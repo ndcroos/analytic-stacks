@@ -31,13 +31,13 @@ So, fact: if you take the solid tensor product of two derived complete things, t
 
 Okay, the derived solid Tor product---is it defined as the derived $T$-product, then you solidify? Or how is it defined, exactly?
 
-Yeah, you can either say it's the left derived functor of the solid tensor product, or you can say that you take the derived tensor product and then derived solidify it. It's all the same.
+You can either say it's the left derived functor of the solid tensor product, or you can say that you take the derived tensor product and then derived solidify it. It's all the same.
 
 And do you need to know there are somehow enough flat things to construct the---you don't need to know that. But it is actually true that all of these guys are flat. I don't know, did Peter mention that? I forget.
 
-Um, okay. Yeah, so a priori, you need to resolve both variables, but since you have flat objects, you only need to resolve one.
+So a priori, you need to resolve both variables, but since you have flat objects, you only need to resolve one.
 
-Okay, so what is the interpretation of this? This corresponds to the affine line, you could say. And then, since this satisfies this idempotent property---sort of like when you invert an element in a ring, you get the same thing---you can think of this as corresponding to some subspace of the affine line. A subspace, as opposed to just a random space with a map to the affine line. And that's the interpretation of this idempotency.
+So what is the interpretation of this? This corresponds to the affine line, you could say. And then, since this satisfies this idempotent property---sort of like when you invert an element in a ring, you get the same thing---you can think of this as corresponding to some subspace of the affine line. A subspace, as opposed to just a random space with a map to the affine line. And that's the interpretation of this idempotency.
 
 So then you could ask: how should one think of this subspace? What subspace is this? The naive thing to say would be that it's the formal completion of the affine line at the origin. Well, because it's a power series ring. But that naive interpretation is not the correct one.
 
@@ -88,13 +88,13 @@ So maybe a little remark about an interpretation of it. I said "solid $\Z$" was 
 
 So what would be the analogous interpretation of "solid $\Z[T]$"? It would be that you have a complete non-archimedean thing where moreover there's a basis of neighborhoods consisting of $\Z[T]$-submodules. And you can think of---for a basic example of a $\Z[T]$-module which is non-archimedean but does not satisfy that property, you can think of this ring. You cannot find a basis of neighborhoods of zero which are stable under multiplication by $T$, because they're stable under multiplication by $T^{-1}$ instead. But in some sense, the theorem is that if you kill just that one guy, then you've explained the difference between the two notions.
 
-Okay, so in the previous theory without "$[T]$" it was a little bit different. It was not defined using this "$p$". Well okay, it basically was done this way. I mean, maybe we didn't make this explicit and we maybe more talked about just this, but we definitely talked about this. Yeah, but it does make it more clear to think of it that way with the $p$.
+Okay, so in the previous theory without "$[T]$" it was a little bit different. It was not defined using this "$p$". Well okay, it basically was done this way. I mean, maybe we didn't make this explicit and we maybe more talked about just this, but we definitely talked about this. But it does make it more clear to think of it that way with the $p$.
 
 Okay, so the proof. Yes, confused about the $\Z[T]$ itself. Is $\Z[T]$ solid? Ah, so it is. That's part of the theorem, because I'm claiming in particular that this is $\Z[T]$-solid and $\Z[T]$ is a retract of this. So it's something that we need to prove and we will prove it. But it's not "solid", what $\Z[T]$ is un-"solid $\Z[T]$". Oh no, it is. As an abelian group, you mean? Yes. No, every discrete abelian group is solid because it's generated under colimits by $\Z$. No, it's an important point. Thank you for bringing it up. $\Z[[T]]$ power series is also solid. $\Z[[T]]$ power series is also solid, yes, because well, it's a limit of things. I mean, you can build it from limits and colimits from $\Z[T]$. So it's all right.
 
 For the proof, well, all of these properties, all except the last. Those are exactly the same. The arguments for all of those things were completely formal, just based on the fact that you have this internally projective object $p$ and you're asking that some endomorphism of internal $\underline{\text{Hom}}(P,M)$ become an isomorphism. That was all that Peter used when he was proving the analog of these claims for solid $\Z$. So the fact that we have a good formal theory is already contained in there. And then in Peter's lecture, the hard part was identifying the free modules, that when you solidify this sequence space $p$, you actually just get a product of copies of $\Z$ fills up the whole thing. Thankfully, that part is actually going to be easier here because we already have solid $\Z$ and basically
 
-Exactly. I mean, you basically---I don't know. Like I said, I sort of tend to think on the derived level from the beginning, but the basic point is that everything has a resolution by these internally projective guys. And then on those, they're the same, and then it's some derived limit of that. And it's just internally projective in $h$ in all condensed, in light condensed, I mean. But it's really not... that's really not necessary either. I mean, this also works in all condensed. I claim it's formal, and I also claim I don't want to get into the detail right now. So yeah, let's maybe discuss after if you still have questions.
+Exactly. I mean, you basically---I don't know. Like I said, I sort of tend to think on the derived level from the beginning, but the basic point is that everything has a resolution by these internally projective guys. And then on those, they're the same, and then it's some derived limit of that. And it's just internally projective in $h$ in all condensed, in light condensed, I mean. But it's really not... that's really not necessary either. I mean, this also works in all condensed. I claim it's formal, and I also claim I don't want to get into the detail right now. So let's maybe discuss after if you still have questions.
 
 Okay, right. So the proof of claim: This follows formally from the fact that this ring $\Z[[T^{-1}]]$ is idempotent over $\Z[T]$, which follows from the very first description I gave of it as the base change of---we check that the power series ring is idempotent and we put that at infinity. And the idempotency is preserved.
 
@@ -120,7 +120,7 @@ Okay, and now we're done. Well, now this functor again---this is internally proj
 
 The last claim is that $\Z$ goes to just the usual polynomial ring in one variable. What happens when you plug in $\Z$ here? You're taking $R\mathrm{Hom}$s from this product of copies of $\Z$ to $\Z$. It turns into a direct sum of copies of $\Z$. You can check that what you get is just the usual $\Z[T]$, even with the $\Z[T]$-module structure. Really, there's a natural comparison map which you see to be an isomorphism.
 
-Okay, so there was this---someone proved it's not related directly to the theory, but someone proved $R\mathrm{Hom}$ from the infinite product of copies of $\Z$ to $\Z$ is a direct sum. But this is not---here you are doing it in---this is easier, yeah.
+Okay, so there was this---someone proved it's not related directly to the theory, but someone proved $R\mathrm{Hom}$ from the infinite product of copies of $\Z$ to $\Z$ is a direct sum. But this is not---here you are doing it in---this is easier.
 
 So we can also do other examples of such a thing. Let's do another example. That finishes the proof of the theorem, so we now have a grip on this $\mathrm{Solid}_{\Z[T]}$ theory. I want to advance the interpretation that the $\mathrm{Solid}_{\Z[T]}$ theory is like working over $\Z[T]$. Without the solidification, it's like the affine line, and $\Z[T]$ with the solidification is like the closed unit disc. That was kind of the interpretation that I started with.
 
@@ -147,19 +147,19 @@ I'm going to call this one $j^*$, and this one $j_!$, and this one $j_*$, this i
 
 "$\ast$ is an adjoint, the inclusion has $!$ on it." 
 "It does, but that one we don't talk about."
-"Yeah, now this was the question I..."
-"Yeah, yeah." Because already this one's not as nice as, I mean, the good adjoint is actually up here.
+"Now this was the question I..."
+" Because already this one's not as nice as, I mean, the good adjoint is actually up here.
 
 So, the interpretation that this suggests---this is exactly like if you have a topological space $X$, and then you have $Z$ a closed subset, and then $U$ the complement open, then you get, if you have $\infty$-categories of sheaves, you have exactly the same thing. Where you have the open over here, you have this thing satisfies a projection formula, you happen to have this other guy, but it's not as well-behaved. And then you have $i_*$ from $\mathcal{D}(Z)$, $i^*$, and then $i^!$. So formally speaking, it behaves exactly the same way. And actually, they're both special cases of the same thing, which is: you have a symmetric monoidal category, and you have an idempotent algebra in it, and it generates the whole situation.
 
 In this case, you have this category and this idempotent algebra. Here you have this category, and then the pushforward of the structure sheaf from the closed sub, or pushforward of the constant sheaf from the closed subset. An
 You said that the rational opens are closed.
 
-Yeah, for example a distinguished open is just the ring with the function inverted - that's quasi-compact.
+For example a distinguished open is just the ring with the function inverted - that's quasi-compact.
 
 The direct image of the structure sheaf is quasi-compact.
 
-Okay, so now... Yeah, by the way, we're going to be guided by this sort of thing in setting up the definition of analytic stack and so on. One of the things we discovered is that when you move to this condensed/solid context, you actually get six functor formalisms in large generality on derived categories of "quasi-coherent sheaves". They really have nice interpretations.
+By the way, we're going to be guided by this sort of thing in setting up the definition of analytic stack and so on. One of the things we discovered is that when you move to this condensed/solid context, you actually get six functor formalisms in large generality on derived categories of "quasi-coherent sheaves". They really have nice interpretations.
 
 For example, if you think of this thing as being what sits at infinity, then it makes sense that this is extension by zero. You're taking your sections and killing the ones that live near the boundary. It all plays quite nicely, and we showed how to give proofs of things like c-t-ness using these formalisms.
 
@@ -195,12 +195,12 @@ In the first definition, the factorization is unique. Yes, it's unique if it exi
 
 Okay, so basically in the definition of solid, you're imposing that certain limits exist uniquely, even though you have non-Hausdorff behavior. Okay, so that's the same thing as saying that if you take $Hom(P, R)$, $f^* \tnsr [-1]$, that this is an isomorphism. That's just... Oh, someone's talking. Hello?
 
-Yes, yes, the first condition is saying that it's a null sequence which is the $p^n$ go to zero. So it's literally... Yeah, it's... I mean, I was going to explain the relation with classical definitions, but it's quite immediate for this one that it's the same as the classical definition. So maybe I'll just repeat what Peter said. So this is
+Yes, yes, the first condition is saying that it's a null sequence which is the $p^n$ go to zero. So it's literally... it's... I mean, I was going to explain the relation with classical definitions, but it's quite immediate for this one that it's the same as the classical definition. So maybe I'll just repeat what Peter said. So this is
 Sure, let me fix that for you:
 
-Imprecise earlier, thank you. Yeah, in the sense of $\Z[T]$-modules is enough, or I'm not sure. I don't think so. Thank you for the comment. Yeah, just as rings, okay.
+Imprecise earlier, thank you. In the sense of $\Z[T]$-modules is enough, or I'm not sure. I don't think so. Thank you for the comment. Just as rings, okay.
 
-So, all right, here's a lemma giving basic properties. So, we write $R^{\circ}$ (this is again kind of standard notation in Huber's theory) for the set of power-bounded elements, and $R^{\circ \circ}$ for the set of topologically nilpotent elements, which is a subset of $R$. Well, yeah, I'm going to prove that.
+So, all right, here's a lemma giving basic properties. So, we write $R^{\circ}$ (this is again kind of standard notation in Huber's theory) for the set of power-bounded elements, and $R^{\circ \circ}$ for the set of topologically nilpotent elements, which is a subset of $R$. Well, I'm going to prove that.
 
 The lemma is that $R^{\circ}$, inside this ring here, is an integrally closed subring, and $R^{\circ \circ}$, first of all, is contained in $R^{\circ}$, and it is a radical ideal.
 
@@ -226,18 +226,18 @@ I'll just say it quickly in words. You use the same trick. You resolve $R$ first
 
 I'll leave the rest to you. It's completely analogous arguments, like why it's an ideal and why it's a radical ideal even. Fun exercises in that style of argument.
 
-So now we can describe this structure sheaf. Suppose we have again a solid ring $R$ and then $g, f_1, \dots, f_n$ in $R^\mathrm{solid}$. The claim is that there exists a universal or an initial solid ring $R^\mathrm{solid}_{g,f_1,\dots,f_n}$ with a map from $R$ such that first of all $g$ becomes invertible in there, and secondly $f_i/g$ is power bounded in $R^\mathrm{solid}_{g,f_1,\dots,f_n}$ for all $i$. That kind of encodes the idea I was talking about, where you want $f_i/g$ to go to the closed unit disc, you want $g^{-1}$ to be invertible.
+Now we can describe this structure sheaf. Suppose we have again a solid ring $R$ and then $g, f_1, \dots, f_n$ in $R^\mathrm{solid}$. The claim is that there exists a universal or an initial solid ring $R^\mathrm{solid}_{g,f_1,\dots,f_n}$ with a map from $R$ such that first of all $g$ becomes invertible in there, and secondly $f_i/g$ is power bounded in $R^\mathrm{solid}_{g,f_1,\dots,f_n}$ for all $i$. That kind of encodes the idea I was talking about, where you want $f_i/g$ to go to the closed unit disc, you want $g^{-1}$ to be invertible.
 
 The proof is you can just construct the guy. You could first invert $g$, but maybe I'll invert $g$ at the end. What you can do is take $R$ and adjoin polynomial variables $x_1, \dots, x_n$ and then solidify with respect to all of them, which recall does something when $R$ is not discrete. Remember we had the example of one variable and $R$ was $\Q_p$, then this gave us the Tate algebra.
 
 Then we can say that these variables are supposed to be $f_i/g$, so maybe $gx_i = f_i$ for all $i$. It doesn't matter at which point you invert $g$, but let's do it at the end. This kind of obviously satisfies the correct universal property. First we freely adjoin solid variables, then we impose the relations which guarantee that kind of thing. There's one small thing to check, which is that after you take this in which these are definitely solid and then you do these operations, you need to see it's still solid. But that's because it's all colimits.
 
-So this is the kind of thing you're looking at. Now I want to make a caution here. This is not
-That means what you're producing a priori is a derived sheaf, not an ordinary sheaf. So that's okay, but now I'll say, in most practical cases, almost all practical cases, all $\pi_i = 0$ for $i > 0$. So in practice it doesn't seem to cause trouble, but it's an important thing to keep in mind.
+This is the kind of thing you're looking at. Now I want to make a caution here. This is not
+That means what you're producing a priori is a derived sheaf, not an ordinary sheaf. So that's okay, but now I'll say, in most practical cases, almost all practical cases, all $\pi_i = 0$ for $i > 0$. In practice it doesn't seem to cause trouble, but it's an important thing to keep in mind.
 
-The second warning---even if $R$ is a very nice kind of Huber ring, then this quotient may not be quasi-separated. So it's a kind of an analogue of restricted power series in general. Yes, exactly. This will always be the usual Tate algebra in many generators. That follows basically from the arguments we gave for any sort of Huber ring $R$. But then when you take this quotient by the ideal generated by these elements, it might not be closed. So in principle you could be having a non-Hausdorff quotient here.
+The second warning---even if $R$ is a very nice kind of Huber ring, then this quotient may not be quasi-separated. It's a kind of an analogue of restricted power series in general. Yes, exactly. This will always be the usual Tate algebra in many generators. That follows basically from the arguments we gave for any sort of Huber ring $R$. But then when you take this quotient by the ideal generated by these elements, it might not be closed. So in principle you could be having a non-Hausdorff quotient here.
 
-So when you say Huber ring, you mean complete Huber---yes, I mean complete Huber ring, thank you. But this theory is defined for complete Huber rings as well, or no? This theory is only defined for complete Huber rings, the theory I'm discussing, because you cannot define the condensed set of any topological thing. You can define it, but it won't be solid unless the thing is complete in general. Ah okay, you want it solid. So you want complete, and then the other guys, when you do this, it is still solid but doesn't come from---it's kind of an analogue of, yes.
+When you say Huber ring, you mean complete Huber---yes, I mean complete Huber ring, thank you. But this theory is defined for complete Huber rings as well, or no? This theory is only defined for complete Huber rings, the theory I'm discussing, because you cannot define the condensed set of any topological thing. You can define it, but it won't be solid unless the thing is complete in general. Ah okay, you want it solid. So you want complete, and then the other guys, when you do this, it is still solid but doesn't come from---it's kind of an analogue of, yes.
 
 Yes, but again, in almost all practical cases, or maybe all practical cases, it is quasi-separated, i.e., Hausdorff.
 
@@ -245,29 +245,29 @@ So what I was trying to aim for is the relation to Huber's theory. I guess I pro
 
 This is the quasi-separification of this more generally defined thing that we have here. So the solid thing, or maybe for emphasis I should put the $\pi_i = 0$ as well---you can get the Huber thing functorially from this more general thing, in particular from our structure sheaf. But they're not necessarily equal in general. In all practical cases, though, they are equal. That's the general outline of the story.
 
-So in general, if you always use the structure sheaf, it always satisfies the---yes, so it's always a sheaf. Yeah, so maybe that's an important point to mention. There was this little fly in the ointment in Huber's theory, that in the general setting he defined a structure sheaf, except it wasn't a sheaf, it was only a presheaf. In all practical cases it was a sheaf, but still, the general theory was kind of missing something for that reason. That's fixed by this. If you no longer care about things being quasi-separated and non-derived, then you get a good plain old structure sheaf. And you get even more, you get the derived category of quasi-coherent sheaves which localizes. Also you get the possibility of defining all of these things even without this condition being present.
+So in general, if you always use the structure sheaf, it always satisfies the---yes, so it's always a sheaf. So maybe that's an important point to mention. There was this little fly in the ointment in Huber's theory, that in the general setting he defined a structure sheaf, except it wasn't a sheaf, it was only a presheaf. In all practical cases it was a sheaf, but still, the general theory was kind of missing something for that reason. That's fixed by this. If you no longer care about things being quasi-separated and non-derived, then you get a good plain old structure sheaf. And you get even more, you get the derived category of quasi-coherent sheaves which localizes. Also you get the possibility of defining all of these things even without this condition being present.
 
 Okay, I think probably I'll stop there. Thank you for your attention.
 
 Yes, do we have any use of discontinuous valuations? Any use? Yes, I know Scholze likes them, so he came up with this notion of adic spaces, and those correspond to certain---yeah, but you don't really use them. I think he used them, but you---oh me? Well look, I just build the theory, I don't---he calls them adic spaces, I don't think he developed the theory, he just kind of did it in an example. So he wanted to exactly include things like this open unit disc.
 
-So this---yeah, things like the 
+So this--- things like the 
 
 This non-quasicompact thing, to fit it inside Huber's theory---but Clausen advocates that sometimes it's better to just work with this thing as if it were fine, and that's something that our theory easily accommodates.
 
-Yeah, there are people who did---I forgot the name of this---and constructed some notion of rigid, I forgot the name. Some draw some paper on this, on like a variant of... I forgot the name of the... There was some paper some time ago, but I'm not sure.
+There are people who did---I forgot the name of this---and constructed some notion of rigid, I forgot the name. Some draw some paper on this, on like a variant of... I forgot the name of the... There was some paper some time ago, but I'm not sure.
 
 Okay, any other questions? Yes?
 
-So every solid $\Z$-algebra... Yes, so you're... Yeah, so this notion of analytic ring, we haven't defined it yet. It kind of organizes a lot of discussion, but indeed, if you have a... If you have a solid... If you have an algebra in solid $\Z$-modules, you get what we call an induced analytic ring structure. So it's just all... You take all, I mean, the module category you have, and that sits inside condensed $\Z$-modules, and that is an analytic ring. Yeah, but in the case of $\Z$, we had something more natural---more natural, it's arguable, it's more complete. There are two things. They exist. They do, I mean, you want them both, I think, and can be extended... Can be extended to any discrete ring, right?
+So every solid $\Z$-algebra... Yes, so you're... So this notion of analytic ring, we haven't defined it yet. It kind of organizes a lot of discussion, but indeed, if you have a... If you have a solid... If you have an algebra in solid $\Z$-modules, you get what we call an induced analytic ring structure. So it's just all... You take all, I mean, the module category you have, and that sits inside condensed $\Z$-modules, and that is an analytic ring. Yeah, but in the case of $\Z$, we had something more natural---more natural, it's arguable, it's more complete. There are two things. They exist. They do, I mean, you want them both, I think, and can be extended... Can be extended to any discrete ring, right?
 
 Yes, that's right. Not in general, not... Not general solid $\Z$-algebra. Well, for a general solid $\Z$-algebra, I don't necessarily know of any, like, completely canonical... Well, like, maybe... I mean, one thing you could do is you could take all of the power-bounded elements and force all of them to be solid. That would be kind of the maximally complete thing that you can get via the stuff that we've developed. But there could be further completions of that, as far as I know. I mean, I...
 
 You're welcome. Yes, with the definition of solid analytic rings we used in the very first lecture, if we use this instead of a regular ring here, do we get something similar to like Huber's theory for Huber pairs instead of just regular? Could you repeat the question? I'm not sure I understood.
 
-In the very first lecture, we defined solid analytic rings. Yes, with the ring and the direct category. If we try applying something similar here to analytic rings, what do you mean? Ah, you mean like this discussion of this thing here? Oh, yeah, yeah, yeah. You can do that. But do we recover, like...? Oh, yeah, you recover the theory with the $R^+$ in there as well, yeah. So elements $R^+$, you require solidity. Exactly, not for all of the guys. Exactly. So you can, you can... Yeah, and we will discuss this. You get... You can add that extra flexibility into the picture, yeah. And the fact that $R_{\Z_0}$ is this is automatic, that those are the... They're automatically solid, exactly.
+In the very first lecture, we defined solid analytic rings. Yes, with the ring and the direct category. If we try applying something similar here to analytic rings, what do you mean? Ah, you mean like this discussion of this thing here? You can do that. But do we recover, like...? Oh, yeah, you recover the theory with the $R^+$ in there as well, yeah. So elements $R^+$, you require solidity. Exactly, not for all of the guys. Exactly. So you can, you can... Yeah, and we will discuss this. You get... You can add that extra flexibility into the picture, yeah. And the fact that $R_{\Z_0}$ is this is automatic, that those are the... They're automatically solid, exactly.
 
-Yes, okay. Yeah, so it actually fits remarkably well with Huber's theory. Like, you take tensor products of analytic... You have to first solidify one another, have to take... Yeah, yeah, usually. Yeah, so here it's still the same. Here you don't have... Well, these solidifications all commute with each other, so there you don't need to... Yeah, they're all given by $R$ mapping out of, out of something, and any two $R$ mapping out of commute with each other.
+Yes, okay. So it actually fits remarkably well with Huber's theory. Like, you take tensor products of analytic... You have to first solidify one another, have to take... Yeah, usually. Yeah, so here it's still the same. Here you don't have... Well, these solidifications all commute with each other, so there you don't need to... Yeah, they're all given by $R$ mapping out of, out of something, and any two $R$ mapping out of commute with each other.
 
 Yeah, other questions? Okay, well, see you on Friday or next Wednesday or whenever.
 
