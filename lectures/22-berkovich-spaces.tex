@@ -35,19 +35,56 @@ First, I want to talk about different notions of how to localize an analytic sta
 
 % 2:40
 We have already seen one way. 
-\begin{unfinished}{2:42}
-If we have an analytic stack, and if we have $S$, which is maybe let's say a metrizable, finite dimensional, compact Hausdorff space, or it could be a maybe a locally compact Hausdorff space, which is locally one of these, then we've seen that that can also be viewed as an analytic stack. We can also view it as an analytic stack. Then we could ask for a map $f: X \rightarrow S$ in $\AnStack$. We discussed kind of what structure you get on X, basically you get a bunch of idempotent algebras in $D(X)$ corresponding to the closed subsets of $S$, or you can think in terms of the complementary opens as well, and you get sort of some idempotent coalgebras which would be like the $J_{!}$ of the constant sheaf on the open subset, as opposed to the like I lower stars of the constant sheaves, giving you these idempotent algebras. But, in any case, you get a whole bunch of algebra objects in here, which let you localize this category over the topological space $S$.
+
+If we have an analytic stack, and if we have $S$, which is maybe let's say a metrizable, finite dimensional, compact Hausdorff space, or it could be a maybe a locally compact Hausdorff space, which is locally one of these, then we've seen that that can also be viewed as an analytic stack. We can also view it as an analytic stack. Then we could ask for a map $f: X \rightarrow S$ in the category of $\AnStack$. 
+% 3:25
+We discussed what structure you get on $X$. Basically, you get a bunch of idempotent algebras in $D(X)$, corresponding to the closed subsets of $S$. You can also think in terms of the complementary opens as well, and you get some idempotent coalgebras which would be like the $D_{!}$ \note{Not sure if D or J} of the constant sheaf on the open subset, as opposed to the $I_{*}$ of the constant sheaves, giving you these idempotent algebras. But, in any case, you get a whole bunch of algebra objects in here $D(x)$, which let you localize this category over the topological space $S$.
 % 4:05
-But when discussing the relation with Berkovich spaces, it's going to be too annoying to require these kinds of conditions, even though they're satisfied in practice. So, I want to discuss some slightly more general notion of how to localize an analytic stack along a topological space and the relation with this one in the case where you do have a metrizable, finite dimensional, compact Hausdorff space.
-% 4:40
+But when discussing the relation with Berkovich spaces, it's going to be too annoying to require these kinds of conditions (metrizable, finite dimensional, compact Hausdorff), even though they're satisfied in practice. So, I want to discuss some slightly more general notion of how to localize an analytic stack along a topological space and the relation with this one in the case where you do have a metrizable, finite dimensional, compact Hausdorff space.
+\begin{unfinished}{4:34}
+So what is another thing I can do? If you have an analytic stack $X \in \AnStack$.
+To $X$ we can assign a locale. We just call it $Loc(X)$, which is just given by the monomorphisms in analytic stacks.
+
+$ X \rightarrow locale$
+
+$ Loc(X) = \{ Y \subseteq X \} $
+
+% 5:03
+So this is a general thing you can do whenever you have a topos, or an $\infty$-topos.
+It always has an underlying locale, where you only look at the monomorphisms. And if you look at the topos axioms, then you can see that union 
+
+% 5:32
+I should say that potentially there are some set theoretical difficulties so that potentially $Loc(X)$ is not a set. I did not investigate it seriously. But in a few seconds, you will see that it doesn't matter, when I get to the definition.
+
+\textbf{Question:} Do you mean, when you get larger and larger sizes, you could have more and more subobjects
+
+\textbf{Answer:} In principle. I didn't spend much time that it is a set, because ...
+
+
 % todo, text seems lost here
 When I make the definition that I'm interested in, it doesn't matter whether it's a set or not. Question: the monom, if I only consider an that's like taking connector component. Exactly, so it means that if you do the fiber product, then the diagonal, I mean the diagonal map associated to this inclusion is an isomorphism.
 
-A topological space also gives rise to a local. But let me actually change perspectives and say 'S' is a local instead of saying 'S' is a topological space. Then we can ask for a map of locales, Loc(X) to S. Whether or not this is a set, this is some data that makes honest mathematical sense, because you're saying that for every open subset, you have to give such a monomorphism, and you know unions have to go to unions and finite intersections have to go to finite intersections.
+A topological space also gives rise to a local. But let me actually change perspectives and say 'S' is a local instead of saying 'S' is a topological space. 
+% 8:00
+Then we can ask for a map of locales, $Loc(X) \rightarrow S$. Whether or not $\{ Y \subseteq X \} $ is a set, this is some data that makes honest mathematical sense. A locale is by definition the collection of open subsets, which is a set. You are saying that for every open subset, you have to give such a monomorphism, and  unions have to go to unions and finite intersections have to go to finite intersections.
 
-In the literature about locales, I don't remember, I didn't, don't use much, but this is like the direction of M of too, but I don't know when they define M of locales, is it in the other direction or in this? I don't know either, so I'm doing the geometric morphism, let's say a geometric morphism of locales. Well, morphism of sites goes the other direction, you, the morphism of sites goes the other direction. I'm talking about a geometric morphism, but also of goes in the direction.
+% 8:26
+\textbf{Question:} In the literature about locales, I don't remember, I didn't, don't use much, but this is like the direction of M of too \citeme{}, but I don't know when they define M of locales, is it in the other direction or in this? 
 
-But we can also ask for a stronger property, so that each inclusion of open subsets, say 'V' inside 'S', maps to, so it's supposed to give some monomorphisms, so maybe I should give some name for this, like 'f' or 'Pi', maybe. So this goes to like 'Pi' inverse 'U' subset 'Pi' inverse 'V' subset 'X'. We could ask that these inclusion maps are actually open immersions from the perspective of the six functor formalism that Peter discussed last time, the extended six functor formalism on analytic Stacks. So we could ask that each of these inclusions be shable, and that they be well chromologic smooth.
+\textbf{Answer:} I don't know either. So I'm doing the geometric morphism, let's say a geometric morphism of locales. 
+
+\textbf{Question:} Well, morphism of sites...
+\textbf{Answer:} Morphism of sites goes the other direction. I'm talking about a geometric morphism, 
+\textbf{Question:} But also a morphism of sites
+
+but also of goes in the direction.
+
+\textbf{Question:} For locales it is not used much by algebraic geometers.
+
+% Back to lecture
+% 9:26
+
+But we can also ask for a stronger property, so that each inclusion of open subsets, say $V$ inside $S$, maps to, so it's supposed to give some monomorphisms, so maybe I should give some name for this, like $f$ or $Pi$, maybe. So this goes to like $\pi^{-1} U \subset \pi^{-1} V \subset X$. We could ask that these inclusion maps are actually open immersions from the perspective of the six functor formalism that Peter discussed last time. That is, the extended six functor formalism on analytic Stacks. So we could ask that each of these inclusions be shriekable, and that they be well cohomologically smooth.
 
 But in the case of a monomorphism, then it's quite easy to see that the dualizing object is canonically the unit, and it's the same thing as an open immersion. A general monomorphism, I mean, it could look like anything really, it could look closed, it could look open, it could look like some mix. But it's reasonable to ask for this stronger property, that what looks like an open immersion on the level of the topological space is also, is looks like an open immersion from the perspective of the six functor formalism.
 
