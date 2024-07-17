@@ -47,7 +47,7 @@ To $X$ we can assign a locale. We just call it $Loc(X)$, which is just given by 
 
 $ X \rightarrow locale$
 
-$ Loc(X) = \{ Y \subseteq X \} $
+$ \Loc(X) = \{ Y \subseteq X \} $
 
 % 5:03
 So this is a general thing you can do whenever you have a topos, or an $\infty$-topos.
@@ -64,7 +64,7 @@ I should say that potentially there are some set theoretical difficulties so tha
 % todo, text seems lost here
 When I make the definition that I'm interested in, it doesn't matter whether it's a set or not. Question: the monom, if I only consider an that's like taking connector component. Exactly, so it means that if you do the fiber product, then the diagonal, I mean the diagonal map associated to this inclusion is an isomorphism.
 
-A topological space also gives rise to a local. But let me actually change perspectives and say 'S' is a local instead of saying 'S' is a topological space. 
+A topological space also gives rise to a locale. But let me actually change perspectives and say 'S' is a locale instead of saying 'S' is a topological space. 
 % 8:00
 Then we can ask for a map of locales, $Loc(X) \rightarrow S$. Whether or not $\{ Y \subseteq X \} $ is a set, this is some data that makes honest mathematical sense. A locale is by definition the collection of open subsets, which is a set. You are saying that for every open subset, you have to give such a monomorphism, and  unions have to go to unions and finite intersections have to go to finite intersections.
 
@@ -98,7 +98,7 @@ In the case where $X$ is a metrizable, finite dimensional, compact Hausdorff spa
 But by abuse of notation, I'm using this symbol $U \subseteq S$ to mean that $U$ is an element of the poset which $S$ is secretly. But it is because I am thinking of it as a topological ... \note{I didn't hear the last word}
 
 
-\textbf{Question:} Equivalently 
+\textbf{Question:} Equivalently \note{todo}
 
 % 12:53
 There is another perspective, it goes like this. You take the definition of a topos but instead of sheaves of sets you look at sheaves of truth values. I don't know if this is helpful or not.
@@ -115,23 +115,39 @@ This is the strongest condition. If you have this, you can ask whether this hold
 The second one is given off by, lo, is one of open, opener, that's true. You could think of this in terms of there's, lo, local X, and then there's some quotient local which is like the local of monomorphisms that are open versions with respect to the six functor formalism, and then the second bit of data is a map like this, thanks for that remark, Peter.
 
 And is it the case that the union, maybe I go confus, union of open immersions is an open immersion or to make it an open, no, that's true, that it's an open immersion, which is needed to, well, it's needed to, it's needed to have this local, I mean, so, or well, remote, I mean, depends on how your, whe. No, but it's true, so that if you have a union of open immersions, then it's still an open immersion, and that's an important point to check when you're discussing these things, and it follows from this extension procedure for six functor formalisms that Peter discussed.
+% 17:06
+If you have a union along open immersions, then those are sheafable maps, and but it's also a cover, and you can get a a lower shriek map defined on the union and then you can actually check locally that it's cohomologically smooth.
 
-If you have a union along open immersions, then those are sheafable maps, and but it's also a cover, and you can get a a lower shriek map defined on the union and then you can actually check locally that it's comically smooth.
 
-Let's give an example. Eemember way back when, when we had Huber pairs and stuff like that, so let's see. Then we assign to this an analytic ring, R, R plus solid. Then, we can take its spectrum, and then we can look at the local associated to this. And what we essentially already saw was that this, this analytic stack localizes along the usual, usual Huber topological space of continuous valuations.
+% 17:10
+\begin{example}[\yt{17m48s}{Huber pair todo}]
 
-Now you consider the spec in your, in your, this is what this is, spec n. So, Peter, I'm lazy, I say spec and, and then, spies in the old sense, yes, it's a topological space, yes. And then, okay, the local, okay, and then you have a map of, oh, this loc, this means for every open in the add space, you give a monomorphism of analytic stacks, and this, of course, this involves passing to some derived pairs in some sense, because you are not, but your original pair is is not right. So if on the level of rational opens, this is going to give another apine, analytic stack, which is the one where you enforce, that $F$ invertible, in the world of analytic Rings, you enforce that $F$ is invertible, and that G1 over $F$, etc., GN over $F$ is solid, and that defines some that
+Let's give an example. Remember way back when, when we had Huber pairs $R, R^{+}$and stuff like that. Then we assign to this an analytic ring $(R, R^{+})^s$ \note{todo} solid. Then, we can take its spectrum, and then we can look at the locale $Loc(Spec)$ associated to this. What we essentially already saw, was that this analytic stack localizes along the usual Huber topological space of continuous valuations $\Spa(R, R^{+})$.
+\end{example}
+
+\textbf{Question:}
+Now you consider the spec in your, this is what this is, spec n. So, Peter, I'm lazy, I say spec and, and then, spies in the old sense, yes, it's a topological space, yes. And then, okay, the local, okay, and then you have a map of, oh, this loc, this means for every open in the add space, you give a monomorphism of analytic stacks, and this, of course, this involves passing to some derived pairs in some sense, because you are not, but your original pair is is not right. So if on the level of rational opens, this is going to give another apine, analytic stack, which is the one where you enforce, that $F$ invertible, in the world of analytic Rings, you enforce that $F$ is invertible, and that G1 over $F$, etc., GN over $F$ is solid, and that defines some that
 Can always refine any open cover here so that, so in fact, you get an open cover. So in fact, we showed, without having the L, without having introduced the language for it, we showed that any open cover or cover of a rational open in $\R^+$ pulls back to an open cover, can be refined to, pulls back to an open cover of, you know, the, pulls back under $\Pi$ to an open cover in the sense of the six functor formalism.
 
-Let me make a remark. Let me make an open cover to cover by monomorphisms. In general, it's not true that a rational open pulls back to an open immersion. Is there a proof of this? I'll give an example right now.
+\begin{remark}
+Let me make an open cover to cover by monomorphisms. In general, it's not true that a rational open pulls back to an open immersion. 
+\end{remark}
 
-So, have two formal variables, maybe $p$ and $X$. Oh, sorry, I should say $\Z_p$. I don't need two variables. Thanks. So one formal variable and then invert it. What does this correspond to? On the level of analytic rings, we get this, and on the level of derived categories, this is solid $\Z_p$ modules, and then this is a, well, this is algebraically inverting $p$. The left adjoint here is the inclusion of the full subcategory, or the right adjoint here is the inclusion of the full subcategory where $p$ is invertible.
+
+\begin{example}[\yt{23m44s}{Remark example, todo}]
+Is there a proof of this? I'll give an example right now.
+
+% todo, correction in lecture
+So, have two formal variables, $p$ and $X$. Oh, sorry, I should say $\Z_p$. I don't need two variables. Thanks. So one formal variable and then invert it. 
+
+$ (\Z_p, \Z_p) \rightarrow (\Q_p, \Z_p)$
+What does this correspond to? On the level of analytic rings, we get this, and on the level of derived categories, this is solid $\Z_p$ modules, and then this is a, well, this is algebraically inverting $p$. The left adjoint here is the inclusion of the full subcategory, or the right adjoint here is the inclusion of the full subcategory where $p$ is invertible.
 
 So this passing from $\Z_p$ to $\Q_p$ is algebraically inverting $p$, $p$ is a prime. And that actually, from the perspective of the six functor formalism, is a closed immersion, not an open immersion. That's a proper map because the, this hasn't the second variable hasn't changed, so we're changing the underlying ring and not the analytic ring structure. But it's also a, proper monomorphism, it's a, it's a closed inclusion, it's closed, not immersion, not open.
 
 So, I think we treated the case of some covering given by a function like $f$, like the Laurent cover,  the one where $f$ or $1-f$ is less than or equal to mean, this kind of basic cover. And for those, is it the case? Yes, so then let me make another remark. However, if $R$ is Tate, then indeed, this doesn't arise. So in general, the problem is exactly these open covers in the Huber sense, which are given by algebraically inverting a function without enforcing any inequalities. But in the setting of a Tate Huber pair, then you know, if you want to invert something, it's, the subset where you invert something can always be written as a union of subsets obtained by forcing inequalities.
 
-So, it is not quasi-compact in general, right? But dealing with something which is in the sense of the ADC space is quasi-compact because it is a rational domain. I think in the, yes, but I mean, it is Rush, so it is quasi-compact in the, yes, in the. This also has to do with the fact that we didn't directly, I was sliding one little thing under the rug here, which is we didn't really directly define this as a map. We didn't really directly define it like this, remember we actually had this valuative spectrum of all of these guys, and we actually defined this map and then we used Huber's retraction here. So this was not quite accurate, because that would be accurate on the level of $\mathrm{Spa}$, but that's not exactly how we get it for $\mathrm{Spa}_a$. Instead, we, assume that the real $\mathrm{Spa}_a$. The idea is open, and then it's okay.
+So, it is not quasi-compact in general, right? But dealing with something which is in the sense of the ADC space is quasi-compact because it is a rational domain. I think in the, yes, but I mean, it is Rush, so it is quasi-compact in the, yes, in the. This also has to do with the fact that we didn't directly, I was sliding one little thing under the rug here, which is we didn't really directly define this as a map. We didn't really directly define it like this, remember we actually had this valuative spectrum of all of these guys, and we actually defined this map and then we used Huber's retraction here. So this was not quite accurate, because that would be accurate on the level of $\Spa$, but that's not exactly how we get it for $\mathrm{Spa}_a$. Instead, we, assume that the real $\mathrm{Spa}_a$. The idea is open, and then it's okay.
 
 So, the point is that the rational opens in the Tate case can always be described by forcing inequality among the valuations. Okay, let me try to finish what I was trying to say. I want to give an idea of what's going on, I don't want to get too precise about it, but it's this kind of phenomenon, where these guys correspond to this kind of thing, which does correspond to an
 
