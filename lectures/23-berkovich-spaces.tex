@@ -9,17 +9,32 @@
 \begin{unfinished}{0:00}
 This lecture is about Berkovich spaces, which is a topic I began discussing last time.
 
-Let me remind you of the classical setup. You have a Banach ring, which is a ring equipped with a norm that is submultiplicative and satisfies the triangle inequality. The norm of 1 is equal to 0 or 1, unless R equals Z. And R is complete.
+Let me remind you of the classical setup. You have a Banach ring, which is a ring equipped with a norm that is submultiplicative and satisfies the triangle inequality. The norm of 1 is equal to 0 or 1, unless $R = \Z$. And $R$ is complete.
 
-Berkovich assigns to this a compact Hausdorff space, $\mathcal{M}_R^{\text{norm}}$, which is a subset over the product over all elements in R of the closed interval from 0 to the norm of f. A point in this space is denoted as X, and it is literally an evaluation map from R to the non-negative real numbers, which is now multiplicative and satisfies the triangle inequality, with 1 being 1.
+%todo insert earlier Banach ring latex def here.
 
-R is not complete with respect to this norm X. In fact, there could be many elements of norm zero. However, if you complete R with respect to any norm X, you get a complete valued field $\mathcal{K}_X^{\text{hat}}$, which is sort of the residue field in the sense of Berkovich theory.
+% 1:45
+Berkovich assigns to this a compact Hausdorff space, $\BerkSpec(R, \norm{}) \subseteq \prod_{f \in R} [ 0, \norm{f} ]$, which is a subset over the product over all elements in R of the closed interval from 0 to the norm of f. A point in this space is denoted as X, and it is literally an evaluation map from R to the non-negative real numbers, which is now multiplicative and satisfies the triangle inequality, with 1 being 1.
 
-There are basically three cases: archimedian, non-archimedian but discrete, and non-archimedian non-discrete. In the archimedian case, there is no real variety in complete normed fields, as it is either R or C. In the non-archimedian discrete case, you have the trivial norm. In the non-archimedian non-discrete case, the value could come from a discrete valuation, and there is an ambiguity in the normalization.
+\begin{remark}
+$\R$ is not complete with respect to this $\norm{}_X$. In fact, there could be many elements of norm zero. However, if you complete $R$ with respect to any norm X, you get a complete valued field $\mathcal{K}(X)^{\text{hat}}$, which is sort of the residue field in the sense of Berkovich theory.
+% TODO: Latex notation of K residue field
+There are basically three cases:
+\begin{enumerate}
+\item archimedian $\iff$ $(\R, \norm{}^{\alpha})$ or $(\C, \norm{}^{\alpha)$, $\alpha \in [0, 1]$
+\item non-archimedian but discrete, then you have the trivial norm $\norm{}_0 = \text{trivial norm}$
+\item non-archimedian non-discrete, $\norm{}_{normalize}^{\alpha}$
+\end{enumerate}
+In the archimedian case, there is no real variety in complete normed fields, as it is either $\R$ or $\C$. In the non-archimedian discrete case,. In the non-archimedian non-discrete case, the value could come from a discrete valuation, and there is an ambiguity in the normalization.
+\end{remark}
 
-Now, the goal is to promote $\mathcal{M}_R^{\text{norm}}$ to an analytic stack, using the stack of norms, $\mathcal{N}$. A map from an analytic stack $\mathcal{X}$ to $\mathcal{N}$ is the same as a certain map from $\P^1_{\mathcal{X}}$ to $[0, \infty)$, satisfying multiplicativity.
+% Some text about the discussion seems to be missing here
 
-Last time, we investigated the geometry of $\mathcal{N}$, and saw that it lies over the extended Berkovich spectrum of the integers. The triangle inequality is what made the difference between taking an arbitrary power $\alpha$ and having something that behaves like a norm, versus just a quasi-norm.
+% 6:36
+Now, the goal is to promote $\BerkSpec(R,{\norm{}}$ to an analytic stack, using the stack of norms, $\mathcal{N}$. A map from an analytic stack $\mathcal{X}$ to $\mathcal{N}$ is the same as a certain map from $\P^1_{\mathcal{X}}$ to $[0, \infty)$, satisfying multiplicativity.
+
+% 7:50
+Last time, we investigated the geometry of $\mathcal{N}$, and saw that it lies over $\ExtBerkSpec(\Z)$,the extended Berkovich spectrum of $\Z$. The triangle inequality is what made the difference between taking an arbitrary power $\alpha$ and having something that behaves like a norm, versus just a quasi-norm.
 
 Plus, you have also the kind of the limit at, yes, there's also the limit at Infinity. So, that makes, so, and in this stack of norms, there's no triangle inequality imposed, and it turns out what you get is this non-strict triangle inequality where all powers of the usual Archimedean normal are allowed. Then, also, there's a some kind of very strange limit point where your Norm takes infinite values on natural numbers, and then you have the Archimedean ones, so two Tic absolute values which end here in a point which has both characteristic zero and characteristic P Behavior, but where the norm of two equals zero.
 
