@@ -14,16 +14,16 @@ Let me remind you of the classical setup. You have a Banach ring, which is a rin
 %todo insert earlier Banach ring latex def here.
 
 % 1:45
-Berkovich assigns to this a compact Hausdorff space, $\BerkSpec(R, \norm{}) \subseteq \prod_{f \in R} [ 0, \norm{f} ]$, which is a subset over the product over all elements in R of the closed interval from 0 to the norm of f. A point in this space is denoted as X, and it is literally an evaluation map from R to the non-negative real numbers, which is now multiplicative and satisfies the triangle inequality, with 1 being 1.
+Berkovich assigns to this a compact Hausdorff space, $\BerkSpec(R, \norm{\cdot}) \subseteq \prod_{f \in R} [ 0, \norm{f} ]$, which is a subset over the product over all elements in R of the closed interval from 0 to the norm of f. A point in this space is denoted as X, and it is literally an evaluation map from R to the non-negative real numbers, which is now multiplicative and satisfies the triangle inequality, with 1 being 1.
 
 \begin{remark}
-$\R$ is not complete with respect to this $\norm{}_X$. In fact, there could be many elements of norm zero. However, if you complete $R$ with respect to any norm X, you get a complete valued field $\mathcal{K}(X)^{\text{hat}}$, which is sort of the residue field in the sense of Berkovich theory.
+$\R$ is not complete with respect to this $\norm{\cdot}_X$. In fact, there could be many elements of norm zero. However, if you complete $R$ with respect to any norm X, you get a complete valued field $\mathcal{K}(X)^{\text{hat}}$, which is sort of the residue field in the sense of Berkovich theory.
 % TODO: Latex notation of K residue field
 There are basically three cases:
 \begin{enumerate}
-\item archimedian $\iff$ $(\R, \norm{}^{\alpha})$ or $(\C, \norm{}^{\alpha)$, $\alpha \in [0, 1]$
-\item non-archimedian but discrete, then you have the trivial norm $\norm{}_0 = \text{trivial norm}$
-\item non-archimedian non-discrete, $\norm{}_{normalize}^{\alpha}$
+\item archimedian $\iff$ $(\R, \norm{\cdot}^{\alpha})$ or $(\C, \norm{\cdot}^{\alpha)$, $\alpha \in [0, 1]$
+\item non-archimedian but discrete, then you have the trivial norm $\norm{\cdot}_0 = \text{trivial norm}$
+\item non-archimedian non-discrete, $\norm{\cdot}_{normalize}^{\alpha}$
 \end{enumerate}
 In the archimedian case, there is no real variety in complete normed fields, as it is either $\R$ or $\C$. In the non-archimedian discrete case,. In the non-archimedian non-discrete case, the value could come from a discrete valuation, and there is an ambiguity in the normalization.
 \end{remark}
@@ -31,48 +31,103 @@ In the archimedian case, there is no real variety in complete normed fields, as 
 % Some text about the discussion seems to be missing here
 
 % 6:36
-Now, the goal is to promote $\BerkSpec(R,{\norm{}}$ to an analytic stack, using the stack of norms, $\mathcal{N}$. A map from an analytic stack $\mathcal{X}$ to $\mathcal{N}$ is the same as a certain map from $\P^1_{\mathcal{X}}$ to $[0, \infty)$, satisfying multiplicativity.
+Now, the goal is to promote $\BerkSpec(R,{\norm{\cdot}}$ to an analytic stack, using the stack of norms, $\mathcal{N}$. A map from an analytic stack $\mathcal{X}$ to $\mathcal{N}$ is the same as a certain map from $\P^1_{\mathcal{X}}$ to $[0, \infty)$, satisfying multiplicativity.
 
 % 7:50
-Last time, we investigated the geometry of $\mathcal{N}$, and saw that it lies over $\ExtBerkSpec(\Z)$,the extended Berkovich spectrum of $\Z$. The triangle inequality is what made the difference between taking an arbitrary power $\alpha$ and having something that behaves like a norm, versus just a quasi-norm.
+Last time, we investigated the geometry of $\mathcal{N}$, and saw that it lies over $\ExtBerkSpec(\Z)$,the extended Berkovich spectrum of $\Z$. The usual triangle inequality is what made the difference, the reason you couldn't take an arbitary power $\alpha$ here. If you take an arbitrary power $\alpha$, that basically behaves like a norm, but it is really just a quasi-norm. So you have to put some constants in front of here.
 
-Plus, you have also the kind of the limit at, yes, there's also the limit at Infinity. So, that makes, so, and in this stack of norms, there's no triangle inequality imposed, and it turns out what you get is this non-strict triangle inequality where all powers of the usual Archimedean normal are allowed. Then, also, there's a some kind of very strange limit point where your Norm takes infinite values on natural numbers, and then you have the Archimedean ones, so two Tic absolute values which end here in a point which has both characteristic zero and characteristic P Behavior, but where the norm of two equals zero.
+\textbf{Question:} Plus, you have also the kind of the limit at, 
+% 8:42
+\textbf{Answer:} Yes, there's also the limit at $\infty$. 
+% 8:50
+In this stack of norms, there's no triangle inequality imposed. It turns out that what you get, is this non-strict triangle inequality, where all powers of the usual archimedean norm are allowed. Also, there's a some kind of very strange limit point where your norm takes infinite values on natural numbers.
+% 9:12
+Then you have the archimedean ones, so $2$-adic absolute values which end here in a point which has both characteristic $0$ and characteristic $p$ Behavior, but where the norm of two equals zero and then for the other primes $p$.
 
-For the other primes P, we also kind of saw what the on the interior of these line segments you were getting the some, the gaseous R theory on the interior here you're getting the gaseous two Tic numbers, and then as you move along the normed, the norm is changing, but the kind of, so to speak, the analytic ring is not. In Q3 and so on, and then here you have things living, you have F2 living for example, you have things living in characteristic two there, living in characteristic three here, and here you have things living in characteristic zero.
+% todo, make drawing
+9:34
+We also kind of saw what on the interior of these line segments, you were getting the the gaseous $\R$ theory $\R^{\gas}}, on the interior here you're getting the gaseous 2-adic numbers, and then as you move along the normed, the norm is changing, but the analytic ring is not. In $\Q_3$ and so on, and then here you have things living, you have $\F_2$ living for example, you have things living in characteristic 2 there, living in characteristic 3 here, and here you have things living in characteristic 0.
 
-In some sense, you can imagine that the points of this stack correspond to something like these complete valued fields or the minimal choices of complete valued Fields like you have real numbers, Adic numbers, you have discrete FP, you have discrete Q.
+% 10:09
+In some sense, you can imagine that the points of this stack correspond to something like these complete valued fields, or the minimal choices of complete valued fields like you have $\R$, $\Q_p$, you have discrete $\F_P$, you have discrete $\Q$.
 
-So, that's kind of a substitute for the notion of multiplicative valuation, but then we still have to input our Bon ring R into the construction in order to get something non-trivial. Here's the definition, and I don't know what good notation is, I'll write it like this.
+% 10:32
+So, that's kind of a substitute for the notion of multiplicative valuation, but then we still have to input our Banach ring $R$ into the construction in order to get something non-trivial. Here's the definition, and I don't know what good notation is, I'll write it like this.
 
-This will be an analytic stack which will be a substack subset of stack of norms cross, and then some Affine analytic stack which is just we take R with a trivial analytic ring topology, I mean sorry, the trivial analytic ring structure. So, what I mean by this is that you take an R, R is a Banach ring, so it has a topology, but you can also view it as a light condensed ring. Using the topology, you consider those condensate, yes, and then trivial analytic ring structure that is all modules are allowed, yes, even not okay, it's the full, you know, condensed derived category of this condensed ring.
-In this map, so it's a condition that you can check in practice, and so is it the case that you have. Since R is cool, you can think of it as a limit of C sub Rings, which are account many elements. Yes, so you can probably reduce to, no, but it maybe, it's not Dimension. Well, I'm not sure, but no, no, but you can look at as a CO liit over finally generated sub rings, and then, and that's always embedded in a finite I mean, okay, okay.
+% Definition
+% todo macro for 'Nu', stack of norms?
+$\Spec^\Berk (R, \norm{\cdot}) \subseteq \Nu \cross \Spec(R, \text{triv})$ 
 
-Okay, yes, so that's one way. So, there is indeed a canonical way to write this as an inverse limit of finite dimensional metrizable spaces, but let's not do it. Let's just work with this setup here. And is it true that you have inverse limits in analytic stat? Yes, you have, you have all limits in analytic Stacks. Ah, okay, so you can syn of it as a limit over the stack, is a limit over the, well, this isn't a stack now. This is just, I'm just viewing this as, when you have those nice sings, you can construct.
+This will be an analytic stack, which will be a substack subset of stack of norms cross, and then some affine analytic stack which is just we take $R$ with the trivial analytic ring structure. What I mean by this, is that you take an $R$, $R$ is a Banach ring, so it has a topology, but you can also view it as a light condensed ring. 
+
+\textbf{Question:} So using the topology, you consider those condensed set?
+\textbf{Answer:} Yes.
+
+And then trivial analytic ring structure.
+
+\textbf{Question:} that is, all modules are allowed?
+% 11:41
+\textbf{Answer:} Yes.
+
+
+It's the full condensed derived category of this condensed ring.
+In this map, so it's a condition that you can check in practice, and so is it the case that you have. Since $R$ is cool, you can think of it as a limit of C sub Rings, which are account many elements. Yes, so you can probably reduce to, no, but it maybe, it's not Dimension. Well, I'm not sure, but no, no, but you can look at as a CO liit over finally generated sub rings, and then, and that's always embedded in a finite I mean, okay, okay.
+
+Okay, yes, so that's one way. So, there is indeed a canonical way to write this as an inverse limit of finite dimensional metrizable spaces, but let's not do it. Let's just work with this setup here. And is it true that you have inverse limits in analytic stat? Yes, you have, you have all limits in analytic stacks. Ah, okay, so you can syn of it as a limit over the stack, is a limit over the, well, this isn't a stack now. This is just, I'm just viewing this as, when you have those nice sings, you can construct.
 
 Okay, so it's not, no, but then you can take for the nice subing, you can take the stock Associated to m in those limit, you get something which is, yes, you get something. Then you get something, the only problem I have with that, it's not a real problem, but just is that if you started with something which happened to be already be finite dimensional and metrizable, then you'd be non-trivially writing it as an inverse limit of other finite dimensional metrizable things, and I mean, you know, so let me just not, let me just not get into it.
 
-Okay, one other question. When R is State, then we we also show that we can localize over the spa, and then there's a map from the spa to the. I mean, that's right, that's right. There's a commutative di, there's a yes, there's a commutative diagram that you can write down where here you have a map from, you know, the Huber space mapping to this, and then you have a some this thing, and then you have the the solid guy here mapping to that. And this this last Arrow, I I mean, no, when I I'll discuss in more detail what this looks like in the Tate case, and then, and then you'll see.
+% 18:32
+\textbf{Question:} When $R$ is Tate \note{not sure}, then we we also show that we can localize over the $\Spa$, and then there's a map from the $\Spa$ to the. I mean, that's right, that's right. 
+% 18:45
+There's a commutative diagram that you can write down, where here you have a map from the Huber space mapping to this, and then you have some this thing, and then you have the the solid guy here mapping to that. And this last Arrow, no, when I 
 
-In particular, I just want to highlight that we get a structure chief on this topological space and even a structure chief of you know of infinity categories, so a theory of Quasi coherent sheaves on the usual Berkovich space. I'll explain in basically the Tate case how it's pretty easy to calculate this structure chath and see what it's doing in the case of Rings like the integers. Well, the integers, you can kind of do it by hand, but it would be interesting to compare. So it's we I'll explain basically how you compare to the cases Berkovich discussed, but it would be interesting to compare to Puu who kind of more or less by hand described structure sheaves in certain cases over the integers. So this is a different different approach where you define something which is a prioria structure sheet, and then you have to calculate it, which can be done in principle, but you know, takes a while. In Poo's case, he explicitly assigns the value, and then he has to maybe prove some, prove some descent results. So here we automatically get some sort of infinity descent, but then you have to calculate the value.
+% 19:05
+\textbf{Answer:} I'll discuss in more detail what this looks like in the Tate case, and then you'll see.
 
-Okay, to like I know this and should be easy to say what I on a disc the structure sheet. It does reduce to seeing what goes on on a dis, but to see what goes on on a dis, so I mean, I'll explain what you need to do to do these calculations, and I think you'll see that it is like, but probably there are like in the case of ho Rings, there are probably some derived phenomena, because when you want to look at the things like the algebra functions on close or open this, anyway, you you quau something by certain, I mean, you have non closed idea, so probably you need to work in some derived sense to get the right, to get what you get from your fan Theory, you should probably have the drinks which are complete. We do, okay, I mean, that's what.
+In particular, I just want to highlight that we get a structure sheaf on this topological space, and even a structure sheaf of $\infty$-categories, so a theory of quasi-coherent sheaves on the usual Berkovich space. 
+% 19:42
+I'll explain in the Tate case how it's pretty easy to calculate this structure sheaf and see what it's doing in the case of rings $R$ like $\Z$. Well, $\Z$, you can kind of do it by hand, but it would be interesting to compare. 
+% 20:02
+So I'll explain how you compare to the cases Berkovich discussed, but it would be interesting to compare to Pooneau \citeme{} who kind of more or less by hand described structure sheaves in certain cases over $\Z$. So this is a different different approach where you define something which is a priori structure sheaf, and then you have to calculate it, which can be done in principle, but you know, takes a while. In Poineau's case, he explicitly assigns the value, and then he has to maybe prove some, prove some descent results. So here we automatically get some sort of infinity descent, but then you have to calculate the value.
 
-I do believe that in cases like what Poo considers, where it's you're starting with
-The Universal Locus: Where the Absolute Value of T is Equal to 2.
+\textbf{Question:} Okay, to like I know this and should be easy to say what I on a disc the structure sheaf. \note{can't hear this well}
 
-So, if we pull back along this, then we look at the Spec Berk R, Norm, Norm, and then $Spec Z_q$ plus or minus 1, and then we get this Universal disc or some Universal annulus over here. Let me just call it y.
+\textbf{Answer:} It does reduce to seeing what goes on on a disc, but to see what goes on on a disc, I'll explain what you need to do to do these calculations, and you'll see that it is like...
+
+\textbf{Question:} But probably there are like in the case of Huber rings, there are probably some derived phenomena.
+% 21:27
+\textbf{Answer:} Yes.
+\textbf{Question:} Because when you want to look at things like the algebra of functions on close or open disc, anyway, you you quotient something by certain, I mean, you have non closed ideals \note{not sure}, so probably you need to work in some derived sense to get the right, to get what you get from your function theory, you should probably have derived rings which are complete. 
+% 21:54
+\textbf{Answer:} Yes. We do. okay, I mean, that's..
+
+I do believe that in cases like what Poineau considers, where it's you're starting with a discrete ring, say $\Z$, that the calculations are quite feasible.
+% 22:15
+But if you start with a more arbitrary Banach ring, it is maybe not so obvious how to do the calculations.
+
+So, where are we?
+% 22:30
+So I want to explain why this is true. 
+
+Proof
+Let's give charts.
+Recall that we had charts for the norms.
+Functor of points
+
+So, if we pull back along this, then we look at the Spec Berk R, Norm, Norm, and then $\Spec \Z_q$ plus or minus 1, and then we get this Universal disc or some Universal annulus over here. Let me just call it y.
 
 For this y thing, we've already got the norm, and we've kind of artificially adjoined an element of Norm 1/2. But the only thing we need to ensure to go from this to this is we need to give the second map, we need to give the map to Spec of R with a trivial thing, and we need to see that they agree, and we need to enforce the condition that this Norm condition that NF lands inside that part there.
 
-So, to get y, you just take $\Spec$ of $Z_q$ hat plus or minus 1 gas cross Spec R, and then pass to the closed subsets given by the idempotent algebra obtained by taking the norm F inverse of these closed subsets.
+So, to get y, you just take $\Spec$ of $\Z_q$ hat plus or minus 1 gas cross $\Spec R$, and then pass to the closed subsets given by the idempotent algebra obtained by taking the norm F inverse of these closed subsets.
 
-This Berkovich spectrum here has a fairly simple cover by an afine, and to calculate this afine, the most difficult part for a completely General R is already in the first step, that is making this product and calculating what analytic ring this is, and in particular, calculating what the underlying condensed ring is, because what this tensor product involves is you have to calculate the gaseous localization of R.
+This Berkovich spectrum here has a fairly simple cover by an afine, and to calculate this afine, the most difficult part for a completely general $R$ is already in the first step, that is making this product and calculating what analytic ring this is, and in particular, calculating what the underlying condensed ring is, because what this tensor product involves is you have to calculate the gaseous localization of $R$.
 
 Once you have that, I'm going to explain that calculating these idempotent algebras is not that hard. So, once you know the ring you have here, then you're passing to certain idempotent algebras over it, and that's not the hard part of the calculation.
 
 If you're in a situation where you can do this calculation, then it's quite feasible to calculate y, which is giving a presentation for this stack. We also saw that the Descent for this cover is quite simple; it happens at the zero stage, so the structure sheaf here will just be a retract of the structure sheaf there.
 
-The map to the Berkovich Spectrum is kind of interesting. On the Spec Berk, you have the universal Norm, let's call it n, and then for every element in R, you have, by fiat, a map to the structure sheaf here. Then, we get a map from Spec Berk R to the product over all f in R of the zero Norm of f. But since we enforce that every element of R, the norm of that element is bounded by the prescribed Norm on our boning R, that in particular implies that the norm of 2 is less than or equal to 2, which means that by last time, the triangle inequality holds for n, and that means that this map lands inside the Berkovich Spectrum.
+The map to the Berkovich spectrum is kind of interesting. On the $\Spec^\Berk$, you have the universal norm, let's call it n, and then for every element in R, you have, by fiat, a map to the structure sheaf here. Then, we get a map from $Spec Berk R$ to the product over all f in $R$ of the zero norm of f. But since we enforce that every element of $R$, the norm of that element is bounded by the prescribed norm on our boning R, that in particular implies that the norm of 2 is less than or equal to 2, which means that by last time, the triangle inequality holds for n, and that means that this map lands inside the Berkovich sspectrum.
 This construction, we could also keep some of the which does not satisfy the triangle inequality, right? It's it's natural from the perspective of this stack of norms that we've been discussing as we've seen to relax the triangle inequality, and it's, and you can do that. I mean, you could, I mean, the the formalism is quite general. There's, I the reason I I stuck to the classical thing is just because it's the classical thing you have for the triangle inequality. You assume that you could require that there exists a constant such that, uh, you know, this, that's that's one thing you could do. Okay, but then if you want to, ah, so this still defines a uniform structure, so you can say it's complete, and, and it is not equivalent by slightly changing things to an actual norm if you have this. 
 
 Well, I don't know because for fields, just by power H, is that true? This wouldn't be, I think this is something, may be, maybe it's true, but you could also conceivably allow the norm to take infinite values and try to build that into things as well. I just wanted to stick with the classical thing.
@@ -87,8 +142,14 @@ So this condition is obviously not satisfied here, but it's satisfied quite broa
 
 Is $\leq$ say a constant, nor effect this. Define still upap on ver spaces. I suppose that your definition does not depend. That is, if let's say you have two Noes which are equivalent in this sense by constants, then all of this will be the same for the two Noes. I suppose, but well, is to check something not quite. So I mean, let me say what I can say, and then, sorry, I just, okay. But in, under this assumption, you mean or in general, I think I agree with that. So that's why I want to postpone the discussion a bit. 
 
-Okay, so in particular, I mean, the classical settings in Berkovich Geometry, you work over some fixed field which is not, well, often non-discrete, and you're working with Banach algebras over that field, and they will certainly satisfy this condition $\star$. But if you're working over a discrete ring, you know, you won't have this condition $\star$. So, so then I claim, well, let me give, we're also so also any, any Kate Huber ring has a norm defining the topology, satisfying $\star$ with $\pi$ a pseudo-uniformizer, so also some mixed characteristic examples exist.
+% 40:11
+Okay, so in particular, I mean, the classical settings in Berkovich geometry, you work over some fixed field which is often non-discrete, and you're working with Banach algebras over that field, and they will certainly satisfy this condition $\star$. But if you're working over a discrete ring, you won't have this condition $\star$. 
+% 40:46
+Also, any Tate-Huber ring has a norm defining the topology, satisfying $\star$ with $\pi$ a pseudo-uniformizer. 
+% 41:06
+So also some mixed characteristic examples exist.
 
+% 41:15
 Right, so, where am I? Oh, so then, claim, if $\star$ holds, then $\operatorname{Spec}_{\mathrm{Berkovich}} (R, \|\cdot\|)$ is affinoid and corresponds to an analytic ring structure on the condensed ring $R$. Moreover, this analytic ring structure only depends on the condensed ring $R$, not on the norm satisfying $\star$.
 
 I think you're right, I think you're right, I think you're right, yes, yes, yes. So similarly for a morphism, if it is only with a constant, you could still apply the same thing. I think you're right, $\mathcal{O}_{\mathcal{E}/\mathcal{S}}$, so this, because in some, I remember that in some text, I don't know if the book of Ver, in some place they consider such things, which is more, apparently more natural, because I don't know the why, but it's probably, you can't, I think you're right that because our Norms are by definition multiplicative, I mean, these geometric Norms that you can, you can argue exactly as you suggested.
