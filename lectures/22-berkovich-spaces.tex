@@ -36,7 +36,7 @@ First, I want to talk about different notions of how to localize an analytic sta
 % 2:40
 We have already seen one way. 
 
-If we have an analytic stack, and if we have $S$, which is maybe let's say a metrizable, finite dimensional, compact Hausdorff space, or it could be a maybe a locally compact Hausdorff space, which is locally one of these, then we've seen that that can also be viewed as an analytic stack. We can also view it as an analytic stack. Then we could ask for a map $f: X \rightarrow S$ in the category of $\AnStack$. 
+If we have an analytic stack, and if we have $S$, which is maybe let's say a metrizable, finite dimensional, compact Hausdorff space, or it could be a maybe a locally compact Hausdorff space, which is locally one of these, then we've seen that that can also be viewed as an analytic stack. We can also view it as an analytic stack. Then we could ask for a map $f: X \to S$ in the category of $\AnStack$. 
 % 3:25
 We discussed what structure you get on $X$. Basically, you get a bunch of idempotent algebras in $D(X)$, corresponding to the closed subsets of $S$. You can also think in terms of the complementary opens as well, and you get some idempotent coalgebras which would be like the $D_{!}$ \note{Not sure if D or J} of the constant sheaf on the open subset, as opposed to the $I_{*}$ of the constant sheaves, giving you these idempotent algebras. But, in any case, you get a whole bunch of algebra objects in here $D(x)$, which let you localize this category over the topological space $S$.
 % 4:05
@@ -45,7 +45,7 @@ But when discussing the relation with Berkovich spaces, it's going to be too ann
 So what is another thing I can do? If you have an analytic stack $X \in \AnStack$.
 To $X$ we can assign a locale. We just call it $Loc(X)$, which is just given by the monomorphisms in analytic stacks.
 
-$ X \rightarrow locale$
+$ X \to locale$
 
 $ \Loc(X) = \{ Y \subseteq X \} $
 
@@ -91,7 +91,7 @@ When I make the definition that I'm interested in, it doesn't matter whether it'
 % 7:40
 A topological space also gives rise to a locale. But let me actually change perspectives and just say "$S$ is a locale", instead of saying "$S$ is a topological space". 
 % 7:52
-Then we can ask for a map of locales, $Loc(X) \rightarrow S$. Whether or not $\{ Y \subseteq X \} $ is a set, this is some data that makes honest mathematical sense. A locale is by definition the collection of open subsets, which is a set. You are saying that for every open subset, you have to give such a monomorphism, and  unions have to go to unions and finite intersections have to go to finite intersections.
+Then we can ask for a map of locales, $Loc(X) \to S$. Whether or not $\{ Y \subseteq X \} $ is a set, this is some data that makes honest mathematical sense. A locale is by definition the collection of open subsets, which is a set. You are saying that for every open subset, you have to give such a monomorphism, and  unions have to go to unions and finite intersections have to go to finite intersections.
 
 % 8:26
 \textbf{Question:} In the literature about locales, I don't remember, I don't use it much, but this is like the direction of map of topoi \citeme{}, but I don't know when they define M of locales \note{I did not hear this}, is it in the other direction or in this? 
@@ -114,7 +114,7 @@ But we can also ask for a stronger property, so that each inclusion of open subs
 But in the case of a monomorphism, then it's quite easy to see that the dualizing object is canonically the unit, and it's the same thing as an open immersion. A general monomorphism could look like anything really, it could look closed, it could look open, it could look like some mix. But it's reasonable to ask for this stronger property, that what looks like an open immersion on the level of the topological space also looks like an open immersion from the perspective of the six functor formalism.
 
 % 11:24
-In the case where $X$ is a metrizable, finite dimensional, compact Hausdorff space, we can ask for, as before, a map $X \rightarrow S$ in $\AnStack$.
+In the case where $X$ is a metrizable, finite dimensional, compact Hausdorff space, we can ask for, as before, a map $X \to S$ in $\AnStack$.
 
 % 12:00
 \textbf{Question:} When you say $S$ is a locale, what is the definition of a locale? What does it mean for $U$ to $V$ an open set \note{I did not hear this}?
@@ -133,12 +133,12 @@ An usual topos would be a $1$-topos. Then a locale maybe would be a $0$-topos or
 
 %13:25
 If you have this kind of structure, then you get \note{todo}
-Note also that if you fix $X$ in $S$ ($Loc(X) \rightarrow S$ \note{$\pi$ above arrow}, \note{todo} they are all just sets. They are not anima or whatever, because here we just asking for a map of locales. It is just a map of posets in the other direction. 
+Note also that if you fix $X$ in $S$ ($Loc(X) \to S$ \note{$\pi$ above arrow}, \note{todo} they are all just sets. They are not anima or whatever, because here we just asking for a map of locales. It is just a map of posets in the other direction. 
 
 \textbf{Question:} Not that when you say set, it also means in this sense of the set theoretical size difficulties.
 
 % 13:56
-\textbf{Answer:} That's true. So, up to size difficulties. I mean, there are no automorphisms of any fixed on of these $$Loc(X) \rightarrow S$. There are no non-trivial automorphisms. That is a good point. 
+\textbf{Answer:} That's true. So, up to size difficulties. I mean, there are no automorphisms of any fixed on of these $$Loc(X) \to S$. There are no non-trivial automorphisms. That is a good point. 
 % 14:11
 So this is tautological. Why does this imply this \note{add what is being pointed at}? Basically, you can just check on the level of the analytic stack associated to such a guy that every open inclusion, actually is an open inclusion from the perspective of the six functor formalism. Peter more or less discussed this last time, that our six functor formalism on analytic stacks, when we restricted to this case, recovers the usual six functor formalism on locally compact Hausdorff spaces. And then this property of being an open immersion is stable under base change
 
@@ -209,7 +209,7 @@ Is there a proof of this? I'll give an example right now.
 % todo, correction in lecture
 So, have two formal variables, $p$ and $X$. Oh, sorry, I should say $\Z_p$. I don't need two variables. Thanks. So one formal variable and then invert it. 
 
-$ (\Z_p, \Z_p) \rightarrow (\Q_p, \Z_p)$
+$ (\Z_p, \Z_p) \to (\Q_p, \Z_p)$
 What does this correspond to? On the level of analytic rings, we get this, and on the level of derived categories, this is solid $\Z_p$ modules, and then this is a, well, this is algebraically inverting $p$. The left adjoint here is the inclusion of the full subcategory, or the right adjoint here is the inclusion of the full subcategory where $p$ is invertible.
 
 So this passing from $\Z_p$ to $\Q_p$ is algebraically inverting $p$, $p$ is a prime. And that actually, from the perspective of the six functor formalism, is a closed immersion, not an open immersion. That's a proper map because the, this hasn't the second variable hasn't changed, so we're changing the underlying ring and not the analytic ring structure. But it's also a, proper monomorphism, it's a, it's a closed inclusion, it's closed, not immersion, not open.
@@ -248,7 +248,7 @@ Okay, so it's not like, so it's not a sufficient condition for having a. So this
 % 40:05
 \subsection{Preliminary definitions}
 \subsubsection{Banach rings}
-So Berkovich spaces. Let me start with a reminder on the definition, so we know where we're going. $A, \norm{\cdot})$ is a Banach ring. That means that $A$ is a commutative ring, and this norm map $||: A \rightarrow \Rnonneg$ from $A$ to the non-negative real numbers ,satisfies, 
+So Berkovich spaces. Let me start with a reminder on the definition, so we know where we're going. $A, \norm{\cdot})$ is a Banach ring. That means that $A$ is a commutative ring, and this norm map $||: A \to \Rnonneg$ from $A$ to the non-negative real numbers ,satisfies, 
 
 $\norm{0} = 0$, 
 triangle inequality, $\norm{x + y} \leqslant \norm{x} + \norm{y}$ , 
@@ -275,7 +275,7 @@ $\norm{f} = \sup_{s \in S} \norm{f(s)}
 Yes, this is multiplicative. It's not multiplicative in general.
 
 \begin{align*}
-(A, \norm{\cdot}) \leadsto \BerkSpec(A, \norm{\cdot}) = \{ \norm_{x} = A \rightarrow R todo \} \\
+(A, \norm{\cdot}) \leadsto \BerkSpec(A, \norm{\cdot}) = \{ \norm_{x} = A \to R todo \} \\
 \text{\underline{multiplicative seminorm}} \\
 with \norm{f}_x todo \norm{f} \\
 \forall f \in A.
