@@ -363,44 +363,145 @@ Let's explore this and let's see what is going on. Let's consider the map - what
 
 \textbf{Question:} The picture you seem to see this image gen topological space, but this is supposed to be something associated with $\Z$, right? That's a good question. So, by definition, I made it a - I was saying it's a closed subset of the topological space. Now, you can view this as an analytic stack. We saw how to view this as an analytic stack, and you can take the product in the category of analytic stacks - that's perfectly legitimate. It's no longer finite dimensional - sorry, it is metrizable, it's no longer finite dimensional. So, we didn't quite talk about this thing, but you can still view this as an analytic stack, and you still do get a map of analytic stacks from N to this product, and this closed subset does correspond to a subanalytic monomorphism of analytic stacks here, and the map from N there does factor through that closed subset, and so you can view it in several different ways.
 
-Okay, to explore this, so consider a fixed prime $p$, and consider the norm of p. So, here's the first claim: we can understand the locus in this universal space of norms where the norm of $p$ lives between zero and one. This is the same thing as the stack parametrizing norms on which the variable p lives between 0 and 1 - let's call this $N$ and $\Z$ less than absolute value of p less than one. This is equal to $\Spec \Q_p$, the gaseous version of the $p$-adic numbers, across this stack associated to the open interval from 0 to 1.
+% 1:13:00
+Okay, to explore this, consider a fixed prime $p$, and consider the norm of $p$ 
+$
+\mathcal{N} \xrightarrow{N(p)} [0, +\infty]
+$
+. 
+% 1:15:15
+Here's the first claim: we can understand the locus in this universal space of norms where the norm of $p$ lives in [0, +\infty]. This is the same thing as the stack parametrizing norms on which the variable $p$ lives between 0 and 1 - let's call this $N$ and $\Z$ less than absolute value of p less than one. This is equal to $\Spec \Q_p^{\gas}$, the gaseous version of the $p$-adic numbers, across this stack associated to the open interval $(0, 1)$.
 
-This is quite easy to see because we know that the universal analytic stack equipped with some variable whose norm is between zero and one is spec of $\Z_q$ hat plus or minus one Gauß cross 0,1. And then you have to impose that that variable becomes p, so you set $q = p$ or you mod out by $q - p$, and then that, as Peter discussed when discussing this gaseous base stack, gives you some analytic ring structure on the $p$-adic numbers, and then the second variable doesn't really change.
+Claim
+$
+N(p)^-1 ((0,1)) = $\Spec \Q_p^{\gas} \times (0,1)$ 
+$
+% vertical equal sign
+$
+\mathcal{N}_{0 < \abs{p} <1}
+$
 
-And so, I'm claiming in particular that if you look at the universal - let's say we take the fiber over a point lambda in 0,1, then you get a normed analytic ring structure here. And it is - so what does that mean? It means that for every radius $r$, you have some notion of overconvergent functions on a disc of radius $r$, where the notion of on a disc of radius $r$ is the usual one from non-Archimedean geometry, where you take the normalization of the absolute value on the $p$-adic numbers for which the absolute value of p is equal to this lambda. So, what we're seeing here is the kind of the interior of the $p$-branch here is kind of fairly...
-Straightforward to understand. So, next, let's look at the locus where another locus that's fairly easy to understand is the locus where $p$ is between one and infinity, strictly between one and infinity, because that's the same thing as saying that $p$ has to be invertible. The absolute value of $p$ is away from zero, and then it's the same thing as saying that the absolute value of $1/p$ is between $0$ and $1$. We can again use the exact same argument to understand what this is, and what you get is you get $\text{Spec}(\R) \times [0,1]$, and the argument is the same. As Peter explained, if you take this ring and mod out by setting $q = 1/p$, then you actually get the real numbers. You get a certain analytic ring structure on the real numbers.
+This is quite easy to see, because we know that the universal analytic stack equipped with some variable whose norm is between zero and one \mathcal{N}_{0 < \abs{p} <1} is spec of $\Z_q$ hat plus or minus one Gaseous cross 0,1. And then you have to impose that that variable becomes p, so you set $q = p$ or you mod out by $q - p$, and then that, as Peter discussed when discussing this gaseous base stack, gives you some analytic ring structure on the $p$-adic numbers, and then the second variable doesn't really change.
 
-Again, if you look at the universal norm with a fixed value of $\lambda$, the universal norm here is the usual one given by convergent functions in Archimedean geometry, say complex geometry, but with respect to the norm, which is a power of the usual absolute value, where $\alpha$ is such that the norm of $1/p$ exactly gets $\lambda$.
+% 1:17:40
+I'm claiming in particular that if you look at the universal - let's say we take the fiber over a point $ \lambda \in (0,1)$, 
 
-I'm not quite sure where the over-convergent functions show up. You had some formal ring with $q$, but then you specified that it is the usual over-convergent functions. The first thing to understand, of course, is why when you take this ring and specialize to $q = 1/p$, you get the real numbers. That has to do with some kind of base-$p$ expansions.
 
-Then you have to understand what the base change of the module $p$ is. It should be some module over the real numbers, some sequence space with some summability condition. You can see that the summability condition is basically some exponential decay, as Peter described.
+$
+Spec(Q_p^\gas) \times \{ \lambda \}      \text{normed analytic ring structure \\ here: notion of overconvergent functions on a disc of radius $r$ }
+$
+then you get a normed analytic ring structure here. And it is - so what does that mean? It means that for every radius $r$, you have some notion of overconvergent functions on a disc of radius $r$, where the notion of on a disc of radius $r$ is the usual one from non-Archimedean geometry, where you take the normalization of the absolute value on the $p$-adic numbers for which $\abs{p} = \lambda$. So, what we're seeing here is the interior of the $p$-branch.
+Kind of fairly straightforward to understand. 
 
-The point is that this thing does sit between the usual ring of overconvergent functions on the unit disc and the ring of holomorphic functions on the interior of the unit disc. When you do this overconvergent business, the subtlety of exactly what ring it is and what summability property you have doesn't matter anymore, and it returns the usual ring of over-convergent holomorphic functions on the disc, with some scaling of the usual absolute value.
+% 1:19:54
+Next, let's look at another locus that's fairly easy to understand. This is the locus where $p$ is between one and infinity. 
+\begin{align*}
+\mathcal{N}_{1 < \abs{p} < \infty} = $\Spec(\R^\gas) \times [0,1]$
 
-In particular, this locus is independent of $p$, because the universal norm didn't really depend on $p$. There's some rescaling property of the norm, but it doesn't affect this subspace of the universal space of norms. This is the kind of thing you need to see to understand that you're getting the Berkovich space. You have some infinite-dimensional space, but the conditions on the various prime numbers are very tightly related to each other, like in the classification of norms on the integers.
+% todo arrow between above and under
 
-Other and is determined each is set of norms on $z$. Yes, not up to equivalence. No.
+0 < \abs{\frac{1}{p}} < 1
 
-Question: all the point right? Why that would be. Is there some explanation why that would be for me?
+\end{align*}
+% 1:20:10
+Strictly between one and infinity, because that's the same thing as saying that $p$ has to be invertible. The absolute value of $p$ is away from zero. 
+% 1:20:20
+Then it's the same thing as saying that the absolute value of $\frac{1}{p}$ is between $0$ and $1$. 
 
-It's a bit of a calculation. I mean, in our axiom for normed analytic ring, we had no version of the triangle inequality whatsoever. We had this that the norm should be multiplicative. But then you can look and see well, if you believe what I'm claiming, then kind of almost all of it does almost all of the space does satisfy the triangle inequality because you can check on in terms of the rings of functions that are being assigned, and you can verify that the triangle inequality holds. So whenever you're in the ordinary Banach space of $Z$, you actually satisfy the triangle inequality, and then okay, it's a you get some sort of quasi-norm if you move out in this direction, and this part is a little funny, but if you throw that away, so there's always some version of the triangle inequality that is automatically satisfied as a consequence of multiplicativity, and that's kind of funny.
+% 1:20:27
+We can again use the exact same argument to understand what this is, and what you get is you get $\Spec(\R^\gas) \times [0,1]$, and the argument is the same. As Peter explained, if you take this ring and mod out by setting $q = \frac{1}{p}$, then you actually get the real numbers. You get a certain analytic ring structure on the real numbers, which is this one here \note{todo: clarify}
 
-in the usual, the like, in fact, was consider earlier, then I mean, it's I'm speaking now about Urs classification, the or maybe, so you can put the following condition. I don't remember which reference, instead of inequality you can put like $x plus y$ val less equal to some constant times x y, and then one can prove that after a normalization by some power, you have the triangle inequality or even the.
+% 1:21:07
+Again, if you look at the universal norm with a fixed value of $\lambda$, the universal norm here is the usual one given by convergent functions in Archimedean geometry, say complex geometry, but with respect to the norm, which is a power of the usual absolute value, where $\alpha$ is such that the norm of $\frac{1}{p}$ exactly gets $\lambda$.
 
-and so is it the case that here you can is related somehow where, in the locus where, so if you know that the priority that the nor some integer like or three not infinity, then you can get the triangle inequality by scaling it.
+% todo: point arrow up 
+$\Spec(\R^\gas) \times { \lambda }$
 
-Yes, exactly. So if, well, I have on everything now, I'm speaking about Bierz. Like in the big, let me make some further claims.
+% 1:22:10
+\textbf{Question:} I'm not quite sure where the overconvergent functions show up. You had some formal series in this $q$ \note{not sure}, but then you specified that it is the usual overconvergent functions. The first thing to understand, of course, is why when you take this ring and specialize to $q = \frac{1}{p}$, you get the real numbers. That has to do with some kind of base-$p$ expansions. \note{need to go over tis question again}
 
-Claim: if you have a normed analytic ring with the norm of 2 say, doesn't matter, less than or equal to 1, automatically satisfies the non-Archimedean triangle inequality. A normed analytic ring with norm of 2 less than or equal to 2 satisfies the usual triangle inequality. Oh, I sorry, let me move this, is the that no of 2 two is equivalent to no of 3 three, yes. Two is an arbitrary prime number here, about to 6, is it that's also equivalent. So I guess prime is not so important, two is an arbitrary integer bigger than one.
+% 1:23:04 todo, clarify which expression he points at
+\textbf{Answer:} You have to do a calculation. The first thing to understand is why if you take this ring and specialize to $q = \frac{1}{p}$, why you get $\R$. That has to do with base $p$ expansions. Then you have to understand, say, if you take this module $p$, the basic module $p$, you want to know what that base change is too. It should be some module over $\R$, so it should be some sequence space with summability condition. 
+% 1:23:38
+You can see that the summability condition is basically some exponential decay, as Peter described.
 
-Okay, so, and then, where am I now? So a normed analytic ring with norm of 2 less than infinity always, there always exists a constant $C$ greater than zero such that the norm of $x + y$ is less than or equal to C * the norm of $X$, the norm of $Y$, but this is interpreted not in the sense of normal functions, but it's not. It's some universal thing, like, you know, you write down, you have whatever you have, you have P1, like, the locus where the norm of the T variable is less than or equal to a, cross P1, you know, locus for the S variable is less than or equal to B, that this maps to, so it's a and b are less than infinity here, so it's this maps to P1 R, and then this maps to Z Infinity, but this should factor through zero, and then C * a plus b.
+The point is that this thing does sit between the usual ring of overconvergent functions on the unit disc and the ring of holomorphic functions on the interior of the unit disc. When you do this overconvergent business, the subtlety of exactly what ring it is and what summability property you have doesn't matter anymore. It returns the usual ring of over-convergent holomorphic functions on the disc. There some scaling of the usual absolute value, because when we were building the universal norm, we had to take a fixed value of the norm of $q$ and kind of use that to write the answer. 
+% 1:24:48
+It is such that if you specialize to the usual situation, you get the normal thing.
 
-So, and this is addition A1, they, it's well defined because this happens to live inside A1, which we already argued earlier.
+% 1:25:19
+In particular: this locus $\mathcal{N}_{1 < \abs{p} < \infty} $ is independent of $p$, because the universal norm didn't really depend on $p$ \note{todo: the second part of this sentence is wrong}. There's some rescaling property of the norm, but it doesn't affect this subspace $\mathcal{N}_{1 < \abs{p} < \infty} $ of the universal space of norms. This is the kind of thing you need to see in order to see that you're getting the Berkovich space. You have some infinite-dimensional space, but the conditions on the various prime numbers are very tightly related to each other. This is like in Ostrowski's classification of norms on the integers.
+% 1:26:07
+If you have a norm on the integers for which the norm of $p = \frac{1}{2}$, then it has to be the $p$-adic norm. In particular, its values on all the other integers have to be determined by that. You can see that also in our situation as well. When you force yourself to live in this locus of \note{todo: 1:26:26} which is only a condition on $p$ that automatically tells you what the norm of everything else is, because you can just do calculations with these usual rings of overconvergent holomorphic in usual non-archimedean geometry. So the norm of all others is determined.
+
+\begin{align*)
+$\mathcal{N}(\text{all other n})$ is determined
+\end{align*}
+
+% 1:26:47
+\textbf{Question:} So The Berkovich \note{I did not hear this }, instead of norms on $\Z$...
+
+\textbf{Answer:} Yes, not up to equivalence. No.
+
+% 1:27:10
+\textbf{Question:} \note{I did not hear this question well}
+
+\textbf{Answer:} Why that would be? Is there some explanation why that would be. For me, it's just a calculation. I mean, in our axioms for normed analytic ring, we had no version of the triangle inequality whatsoever. We just had this that the norm should be multiplicative. But then you can look and see, if you believe what I'm claiming, then kind of almost all of this does satisfy the triangle inequality, because you can check on in terms of the rings of functions that are being assigned, and you can verify that the triangle inequality holds. So whenever you're in the ordinary Berkovich space of $\Z$, your norm actually satisfy the triangle inequality. And then you get some sort of quasi-norm, if you move out in this direction, and this part is a little funny, but if you throw that away. 
+% 1:28:08
+So there's always some version of the triangle inequality that is automatically satisfied, just as a consequence of multiplicativity, and that's kind of funny.
+
+% 1:28:15
+\textbf{Question:} In the usual theory of Berkovich, in fact, was consider earlier, then I mean, it's I'm speaking now about Ostrowski's classification, so you can put the following condition. I don't remember which reference, instead of triangle inequality, you can put like $x +/- y$ val less equal to some constant times x y, and then one can prove that after a normalization by some power, you have the triangle inequality or even the.
+
+And so is it the case that, here, you can relate it somehow where, in the locus where, so if you know that the priority that the nor some integer like or three not infinity, then you can get the triangle inequality by scaling it.
+
+\textbf{Answer:} Yes, exactly. 
+
+\textbf{Question:} So if, well, I have on everything now, I'm speaking about \note{I did not hear this}
+
+% 1:29:18
+\textbf{Answer:} Let me make some further claims.
+Claims
+\begin{itemize}
+\item Claim: if you have a normed analytic ring $(R, N), N(2) \leq 1$ with 2 say, doesn't matter, less than or equal to 1, automatically satisfies the non-Archimedean triangle inequality.
+\item A normed analytic ring with norm of 2 less than or equal to 2 satisfies the usual triangle inequality.
+\end{itemize}
+
+\textbf{Question:} no of 2 two is equivalent to no of 3 three, 
+ 
+% 1:30:28
+\textbf{Answer:} Yes. 2 is an arbitrary prime number here, 
+
+\textbf{Question:} about to 6, is it
+
+\textbf{Answer:} That's also equivalent. So I guess prime is not so important, 3 is an arbitrary integer bigger than 1.
+
+% 1:31:08
+Okay, then. 
+Claims
+\begin{itemize}
+\item 
+\end{itemize}
+So a normed analytic ring with $N(2) < \infty$, there always exists a constant $ \exists c > 0$, such that $\norm(x + y) \leq C (\norm{x + y})$ is less than or equal to C * the norm of $X$, the norm of $Y$, 
+\textbf{Question:} but this is interpreted not in the sense of normal functions, but it's not. 
+% 1:31:39
+\textbf{Answer:} It's some universal thing, like, you know, you write down, you have whatever you have, you have $\P^1$, like, the locus where the norm of the T variable is less than or equal to a, cross P1, you know, locus for the S variable is less than or equal to B, that this maps to, so it's a and b are less than infinity here, so it's this maps to P1 R, and then this maps to Z Infinity, but this should factor through zero, and then C * a plus b.
+
+% Draw commutative diagram
+\begin{align*)
+A, B < \infty \P_{\abs{T} \leq A}^1 \times \P_{\abs{S} \leq B}^1
+\end{align*}
+
+So, and this is addition A1, they, 
+% 1:32:33
+it's well defined because this happens to live inside $A1$ \note{todo, check this}, which we already argued earlier.
 
 So there's always some version of the triangle inequality.
 
-How do you prove these claims? By the way, these claims imply the claim about what the image of n is, because, so, and then this extended Berkovich space, the one I mean the specific one that I wrote down, the reason is that you can, you can look at the norm of two, which goes to zero infinity, if you want to, if you want to know the image of something, you can actually work, you can actually work on stratifications of your topologic, you don't have to work in closed covers or open covers, you don't have to work locally
+How do you prove these claims? 
+
+% 1:33:06
+By the way, these claims imply the claim about what the image of n is, because, so, and then this extended Berkovich space, the one I mean the specific one that I wrote down, the reason is that you can, you can look at the norm of two, which goes to zero infinity, if you want to, if you want to know the image of something, you can actually work, you can actually work on stratifications of your topologic, you don't have to work in closed covers or open covers, you don't have to work locally
 Over the locus where $2$ is less than or equal to $1$, the locus where $1$ is less than $2$ is less than infinity, and then the locus where $2$ is equal to infinity. We then have to take the union of the images we see there and here. If you believe this claim, then there you have the non-archimedean triangle inequality. So, here it's automatically a subset of by some universal argument, the non-archimedean Berkovich spectrum of $\Z$. We're contained in the claimed locus there. This thing we already classified is contained in the archimedean locus, the archimedean locus. So, the last thing we need to do is to see that this locus consists of one point.
 
 We need for all $n$ different from $0$, $1$, and $-1$. And that actually doesn't follow from the claims well. well, the claim that these conditions are independent of $2$ does give this as well. The last thing you say plus be, that's true. You can also directly argue that if $3$, for example, wasn't sent to infinity, then you'd be in one of these loci, and then $2$ wouldn't be equal to infinity.
