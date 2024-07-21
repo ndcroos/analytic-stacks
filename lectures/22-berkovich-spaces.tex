@@ -78,7 +78,7 @@ It always has an underlying locale, where you only look at the monomorphisms. An
 \textbf{Answer:} This category $\AnStack$ has all limits and colimits. We don't have to do anything special here to make this definition work.
 
 % 6:20
-\textbf{Question:} Why is the colmit a submonomorphism? Ah, you take the colimit and then you quotient by the... \note{I did not hear this well}
+\textbf{Question:} Why is the colimit a submonomorphism? Ah, you take the colimit and then you quotient by the... \note{I did not hear this well}
 
 \textbf{Answer:} That is a general $\infty$-topos thing, for example you could take the Cech-nerve of the map and take the colimit.
 
@@ -101,50 +101,70 @@ When I make the definition that I'm interested in, it doesn't matter whether it'
 
 \textbf{Answer:} Exactly, so it means that if you do the fiber product of  $\{ Y \subseteq X \}$, then the diagonal, I mean the diagonal map associated to this inclusion is an isomorphism.
 
-\begin{unfinished}{7:40}
+
+\subsubsection{Ask for map of locales}
 % 7:40
 A topological space also gives rise to a locale. But let me actually change perspectives and just say "$S$ is a locale", instead of saying "$S$ is a topological space". 
 % 7:52
 Then we can ask for a map of locales, $Loc(X) \to S$. Whether or not $\{ Y \subseteq X \} $ is a set, this is some data that makes honest mathematical sense. A locale is by definition the collection of open subsets, which is a set. You are saying that for every open subset, you have to give such a monomorphism, and  unions have to go to unions and finite intersections have to go to finite intersections.
 
+
 % 8:26
 \textbf{Question:} In the literature about locales, I don't remember, I don't use it much, but this is like the direction of map of topoi \citeme{}, but I don't know when they define M of locales \note{I did not hear this}, is it in the other direction or in this? 
 
-\textbf{Answer:} I don't know either. So I'm doing the geometric morphism, let's say a geometric morphism of locales. 
+\textbf{Answer:} I don't know either. So I'm doing the geometric morphism of locales. 
 
 \textbf{Question:} Well, morphism of sites...
-\textbf{Answer:} Morphism of sites goes the other direction. I'm talking about a geometric morphism. 
-\textbf{Question:} But also a morphism of sites \note{I did not hear this}
 
-but also of goes in the direction.
+\textbf{Answer:} Morphism of sites goes the other direction. I'm talking about a geometric morphism. 
+
+\textbf{Question:} But also a morphism of sites \note{I did not hear this} also goes in the other direction.
+
+\textbf{Answer:} Maybe, I forgot.
 
 \textbf{Question:} For locales it is not used much by algebraic geometers.
 
 % Back to lecture
 % 9:26
+\subsubsection{Ask for a stronger property}
+But we can also ask for a stronger property, so that each inclusion of open subsets, say $ U \subset V \subset S$, maps to, so it's supposed to give some monomorphisms, so maybe I should give some name for this, like $f$ or $Pi$, maybe, so $Loc(X) \xrightarrow{\pi} S$. So this: $
 
-But we can also ask for a stronger property, so that each inclusion of open subsets, say $V$ inside $S$, maps to, so it's supposed to give some monomorphisms, so maybe I should give some name for this, like $f$ or $Pi$, maybe. So this goes to $\pi^{-1} U \subset \pi^{-1} V \subset X$. We could ask that these inclusion maps are actually open immersions from the perspective of the six functor formalism that Peter discussed last time. That is, the extended six functor formalism on analytic stacks. So we could ask that each of these inclusions be shriekable, and that they be well cohomologically smooth.
+U \subset V \subset S \mapsto \pi^{-1} U \subset \pi^{-1} V \subset X
 
-But in the case of a monomorphism, then it's quite easy to see that the dualizing object is canonically the unit, and it's the same thing as an open immersion. A general monomorphism could look like anything really, it could look closed, it could look open, it could look like some mix. But it's reasonable to ask for this stronger property, that what looks like an open immersion on the level of the topological space also looks like an open immersion from the perspective of the six functor formalism.
+$. 
+
+% 10:17
+We could ask that these inclusion $\subset$ maps are actually open immersions, from the perspective of the six functor formalism that Peter discussed last time. That is, the extended six functor formalism on analytic stacks. So we could ask that each of these inclusions be shriekable, and that they be well cohomologically smooth.
+
+But in the case of a monomorphism, then it's quite easy to see that the dualizing object is canonically the unit, and it's the same thing as an open immersion. 
+% 10:56
+A general monomorphism could look like anything really. It could look closed, it could look open, it could look like some mix. But it's reasonable to ask for this stronger property, that what looks like an open immersion on the level of the topological space also looks like an open immersion from the perspective of the six functor formalism.
 
 % 11:24
+\subsubsection{Metrizable, fin. dimensional CHausdorff case}
 In the case where $X$ is a metrizable, finite dimensional, compact Hausdorff space, we can ask for, as before, a map $X \to S$ in $\AnStack$.
 
 % 12:00
-\textbf{Question:} When you say $S$ is a locale, what is the definition of a locale? What does it mean for $U$ to $V$ an open set \note{I did not hear this}?
+\textbf{Question:} This is just a clarification. When you say $S$ is a locale, what is the definition of a locale? What does it mean for you for $U$, $V$ to be an open set inside $S$?
 \textbf{Answer:} I'm using a bit of loose terminology here. But the definition of a locale is that it is a certain poset. That axioms that you impose on this poset are the axioms that are satisfied by the poset of open subsets of a given topolocal space.
 % 12:30
-But by abuse of notation, I'm using this symbol $U \subseteq S$ to mean that $U$ is an element of the poset which $S$ is secretly. But it is because I am thinking of it as a topological ... \note{I didn't hear the last word}
+But by abuse of notation, I'm using this symbol $U \subseteq S$ to mean that $U$ is an element of the poset which $S$ is secretly. But it is because I am thinking of it as a topological space \note{I didn't hear the last word}
 
 
-\textbf{Question:} Equivalently \note{todo}
+\textbf{Question:} Equivalently suboject or the final object \note{todo} 
+
+\textbf{Answer:} Inside some topos, yes. 
+
+\textbf{Question:} Then this defines kind of localic reflection topos...
+
 
 % 12:53
-There is another perspective, it goes like this. You take the definition of a topos but instead of sheaves of sets you look at sheaves of truth values. I don't know if this is helpful or not.
+\textbf{Answer:} There is another perspective, it goes like this. You take the definition of a topos but instead of sheaves of sets you look at sheaves of truth values. I don't know if this is helpful or not.
 
 %13:08
 An usual topos would be a $1$-topos. Then a locale maybe would be a $0$-topos or something like that, I don't know.
 
+\begin{unfinished}{13:25}
 %13:25
 If you have this kind of structure, then you get \note{todo}
 Note also that if you fix $X$ in $S$ ($Loc(X) \to S$ \note{$\pi$ above arrow}, \note{todo} they are all just sets. They are not anima or whatever, because here we just asking for a map of locales. It is just a map of posets in the other direction. 
