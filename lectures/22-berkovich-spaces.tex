@@ -44,56 +44,64 @@ We discussed what structure you get on $X$. Basically, you get a bunch of idempo
 But when discussing the relation with Berkovich spaces, it's going to be too annoying to require these kinds of conditions (metrizable, finite dimensional, compact Hausdorff), even though they're satisfied in practice. So, I want to discuss some slightly more general notion of how to localize an analytic stack along a topological space and the relation with this one in the case where you do have a metrizable, finite dimensional, compact Hausdorff space.
 
 
-\begin{unfinished}{4:34}
+
 So what is another thing I can do? If you have an analytic stack $X \in \AnStack$.
 To $X$ we can assign a locale. We call it $\Loc(X)$, which is given by the monomorphisms in analytic stacks.
 
-\begin{align*}
-X \to locale$
+\[
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \node (A) at (0,0) {$X \to \Loc, \quad \Loc(X) = \{ Y \subseteq X \}$};
+    \draw[->] (1.7,-0.3) -- (1.7,-1.0);
+    \node[below] at (1.7,-1.0) {monomorphisms in $\AnStack$};
+\end{tikzpicture}
+\]
 
-$ \Loc(X) = \{ Y \subseteq X \} $
-
-\end{align*}
 
 % 5:03
 So this is a general thing you can do whenever you have a topos, or an $\infty$-topos.
-It always has an underlying locale, where you only look at the monomorphisms. And if you look at the topos axioms, then you can see that union 
+It always has an underlying locale, where you only look at the monomorphisms. And if you look at the topos axioms, then you can see that unions...
+
+\textbf{Question:} Here that possible infinite unions and intersections exist? \note{I did not hear this well}
 
 % 5:32
-I should say that potentially there are some set theoretical difficulties so that potentially $Loc(X)$ is not a set. I did not investigate it seriously. But in a few seconds, you will see that it doesn't matter, when I get to the definition.
+\textbf{Answer:} Yes. But, I should say that potentially there are some set theoretical difficultie,s so that potentially $Loc(X)$ is not a set. I did not investigate it seriously. But in a few seconds, you will see that it doesn't matter, when I get to the definition.
 
-\textbf{Question:} Do you mean, when you get larger and larger sizes, you could have more and more subobjects
+\textbf{Question:} Do you mean, when you get larger and larger sizes, you could have more and more subobjects.
 
 % 5:48
-\textbf{Answer:} In principle. I didn't spend much time that it is a set, because ...
+\textbf{Answer:} In principle. I didn't spend much time to prove that it is a set, because ...
 
-\textbf{Question:} About the locale axiom, you said there is a way to produce finite binary intersection and unions, but you also have to infinite, I mean...
+
+\textbf{Question:} About the locale axiom, you said there is a way to produce finite binary intersection and unions, but you also have to produce infinite, I mean...
 
 % 6:12
 \textbf{Answer:} This category $\AnStack$ has all limits and colimits. We don't have to do anything special here to make this definition work.
 
-% 6:20 todo
-\textbf{Question:} You take the colimit and then you quotient by 
+% 6:20
+\textbf{Question:} Why is the colmit a submonomorphism? Ah, you take the colimit and then you quotient by the... \note{I did not hear this well}
 
-\textbf{Answer:} This is an $\infty$-topos thing
+\textbf{Answer:} That is a general $\infty$-topos thing, for example you could take the Cech-nerve of the map and take the colimit.
 
-% todo
-\textbf{Question:}
+
+\textbf{Question:} And this is in what kind of $\infty$-topos, the analytic stack?
 
 % 6:49
-\textbf{Answer:} Modulo set theoretic technicalities. So it satisfies all the same exactness as an $\infty$-topos, but it is not presentable.
+\textbf{Answer:} Yes. Modulo set theoretic technicalities. So it satisfies all the same exactness as an $\infty$-topos, but it is not presentable, so...
 
 % 7:00
-%\textbf{Question:} 
+\textbf{Question:}  OK, so it could be some...
 
 % 7:10
-So maybe $\{ Y \subseteq X \}$ is not a set, I don't care, and you'll see when I make the definition.
+\textbf{Answer:} So maybe $\{ Y \subseteq X \}$ is not a set, I don't care, and you'll see when I make the definition.
 
 % 7:12
-When I make the definition that I'm interested in, it doesn't matter whether it's a set or not. \textbf{Question:} The monomorphism, if I only consider \note{I did not hear this} that's like taking connector component. 
+When I make the definition that I'm interested in, it doesn't matter whether it's a set or not. 
 
-\textbf{Answer:} Exactly, so it means that if you do the fiber product, then the diagonal, I mean the diagonal map associated to this inclusion is an isomorphism.
+\textbf{Question:} The monomorphism, if I only consider \note{I did not hear this} that's like taking connecting component. 
 
+\textbf{Answer:} Exactly, so it means that if you do the fiber product of  $\{ Y \subseteq X \}$, then the diagonal, I mean the diagonal map associated to this inclusion is an isomorphism.
+
+\begin{unfinished}{7:40}
 % 7:40
 A topological space also gives rise to a locale. But let me actually change perspectives and just say "$S$ is a locale", instead of saying "$S$ is a topological space". 
 % 7:52
