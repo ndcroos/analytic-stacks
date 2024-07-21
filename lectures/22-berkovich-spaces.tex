@@ -269,18 +269,32 @@ So what we did, is that we argued that you can always refine any open cover here
 Let me make a remark. In general, it's not true that a rational open pulls back to an open immersion. 
 \end{remark}
 
-\begin{unfinished}{23:44}
-
-\begin{example}[\yt{23m44s}{Remark example, todo}]
-Is there a proof of this? I'll give an example right now.
+\begin{example}[\yt{23m44s}{Example of remark}]
+I'll give an example right now.
 
 % todo, correction in lecture
 So, have two formal variables, $p$ and $X$. Oh, sorry, I should say $\Z_p$. I don't need two variables. Thanks. So one formal variable and then invert it. 
 
 $ (\Z_p, \Z_p) \to (\Q_p, \Z_p)$
-What does this correspond to? On the level of analytic rings, we get this, and on the level of derived categories, this is solid $\Z_p$ modules, and then this is a, well, this is algebraically inverting $p$. The left adjoint here is the inclusion of the full subcategory, or the right adjoint here is the inclusion of the full subcategory where $p$ is invertible.
 
-So this passing from $\Z_p$ to $\Q_p$ is algebraically inverting $p$, $p$ is a prime. And that actually, from the perspective of the six functor formalism, is a closed immersion, not an open immersion. That's a proper map because the, this hasn't the second variable hasn't changed, so we're changing the underlying ring and not the analytic ring structure. But it's also a, proper monomorphism, it's a, it's a closed inclusion, it's closed, not immersion, not open.
+What does this correspond to? 
+
+On the level of analytic rings, we get this:
+
+$ (\Z_p, \Z_p)^\solid \to (\Q_p, \Z_p)^\solid$
+
+and on the level of derived categories, this is solid $\Z_p$ modules, and then this is algebraically inverting $p$. 
+
+$ D(\Z_p, \Z_p)^\solid \to D(\Q_p, \Z_p)^\solid $ 
+
+% 24:52, small correction
+The right adjoint here is the inclusion of the full subcategory where $p: X \to X$ is invertible.
+
+So this passing from $\Z_p$ to $\Q_p$ is algebraically inverting $p$, $p$ is a prime. 
+
+\begin{unfinished}{25:19}
+% 25:19
+And that actually, from the perspective of the six functor formalism, is a closed immersion, not an open immersion. That's a proper map because the, this hasn't the second variable hasn't changed, so we're changing the underlying ring and not the analytic ring structure. But it's also a, proper monomorphism, it's a, it's a closed inclusion, it's closed, not immersion, not open.
 
 So, I think we treated the case of some covering given by a function like $f$, like the Laurent cover, the one where $f$ or $1-f$ is less than or equal to mean, this kind of basic cover. And for those, is it the case? Yes, so then let me make another remark. However, if $R$ is Tate, then indeed, this doesn't arise. So in general, the problem is exactly these open covers in the Huber sense, which are given by algebraically inverting a function without enforcing any inequalities. But in the setting of a Tate Huber pair, then you know, if you want to invert something, it's, the subset where you invert something can always be written as a union of subsets obtained by forcing inequalities.
 
