@@ -7,6 +7,7 @@
 \vspace{1em}
 
 At the very beginning, in the first lecture, I gave an introduction to what we wanted to have out of this theory of analytic stacks.
+
 % 0:43
 In particular, I was putting some emphasis on the fact that we want to know that traditional frameworks for analytic geometry can fit into this perspective of analytic stacks.
 % 0:53
@@ -24,30 +25,35 @@ Maybe there are different ways to do it. I'm not sure.
 
 % 1:32 Peter
 
-It's in Juan Estaban's paper on the analytic de Rham stack Camargo \cite{AnalyticRhamStackRigid} \,note{Not sure if I should cite with the name Camargo or Estaban}. So, there you go. 
+It's in Juan Estaban's paper on the analytic de Rham stack Camargo \cite{AnalyticRhamStackRigid} \note{Not sure if I should cite with the name Camargo or Estaban}. So, there you go. 
 
 % 1:55
 What I want to start moving towards today, is the relation with Berkovich spaces.
 
 % 2:10
-But before discussing that, I want to do a little bit of setup.
-First, I want to talk about different notions of how to localize an analytic stack over a topological space. 
+But before discussing that, I want to do a little bit of setup. First, I want to talk about \emph{different notions of how to localize an analytic stack over a topological space}. 
 
+\subsection{Localizing an analytic stack over a topological space}
 % 2:40
 We have already seen one way. 
 
-If we have an analytic stack, and if we have $S$, which is maybe let's say a metrizable, finite dimensional, compact Hausdorff space, or it could be a maybe a locally compact Hausdorff space, which is locally one of these, then we've seen that that can also be viewed as an analytic stack. We can also view it as an analytic stack. Then we could ask for a map $f: X \to S$ in the category of $\AnStack$. 
+If we have an analytic stack, and if we have an $S$, which is a metrizable, finite dimensional, compact Hausdorff space, or it could be a locally compact Hausdorff space, which is locally one of these, then we've seen that this can also be viewed as an analytic stack. Then we could ask for a map $f: X \to S$ in the category of $\AnStack$. 
 % 3:25
 We discussed what structure you get on $X$. Basically, you get a bunch of idempotent algebras in $D(X)$, corresponding to the closed subsets of $S$. You can also think in terms of the complementary opens as well, and you get some idempotent coalgebras which would be like the $D_{!}$ \note{Not sure if D or J} of the constant sheaf on the open subset, as opposed to the $I_{*}$ of the constant sheaves, giving you these idempotent algebras. But, in any case, you get a whole bunch of algebra objects in here $D(x)$, which let you localize this category over the topological space $S$.
 % 4:05
 But when discussing the relation with Berkovich spaces, it's going to be too annoying to require these kinds of conditions (metrizable, finite dimensional, compact Hausdorff), even though they're satisfied in practice. So, I want to discuss some slightly more general notion of how to localize an analytic stack along a topological space and the relation with this one in the case where you do have a metrizable, finite dimensional, compact Hausdorff space.
+
+
 \begin{unfinished}{4:34}
 So what is another thing I can do? If you have an analytic stack $X \in \AnStack$.
-To $X$ we can assign a locale. We just call it $Loc(X)$, which is just given by the monomorphisms in analytic stacks.
+To $X$ we can assign a locale. We call it $\Loc(X)$, which is given by the monomorphisms in analytic stacks.
 
-$ X \to locale$
+\begin{align*}
+X \to locale$
 
 $ \Loc(X) = \{ Y \subseteq X \} $
+
+\end{align*}
 
 % 5:03
 So this is a general thing you can do whenever you have a topos, or an $\infty$-topos.
@@ -518,7 +524,7 @@ To prove, we can assume we have this $\Q$ with a norm of $\Q$ between $0$ and $1
 This idempotent algebra is the ring of holomorphic functions, so to speak, the overconvergent version of the unit disc, and then you mod out by $T - 2$. This gives a power series or Laurent series with integer coefficients that converge to radius zero, which are converge on some unspecified open disc around the origin. This already shows that the condition is independent of $2$, and then you can look at the universal over this and check the non-archimedean triangle inequality.
 
 The only other locus you need to worry about is the locus where you're...
-Between one and two, and then you're in this non-Archimedean branch, and we saw you get the usual thing: you have the triangle inequality there. And then, to prove this claim, it's actually enough to - I think it's easier to prove the root. The root is, it's easiest to prove this claim, and then that implies the claim, because this means that the only other possible point to consider, we're living in the Archimedean locus, so we're some rescaling of the usual absolute value. And then, this weak triangle inequality, this quasi-norm triangle inequality, is actually satisfied.
+Between one and two, and then you're in this non-archimedean branch, and we saw you get the usual thing: you have the triangle inequality there. And then, to prove this claim, it's actually enough to - I think it's easier to prove the root. The root is, it's easiest to prove this claim, and then that implies the claim, because this means that the only other possible point to consider, we're living in the Archimedean locus, so we're some rescaling of the usual absolute value. And then, this weak triangle inequality, this quasi-norm triangle inequality, is actually satisfied.
 
 To prove this, you again do a calculation. It's sort of similar, except you're setting $t$ equal to 2, or you're setting the inverse of $t$ equal to some weird version of functions convergent on the open disc. And again, you observe that it's independent of 2.
 
