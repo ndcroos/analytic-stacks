@@ -33,7 +33,7 @@ What I want to start moving towards today, is the relation with Berkovich spaces
 % 2:10
 But before discussing that, I want to do a little bit of setup. First, I want to talk about \emph{different notions of how to localize an analytic stack over a topological space}. 
 
-\subsection{Localizing an analytic stack over a topological space}
+\subsection{Localizing an analytic stack over a topological space} \label{subsec:localizing_an_analytic_stack}
 % 2:40
 We have already seen one way. 
 
@@ -102,7 +102,7 @@ When I make the definition that I'm interested in, it doesn't matter whether it'
 \textbf{Answer:} Exactly, so it means that if you do the fiber product of  $\{ Y \subseteq X \}$, then the diagonal, I mean the diagonal map associated to this inclusion is an isomorphism.
 
 
-\subsubsection{Ask for map of locales}
+\subsubsection{Ask for map of locales} \label{subsubsec:ask_for_map_of_locales}
 % 7:40
 A topological space also gives rise to a locale. But let me actually change perspectives and just say "$S$ is a locale", instead of saying "$S$ is a topological space". 
 % 7:52
@@ -126,7 +126,7 @@ Then we can ask for a map of locales, $Loc(X) \to S$. Whether or not $\{ Y \subs
 
 % Back to lecture
 % 9:26
-\subsubsection{Ask for a stronger property}
+\subsubsection{Ask for a stronger property} \label{subsubsec:ask_for_a_stronger_property}
 But we can also ask for a stronger property, so that each inclusion of open subsets, say $ U \subset V \subset S$, maps to, so it's supposed to give some monomorphisms, so maybe I should give some name for this, like $f$ or $Pi$, maybe, so $Loc(X) \xrightarrow{\pi} S$. So this: $
 
 U \subset V \subset S \mapsto \pi^{-1} U \subset \pi^{-1} V \subset X
@@ -141,7 +141,7 @@ But in the case of a monomorphism, then it's quite easy to see that the dualizin
 A general monomorphism could look like anything really. It could look closed, it could look open, it could look like some mix. But it's reasonable to ask for this stronger property, that what looks like an open immersion on the level of the topological space also looks like an open immersion from the perspective of the six functor formalism.
 
 % 11:24
-\subsubsection{Metrizable, fin. dimensional CHausdorff case}
+\subsubsection{Metrizable, fin. dimensional CHausdorff case} \label{subsubsec:metrizable_etc_case}
 In the case where $X$ is a metrizable, finite dimensional, compact Hausdorff space, we can ask for, as before, a map $X \to S$ in $\AnStack$.
 
 % 12:00
@@ -337,8 +337,8 @@ Okay, so I'm always confused, is there really a t-structure def over D of that o
 Okay, so it's not like, so it's not a sufficient condition for having a. So this is like the for schemes that you have the the non-aine orens, but still, if you use as the flat or pqc, still if it's up upstairs, it's up downstairs, so that's. But in your topology, of course, you have much more stuff, yes. So you can have these wheel-we things where, you have a map which is affine locally, but with an with a map with affine Target which is affine locally, but not globally, and that's kind of unavoidable when you're doing analytic geometry.
 
 % 40:05
-\subsection{Preliminary definitions}
-\subsubsection{Banach rings}
+\subsection{Preliminary definitions} \label{subsec:preliminary_definitions}
+\subsubsection{Banach rings} \label{subsubsec:banach_rings}
 So Berkovich spaces. Let me start with a reminder on the definition, so we know where we're going. $A, \norm{\cdot})$ is a Banach ring. That means that $A$ is a commutative ring, and this norm map $||: A \to \Rnonneg$ from $A$ to the non-negative real numbers ,satisfies, 
 
 $\norm{0} = 0$, 
@@ -393,11 +393,11 @@ But, do you allow $\Z_R$? No, well, wait, I allow, okay, I allow $\mathbb{A}$ is
 \end{align}
 This is actually a compact Hausdorff space. I didn't describe the topology, but here it is. You can view it as a subset of the product over all $F$ in $A$ of the interval from zero to the norm of $F$. It is actually a closed subset. This map takes a norm and records its value on $F$. The topology is the subspace topology, so it is a compact Hausdorff space.
 
-\subsection{Berkovich spaces in the language of analytic stacks}
+\subsection{Berkovich spaces in the language of analytic stacks} \label{subsec:berk_spaces_language_analytic_stacks}
 % 50:20
 So what we're going to do is, we're going to try to make the same definition, but in the world of analytic stacks instead of topological spaces. So, we want to take the same idea, which is that we want to look at the set of all multiplicative seminorms $\BerkSpec$ on $A$, bounded by the given norm on $A$, but we want to say that in the language of analytic stacks, using the notion of norm on an analytic ring that we discussed earlier.
 
-\subsubsection{Norm}
+\subsubsection{Norm} \label{subsubsec:norm_reminder}
 % 51:18
 Let me remind you about this notion of a norm. So, the definition of, we could say even more generally in an $\infty$-category stack. 
 
@@ -450,7 +450,7 @@ So if you ask for a norm on an analytic ring and an element whose norm is exactl
 
 
 % 1:00:20
-\subsubsection{What does $\mathcal{N}$ look like?}
+\subsubsection{What does $\mathcal{N}$ look like?} \label{subsubsec:what_does_n_look_like}
 
 Before finishing the introduction of the definition of this enhanced Berkovich spectrum as an analytic stack, I want to explore a little bit about what does $\mathcal{N}$ look like? So, what do we have on $\mathcal{N}$ if you have a norm on an arbitrary analytic ring? So, if you have a norm $N: \P_R^1 \to [0, \infty)$, so as mentioned, for any section here, you get a function from $\Spec(R) \to [0, \infty]$, but over an arbitrary analytic ring, the only thing we know exist are the integers. 
 % 1:01:42
