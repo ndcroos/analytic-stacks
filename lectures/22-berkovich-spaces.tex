@@ -354,10 +354,10 @@ So an example, there's, so example for, say, $S$ is a compact hausdorff space, y
 $A = \Cont(S; \C)$
 
  and take the norm to be the sup norm, where you have the usual absolute value, and this, maybe this is kind of right. 
-$\norm{f} = \sup_{s \in S} \norm{f(s)}
+$\norm{f} = \sup_{s \in S} \norm{f(s)}$
 
 \note{todo, last bit of eq I can't see}
-\end
+\end{example}
  
 \begin{example}[\yt{43m04s}{Tate-Huber ring}] 
  Another example would be if $R$ is a Tate-Huber ring, and if you choose a pseudo uniformizer, topologically nilpotent unit, then you can define a norm, Peter actually wrote down the
@@ -371,7 +371,7 @@ Yes, this is multiplicative. It's not multiplicative in general.
 with \norm{f}_x todo \norm{f} \\
 \forall f \in A.
 \end{align*}
-And then so to this data, so this to a and the Norm Huber assigned the space, which has a set Berkovich. Thank you, we're switching over now. Thought Berkovich, which as a set is given by the. Norm of $f$ equals $z$ if and only if $f$ equals $z$, right.
+And then to this data, so to $(A, \norm{\cdot})$ Berkovich assigned the space, which as a set is given by the norm of $f$ equals $z$ if and only if $f$ equals $z$, right.
 % 46:30
 So, I'm using this notation $X$, so kind of it's a decoration to. And this is now a \underline{multiplicative seminorm}, with which is bounded by the given norm you have on the Banach algebra $A$.
 
@@ -380,11 +380,13 @@ So, I'm using this notation $X$, so kind of it's a decoration to. And this is no
 A = \Cont(S, \C) \\
 \norm{f}_x = \norm{f(x)} \forall x \in S.
 \end{align*}
-Well, for example, in and you can take. If you require that the norm restricts to the usual Norm on the complex numbers, then these are all the examples. So that's  Gelfand's theorem. So, those are the only examples in this situation. And multiplicative includes the of Zero element, that is the norm of one is one, yes.
+Well, for example, in and you can take. If you require that the norm restricts to the usual Norm on the complex numbers, then these are all the examples. So that's Gelfand's theorem. So, those are the only examples in this situation. And multiplicative includes the zero element, that is $\norm{1} = 1$, yes.
 
 Except, but this is maybe zero multiplication of zero numbers, we don't want that. So, we want these to be like points, so we want them to be non-empty. So, we want one to be different from zero.
 
 But, do you allow $\Z_R$? No, well, wait, I allow, okay, I allow $\mathbb{A}$ is the zero ring, when this will be the empty set.
+% todo, move this end example
+\end{example}
 
 \begin{align}
 \BerkSpec(A, \norm{\cdot}) \subseteq \prod_{f \in A} [0, \norm{f} ]
@@ -395,27 +397,68 @@ This is actually a compact Hausdorff space. I didn't describe the topology, but 
 % 50:20
 So what we're going to do is, we're going to try to make the same definition, but in the world of analytic stacks instead of topological spaces. So, we want to take the same idea, which is that we want to look at the set of all multiplicative seminorms $\BerkSpec$ on $A$, bounded by the given norm on $A$, but we want to say that in the language of analytic stacks, using the notion of norm on an analytic ring that we discussed earlier.
 
+\subsubsection{Norm}
 % 51:18
-Let me remind you about this notion of a norm. So, the definition of, well, we could say even more generally in an $\infty$-category stack. 
+Let me remind you about this notion of a norm. So, the definition of, we could say even more generally in an $\infty$-category stack. 
 
 % TODO: when the earlier lectures are transcribed, we can see what we need to copy here.
 
-A norm on $X$ is a map from the algebraic $\P^1_X$ to the closed interval from zero to Infinity, including Infinity, which is multiplicative away from Infinity. So, let's say on Norm inverse $0$ to Infinity, and let me write it suggestively like this. You really should write down the commutative diagram with inversion on $\P^1$, inversion of the coordinate on $\P^1$ and inversion of this extended real positive non-negative real axis here. And some condition on how $\mathcal{P}$ sits, $p$, $p$, $p$, so this is the $p$, oh $t$, $t$ is the variable on $\P^1$.
+A \emph{norm} on $X$ is a map $\P^1_X \xrightarrow{N} [0, \infty]$, including $\infty$, which is multiplicative (so away from $\infty$, so, let's say on $N^{-1} ([0, \infty))$ and let me write it suggestively like this: $N(T^{-1}) = N(T)^{-1}$. $T$ is the variable on $\P^1$. You really should write down the commutative diagram with inversion on $\P^1$, inversion of the coordinate on $\P^1$ and inversion of this extended real positive non-negative real axis here. 
+% 52:34
+And some condition on how $P$ sits.
 
-Yes, what do you mean by how $\mathcal{P}$ sits? So, remember $\mathcal{P}$ was this ring object you have over any analytic ring, which is the free guy on a topologically nilpotent element. And it's some version of a unit disc, and what we ask is that this Norm function gives
+\textbf{Question:} What do you mean by how $P$ sits?
+% 53:19
+\textbf{Answer:} So, remember $P$ was this ring object you have over any analytic ring, which is the free guy on a topologically nilpotent element. And it's some version of a unit disc, and what we ask is that this Norm function gives you another version of the unit disc, which is like the inverse image of the closed interval $[0, 1]$ or you also have the inverse image of the halfopen interval from , and you want to say that $P$ sits in between the two of those.
 
-Small $a$ map in the category of analytic stacks. So these objects are fixed, right? When you fix $X$, this is fixed, and this is fixed. Yes, that you know that there is a. Why was it? Well, we basically by definition, every analytic stack was a small co-limit of representable analytic stacks, okay? You have a.
+% 54:00
+Write $\mathcal{N}(X)$ for the set of norms on $X$. So recall $\mathcal{N}$ is an analytic stack. (It is a set. It is just given by a map in our category and our category is locally small.)
 
-Because there was a notion of analytic ring where there is the category. Okay, there, you handle the problem of large sizes. I mean, because it's enough to check the condition some smoke, but then you have the analytic stack where you cover, but you don't know which covering you need to give a ism, so you have need all possible covers could be covers by bigger and bigger see, but you say the category is accessible. So the main technical result you need to prove is that the sheafification of an accessible prief is still an accessible prief. That's the main technical result you need to prove. We did not discuss this at all, but that's what's underlying the resolution to these issues. It's like in Waterhouse.
+% 54:38
+A map in the category of analytic stacks. So these objects are fixed, right? When you fix $X$, this is fixed, and this is fixed. 
 
-Okay, so this, in fact, so there's a cover, so this gaseous base maps to $n$. In other words, you can write down a norm on this gous space tack, and it's, and this, so this, and this is actually the universal norm on an analytic ring with a variable $Q$ in $R$ such that norm of $Q$ is precisely equal to $1/12$. What did you write? $NX$ is the analytic stack $n$, $n$ is an analytic stack. So $NX$, the set of norms, is actually the set of maps from $X$ to some stack $n$.
+\textbf{Question:} Yes, that you know that there is a. Why was it? 
 
-So if you ask for a norm on an analytic ring and an element whose norm is exactly equal to $1/2$, which is kind of a somewhat stringent condition, because a priori again, the norm map is norm of $Q$ is a map from $Spec R$ to $[0, \infty)$, and you're asking that it factor through this, a priori, its image could be some interval or something, but you're asking that its image be exactly this singleton. The universal example of that is this guy, and moreover, the map to the base stack is actually a cover in the sense of our Gro de topology on analytic Stacks, because every norm on an analytic ring locally, you can find such an element. We had this argument, we discussed this two lectures ago. Everything here was like $X$ was a $Spec$ of an analytic rate. I mean, I made this definition for a general $X$, but it, I mean, it doesn't matter because the condition, I mean, the norms on an analytic ring, they satisfy descent basically. I mean, it's kind of follows from general nonsense, and so it automatically glues to say what a norm is on an arbitrary analytic stack, and it unwinds to the same thing. So the cover also exists because it exists locally, like you GRE it. Well, the map, the map, no, the map exists because you can write down this norm, and then it's a cover because given any norm on an analytic ring, after a cover, you can find a $q$ that satisfies this property.
+\textbf{Answer:} Well, basically by definition, every analytic stack was a small colimit of representable analytic stacks. You have a.
 
-Sure, do you need to do some base tank? I'm sorry, do you need to do a base change? What do you mean? Is it okay, or you still have a question?
+% 55:28
+\textbf{Question:} Because there was a notion of analytic ring where there is the category. Okay, there, you handle the problem of large sizes. I mean, because it's enough to check the condition on some small... But then you have the notion of analytic stack where you cover, but you don't know which covering you need to give a morphism, so you have need all possible covers, could be covers by bigger and bigger see, but you say the category is accessible. 
 
-Okay, so I want to, before finishing the discussion of or introducing the definition of this enhanced Berkovich Spectrum as an analytic stack, I want to explore a little bit about so, what does $n$ look like? So, well, what do we have on $N$ if you have a norm on an arbitrary analytic ring? So, if you have a norm $p: R \to [0, \infty)$, so as mentioned, for any section here, you get a function from $Spec R$ to $[0, \infty)$, but over an arbitrary analytic ring, the only thing we know exist are the integers. So, given $n$ in $\Z$, we get a map which records the value of your norm on the integer $n$. So, what does this
-We'll also see that the fiber over any point in the image is non-empty, so that at least in this case, maybe it's a general fact - I don't know, at least in this case, it's kind of a theorem that the image is closed, so to speak. Now note that the more traditional thing is this Berkovich spectrum of the integers, that was also by definition a subset of this product going from zero to infinity, and it was given by those Norms, so multiplicative, avoiding Infinity, satisfying the triangle inequality.
+% 56:01
+\textbf{Answer:}
+So the main technical result you need to prove is that the sheafification of an accessible presheaf is still an accessible presheaf. That's the main technical result you need to prove. We did not discuss this at all, but that's what's underlying the resolution to these issues. It's like in Waterhouse.
+
+% 56:35 todo, notation
+In fact, $\exists$ a cover, so $\Spec(\Z[q]\gas) \to \mathcal{N}$. In other words, you can write down a norm on this gaseous space stack, and this is actually the universal norm on an analytic ring (R^\tri, D(R))with a variable $q \in R^\tri \st  N(q) = \{ \frac{1}{2} \}$. 
+
+
+\textbf{Question:} What did you write? $\mathcal{N}(X)$ is the analytic stack
+
+% 57:43
+\textbf{Answer:} $\mathcal{N}$ is an analytic stack. So $\mathcal{N}(X)$, the set of norms, is actually the set of maps from $X$ to some stack $\mathcal{N}$.
+
+So if you ask for a norm on an analytic ring and an element whose norm is exactly equal to $\frac{1}{2}$, which is kind of a somewhat stringent condition, because a priori again, the norm map $N(q)$ is a map $\Spec(R) \to [0, \infty)$, and you're asking that it factor through this \note{I don't understand this phrasing}, a priori, its image could be some interval or something, but you're asking that its image be exactly this singleton. The universal example of that is this guy $\Spec(\Z)$ \note{todo, notation}, and moreover, the map to the base stack is actually a cover, in the sense of our Grothendieck topology on analytic stacks, because every norm on an analytic ring locally, you can find such an element. We had this argument, we discussed this two lectures ago. 
+
+% 58:45
+\textbf{Question:} Everything here was like $X$ was a $\Spec$ of an analytic ring. 
+
+\textbf{Answer:} I made this definition for a general $X$, but it doesn't matter, because the condition, the norms on an analytic ring, they satisfy descent basically. I mean, it's kind of follows from general nonsense, and so it automatically glues to say what a norm is on an arbitrary analytic stack. It just unwinds to the same thing. 
+
+\textbf{Question:} So the cover also exists because it exists locally, like you GRE it. 
+
+\textbf{Answer:} Well, the map, the map, no, the map exists because you can write down this norm, and then it's a cover because given any norm on an analytic ring, after a cover, you can find a $q$ that satisfies this property.
+
+
+% 1:00:20
+\subsubsection{What does $\mathcal{N}$ look like?}
+
+Before finishing the introduction of the definition of this enhanced Berkovich spectrum as an analytic stack, I want to explore a little bit about what does $\mathcal{N}$ look like? So, what do we have on $\mathcal{N}$ if you have a norm on an arbitrary analytic ring? So, if you have a norm $N: \P_R^1 \to [0, \infty)$, so as mentioned, for any section here, you get a function from $\Spec(R) \to [0, \infty]$, but over an arbitrary analytic ring, the only thing we know exist are the integers. 
+% 1:01:42
+So, given $n \in \Z$, we get a map which records the value of your norm on the integer $n$. So, what does this
+We'll also see that the fiber over any point in the image is non-empty, so that at least in this case, maybe it's a general fact - I don't know, at least in this case, it's kind of a theorem that the image is closed, so to speak. Now note that the more traditional thing is this Berkovich spectrum of the integers, that was also by definition a subset of this product going from $\prod_{n \in R} [0, \infty]$, and it was given by those norms, so multiplicative, avoiding Infinity, satisfying the triangle inequality.
+
+% 1:02:30
+So we want to know what the "image" is, so to speak. Let me say what I mean by image. I mean the \emph{complement of the largest open subset $U \subset \product[0,\infty] with \pi^-1 U = \empty$}.
 
 Let me remind you what this thing looks like, in case people haven't seen this before. Recall that $\M(\Z)$ looks as follows: you have a point at the center, so to speak, which corresponds to the trivial norm, meaning the zero norm of $Z$ is $Z Norm$, and the norm of everything else is equal to one. 
 % 1:05:33
@@ -452,7 +495,7 @@ So, another way of saying this is $\text{Im}(\mathcal(N)) = \BerkSpec(\Z)$ - you
 
 Let's explore this and let's see what is going on. Let's consider the map - what's that? Is the one-point.
 
-\textbf{Question:} The picture you seem to see this image gen topological space, but this is supposed to be something associated with $\Z$, right? That's a good question. So, by definition, I made it a - I was saying it's a closed subset of the topological space. Now, you can view this as an analytic stack. We saw how to view this as an analytic stack, and you can take the product in the category of analytic stacks - that's perfectly legitimate. It's no longer finite dimensional - sorry, it is metrizable, it's no longer finite dimensional. So, we didn't quite talk about this thing, but you can still view this as an analytic stack, and you still do get a map of analytic stacks from N to this product, and this closed subset does correspond to a subanalytic monomorphism of analytic stacks here, and the map from N there does factor through that closed subset, and so you can view it in several different ways.
+\textbf{Question:} The picture you seem to see this image gen topological space, but this is supposed to be something associated with $\Z$, right? That's a good question. So, by definition, I made it a - I was saying it's a closed subset of the topological space. Now, you can view this as an analytic stack. We saw how to view this as an analytic stack, and you can take the product in the category of analytic stacks - that's perfectly legitimate. It's no longer finite dimensional - sorry, it is metrizable, it's no longer finite dimensional. So, we didn't quite talk about this thing, but you can still view this as an analytic stack, and you still do get a map of analytic stacks from $N$ to this product, and this closed subset does correspond to a subanalytic monomorphism of analytic stacks here, and the map from N there does factor through that closed subset, and so you can view it in several different ways.
 
 % 1:13:00
 Okay, to explore this, consider a fixed prime $p$, and consider the norm of $p$ 
@@ -461,18 +504,15 @@ $
 $
 . 
 % 1:15:15
-Here's the first claim: we can understand the locus in this universal space of norms where the norm of $p$ lives in [0, +\infty]. This is the same thing as the stack parametrizing norms on which the variable $p$ lives between 0 and 1 - let's call this $N$ and $\Z$ less than absolute value of p less than one. This is equal to $\Spec \Q_p^{\gas}$, the gaseous version of the $p$-adic numbers, across this stack associated to the open interval $(0, 1)$.
+Here's the first claim: we can understand the locus in this universal space of norms where the norm of $p$ lives in $[0, +\infty]$. This is the same thing as the stack parametrizing norms on which the variable $p$ lives between 0 and 1 - let's call this $N$ and $\Z$ less than absolute value of p less than one. This is equal to $\Spec \Q_p^{\gas}$, the gaseous version of the $p$-adic numbers, across this stack associated to the open interval $(0, 1)$.
 
 Claim
-$
-N(p)^-1 ((0,1)) = $\Spec \Q_p^{\gas} \times (0,1)$ 
-$
-% vertical equal sign
-$
-\mathcal{N}_{0 < \abs{p} <1}
-$
+$N(p)^-1 ((0,1)) = $\Spec \Q_p^{\gas} \times (0,1)$ 
 
-This is quite easy to see, because we know that the universal analytic stack equipped with some variable whose norm is between zero and one \mathcal{N}_{0 < \abs{p} <1} is spec of $\Z_q$ hat plus or minus one Gaseous cross 0,1. And then you have to impose that that variable becomes p, so you set $q = p$ or you mod out by $q - p$, and then that, as Peter discussed when discussing this gaseous base stack, gives you some analytic ring structure on the $p$-adic numbers, and then the second variable doesn't really change.
+% vertical equal sign
+$\mathcal{N}_{0 < \abs{p} <1}$
+
+This is quite easy to see, because we know that the universal analytic stack equipped with some variable whose norm is between zero and one \mathcal{N}_{0 < \abs{p} <1}$ is $\Spec(\Z_q)$ hat plus or minus one Gaseous cross 0,1. And then you have to impose that that variable becomes $p$, so you set $q = p$ or you mod out by $q - p$, and then that, as Peter discussed when discussing this gaseous base stack, gives you some analytic ring structure on the $p$-adic numbers, and then the second variable doesn't really change.
 
 % 1:17:40
 I'm claiming in particular that if you look at the universal - let's say we take the fiber over a point $ \lambda \in (0,1)$, 
@@ -481,17 +521,18 @@ I'm claiming in particular that if you look at the universal - let's say we take
 $
 Spec(Q_p^\gas) \times \{ \lambda \}      \text{normed analytic ring structure \\ here: notion of overconvergent functions on a disc of radius $r$ }
 $
+
 then you get a normed analytic ring structure here. And it is - so what does that mean? It means that for every radius $r$, you have some notion of overconvergent functions on a disc of radius $r$, where the notion of on a disc of radius $r$ is the usual one from non-Archimedean geometry, where you take the normalization of the absolute value on the $p$-adic numbers for which $\abs{p} = \lambda$. So, what we're seeing here is the interior of the $p$-branch.
 Kind of fairly straightforward to understand. 
 
 % 1:19:54
 Next, let's look at another locus that's fairly easy to understand. This is the locus where $p$ is between one and infinity. 
 \begin{align*}
-\mathcal{N}_{1 < \abs{p} < \infty} = $\Spec(\R^\gas) \times [0,1]$
+$\mathcal{N}_{1 < \abs{p} < \infty} = \Spec(\R^\gas) \times [0,1]$
 
 % todo arrow between above and under
 
-0 < \abs{\frac{1}{p}} < 1
+$ 0 < \abs{\frac{1}{p}} < 1 $
 
 \end{align*}
 % 1:20:10
@@ -580,7 +621,7 @@ So a normed analytic ring with $N(2) < \infty$, there always exists a constant $
 
 % Draw commutative diagram
 \begin{align*)
-A, B < \infty \P_{\abs{T} \leq A}^1 \times \P_{\abs{S} \leq B}^1
+$A, B < \infty \P_{\abs{T} \leq A}^1 \times \P_{\abs{S} \leq B}^1$
 \end{align*}
 
 So, and this is addition A1, they, 

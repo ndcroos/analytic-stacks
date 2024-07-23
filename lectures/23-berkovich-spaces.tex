@@ -9,19 +9,19 @@
 \begin{unfinished}{0:00}
 This lecture is about Berkovich spaces, which is a topic I began discussing last time.
 
-Let me remind you of the classical setup. You have a Banach ring, which is a ring equipped with a norm that is submultiplicative and satisfies the triangle inequality. The norm of 1 is equal to 0 or 1, unless $R = \Z$. And $R$ is complete.
+Let me remind you of the classical setup. You have a Banach ring $(R, \norm{\cdot}), which is a ring $R$ equipped with a norm $\norm{\cdot}$ that is submultiplicative and satisfies the triangle inequality. $\norm{1} = 1$, unless $R = 0$. And $R$ is complete.
 
 %todo insert earlier Banach ring latex def here.
 
 % 1:45
-Berkovich assigns to this a compact Hausdorff space, $\BerkSpec(R, \norm{\cdot}) \subseteq \prod_{f \in R} [ 0, \norm{f} ]$, which is a subset over the product over all elements in R of the closed interval from 0 to the norm of f. A point in this space is denoted as X, and it is literally an evaluation map from R to the non-negative real numbers, which is now multiplicative and satisfies the triangle inequality, with 1 being 1.
+To this $(R, \norm{\cdot}), Berkovich assigns a compact Hausdorff space, $\BerkSpec(R, \norm{\cdot}) \subseteq \prod_{f \in R} [ 0, \norm{f} ]$, which is a subset over the product over all elements in $R$ of the closed interval from [0, \norm{f}]. A point in this space is denoted as $x$, but what it really is, it is an evaluation map $\norm{\cdot}_{x}= R \to \Rnonneg$, which is now multiplicative ( $\norm{fg}_x  = \norm{f}_x \norm{g}_x) and satisfies the triangle inequality $\norm{f + g}_x \leq \norm{f} + \norm{g}$, with $\norm{1}_x = 1$.
 
 \begin{remark}
-$\R$ is not complete with respect to this $\norm{\cdot}_X$. In fact, there could be many elements of norm zero. However, if you complete $R$ with respect to any norm X, you get a complete valued field $\mathcal{K}(X)^{\text{hat}}$, which is sort of the residue field in the sense of Berkovich theory.
+$R$ is not complete with respect to this $\norm{\cdot}_x$. In fact, there could be many elements of norm zero. However, if you complete $R$ with respect to any $\norm{\cdot}_x$, you get a complete valued field $\mathcal{K}(X)^{\text{hat}}$, which is sort of the residue field in the sense of Berkovich theory.
 % TODO: Latex notation of K residue field
-There are basically three cases:
+Recall that there are basically three cases:
 \begin{enumerate}
-\item archimedian $\iff$ $(\R, \norm{\cdot}^{\alpha})$ or $(\C, \norm{\cdot}^{\alpha)$, $\alpha \in [0, 1]$
+\item archimedian $\iff$ $(\R, \norm{\cdot}^{\alpha})$ or $(\C, \norm{\cdot}^{\alpha)$, $\alpha \in [0, 1]$ by Ostrowski
 \item non-archimedian but discrete, then you have the trivial norm $\norm{\cdot}_0 = \text{trivial norm}$
 \item non-archimedian non-discrete, $\norm{\cdot}_{normalize}^{\alpha}$
 \end{enumerate}
@@ -31,6 +31,7 @@ In the archimedian case, there is no real variety in complete normed fields, as 
 % Some text about the discussion seems to be missing here
 
 % 6:36
+\subsection{Promote to stack}
 Now, the goal is to promote $\BerkSpec(R,{\norm{\cdot}}$ to an analytic stack, using the stack of norms, $\mathcal{N}$. A map from an analytic stack $\mathcal{X}$ to $\mathcal{N}$ is the same as a certain map from $\P^1_{\mathcal{X}}$ to $[0, \infty)$, satisfying multiplicativity.
 
 % 7:50
@@ -49,7 +50,7 @@ Then you have the archimedean ones, so $2$-adic absolute values which end here i
 We also kind of saw what on the interior of these line segments, you were getting the the gaseous $\R$ theory $\R^{\gas}}, on the interior here you're getting the gaseous 2-adic numbers, and then as you move along the normed, the norm is changing, but the analytic ring is not. In $\Q_3$ and so on, and then here you have things living, you have $\F_2$ living for example, you have things living in characteristic 2 there, living in characteristic 3 here, and here you have things living in characteristic 0.
 
 % 10:09
-In some sense, you can imagine that the points of this stack correspond to something like these complete valued fields, or the minimal choices of complete valued fields like you have $\R$, $\Q_p$, you have discrete $\F_P$, you have discrete $\Q$.
+In some sense, you can imagine that the points of this stack correspond to something like these complete valued fields, or the minimal choices of complete valued fields like you have $\R$, $\Q_p$, you have discrete $\F_p$, you have discrete $\Q$.
 
 % 10:32
 So, that's kind of a substitute for the notion of multiplicative valuation, but then we still have to input our Banach ring $R$ into the construction in order to get something non-trivial. Here's the definition, and I don't know what good notation is, I'll write it like this.
@@ -71,11 +72,11 @@ And then trivial analytic ring structure.
 
 
 It's the full condensed derived category of this condensed ring.
-In this map, so it's a condition that you can check in practice, and so is it the case that you have. Since $R$ is cool, you can think of it as a limit of C sub Rings, which are account many elements. Yes, so you can probably reduce to, no, but it maybe, it's not Dimension. Well, I'm not sure, but no, no, but you can look at as a CO liit over finally generated sub rings, and then, and that's always embedded in a finite I mean, okay, okay.
+In this map, so it's a condition that you can check in practice, and so is it the case that you have. Since $R$ is cool, you can think of it as a limit of C sub Rings, which are account many elements. Yes, so you can probably reduce to, no, but it maybe, it's not dimension. Well, I'm not sure, but no, no, but you can look at as a colimit over finally generated sub rings, and then, and that's always embedded in a finite I mean, okay, okay.
 
-Okay, yes, so that's one way. So, there is indeed a canonical way to write this as an inverse limit of finite dimensional metrizable spaces, but let's not do it. Let's just work with this setup here. And is it true that you have inverse limits in analytic stat? Yes, you have, you have all limits in analytic stacks. Ah, okay, so you can syn of it as a limit over the stack, is a limit over the, well, this isn't a stack now. This is just, I'm just viewing this as, when you have those nice sings, you can construct.
+Okay, yes, so that's one way. So, there is indeed a canonical way to write this as an inverse limit of finite dimensional metrizable spaces, but let's not do it. Let's just work with this setup here. And is it true that you have inverse limits in analytic stacks? Yes, you have, you have all limits in analytic stacks. Ah, okay, so you can syn of it as a limit over the stack, is a limit over the, well, this isn't a stack now. I'm just viewing this as, when you have those nice things, you can construct.
 
-Okay, so it's not, no, but then you can take for the nice subing, you can take the stock Associated to m in those limit, you get something which is, yes, you get something. Then you get something, the only problem I have with that, it's not a real problem, but just is that if you started with something which happened to be already be finite dimensional and metrizable, then you'd be non-trivially writing it as an inverse limit of other finite dimensional metrizable things, and I mean, you know, so let me just not, let me just not get into it.
+Okay, so it's not, no, but then you can take for the nice subing, you can take the stock Associated to m in those limit, you get something which is, yes, you get something. Then you get something, the only problem I have with that, it's not a real problem, but just is that if you started with something which happened to be already be finite dimensional and metrizable, then you'd be non-trivially writing it as an inverse limit of other finite dimensional metrizable things, so let me just not get into it.
 
 % 18:32
 \textbf{Question:} When $R$ is Tate \note{not sure}, then we we also show that we can localize over the $\Spa$, and then there's a map from the $\Spa$ to the. I mean, that's right, that's right. 
@@ -200,14 +201,14 @@ I suppose that your definition does not understand, if you have two norms that a
 I want to postpone the discussion a bit.
 
 % 40:11
-Okay, so in particular, I mean, the classical settings in Berkovich geometry, you work over some fixed field which is often non-discrete, and you're working with Banach algebras over that field, and they will certainly satisfy this condition $\star$. But if you're working over a discrete ring, you won't have this condition $\star$. 
+So in particular, in the classical settings in Berkovich geometry, you work over some fixed field which is often non-discrete, and you're working with Banach algebras over that field, and they will certainly satisfy this condition $\star$. But if you're working over a discrete ring, you won't have this condition $\star$. 
 % 40:46
-Also, any Tate-Huber ring has a norm defining the topology, satisfying $\star$ with $\pi$ a pseudo-uniformizer. 
+% Also, any Tate-Huber ring has a norm defining the topology, satisfying $\star$ with $\pi$ a pseudo-uniformizer. 
 % 41:06
 So also some mixed characteristic examples exist.
 
 % 41:15
-Right, so, where am I? So then, claim: if $\star$ holds, then $\operatorname{Spec}_{\mathrm{Berkovich}} (R, \|\cdot\|)$ is affine and corresponds to an analytic ring structure on the condensed ring $R$. Moreover, this analytic ring structure only depends on the condensed ring $R$, not on the norm satisfying $\star$.
+Right, so, where am I? So then, claim: if $\star$ holds, then $\operatorname{Spec}_{\mathrm{Berkovich}} (R, \norm{\cdot})$ is affine and corresponds to an analytic ring structure on the condensed ring $R$. Moreover, this analytic ring structure only depends on the condensed ring $R$, not on the norm satisfying $\star$.
 
 I think you're right, yes. So similarly for a morphism, if it is only with a constant, you could still apply the same thing. I think you're right, $\mathcal{O}_{\mathcal{E}/\mathcal{S}}$, so this, because in some, I remember that in some text, I don't know if the book of Berkovich, in some place they consider such things, which is more, apparently more natural, because I don't know the why, but it's probably, you can't.
 
@@ -221,7 +222,7 @@ So, the proof... I'm going to explain how to produce this analytic ring structur
 
 Then we need to check, or we want to check, that $R$ is gaseous. Recall that this gaseous theory was a non-trivial analytic ring structure which was produced by taking, by realizing that the category as a full subcategory of over this ring, and then there's this completion procedure which changes the underlying ring to this gaseous thing, but the category of modules was just described at this level.
 
-And this is something very straightforward, because the definition of gaseous was that some map from $\P$ to $\P$, $\P$ being the universal null sequence, so to speak, namely $1 - t * q$, should be an isomorphism on maps to $R$. But when you map out to R from this null sequence space to your Banach space, um, you're just getting the space of null sequences in the Banach space, so that's equivalent to saying that if you look at the space of null sequences in R, and then you have some $1 - q * shift$, this should be an isomorphism of condensed,  of Banach alien groups, say, um. But this is, but it's easy to see what the inverse is supposed to be, and to write it down, you need to just, you need that if, sort of $F_n$ is a null sequence, then you can sum, $F_n \pi^n$ and still get an element in $R$, um, and, the condition on Pi and the usual triangle inequality stuff, lets you write this down. It's just the limit of the Cauchy sequence, um, so it's quite straightforward to check that R is gaseous, um, and then we can just take the induced analytic ring structure.
+And this is something very straightforward, because the definition of gaseous was that some map from $\P$ to $\P$, $\P$ being the universal null sequence, so to speak, namely $1 - t * q$, should be an isomorphism on maps to $R$. But when you map out to R from this null sequence space to your Banach space, um, you're just getting the space of null sequences in the Banach space, so that's equivalent to saying that if you look at the space of null sequences in R, and then you have some $1 - q * shift$, this should be an isomorphism of condensed, of Banach alien groups, say, um. But this is, but it's easy to see what the inverse is supposed to be, and to write it down, you need to just, you need that if, sort of $F_n$ is a null sequence, then you can sum, $F_n \pi^n$ and still get an element in $R$, um, and, the condition on Pi and the usual triangle inequality stuff, lets you write this down. It's just the limit of the Cauchy sequence, um, so it's quite straightforward to check that $R$ is gaseous, and then we can just take the induced analytic ring structure.
 
 So, what? Oh, I said I meant to, I keep saying liquid instead of gaseous, it is gaseous. Well anyway, this, take induced analytic ring structure, from $\Z_q \pm 1$ gaseous.
 
@@ -232,9 +233,9 @@ Then we can by functoriality of norms, but because norms pull back, we get a, ge
 The $q$, thank you. I'm sorry, yes, thank you.
 
 So we get a norm on $R$ with an induced analytic ring structure, and the claim, so this normed analytic ring,
-The Singleton value pi and it's easy to see just by tracing through the construction that this is universal with respect to that or with respect to those that structure. So what's the difference with the thing we're trying to compare to? It's that in instead of having a condition on just the norm of Pi, which we have here, we have a condition on the norm of every element. So we need that this condition on a norm is equivalent to the condition that Norm of f is contained in zero f for all F and R. So we need this equivalence.
+The singleton value pi and it's easy to see just by tracing through the construction that this is universal with respect to that or with respect to those that structure. So what's the difference with the thing we're trying to compare to? It's that in instead of having a condition on just the norm of $\pi$, which we have here, we have a condition on the norm of every element. So we need that this condition on a norm is equivalent to the condition that $\norm{f}$ is contained in zero f for all F and R. So we need this equivalence.
 
-One direction is quite easy. If you have this, then you apply it to Pi and to Pi inverse and you deduce that. The key is to see that just telling you what the norm of Pi is, then I know I've constrained the norm of every element in our offering. For that direction and because it's good to know, we will calculate the Universal norm.
+One direction is quite easy. If you have this, then you apply it to $\pi$ and to $\pi^-1$ inverse and you deduce that. The key is to see that just telling you what the norm of i is, then I know I've constrained the norm of every element in our offering. For that direction and because it's good to know, we will calculate the Universal norm.
 
 More precisely, what is a normed analytic ring structure? Recall that it amounts to specifying some item potent algebras over $P_1$. So we'll calculate the algebras. For all less than c, a norm in our Sense on an analytic ring is implicitly just telling you what the overon convergent functions are on a disc of arbitrary radius centered around the origin. My claim is it's going to be the usual thing from Berkovich theory, so this is equal to filtered co limit of let's say radius bigger than C of you take the, I'll explain what this is afterwards, but kind of you can make a universal Banach ring where the norm is less than or equal to $R$.
 % 59:459
@@ -290,7 +291,7 @@ once you once you do this, and for this, for that, we can use Serre duality on $
 Algebraic Serre duality implies that this map is smooth and proper.
 The dual on the other side, but we can do it with a trick more or less because, so this gives also, so this, this over con, this by the over convergence, you get that the the single dual of the end object, sorry, we can then we can write this, this is a pro object, we we can get this, we can view this overconvergent thing as an end object, and it's dual will be a pro object, and it will be the pro object given by this thing where you increase the radius as well. But then now we can view that Pro object as an inverse limit of the overconvergent things with the the non-strict inequalities over there, and then, and then use the duality result in this direction on each of those.
 
-There's some trick, trick with overconvergence. This implies that if you take the the dual of this, so if you view this as a pro object, because it's an inverse limit of the things where we have a greater than, then the Dual of that Pro object is the end object we're interested in. And that gives a, that gives an expression exactly like this, that this guy is a co-limit of du of P's. 
+There's some trick, trick with overconvergence. This implies that if you take the the dual of this, so if you view this as a pro object, because it's an inverse limit of the things where we have a greater than, then the Dual of that Pro object is the end object we're interested in. And that gives a, that gives an expression exactly like this, that this guy is a colimit of du of P's. 
 
 % 1:14:55
 We still need the trace class claim, but I claim that that also holds for soft reasons.
@@ -308,7 +309,7 @@ And then again by sandwiching different versions of the discs and changing the r
 % 1:18:21
 Okay, so what was a bit of a digression. So what were we doing? We were calculating the normed analytic ring structure, and the conclusion was that the norm on $\Spec R^{\gas}$ is given by usual overconvergent functions on discs over $R$. So then you need to, so to see what did, what were we trying to show? We were trying to show that for this norm here, this universal norm that we produced by fixing the norm of Pi, that automatically the norm of every other element is correctly bounded. So to show norm of f contained in zero f for all f, it suffices to show it translates into, 
 % 1:19:35
-oh no, now we have bad notation, it's not clear a priori that it is finite, sorry, you have to know even the fineness is not a statement, that's correct. So we have to show that if you take this and you mod out by T minus F, you just get $R$, this. This is elementary, and indeed this is elementary, so the map giving this is of course setting T equals to F, and it's quite Elementary to see that you get the correct short exact sequence of Banach spaces, so that the kernel of this map is.
+oh no, now we have bad notation, it's not clear a priori that it is finite, sorry, you have to know even the fineness is not a statement, that's correct. So we have to show that if you take this and you mod out by T minus F, you just get $R$, this. This is elementary, and indeed this is elementary, so the map giving this is of course setting T equals to F, and it's quite eElementary to see that you get the correct short exact sequence of Banach spaces, so that the kernel of this map is.
 
 \textbf{Question:} T minus. $f$ is of the. That mere existence of the $m$ is mere existence of the map. Enough. Oh, that's a really good point. 
 % 1:20:44
