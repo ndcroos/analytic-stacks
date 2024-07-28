@@ -9,33 +9,65 @@
 \begin{unfinished}{0:00}
 This lecture is about Berkovich spaces, which is a topic I began discussing last time.
 
-Let me remind you of the classical setup. You have a Banach ring $(R, \norm{\cdot}), which is a ring $R$ equipped with a norm $\norm{\cdot}$ that is submultiplicative and satisfies the triangle inequality. $\norm{1} = 1$, unless $R = 0$. And $R$ is complete.
+Let me remind you of the classical setup. You have a Banach ring $(R, \norm{\cdot})$, which is a ring $R$ equipped with a norm $\norm{\cdot}$ that is submultiplicative and satisfies the triangle inequality. $\norm{1} = 1$, unless $R = 0$. And $R$ is complete.
+
+\begin{itemize}
+\item $\norm{xy} \leqslant \norm{x} \norm{y}$ so it's sub-multiplicative
+\item triangle inequality, $\norm{x + y} \leqslant \norm{x} + \norm{y}$
+\item $\norm{1} = 1$ unless $R = 0$
+\item $R$ is complete w.r.t. $\norm{\cdot}: A \to \Rnonneg$
+\item $\norm{-x} = \norm{x}$
+\end{itemize}
 
 %todo insert earlier Banach ring latex def here.
 
 % 1:45
-To this $(R, \norm{\cdot}), Berkovich assigns a compact Hausdorff space, $\BerkSpec(R, \norm{\cdot}) \subseteq \prod_{f \in R} [ 0, \norm{f} ]$, which is a subset over the product over all elements in $R$ of the closed interval from [0, \norm{f}]. A point in this space is denoted as $x$, but what it really is, it is an evaluation map $\norm{\cdot}_{x}= R \to \Rnonneg$, which is now multiplicative ( $\norm{fg}_x  = \norm{f}_x \norm{g}_x) and satisfies the triangle inequality $\norm{f + g}_x \leq \norm{f} + \norm{g}$, with $\norm{1}_x = 1$.
+To this $(R, \norm{\cdot})$, Berkovich assigns a compact Hausdorff space, $\BerkSpec(R, \norm{\cdot}) \subseteq \prod_{f \in R} [ 0, \norm{f} ]$, which is a subset over the product over all elements in $R$ of the closed interval $[0, \norm{f}]$. A point in this space is denoted as $x$, but what it really is, it is an evaluation map $\norm{\cdot}_{x}= R \to \Rnonneg$, which is now multiplicative ( $\norm{fg}_x  = \norm{f}_x \norm{g}_x) and satisfies the triangle inequality $\norm{f + g}_x \leq \norm{f} + \norm{g}$, with $\norm{1}_x = 1$.
+
+% 2:43
+Now it is strictly multiplicative.
 
 \begin{remark}
-$R$ is not complete with respect to this $\norm{\cdot}_x$. In fact, there could be many elements of norm zero. However, if you complete $R$ with respect to any $\norm{\cdot}_x$, you get a complete valued field $\mathcal{K}(X)^{\text{hat}}$, which is sort of the residue field in the sense of Berkovich theory.
+% 2:49
+$R$ is not complete with respect to this $\norm{\cdot}_x$. In fact, there could be many elements of norm 0. However, if you complete $R$ with respect to any $\norm{\cdot}_x$, you get a complete valued field $\mathcal{K}(X)^{\text{hat}}$, which is sort of the residue field in the sense of Berkovich theory.
 % TODO: Latex notation of K residue field
 Recall that there are basically three cases:
 \begin{enumerate}
 \item archimedian $\iff$ $(\R, \norm{\cdot}^{\alpha})$ or $(\C, \norm{\cdot}^{\alpha)$, $\alpha \in [0, 1]$ by Ostrowski
 \item non-archimedian but discrete, then you have the trivial norm $\norm{\cdot}_0 = \text{trivial norm}$
-\item non-archimedian non-discrete, $\norm{\cdot}_{normalize}^{\alpha}$
+\item non-archimedian non-discrete, $\norm{\cdot}_{normalize}^{\alpha}, \alpha \in (0, \infty)$
 \end{enumerate}
 In the archimedian case, there is no real variety in complete normed fields, as it is either $\R$ or $\C$. In the non-archimedian discrete case,. In the non-archimedian non-discrete case, the value could come from a discrete valuation, and there is an ambiguity in the normalization.
 \end{remark}
 
 % Some text about the discussion seems to be missing here
+% 5:05
+\textbf{Question:} Of course, on non-discrete, there is ambiguity. It's not about discrete... \note{todo}
+
+\textbf{Answer:} Exactly, that was the parenthetical comment I was making. A non-discrete topology. Non-discrete exactness \note{todo}
+
+% 5:31
+\textbf{Question:} It is not what most people call non-archimedean. 
+
+\textbf{Answer:} The norm is non-archimedean, but the field is discrete. It is just a discrete field.
+
+% 5:45
+So these are the three kinds of cases of possible residue field behaviors.
+
+% 6:05
+\textbf{Question:} There is no normalization.
+
+\textbf{Answer:} No. You could choose a normalization, if you fix a pseudo-uniformizer and a real number, you can choose a normalization. 
+
+% 6:29
+So these are kinds of points.
 
 % 6:36
-\subsection{Promote to stack}
-Now, the goal is to promote $\BerkSpec(R,{\norm{\cdot}}$ to an analytic stack, using the stack of norms, $\mathcal{N}$. A map from an analytic stack $\mathcal{X}$ to $\mathcal{N}$ is the same as a certain map from $\P^1_{\mathcal{X}}$ to $[0, \infty)$, satisfying multiplicativity.
+\subsection{Promote $\BerkSpec(R, \norm{\cdot})$ to stack}
+Now, the goal is to promote $\BerkSpec(R, \norm{\cdot})$ to an analytic stack, using the stack of norms, $\mathcal{N}$. A map from an analytic stack $X \to \mathcal{N}$ is the same as a certain map from $\P^1_X  \xrightarrow{N} [0, +\infty]$, satisfying norm axioms, the most important one multiplicativity, which you have to phrase a bit carefully, but in the end, it's just multiplicativity.
 
 % 7:50
-Last time, we investigated the geometry of $\mathcal{N}$, and saw that it lies over $\ExtBerkSpec(\Z)$,the extended Berkovich spectrum of $\Z$. The usual triangle inequality is what made the difference, the reason you couldn't take an arbitary power $\alpha$ here. If you take an arbitrary power $\alpha$, that basically behaves like a norm, but it is really just a quasi-norm. So you have to put some constants in front of here.
+Last time, we investigated the geometry of $\mathcal{N}$, and saw that $\mathcal{N}$ lies over $\ExtBerkSpec(\Z)$, the extended Berkovich spectrum of $\Z$. The usual triangle inequality is what made the difference, the reason you couldn't take an arbitary power $\alpha$ here. If you take an arbitrary power $\alpha$, that basically behaves like a norm, but it is really just a quasi-norm. So you have to put some constants in front of here.
 
 \textbf{Question:} Plus, you have also the kind of the limit at, 
 % 8:42
