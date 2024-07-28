@@ -275,7 +275,7 @@ I'll give an example right now.
 % todo, correction in lecture
 So, have two formal variables, $p$ and $X$. Oh, sorry, I should say $\Z_p$. I don't need two variables. Thanks. So one formal variable and then invert it. 
 
-$ (\Z_p, \Z_p) \to (\Q_p, \Z_p)$
+$ (\Z_p, \Z_p) \to (\Q_p, \Z_p)$ \label{eq:z_p_to_q_p}
 
 What does this correspond to? 
 
@@ -301,51 +301,157 @@ It's a closed immersion, not open.
 
 \textbf{Question:} So, I think we treated the case of some covering given by a function like $f$, like the Laurent cover, the one where $f$ or $1-f$ is less than or equal to mean, this kind of basic cover. And for those, is it the case? 
 
+\label{r_is_tate}
 \textbf{Answer:} Yes, so then let me make another remark. However, if $R$ is Tate, then indeed, this doesn't arise. So in general, the problem is exactly these open covers in the Huber sense, which are given by algebraically inverting a function, without enforcing any inequalities. But in the setting of a Tate-Huber pair, then you know, if you want to invert something, it's, the subset where you invert something can always be written as a union of subsets obtained by forcing inequalities.
 
 % 26:55
 \textbf{Question:} So, it is not quasi-compact in general.
 \textbf{Answer:} Right. It is not going to be quasi-compact.
-\begin{unfinished}{27:05}
-But dealing with something which is in the sense of the ADC space is quasi-compact because it is a rational domain. I think in the, yes, but I mean, it is Rush, so it is quasi-compact in the, yes, in the. This also has to do with the fact that we didn't directly, I was sliding one little thing under the rug here, which is we didn't really directly define this as a map. We didn't really directly define it like this, remember we actually had this valuative spectrum of all of these guys, and we actually defined this map and then we used Huber's retraction here. So this was not quite accurate, because that would be accurate on the level of $\Spa$, but that's not exactly how we get it for $\mathrm{Spa}_a$. Instead, we, assume that the real $\mathrm{Spa}_a$. The idea is open, and then it's okay.
 
-So, the point is that the rational opens in the Tate case can always be described by forcing inequality among the valuations. Okay, let me try to finish what I was trying to say. I want to give an idea of what's going on, I don't want to get too precise about it, but it's this kind of phenomenon, where these guys correspond to this kind of thing, which does correspond to an
+\textbf{Question:} But dealing with something which is in the sense of the adic space is quasi-compact, because it is a rational domain. I think in the... 
 
-So, sheets on this $F$ is not there. In fact, you cannot algebraically invert $F$, but using the right-hand side. That's right.
+\textbf{Answer:} Yes, but...
 
-Okay, and also, there is another topology on the same space, with the same constructible subsets. Where the open pulls back to open.
+\textbf{Question:} I mean, it is rational, so it is quasi-compact in the...
 
-So, another fix, even outside the Tate case, is to choose a slightly different topology from the one Huber described, where both of these things are open. It's not the constructible topology, no. It's a topology which is incomparable to the Huber topology. For this subset here, $P \neq 0$, it will be closed from one perspective and open from the other perspective. It's open from Huber's perspective but will be closed from the perspective of this other topology.
+% 27:34
+\textbf{Answer:} Yes. This also has to do with the fact that we didn't directly... I was sliding one little thing under the rug here, which is we didn't really directly define this \note{refer to this} as a map. We didn't really directly define it like this. Remember we actually had this valuative spectrum of all of these guys, and we actually defined this map and then we used Huber's retraction here. So this was not quite accurate, because that would be accurate on the level of $\Spv$, but that's not exactly how we get it for $\Spa$. 
 
-It is a spectral space. To be open, you basically redeclare Zariski open subsets to be closed, which the Zariski open they are not.
+\textbf{Peter:} Instead, we just assume that the real $\mathrm{Spa}_a$. \note{todo}
 
-For example, inverting $P$ here, inverting $P$, is now closed in the new topology. We haven't discussed that element of synthetics so far, that's true. But let's leave that aside, I think there's already enough information being discussed.
+% 28:09
+\textbf{Question:} The idea is open, and then it's okay.
 
-Is it the opposite spectral space? No, it's not the opposite spectral space, because these ones are still the ones where you're enforcing inequalities like $f \leq 1$, that's still open in both cases. It is the opposite of one of the ones Huber describes in one of his papers.
+So, the point is that the rational opens in the Tate case (when $R$ is Tate \ref{r_is_tate}) can always be described by forcing inequalities among the valuations. Let me try to finish what I was trying to say. I want to give an idea of what's going on, I don't want to get too precise about it, but it's this kind of phenomenon, where these guys correspond to this kind of thing, which does correspond to an open immerson \todo{add what he is pointing add}. In general this is closed and in complete generality your subsets are going to be a mix of open and closed.
 
-Yes, we can make this more precise. I'm going to hesitantly say yes, it's obvious if you remember the definitions of everything. Maybe we need compact or not, because I mean, you want an input to correspond to it, but I'm not sure whether if it's not quasicompact, you have...
+% 29:15
+\textbf{Question:} So, sheaves on this $F$ is not there. In fact, you cannot algebraically invert $F$, but using the right-hand side. 
 
-So everything is defined by inequalities $f_i \leq g_n, g_n \neq 0$, and this one you replace by saying that is a closed condition for any $G$. Well, I mean, you have a rational open, so the conditions are satisfied, like the ideal generated by all of them is open. So, you can't invert $G$ if that doesn't correspond to a rational open in Huber's sense, but in situations where you can, it corresponds to a closed conclusion.
+\textbf{Answer:} That's right.
 
-One last remark about this general setup: if $S_i$ is some inverse system of compact Hausdorff spaces, then giving compatible maps from $\operatorname{Lal} X$ to $S_i$ for all $i$ is equivalent to giving a map from $\operatorname{Lal} X$ to the inverse limit. And it's the same for $\operatorname{Lo}_p$. If all of those ones factor through $\operatorname{Lo}_p$, then this one will also factor through $\operatorname{Lo}_p$.
+Also, $\exists$ another topology on the same space $\Spa(R, R^{+})$, with the same constructible subsets, where the open pulls back to open.
 
-Every compact Hausdorff space is a limit of metrizable finite-dimensional spaces, potentially in many different ways, but in many situations, there's a natural way of doing it. We'll see this in the setting of adic spaces, and then this gives you a way of going from the case of metrizable finite-dimensional compact Hausdorff spaces where you can sometimes go from this perspective and you can go to this perspective.
-You're closed, you know, the situation kind of passes to inverse limits in a nice way, but now you no longer have to worry about things being metrizable or finite-dimensional. Okay, that was my little, is a map to s the same thing as a map from loal? No, because you have this connectivity condition, so it's the you still have to impose this locally that locally all the item poent algebras are connective. I mean, as far as I, it's not like I produced a counter example, but I kind of believe that it's not the same.
+So, another fix, even outside the Tate case, is to choose a slightly different topology from the one Huber described, where both of these things are open \note{todo, not what he points at}. 
 
-Okay, so I'm always confused, is there really a t-structure def over D of that object? And no, no, there's no t-structure. So what I didn't, I don't have to say what I mean by connective. I have to say what I mean by connective locally, and what I mean by connective locally is that there exists a cover by apine things such that it's your object when you pull back to each of those apine things is connective. Now, once you're in the apine world, connectivity is a pullback of something connective, is you have a t-structure and the pullback of something connective is connective, so it's kind of. And also, if the pullback is connective, then it's connective or not, no, that that is not necessarily true, okay, okay.
+\textbf{Question:} It's not the constructible topology?
 
-Okay, so it's not like, so it's not a sufficient condition for having a. So this is like the for schemes that you have the the non-aine orens, but still, if you use as the flat or pqc, still if it's up upstairs, it's up downstairs, so that's. But in your topology, of course, you have much more stuff, yes. So you can have these wheel-we things where, you have a map which is affine locally, but with an with a map with affine Target which is affine locally, but not globally, and that's kind of unavoidable when you're doing analytic geometry.
+\textbf{Answer:} It's not the constructible topology, no. 
 
+% 30:25
+\textbf{Question:} Is it a topology which is less...
+
+\textbf{Answer:} It is incomparable to the Huber topology. For this subset here \note{add where he points at}, $p \neq 0$, it will be closed from one perspective and open from the other perspective. It's open from Huber's perspective, but will be closed from the perspective of this other topology.
+
+\textbf{Question:} Is it a spectral space?
+
+\textbf{Answer:} Yes.
+
+% 30:58
+\textbf{Peter:} \note{can't hear this} Zariski closed sets should be open now, instead of closed.
+
+Peter is saying, basically, you redeclare Zariski open subsets to be closed, 
+
+\textbf{Question:} Which  Zariski open... They are not open.
+
+
+\textbf{Answer:} For example, inverting $p$ here \ref{eq:z_p_to_q_p}. 
+
+\textbf{Question:} Inverting $p$, is now closed in the new topology. 
+
+\textbf{Answer:} Yes.
+
+\textbf{Peter:} We haven't discussed so far that every algebraic inverted element ... \note{can't hear this} 
+% 31:49
+\textbf{Answer:} That's true, we haven't talked about that. But let's leave that aside, I think there's already enough information being discussed.
+
+\textbf{Question:} Is it the opposite spectral space? \note{can't hear this}
+
+\textbf{Answer:} No, it's not the opposite spectral space, because these \note{add what is being pointed at}ones are still the ones where you're enforcing inequalities like $f \leq 1$, that's still open in both cases. 
+
+% 32:17
+\textbf{Question:} It is the opposite of something Huber describes in one of his papers? He defines a lot of topology and one of them...
+
+\textbf{Answer:} It is opposite of one of the ones Huber describes in one of his papers, yes. 
+
+% 32:29
+\textbf{Question:} we can make this more precise when ... closed \note{can't hear this}
+
+\textbf{Answer:} I'm going to hesitantly say yes, it's obvious if you remember the definitions of everything. 
+
+\textbf{Question:} Maybe we need \note{can't hear this} compactness or not, because you want an idempotent \note{can't hear this} to correspond to it, but I'm not sure whether if it's not quasicompact, you have...
+
+% 33:01
+\textbf{Answer:} Let me say quasicompact. It's something we've actually discussed before in the course. I drew some pictures trying to explain why it makes sense that Zariski opens should be closed. I don't know.
+
+\textbf{Question:} All rational subsets are defined by inequalities. $f_i \leq g_n, g_n \neq 0$, 
+
+\textbf{Answer:} Yes.
+
+\textbf{Question:} And this one you replace by...
+
+\textbf{Answer:} We say that is a closed condition. 
+
+% 33:41
+\textbf{Question:} For any $g$? Let's say you have a rational open, so the conditions are satisfied, like the ideal generated by all of them \todo{add what is being pointed at} is open. So, you can't invert $g$ if that doesn't correspond to a rational open in Huber's sense, but in situations where you can, it corresponds to a closed inclusion.
+
+% 34:09
+We actually discussed this topology in the notes on condensed mathematics and complex geometry \citem{todo https://people.mpim-bonn.mpg.de/scholze/Complex.pdf}. I think it was in the chapter called GAGA redux, we discussed this modification of Huber's topology. Apparently, it's also in one of Huber's papers, just passing to the opposite.
+
+% 34:49
+\begin{remark}
+One last remark about this general setup: 
+
+If $S_i$ is some inverse system of compact Hausdorff spaces, then giving compatible maps from $\Loc(X) \to S_i \forall i$ is equivalent to giving a map from $\Loc(X) \to \varprojlim S_i$. 
+% 35:35
+The only claim I'm making is that inverse limits in topological spaces are the same as in locales in this specific situation, which is something you can quite easily see. 
+% 35:48
+Also, it's the same for $\Loc^{\op}(X)$. \note{todo, add commuting diagram} If all of those ones factor through $\Loc^{\op}$, then this one will also factor through $\Loc^{\op}$.
+
+% 36:19
+There is a remark that every compact Hausdorff space is a limit of metrizable finite-dimensional spaces, (potentially in many different ways, but in many situations, there's a natural way of doing it). We'll see this in the setting of Berkovich spaces. Then this gives you a way of going from the case of metrizable finite-dimensional compact Hausdorff spaces where you can sometimes go from this perspective \note{add what is being pointed at} and you can go to this perspective, and then you're closed, the situation passes to inverse limits in a nice way, but now you no longer have to worry about things being metrizable or finite-dimensional.
+\end{remark}
+
+% 37:19
+\textbf{Peter:} \note{todo}
+
+is a map to s the same thing as a map from loal? 
+
+% 37:32
+\textbf{Answer:} No, because you have this connectivity condition. You still have to impose this locally, that locally all the itempotent algebras are connective. It's not like I produced a counter example, but I kind of believe that it's not the same.
+
+% 38:18
+\textbf{Question:} I'm always confused, is there really a t-structure def over D of that object? 
+
+\textbf{Answer:} No, there's no t-structure. I don't have to say what I mean by connective. I have to say what I mean by connective locally. What I mean by connective locally, is that there exists a cover by affine things such that it's your object, when you pull back to each of those affine things is connective. Now, once you're in the affine world, connectivity is a pullback of something connective, you have a t-structure and the pullback of something connective is connective, so it's kind of. 
+
+% 38:53
+\textbf{Question:} And also, if the pullback is connective, then it's connective or not? 
+
+\textbf{Answer:} No, that is not necessarily true.
+
+\textbf{Question:} So it's not a sufficient condition for having a map. 
+
+\textbf{Question:} So this is like for schemes, that you have the the non-affine opens, but still, if you use as the flat or pqc, still if it's affine up, it's affine down \note{not sure of this}, so that's... But in your topology, of course, you have much more stuff, 
+
+\textbf{Answer:} Yes. So you can have these weird things where you have a map which is affine locally, but with a map with affine target which is affine locally, but not globally. That's kind of unavoidable when you're doing analytic geometry.
+
+\begin{unfinished}{40:05}
 % 40:05
 \subsection{Preliminary definitions} \label{subsec:preliminary_definitions}
 \subsubsection{Banach rings} \label{subsubsec:banach_rings}
-So Berkovich spaces. Let me start with a reminder on the definition, so we know where we're going. $A, \norm{\cdot})$ is a Banach ring. That means that $A$ is a commutative ring, and this norm map $||: A \to \Rnonneg$ from $A$ to the non-negative real numbers ,satisfies, 
+So Berkovich spaces. Let me start with a reminder on the definition, so we know where we're going. $A, \norm{\cdot})$ is a Banach ring. That means that $A$ is a commutative ring, and this norm map $\norm{\cdot}: A \to \Rnonneg$ satisfies:
 
-$\norm{0} = 0$, 
-triangle inequality, $\norm{x + y} \leqslant \norm{x} + \norm{y}$ , 
-and third of all, it's sub-multiplicative.
-$\norm{xy} \leqslant \norm{x} \norm{y}$
-So, probably have to put the norm of -1 is equal to the norm of one, which is e z, I should probably put that, so either a equal Z or Norm of 1 equal 1 and Norm of us one, also do you need that? It does not follow I'm not sure how much it follows, but it, it's usually they want the triangle inequality Al with x + y, okay. I think you can, you can get it, you can give a crazy thing like the negative multiply by two, you can do something that still satisfy the a without, but of course, it would be equivalent something satisfying the a, this is probably not how to show, okay.
+\begin{enumerate}
+\item $\norm{0} = 0$
+\item triangle inequality, $\norm{x + y} \leqslant \norm{x} + \norm{y}$
+\item $\norm{xy} \leqslant \norm{x} \norm{y}$ so it's sub-multiplicative
+\item either $A = 0$ or $\norm{1} = \norm{-1} = 1$
+\end{enumerate}
+
+% 41:01
+\textbf{Question:} So, probably have to put the norm of -1 is equal to the norm of one, which is either zero...
+
+ I should probably put that, so either a equal Z or Norm of 1 equal 1 and Norm of us one, also do you need that? It does not follow I'm not sure how much it follows, but it, it's usually they want the triangle inequality Al with $x + y$, okay. I think you can, you can get it, you can give a crazy thing like the negative multiply by two, you can do something that still satisfy the a without, but of course, it would be equivalent something satisfying the a, this is probably not how to show, okay.
 
 Then $A$ is complete, with respect to the metric $d(x,y) = \norm{x-y}$. 
 
@@ -353,7 +459,7 @@ Then $A$ is complete, with respect to the metric $d(x,y) = \norm{x-y}$.
 So an example, there's, so example for, say, $S$ is a compact hausdorff space, you could take for $A$ to be, say, complex-valued continuous functions,
 $A = \Cont(S; \C)$
 
- and take the norm to be the sup norm, where you have the usual absolute value, and this, maybe this is kind of right. 
+and take the norm to be the sup norm, where you have the usual absolute value, and this, maybe this is kind of right. 
 $\norm{f} = \sup_{s \in S} \norm{f(s)}$
 
 \note{todo, last bit of eq I can't see}
