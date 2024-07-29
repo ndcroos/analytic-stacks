@@ -459,17 +459,49 @@ Then $A$ is complete, with respect to the metric $d(x,y) = \norm{x-y}$.
 So an example, there's, so example for, say, $S$ is a compact hausdorff space, you could take for $A$ to be, say, complex-valued continuous functions,
 $A = \Cont(S; \C)$
 
-and take the norm to be the sup norm, where you have the usual absolute value, and this, maybe this is kind of right. 
+and take the norm to be the $\sup$-norm, where you have the usual absolute value. 
+% 42:58
+and this, maybe this is kind of right. 
 $\norm{f} = \sup_{s \in S} \norm{f(s)}$
 
 \note{todo, last bit of eq I can't see}
 \end{example}
  
 \begin{example}[\yt{43m04s}{Tate-Huber ring}] 
- Another example would be if $R$ is a Tate-Huber ring, and if you choose a pseudo uniformizer, topologically nilpotent unit, then you can define a norm, Peter actually wrote down the
+ Another example would be if $R$ is a complete Tate-Huber ring. % with correction from 44:50
+ 
+If you choose a pseudo-uniformizer $\pi \in R$, topologically nilpotent unit, then you can define a norm $\norm{f}$. (Peter actually wrote down the formula before.) Basically, it is like the $p$-adic topology.
+You can define a norm on $R$: $\norm{\cdot}: R \to \nonneg$ with $\norm{\pi} = \frac{1}{2}$ or $0$, %correction from 45:09
+and it satisfies also that always $\norm{\pi f} = \norm{\pi}\norm{f}$ 
+You can define a norm on $R$: $\norm{\cdot}: R \to \nonneg$ with $\norm{\pi} = \frac{1}{2}, and it satisfies also that always $\norm{\pi f} = \norm{\pi}\norm{f}$ 
+ 
+ % todo, correction 44:07
+ $\norm{R_0} \leq 1$
 \end{example}
 
-Yes, this is multiplicative. It's not multiplicative in general.
+% 43:59
+\textbf{Question:} And you need a ring of definition for the norm. 
+
+\textbf{Answer:} Yes.
+
+\textbf{Question:} You have some ring of definition where you declare the norm to be less or equal to one.
+
+%\textbf{Question:} You can take $1 + p$.
+
+% 44:29
+\textbf{Question:} Also, there was this 
+
+% 44:38
+\textbf{Answer:} I meant $\Q_p$. $\Z_p$ is not a Tate-Huber ring. In $\Q_p$ bar \note{todo} you can also take $p$ actually. 
+
+%\textbf{Question:} So first of all, you must have complete, because you assume it's complete. 
+%\textbf{Answer:} Yes, thank you.
+
+\textbf{Question:} 
+
+% 45:16
+\textbf{Answer:} $\norm{\pi f}$ is multiplicative when one of the guys is $\pi$. It's not multiplicative in general.
+
 
 \begin{align*}
 (A, \norm{\cdot}) \leadsto \BerkSpec(A, \norm{\cdot}) = \{ \norm_{x} = A \to R todo \} \\
@@ -488,7 +520,7 @@ A = \Cont(S, \C) \\
 \end{align*}
 Well, for example, in and you can take. If you require that the norm restricts to the usual Norm on the complex numbers, then these are all the examples. So that's Gelfand's theorem. So, those are the only examples in this situation. And multiplicative includes the zero element, that is $\norm{1} = 1$, yes.
 
-Except, but this is maybe zero multiplication of zero numbers, we don't want that. So, we want these to be like points, so we want them to be non-empty. So, we want one to be different from zero.
+Except, but this is maybe zero multiplication of zero numbers, we don't want that. So, we want these to be like points, so we want them to be non-empty. So, we want 1 to be different from 0.
 
 But, do you allow $\Z_R$? No, well, wait, I allow, okay, I allow $\mathbb{A}$ is the zero ring, when this will be the empty set.
 % todo, move this end example
