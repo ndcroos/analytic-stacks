@@ -1,570 +1,974 @@
 % !TeX root = ../AnalyticStacks.tex
 
-\section{\ufs Berkovich spaces (Clausen)}
+\section{Stacks (Clausen)}
 
-\url{https://www.youtube.com/watch?v=fnEPiDIF9_k&list=PLx5f8IelFRgGmu6gmL-Kf_Rl_6Mm7juZO}
-\renewcommand{\yt}[2]{\href{https://www.youtube.com/watch?v=fnEPiDIF9_k&list=PLx5f8IelFRgGmu6gmL-Kf_Rl_6Mm7juZO&t=#1}{#2}}
+\url{https://www.youtube.com/watch?v=EEH_0QhrgEg&list=PLx5f8IelFRgGmu6gmL-Kf_Rl_6Mm7juZO}
+\renewcommand{\yt}[2]{\href{https://www.youtube.com/watch?v=EEH_0QhrgEg&list=PLx5f8IelFRgGmu6gmL-Kf_Rl_6Mm7juZO&t=#1}{#2}}
 \vspace{1em}
 
-At the very beginning, in the first lecture, I gave an introduction to what we wanted to have out of this theory of analytic stacks.
+The topic of today's lecture will be stacks.
 
-% 0:43
-In particular, I was putting some emphasis on the fact that we want to know that traditional frameworks for analytic geometry can fit into this perspective of analytic stacks.
-% 0:53
-We have already discussed adic spaces and a little bit of geometry over this, like Tate curves. 
+So far, we've discussed the theory and examples of ``analytic rings''. Next, we will explain how to use these to build geometric objects, the ``analytic stacks''. We already saw a clue of what phenomena we want to include in this world of analytic stacks in the previous lecture, namely the Tate curve over the gaseous base ring.
 
-\textbf{Question:} With adic spaces, there was this issue of shifting and then the idea was that you have to define some kind of derived adic spaces. This will not explain in full what is Huber \note{something I didn't hear, derived ... spaces}. This will not fully explain what is derived Huber \note{I could not hear this part} set up and in your formul. 
-% 1:23
-Maybe there are different ways to do it. I'm not sure.
+Today we won't give the precise definition of analytic stack, but will provide motivation from algebraic geometry. The paradigm here is you have commutative rings, and you want to think of these as describing some sort of basic geometric objects which are called affine schemes.
+\begin{align*}
+  \text{commutative rings} &\leadsto \text{affine schemes}\\
+  R &\mapsto \Spec R
+\end{align*}
+These two categories are anti-equivalent. Then you want to allow yourself to glue these affine schemes together to make more general geometric objects. 
 
-\textbf{Answer:} It's possible there are different ways to do it. 
+There are two aspects to this gluing:
+\begin{enumerate}
+  \item What gluings are allowed?
+  \item How to identify the results of different gluings? More generally, what are the maps/what is the category we get from these formal gluings of affine schemes?
+\end{enumerate}
 
-\textbf{Question:} This is already in progress?
+A classic example is the projective line
+\[ \P^1 = \A^1_+ \cup_{\G_m} \A^1_- \]
+where we glue together a ``plus'' version of $\A^1$ and a ``minus'' version of $\A^1$ along the multiplicative group $\G_m$. But we want this object to have symmetries like $\PGL_2$, which don't respect this decomposition. So there has to be something said about what are the maps between different gluings.
 
-\textbf{Answer:} Let's say that. 
+It's better to think of (2) first: specify an ambient category containing the category of affine schemes, and then single out a full subcategory by specifying allowable gluings of affine schemes in the larger category. This is one way to describe a class of geometric objects in algebraic geometry.
+\[\xymatrix@R=2em@C=1em{
+\text{category} \ar@{}[rr]|-{\supseteq} \ar@{}[dr]|-{\rotatebox{-45}{$\supseteq$}} && \text{affine schemes = $\text{CRing}^\op$}\\
+& \text{single out $\{*\}$} \ar@{}[ur]|-{\rotatebox{45}{$\supseteq$}}
+}\]
 
-% 1:32 Peter
+In the classical approach to schemes, you take the ambient category to be locally ringed spaces, so a commutative ring gives you $\Spec R$, and then a scheme is a locally ringed space which is locally isomorphic to some $\Spec R$. So the allowable gluings between affine opens are gluings along open subsets, in terms of viewing $\Spec R$ as a locally ringed space.
 
-It's in Juan Estaban's paper on the analytic de Rham stack Camargo \cite{AnalyticRhamStackRigid} \note{Not sure if I should cite with the name Camargo or Estaban}. So, there you go. 
+There's a more modern approach which says we shouldn't try to be clever about choosing an ambient category---we don't have to find the concept of a locally ringed space. We can just formally build an ambient category based on the category of commutative rings, and then work there. The category where you're allowed to glue arbitrary affine schemes is called the \textbf{category of presheaves} on affine schemes, $\Psh(\Aff)$. This is the universal category in which you can glue; more formally, it's the initial category-with-all-colimits with a functor from $\Aff$, and giving a colimit-preserving functor out of $\Psh(\Aff)$ is the same as giving a functor out of $\Aff$. There's a set-theoretic technicality here, so caution is needed; we'll discuss that later. The category $\Aff$ is not a small category, so one has to be careful when taking functor categories out of it.
 
-% 1:55
-What I want to start moving towards today, is the relation with Berkovich spaces.
+Now you've formally allowed yourself to glue, but you haven't explained how you should identify the results of two different gluings. If you pass to sheaves for some Grothendieck topology, that explains how to identify gluings; more generally, how to map between two of these formal gluings. The more covers you put in your Grothendieck topology, the more maps you're going to be making, which might not be so evident from the perspective of the cover. For example, the automorphisms $\PGL_2$ of $\P^1$ may not be apparent. But you don't want to add too many elements to your cover, or else you might destroy information by identifying too many things; so there's a delicate choice to be made in the Grothendieck topology.
 
-% 2:10
-But before discussing that, I want to do a little bit of setup. First, I want to talk about \emph{different notions of how to localize an analytic stack over a topological space}. 
-
-\subsection{Localizing an analytic stack over a topological space}
-% 2:40
-We have already seen one way. 
-
-If we have an analytic stack, and if we have an $S$, which is a metrizable, finite dimensional, compact Hausdorff space, or it could be a locally compact Hausdorff space, which is locally one of these, then we've seen that this can also be viewed as an analytic stack. Then we could ask for a map $f: X \to S$ in the category of $\AnStack$. 
-% 3:25
-We discussed what structure you get on $X$. Basically, you get a bunch of idempotent algebras in $D(X)$, corresponding to the closed subsets of $S$. You can also think in terms of the complementary opens as well, and you get some idempotent coalgebras which would be like the $D_{!}$ \note{Not sure if D or J} of the constant sheaf on the open subset, as opposed to the $I_{*}$ of the constant sheaves, giving you these idempotent algebras. But, in any case, you get a whole bunch of algebra objects in here $D(x)$, which let you localize this category over the topological space $S$.
-% 4:05
-But when discussing the relation with Berkovich spaces, it's going to be too annoying to require these kinds of conditions (metrizable, finite dimensional, compact Hausdorff), even though they're satisfied in practice. So, I want to discuss some slightly more general notion of how to localize an analytic stack along a topological space and the relation with this one in the case where you do have a metrizable, finite dimensional, compact Hausdorff space.
-
-
-
-So what is another thing I can do? If you have an analytic stack $X \in \AnStack$.
-To $X$ we can assign a locale. We call it $\Loc(X)$, which is given by the monomorphisms in analytic stacks.
-
+For example, you could take the Zariski topology, and then schemes is a full subcategory of Zariski sheaves on affine schemes such that they're locally representable, in the sense of open covers.
 \[
-\begin{tikzpicture}[baseline=(current bounding box.center)]
-    \node (A) at (0,0) {$X \to \Loc, \quad \Loc(X) = \{ Y \subseteq X \}$};
-    \draw[->] (1.7,-0.3) -- (1.7,-1.0);
-    \node[below] at (1.7,-1.0) {monomorphisms in $\AnStack$};
-\end{tikzpicture}
+  \text{schemes} \subseteq \Sh^\Zar(\Aff)
 \]
+You can define the notion of an open inclusion in $\Sh^\Zar(\Aff)$ just by reduction to the case of $\Aff$: a map $X\to Y$ in $\Sh^\Zar(\Aff)$ is an open inclusion if for every $\Spec A\to Y$, the pullback
+\[\xymatrix{
+  \Spec B \ar[r] \ar[d] \pullback & X\ar[d]\\
+  \Spec A \ar[r] & Y
+}\]
+is an open inclusion $\Spec B\to \Spec A$ in $\Aff$ (this includes the condition that the pullback is in $\Aff$).
 
+This is the perspective we're going to take on defining analytic stacks from analytic rings. However, we don't want to take schemes as a model, because more general geometric objects come up and are relevant, namely \emph{stacks}.
 
-% 5:03
-So this is a general thing you can do whenever you have a topos, or an $\infty$-topos.
-It always has an underlying locale, where you only look at the monomorphisms. And if you look at the topos axioms, then you can see that unions...
+\subsection{Why stacks?}
+% \subsection{\yt{12m13s}{Why stacks?}}
+Often moduli spaces in algebraic geometry have the form $X/G$, where $X$ is a variety and $G$ is a group variety or scheme acting on $X$. So we have a quotient of some variety by some group of automorphisms.
 
-\textbf{Question:} Here that possible infinite unions and intersections exist? \note{I did not hear this well}
+\begin{example}[\yt{12m48s}{Moduli of elliptic curves}]
+  Consider the moduli stack of elliptic curves $\M_{\text{ell},\Z[\frac16]}$, where we invert $6$ to simplify the discussion. Then this is $X/G$ with
+  \begin{align*}
+    X &= \Spec\Z\left[\tfrac16\right][A,B][\Delta^{-1}]\\
+    G &= \G_m
+  \end{align*}
+  where $\Delta$ is the discriminant.
 
-% 5:32
-\textbf{Answer:} Yes. But, I should say that potentially there are some set theoretical difficultie,s so that potentially $Loc(X)$ is not a set. I did not investigate it seriously. But in a few seconds, you will see that it doesn't matter, when I get to the definition.
+  This parameterizes elliptic curves with affine equation in Weierstrass form
+  \[ y^2 = x^3 + Ax + B. \]
+  It then turns out that the only isomorphisms between two elliptic curves given by the above equation are given by scalar multiplication with certain weights on the $x$ and $y$ variables, and that gives the $\G_m$ action.
 
-\textbf{Question:} Do you mean, when you get larger and larger sizes, you could have more and more subobjects.
+  There's also many other ways of presenting the same stack. For example, you can add level structure and then mod out by a finite group,
+  \[
+    \M_{\text{ell},N} / \GL_2(\Z/N)
+  \]
+  If $N$ is sufficiently large, $\M_{\text{ell},N}$ will be represented by a variety, and then you quotient out by the finite group $\GL_2(\Z/N)$. The Grothendieck topology that we choose should be such that this is identified with $\M_{\text{ell}}$ our category, so we should at least allow \'etale covers into the story for this, and that is indeed the classic choice.
 
-% 5:48
-\textbf{Answer:} In principle. I didn't spend much time to prove that it is a set, because ...
+  These quotients exist in the category of schemes, and they give $\A^1_{\Z[\frac16]}$, the so-called ``$j$-line'', implemented by the $j$ function. However, this is not a good quotient. One way of measuring that is: on the moduli stack of elliptic curves, there's a natural line bundle $\omega$,
+  \[ \omega = \Lie(E)^*, \]
+  which is the dual of the one-dimensional vector space of tangent vectors at the origin. In other words, it's the cotangent space of the universal elliptic curve.
 
-
-\textbf{Question:} About the locale axiom, you said there is a way to produce finite binary intersection and unions, but you also have to produce infinite, I mean...
-
-% 6:12
-\textbf{Answer:} This category $\AnStack$ has all limits and colimits. We don't have to do anything special here to make this definition work.
-
-% 6:20
-\textbf{Question:} Why is the colimit a submonomorphism? Ah, you take the colimit and then you quotient by the... \note{I did not hear this well}
-
-\textbf{Answer:} That is a general $\infty$-topos thing, for example you could take the Cech-nerve of the map and take the colimit.
-
-
-\textbf{Question:} And this is in what kind of $\infty$-topos, the analytic stack?
-
-% 6:49
-\textbf{Answer:} Yes. Modulo set theoretic technicalities. So it satisfies all the same exactness as an $\infty$-topos, but it is not presentable, so...
-
-% 7:00
-\textbf{Question:}  OK, so it could be some...
-
-% 7:10
-\textbf{Answer:} So maybe $\{ Y \subseteq X \}$ is not a set, I don't care, and you'll see when I make the definition.
-
-% 7:12
-When I make the definition that I'm interested in, it doesn't matter whether it's a set or not. 
-
-\textbf{Question:} The monomorphism, if I only consider \note{I did not hear this} that's like taking connecting component. 
-
-\textbf{Answer:} Exactly, so it means that if you do the fiber product of  $\{ Y \subseteq X \}$, then the diagonal, I mean the diagonal map associated to this inclusion is an isomorphism.
-
-
-\subsubsection{Ask for map of locales}
-% 7:40
-A topological space also gives rise to a locale. But let me actually change perspectives and just say "$S$ is a locale", instead of saying "$S$ is a topological space". 
-% 7:52
-Then we can ask for a map of locales, $Loc(X) \to S$. Whether or not $\{ Y \subseteq X \} $ is a set, this is some data that makes honest mathematical sense. A locale is by definition the collection of open subsets, which is a set. You are saying that for every open subset, you have to give such a monomorphism, and  unions have to go to unions and finite intersections have to go to finite intersections.
-
-
-% 8:26
-\textbf{Question:} In the literature about locales, I don't remember, I don't use it much, but this is like the direction of map of topoi \citeme{}, but I don't know when they define M of locales \note{I did not hear this}, is it in the other direction or in this? 
-
-\textbf{Answer:} I don't know either. So I'm doing the geometric morphism of locales. 
-
-\textbf{Question:} Well, morphism of sites...
-
-\textbf{Answer:} Morphism of sites goes the other direction. I'm talking about a geometric morphism. 
-
-\textbf{Question:} But also a morphism of sites \note{I did not hear this} also goes in the other direction.
-
-\textbf{Answer:} Maybe, I forgot.
-
-\textbf{Question:} For locales it is not used much by algebraic geometers.
-
-% Back to lecture
-% 9:26
-\subsubsection{Ask for a stronger property}
-But we can also ask for a stronger property, so that each inclusion of open subsets, say $ U \subset V \subset S$, maps to, so it's supposed to give some monomorphisms, so maybe I should give some name for this, like $f$ or $Pi$, maybe, so $Loc(X) \xrightarrow{\pi} S$. So this: $
-
-U \subset V \subset S \mapsto \pi^{-1} U \subset \pi^{-1} V \subset X
-
-$. 
-
-% 10:17
-We could ask that these inclusion $\subset$ maps are actually open immersions, from the perspective of the six functor formalism that Peter discussed last time. That is, the extended six functor formalism on analytic stacks. So we could ask that each of these inclusions be shriekable, and that they be well cohomologically smooth.
-
-But in the case of a monomorphism, then it's quite easy to see that the dualizing object is canonically the unit, and it's the same thing as an open immersion. 
-% 10:56
-A general monomorphism could look like anything really. It could look closed, it could look open, it could look like some mix. But it's reasonable to ask for this stronger property, that what looks like an open immersion on the level of the topological space also looks like an open immersion from the perspective of the six functor formalism.
-
-% 11:24
-\subsubsection{Metrizable, fin. dimensional CHausdorff case}
-In the case where $X$ is a metrizable, finite dimensional, compact Hausdorff space, we can ask for, as before, a map $X \to S$ in $\AnStack$.
-
-\begin{unfinished}{12:00}
-% 12:00
-\textbf{Question:} This is just a clarification. When you say $S$ is a locale, what is the definition of a locale? What does it mean for $U$ to $V$ an open set \note{I did not hear this}?
-\textbf{Answer:} I'm using a bit of loose terminology here. But the definition of a locale is that it is a certain poset. That axioms that you impose on this poset are the axioms that are satisfied by the poset of open subsets of a given topolocal space.
-% 12:30
-But by abuse of notation, I'm using this symbol $U \subseteq S$ to mean that $U$ is an element of the poset which $S$ is secretly. But it is because I am thinking of it as a topological ... \note{I didn't hear the last word}
-
-
-\textbf{Question:} Equivalently \note{todo}
-
-% 12:53
-There is another perspective, it goes like this. You take the definition of a topos but instead of sheaves of sets you look at sheaves of truth values. I don't know if this is helpful or not.
-
-%13:08
-An usual topos would be a $1$-topos. Then a locale maybe would be a $0$-topos or something like that, I don't know.
-
-%13:25
-If you have this kind of structure, then you get \note{todo}
-Note also that if you fix $X$ in $S$ ($Loc(X) \to S$ \note{$\pi$ above arrow}, \note{todo} they are all just sets. They are not anima or whatever, because here we just asking for a map of locales. It is just a map of posets in the other direction. 
-
-\textbf{Question:} Not that when you say set, it also means in this sense of the set theoretical size difficulties.
-
-% 13:56
-\textbf{Answer:} That's true. So, up to size difficulties. I mean, there are no automorphisms of any fixed on of these $$Loc(X) \to S$. There are no non-trivial automorphisms. That is a good point. 
-% 14:11
-So this is tautological. Why does this imply this \note{add what is being pointed at}? Basically, you can just check on the level of the analytic stack associated to such a guy that every open inclusion, actually is an open inclusion from the perspective of the six functor formalism. Peter more or less discussed this last time, that our six functor formalism on analytic stacks, when we restricted to this case, recovers the usual six functor formalism on locally compact Hausdorff spaces. And then this property of being an open immersion is stable under base change
-
-% 14:54
-\textbf{Question:} So can you say so you know that open immersion holds for, ah, it is stable under, of analytic stacks or \note{I did not hear this}
-
-\textbf{Answer:} It's stable under pullback.
-
-% 15:16
-This is the strongest condition. If you have this, you can ask whether this holds \note{add what is being pointed at}. You check whether certain inclusions or open immersions, if you have this, you can ask whether this holds. As we discussed the last couple of times, that corresponds to some connectivity condition on the idempotent algebra, as you see. 
-
-
-% 15:36 Example is started, but there is a question. The example is restarted at 17m10
-The second one is given off by, lo, is one of open, opener, that's true. You could think of this in terms of there's, lo, local X, and then there's some quotient local which is like the local of monomorphisms that are open versions with respect to the six functor formalism, and then the second bit of data is a map like this, thanks for that remark, Peter.
-
-And is it the case that the union, maybe I go confus, union of open immersions is an open immersion or to make it an open, no, that's true, that it's an open immersion, which is needed to, well, it's needed to, it's needed to have this local, I mean, so, or well, remote, I mean, depends on how your, whe. No, but it's true, so that if you have a union of open immersions, then it's still an open immersion, and that's an important point to check when you're discussing these things, and it follows from this extension procedure for six functor formalisms that Peter discussed.
-% 17:06
-If you have a union along open immersions, then those are sheafable maps, and but it's also a cover, and you can get a a lower shriek map defined on the union and then you can actually check locally that it's cohomologically smooth.
-
-
-% 17:10
-\begin{example}[\yt{17m48s}{Huber pair todo}]
-
-Let's give an example. Remember way back when we had Huber pairs $R, R^{+}$ and stuff like that. Then we assign to this an analytic ring $(R, R^{+})^s$ \note{todo} solid. Then, we can take its spectrum, and then we can look at the locale $Loc(Spec)$ associated to this. What we essentially already saw, was that this analytic stack localizes along the usual Huber topological space of continuous valuations $\Spa(R, R^{+})$.
+  This means you can write down a line bundle on $\Spec\Z\left[\tfrac16\right][A,B][\Delta^{-1}]$ which is equivariant for the $\G_m$-action, or a line bundle on $\M_{\text{ell},N}$ which is equivariant for the $\GL_2(\Z/N)$-action. However, this line bundle doesn't descend to the quotient $A^1$, so it's a bad quotient in the sense that you can have equivariant objects on the top, but they don't come from something on the bottom. Even more basic, the universal elliptic curve over $\M_{\text{ell}}$ can't be defined over $\A^1$.
 \end{example}
 
-% 18:14
-\textbf{Question:} Now you consider the spec in your, \note{todo}
+The problem in the above example is that the action is not free. There are some elliptic curves with extra automorphisms, and because the action isn't free, the naive quotient in schemes is collapsing too much. The solution is to take the quotient in a more refined (2-)category: (sheaves of) groupoids.
 
+Working in groupoids, there's a notion of groupoid quotient
+\[ X \gq G \]
+where:
+\begin{itemize}
+  \item the objects of $X\gq G$ are the elements of $X$
+  \item $\Hom_{X\gq G}(x,y) = \{g\in G \mid gx = y \}$
+\end{itemize}
 
-\textbf{Answer:} This is what this is, spec n. So, I'm lazy, I say $\Spec$ 
+There's always a map $X\to X\gq G$, and the fibers are all isomorphic to $G$, where ``fiber'' means a pullback
+\[\xymatrix{
+  X_x \ar[r] \ar[d] \pullback & X \ar[d]\\
+  \{x\} \ar[r] & X \gq G
+}\]
+So this sort of allows us to pretend that every action is free; the map $X\to X\gq G$ is always like the total space of a $G$-bundle.
 
-\textbf{Question:} And then, $\Spa$ in the old sense.
-\textbf{Answer:} Yes. 
-\textbf{Question:} It's a topological space
-\textbf{Answer:} Yes. 
-\textbf{Question:} And then, okay, the local, okay, and then you have a map of, oh, 
+The only trick is you have to interpret fiber product in the sense of 2-categories: in a pullback diagram of groupoids,
+\[\xymatrix{
+  A \times_C B \ar[r] \ar[d] \pullback & B \ar[d]^-g\\
+  A \ar[r]_-f & C
+}\]
+an object of $A\times_C B$ consists of a triple $(a,b,\gamma)$ where $a\in A$, an object $b\in B$, and $\gamma$ is \emph{an isomorphism} between $f(a)$ and $g(b)$ in $C$.
 
-This loc, this means for every open in the add space, you give a monomorphism of analytic stacks. Of course, this involves passing to some derived Huber pairs in some sense.
-\textbf{Answer:} Yes. 
-\textbf{Question:} Because you are not, but your original pair is is not derived. 
-\textbf{Answer:} So on the level of rational opens, this is going to give another affine analytic stack, which is the one where you enforce that $F$ invertible. In the world of analytic ings, you enforce that $F$ is invertible, and that $\frac{G_1}{F}, etc., $\frac{G_N}{F} is solid.
-% 19:45
-That defines some analytic ring. under this analytic ring here, and passing to $\Spec$ it is a actually a monomorphism, on the level of the derived categories for example it is a localization. 
-% 20:04
-That gives some inclusion of analytic stacks here. What we argued 
-% 20:15
-We proved a less precise version of this claim early on, when we argued that the derived category 
+So it's a way of taking a quotient such that you don't really care about the difference between a free action and a non-free action. And it's such that you formally have that line bundles on $X\gq G$ are the same as equivariant line bundles on $X$ and so on and so forth.
 
-% 20:30
-So this refines the statement that $D(R, R^{+}) solid$ \note{todo}$ localizes on $\Spa(R, R^{+})$.
-% 20:48
-Recall that you have a sheaf of $\infty$-categories on this topological space $\Spa(R, R^{+})$, whose global sections is equal to this $D(R, R^{+}) solid$, and whose sections on a rational open is the analogous category where you impose these conditions \note{todo, add latex}/
+This leads to notions such as Deligne-Mumford stack, or more generally, Artin stack. These are all full subcategories of \'etale sheaves on affine schemes.
+\[
+  \text{Deligne-Mumford stacks, Artin stacks}
+  \subseteq
+  \Sh^\et(\Aff)
+\]
+In the discussion of schemes, we had Zariski sheaves that we asked to be locally representable, where ``locally'' is in the sense of open covers. We also could have used \'etale sheaves, it doesn't change the resulting category of schemes. For Artin stacks, you more or less require that you have a smooth cover by affine schemes, and maybe some technical things you want to put in there as well.
 
-% 21:00
-We had several discussions about when this is the same as \note{todo}
+The basic example is, let $X$ be an affine scheme, for simplicity let's say over some base $S$. Let $G$ be a smooth group scheme over $S$ which acts on $X$. Then you pass to the quotient in the stacky sense, $X \to X\gq G$.
 
-Can always refine any open cover here so that, so in fact, you get an open cover. So in fact, we showed, without having the L, without having introduced the language for it, we showed that any open cover or cover of a rational open in $\R^+$ pulls back to an open cover, can be refined to, pulls back to an open cover of, you know, the, pulls back under $\Pi$ to an open cover in the sense of the six functor formalism.
+So these are more general geometric objects, and this is really good for moduli theory. The theoretical justification for that is the \textbf{Artin representability theorem}, which gives concrete criteria for when a functor is represented by an Artin stack. But it's still constrained by the need for a smooth cover; in particular, this means finitely presented. So if you had some non-finite type group scheme acting on something, you wouldn't necessarily be able to take the quotient in Artin stacks.
+
+Now you might say, why do you care? It turns out there are many $X\in\Sh^\et(\Aff)$ which are geometrically relevant, but are \textbf{not} Artin stacks.
+
+\begin{example}[\yt{23m40s}{Formal schemes}]
+  \label{ex:15-formal-schemes}
+  Let $R$ be a noetherian ring, and $I\subset R$ an ideal of $R$. We want to consider the formal spectrum $\Spf(R_I)$. There are different options as to how to encode this thing, and what it should mean. One we've already discussed is Huber's theory, which includes formal schemes as an example, and is based on viewing $R$ as a topological ring. Grothendieck's theory of formal schemes is also based on viewing $R$ as a topological ring, but localizing along a smaller subset than in Huber's theory.
+  
+  Another way of looking at it is it's just the union of all the $n$th order infinitesimal neighborhoods of $\Spec(R/I)$ inside $\Spec(R)$,
+  \[ \Spf(R_I) = \bigcup_n \Spec(R/I^n). \]
+  So giving some (finite-type) data on a formal scheme should be the same as giving compatible collections of data at all of these finite levels. For example, vector bundles on $\Spf(R_I)$ should just give a compatible collection of vector bundles in the usual sense (finitely-generated projective modules),
+  \[ \Vect(\Spf(R_I)) = \lim \Vect(R/I^n). \]
+\end{example}
+
+This is a very different gluing from what you think about with schemes, and even when you think about Artin stacks. There are no smooth covers in sight here; instead, you're taking some union of infinitesimal thickenings and getting a new object.
+
+There are other examples: for some moduli problems, you really are quotienting by an infinite-dimensional group. One example that's dear to the hearts of both homotopy theorists and number theorists is the moduli of one-dimensional formal groups, the \textbf{Lubin-Tate space}. In this case the group you have to mod out by is coordinate changes on a one-dimensional formal scheme, and then there's infinitely many coefficients you have to specify. So you have an infinite-dimensional group you have to mod out by, and that doesn't fit into the framework of Artin stacks. 
+
+This suggests using a different Grothendieck topology, say fpqc instead of \'etale, if you want to accommodate infinite type phenomena in your covers. But in addition to these, there's also a very remarkable class of examples started by Carlos Simpson.
+
+\begin{center}
+  Simpson: ``Every linear algebra category is $\QCoh(\text{some stack})$''
+\end{center}
+
+Simpson didn't literally say this, and it's much too strong to be true; this is just an slogan interpretation of his work. His work gives lots of examples of this phenomenon, where you have a natural linear-algebraic category, and then it turns out you can write down some stack whose quasicoherent sheaves are that category. There are fun examples of this already in the world of Artin stacks.
+
+\begin{example}[\yt{28m22s}{Representations}]
+  Let $G$ be an algebraic group over a field $k$. Then a special case of a non-free quotient is a point $*=\Spec k$ with an action of $G$, so
+  \[ BG = * \gq G. \]
+  A quasicoherent sheaf on $BG$ should be a $G$-equivariant quasicoherent sheaf on the point; but a quasicoherent sheaf on a point is just a $k$-vector space, and the $G$-equivariance exactly means you have a representation of $G$. So we get
+  \[ \QCoh(BG) = \operatorname{Rep}_G(\text{$k$-vector spaces}). \]
+\end{example}
+
+\begin{example}[\yt{29m20s}{Filtered objects}]
+  We can also consider $\A^1/\G_m$ for the natural action of $\G_m$ on $\A^1$ by scalar multiplication. This is a funny stack, because there's an open locus in this stack, corresponding to a $\G_m$-invariant open locus in $\A^1$, namely $\G_m$ itself. On that open locus, you're taking $\G_m/\G_m$, which is a point. So this has a point as an open subset, and the closed complement is $0/\G_m=B\G_m$. In this case, (flat) quasicoherent sheaves are given by filtered $k$-vector spaces.
+  \[
+    \QCoh^{\text{flat}}(\A^1/\G_m) = \{\text{$k$-vector spaces equipped with a $\Z$-indexed filtration}\}
+  \]
+  The restriction to flat modules is just to stay in the abelian world rather than going derived.
+
+  Note that at the origin, we have
+  \[
+    \QCoh^{\text{flat}}(B\G_m) = \{\text{$k$-vector spaces equipped with a $\Z$-indexed grading}\}
+  \]
+\end{example}
+
+These are Artin stacks, so there's nothing exotic there. Here's a more interesting example.
+
+\begin{example}[\yt{31m11s}{de Rham stack}]
+  \label{ex:15-dR}
+  Let $k$ be a field of characteristic $0$, and let $X/k$ be a smooth variety. Then you can form, and Simpson did, what's called the \textbf{de Rham stack} of $X$. There is a presentation
+  \[ X \epi X^\dR \]
+  but this is not quotienting out by a group action, it's just some by equivalence relation. The equivalence relation in question is that which identifies two points if they're ``infinitesimally close'' to each other. Equivalence relations are supposed to live in the product $X\times_k X$, and what you do is you take this product and you formally complete along the diagonal,
+  \[ (X\times_k X)_{\widehat X}. \]
+  Then $X$ mod this equivalence relation gives $X^\dR$. The formal completion should be taken in this sense of Example \ref{ex:15-formal-schemes}, i.e.\ the union of the different scheme structures that are available on the diagonal as a closed subset.
+
+  (The definition of $X^\dR$ makes sense in arbitrary characteristic, but some things we're about to say will not be true in positive characteristic.)
+
+  What are quasi-coherent sheaves, let's say vector bundles, on $X^\dR$? This is the same thing as vector bundles on $X$ equipped with some kind of descent datum, but that descent datum exactly amounts to a flat connection.
+  \[ \Vect(X^\dR) = \{\text{vector bundles on $X$ + flat connection}\} \]
+  That's Grothendieck's interpretation of what is a flat connection. It's exactly giving descent, identifying infinitesimally close points.
+  
+  There's also cohomology of the structure sheaf. This gives de Rham cohomology, which is the natural notion of cohomology in the world of vector bundles with flat connection.
+  \[ R\Gamma(X^\dR, \O_{X^\dR}) = R\Gamma_\dR(X/k) \]
+
+  This is not even close to being an Artin stack either, and for different reasons from the moduli of formal groups. Here we're modding out by some formal scheme giving an equivalence relation.
+\end{example}
+
+\begin{example}[\yt{35m2s}{Prismatization}]
+  More recently, Bhatt-Lurie \cite{APC,BLPrismatization} \citeme\textcolor{red}{$F$-gauges} and Drinfeld \citeme define stacks whose $\QCoh$ capture coefficient systems for various $p$-adic cohomology theories in characteristic $p$ or mixed characteristic. For example, there's a stack capturing de Rham characteristic $p$, but it is not the one of Example \ref{ex:15-dR}. You have to use the divided power envelope of the diagonal instead of the formal neighborhood of the diagonal.
+  
+  So there are stacks capturing prismatic cohomology, de Rham cohomology, and crystalline cohomology, as well as filtered versions of these. Moreover, the comparison theorems in prismatic cohomology between all of these various cohomology theories can be explained, so to speak, ``geometrically'' in terms of the stacks. (It's arguable how geometric these kinds of stacks are :)
+  
+  Maybe the better way to say it is that, a priori these comparison theorems are about comparing linear algebra categories, e.g.\ vector spaces. But it turns out there's a more fundamental explanation, which is that you have an isomorphism of \emph{stacks}. You then deduce comparison theorems of cohomology theories by passing to quasicoherent sheaves. So you promote a comparison of cohomology theories to an isomorphism of stacks.
+\end{example}
+
+I want to give another example of this phenomenon. We've seen de Rham cohomology in characteristic zero, some $p$-adic cohomology theories as well, but what about Betti cohomology? Here's a fun example which actually has quite a bit of relevance for the course, so that's why I'm going to mention it.
+
+\begin{example}[\yt{38m6s}{Betti stacks}]
+  ``Betti cohomology'' is the algebraic geometers' term for, if you have a complex variety, then you take singular cohomology or sheaf cohomology with constant coefficients on the underlying topological space with the analytic topology. For example, if you have a compact Hausdorff space $S$, then I claim that you can make a stack.
+  
+  How do you do it? You use the old familiar idea: you find a surjection from a profinite set $T$, and then you have some fiber product $T\times_S T$.
+  \[\xymatrix{
+    T\times_S T \ar@<-.5ex>[r] \ar@<.5ex>[r] & T \ar@{->>}[r] & S
+  }\]
+  Since $T\times_S T$ is a closed subset of a product of two profinite sets, it'll also be a profinite set. Write $T_0\defeq T$ and $T_1\defeq T\times_S T$.
+  
+  So your compact Hausdorff space $S$ is a quotient of an equivalence relation in the category of profinite sets. We can then apply $C(-,\Z)$ (continuous $\Z$-valued functions) followed by $\Spec$ to get a groupoid in the category of schemes, in fact in the category of affine schemes. We define the Betti stack of $S$ as the quotient of this equivalence relation in the category of sheaves for the fpqc topology on affine schemes. 
+  \[\xymatrix{
+    \Spec C(T_1,\Z) \ar@<-.5ex>[r] \ar@<.5ex>[r] & \Spec C(T_0,\Z) \ar@{->>}[r] & S^\Betti
+  }\]
+  You could also replace $\Z$ with a commutative ring $k$.
+
+  What are quasi-coherent sheaves on Betti stacks? These are just usual sheaves of abelian groups on the topological space $S$.
+  \[ \QCoh(S^\Betti) = \Sh(S,\Ab) \]
+  That's a fun exercise. So, coherent cohomology on the Betti stack $S^\Betti$ is just usual topological cohomology of the topological space $S$. More generally, we can embed condensed sets into stacks via the above procedure, using the presentation of a condensed set via profinite sets.
+
+  \note{(something I didn't hear)}
+
+  What you have to check to see that is that, if you have a surjective map of profinite sets, then it goes to a faithfully flat map on the level of continuous functions. That's not that hard to do: $C(T_i,\Z)$ are filtered colimits of continuous functions of finite sets, which as rings are copies of products of $\Z$. In fact, for \emph{any} map of profinite sets $T_1\to T_0$, the induced map $C(T_0,\Z)\to C(T_1,\Z)$ is flat, and then if it's surjective it's faithfully flat. You also need to check that fiber products in profinite sets correspond to relative tensor products; this follows again by a reduction to finite sets.
+\end{example}
+
+So now we're faced with this somewhat baffling array of different stacks, some of which don't resemble Artin stacks in the least. But we want them because they're convenient ways of encoding different linear-algebraic and geometric phenomena. 
+
+\textbf{Question:} how to define a reasonable subcategory of $\Sh^\fpqc(\Aff)$ containing all these examples?
+
+\textbf{Answer:} $\Sh^\fpqc(\Aff)$ (modulo set theory)
+
+In other words, it's not clear that there's any other answer to this question than the entire category $\Sh^\fpqc(\Aff,\An)$. So there is content in the answer, but it didn't necessitate introducing anything wasn't present in the question. 
+
+\subsection{Desired examples of analytic stacks}
+% \subsection{\yt{47m44s}{Desired examples of analytic stacks}}
+This is also the approach we will take in defining analytic stacks. We will define a Grothendieck topology on $\AnRing^\op$ and then take sheaves with respect to it (again modulo set theory). Before getting into the details of exactly which Grothendieck topology, and these set theoretic technicalities as well, let's see what kind of phenomena we want to capture, so what the examples should be. In some sense, we've already seen some.
+
+\begin{example}[\yt{48m6s}{Adic spaces}]
+  We certainly want that any adic space in the sense of Huber should give rise to an analytic stack. We already explained how the basic ingredient in adic spaces, namely Huber pairs $(R,R^+)$, give rise to analytic rings, and we explained something about how the formalism of analytic rings lets you glue. But we didn't quite discuss how you can use that to then glue these analytic rings together to get some kind of analytic stack.
+
+  We saw that at least you can localize the category of modules over that analytic ring along Huber's spectrum, but we didn't quite discuss how you can use that to then glue these analytic rings together to get some kind of analytic space. But we certainly want the kind of gluing that shows up in Huber's theory, gluing along rational open subsets in the topology defined by a basis of rational opens, we want that kind of gluing to be allowed and to give you an analytic space.
+\end{example}
+  
+\begin{example}[\yt{49m8s}{Complex analytic spaces}]
+  We also want any complex analytic space to give an analytic stack, say over $\C^\gas$ or $\C^{\liq_p}$. So the kind of gluing allowed should also incorporate gluing along open subsets in complex analytic geometry.
+\end{example}
+
+\begin{example}[\yt{49m53s}{Algebraic stacks}]
+  Another even more basic thing is we want the world of analytic geometry to be a generalization of the world of schemes, and even of algebraic stacks (in some sense---maybe not precisely the fpqc topology discussed above, but a slight modification of that). These should live over the universal base $\Z$, with trivial analytic structure ($\Mod(\Z)=\Cond\Ab$). So universally, over any analytic ring, if you have some algebraic object, you can get an analytic object.
+\end{example}
+  
+\begin{example}[\yt{51m4s}{Banach rings}]
+  Any Banach ring $R$ should also give rise to an analytic stack. This in some sense matches Berkovich's theory, in the same way that the affinoid analytic stacks coming from pairs $(R,R^+)$ match Huber's picture. There's a small interesting tidbit here, which is that the stack that we'll assign to a general Banach ring will actually not be affinoid, it will really be a stack. So, if you take $\Z$ with the usual archimedean norm, it will go to an actual stack that's not affinoid; instead, it's a stack which in some sense corresponds to $\M(\Z)$, the Berkovich spectrum of $\Z$, so that's a fun little twist.
+\end{example}
+
+\begin{example}[\yt{52m22s}{Coefficient systems}]
+  As above, there should be analytic stacks whose $\QCoh$ capture various coefficient systems for cohomology (sheaves of abelian groups, vector bundles with connection, prismatic $F$-gauges etc.)
+\end{example}
+
+\begin{example}[\yt{52m58s}{Tate curve}]
+  We want to be able to define the Tate curve as well as its uniformization over $\gasopen$. We also want to have machinery to prove it's algebraic. So we have this curve that we define via uniformization. We take the analytic $\G_m$ and we quotient by the multiplication by $q$, and we get something which Peter argued was a smooth proper curve, and it has an identity section. So then, if you have some Riemann-Roch theorem, then you can see that you have a projective embedding. And if you have some GAGA theorem, then you'll be able to see that it has to be algebraic. So we want Riemann-Roch, and we want GAGA.
+\end{example}
+
+\begin{example}[\yt{52m20s}{Comparison theorems}]
+  On the theme of GAGA, we want that various linear algebraic comparison results should promote to isomorphisms of stacks. GAGA is one such.
+  
+  GAGA is a general principle which applies in different contexts. But for example, in the world of complex analytic spaces, it says that if you have a proper algebraic variety $X$ over the $\C$, so it has an analytification $X^\an$ which is compact, then it says that coherent sheaves and their cohomology in the algebraic and in the analytic sense agree.
+  
+  So that's a question about making a comparison between two linear algebraic categories. It's saying algebraic coherent sheaves are the same as analytic coherent sheaves. And one thing we would like our formalism to do is to promote that to an isomorphism of stacks.
+
+  Another example, again in the complex analytic context, would be the comparison between Betti cohomology and de Rham cohomology. This should also promote to an isomorphism of stacks.
+\end{example}
+
+\subsection{Analytification}
+% \subsection{\yt{56m48s}{Analytification}}
+Recall that adic geometry in the solid context really got started once we noticed that there's a nice subset of $\A^1_{\Z^\solid}$, namely the closed unit disc, which we were thinking of as open. Or you could think of it in terms of its complement. or the translation of that back to the origin. In the end, algebraically speaking, this came from an idempotent algebra
+\[ \Z\psr T \in \Solid_{(\Z[T],\,\Z)} \]
+Once we had this idempotent algebra, then we could move it to infinity via the change of variables $T\mapsto T^{-1}$, and then that gave us the closed unit disc, and then that let us tie into the $(R,R^+)$ theory, where we could ask that the elements in $R^+$ actually land in the closed unit disc as opposed to just being maps to $\A^1$.
+
+Similarly, over $\gasopen$, you can define a ``subset'' of $\A^1_{\gasopen}$, corresponding to an idempotent algebra of ``functions which are convergent in some (unspecified) disk around the origin''. So it's germs of functions defined at the origin, so to speak. Formally, it's going to be the filtered colimit
+\[ P[q^{-1}] \defeq \colim\left(P \xra q P \xra q P \xra q \dotsb \right) \]
+
+In the solid case, $P$ was itself idempotent and turned into $\Z\psr T$. In the gaseous setting, $P$ is not idempotent in $\Mod_{\Z[T]}(\Mod_{\gasopen})$, but it becomes idempotent after we take this colimit to shrink the open unit disc down to the origin.
+
+% \begin{remark}
+% Sorry, we write sheaves and what are they valued in? One group? Points, yeah. So, let's say group points, but of course, I mean, you might as well, yeah, I mean, but all the examples are just groupoids. And in fact, many of the examples, even though they're called stacks, are actually just sheaves of sets. So, like Simpson's Duram stack, for example, is just a sheaf of sets. It's a Duram space somehow, but anyway, somehow they call these things stacks anyway.
+
+% But yeah, so it's going to be similar to the situation with analytic rings and where we had sometimes theoretically we had derived things that were animated or whatever and so on. Theoretically we had them, but in practical examples, they didn't really show up. And similarly here, theoretically we're going to allow sheaves with values in anma, but in practical cases, they'll be at most groupoids. I mean, that's, yeah.
+% \end{remark}
+
+The idempotent algebra $P[q^{-1}]$ satisfies many of the same properties as $\Z\psr T$, and it again lets us import Huber's theory of pairs to this context. What you do is you take this idempotent algebra functions of germs at the origin in the affine line, you move it to infinity and you get germs at infinity.
+
+Let $R$ be of finite type over $\gasopen(*)$, and assume that $\Z$ is bounded in $R$. Then you get an analytic ring structure on $R$, namely $(R,\Mod_R(\Mod_{\gasopen}))$. Every element $f\in R$ gives a map
+\[ \AnSpec(R)\xra f\A^1, \]
+and we pass to the ``subset'' where all such maps land in the locus ``away from $\infty$''. This gives a new analytic space $\Spec(R)^\an$, the ``analytification'' of $\Spec(R)$.
+
+\begin{example}
+  When $R=\Z[T^\pm]$, we get $\G_m^\an$. After base change to a ring where $2$ is bounded, this is the object of the previous lecture, the thing we quotiented out by to get the Tate curve.
+\end{example}
+
+So now we have two different contexts (solid and gaseous) in which you can import Huber's theory of pairs into the world of analytic spaces. It turns out that they can be glued together, and so can the idempotent algebras. First notice that the gaseous theory makes sense over $\Z[q]$: all we had to do to define the gaseous theory was we had to write down the endomorphism $1-qt$ of $P$, and then ask that it become an isomorphism in our theory. And to do that, you didn't need to require $q$ to be topologically nilpotent. So this gives an analytic ring $\Z[q]^\gas$.
+
+\begin{itemize}
+  \item if we set $q=0$, we get the uncompleted $\Z$ theory
+  \item if you set $q=1$, you get the solid theory, $\Z^\solid$
+  \item if you require $q$ to be topologically nilpotent and a unit, you get the gaseous theory, $\gasopen$
+  \item if you work away from the locus where $q$ is topologically nilpotent, then you are working over a theory where you force both $q$ and $q^{-1}$ to be gaseous, and that implies that $1$ is gaseous, which means you're in the solid theory, so you get $\Z[q^\pm]^\solid$.
+\end{itemize}
+
+Then we can define a certain quotient of
+\[ \Spec(\Z[q^\pm]^\qgas) \]
+which more or less parameterizes choices of a notion of ``analytification''. So, anytime you have this variable $q$ which you've declared to be gaseous, you can form this colimit and you'll get an idempotent algebra at zero, and you can move it to infinity, and then you get a notion of analytification, as discussed.
+
+However, different choices of $q$ can give rise to the same thing. If two choices of $q$ differ by a bounded unit, so something in $\G_m^\an$, then you'll get the same algebra. So the quotient we want is 
+\[ \Spec(\Z[q^\pm]^\qgas)/\G_m^\an \]
+where $\G_m^\an$ acts by multiplication on $q$.
+
+This is a different role of stacks in the theory. Here we have a stack which is a quotient of ($\AnSpec$ of) an analytic ring by an equivalence relation, and which is in some sense parameterizing choices of analytic geometry over a given base ring. Let $R$ be an analytic ring with a map
+\[ \Spec R^\tri(*) \to \Spec(\Z[q^\pm]^\qgas)/\G_m^\an, \]
+which we call a ``gaseous structure'' on $\Spec R^\tri(*)$ (and again assume $2\in R$ is bounded). Then we get two functors from $R^\tri(*)$-schemes to analytic stacks over $R$, plus a natural transformation.
+
+Say $X=\Spec A$, where $A$ is an $R^\tri(*)$-algebra. We can view this as an analytic stack over the uncompleted $\Z$, and then you can base change that to $R$ to get $X_R\defeq X\times_\Z R$. But then you also have a subset
+\[ X^\an_R \xra\subseteq X_R, \]
+the analytification over $R$, given by requiring that all the functions land in the part of $\A^1$ that's away from $\infty$. Now there's a general theorem.
+
+\begin{theorem}[\yt{1h18m18s}{GAGA}]
+  If $X\to\Spec(R)$ is proper (and finitely presented), and every element $f\in R(*)$ is bounded, then $X_R^\an \to X_R$ is an isomorphism.
+
+  \note{some discussion between Peter and Dustin about whether finitely presented is really necessary. It might not matter for GAGA, but could for some other things.}
+\end{theorem}
 
 \begin{remark}
-Let me make an open cover to cover by monomorphisms. In general, it's not true that a rational open pulls back to an open immersion. 
+  This implies completely formally that $D(X^\an_R)=D(X_R)$, which is some form of GAGA. Non-formally, maybe with some more conditions on $R$ (but satisfied in practice), this implies that $\Vect(X^\an_R)=\Vect(X_R)$, which is classical GAGA. 
+
+  Basically you can do algebraic geometry over the uncompleted $\Z$ theory, and then that means you can do algebraic geometry over any analytic ring just by base change.
 \end{remark}
 
+One of the things that maybe I should have been emphasizing before launching into this whole discussion is that over the completed $\Z$ theory, you can basically do algebraic geometry. And then that means you can do algebraic geometry over any analytic ring just by base change. For example, we were considering $\A^1$ over an arbitrary base ring. It's not analytified yet, but when you have extra structure on your analytic ring, then that picks out a choice of what it means to analytify an algebraic variety.
 
-\begin{example}[\yt{23m44s}{Remark example, todo}]
-Is there a proof of this? I'll give an example right now.
-
-% todo, correction in lecture
-So, have two formal variables, $p$ and $X$. Oh, sorry, I should say $\Z_p$. I don't need two variables. Thanks. So one formal variable and then invert it. 
-
-$ (\Z_p, \Z_p) \to (\Q_p, \Z_p)$
-What does this correspond to? On the level of analytic rings, we get this, and on the level of derived categories, this is solid $\Z_p$ modules, and then this is a, well, this is algebraically inverting $p$. The left adjoint here is the inclusion of the full subcategory, or the right adjoint here is the inclusion of the full subcategory where $p$ is invertible.
-
-So this passing from $\Z_p$ to $\Q_p$ is algebraically inverting $p$, $p$ is a prime. And that actually, from the perspective of the six functor formalism, is a closed immersion, not an open immersion. That's a proper map because the, this hasn't the second variable hasn't changed, so we're changing the underlying ring and not the analytic ring structure. But it's also a, proper monomorphism, it's a, it's a closed inclusion, it's closed, not immersion, not open.
-
-So, I think we treated the case of some covering given by a function like $f$, like the Laurent cover, the one where $f$ or $1-f$ is less than or equal to mean, this kind of basic cover. And for those, is it the case? Yes, so then let me make another remark. However, if $R$ is Tate, then indeed, this doesn't arise. So in general, the problem is exactly these open covers in the Huber sense, which are given by algebraically inverting a function without enforcing any inequalities. But in the setting of a Tate Huber pair, then you know, if you want to invert something, it's, the subset where you invert something can always be written as a union of subsets obtained by forcing inequalities.
-
-So, it is not quasi-compact in general, right? But dealing with something which is in the sense of the ADC space is quasi-compact because it is a rational domain. I think in the, yes, but I mean, it is Rush, so it is quasi-compact in the, yes, in the. This also has to do with the fact that we didn't directly, I was sliding one little thing under the rug here, which is we didn't really directly define this as a map. We didn't really directly define it like this, remember we actually had this valuative spectrum of all of these guys, and we actually defined this map and then we used Huber's retraction here. So this was not quite accurate, because that would be accurate on the level of $\Spa$, but that's not exactly how we get it for $\mathrm{Spa}_a$. Instead, we, assume that the real $\mathrm{Spa}_a$. The idea is open, and then it's okay.
-
-So, the point is that the rational opens in the Tate case can always be described by forcing inequality among the valuations. Okay, let me try to finish what I was trying to say. I want to give an idea of what's going on, I don't want to get too precise about it, but it's this kind of phenomenon, where these guys correspond to this kind of thing, which does correspond to an
-
-So, sheets on this $F$ is not there. In fact, you cannot algebraically invert $F$, but using the right-hand side. That's right.
-
-Okay, and also, there is another topology on the same space, with the same constructible subsets. Where the open pulls back to open.
-
-So, another fix, even outside the Tate case, is to choose a slightly different topology from the one Huber described, where both of these things are open. It's not the constructible topology, no. It's a topology which is incomparable to the Huber topology. For this subset here, $P \neq 0$, it will be closed from one perspective and open from the other perspective. It's open from Huber's perspective but will be closed from the perspective of this other topology.
-
-It is a spectral space. To be open, you basically redeclare Zariski open subsets to be closed, which the Zariski open they are not.
-
-For example, inverting $P$ here, inverting $P$, is now closed in the new topology. We haven't discussed that element of synthetics so far, that's true. But let's leave that aside, I think there's already enough information being discussed.
-
-Is it the opposite spectral space? No, it's not the opposite spectral space, because these ones are still the ones where you're enforcing inequalities like $f \leq 1$, that's still open in both cases. It is the opposite of one of the ones Huber describes in one of his papers.
-
-Yes, we can make this more precise. I'm going to hesitantly say yes, it's obvious if you remember the definitions of everything. Maybe we need compact or not, because I mean, you want an input to correspond to it, but I'm not sure whether if it's not quasicompact, you have...
-
-So everything is defined by inequalities $f_i \leq g_n, g_n \neq 0$, and this one you replace by saying that is a closed condition for any $G$. Well, I mean, you have a rational open, so the conditions are satisfied, like the ideal generated by all of them is open. So, you can't invert $G$ if that doesn't correspond to a rational open in Huber's sense, but in situations where you can, it corresponds to a closed conclusion.
-
-One last remark about this general setup: if $S_i$ is some inverse system of compact Hausdorff spaces, then giving compatible maps from $\operatorname{Lal} X$ to $S_i$ for all $i$ is equivalent to giving a map from $\operatorname{Lal} X$ to the inverse limit. And it's the same for $\operatorname{Lo}_p$. If all of those ones factor through $\operatorname{Lo}_p$, then this one will also factor through $\operatorname{Lo}_p$.
-
-Every compact Hausdorff space is a limit of metrizable finite-dimensional spaces, potentially in many different ways, but in many situations, there's a natural way of doing it. We'll see this in the setting of adic spaces, and then this gives you a way of going from the case of metrizable finite-dimensional compact Hausdorff spaces where you can sometimes go from this perspective and you can go to this perspective.
-You're closed, you know, the situation kind of passes to inverse limits in a nice way, but now you no longer have to worry about things being metrizable or finite-dimensional. Okay, that was my little, is a map to s the same thing as a map from loal? No, because you have this connectivity condition, so it's the you still have to impose this locally that locally all the item poent algebras are connective. I mean, as far as I, it's not like I produced a counter example, but I kind of believe that it's not the same.
-
-Okay, so I'm always confused, is there really a t-structure def over D of that object? And no, no, there's no t-structure. So what I didn't, I don't have to say what I mean by connective. I have to say what I mean by connective locally, and what I mean by connective locally is that there exists a cover by apine things such that it's your object when you pull back to each of those apine things is connective. Now, once you're in the apine world, connectivity is a pullback of something connective, is you have a t-structure and the pullback of something connective is connective, so it's kind of. And also, if the pullback is connective, then it's connective or not, no, that that is not necessarily true, okay, okay.
-
-Okay, so it's not like, so it's not a sufficient condition for having a. So this is like the for schemes that you have the the non-aine orens, but still, if you use as the flat or pqc, still if it's up upstairs, it's up downstairs, so that's. But in your topology, of course, you have much more stuff, yes. So you can have these wheel-we things where, you have a map which is affine locally, but with an with a map with affine Target which is affine locally, but not globally, and that's kind of unavoidable when you're doing analytic geometry.
-
-% 40:05
-\subsection{Preliminary definitions}
-\subsubsection{Banach rings}
-So Berkovich spaces. Let me start with a reminder on the definition, so we know where we're going. $A, \norm{\cdot})$ is a Banach ring. That means that $A$ is a commutative ring, and this norm map $||: A \to \Rnonneg$ from $A$ to the non-negative real numbers ,satisfies, 
-
-$\norm{0} = 0$, 
-triangle inequality, $\norm{x + y} \leqslant \norm{x} + \norm{y}$ , 
-and third of all, it's sub-multiplicative.
-$\norm{xy} \leqslant \norm{x} \norm{y}$
-So, probably have to put the norm of -1 is equal to the norm of one, which is e z, I should probably put that, so either a equal Z or Norm of 1 equal 1 and Norm of us one, also do you need that? It does not follow I'm not sure how much it follows, but it, it's usually they want the triangle inequality Al with x + y, okay. I think you can, you can get it, you can give a crazy thing like the negative multiply by two, you can do something that still satisfy the a without, but of course, it would be equivalent something satisfying the a, this is probably not how to show, okay.
-
-Then $A$ is complete, with respect to the metric $d(x,y) = \norm{x-y}$. 
-
-\begin{example}[\yt{42m24s}{Banach ring}]
-So an example, there's, so example for, say, $S$ is a compact hausdorff space, you could take for $A$ to be, say, complex-valued continuous functions,
-$A = \Cont(S; \C)$
-
- and take the norm to be the sup norm, where you have the usual absolute value, and this, maybe this is kind of right. 
-$\norm{f} = \sup_{s \in S} \norm{f(s)}
-
-\note{todo, last bit of eq I can't see}
-\end
- 
-\begin{example}[\yt{43m04s}{Tate-Huber ring}] 
- Another example would be if $R$ is a Tate-Huber ring, and if you choose a pseudo uniformizer, topologically nilpotent unit, then you can define a norm, Peter actually wrote down the
-\end{example}
-
-Yes, this is multiplicative. It's not multiplicative in general.
-
-\begin{align*}
-(A, \norm{\cdot}) \leadsto \BerkSpec(A, \norm{\cdot}) = \{ \norm_{x} = A \to R todo \} \\
-\text{\underline{multiplicative seminorm}} \\
-with \norm{f}_x todo \norm{f} \\
-\forall f \in A.
-\end{align*}
-And then so to this data, so this to a and the Norm Huber assigned the space, which has a set Berkovich. Thank you, we're switching over now. Thought Berkovich, which as a set is given by the. Norm of $f$ equals $z$ if and only if $f$ equals $z$, right.
-% 46:30
-So, I'm using this notation $X$, so kind of it's a decoration to. And this is now a \underline{multiplicative seminorm}, with which is bounded by the given norm you have on the Banach algebra $A$.
-
-\begin{example}[\yt{47m13s}{Tate-Huber ring}] 
-\begin{align*}
-A = \Cont(S, \C) \\
-\norm{f}_x = \norm{f(x)} \forall x \in S.
-\end{align*}
-Well, for example, in and you can take. If you require that the norm restricts to the usual Norm on the complex numbers, then these are all the examples. So that's  Gelfand's theorem. So, those are the only examples in this situation. And multiplicative includes the of Zero element, that is the norm of one is one, yes.
-
-Except, but this is maybe zero multiplication of zero numbers, we don't want that. So, we want these to be like points, so we want them to be non-empty. So, we want one to be different from zero.
-
-But, do you allow $\Z_R$? No, well, wait, I allow, okay, I allow $\mathbb{A}$ is the zero ring, when this will be the empty set.
-
-\begin{align}
-\BerkSpec(A, \norm{\cdot}) \subseteq \prod_{f \in A} [0, \norm{f} ]
-\end{align}
-This is actually a compact Hausdorff space. I didn't describe the topology, but here it is. You can view it as a subset of the product over all $F$ in $A$ of the interval from zero to the norm of $F$. It is actually a closed subset. This map takes a norm and records its value on $F$. The topology is the subspace topology, so it is a compact Hausdorff space.
-
-\subsection{Berkovich spaces in the language of analytic stacks}
-% 50:20
-So what we're going to do is, we're going to try to make the same definition, but in the world of analytic stacks instead of topological spaces. So, we want to take the same idea, which is that we want to look at the set of all multiplicative seminorms $\BerkSpec$ on $A$, bounded by the given norm on $A$, but we want to say that in the language of analytic stacks, using the notion of norm on an analytic ring that we discussed earlier.
-
-% 51:18
-Let me remind you about this notion of a norm. So, the definition of, well, we could say even more generally in an $\infty$-category stack. 
-
-% TODO: when the earlier lectures are transcribed, we can see what we need to copy here.
-
-A norm on $X$ is a map from the algebraic $\P^1_X$ to the closed interval from zero to Infinity, including Infinity, which is multiplicative away from Infinity. So, let's say on Norm inverse $0$ to Infinity, and let me write it suggestively like this. You really should write down the commutative diagram with inversion on $\P^1$, inversion of the coordinate on $\P^1$ and inversion of this extended real positive non-negative real axis here. And some condition on how $\mathcal{P}$ sits, $p$, $p$, $p$, so this is the $p$, oh $t$, $t$ is the variable on $\P^1$.
-
-Yes, what do you mean by how $\mathcal{P}$ sits? So, remember $\mathcal{P}$ was this ring object you have over any analytic ring, which is the free guy on a topologically nilpotent element. And it's some version of a unit disc, and what we ask is that this Norm function gives
-
-Small $a$ map in the category of analytic stacks. So these objects are fixed, right? When you fix $X$, this is fixed, and this is fixed. Yes, that you know that there is a. Why was it? Well, we basically by definition, every analytic stack was a small co-limit of representable analytic stacks, okay? You have a.
-
-Because there was a notion of analytic ring where there is the category. Okay, there, you handle the problem of large sizes. I mean, because it's enough to check the condition some smoke, but then you have the analytic stack where you cover, but you don't know which covering you need to give a ism, so you have need all possible covers could be covers by bigger and bigger see, but you say the category is accessible. So the main technical result you need to prove is that the sheafification of an accessible prief is still an accessible prief. That's the main technical result you need to prove. We did not discuss this at all, but that's what's underlying the resolution to these issues. It's like in Waterhouse.
-
-Okay, so this, in fact, so there's a cover, so this gaseous base maps to $n$. In other words, you can write down a norm on this gous space tack, and it's, and this, so this, and this is actually the universal norm on an analytic ring with a variable $Q$ in $R$ such that norm of $Q$ is precisely equal to $1/12$. What did you write? $NX$ is the analytic stack $n$, $n$ is an analytic stack. So $NX$, the set of norms, is actually the set of maps from $X$ to some stack $n$.
-
-So if you ask for a norm on an analytic ring and an element whose norm is exactly equal to $1/2$, which is kind of a somewhat stringent condition, because a priori again, the norm map is norm of $Q$ is a map from $Spec R$ to $[0, \infty)$, and you're asking that it factor through this, a priori, its image could be some interval or something, but you're asking that its image be exactly this singleton. The universal example of that is this guy, and moreover, the map to the base stack is actually a cover in the sense of our Gro de topology on analytic Stacks, because every norm on an analytic ring locally, you can find such an element. We had this argument, we discussed this two lectures ago. Everything here was like $X$ was a $Spec$ of an analytic rate. I mean, I made this definition for a general $X$, but it, I mean, it doesn't matter because the condition, I mean, the norms on an analytic ring, they satisfy descent basically. I mean, it's kind of follows from general nonsense, and so it automatically glues to say what a norm is on an arbitrary analytic stack, and it unwinds to the same thing. So the cover also exists because it exists locally, like you GRE it. Well, the map, the map, no, the map exists because you can write down this norm, and then it's a cover because given any norm on an analytic ring, after a cover, you can find a $q$ that satisfies this property.
-
-Sure, do you need to do some base tank? I'm sorry, do you need to do a base change? What do you mean? Is it okay, or you still have a question?
-
-Okay, so I want to, before finishing the discussion of or introducing the definition of this enhanced Berkovich Spectrum as an analytic stack, I want to explore a little bit about so, what does $n$ look like? So, well, what do we have on $N$ if you have a norm on an arbitrary analytic ring? So, if you have a norm $p: R \to [0, \infty)$, so as mentioned, for any section here, you get a function from $Spec R$ to $[0, \infty)$, but over an arbitrary analytic ring, the only thing we know exist are the integers. So, given $n$ in $\Z$, we get a map which records the value of your norm on the integer $n$. So, what does this
-We'll also see that the fiber over any point in the image is non-empty, so that at least in this case, maybe it's a general fact - I don't know, at least in this case, it's kind of a theorem that the image is closed, so to speak. Now note that the more traditional thing is this Berkovich spectrum of the integers, that was also by definition a subset of this product going from zero to infinity, and it was given by those Norms, so multiplicative, avoiding Infinity, satisfying the triangle inequality.
-
-Let me remind you what this thing looks like, in case people haven't seen this before. Recall that $\M(\Z)$ looks as follows: you have a point at the center, so to speak, which corresponds to the trivial norm, meaning the zero norm of $Z$ is $Z Norm$, and the norm of everything else is equal to one. 
-% 1:05:33
-Then, you have several branches. You have an archimedian branch, so at the end of the archimedian branch, you have the usual norm, the usual archimedian norm, the usual absolute value. But then, for each prime $p$, you have another branch, which also ends at some point. To get the correct topology on embedding it into $\R^2$, you should probably make the branches get shorter and shorter and shorter, but okay, that's...
-% 1:06:10
-But the situation with these $p$-adic branches is a little bit different. So, what's going on here? Here, you have the usual absolute value, and here, at the halfway point, you have the square root of the usual absolute value. And here, you can then you can put any $\alpha$ between zero and one, and you can kind of see from the intuitive perspective that this interpolates between the usual absolute value and the trivial absolute value. 
-% 1:06:34
-Here, what goes at the top is not the usual $p$-adic absolute value; the usual $p$-adic absolute value sits somewhere here, so normalized to say so that P equals 1 over p. And now, you can actually scale it to $R_{>0}$, and then there's also a limit as the scaling goes to infinity, and what that gives is the trivial norm or the pullback of the trivial norm on the residue field $FP$, so in other words, the norm of any multiple of $p$ is equal to zero, and the norm of everything else is one.
-
-Okay, what of course, no, I... This is great. I think this was something like this, this is the first talk. There was a talk in this course, it was in this course or another, probably in this course, there was some discussion of, but maybe I could do this another thing. 
-% 1:07:42
-So I'm trying to recall something which is well-known indeed, in order to set up the discussion of what's following here. So, in particular, I want to emphasize this is a really big space, but the subspace $MZ$ \note{todo} is quite small, you know, one-dimensional.
-
-\textbf{Question:} So, now what we're going to see, so there, you allow the value to be in, but here, you don't. 
-
-% 1:08:13
-\textbf{Answer:} That's correct. So, here's going to be the claim: the image of the norm $\text{Im}(\mathcal{N})$ is a larger subset. It looks like this: you have all the same ones as before, sorry, I'm trying to say that it stops there, trying to draw like a closed interval sign, but then also at the archimedian place, it gets extended. So, here now the usual archimedian absolute value is also in the middle of the interval, and you can take arbitrary powers of it, so for any $\alpha \in R_{>0}$, you can take powers of it. So, it'll go to there in one direction, and to the other direction, you get some really strange point, which corresponds to... 
-% 1:09:23
-So, it's a subset of there, so it's given by some maps from $\Z$ to the extended real line there, and it's given by $N(n) = \infty$ if $n \neq -1, 0, 1$.
-
-% 1:10:17
-\textbf{Question:} \note{todo}
-\textbf{Answer:} No, it is a different kind of base. Because over Solid $\Z$, $\R = 0$ you can't.
-
-\textbf{Question:} \note{todo}
-% 1:11:18
-\textbf{Answer:} It extends to to infinity and then compactified at the end. You can try to write a formula for it. It's like the image norm is like - you take the Berkovich space of the integers. Ah, no, let me make a before I say this.
-
-% 1:11:35
-In particular, the triangle inequality can fail. That's quite clear here - you have $N(1) = 1$, but $N(2) = \infty$. That's a pretty drastic failure of the triangle inequality. But also, like for the square of the usual absolute value, which is a new thing, you have the triangle inequality fails as well.
-
-% 1:12:05
-So, another way of saying this is $\text{Im}(\mathcal(N)) = \BerkSpec(\Z)$ - you can get it from the Berkovich spectrum of $\Z$. On the Berkovich spectrum of $\Z$, you have an action of the real numbers greater than or equal to one. Wait, did I - or well. Or maybe, on this other thing, you have an action of the positive real numbers. You can do this, and that doesn't do anything on the non-Archimedean branches, and then on the Archimedean branch, it extends it all the way, and then you compactify it - one-point compactification. So, I don't know.
-
-Let's explore this and let's see what is going on. Let's consider the map - what's that? Is the one-point.
-
-\textbf{Question:} The picture you seem to see this image gen topological space, but this is supposed to be something associated with $\Z$, right? That's a good question. So, by definition, I made it a - I was saying it's a closed subset of the topological space. Now, you can view this as an analytic stack. We saw how to view this as an analytic stack, and you can take the product in the category of analytic stacks - that's perfectly legitimate. It's no longer finite dimensional - sorry, it is metrizable, it's no longer finite dimensional. So, we didn't quite talk about this thing, but you can still view this as an analytic stack, and you still do get a map of analytic stacks from N to this product, and this closed subset does correspond to a subanalytic monomorphism of analytic stacks here, and the map from N there does factor through that closed subset, and so you can view it in several different ways.
-
-% 1:13:00
-Okay, to explore this, consider a fixed prime $p$, and consider the norm of $p$ 
-$
-\mathcal{N} \xrightarrow{N(p)} [0, +\infty]
-$
-. 
-% 1:15:15
-Here's the first claim: we can understand the locus in this universal space of norms where the norm of $p$ lives in [0, +\infty]. This is the same thing as the stack parametrizing norms on which the variable $p$ lives between 0 and 1 - let's call this $N$ and $\Z$ less than absolute value of p less than one. This is equal to $\Spec \Q_p^{\gas}$, the gaseous version of the $p$-adic numbers, across this stack associated to the open interval $(0, 1)$.
-
-Claim
-$
-N(p)^-1 ((0,1)) = $\Spec \Q_p^{\gas} \times (0,1)$ 
-$
-% vertical equal sign
-$
-\mathcal{N}_{0 < \abs{p} <1}
-$
-
-This is quite easy to see, because we know that the universal analytic stack equipped with some variable whose norm is between zero and one \mathcal{N}_{0 < \abs{p} <1} is spec of $\Z_q$ hat plus or minus one Gaseous cross 0,1. And then you have to impose that that variable becomes p, so you set $q = p$ or you mod out by $q - p$, and then that, as Peter discussed when discussing this gaseous base stack, gives you some analytic ring structure on the $p$-adic numbers, and then the second variable doesn't really change.
-
-% 1:17:40
-I'm claiming in particular that if you look at the universal - let's say we take the fiber over a point $ \lambda \in (0,1)$, 
-
-
-$
-Spec(Q_p^\gas) \times \{ \lambda \}      \text{normed analytic ring structure \\ here: notion of overconvergent functions on a disc of radius $r$ }
-$
-then you get a normed analytic ring structure here. And it is - so what does that mean? It means that for every radius $r$, you have some notion of overconvergent functions on a disc of radius $r$, where the notion of on a disc of radius $r$ is the usual one from non-Archimedean geometry, where you take the normalization of the absolute value on the $p$-adic numbers for which $\abs{p} = \lambda$. So, what we're seeing here is the interior of the $p$-branch.
-Kind of fairly straightforward to understand. 
-
-% 1:19:54
-Next, let's look at another locus that's fairly easy to understand. This is the locus where $p$ is between one and infinity. 
-\begin{align*}
-\mathcal{N}_{1 < \abs{p} < \infty} = $\Spec(\R^\gas) \times [0,1]$
-
-% todo arrow between above and under
-
-0 < \abs{\frac{1}{p}} < 1
-
-\end{align*}
-% 1:20:10
-Strictly between one and infinity, because that's the same thing as saying that $p$ has to be invertible. The absolute value of $p$ is away from zero. 
-% 1:20:20
-Then it's the same thing as saying that the absolute value of $\frac{1}{p}$ is between $0$ and $1$. 
-
-% 1:20:27
-We can again use the exact same argument to understand what this is, and what you get is you get $\Spec(\R^\gas) \times [0,1]$, and the argument is the same. As Peter explained, if you take this ring and mod out by setting $q = \frac{1}{p}$, then you actually get the real numbers. You get a certain analytic ring structure on the real numbers, which is this one here \note{todo: clarify}
-
-% 1:21:07
-Again, if you look at the universal norm with a fixed value of $\lambda$, the universal norm here is the usual one given by convergent functions in Archimedean geometry, say complex geometry, but with respect to the norm, which is a power of the usual absolute value, where $\alpha$ is such that the norm of $\frac{1}{p}$ exactly gets $\lambda$.
-
-% todo: point arrow up 
-$\Spec(\R^\gas) \times { \lambda }$
-
-% 1:22:10
-\textbf{Question:} I'm not quite sure where the overconvergent functions show up. You had some formal series in this $q$ \note{not sure}, but then you specified that it is the usual overconvergent functions. The first thing to understand, of course, is why when you take this ring and specialize to $q = \frac{1}{p}$, you get the real numbers. That has to do with some kind of base-$p$ expansions. \note{need to go over tis question again}
-
-% 1:23:04 todo, clarify which expression he points at
-\textbf{Answer:} You have to do a calculation. The first thing to understand is why if you take this ring and specialize to $q = \frac{1}{p}$, why you get $\R$. That has to do with base $p$ expansions. Then you have to understand, say, if you take this module $p$, the basic module $p$, you want to know what that base change is too. It should be some module over $\R$, so it should be some sequence space with summability condition. 
-% 1:23:38
-You can see that the summability condition is basically some exponential decay, as Peter described.
-
-The point is that this thing does sit between the usual ring of overconvergent functions on the unit disc and the ring of holomorphic functions on the interior of the unit disc. When you do this overconvergent business, the subtlety of exactly what ring it is and what summability property you have doesn't matter anymore. It returns the usual ring of over-convergent holomorphic functions on the disc. There some scaling of the usual absolute value, because when we were building the universal norm, we had to take a fixed value of the norm of $q$ and kind of use that to write the answer. 
-% 1:24:48
-It is such that if you specialize to the usual situation, you get the normal thing.
-
-% 1:25:19
-In particular: this locus $\mathcal{N}_{1 < \abs{p} < \infty} $ is independent of $p$, because the universal norm didn't really depend on $p$ \note{todo: the second part of this sentence is wrong}. There's some rescaling property of the norm, but it doesn't affect this subspace $\mathcal{N}_{1 < \abs{p} < \infty} $ of the universal space of norms. This is the kind of thing you need to see in order to see that you're getting the Berkovich space. You have some infinite-dimensional space, but the conditions on the various prime numbers are very tightly related to each other. This is like in Ostrowski's classification of norms on the integers.
-% 1:26:07
-If you have a norm on the integers for which the norm of $p = \frac{1}{2}$, then it has to be the $p$-adic norm. In particular, its values on all the other integers have to be determined by that. You can see that also in our situation as well. When you force yourself to live in this locus of \note{todo: 1:26:26} which is only a condition on $p$ that automatically tells you what the norm of everything else is, because you can just do calculations with these usual rings of overconvergent holomorphic in usual non-archimedean geometry. So the norm of all others is determined.
-
-\begin{align*)
-$\mathcal{N}(\text{all other n})$ is determined
-\end{align*}
-
-% 1:26:47
-\textbf{Question:} So The Berkovich \note{I did not hear this }, instead of norms on $\Z$...
-
-\textbf{Answer:} Yes, not up to equivalence. No.
-
-% 1:27:10
-\textbf{Question:} \note{I did not hear this question well}
-
-\textbf{Answer:} Why that would be? Is there some explanation why that would be. For me, it's just a calculation. I mean, in our axioms for normed analytic ring, we had no version of the triangle inequality whatsoever. We just had this that the norm should be multiplicative. But then you can look and see, if you believe what I'm claiming, then kind of almost all of this does satisfy the triangle inequality, because you can check on in terms of the rings of functions that are being assigned, and you can verify that the triangle inequality holds. So whenever you're in the ordinary Berkovich space of $\Z$, your norm actually satisfy the triangle inequality. And then you get some sort of quasi-norm, if you move out in this direction, and this part is a little funny, but if you throw that away. 
-% 1:28:08
-So there's always some version of the triangle inequality that is automatically satisfied, just as a consequence of multiplicativity, and that's kind of funny.
-
-% 1:28:15
-\textbf{Question:} In the usual theory of Berkovich, in fact, was consider earlier, then I mean, it's I'm speaking now about Ostrowski's classification, so you can put the following condition. I don't remember which reference, instead of triangle inequality, you can put like $x +/- y$ val less equal to some constant times x y, and then one can prove that after a normalization by some power, you have the triangle inequality or even the.
-
-And so is it the case that, here, you can relate it somehow where, in the locus where, so if you know that the priority that the nor some integer like or three not infinity, then you can get the triangle inequality by scaling it.
-
-\textbf{Answer:} Yes, exactly. 
-
-\textbf{Question:} So if, well, I have on everything now, I'm speaking about \note{I did not hear this}
-
-% 1:29:18
-\textbf{Answer:} Let me make some further claims.
-Claims
+All the classical GAGA theorems are special cases:
 \begin{itemize}
-\item Claim: if you have a normed analytic ring $(R, N), N(2) \leq 1$ with 2 say, doesn't matter, less than or equal to 1, automatically satisfies the non-Archimedean triangle inequality.
-\item A normed analytic ring with norm of 2 less than or equal to 2 satisfies the usual triangle inequality.
-\end{itemize}
+  \item complex-analytic GAGA after Serre (using $\C^\gas$ or $\C^{\liq_p}$)
+  \item Grothendieck's formal GAGA: \note{look up statement of formal GAGA}if you have again complete noetherian ring $R$, and a proper scheme over it, then coherent sheaves on that is the same thing as coherent sheaves on the formal scheme you get by formally completing or, in other words, compatible collections of coherent sheaves on all the various $n$ potent thickenings there.
 
-\textbf{Question:} no of 2 two is equivalent to no of 3 three, 
- 
-% 1:30:28
-\textbf{Answer:} Yes. 2 is an arbitrary prime number here, 
+  In terms of Huber pairs, you would work over
+  \[ \Spa(R^\land_I, R^\land_I) \to \Spec(\Z^\solid) \]
+  so $\Spa(R^\land_I, R^\land_I)$ inherits the notion of analytification from $\Z^\solid$ based on the closed unit disc.
+  
+  \item non-archimedean GAGA over $\Q_p$ or any complete non-archimedean field. For this you would take your analytic ring to be $\Q_p^\solid$. But you don't put the gaseous structure on it which factors through the map to $\Spec\Z^\solid$, rather you put the gaseous structure on it which corresponds to
+  \begin{align*}
+    \Spec(\Q_p^\solid) &\to \Spec(\Z[\hat q^\pm]^\qgas)\\
+    q &\mapsto p
+  \end{align*}
+  That's the one that picks out the notion of analytification that corresponds to usual analytification of algebraic varieties over your non-archimedean field.
+\end{itemize} 
 
-\textbf{Question:} about to 6, is it
+\begin{remark}
+  You could try to use the other gaseous structure on $\Spec\Q_p^\solid$ where you factor through $\Spec\Z^\solid$. But GAGA won't apply in this setting, since then $1/p$ will not be bounded, and if you make it bounded in the solid setting you'll kill everything.
 
-\textbf{Answer:} That's also equivalent. So I guess prime is not so important, 3 is an arbitrary integer bigger than 1.
+  Nonetheless, there is still a different gaseous structure on $\Q_p^\solid$ obtained by factoring it through $\Z_p^\solid$. In a sense the above gaseous ring structure corresponds to some kind of overconvergent version of rigid geometry, while the gaseous ring structure that factors through $\Z_p^\solid$ corresponds to usual rigid geometry.
+\end{remark}
 
-% 1:31:08
-Okay, then. 
-Claims
-\begin{itemize}
-\item 
-\end{itemize}
-So a normed analytic ring with $N(2) < \infty$, there always exists a constant $ \exists c > 0$, such that $\norm(x + y) \leq C (\norm{x + y})$ is less than or equal to C * the norm of $X$, the norm of $Y$, 
-\textbf{Question:} but this is interpreted not in the sense of normal functions, but it's not. 
-% 1:31:39
-\textbf{Answer:} It's some universal thing, like, you know, you write down, you have whatever you have, you have $\P^1$, like, the locus where the norm of the T variable is less than or equal to a, cross P1, you know, locus for the S variable is less than or equal to B, that this maps to, so it's a and b are less than infinity here, so it's this maps to P1 R, and then this maps to Z Infinity, but this should factor through zero, and then C * a plus b.
-
-% Draw commutative diagram
-\begin{align*)
-A, B < \infty \P_{\abs{T} \leq A}^1 \times \P_{\abs{S} \leq B}^1
-\end{align*}
-
-So, and this is addition A1, they, 
-% 1:32:33
-it's well defined because this happens to live inside $A1$ \note{todo, check this}, which we already argued earlier.
-
-So there's always some version of the triangle inequality.
-
-How do you prove these claims? 
-
-% 1:33:06
-By the way, these claims imply the claim about what the image of n is, because, so, and then this extended Berkovich space, the one I mean the specific one that I wrote down, the reason is that you can, you can look at $N(2)$, which goes to zero infinity, if you want to, if you want to know the image of something, you can actually work, you can actually work on stratifications of your topologic, you don't have to work in closed covers or open covers, you don't have to work locally
-Over the locus where $2$ is less than or equal to $1$, the locus where $1$ is less than $2$ is less than infinity, and then the locus where $\norm{2} = \infty$. 
-% 1:34:46
-We then have to take the union of the images we see there. And here, if you believe this claim, then there you have the non-archimedean triangle inequality. So, here it's automatically a subset of by some universal argument, the non-archimedean Berkovich spectrum of $\Z$. We're contained in the claimed locus there. 
-% 1:35:16
-This thing $1 < norm{2} < \infty$ we already classified, is contained in the archimedean locus, the archimedean locus. So, the last thing we need to do is to see that this locus $\norm{2} = \infty$ consists of one point.
-Need: $\norm{2} = \infty \Rightarrow \norm{n} = \infity \forall n \neq 0, 1, -1$ 
-
-We need for all $n$ different from $0$, $1$, and $-1$. And that actually doesn't follow from the claims well. well, the claim that these conditions are independent of $2$ does give this as well. The last thing you say plus be, that's true. You can also directly argue that if $3$, for example, wasn't sent to infinity, then you'd be in one of these loci, and then $2$ wouldn't be equal to infinity.
-
-To prove these kinds of claims, you calculate. For the first part, we only know it's not larger than once, and it's not implied directly. Then you also need to see that if you take any point and then take that, there exists some normed analytic ring which has those values. We already saw it for the points in the interior of the rays in the Berkovich space, and it's also quite easy to hit the center because you do some non-archimedean geometry over some Laurent series ring with $\Q$ with the trivial norm, or you can hit the points at the end by doing some non-archimedean geometry with $\F_p$. This gives the containment, but you can actually see the other inclusion by exhibiting.
-
-To prove, we can assume we have this $\Q$ with a norm of $\Q$ between $0$ and $1$, and then we're working over this Gauss to base. For the first claim here, the non-archimedean claim, what do we need to do? Well, then the universal case, given that we fix this data, we're asking that the norm of $2$ is less than or equal to $1$, so it lives over an idempotent algebra. This was because of the claim that you have a cover. You can check things like the non-archimedean triangle inequality after passing to the total space of a cover.
-
-This idempotent algebra is the ring of holomorphic functions, so to speak, the overconvergent version of the unit disc, and then you mod out by $T - 2$. This gives a power series or Laurent series with integer coefficients that converge to radius zero, which are converge on some unspecified open disc around the origin. This already shows that the condition is independent of $2$, and then you can look at the universal over this and check the non-archimedean triangle inequality.
-
-The only other locus you need to worry about is the locus where you're...
-Between one and two, and then you're in this non-archimedean branch, and we saw you get the usual thing: you have the triangle inequality there. And then, to prove this claim, it's actually enough to - I think it's easier to prove the root. The root is, it's easiest to prove this claim, and then that implies the claim, because this means that the only other possible point to consider, we're living in the Archimedean locus, so we're some rescaling of the usual absolute value. And then, this weak triangle inequality, this quasi-norm triangle inequality, is actually satisfied.
-
-To prove this, you again do a calculation. It's sort of similar, except you're setting $t$ equal to 2, or you're setting the inverse of $t$ equal to some weird version of functions convergent on the open disc. And again, you observe that it's independent of 2.
-
-In this locus, your convergence property is shrinking down to zero. In this locus, the locus relevant to this claim, it's kind of the Laurent tails that are forcing the convergence out to the boundary of the unit disc.
-
-% 1:44:07
-As mentioned, there's no course this Friday, but please come here, and Peter will be here in person, and so will three other people giving talks, some of which are relevant to the material here. Next week, I'll continue this discussion of Berkovich geometry next Wednesday, and then the next Friday is actually going to be the last class, so we're really almost done here.
-
-Regarding the question about the ontic stack sitting over the classical regions, and what it means if it sits over infinitely many points, it's a bit weird. The norm is quite different - it's an analytic norm, not the norm on a ring. This relates to the statement about the set of norms being like the rescaling of the norms and forming a stack, where any analytic space has a unique map to this stack.
-According to the website, we have two more weeks. However, we may have to change that because there was some... Apparently, on the IHS website, it says we have two more weeks. But I'll get it fixed because the number of talks was originally more than the actual...
-
-We did decide that next week is the last week, right Peter?
-
-Yes.
-
-What's that IASS?
-
-Here, I see. In BOND classes, officially end, that's why we're stopping.
-
+\subsection{\ufs Addressing set-theoretic technicalities}
+\begin{unfinished}{1:29:22}
+things that maybe I should have been
+emphasizing before launching into this
+whole discussion is that over the
+completed Z Theory you you basically you
+can do algebraic
+geometry
+um and then that then that means you can
+do algebraic geometry over any analytic
+ring just by just by base change so
+that's um so that's kind of like
+considering the apine line like I was
+considering the apine line for example
+over an ariary base ring it's not it's
+not analytify yet but when you have
+extra structure on your analytic ring
+then that uh then that picks out a
+choice of what it means to analytify
+also in algebraic
+variety um and
+so
+uh and I'm also conf exit are fine or
+yeah when I was describing kind of
+explicitly what it is I was looking at
+the case where X is apine but in general
+both things glue and so you then then
+you can Define uh you can doesn't need
+to be it doesn't need to be Aline no
+yeah
+um so so all the all classical Gaga
+theorems
+uh are special
+cases so
+there's um so for example groen's formal
+Gaga well the complex analytic
+Gaga um so Sarah's original Gaga um take
+for example C gaseous or P liquid or
+whatever you
+like
+um uh there's also formal
+Gaga uh which is you know if you have a
+a again complete nean ring and then you
+have a a proper a proper uh scheme over
+it then coherent sheaves on that is the
+same thing as coherent sheaves on the
+formal scheme you get by formally
+completing or in other words compatible
+collections of coherent sheaves on all
+the various n potent thickenings there
+um then you would take a spff well maybe
+I should say
+Spa so in terms of Huber pairs you would
+work you would work over this um which
+lives over a solid
+Z and therefore inherits the notion of
+analyics based on
+the the closed unit
+dis
+um it also includes like non-
+archimedian GMA
+Gaga uh say over I don't know over QP or
+any complete non- archimedian field so
+there you would take your analytic ring
+you would take to be a spec of say QP
+solid
+um but you wouldn't put the gaseous
+structure on it which factors through
+the map to spec Z rather you'd put the
+gaseous structure on it which
+corresponds to mapping topc of Z q hat
+plus or minus one Q
+gasas uh where Q goes
+to uh Q goes to P say so St say standard
+choice of topologically mil potent
+unit um that's the one that picks out
+the notion of analy ification that
+corresponds to usual anal analy
+ification of algebraic varieties over
+your non- archimedian field um you could
+have also chosen the other gashes
+structure on this guy where you factor
+through uh spec Z solid um and that
+would give you a different statement of
+Gaga in fact a different theorem so yeah
+so we're
+Mark and three could also
+choose
+uh the solid
+z uh gaseous
+structure on uh on solid
+QP that gives a an a priori different
+Gaga
+theorem oh the the analy ification of A1
+will then just be the open unit or the
+closed unit
+dis so um yeah so there's so let me
+illustrate H that cannot
+beis it has
+what
+sorry dation
+sorry1
+ofp
+canale so they must
+also1 so iation of A1 in that context is
+oh wait ah you're right you're right
+you're right I'm sorry you're right I'm
+sorry yeah that's that that open your
+dis is when you just force T to be
+analytic but there's no reason
+why
+uh that should also Force something like
+uh T over P to be analytic yeah no ah
+same Gaga thank
+you yeah I miss uh I I was not the same
+guys it's
+just no it is the same isn't it because
+you you would
+make you should always assume that your
+whole
+ah
+you're right I forgot that Axiom shoot
+yeah so I'm sorry you need
+ah oh boy than uh thanks again so you
+need
+uh to
+assume uh that every element in here is
+is bounded
+uh
+uh yeah
+so I was kind of making the same mistake
+again over and over um yeah I'm sorry uh
+so you don't get a Gaga statement at all
+in this context because
+um one over p uh is never going to be if
+you try to make one over P bounded in
+that sense then you're just going to
+kill everything so in in the solid QP
+setting but nonetheless um there's a
+point I wanted to make which is that
+there is still a different gaseous
+structure on solid QP obtained by taking
+um uh obtained by factoring it through
+solid zp
+and in a sense the difference between
+this gaseous ring structure and this
+gaseous ring structure is sort of the
+difference between usual rigid geometry
+and um and some kind of overon
+convergent version of rigid
+geometry
+um
+yeah uh
+okay
+so is there something weaker than
+n something weaker than n could you
+explain the
+question a result that would put uh
+identify x r with some
+less uh
+regular could you explain uh okay maybe
+okay yeah this assumption that this uh
+bound it yeah yeah
+so what is the issue if it's if you
+don't assume that it's empty like the if
+you don't assume that everything in here
+is bounded then when you try to do the
+analyics that I described then in
+particular you're always forcing all of
+the scalers IE elements of of here uh
+you're forcing them to be bounded anyway
+so if you don't if you don't have this
+assumption then your analyics changing
+your your base so we have so a special
+case is when you take x equals Spec R
+and you try to analytify that what this
+assumption is saying is basically that
+then it doesn't change it like specr is
+its own
+analytify ring where it's where this
+thing has been forced to be bounded but
+in the case of solid QP if you try to
+force with that with that with that
+gaseous structure factoring through
+solid Z if you try to force all of the
+scalars to be bounded um you're just
+going to get the zero ring because
+yeah yeah
+um
+right
+yeah um so yeah so that was the
+uh yeah x equals specr was giving a
+problem there my
+apologies
+um
+okay
+uh right
+so that was um kind of explaining one
+example of where a linear algebraic
+comparison result uh can be promoted to
+an isomorphism of
+stacks um more generally we want
+relations um so
+relations between the various kinds of
+stacks uh various
+examples so for already in Peter's talk
+he had this map from the T
+curve uh with parameter Q to the
+topological Circle
+so and we want this to make sense as a
+map of analytic stacks
+so where I already explained how such a
+thing is an algebraic stack and
+algebraic Stacks will embed into
+analytic Stacks even over the the
+initial analytic ring um and then we
+have the Tate curve and so this kind of
+analytic space should map to that kind
+of analytic space but also if x is a
+complex analytic
+space uh then you want
+um X to map
+to uh its underlying topological Space X
+of c
+um and if say R is a banak
+ring then you want its well sort of its
+liquid spec uh to M map to the burkovich
+Spectrum
+um
+so
+uh yeah so there's all these we're going
+to have all these various different
+classes of analytic spaces and we want
+the category to be such that we can make
+maps between them when we expect
+comparisons um so for example it's well
+known that the coherent chology of a
+comp complex analytic space localizes on
+the underlying topological space um
+that's kind of more or less by
+definition in a lot of ways um and that
+kind of linear algebraic relation is
+supposed to be explained by the
+existence of such a map in this in this
+large category of analytic
+spaces um so all right
+um I
+think
+uh maybe I'll say one word about the set
+theoretic technicalities just to get it
+out of the way
+um
+so so addressing
+uh
+um
+so um well let's go back to our
+uh algebraic analog so so this was a
+Comm the opposite category of
+commutative
+Rings um so we have fpqc sheaves on
+there but again this is not a legitimate
+definition because this is not a small
+category and this by definition is a
+full subcategory of functors from uh
+commutative Rings uh to say sets or
+groupoids or whatever you like um and
+there's well-known problems with such
+things that the
+morphisms in this funct category involve
+a some more than a sets worth of data so
+you have morphisms that aren't sets but
+are some sort of bigger entity so that's
+a real pain um so what is the
+fix
+um uh consider so instead
+of instead of pre- shees uh on on F
+consider uh what are called accessible
+prees
+um which are the same thing as
+accessible
+functors uh from commutative rings to
+sets and what are accessible
+functors
+uh if and only if there exists a
+cardinal Kappa regular
+Cardinal uh such that uh fun F such that
+f commutes
+with with Kappa filtered
+coletes
+um so what does this mean uh the the
+first choice of Kappa is Alf not
+um um and in general when you think of a
+regular Cardinal you shouldn't try to
+think about what it is as a set what you
+should really think of is the collection
+of sets that are of smaller cardinality
+that's what Kappa is really indexing
+it's don't think of it as the
+cardinality of some set think of it as
+indexing the so this corresponds to
+finite
+sets um those are the sets of
+cardinality smaller than Kappa and then
+the notion of Kappa filtered Co limit in
+that case is just the usual notion of
+filtered Co limit so if your funter
+commutes with filtered colimits you're
+okay but if Kappa gets
+bigger uh you have
+fewer uh Kappa filtered Co
+limits so to be a so for example if you
+take Kaa equals lf1 then you're indexing
+the countable
+sets and you're only then a Kappa
+filtered Co liit would be one where
+every countable set has a cone as
+opposed to just every finite set so
+there are fewer kapper filtered colimits
+that means there's more examples of
+functors which commute with Kappa
+filtered
+colimits um and
+uh uh
+Kappa um so so the nice thing uh is that
+every uh for
+every X in
+F uh the un
+uh the on its image under the on
+embedding is always
+accessible and in
+fact
+accessible is equivalent to being a
+small co-
+liit of representable functors
+hxs so if we think of
+these apine schemes is the basic
+building blocks and Co limits as our
+gluing procedure then we're saying kind
+of an obvious thing we're only allowed
+to glue a sets many worth of things
+together at a time and that's exactly
+what's captured by this notion of
+accessible
+functor and
+moreover uh fpqc shif
+foration uh preserves accessible sheaves
+or pre- shees
+sorry that was actually that's a theorem
+of
+Waterhouse
+um so that um
+you can um yeah so you can also impose
+the sheath condition at will without
+running into set theoretic
+technicalities um but this accessible PR
+is not presentable right it's not a
+presentable C never there
+AIC yes okay yeah we have we have to
+prove it yeah yeah yeah it has to be
+proved so what what makes this work so
+these are not kind of in some sense non
+trivial claims the claims made here so
+what makes this
+work so the first thing is that this
+category that we're working with uh is
+presentable in fact compactly
+generated
+uh that's what makes the theory of
+accessible prees work so it makes that
+the condition they're commuting with
+Capa filtered col is the same as being a
+small cimit of
+representes um and then there's
+something about the gro de topology
+which is that
+every uh fpqc
+cover
+um uh in
+F is a a filtered is a there exists a
+Kappa such that um and in this case it's
+lf1 is a is a Kappa filtered
+limit of Kappa comp
+compact uh cap fpqc
+covers so every uh every flat cover of a
+ring is a alf1 filtered Co limit of
+countably presented flat covers of that
+ring um and this kind of condition
+having some a priori bound
+on the basic fpqc covers I cardinality
+bound is what you can use to um to check
+this kind of fpqc shic result and um
+so well so maybe I'll say then so
+then at
+least I we haven't explained what our gr
+de topology is but we' least explained
+what the category of analytic Rings is
+so so there's a theorem um
+so analytic
+Rings is uh
+presentable in fact it's Kappa compactly
+generated for
+Kappa uh true to the ALF not plus
+so
+so so that you Capa small means
+cardinality less than Continuum um
+so the uh that's what lets you kind of
+formally avoid all of these uh set
+theoretic difficulties involved with
+taking pre- sheaves and sheaves on a um
+a big
+category uh maybe
+yeah oh no I won't add anything that's
+fine okay thank you for your attention
+this category of analytic Rings is
+naturally ened of a condensed animal
+right I mean
+mapping mapping home mapping space
+is a condens condens animal yes so we
+could also consider ened seeds
+instead of usual SE it it seems also
+natural to me but you take non-enriched
+we take non-enriched yeah and
+um it's confusing
+the it's
+confusing
+um what can I
+say
+um
+so in particular this analy the category
+of analytic uh Stacks is
+not um no it's not that's right
+yeah um right different
+way because also okay but how do you use
+that to get an
+enrichment uh
+I
+mean yeah well maybe there's some
+adjoint funter is
+there I mean you're saying I mean okay
+it's yeah it's not even clear it's
+enriched over itself
+right
+well I mean I don't know yeah but no I
+guess I guess you're right you're you're
+saying you just take your profinite set
+or whatever and then you cross it with X
+and map it to y yeah no yeah that's
+right yeah so there is an sorry thanks
+yeah so you you could take take so in in
+analytics tax is enriched over light
+condensed sets because you can define an
+s-v valued point to be just a a map like
+this um but uh it's different from the
+enrichment there's essentially no
+relation with the enrichment you had on
+analytic Rings because we imported these
+things via kind of very trivial analytic
+Rings just continuous functions and it
+um yeah it's all all in all it's a
+little bit confusing and um yeah so for
+example I think in some recent Works
+in in with ptic coefficient systems and
+like like V vishan was telling me that
+she wants to work with like sheaves of
+solid aelan groups on the proall side
+site and then you know on the protol
+site you already have profinite sets
+there so you're somehow you have you're
+doing condensed in two orthogonal
+directions at the same time but
+apparently that's the correct thing for
+her and it's just it's it's all a little
+bit confusing
+but
+yeah
+yeah I want to explain how this space be
+seen as an analytical space um well this
+by this I just meant the topological
+space um and maybe I make some
+assumptions to make sure it's compactly
+generated otherwi I mean sorry
+metrizable otherwise I have to modify a
+little bit what I mean maybe but um yeah
+just so the same way that uh that this
+thing was a a topological space and
+therefore an analytic stack so but this
+you could think of as providing an
+analytic stack structure on this a
+non-trivial analytic stack structure on
+this this this topological space
+here
+yeah um what do you mean by two years
+Bond what do I mean by by
+one CU is
+bounded two is bounded two is bounded ah
+yeah so what I meant was that the yeah
+so we have some Spec
+R and I was looking at the apine line
+and then so two is a a function on this
+well if you have any element in the
+ground ring it gives you a section of
+the projection and you can ask that that
+section be away from the the local ring
+at Infinity so so we had this ring of of
+uh ring living at the origin this
+filtered cimit of P along scaling the
+coordinate by Q then we can put it at
+infinity and we can ask that this F not
+meet that Locus at Infinity in the sense
+that well in the sense that if
+you that if you take some relative
+tensor product like R mod f and then
+that that ring that lives there then you
+get zero um
+so
+um uh right and that if that happens we
+say that f is bounded or that f is of
+analytic so um it doesn't yeah it
+doesn't get too close to
+Infinity um so you have to ask that
+condition for the scaler two um in order
+for some of the claims I made to hold
+um yeah and for the Gaga you have to ask
+that condition for all elements in the
+Basse ring
+um
+yeah I feel particularly silly about
+forgetting that because I mean basically
+we we already basically wrote up the
+argument in the previous lectures on
+complex analytic spaces and that aim was
+explicitly included there so I just kind
+of forgot about it
+um okay other
+questions
+maybe at Point you said so you wrote
+what what was the G structure on Spec R
+on Spec R yeah uhhuh said this amount
+to Spec
+R G GM did it say did I say spec RQ
+plusus one I meant spec zq plusus one ah
+okay spec oh I'm sorry I'm sorry I meant
+Z I meant Z I'm sorry but is it possible
+to
+elaborate or maybe or
+maybe
+well I mean the point is that if you
+have a map to that stack then you get to
+Define such a Ring The Ring of germs at
+zero
+um uh which lets you run this machine of
+of building
+analytic so yeah but so why you divide
+by G because you don't really want to
+specify exactly you don't want to
+specify Q so for example you know if you
+have like a a tate ring or whatever an
+analy T Tate Huber ring or whatever then
+there exists a topologically no potent
+unit but you know it doesn't play any
+role I mean so or at least up to some
+bounded difference it doesn't play any
+role so that's exactly what this
+quotient is doing it's saying you have
+some say topologically nil potent unit
+um but it shouldn't it should only
+matter up to some bounded difference and
+so you define this GM analytic and then
+you say that if you have q and you
+multiply it by something bounded both
+both away from zero and away from
+Infinity then that should play the same
+role in particular it should give rise
+to the same item poent algebras and the
+same theory of
+analytic and so
+on by the way I don't see you multiply
+by something about it I mean rather that
+you can mully by something one or you
+raise to raise to some
+power but this gets
+confus s model is not really antic gen
+at
+all uh it
+is I mean you can have something that's
+like Q nor itself but if you multip by
+something bound that's too large then
+you would actually not have something
+anymore yeah but
+we that's
+true
+um that's true wait
+uh there but it's not
+really I thought I wrote the thing
+down
+um but maybe we can just
+sort I thought I wrote this thing
+down um just a
+second
+ah okay sorry yeah maybe it's not the GM
+maybe it's the uh so you can also Define
+the locus
+where uh the coordinate is bigger than
+or equal to one or sorry some in some
+over convergent sense and the locus for
+T is less than or equal to zero maybe
+it's the thing that's uh that lies in
+between
+there um that's not a yeah that's a
+group yeah
+um we will discuss later in the
+course
+yeah but now I'm concerned okay anyway
+okay we'll discuss it later in the
+course thanks everyone
 \end{unfinished}
