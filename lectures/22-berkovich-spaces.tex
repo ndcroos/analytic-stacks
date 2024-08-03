@@ -657,7 +657,7 @@ I'm claiming in particular that if you look at the universal - let's say we take
 
 
 $
-Spec(Q_p^\gas) \times \{ \lambda \}      \text{normed analytic ring structure \\ here: notion of overconvergent functions on a disc of radius $r$ }
+\Spec(\Q_p^{\gas}) \times \{ \lambda \}      \text{normed analytic ring structure \\ here: notion of overconvergent functions on a disc of radius $r$ }
 $
 
 then you get a normed analytic ring structure here. And it is - so what does that mean? It means that for every radius $r$, you have some notion of overconvergent functions on a disc of radius $r$, where the notion of on a disc of radius $r$ is the usual one from non-Archimedean geometry, where you take the normalization of the absolute value on the $p$-adic numbers for which $\abs{p} = \lambda$. So, what we're seeing here is the interior of the $p$-branch.
@@ -779,25 +779,95 @@ We then have to take the union of the images we see there. And here, if you beli
 This thing $1 < norm{2} < \infty$ we already classified, is contained in the archimedean locus, the archimedean locus. So, the last thing we need to do is to see that this locus $\norm{2} = \infty$ consists of one point.
 Need: $\norm{2} = \infty \Rightarrow \norm{n} = \infity \forall n \neq 0, 1, -1$ 
 
-We need for all $n$ different from $0$, $1$, and $-1$. And that actually doesn't follow from the claims well. well, the claim that these conditions are independent of $2$ does give this as well. The last thing you say plus be, that's true. You can also directly argue that if $3$, for example, wasn't sent to infinity, then you'd be in one of these loci, and then $2$ wouldn't be equal to infinity.
+% 1:35:53
+We need for all $n$ different from $0$, $1$, and $-1$. That actually doesn't follow from the claims. 
 
-To prove these kinds of claims, you calculate. For the first part, we only know it's not larger than once, and it's not implied directly. Then you also need to see that if you take any point and then take that, there exists some normed analytic ring which has those values. We already saw it for the points in the interior of the rays in the Berkovich space, and it's also quite easy to hit the center because you do some non-archimedean geometry over some Laurent series ring with $\Q$ with the trivial norm, or you can hit the points at the end by doing some non-archimedean geometry with $\F_p$. This gives the containment, but you can actually see the other inclusion by exhibiting.
+\textbf{Peter:} It does follow from \note{did not hear this} $n$ was arbitrary bigger than one. 2 was arbitrary bigger.
 
-To prove, we can assume we have this $\Q$ with a norm of $\Q$ between $0$ and $1$, and then we're working over this Gauss to base. For the first claim here, the non-archimedean claim, what do we need to do? Well, then the universal case, given that we fix this data, we're asking that the norm of $2$ is less than or equal to $1$, so it lives over an idempotent algebra. This was because of the claim that you have a cover. You can check things like the non-archimedean triangle inequality after passing to the total space of a cover.
+% 1:36:07
+\textbf{Answer:} Yes, that's right. The claim that these conditions are independent of $2$ does give this \note{add what is being pointed} as well. 
 
-This idempotent algebra is the ring of holomorphic functions, so to speak, the overconvergent version of the unit disc, and then you mod out by $T - 2$. This gives a power series or Laurent series with integer coefficients that converge to radius zero, which are converge on some unspecified open disc around the origin. This already shows that the condition is independent of $2$, and then you can look at the universal over this and check the non-archimedean triangle inequality.
+
+\textbf{Peter:} \note{can't hear this} The last thing you say plus three. 
+
+\textbf{Answer:} That's true. You can also directly argue that if $3$, for example, wasn't sent to infinity, then you'd be in one of these loci, and then $2$ wouldn't be equal to infinity.
+
+% 1:36:43
+To prove these kinds of claims, you just calculate. 
+
+% 1:37:02
+\textbf{Question:} For the first part, we only know it's not larger than 1, and it's not implied directly. 
+
+\textbf{Answer:} Then you also need to see that if you take any point in $\BerkSpec^{n.c.} (\Z)$ and then take that there exists some normed analytic ring, which has those values. We already saw it for the points in the interior of the rays in the Berkovich space, and it's also quite easy to hit the center because you do some non-archimedean geometry over some Laurent series ring $\Q((q))$ with the trivial norm, or you can hit the points at the end by doing some non-archimedean geometry with $\F_p((q))$. 
+% 1:37:39
+This gives the containment, the image is contained in this, but you can actually see the other inclusion by exhibiting.
+
+% 1:37:56
+To prove, we can assume $\exists q$, in addition we have our arbitrary normed analytic ring satisfying this property, but we can in addition assume we have this norm of $q$ with $ 0 < N(q) < 1$, and then we're working over this gaseous base $\Z[\hat{q}^{\pm}]^{\gas}$. 
+% 1:38:25
+For the first claim here, the non-archimedean claim, what do we need to do? The universal case, given that we fix this data, we're asking that the norm of $2$ is less than or equal to $1$, so it lives over an idempotent algebra. 
+
+% 1:38:53
+\textbf{Question:} Why \note{did not hear this}
+
+% 1:39:01
+\textbf{Answer:} This was because of the claim that you have a cover. You can check things like the non-archimedean triangle inequality after passing to the total space of a cover.
+
+% todo
+This idempotent algebra is the ring of holomorphic functions, so to speak, the overconvergent version of the unit disc, and then you mod out by $T - 2$:  $\O_{\Z[\hat{q}^{\pm}]^{\gas}} (|T| \leq 1) / T-2$. This gives a power series or Laurent series $\Z((q)) \O_{\C,0}^{todo}[q^{-1}]$ \note{todo: eq between the last two expressions} with integer coefficients that converge to radius zero, which are converge on some unspecified open disc around the origin. This already shows that the condition is independent of 2, because this \note{todo} description is independent from 2.
+Then you can look at the universal over this and calculate what the base change of these overconvergent rings are , you could just check by hand, very brute-force, that the non-archimedean triangle inequality is satisfied.
+
+% 1:40:59
+It's just about a certain existing map of idempotent algebras lying over the addition map on the polynomial ring. 
+
+\textbf{Question:} So in particular thing is the \note{todo} field the convergent formal series Laurent \note{todo}
+
+% 1:41:24
+\textbf{Answer:} We have negative powers of $q$ here (in $\Z((q)) \O_{\C,0}^{todo}$).
+
+% 1:41:35 Correction
+% meromorphic around the origin, thank you.
 
 The only other locus you need to worry about is the locus where you're...
-Between one and two, and then you're in this non-archimedean branch, and we saw you get the usual thing: you have the triangle inequality there. And then, to prove this claim, it's actually enough to - I think it's easier to prove the root. The root is, it's easiest to prove this claim, and then that implies the claim, because this means that the only other possible point to consider, we're living in the Archimedean locus, so we're some rescaling of the usual absolute value. And then, this weak triangle inequality, this quasi-norm triangle inequality, is actually satisfied.
+Between one and two, and then you're in this non-archimedean branch, and we saw you get the usual thing: you have the triangle inequality there. And then, to prove this claim, it's actually enough to - I think it's easier to prove the root. It's easiest to prove this claim, and then that implies the claim, because this means that the only other possible point to consider, we're living in the Archimedean locus, so we're some rescaling of the usual absolute value. And then, this weak triangle inequality, this quasi-norm triangle inequality, is actually satisfied.
 
-To prove this, you again do a calculation. It's sort of similar, except you're setting $t$ equal to 2, or you're setting the inverse of $t$ equal to some weird version of functions convergent on the open disc. And again, you observe that it's independent of 2.
+% 1:42:42
+To prove this, you again do a calculation. It's sort of similar, except you're instad setting $T = 2$, you're setting $T = \frac{1}{2}$.
+% 1:42:55
+There's a similar \note{todo}
 
+What you end up getting is some weird version of functions convergent on the open disc \note{todo: drawing}. And again, you just observe that it's independent of 2.
+
+% 1:43:15
 In this locus, your convergence property is shrinking down to zero. In this locus, the locus relevant to this claim, it's kind of the Laurent tails that are forcing the convergence out to the boundary of the unit disc.
 
 % 1:44:07
 As mentioned, there's no course this Friday, but please come here, and Peter will be here in person, and so will three other people giving talks, some of which are relevant to the material here. Next week, I'll continue this discussion of Berkovich geometry next Wednesday, and then the next Friday is actually going to be the last class, so we're really almost done here.
 
-Regarding the question about the ontic stack sitting over the classical regions, and what it means if it sits over infinitely many points, it's a bit weird. The norm is quite different - it's an analytic norm, not the norm on a ring. This relates to the statement about the set of norms being like the rescaling of the norms and forming a stack, where any analytic space has a unique map to this stack.
+% end of lecture, applause
+
+\textbf{Question:} analytic stack sitting over the classical regions, but what it means if it sits over infinitely many points, 
+
+\textbf{Answer:} It's weird. I don't know. It is a bit weird. 
+
+\textbf{Question:} Of course, the norm is quite different - the norm there was this norm on a ring, but here you have an analytic one. So a norm is something quite different, I mean
+
+% 1:45:39
+For like a Tate ring, it's somehow, you choose one norm and then you can rescale by continuous exponent...
+
+\textbf{Answer:} Exactly.
+
+\textbf{Question:} Of course around continuous functions from the Berkovich space to $R$.
+
+\textbf{Answer:} Yes.
+
+% 1:46:03
+\textbf{Question:} I mean, this is actually true in the set of norms \note{todo)
+
+% 1:46:10
+\textbf{Peter:} 
+
+This relates to the statement about the set of norms being like the rescaling of the norms and forming a stack, where any analytic space has a unique map to this stack.
 According to the website, we have two more weeks. However, we may have to change that because there was some... Apparently, on the IHS website, it says we have two more weeks. But I'll get it fixed because the number of talks was originally more than the actual...
 
 We did decide that next week is the last week, right Peter?
