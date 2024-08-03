@@ -506,22 +506,23 @@ You can define a norm on $R$: $\norm{\cdot}: R \to \nonneg$ with $\norm{\pi} = \
 
 \begin{unfinished}{45:16}
 \begin{align*}
+x \in A
 (A, \norm{\cdot}) \leadsto \BerkSpec(A, \norm{\cdot}) = \{ \norm_{x} = A \to R todo \} \\
 \text{\underline{multiplicative seminorm}} \\
 with \norm{f}_x todo \norm{f} \\
 \forall f \in A.
 \end{align*}
-And then to this data, so to $(A, \norm{\cdot})$ Berkovich assigned the space, which as a set is given by the norm of $f$ equals $z$ if and only if $f$ equals $z$, right.
+And then to this data, so to $(A, \norm{\cdot})$ Berkovich assigned the space, which as a set is given by the norm of $f$ equals $z$ if and only if $f$ equals $z$, right % todo
 % 46:30
-So, I'm using this notation $X$, so kind of it's a decoration to. And this is now a \underline{multiplicative seminorm}, with which is bounded by the given norm you have on the Banach algebra $A$.
+So, I'm using this notation $\norm{\cdot}_{x}$, so kind of it's a decoration. And this is now a \underline{multiplicative seminorm}, which is bounded by the given norm you have on the Banach algebra $A$.
 
-% todo, change title example
-\begin{example}[\yt{47m13s}{Tate-Huber ring}] 
+% 47:15
+\begin{example}[\yt{47m13s}{Berkovich space}] \label{ex:22-berkovich-space} 
 \begin{align*}
 A = \Cont(S, \C) \\
 \norm{f}_x = \norm{f(x)} \forall x \in S.
 \end{align*}
-If you require that the norm restricts to the usual norm on the complex numbers, then these are all the examples. So that's Gelfand's theorem. Those are the only examples in this situation. 
+If you require in this example that the norm restricts to the usual norm on the complex numbers, then these are all the examples. So that's Gelfand's theorem. Those are the only examples in this situation. 
 
 \textbf{Question:} And multiplicative seminorm includes the zero element, that is $\norm{1} = 1$. 
 
@@ -544,11 +545,11 @@ If you require that the norm restricts to the usual norm on the complex numbers,
 \BerkSpec(A, \norm{\cdot}) \subseteq \prod_{f \in A} [0, \norm{f} ]
 \end{align}
 % 48:53
-This is actually a compact Hausdorff space. I didn't describe the topology, but here it is. You can view it as a subset of the product over all $F$ in $A$ of the interval from zero to the norm of $F$. It is actually a closed subset. This map takes a norm and records its value on $F$. The topology is the subspace topology, so it is a compact Hausdorff space.
+This is actually a compact Hausdorff space. I didn't describe the topology, but here it is. You can view it as a subset of the product over all $F$ in $A$ of the interval from zero to the norm of $F$. It is actually a closed subset. This map takes a norm and records its value on $F$: $\norm{\cdot}_x \mapsto (\norm{f}_x)_{f \in A}$. The topology is the subspace topology, so it is a compact Hausdorff space.
 
 \subsection{Berkovich spaces in the language of analytic stacks} \label{subsec:berk_spaces_language_analytic_stacks}
 % 50:20
-So what we're going to do is, we're going to try to make the same definition, but in the world of analytic stacks instead of topological spaces. So, we want to take the same idea, which is that we want to look at the set of all multiplicative seminorms $\BerkSpec$ on $A$, bounded by the given norm on $A$, but we want to say that in the language of analytic stacks, using the notion of norm on an analytic ring that we discussed earlier.
+We're going to try to make the same definition, but in the world of analytic stacks instead of topological spaces. So, we want to take the same idea, which is that we want to look at the set of all multiplicative seminorms $\BerkSpec$ on $A$, bounded by the given norm on $A$, but we want to say that in the language of analytic stacks, using the notion of norm on an analytic ring that we discussed earlier.
 
 \subsubsection{Norm} \label{subsubsec:norm_reminder}
 % 51:18
