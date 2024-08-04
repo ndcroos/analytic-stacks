@@ -8,52 +8,79 @@
 
 \subsection{Introduction and motivation}
 
-\begin{unfinished}{0:00}
-All right, so welcome back to the second lecture. I should make an announcement about the schedule for the next few weeks, which is a little bit different than usual. Usually, it should be the case that Dustin lectures Wednesdays at PS and Fridays I lecture here. But due to some traveling, I will give the next few lectures all at MPI, but note that there will be a gap of two lectures. So there are no lectures next Friday and the Wednesday after.
+Welcome back to the second lecture. I should make an announcement about the schedule for the next few weeks, which is a little bit different than usual. Usually, it should be the case that Dustin lectures Wednesdays at PS and Fridays I lecture here. But due to some traveling, I will give the next few lectures all at MPI, but note that there will be a gap of two lectures. So there are no lectures next Friday and the Wednesday after.
 
-So the goal of today's lecture is to recall---partly this will be much repetition of a very similar lecture I gave four years ago, also five years ago. But something I want to stress throughout is why we switch to the Huber setting and which properties you gain when you make this restriction.
+So the goal of today's lecture is to recall condensed spaces, so this will be about light condensed sets, light condensed abelian groups. In particular, partly this will be much repetition of a very similar lecture I gave four years ago, also five years ago. But something I want to stress throughout is why we switch to the Huber setting and which properties you gain when you make this restriction.
 
+% 2:22
 Before I go there, let me just say a few introductory words from my perspective about what was said last time. So what's our goal with all of this analytic geometry? For me personally, one goal since 10 years or so has always been to find---there's all this fancy geometry that has been developed $p$-adically, like perfectoid spaces, prismatic cohomology, $p$-adic shtukas, and the geometrization of local Langlands. This all works quite beautifully over the $p$-adic numbers. But it has to use some quite fancy $p$-adic geometry, like these highly non-noetherian perfectoid spaces and so on.
 
-I mean, I'm always hoping that similar ideas or techniques could also be applied not just over $p$-adic local fields, but also real local fields. That's actually something that I think really is possible now. But then also over the whole integers, globally.
+I'm always hoping that similar ideas or techniques could also be applied not just over $p$-adic local fields, but also real local fields. That's actually something that I think really is possible now. But then also over the whole integers, globally.
 
-What I want is some kind of notion of a global $\Spec(\Z)$, something like that. And this guy, this should definitely be some kind of analytic space, some kind of adic space, some non-affinoid---I mean, some model by some rings with a non-archimedean norm. It should definitely include those archimedean and non-archimedean parts, $\R$ and $\Z_p$. You know, hopefully a kind of uniform language to talk about these parts. But it should also be extremely non-noetherian---you can't hope for any of the usual finiteness properties often imposed.
+% 3:34
+What I want is some kind of notion of a \emph{"global $\Spec(\Z)$ perfectoid space"}, something like that. And this guy, this should definitely be some kind of analytic space, some kind of Banach algebra, or some non-trivial---I mean, some model by some rings with a nontrivial topology. 
+% 4:24
+It should definitely \emph{include those archimedean ($\R$) and non-archimedean parts ($\Q_p$)}. Hopefully a kind of uniform language to talk about these parts. But it should also be \emph{extremely non-noetherian}---you can't hope for any of the usual finiteness properties that are often imposed on these \note{can't hear this well, is it 'groups'?}.
 
+% 4:54
 So it's clear that you need some new language to talk about these things. The goal of this course is to develop a language in which it is at least conceivable that such objects exist.
 
-Here's some kind of very vague idea that's possibly completely misguided. So when you do these perfectoid things, you have some kind of perfect field, maybe $\C_p$ or something like this. But then when you have an atlas over this, you're always doing the thing where you adjoin a variable, but with it also all its $p$-power roots. This is a prototypical example.
+% 5:20
+Here's some kind of very vague idea that's possibly completely misguided. When you do these perfectoid things, you have some kind of perfect field, maybe $\C_p$ or something like this. But then when you have algebras over this set, you're always doing the thing where you adjoin a variable, but with it also all its $p$-power roots. This is a prototypical example of perfectoid algebras.
 
-If you think about how you would do something similar, like not a fixed prime but kind of globally, then you say you definitely want to get rid of the choice of the fixed prime here. So maybe you have no idea what the base is, but at least you can try to understand what happens relatively. And then relatively, I think you at least certainly want to adjoin some variable with all of its rational powers. Because each prime $p$ is forced in some way.
+\note{todo equation}
 
-But then you're only taking care of the finite primes, and then you maybe wonder, what could be the analog of this at an infinite prime? I mean, something that suggests itself---and again, maybe it's completely misguided, but something that you tend to wonder is whether you should try to form some ring where you adjoin all real powers of a variable $T$. But then you begin to wonder, what kind of object should this even be?
+% 6:07
+If you think about how you would do something similar, like not \note{can't hear this} a fixed prime but kind of globally, then you say you definitely want to get rid of the choice of the fixed prime here. So maybe you have no idea what the base is, but at least you can try to understand what happens relatively. And then relatively, I think you at least certainly want to adjoin some variable $T$ with all of its rational powers: $K<T^{\Q}>$. Because each prime $p$ is forced in some way. \note{can't hear this}
 
-So you can definitely just treat the real numbers as a discrete thing and then adjoin here and all real powers, and then this would be some kind of algebra. But I mean, this feels somewhat artificial---that's the real, and sometimes then the real numbers are just some uncountable dimensional Cantor space, and you don't feel like you really made the situation any better.
+% 6:36
+But then you're only taking care of the finite primes, and then you maybe wonder, what could be the analog of this at an infinite prime? Something that suggests itself---and again, maybe it's completely misguided, but something that you tend to wonder is whether you should try to form some ring where you adjoin all real powers of a variable $T$, i.e. $K<T^{\R}>$. But then you begin to wonder, what kind of object should this even be?
 
-So you definitely want to keep track of the topology on $\R$ here. But then it's mixing the topology, like the profinite topology you usually have appearing, in a very strange way with the real
+% 7:14
+So you can definitely just treat $\R$ as a discrete thing and then adjoin $T$ and all its real powers, and then this would be some kind of Banach algebra. But this feels somewhat artificial--- and in some sense then the real numbers are just some uncountable dimensional Cantor space, and you don't feel like you really made the situation any better.
 
-Correspondences, F-schemes and similar---this should be some algebra modeling for some local model of the space St I called this last time. But even I'm more unclear what kind of geometry that should be.
+% 7:32
+So you definitely want to keep track of the topology on $\R$ here. But then it's mixing the topology, like the $p$-adic topology you usually have a Banach ring, in a very strange way with the real topology you have on this. \note{could not hear this well}
 
-So maybe these are not at all the correct objects. But maybe we could at least, if these would turn out to be the correct objects, want to have a language we can talk about those. So some such things will be involved.
+% 8:01
+So it's definitely not a Banach algebra and it is quite unclear what it should be from some formal perspective.
+% 8:09
+Even more unclear is, if this is the algebra, what should be the corresponding geometric object? Geometry to any ring should correspond to an affine scheme, and similar, this ($K<T^{\R}>$) should be some of the algebra modelling for some local model space that Dustin called this last time. 
+% 8:29
+But I'm even more unclear what kind of geometry that should be.
 
-% 9:20
-When Dustin came to Bonn in 2018, he somehow made the suggestion that one should  replace topological spaces by condensed sets. Since 2018, we've been pursuing this path of replacing topological spaces by condensed sets.
+Maybe these are not at all the correct objects. But maybe we could at least, if these would turn out to be the correct objects, we would want to have a language we can talk about those. So some of such things will be allowed in our formalism.
+
+% 9:15
+When Dustin came to Bonn in 2018, he made the suggestion that one should replace topological spaces by condensed sets. Since 2018, we've been pursuing this path of replacing topological spaces by condensed sets.
 
 % 9:55
-Something that was definitely clear from the very start is that this switch does resolve a lot of the foundational issues you usually have when you work with some analytic geometry. For example, it makes it possible to remove Noetherian hypotheses that are quite pervasive, for example for adic spaces or formal schemes. I'll talk about abelian categories of complete modules and so on, and derived categories.
+Something that was definitely clear from the very start is that this switch does resolve a lot of the foundational issues you usually have when you work with some analytic geometry. For example, it makes it possible to remove Noetherian hypotheses that are quite pervasive, for example the theory of adic spaces \note{could not hear this well}. I'll talk about abelian categories of complete modules and so on, and derived categories of such.
 
-It was clear that a lot could be gained by doing the switch. Simultaneously, something that I always liked is that suddenly such a thing as $\Z[[T]]$ does make sense. This is something I will in some form also discuss today. Maybe this is not really the correct thing to consider, maybe some other thing, but I was quite happy that this kind of object at least exists in this framework.
+% 10:28
+It was clear that a lot could be gained by doing the switch. Simultaneously, something that I always liked is that suddenly such a thing as \emph{$K<T^{\R}>$ does make sense as condensed ring}. This is something I will in some form also discuss today. Maybe this is not really the correct thing to consider, maybe some other thing, but I was quite happy that this kind of object at least exists in this framework.
 
-Our attitude then was that maybe we have really no idea what we're really looking for, but let's try to develop the foundations of some kind of analytic geometry from the perspective that you should start from some kind of condensed rings. Then try to build as natural as possible a framework, so as to at least accommodate all the known examples and possibly extend them quite a bit further, for example allowing Schemes over $\F_1$ and $\F_{1^2}$.
+% 11:09
+Our attitude then was that maybe we have really no idea what we're really looking for, but let's try to develop the foundations of some kind of analytic geometry from the perspective that you should start from some kind of condensed rings. Then try to build as natural as possible a framework, so as to at least accommodate all the known examples and possibly extend them quite a bit further, for example allowing a theory of quasicoherent sheaves.
 
-Then just see where you're led to, and maybe someday one can hope to understand how such more exotic examples might be related to some kind of interesting geometry or number theory. Basically, try it out.
+% 11:38
+Then just see where you're led to, and maybe someday one can hope to understand how such more exotic examples might be related to \note{could not hear this}. So the \underline{attitude} is: develop foundations for analytic geometry based on condensed rings as basic objects and try it out on known formalisms.
 
-Also, in the known formalisms, there are sometimes things that are slightly beyond the traditional categories. For example, if you work with adic spaces, there's the usual things built on Banach algebras. But Grosse-Klönne for example has a theory where you have some overconvergent functions instead, and usually this is yet another category. You would also like to accommodate all these variants.
+% 12:38
+Also, in the known formalisms, there are sometimes things that are slightly beyond the traditional categories. For example, if you work with $p$-adic spaces, there's the usual things built on Banach algebras, but on Grosse-Klönne \note{can't hear this} for example has a theory where you have some overconvergent functions instead, and usually this is yet another category. You would also like to accommodate all these variants.
 
+% Request to write bigger.
+
+% 13:39
 So this course will not really touch on anything fancy like that. It will just try to really lay out what the formalism should be and how it accommodates the known examples.
 
 % 14:40
 \subsection{Light condensed sets} \label{subsec:light_condensed_sets}
-Let's start the course. Let me start by talking about condensed sets. The starting point for the whole theory is profinite sets, which will for the moment be restricted to these small things. First of all, I want to recall the following proposition.
+Let's start the course. Let me start by talking about condensed sets. The starting point for the whole theory is profinite sets, which will in the denominator \note{not sure of this} be restricted to these light things. First of all, I want to recall the big one.
+
+\begin{unfinished}{15:16}
+% 15:16
+Let me recall the following proposition
 
 Stone duality
 
