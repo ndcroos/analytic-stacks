@@ -12,11 +12,16 @@ Okay, so let me recall a little bit where we were last time. Last time, we had t
 
 As I kind of stated last time, this has a very important consequence that I want to stress again: sequential limits of covers are still covers. This property will actually be extremely crucial in order to have a good resulting theory of something like topological abelian groups that we want to use to have good homological algebra properties. This is something I maybe want to stress today a little bit, where this appears.
 
+% Grothendieck topology covers
+% - finite disjoint unions
+% - \underline{all} serjective mapq
+% (\leadsto sequential limits of covers are still covers!)
+% 2:39
 Then we had this category of condensed sets, which were these sheaves for the Grothendieck topology on this category of profinite sets. In general, whenever you have sheaves on some site and the generating site embeds (well, at least if it's a subcanonical site), you have a Yoneda embedding. You have the profinite sets sitting inside there. This sends any profinite set $S$ to the functor that takes any $T$ to the maps from $T$ to $S$, maps in profinite sets. If you prefer to think more concretely in terms of compact Hausdorff spaces, this is continuous maps.
 
 One important property, which is also completely general, is that the image generates under colimits. You can think of general condensed sets as being built out of profinite sets by some kind of gluing procedure.
 
-Then we also compared this to the category of topological spaces. In particular, we can embed this here as certain compact Hausdorff spaces. In fact, more generally, for any topological space $A$, you can build such a thing. I think I called a topological space $A$ last time $\underline{A}$, which is given by the same procedure. You send any $S$ to the continuous maps from $S$ to $A$. So this diagram commutes.
+Then we also compared this to the category of topological spaces. In particular, we can embed this here as certain compact Hausdorff spaces. In fact, more generally, for any topological space $A$, you can build such a thing. I think I called a topological space $A$ last time $\underline{A}$, which is given by the same procedure. You send any $S$ to the continuous maps  $S \to A$. So this diagram commutes.
 
 As I also said last time, and I kind of want to improve on something I said last time, this $A\mapsto \underline{A}$ is left adjoint. It takes any condensed set $X$ to, well, if you have a condensed set, in particular you have the value on a point, which we think of as the underlying set of this condensed set. Then we were equipping this with a certain topology.
 
@@ -64,7 +69,7 @@ Then you can also wonder more generally, if it drops the compactness hypothesis 
 
 So we know that the metrizable compact Hausdorff spaces are allowed. And in general, you should think of these guys as being rising unions of quasicompact subsets. In fact, they are exactly the ind-category, where all the transition maps are closed immersions of metrizable compact spaces. Let me write injections---I really mean all maps are injective, in which case they're automatically closed immersions of metrizable compact spaces. In the ind-category. So last time I was talking about the pro-category, which were formal inverse systems, and these are formal directed systems. So there is a category, where the objects are functors from a filtered poset towards metrizable compact Hausdorff spaces with all the maps injective. And functors, I mean maps, are the usual thing on ind-objects.
 
-Yeah, so you could also drop the Hausdorff here and then drop this here. And let me just point out that within this category you have what topologists call the compactly generated spaces. Probably meaning sequential. But note that they are not the same, because in this category, as I said previously, you can write the countable set as a huge colimit of countable closed subsets, but not in the category of quasiseparated condensed sets.
+So you could also drop the Hausdorff here and then drop this here. And let me just point out that within this category you have what topologists call the compactly generated spaces. Probably meaning sequential. But note that they are not the same, because in this category, as I said previously, you can write the countable set as a huge colimit of countable closed subsets, but not in the category of quasiseparated condensed sets.
 
 I mean, these are both condensed sets. This is the prototypical example of an ind-system of metrizable compact Hausdorff spaces. This is also an ind-system where you just have one term, it's actually some quasicompact quasiseparated guy. But as condensed sets, they are very different. Because this is really just a formal colimit, and this is just one object. In particular, this guy is quasicompact and this one is not.
 
@@ -85,7 +90,7 @@ To get this started, let's talk about condensed abelian groups. There are actual
 
 From the general theory of sheaves and Grothendieck topologies, we know that this is an abelian category, in fact a Grothendieck abelian category. So it has filtered colimits, etc. It also has a tensor product. Let me describe a little bit what the properties are.
 
-The unit object is just the condensed set $\underline\Z$ associated to the integers as a discrete set. If you have two condensed abelian groups $M$ and $N$, then $M\otimes N$ is the sheafification of the presheaf that sends a condensed set $S$ to the tensor product $M(S)\otimes N(S)$. This is just a functor from condensed sets to abelian groups, a "presheaf", and then you can always sheafify.
+The unit object is just the condensed set $\underline{\Z}$ associated to the integers as a discrete set. If you have two condensed abelian groups $M$ and $N$, then $M\otimes N$ is the sheafification of the presheaf that sends a condensed set $S$ to the tensor product $M(S)\otimes N(S)$. This is just a functor from condensed sets to abelian groups, a "presheaf", and then you can always sheafify.
 
 There's a further property that I want to stress, which is also completely general. If you have a condensed abelian group, then you can forget its abelian group structure and just have an underlying condensed set. But this has a left adjoint, a kind of free construction. A "free condensed abelian group"---let me drop the "condensed" when I say that now---takes any condensed set $X$ to the free abelian group on $X$. Here, as in general for these colimit-type constructions like tensor products and left adjoints, you always have to sheafify. So it's the sheafification of the presheaf that takes any $S$ to the free abelian group on $X(S)$.
 
@@ -95,7 +100,7 @@ The idea is that this free abelian group on $X$ is some topological abelian grou
 
 Let me actually discuss this in an example. Sheafification won't change the value on the point, because any cover of the point is split, so the sheaf condition is kind of vacuous on the point.
 
-Here's an example, which is kind of related to the introduction I gave last time. We can take the real numbers $\underline\R$. Very soon I will forget to write the underline all the time, because implicitly everything has become a condensed set. But okay, so we have the real numbers as a condensed set, and then we can take the free condensed abelian group on that.
+Here's an example, which is kind of related to the introduction I gave last time. We can take the real numbers $\underline{\R}$. Very soon I will forget to write the underline all the time, because implicitly everything has become a condensed set. But okay, so we have the real numbers as a condensed set, and then we can take the free condensed abelian group on that.
 
 What kind of object is this? It's sums, if you want, of real numbers $x$ weighted by integers $n_x$, where the $n_x$ are almost all zero. You might think of these points $x$ as measures, and then these are finite sums of measures.
 
@@ -139,7 +144,7 @@ But let's just see what happens. We definitely, well, right, so this is this map
 
 And so now you can just take $S$ to be the limit of this diagram. So inductively, you construct light profinite sets with a map to here, and then take the countable limit of these surjective maps. As I said last time, and I think I recalled today, countable limits of surjections are still surjections in light profinite sets. Hence, this guy is still allowed as a cover in our Grothendieck topology.
 
-So in the definition of your $X$ group in the sheafification, you drop the underline and the left $p$. So $\Z_p$ $s$, you mean $\Z_p$ $s$ underline? Yeah, let me drop the underlines. Okay, so $S$ is for me a light profinite set, and they sit inside of light condensed sets. So yeah, if you feel better, make an underline, I mean, yeah. And like, the Yoneda embedding has no decoration for me, it's just the same thing. But yeah, also in three, like, this threefold guy, it's like, maybe I should also underline $10$ here.
+So in the definition of your $X$ group in the sheafification, you drop the underline and the left $p$. So $\Z_p$ $s$, you mean $\Z_p$ $s$ underline? Let me drop the underlines. Okay, so $S$ is for me a light profinite set, and they sit inside of light condensed sets. So if you feel better, make an underline. And like, the Yoneda embedding has no decoration for me, it's just the same thing. But yeah, also in three, like, this threefold guy, it's like, maybe I should also underline $10$ here.
 
 Okay, so before I go on to the proof of three, let me reflect a little bit on what happened here. This finishes one and two, and let me come back to that in a second.
 
@@ -155,13 +160,13 @@ Actually, I should maybe say that this is not some kind of ahistorical comment. 
 
 All right, so this was a small interlude. Excuse me. So if you have a surjective map of topological spaces, for example, you take the $\N \cup \{\infty\}$, two copies of $\N \cup \{\infty\}$. So all of the two sequences will converge to infinity. And then this is covered by two copies of $\N \cup \{\infty\}$, and they intersect at infinity.
 
-You made a statement to the effect that---yeah, well, okay, not all transition maps are surjective. But actually, you know, I mean, actually something slightly stronger is true. I don't need all the transition maps to be surjective. I only need that the maps down to $S$ are surjective, and the limit is still okay. And in that sense, you can realize $S$ as okay in this other sense.
+You made a statement to the effect that--- not all transition maps are surjective. But actually something slightly stronger is true. I don't need all the transition maps to be surjective. I only need that the maps down to $S$ are surjective, and the limit is still okay. And in that sense, you can realize $S$ as okay in this other sense.
 
-Okay, something slightly weaker would be---yeah, I'm not sure. I would have to think how much difference it makes.
+Okay, something slightly weaker would be---I'm not sure. I would have to think how much difference it makes.
 
 Okay, so I want to prove this thing that this is internally projective. But before I do that, let me make a warning that this is a phenomenon that's only true once you pass to groups. So $\N \cup \{\infty\}$ is not at all projective in condensed sets.
 
-And I actually kind of expected Gab wanted to go there with this remark. Because this is precisely the example that I need to do. So you can have a surjective map of topological spaces and the convergent sequence downstairs, so that there does not exist a lift. And one example for this would be to just take this to be the convergent sequence itself, and this to be like, I don't know, $2\N \cup \{\infty\}$ disjoint union $2\N+1 \cup \{\infty\}$. Some breakup of $\{\infty\}$ as like the limit of the even guys and the odd guys.
+And I actually kind of expected Gabber wanted to go there with this remark. Because this is precisely the example that I need to do. So you can have a surjective map of topological spaces and the convergent sequence downstairs, so that there does not exist a lift. And one example for this would be to just take this to be the convergent sequence itself, and this to be like, I don't know, $2\N \cup \{\infty\}$ disjoint union $2\N+1 \cup \{\infty\}$. Some breakup of $\{\infty\}$ as like the limit of the even guys and the odd guys.
 
 Then like on the integers, you only have one possible lift. But the even guards converge to something else than the odd guards. But miraculously, once you pass to groups---it so happens that if these were condensed abelian groups, in fact you don't---then any convergent sequence can be lifted.
 
@@ -172,7 +177,7 @@ And so, and of course, the integers themselves, they are projective. That's okay
 So if we want that this guy is internally projective---and let me actually focus on the projectivity, and then just
 The property that $\infty$ goes to $0$... Because this is a surjective map of condensed groups, this means that there is some surjective map from a profinite set that lifts to $\N$. That's just what the surjectivity means.
 
-Okay, now how do covers of $\N \cup \{\infty\}$ look like? $\N \cup \{\infty\}$ is like you have a discrete set and then it accumulates towards infinity. Now, in the pullback, you have some complicated $S$ upstairs here. But you can always make that smaller because, for each of the discrete points here, you can just pick any lift. I don't care which one, and then all these lifts together with keeping everything at $\infty$, this is a closed subspace. So there exists $S'$, a closed subspace, so that over the integers, it's just always a point.
+Now how do covers of $\N \cup \{\infty\}$ look like? $\N \cup \{\infty\}$ is like you have a discrete set and then it accumulates towards infinity. Now, in the pullback, you have some complicated $S$ upstairs here. But you can always make that smaller because, for each of the discrete points here, you can just pick any lift. I don't care which one, and then all these lifts together with keeping everything at $\infty$, this is a closed subspace. So there exists $S'$, a closed subspace, so that over the integers, it's just always a point.
 
 You can assume that this $S$ here is somehow a different compactification of $\N$. Without loss of generality, we can always make $S$ smaller here, as long as it's surjective. So we can assume that $S$, the part over any finite thing, is just a point. Okay, but there are many compactifications of the natural numbers. For example, this one, so we can't expect that we can directly split that.
 
@@ -180,13 +185,13 @@ But now we actually use a property of profinite sets that I mentioned last time.
 
 Okay, so let me call this inclusion here $i$. Maybe this was my original map $f$ and this was a map $g$. Now we can just write down the lift. Consider the following map from $S$ to $\N^\sim$, which is the map $g$ that we had. But then from it, you subtract what you would get if you first use the retraction and then re-embed into $S$ and then apply $g$.
 
-So if you look at $S_\infty$, then on $S_\infty$, these two maps are just the same because this was a retraction. Am I frozen again? So on $S_\infty$, it's actually just the constant map $0$. Was that a question? Am I frozen again? Do you see me now? Yeah, okay.
+So if you look at $S_\infty$, then on $S_\infty$, these two maps are just the same because this was a retraction. Am I frozen again? So on $S_\infty$, it's actually just the constant map $0$. Was that a question? Am I frozen again? Do you see me now?
 
 But $S$ surjects onto $\N \cup \{\infty\}$ and this map to $\infty$. Because this is actually a surjective map here, you can show that this is a pushout in profinite condensed sets. That's basically a version of this gluing condition that I gave. If I want to give a continuous map from here to somewhere, it's enough to give one here and here which agree on the overlap. But it's definitely enough to give one here, and then the question is just when does it descend down to $\N \cup \{\infty\}$? This means that on fibers it must be constant, but there's only one fiber in some sense where there's something to check, which is the fiber at infinity. And there we precisely assume that it all just comes from a point.
 
-Okay, but now you're precisely in this situation. You have a map from $S$, you have the zero map, and they agree on $S_\infty$. So this means that actually this whole map factors over a map from $\N \cup \{\infty\}$ to here. Let me call that map $f$.
+But now you're precisely in this situation. You have a map from $S$, you have the zero map, and they agree on $S_\infty$. So this means that actually this whole map factors over a map from $\N \cup \{\infty\}$ to here. Let me call that map $f$.
 
-Okay, and now we basically have all the structure we need, and we just need to check that we actually produce the lift. So what do we have now? Now we have a map from $\N \cup \{\infty\}$ to $\N^\sim$ which vanishes on $\infty$. So in other words
+And now we basically have all the structure we need, and we just need to check that we actually produce the lift. So what do we have now? Now we have a map from $\N \cup \{\infty\}$ to $\N^\sim$ which vanishes on $\infty$. So in other words
 Because this was a retraction, and so this means that, because of this pushout property, you really get an exact sequence. You have a map from the convergent sequence modulo infinity to $N$.
 
 Now the question is whether we've actually lifted $f$, and the claim is that we did. To check that we did, note that this guy here is still surjected on by the free guy on $S$. So to see that this map here is $f$, it's enough to check for the composite.
@@ -201,7 +206,7 @@ In all condensed abelian groups, products are exact and you have projective gene
 
 One thing that's better there is that you really have projective generators. You don't have projective generators in light condensed groups. You have this one guy which is the free guy on a null sequence, but the free guy on a countable set cannot be covered by a projective object. This is slightly unfortunate, but actually not that bad in practice.
 
-The good thing is that in light condensed groups, you have this really explicit projective object which is the free guy on the $\N$ sequence. Whereas here, these projective guys exist by the axiom of choice, but they are completely inexplicit and their precise structure depends on which model of set theory you're working with.
+The good thing is that in $\CondAb^\light$, you have this really explicit projective object which is the free guy on the $\N$ sequence. Whereas here, these projective guys exist by the axiom of choice, but they are completely inexplicit and their precise structure depends on which model of set theory you're working with.
 
 But one thing I want to point out is that none of those projective generators there are internally projective. Basically, if you take a product of two Stone-Čech compactifications, and $I$ and $J$ are infinite, this product is never projective. That's actually not so easy to see, but we can prove it. This is a rather severe technical issue in the category of all condensed abelian groups. It's extremely nice that you have these projective guys, but for many arguments you would really like to know that they are internally projective, and they are not. That's bad.
 
@@ -215,34 +220,69 @@ It's known that all injective Banach spaces are retracts of continuous functions
 
 What about injectives? In your case, it is for light condensed abelian groups. Is it enough injective? For all condensed abelian groups, there are no nonzero injectives. In all condensed abelian groups, there are no non-zero injective objects.
 
-Okay, yeah, they exist for set-theoretic reasons. I mean, for like general nonsense reasons in light condensed abelian groups. But I don't think you can write any of them down.
+They exist for set-theoretic reasons. For like general nonsense reasons in light condensed abelian groups. But I don't think you can write any of them down.
 
 And what corresponds to this free abelian group sequence is the Banach space of null sequences. This is not injective as a Banach space. But it is what's known as separably injective, where you only test this injectivity against separable Banach spaces. This is very much related to the thing that this guy is not projective in condensed abelian groups, but it is in light condensed abelian groups.
 
-Actually, I think I made this realization that it is projective in light condensed abelian groups after looking up this proof that this guy is separably injective. It was an open question in the Banach space literature whether the continuous functions on this guy is a separably injected Banach space. In the notes on complex geometry, Kan kind of proves that it's not separably injective. In particular, this guy also doesn't behave like a projective object, even when you test against light condensed abelian groups.
+% 1:24:37
+Actually, I think I made this realization that it is projective in light condensed abelian groups after looking up this proof that this guy is separably injective. It was an open question in the Banach space literature whether the continuous functions on this guy is a separably injected Banach space. In the notes on complex geometry, Kan kind of proves that it's not separably injective. 
+% 1:25:12
+In particular, this guy also doesn't behave like a projective object, even when you test against light condensed abelian groups.
 
-Anyways, maybe one thing to take away here is that you might think that all this totally disconnected nonsense shouldn't really appear when you do function analysis over the reals. But actually, people that studied Banach spaces intensively, they are very much studying continuous functions on totally disconnected things.
+One thing to take away here is that you might think that all this totally disconnected nonsense shouldn't really appear when you do functional analysis over $\R$. But actually, people that studied Banach spaces intensively, they are very much studying continuous functions on totally disconnected things.
 
-Okay, right. Yeah, maybe let me finish by talking about homological algebra. You also said something, I forgot in which context, about the axioms AB5 and AB6 of abelian categories.
+% 1:26:01 
+Let me finish by talking about cohomology. 
 
-In Grothendieck's Tohoku paper, you can find a lot of axioms that an abelian category might or might not satisfy. AB5 is the question of whether all products are exact. This is true in all condensed abelian groups. It's not true in light ones, but at least the countable ones are okay. When AB5 is satisfied, you can ask about AB6, which is a certain question about the commutation of infinite products with filtered colimits. This always sounds confusing, but you can actually make a statement that's true.
+\textbf{Question:} You also said something, I forgot in which context, about the axioms AB5 and AB6 of abelian categories.
 
-This property, AB6, is always true if you have enough projective generators. In particular, it's true in condensed abelian groups. If you restrict this question to countable products, then it's also true in light condensed abelian groups. So AB6 holds for countable products. One way to see this is that you have this fully faithful embedding of light condensed abelian groups into all condensed abelian groups. This commutes with all colimits and countable limits. In particular, these countable products are some of the correct products there, the ones that you would also compute in condensed abelian groups. But you can also just check it by hand.
+\textbf{Answer:} In Grothendieck's Tohoku paper, you can find a lot of axioms that an abelian category might or might not satisfy. AB5 is the question of whether all products are exact. This is true in all condensed abelian groups. It's not true in light ones, but at least the countable ones are okay. When AB5 is satisfied, you can ask about AB6, which is a certain question about the commutation of infinite products with filtered colimits. This always sounds confusing, but you can actually make a statement that's true.
 
-In the last bit, I want to talk about cohomology. When you study topological spaces, you probably also care about the cohomology, in particular for manifolds where you would want that to be the singular cohomology. When you think about a topological space, we already have an idea of what the cohomology should be, just as we already had an idea of what a complex thing should be like, and so forth. But on the other hand, whenever you work in a topos, that topos somehow comes with its preconceived notions of not only what compact objects are, but also what cohomology is.
+% 1:26:47 
+This property, AB6, is always true if you have enough projective generators. In particular, it's true in condensed abelian groups. If you restrict this question to countable products, then it's also true in light condensed abelian groups. 
+% 1:27:07
+So AB6 holds for countable products in $\Cond\Ab^\light$. One way to see this is that you have this fully faithful embedding of light condensed abelian groups into all condensed abelian groups. This commutes with all colimits and countable limits. In particular, these countable products are some of the correct products there, the ones that you would also compute in condensed abelian groups. But you can also just check it by hand.
 
-If $X$ is any condensed set and $M$ is any abelian group (it could even be a condensed abelian group, but let's restrict to discrete ones for the moment), you can define the cohomology of $X$ with coefficients in $M$. This is just something that is there whenever you work in the topos.
+\subsection{Cohomology}
+In the last bit, I want to talk about cohomology. When you study topological spaces, you probably also care about the cohomology, in particular for manifolds where you would want that to be the singular cohomology. When you think about a topological space, we already have an idea of what the cohomology should be, just as we already had an idea of what a complex thing should be like, and so forth. 
+% 1:28:25
+But on the other hand, whenever you work in a topos, that topos somehow comes with its preconceived notions of not only what compact objects are, but also what cohomology is.
 
-One way to define the cohomology of $X$ with integral coefficients, in terms of the formalism that I now introduced: You take R Hom in the category of $X$-groups in light condensed abelian groups (actually they would also be the same as in all condensed abelian groups, oh well, I'm doing light stuff so let me stick
+% 1:28:38
+If $X$ is any light condensed set and $M$ is any abelian group (it could even be a condensed abelian group, but let's restrict to discrete ones for the moment), you can define the cohomology of $X$ with coefficients in $M$. This is just something that is there whenever you work in the topos.
 
-So, um, if say $X$ is a CW complex, this thing is $X_\bullet$ or it's underlined. It's exactly the singular cohomology. This might seem a little bit weird because we didn't really put any geometry into the definition of these condensed sets, right? We were just using totally disconnected things, and suddenly using totally disconnected things, we are still able to probe whether that circle is not contractible. Um, but it comes out right.
+One way to define the cohomology of $X$ with integral coefficients, in terms of the formalism that I now introduced: You take R Hom in the category of $X$-groups in light condensed abelian groups (actually they would also be the same as in all condensed abelian groups, oh well, I'm doing light stuff so let me stick.
 
-Um, and, um, right, uh, so let me actually recall that. I mean, yeah, let me make one remark about this and then stop. So as I said, this is here the $\Z$ of these $X_\bullet$ groups, and I told you how to think about this, right? So this was, uh, the thing where you take finite sums of $X$-points of $X$ valued by integers. Um, and so this is actually---there's a Dold-Thom theorem which basically tells you that this guy is something like a model for the homology of $X$ once you, once you pass, once you treat this up to homotopy equivalence. This kind of guy is a model for the homology of $X$. Uh, and, well, for us the interval in condensed sets is like an actual interval, it's not a point. So we didn't yet pass to homotopy, uh, but one way in which you're doing that is by taking $X^s$ out of it, because an interval cannot map to something, uh, this being discrete. And so, uh, yeah, so this dualizing, I mean this is like homology, so the dual should be like cohomology, which fits the picture. Uh, and yeah, let me just, uh, stop here.
+% Definition
+H(X, M) = \Ext_{\Cond\Ab^\light} (\Z [X], M)
 
-Other questions? Uh, all right, so we can also consider the internal $\Ext$-functor. Um, in this case, this would just unravel to an adjunction to, uh, also replacing $M$ by the continuous functions from $S$ to $M$, which is still an abelian group, so it doesn't really do that much more. Um, uh, maybe one comment to make is that, and maybe I won't talk much about it, but, um, for all sorts of things like continuous group cohomology and so on, sometimes it's not quite clear, like, what is a continuous representation of a group, what is the right notion of continuous group cohomology? Because often this is just represented by some explicit cochain complex, uh, but if you just treat your topological groups as condensed abelian groups, uh, then it's clear what an action on, like, a condensed abelian group should be, and it's clear what cohomology should be. There's some kind of general 2-categorical answer to what it should be, and this always gives you the expected answer. It's not always the same thing as the thing computed by continuous cochains, but when it's not, it's a better answer.
+So if say $X$ is a CW complex, this thing is $X_\bullet$ or it's underlined. It's exactly the singular cohomology. 
 
-So, so here, when you, when you have a CW complex, if you have more generally a local system, I think it will give a sheaf on condensed $X_\bullet$ over $X$-underline, and then you can say that the usual cohomology, it's like singular sheaf cohomology. It satisfies cohomological descent, for, for at least for compact Hausdorff spaces, it satisfies cohomological descent of surjections of compact Hausdorff spaces. So to compare the two sides, it looks like using the theory of cohomological descent to, to, well, essentially to do the, should give, to do it with local systems. By, yeah, you can, you can use any coefficient system, really, on $X$-underline. This is, yeah, it's a really robust result.
+% 1:31:07
+% Theorem
+if $X$ CW
+$H^i (X,M) =~ H_sing^i (X, M)$ todo
+is exactly the singular homology 
+% 1:31:30
+This might seem a little bit weird because we didn't really put any geometry into the definition of these condensed sets, right? We were just using totally disconnected things, and suddenly using totally disconnected things, we are still able to probe whether that circle is not contractible. But it comes out right.
 
-Um, but if you, for example, work in, um, like, this topos of sequential spaces, where you only allow $\N \cup \{\infty\}$ as a generating object, then if you would try to compute this cohomology of, like, the interval, then you would first have to express your interval in terms of your generating object. So we would write this as this huge colimit of all these, uh, small countable sub-closed subsets in the interval, and then this $C$
+% 1:32:03 
+Let me make one remark about this and then stop. So as I said, this is here the $\Z$ of these $X_\bullet$ groups, and I told you how to think about this, right? So this was the thing where you take finite sums of $X$-points of $X$ valued by integers. 
+And so this is actually---there's a Dold-Thom theorem which basically tells you that this guy is something like a model for the homology of $X$ once you, once you pass, once you treat this up to homotopy equivalence. 
+% https://en.wikipedia.org/wiki/Dold%E2%80%93Thom_theorem
+% https://ncatlab.org/nlab/show/Dold-Thom+theorem
+This kind of guy is a model for the homology of $X$. For us the interval in condensed sets is like an actual interval, it's not a point. So we didn't yet pass to homotopy, but one way in which you're doing that is by taking $X$'s out of it, because an interval cannot map to something, this being discrete. And so this dualizing, I mean this is like homology, so the dual should be like cohomology, which fits the picture. Let me just stop here.
+
+% 1:33:51
+Other questions? So we can also consider the internal $\Ext$-functor. In this case, this would just unravel to an adjunction to also replacing $M$ by the continuous functions from $S$ to $M$, which is still an abelian group, so it doesn't really do that much more. 
+% 1:34:19
+Maybe one comment to make is that, and maybe I won't talk much about it, but for all sorts of things like continuous group cohomology and so on, sometimes it's not quite clear, like, what is a continuous representation of a group, what is the right notion of continuous group cohomology? Because often this is just represented by some explicit cochain complex but if you just treat your topological groups as condensed abelian groups then it's clear what an action on a condensed abelian group should be, and it's clear what cohomology should be. There's some kind of general topos-theoretical answer to what it should be, and this always gives you the expected answer. It's not always the same thing as the thing computed by continuous cochains, but when it's not, it's a better answer.
+
+% 1:35:09
+\textbf{Question:} So here, when you have a CW complex, if you have more generally a local system, I think it will give a sheaf on condensed sets over $\underline{X}$, and then you can say that the usual cohomology, it's like singular sheaf cohomology. It satisfies cohomological descent for at least for compact Hausdorff spaces, it satisfies cohomological descent of surjections of compact Hausdorff spaces. So to compare the two sides, it looks like using the theory of cohomological descent to essentially to do the, should give, to do it with local systems. 
+
+\textbf{Answer:} You can use any coefficient system, really, on $\underline{X}$. It's a really robust result.
+
+But if you, for example, work in this topos of sequential spaces, where you only allow $\N \cup \{\infty\}$ as a generating object, then if you would try to compute this cohomology of, like, the interval, then you would first have to express your interval in terms of your generating object. So we would write this as this huge colimit of all these small countable sub-closed subsets in the interval, and then this $C$
 
 \end{unfinished}
