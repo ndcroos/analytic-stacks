@@ -80,31 +80,45 @@ Let's start the course. Let me start by talking about condensed sets. The starti
 
 \begin{unfinished}{15:16}
 % 15:16
-Let me recall the following proposition
-
-Stone duality
+Let me recall the following proposition ("Stone duality"):
 
 Always, the following categories are equivalent: 
 \begin{itemize}
-\item The pro-category of finite sets. Sometimes this is a purely combinatorial kind of category, where the objects are just certain diagrams of finite sets, formal inverse limits, where the $S_i$ are just some finite sets and $I$ can be taken to be cofiltered.
+\item The pro-category of finite sets $\Pro(\Fin)$. Sometimes this is a purely combinatorial kind of category, where the objects are just certain diagrams of finite sets, formal inverse limits, where the $S_i$ are just some finite sets and $I$ can be taken to be cofiltered.
 
-Recall that this means that $I$ is not empty, and whenever you have two elements in $I$, you can find one that is strictly smaller.
+objects : $\lim_{i \in I} S_i $
 
-The morphisms, well, this is an inverse limit, so you can pull that out first. But then there are two traditions about writing limits and colimits, either with an arrow and just a "lim" or writing "lim" and "colim". I'm kind of combining the two for maximum clarity.
-% 
-I might at some point just write lim and colim, but for the moment I'll use the directional arrows. But then when you have a formal inverse limit, nothing just means one in TJ.
+
+
+Recall that this means that $I \neq \emptyset$, and whenever you have two elements in $I$, you can find one that is strictly smaller.
+
+$\forall i, j \in I \exists k \leq i,j$
+
+% 16:58
+The morphisms, this is an inverse limit, so you can pull that out first. But then there are two traditions about writing limits and colimits, either with an arrow and just a "lim" or writing "lim" and "colim". I'm kind of combining the two for maximum clarity.
+
+$Hom(\lim_{i \in I} S_i ,\lim_{j \in J} T_j ) $
+$ = \lim \colim \Hom (S_i, T_j$
+% 17:45
+I might at some point just write lim and colim, but for the moment I'll use the directional arrows. But then when you have a formal inverse limit, nothing just means one in $T_j$.
 
 \item Totally disconnected compact Hausdorff spaces
 
+% 18:39
 One can also think of this $S$ more concretely, but now using---in some sense this whole theory could be developed without mentioning topological spaces, but let's not try to do so. It's also equivalent to totally disconnected spaces, where here you send---let me write the functor.
 
+% 19:16
 \item $\text{(Boolean algebras)}^{op}$ A third possibility is to take the category of Boolean algebras. So recall what a Boolean algebra is: it's a commutative ring $R$ such that for all $x \in R$, $x^2 = x$. In particular, $(-1)^2 = -1$, meaning that $2 = 0$. So these are---let me write down some functors.
 \end{itemize}
 
+\note{todo, functors}
 
-So if you have a formal inverse limit of $S_i$, you can map this to $S$, which is the limit of $S_i$ but with the inverse limit topology. And then this would map to the continuous functions on $S$ valued in $\{0,1\}$, which then also, if you compose the two things, is just the colimit of all $\{0,1\}$-valued functions.
+So if you have a formal inverse limit of $S_i$, you can map this to $S$, which is the limit of $S_i$ but with the inverse limit topology. 
+% 20:23
+And then this would map to the continuous functions on $S$ valued in $\{0,1\}$, which then also, if you compose the two things, is just the colimit of all $\{0,1\}$-valued functions.
 
-And one can also go back. If you have a Boolean algebra $A$, this maps to $\mathrm{Spec}(A)$, which is also---you want a map from $A$ to---so actually all points of the spectrum are just $\mathrm{Hom}(A, \{0,1\})$. And actually, we can also write this $\mathrm{Hom}$ as a colimit, a limit over all finite subalgebras $A_i \subset A$ of $\mathrm{Hom}(A_i, \{0,1\})$. Alright, let me not say anything about the proof. I mean, one can actually quite easily check these functors.
+% 21:00
+And one can also go back. If you have a Boolean algebra $A$, this maps to $\Spec(A)$, which is also---you want a map from $A$ to---so actually all points of the spectrum are just $\Hom(A, \{0,1\})$. And actually, we can also write this $\Hom$ as a colimit, a limit over all finite subalgebras $A_i \subset A$ of $\Hom(A_i, \{0,1\})$. Alright, let me not say anything about the proof. I mean, one can actually quite easily check these functors.
 
 So most often, I will actually think in terms of this presentation. Whenever I have a profinite set, I will usually just present it in some way as such a limit. I'll most often think about it that way.
 
@@ -112,7 +126,7 @@ And now that I want to come to the main things, I need to tell you two ways to m
 
 The size of $S$ is just the cardinality of the underlying set. 
 % 24:04
-And then there is something that's traditionally called the weight. Maybe this has a different name, let's just---so this is the cardinality of the corresponding Boolean algebra.
+And then there is something that's traditionally called the weight. Maybe this has a different name---so this is the cardinality of the corresponding Boolean algebra.
 
 
 \begin{itemize}
@@ -121,7 +135,7 @@ And then there is something that's traditionally called the weight. Maybe this h
 \item $S$ is \emph{light} if $\lambda \leq \omega$ (so if its weight is at most countable). i.e. countable limit of finite sets.
 \end{itemize}
 
-Here, $S$ is light if it has the smallest possible weight, except it could be finite. We definitely want infinite things. $S$ is light if the weight is at most $| S |$. It's countable, yeah, so this is also equivalent to--- 
+Here, $S$ is light if it has the smallest possible weight, except it could be finite. We definitely want infinite things. $S$ is light if the weight is at most $| S |$. It's countable, so this is also equivalent to--- 
 
 \note{todo}
 \begin{remark}
@@ -158,7 +172,7 @@ One way to think of the Cantor sit is just the two element ${0, 1}^N$. In other 
 
 \varprojlim {0,1}
 % 2) 
-So this is still a countable limit ($\lambda = \omega$), so it's still light. But obviously it's much bigger than this oe if you just think in terms of the number of points, so number of points is $\Kappa = 2^\omega$.
+So this is still a countable limit ($\lambda = \omega$), so it's still light. But obviously it's much bigger than this oe if you just think in terms of the number of points, so number of points is $\kappa = 2^\omega$.
 
 % 3)
 $S = \beta N$
@@ -201,7 +215,7 @@ Why are these things true?
 $\lambda$ was the continuous functions. Certainly bounded by all the maps from, this is obviously $2^{\kappa}$. And on the other $\kappa$ is the homomorphisms from the Boolean algebra, right? Because I said you can recover the profinite set as a map from Boolean algebra to $F_2$. And again, this is bounded by all the maps from $\lambda$.
 
 % todo size
-$\kappa = | Hom (A, F_2 |
+$\kappa = | Hom (A, F_2) |
 
 So what's quite nice about this is that these estimates even hold true in the finite case. In the finite case, actually this one becomes $\kappa = \lambda$.
 
@@ -216,13 +230,33 @@ Remark by Gabber, that the same proof shows that if you're in an infinite situat
 
 As Scholze mentioned, you build a finite quotient where these elements are distinguished and then take the limit.
 
-Because this SL condensate will be so important for us, let me just rephrase the first proposition for light condensates. The following categories:
+Because this SL condensate will be so important for us, let me just rephrase the first proposition for light condensates. 
 
-First, let's call it $\text{Pro}^N$, the sequential pro-category of finite sets. The objects here are not some fancy limit along some cofiltered poset, but really just some limit along the integers of some finite sets. And the morphisms are as before, but you are not allowed to change the $m$, so that's an important thing. So the $\text{Hom}$ from $\varprojlim F_m$ to $\varprojlim G_m$ is again, you can first pull out the limit and then take the other thing to be the colimit. Let me actually note that there's a different way to think about this. Basically, something you are always allowed to do in a pro-object is to pass to any cofinal subsequence. And then, if you want to give a morphism from here to here, you think that first you extract a subsequence of the $n$s, and then you really just give compatible maps. One way to express it is, it's really some colimit over all possible strictly increasing functions $\varphi$ of compatible maps for all $m$ towards $G_{\varphi(m)}$, but from the three-scale version.
+% 38:44
+The following categories are equivalent to light profinite sets:
+\begin{enumerate}
+% 38:55
+\item First, let's call it $\Pro_\N(\Fin)$, the sequential pro-category of finite sets. The objects here are not some fancy limit along some cofiltered poset, but really just some limit along the integers of some finite sets. 
 
-You can also phrase this pairability condition in terms of totally disconnected compact Hausdorff spaces, and it's precisely the condition that they are metizable. And the last one was Banach algebras, and for Banach algebras, we precisely made the condition so there we made it.
+objects: $lim S_n$ $S_n$ finite
 
-So let me just note one very simple proposition that will be used throughout. If you work in $\text{Prof}_{\text{fin}}$-sets, and this says you have all limits, but if you restrict to light $\text{Prof}_{\text{fin}}$-sets, then you still have all countable limits and sequential limits of surjections are surjective. Maybe I should say surjectivity is just meant in terms of the underlying sets, like taking the actual limit. So in other words, surjectivity on the point set of the component processes. And I mean, something similar is true, that any limits of surjections are surjective in all $\text{Prof}$-sets, but there it uses some rather high-powered compactness result, like the Tychonoff theorem. In the sequential case, it's really kind of stupid, you just successively lift.
+% 39:22
+And the morphisms are as before, but you are not allowed to change the $m$, so that's an important thing. So the $\Hom(\lim S_n, \lim T_m$ is again, you can first pull out the limit and then take the other thing to be the colimit. 
+% 40:02
+Let me actually note that there's a different way to think about this. Basically, something you are always allowed to do in a $\Pro$-object is to pass to any cofinal subsequence. And then, if you want to give a morphism from here to here, you think that first you extract a subsequence of the $n$s, and then you really just give compatible maps. One way to express it is, it's really some colimit over all possible strictly increasing functions $\varphi$ of compatible maps for all $m$ towards $G_{\varphi(m)}$, but from the three-scale version.
+
+$\colim_{f: \N \to \N \text{strictly incr.}} \lim \Hom(S_{f(n)}, T_n)$ 
+\note{not sure of this, todo}
+
+% 41:32
+
+\item You can also phrase this countability condition in terms of totally disconnected compact Hausdorff spaces, and it's precisely the condition that they are \underline{metrizable}. 
+
+\item And the last one was Boolean algebras, and for Boolean algebras, we precisely made the condition so there we made it.
+
+\end{enumerate}
+
+Let me just note one very simple proposition that will be used throughout. If you work in $\Pro_\N(\Fin)$-sets, and this says you have all limits, but if you restrict to light $\Pro_\N(\Fin)$-sets, then you still have all countable limits and sequential limits of surjections are surjective. Maybe I should say surjectivity is just meant in terms of the underlying sets, like taking the actual limit. So in other words, surjectivity on the point set of the component processes. Something similar is true, that any limits of surjections are surjective in all $\text{Prof}$-sets, but there it uses some rather high-powered compactness result, like the Tychonoff theorem. In the sequential case, it's really kind of stupid, you just successively lift.
 
 So the first interesting thing I want to mention is that the natural numbers actually play a bit of a universal role within the light profinite sets. That is, if you have any light profinite set $S$, then there exists a surjection from $\widehat\N$ onto $S$. The proof is really simple induction. It just writes $S$ as a sequential limit and then at each point, just pick a large enough finite quotient of $\widehat\N$ to accommodate everything you already have.
 
