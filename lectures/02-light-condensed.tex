@@ -78,38 +78,45 @@ So this course will not really touch on anything fancy like that. It will just t
 \subsection{Light condensed sets} \label{subsec:light_condensed_sets}
 Let's start the course. Let me start by talking about condensed sets. The starting point for the whole theory is profinite sets, which will in the denominator \note{not sure of this} be restricted to these light things. First of all, I want to recall the big one.
 
-\begin{unfinished}{15:16}
 % 15:16
+
+\begin{proposition}
 Let me recall the following proposition ("Stone duality"):
 
 Always, the following categories are equivalent: 
 \begin{itemize}
-\item The pro-category of finite sets $\Pro(\Fin)$. Sometimes this is a purely combinatorial kind of category, where the objects are just certain diagrams of finite sets, formal inverse limits, where the $S_i$ are just some finite sets and $I$ can be taken to be cofiltered.
+\item The pro-category of finite sets $\Pro(\Fin)$
 
+Sometimes this is a purely combinatorial kind of category, where the objects are just certain diagrams of finite sets:
 objects : $\lim_{i \in I} S_i $
 
+Just formal inverse limits, where the $S_i$ are just some finite sets and $I$ can be taken to be a cofiltered poset. Recall that this means that $I \neq \emptyset$, and whenever you have two elements in $I$, you can find one that is strictly smaller:
 
-
-Recall that this means that $I \neq \emptyset$, and whenever you have two elements in $I$, you can find one that is strictly smaller.
-
-$\forall i, j \in I \exists k \leq i,j$
+$\forall i, j \in I, \exists k \leq i,j$
 
 % 16:58
-The morphisms, this is an inverse limit, so you can pull that out first. But then there are two traditions about writing limits and colimits, either with an arrow and just a "lim" or writing "lim" and "colim". I'm kind of combining the two for maximum clarity.
+The morphisms, this is an inverse limit, so you can pull that out first. But then there are two traditions about writing limits and colimits, either with an arrow and just a "lim" or writing "lim" and "colim". I'm kind of combining the two for maximum clarity. \note{macro for colim differs from Scholze's notation.}
 
 $Hom(\lim_{i \in I} S_i ,\lim_{j \in J} T_j ) $
 $ = \lim \colim \Hom (S_i, T_j$
 % 17:45
-I might at some point just write lim and colim, but for the moment I'll use the directional arrows. But then when you have a formal inverse limit, nothing just means one in $T_j$.
+I might at some point just write lim and colim, but for the moment I'll use the directional arrows. But then when you have a formal inverse limit, that means just  one $T_j$, this should factor over of the the terms \note{not sure of this}.
 
 \item Totally disconnected compact Hausdorff spaces
 
 % 18:39
-One can also think of this $S$ more concretely, but now using---in some sense this whole theory could be developed without mentioning topological spaces, but let's not try to do so. It's also equivalent to totally disconnected spaces, where here you send---let me write the functor.
+One can also think of this slightly more concretely, but now using---in some sense this whole theory could be developed without ever mentioning topological spaces, but let's not try to do so. It's also equivalent to totally disconnected compact Hausdorff spaces, where here you send---let me write the functor. \note{todo, remove last sentence?}
 
 % 19:16
-\item $\text{(Boolean algebras)}^{op}$ A third possibility is to take the category of Boolean algebras. So recall what a Boolean algebra is: it's a commutative ring $R$ such that for all $x \in R$, $x^2 = x$. In particular, $(-1)^2 = -1$, meaning that $2 = 0$. So these are---let me write down some functors.
+\item $\text{(Boolean algebras)}^{op}$ 
+
+The third possibility is to take the category of Boolean algebras. Recall what a Boolean algebra is: it's a commutative ring $R$ such that for all $x \in R$, $x^2 = x$. In particular, $(-1)^2 = -1$, meaning that $2 = 0$. 
 \end{itemize}
+
+\end{proposition}
+
+% 19:58
+So these are---let me write down some functors.
 
 \note{todo, functors}
 
@@ -122,37 +129,48 @@ And one can also go back. If you have a Boolean algebra $A$, this maps to $\Spec
 
 So most often, I will actually think in terms of this presentation. Whenever I have a profinite set, I will usually just present it in some way as such a limit. I'll most often think about it that way.
 
-And now that I want to come to the main things, I need to tell you two ways to measure how big--- let's say $S$. When I write this, I implicitly mean that the $S_i$ are finite sets and the index category is filtered.
+% 23:06
+And now that I want to come to the light things, I need to tell you two ways to measure how "big" $S$ is. 
 
-The size of $S$ is just the cardinality of the underlying set. 
+\begin{definition}
+Let $S = \lim_{i} S_i$ be a profinite set. (When I write this, I implicitly mean that the $S_i$ are finite sets and the index category is cofiltered or poset.)
+
 % 24:04
-And then there is something that's traditionally called the weight. Maybe this has a different name---so this is the cardinality of the corresponding Boolean algebra.
-
-
 \begin{itemize}
-\item The \emph{size} of $S$ is 
-\item The \emph{weight} of $S$ is  $\lambda := \abs{Cont(S, \F_2)}
+\item The \emph{size} of $S$ is $\kappa = |S|$, the cardinality of the underlying set. 
+\item The \emph{weight} of $S$ is  $\lambda := \abs{Cont(S, \F_2)}$. This is something that's traditionally called the weight. Maybe this has a different name---so this is the cardinality of the corresponding Boolean algebra.
 \item $S$ is \emph{light} if $\lambda \leq \omega$ (so if its weight is at most countable). i.e. countable limit of finite sets.
 \end{itemize}
 
-Here, $S$ is light if it has the smallest possible weight, except it could be finite. We definitely want infinite things. $S$ is light if the weight is at most $| S |$. It's countable, so this is also equivalent to--- 
+Here, $S$ is light if it has the smallest possible weight, except it could be finite. We definitely want infinite things. $S$ is light if the weight is at most $|S|$. It's countable, so this is also equivalent to--- 
+
+\end{definition}
 
 \note{todo}
 \begin{remark}
-if $\lambda$ is infinite, then it's also equal to the smallest possible cardinality for a small, possible---
+if $\lambda$ is infinite, then $\lambda = |I|$ for smallest possible $I$.
 
-In general, there are many ways to present a profinite set. For example, a point you could present as an index limit of a large profinite set of always a one-element set, which is kind of silly. But there's always a minimal possible choice. And if it's infinite, then this is unique.
+% 25:31
+In general, there are many ways to present a profinite set. For example, you could present a point as an index limit of an arbitrary large poset of just always a one-element set, which is kind of silly \note{can't hear the last word}. But there's always a minimal possible choice. If $\lambda$ is infinite, then $|I|$ is unique.
+
+% 26:05
+So in other words, a profinite set is light if and only if it's at most countable.
 
 \end{remark}
 
 
-So in other words, a profinite set is light if and only if it's at most countable. Alright, so let me give some examples.
+Alright, so let me give some examples.
 
 % 26:54
-\textbf{Question:} How does it compare to having countably many non-trivial closed subsets? How do the properties compare to having countably many non-trivial closed subsets? If you take the maximum---
+\textbf{Question:} How does it compare to having countably many non-isomorphic tiny quotients? 
+
+% 27:00
+\textbf{Answer:} Countably many? Clopens
+
+\textbf{Question:} How does it compare that the lightness to \note{can't hear this} finite many non-isomorphic continuous finite quotients, if you take $I$ to be the maximum? 
 
 % 27:25
-\textbf{Answer:} I mean, the closed subsets are basically the ideals, right? How many of them---what does it mean? Yeah, I think that's also the same thing. Because any such collection is given by countably many finite collections of such subsets. And I think this is still the same.
+\textbf{Answer:} I mean, the closed subsets are basically the ideals, right? How many of them---what does it mean? I think that's also the same thing. Because any such collection is given by countably many finite collections of such subsets. And I think this is still the same.
 
 
 \begin{example}[\yt{28m06s}{Examples of profinite sets}]
@@ -160,9 +178,11 @@ Let's do some examples of profinite sets and of their size and weight.
 % 28:06
 So for finite sets, you can figure out what the size and weight is.
 
-The smallest kind of infinite profinite set is the one-point compactification of the integers. One way to think about this, is that it's a limit of all maps $\N \to [n] \cup \{\infty\}$ counting up to 
+The smallest kind of infinite profinite set is the one-point compactification of the integers. One way to think about this, is that it's a limit of all maps $\N \to [n] \cup \{\infty\}$ counting up to $n$ and then treating everything that comes after $n$ as infinite.
 
-% lim onverse { 0,1... }
+$\lim \{ 0, 1, \dots, n, \infty \}
+
+\begin{unfinished}{28:26}
 
 Limit. So it's still light, but obviously it's much bigger than this one if you just think in terms of the number of points. Number of points is, in general, these are really different.
 
@@ -170,7 +190,7 @@ Limit. So it's still light, but obviously it's much bigger than this one if you 
 % 29:04
 One way to think of the Cantor sit is just the two element ${0, 1}^N$. In other words it's a limit of all 
 
-\varprojlim {0,1}
+$\varprojlim {0,1}$
 % 2) 
 So this is still a countable limit ($\lambda = \omega$), so it's still light. But obviously it's much bigger than this oe if you just think in terms of the number of points, so number of points is $\kappa = 2^\omega$.
 
