@@ -204,8 +204,6 @@ $\text{Cantor set} = \lim_{n} \{ 0,1 \}^n $
 % 29:16
 So this is still a countable limit ($\lambda = \omega$), so it's still light. But obviously it's much bigger than the first example, if you just think in terms of the number of points. So number of points is $\kappa = 2^\omega$. In general, these are really different.
 
-\begin{unfinished}{29:28}
-
 % 29:28
 \item Let me give one more example that has some relevance in the theory, although excluded. One very important thing: any locally compact space has two compactifications: one-point compactification and the Stone-Čech compactification. Item 1 is small, item 3 is really huge. So let me not try to present this as a limit.
 
@@ -362,8 +360,25 @@ Now I want to come to two special properties that \underline{light} profinite se
 
 % 48:07
 \begin{proposition}
+Let $S$ be a light profinite set, $U \subset S$ an open subset.
+% 43:37
+Then $U$ is a countable disjoint union of light profinite sets.
 \end{proposition}
-First, open subsets of light profinite sets can be too wild. If $U$ is an open subset of a light profinite set $S$, then $U$ is actually a countable disjoint union of profinite subsets of $S$. So this is to be contrasted with the following: In general, there exist open subsets $U$ in a profinite set $S$ that are not disjoint unions of profinite subsets. One way in which this can fail is, for example, you could take a product of profinite sets. I mean, disjoint unions take coproducts to products, and on profinite sets, these are totally disconnected. So you can't have non-trivial open coverings in this sense. But in general, the structure of these open subsets
+First, open subsets of light profinite sets can be too wild. If $U$ is an open subset of a light profinite set $S$, then $U$ is actually a countable disjoint union of light profinite sets. This is to be contrasted with the following: 
+% 49:19
+In general $exists $U \subset S$ profinite with $H^i (U, \Z) \neq 0$ for $i >0$
+
+In general, there exist an open subset $U$ in a profinite set $S$ that are not disjoint unions of profinite sets. One way in which this can fail is, for example, you could have higher sheaf cohomology. 
+
+% 49:43
+I mean, disjoint unions take cohomology to products, and on profinite sets, these are totally split, disconnected. So you can't have non-trivial open coverings in this sense \note{not sure of this}. But in general, the structure of these open subsets of profinite ses can be pretty wild.
+
+\begin{unfinished}{50:03}
+% 50:03
+But here we have good control over them. 
+
+\begin{sketch}
+\end{sketch}
 
 Let $U$ be an open subset of a profinite set $S$. Then $U$ is a union of clopen subsets, so we can write $U = \bigcup_{n} S_n$ where each $S_n$ is clopen in $S$. More precisely, choose a presentation $S = \varprojlim S_n$ where the transition maps $S_{n+1} \to S_n$ are surjective. Then $U$ is the union over all $n$ of the images of $S_n \setminus f_n^{-1}(S \setminus U)$.
 
