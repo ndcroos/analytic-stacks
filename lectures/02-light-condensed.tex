@@ -377,28 +377,62 @@ I mean, disjoint unions take cohomology to products, and on profinite sets, thes
 % 50:03
 But here we have good control over them. 
 
+% todo
 \begin{sketch}
+
+$\lim_n S_n $
+
+$Z_n = \Im(Z \to S_n ) \subset S
+
 \end{sketch}
 
 Let $U$ be an open subset of a profinite set $S$. Then $U$ is a union of clopen subsets, so we can write $U = \bigcup_{n} S_n$ where each $S_n$ is clopen in $S$. More precisely, choose a presentation $S = \varprojlim S_n$ where the transition maps $S_{n+1} \to S_n$ are surjective. Then $U$ is the union over all $n$ of the images of $S_n \setminus f_n^{-1}(S \setminus U)$.
 
-So now you've at least written it as a sequential union of closed subsets. Maybe I should have said, one way to think about open subsets purely in this language of pro-categories and profinite sets is to think about the closed things instead. Closed subsets should themselves be profinite sets, and then the closed subsets are precisely the injective maps of profinite sets.
+So now you've at least written it as a sequential union of closed subsets. 
 
-The closed complement should be a profinite set. Someone injects, you take the preimage of this. Then if you want, you can write $U$ as a union over all $n$. Now these are subsets and are themselves profinite sets. Okay, so that's one nice thing.
+% 51:30
+Maybe I should have said, one way to think about open subsets purely in this language of pro-categories and profinite sets is to think about the closed things instead. Closed subsets should themselves be profinite sets, and then the closed subsets are precisely the injective maps of profinite sets.
 
-Here's another one. Then $S$ is an injective object in the category of profinite sets. I will spell out what I mean by that. This means that whenever you have an injection of profinite sets $Z \to X$ and a map $Z \to S$, you can always find an extension $X \to S$.
+% 51:47
+The closed complement should itself be a profinite set and injective \note{could not hear this well}, 
 
-Assume that these don't characterize all injective objects. Or are these exactly injective objects? So there are more injective objects. For example, any injective object in general is closed under taking products, so any product of profinite sets would also be allowed. But the profinite sets in particular are profinite.
+% 52:10
+% Each $\pi^{-1}(S_n \ Z_n) \subset_clopen S $
+you take the preimage of this. Then if you want, you can write $U$ as a union over all $n$. 
 
+% todo
+$U = \bigsqcup_n (\pi^{-1})$
+
+Now these are subsets and are themselves profinite sets. 
+% 53:06
+Okay, so that's one nice thing.
+
+Here's another one. 
+
+\begin{proposition}
+Let $S$ be a light profinite set. Then $S$ is an injective object in $\Pro(\Fin), i.e. $\forall Z \subset X. injection of profinite sets 
+\end{proposition}
+
+Then $S$ is an injective object in the category of profinite sets. I will spell out what I mean by that. This means that whenever you have an injection of profinite sets $Z \to X$ and a map $Z \to S$, you can always find an extension $X \to S$.
+
+% 54:13
+\textbf{Question:} Do we assume that these don't characterize all injective objects? Or are these exactly injective objects? 
+
+
+\textbf{Answer:} So there are more injective objects. For example, any injective object in general is closed under taking products, so any product of light profinite sets would also be allowed. There are also some bigger ones. But the light profinite sets in particular are injective \note{not sure of this}.
+
+\begin{sketch}
 So let me prove this. 
 % proof
-Actually, the first thing one should check is the case where $S$ is just $\F_2$. In this case, it means that the continuous maps from $X$ to $\F_2$ are in bijection with the clopen subsets of $X$. Or equivalently, any clopen subset of $Z$ can be extended to a clopen subset of $X$. Consequently, I don't know what an exercise to do.
+Actually, the first thing one should check is the case where $S$ is just $\F_2$. In this case, it means that the continuous maps $X \to \F_2$ are in bijection with the clopen subsets of $X$. Or equivalently, any clopen subset of $Z$ can be extended to a clopen subset of $X$. Consequently, I don't know what an exercise to do.
 
 Let's assume we know this case. Then in general, just write $S$ as a limit of finite sets $S_n$. In general, the transition maps are not required to be surjective, but I will assume that all the maps are surjective. You can always assume that.
 
 In this case, you will argue by induction on $n$. If you want to extend the map to $S$, you need to extend it compatibly to all the $S_n$'s. But if you've already extended the map to $S_n$, then extending further to $S_{n+1}$ means the whole situation decomposes into a disjoint union over all the fibers over $S_n$.
 
 So you can assume that $S_n$ is just a point, but then $S_{n+1}$ is just some finite set. Then it's a very easy exercise to extend, maybe just have to extend a bunch of clopen subsets. Okay.
+
+\end{sketch}
 
 Exercise: Figure out why this argument doesn't apply to a general profinite set. You might still think that you can similarly extend as a limit along surjective maps. You can always do that and then try to inductively extend.
 
@@ -408,15 +442,33 @@ Just a small remark. If $Z$ and $S$ are both empty, do you need something? No, $
 
 \end{remark}
 
-I think that's it for my general preparations about profinite sets. Let's now finally come to the definition of profinite condensed sets on a site with the following covers. We always take a profinite set $S$ and a cover of $S$ by other profinite subsets. This is the cover, and also surjectivity.
+% 1:00:19
+I think that's it for my general preparations about light profinite sets. Let's now finally come to the definition of light profinite condensed sets.
 
-Let me, as last time, spell out what this really means. A profinite condensed set $X$ is a functor from profinite sets to sets satisfying the following conditions:
+\begin{definition}
 
-Just need to $M$ both of them individually, and then there is this funny condition. This comes from allowing all the surjective maps. This means that whenever you have any surjective map of profinite sets, then to give a map from $S$ to $X$, it's sufficient to give a map from $T$ to $X$. 
+A \emph{light condensed set} is a sheaf on the category of light profinite sets. For the Grothendieck topology generated by 
 
-At least as a first approximation, you want that any map from $S$ to $X$ is determined by what it does on $T$. But actually, you also want to characterize which maps from $T$ to $X$ actually come from $S$, and these should be the ones that agree on fibers of this map, so to speak. The good way to say this is that the two ways you can make a map out of the fiber product, either first projecting to the first coordinate or the second coordinate, this should agree. This is what the sheaf condition for this surjection says.
+\begin{enumerate}
+\item Finite disjoint unions
+\item \underline{All} surjective maps
+\end{enumerate} 
 
-Before expanding machinery, let me just tell you this key example to have in mind. Let's say $A$ is a compact Hausdorff topological space. Then we can define $\underline{A}$, and this is the thing that takes any $S$ to the continuous maps from $S$ to $A$. Here the presheaf on profinite sets precisely remembers how profinite sets map continuously into your topological space. This has all the fun properties.
+\end{definition}
+
+on a site with the following covers. We always take a profinite set $S$ and a cover of $S$ by other profinite subsets. This is the cover, and also surjectivity.
+
+% 1:02:47
+Let me, as last time, spell out what this really means.
+
+\underline{Equivalent} A functor from light profinite sets $\Pro_{N}(\Fin)^{\op} \to \Set$
+ A profinite condensed set $X$ is a functor from profinite sets to sets satisfying the following conditions:
+
+Just need to $M$ both of them individually, and then there is this funny condition. This comes from allowing all the surjective maps. This means that whenever you have any surjective map of profinite sets, then to give a map $S \to X$, it's sufficient to give a map $T \to X$. 
+
+At least as a first approximation, you want that any map $S \to X$ is determined by what it does on $T$. But actually, you also want to characterize which maps from $T$ to $X$ actually come from $S$, and these should be the ones that agree on fibers of this map, so to speak. The good way to say this is that the two ways you can make a map out of the fiber product, either first projecting to the first coordinate or the second coordinate, this should agree. This is what the sheaf condition for this surjection says.
+
+Before expanding machinery, let me just tell you this key example to have in mind. Let's say $A$ is a compact Hausdorff topological space. Then we can define $\underline{A}$, and this is the thing that takes any $S$ to the continuous maps $S \to A$. Here the presheaf on profinite sets precisely remembers how profinite sets map continuously into your topological space. This has all the fun properties.
 
 Whenever you have a map between profinite sets, that remembers how a continuous map from one gives one to the other. It turns out that this condition is always satisfied. There's actually not a concrete topology, so if you would omit continuity then this would be clear. If you want a map from $S$ into $A$, it's sufficient to give one from $T$ into $A$, and then it factors over $S$ if and only if on the fibers the map is constant, which is kind of expressed by this.
 
@@ -445,7 +497,7 @@ Right, so this functor that takes a topological space to... At least for today, 
 
 So this has a left adjoint that takes any condensed set $X$ and maps it to the underlying set (what you want to think of as the underlying set) and canonically equips it with a certain quotient topology.
 
-So whenever you have anything that you want to think of as a continuous map from $S$ to $X$, you in particular get a map from $S$ (or rather, just the underlying set of $S$) to this $X^*$. This gives us a map from $S^*$ to $X^*$. Take this union here and endow all of these with their natural topology as a condensed space, and this was an isomorphism.
+So whenever you have anything that you want to think of as a continuous map $S \to X$, you in particular get a map from $S$ (or rather, just the underlying set of $S$) to this $X^*$. This gives us a map from $S^*$ to $X^*$. Take this union here and endow all of these with their natural topology as a condensed space, and this was an isomorphism.
 
 So the image actually lands in... This will always be like "mildly compactly generated". What is this? This is for fixed $S$, and all $X$. Or if you want, you could just take the full subcategory, because everything is a presheaf on this.
 
