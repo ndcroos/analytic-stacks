@@ -493,23 +493,41 @@ Maybe put a topology on this that... Actually, no, because you need to ensure th
 
 \end{remark}
 
-Right, so this functor that takes a topological space to... At least for today, I want to stress the other direction, because I'm also discussing something related.
+% 1:14:35
 
+\begin{proposition}
+$A \mapsto \underline{A}$
+$\Top \to \Cond\Set^{\light}$
+\end{proposition}
+Right, so this functor that takes a topological space to light condensed sets. At least for today, I want to stress the other direction, because I'm also discussing something related.
+
+% 1:14:59
 So this has a left adjoint that takes any condensed set $X$ and maps it to the underlying set (what you want to think of as the underlying set) and canonically equips it with a certain quotient topology.
 
-So whenever you have anything that you want to think of as a continuous map $S \to X$, you in particular get a map from $S$ (or rather, just the underlying set of $S$) to this $X^*$. This gives us a map from $S^*$ to $X^*$. Take this union here and endow all of these with their natural topology as a condensed space, and this was an isomorphism.
+$ X(*)_{top} X$
 
-So the image actually lands in... This will always be like "mildly compactly generated". What is this? This is for fixed $S$, and all $X$. Or if you want, you could just take the full subcategory, because everything is a presheaf on this.
+% 1:16:22
+$ X(*)_{top} = X(*) $
+with the quotient topology 
 
-For topological spaces, there's a notion of a compactly generated topological space, which is one where, when you want to test whether a map is continuous, it's enough to test it on compact spaces mapping to it. And this is by definition the case for this $X^*$, because if you want to test continuity from here to somewhere, by definition of the quotient topology, you only have to test it from here.
+% 1:16:33
+So whenever you have anything that you want to think of as a continuous map $S \to X$, you in particular get a map from $S$ (or rather, just the underlying set of $S$) to this $X(*)$. This gives us a map from $S^*$ to $X(*)$. Take disjoint union here and endow all of these with their natural topology as a compact Hausdorff space, and this was the quotient topology.
 
-So you only have to test continuity on these condensed sets, but these are actually metrizable. So it's actually in this sense "mildly compactly generated". I hope you can imagine what this should mean.
+$ \bigsqcup_{\alpha \in X(S} S \to X(*)$
+
+% 1:17:19
+So the image actually lands in... This will always be like "metrizable compactly generated". What is this? This is for fixed $S$, and all $X$. Or if you want, you could just take the full subcategory, because everything is a presheaf on this.
+
+% 1:18:28
+For topological spaces, there's a notion of a compactly generated topological space, which is one where, when you want to test whether a map is continuous, it's enough to test it on compact spaces mapping to it. And this is by definition the case for this $X(*)$, because if you want to test continuity from here to somewhere, by definition of the quotient topology, you only have to test it from here.
+
+So you only have to test continuity on these Cantor sets, but these are actually metrizable. So it's actually in this sense "metrizable compactly generated". I hope you can imagine what this should mean.
 
 And conversely, if you start with a mildly compactly generated space, first treat it as a condensed set and then go back, you're precisely recovering the correct topological space, because basically exactly this condition here, and because the condensed objects anyway will come back.
 
 In other words, there is any... Basically, any underlying... So in other words, the kind of unit of the adjunction map in this case.
 
-So they have the... I mean generally, any $X$ maps to this $X^{**}$, the unit of the adjunction. And on these guys, it's an isomorphism.
+So they have the... I mean generally, any $X$ maps to this $X(*}$, the unit of the adjunction. And on these guys, it's an isomorphism.
 
 And so in particular, this means that these guys will form a full subcategory of all condensed sets. And it's... This is a very weak condition to be in this subcategory. I mean, virtually all the topological spaces that ever arise in nature... I mean, for example, we're mostly using these condensed sets in our functional analysis, so to say, for topological modules. And any kind of Banach spaces, Fréchet spaces, whatever, they all have this property. They are all usable. So it's not so bad.
 
