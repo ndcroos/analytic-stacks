@@ -202,38 +202,47 @@ $\text{Cantor set} = \lim_{n} \{ 0,1 \}^n $
 
 
 % 29:16
-So this is still a countable limit ($\lambda = \omega$), so it's still light. But obviously it's much bigger than the first example, if you just think in terms of the number of points. So number of points is $\kappa = 2^\omega$.
+So this is still a countable limit ($\lambda = \omega$), so it's still light. But obviously it's much bigger than the first example, if you just think in terms of the number of points. So number of points is $\kappa = 2^\omega$. In general, these are really different.
 
 \begin{unfinished}{29:28}
 
 % 29:28
+\item Let me give one more example that has some relevance in the theory, although excluded. One very important thing: any locally compact space has two compactifications: one-point compactification and the Stone-Čech compactification. Item 1 is small, item 3 is really huge. So let me not try to present this as a limit.
+
 % 3)
 $S = \beta N$
-\item Let me give one more example that has some relevance in the theory, although excluded. One very important thing: any locally compact space has two compactifications: one-point compactification, and the Stone-Čech compactification. Item 1 is small, item 3 is really huge. So let me not try to present this as a limit.
 
-$\Cond(S, \F_2) = \Cond (\beta N, \F_2)
+$\Cont(S, \F_2) = \Cont(\beta N, \F_2) $
+
+$ \{ \text{ switch of } \N \}$
 
 % left: \{ subsets of N \}
 
-Instead of presenting it as a limit, let me say what are the continuous functions from $S$ to $\F_2$. These are the continuous functions from the Stone-Čech compactification. But by the universal property of Stone-Čech compactification, this is really just a continuous map from the natural numbers to $\F_2$. But these are discrete, so this is really just the set of giving such $\N \to \F_2$. You just have to specify the image of zero, and this is just any subset of the integers. So this is just the set of all subsets of the numbers.
+Instead of presenting it as a limit, let me say what are the continuous functions $S \to \F_2$. These are the continuous functions from the Stone-Čech compactification. But by the universal property of Stone-Čech compactification, this is really just a continuous map from the natural numbers to $\F_2$. But these are discrete, so this is really just the set of giving such $\N \to \F_2$. You just have to specify the image of zero, and this is just any subset of the integers. So this is just the set of all subsets of the numbers.
 % 30:54
-So we see that this actually has weight $\lambda = 2^{\aleph_0}$, and it's not super clear, but you can show that it has size $\Kappa = 2^{2^{\aleph_0}}$. It's pretty large. So in all those examples, it turns out that, well, in the example that you gave, the size in the infinite case---the size is either equal to the weight, or it is bigger.
+So we see that this actually has weight $\lambda = 2^{\aleph_0}$, and it's not super clear, but you can show that it has size $\kappa = 2^{2^{\aleph_0}}$. It's pretty large. 
+
+% 31:09
+\textbf{Question:} In all those examples, it turns out that, well in the example that you gave, the size in the infinite case---the size is either equal to the weight, or it is bigger.
 
 %For some reason, I only hear you very softly. We need to get CL. Okay, okay. So I just... 
 
-
-\textbf{Question:} In the examples, there are trivial estimates that the size is at most $2^{\text{weight}}$ and at most $2^{\text{size}}$. And so you can ask whether there is about inequalities between them. So in the case where you consider, like you have the Cantor set and the Stone-Čech, the size is $2^{\text{weight}}$. So the question is whether it can be the other way in the infinite case, that is, that you have actually... 
+% 31:40
+\textbf{Question:} In the examples, of course there are trivial estimates that the size is at most $2^{\weight}$ and at most $2^{\size}$. And so you can ask whether there is about inequalities between them. So in the case where you consider, like in Cantor set and the Stone-Čech, the size is $2^{\weight}$. So the question is whether it can be the other way in the infinite case, that is, that you have actually...
+ 
 % 32:13
 \textbf{Answer:} When I prepared, because I wanted the same question and I didn't, 
 
 \textbf{Question:} But I think I know an example, but anyway it's a bit complicated. 
 
 \textbf{Answer:} But that's also what I suspected.
-
+% 32:24 
 Let me tell you what I know is easy and sufficient for us to know. 
 
 % $\lambda \leq 2^{\kappa}$
 % $\kappa \leq 2^{\lambda}$
+\begin{proposition}
+
 Here's a proposition. As Ofer mentioned, you have trivial estimates, and I will tell you they are trivial, that $\lambda$ at most $2^{\kappa}$ and $\kappa$ is at most $2^{\lambda}$. And you see that this one can be attained, and actually in quite large generality you can make examples where this becomes as large as this. 
 % 33:09
 But it's actually quite hard to give examples where $\lambda$ becomes bigger than $\kappa$.
@@ -242,29 +251,62 @@ So let me just note that in the case that's most relevant to us.
 % if $\kappa = \omega \Rightarrow \lambda = \omega $.
 If you have a profinite set that's countable, then actually it can also be written as a countable limit of finite sets. So all the ones, these are like, I mean, this wouldn't follow from this inequality, right?
 
+\end{proposition}
+
+\begin{sketch}
 % 33:51
 Why are these things true? 
 % proof
-$\lambda$ was the continuous functions. Certainly bounded by all the maps from, this is obviously $2^{\kappa}$. And on the other $\kappa$ is the homomorphisms from the Boolean algebra, right? Because I said you can recover the profinite set as a map from Boolean algebra to $F_2$. And again, this is bounded by all the maps from $\lambda$.
+$\lambda$ was the continuous functions. Certainly bounded by all the maps from, this is obviously $2^{\kappa}$. 
+
+$\lambda = |\Cont(S, \F_2)| \leq |\Map(S, \F_2| = 2^{\kappa}$
+
+And on the other hand, $\kappa$ is the homomorphisms from the Boolean algebra $A$ to $\F_2$, right? Because I said you can recover the profinite set as a map from Boolean algebra $A$ to $\F_2$.
+% 34:24
+And again, this is bounded by all the maps from $\lambda$.
+
+$\kappa = |Hom(A, \F_2| \leq |\Map(A, \F_2)| = 2^{\lambda}$
 
 % todo size
-$\kappa = | Hom (A, F_2) |
+$\kappa = |\Hom(A, F_2)|
 
-So what's quite nice about this is that these estimates even hold true in the finite case. In the finite case, actually this one becomes $\kappa = \lambda$.
+% 34:35
+So what's quite nice about this, is that these estimates even hold true in the finite case. In the finite case, actually this one becomes $\kappa = \lambda$ \note{todo}.
 
-Let me do this one case where $\kappa$ is equal to $\aleph_0$. So then you can enumerate $S$, we can enumerate the elements. And then for each $n$, inductively choose a quotient $S_n$ compatible, so that first three elements $z_n$ inject any finite set. You can always find such a quotient.
+% 34:49
+Let me do this one case where $\kappa = \omega$. So then you can enumerate $S$, we can enumerate the elements. 
 
-Then you see that the map from $S$ to the inverse limit of $S_n$
+$S = \{ s_0, s_1, s_3, \dots \}
 
-% 36:42
+And then for each $n$, (inductively) choose a finite quotient $S \to S_n ( \to S_{n-1}$ compatible, so that the first three \note{todo} elements from $s_0$ to $s_n$ inject to a set set. 
+
+% 35:30
+
+$\{ s_0, \dots, \s_n \} \mono S_n$ 
+
+% 35:36
+You can always find such a quotient.
+Then you see that the map from $S$ to the inverse limit of all the $S_n$'s is injective because already for any two elements, you can distinguish them in them in a quotient \note{todo}. But also because it's a limit of surjective maps, it's also always surjective. So it's actually a bijective map, but the bijective map ... isomorphism \note{didn't hear this}.
+ 
+$S \to \lim_n S_n$  % todo
+
+\end{sketch}
+
+% 36:13 
+\textbf{Question by Gabber:} So maybe this actually proves more, I did not realize it until just a few seconds ago, but if you have any infinite $S$, so because by set theory, we know that the cardinality square is cardinality, you can look at all pairs of distinct elements. For each one, you choose a finite quotient, which separates them. Then, you say, well, the same proof that you have, the same proof will show that in the infinite case, actually we can improve this bound, so that the example that I thought of is something else.
+
+% 36:50
 \begin{remark}
-Remark by Gabber, that the same proof shows that if you're in an infinite situation, then $\lambda \leq \kappa$.
+Remark by Gabber, that the same proof shows that if you're in an infinite situation($\kappa$ infinite), then $\lambda \leq \kappa$.
 \end{remark
 
-As Scholze mentioned, you build a finite quotient where these elements are distinguished and then take the limit.
+% 37:23
+You just ensure that any finite subset ... $\kappa$ \note{todo}. You build a finite quotient where these elements are distinguished and then take the ... \note{didn't hear this}.
 
-Because this SL condensate will be so important for us, let me just rephrase the first proposition for light condensates. 
+% 38:19
+Because these light condensed sets will be so important for us, let me just rephrase the first proposition for light condensed sets. 
 
+\begin{proposition}
 % 38:44
 The following categories are equivalent to light profinite sets:
 \begin{enumerate}
@@ -289,12 +331,38 @@ $\colim_{f: \N \to \N \text{strictly incr.}} \lim \Hom(S_{f(n)}, T_n)$
 
 \end{enumerate}
 
-Let me just note one very simple proposition that will be used throughout. If you work in $\Pro_\N(\Fin)$-sets, and this says you have all limits, but if you restrict to light $\Pro_\N(\Fin)$-sets, then you still have all countable limits and sequential limits of surjections are surjective. Maybe I should say surjectivity is just meant in terms of the underlying sets, like taking the actual limit. So in other words, surjectivity on the point set of the component processes. Something similar is true, that any limits of surjections are surjective in all $\text{Prof}$-sets, but there it uses some rather high-powered compactness result, like the Tychonoff theorem. In the sequential case, it's really kind of stupid, you just successively lift.
+\end{proposition}
 
-So the first interesting thing I want to mention is that the natural numbers actually play a bit of a universal role within the light profinite sets. That is, if you have any light profinite set $S$, then there exists a surjection from $\widehat\N$ onto $S$. The proof is really simple induction. It just writes $S$ as a sequential limit and then at each point, just pick a large enough finite quotient of $\widehat\N$ to accommodate everything you already have.
+% 42:42
+Let me just note one very simple proposition that will be used throughout. 
+\begin{proposition}
 
-Now I want to come to two properties that light profinite sets have and that fail in general, and that will play a technical role in what we're doing. These are some of the key reasons that we make the switch. Now, two properties that are special to light profinite sets, they may also work for some other $\text{Prof}$-sets, but that would be hard to single out there.
+Category of light profinite sets has all the countable limits. Sequential limits of surjections are surjective.
 
+\end{proposition}
+
+If you work in profinite sets, and this says you have all limits, but if you restrict to light profinite sets, then you still have all countable limits and sequential limits of surjections are surjective. Maybe I should say surjectivity is just meant in terms of the underlying sets, like taking the actual limit. So in other words, surjectivity on the point set of the component processes. 
+% 43:47
+Something similar is true, that any limits of surjections are surjective in all profinite sets, but there it uses some rather high-powered compactness result, like the Tychonoff theorem. In the sequential case, it's really kind of stupid, you just successively lift.
+
+% 44:55
+\begin{proposition}
+Let $S$ be a light profinite set. Then $\exists$ surjection $\{ 0,1 \}^{\N} \epi S$.
+\end{proposition}
+So the first interesting thing I want to mention, is that the Cantor set actually play a bit of a universal role within the light profinite sets. That is, if you have any light profinite set $S$, then there exists a surjection from the Cantor set $\{ 0,1 \}^{\N}$ onto $S$. 
+% 45:47
+The proof is a really simple induction. Just write $S$ as a sequential limit and then at each point, just pick a large enough finite quotient of the Cantor set to accommodate everything you already have.
+
+\begin{sketch}
+Exercise (simple induction).
+\end{sketch}
+
+% 46:27
+Now I want to come to two special properties that \underline{light} profinite sets have and that fail in general, and that will play a technical role in what we're doing. These are some of the key reasons that we make the switch. Now, two properties that are special to light profinite sets, they may also work for some other profinite sets, but that would be hard to single out there.
+
+% 48:07
+\begin{proposition}
+\end{proposition}
 First, open subsets of light profinite sets can be too wild. If $U$ is an open subset of a light profinite set $S$, then $U$ is actually a countable disjoint union of profinite subsets of $S$. So this is to be contrasted with the following: In general, there exist open subsets $U$ in a profinite set $S$ that are not disjoint unions of profinite subsets. One way in which this can fail is, for example, you could take a product of profinite sets. I mean, disjoint unions take coproducts to products, and on profinite sets, these are totally disconnected. So you can't have non-trivial open coverings in this sense. But in general, the structure of these open subsets
 
 Let $U$ be an open subset of a profinite set $S$. Then $U$ is a union of clopen subsets, so we can write $U = \bigcup_{n} S_n$ where each $S_n$ is clopen in $S$. More precisely, choose a presentation $S = \varprojlim S_n$ where the transition maps $S_{n+1} \to S_n$ are surjective. Then $U$ is the union over all $n$ of the images of $S_n \setminus f_n^{-1}(S \setminus U)$.
