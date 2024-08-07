@@ -98,7 +98,7 @@ $\forall i, j \in I, \exists k \leq i,j$
 The morphisms, this is an inverse limit, so you can pull that out first. But then there are two traditions about writing limits and colimits, either with an arrow and just a "lim" or writing "lim" and "colim". I'm kind of combining the two for maximum clarity. \note{macro for colim differs from Scholze's notation.}
 
 $Hom(\lim_{i \in I} S_i ,\lim_{j \in J} T_j ) $
-$ = \lim \colim \Hom (S_i, T_j$
+$ = \lim \colim \Hom (S_i, T_j)$
 % 17:45
 I might at some point just write lim and colim, but for the moment I'll use the directional arrows. But then when you have a formal inverse limit, that means just  one $T_j$, this should factor over of the the terms \note{not sure of this}.
 
@@ -133,12 +133,12 @@ So most often, I will actually think in terms of this presentation. Whenever I h
 And now that I want to come to the light things, I need to tell you two ways to measure how "big" $S$ is. 
 
 \begin{definition}
-Let $S = \lim_{i} S_i$ be a profinite set. (When I write this, I implicitly mean that the $S_i$ are finite sets and the index category is cofiltered or poset.)
+Let $S = \lim_{i} S_i$ be a profinite set. (When I write this, I implicitly mean that the $S_i$ are finite sets and the index category is cofiltered or a poset.)
 
 % 24:04
 \begin{itemize}
 \item The \emph{size} of $S$ is $\kappa = |S|$, the cardinality of the underlying set. 
-\item The \emph{weight} of $S$ is  $\lambda := \abs{Cont(S, \F_2)}$. This is something that's traditionally called the weight. Maybe this has a different name---so this is the cardinality of the corresponding Boolean algebra.
+\item The \emph{weight} of $S$ is  $\lambda := \abs{\Cont(S, \F_2)}$. This is something that's traditionally called the weight. Maybe this has a different name---so this is the cardinality of the corresponding Boolean algebra.
 \item $S$ is \emph{light} if $\lambda \leq \omega$ (so if its weight is at most countable). i.e. countable limit of finite sets.
 \end{itemize}
 
@@ -314,7 +314,7 @@ The following categories are equivalent to light profinite sets:
 objects: $lim S_n$ $S_n$ finite
 
 % 39:22
-And the morphisms are as before, but you are not allowed to change the $m$, so that's an important thing. So the $\Hom(\lim S_n, \lim T_m$ is again, you can first pull out the limit and then take the other thing to be the colimit. 
+And the morphisms are as before, but you are not allowed to change the $m$, so that's an important thing. So the $\Hom(\lim S_n, \lim T_m)$ is again, you can first pull out the limit and then take the other thing to be the colimit. 
 % 40:02
 Let me actually note that there's a different way to think about this. Basically, something you are always allowed to do in a $\Pro$-object is to pass to any cofinal subsequence. And then, if you want to give a morphism from here to here, you think that first you extract a subsequence of the $n$s, and then you really just give compatible maps. One way to express it is, it's really some colimit over all possible strictly increasing functions $\varphi$ of compatible maps for all $m$ towards $G_{\varphi(m)}$, but from the three-scale version.
 
@@ -366,44 +366,48 @@ Then $U$ is a countable disjoint union of light profinite sets.
 \end{proposition}
 First, open subsets of light profinite sets can be too wild. If $U$ is an open subset of a light profinite set $S$, then $U$ is actually a countable disjoint union of light profinite sets. This is to be contrasted with the following: 
 % 49:19
-In general $exists $U \subset S$ profinite with $H^i (U, \Z) \neq 0$ for $i >0$
+In general $\exists U \subset S$ profinite with $H^i (U, \Z) \neq 0$ for $i >0$
 
 In general, there exist an open subset $U$ in a profinite set $S$ that are not disjoint unions of profinite sets. One way in which this can fail is, for example, you could have higher sheaf cohomology. 
 
 % 49:43
-I mean, disjoint unions take cohomology to products, and on profinite sets, these are totally split, disconnected. So you can't have non-trivial open coverings in this sense \note{not sure of this}. But in general, the structure of these open subsets of profinite ses can be pretty wild.
+I mean, disjoint unions take cohomology to products, and on profinite sets, these are totally split, disconnected. So you can't have non-trivial open coverings in this sense \note{not sure of this}. But in general, the structure of these open subsets of profinite sets can be pretty wild.
 
 \begin{unfinished}{50:03}
 % 50:03
 But here we have good control over them. 
 
 % todo
+% 50:11
 \begin{sketch}
 
 $\lim_n S_n $
 
 $Z_n = \Im(Z \to S_n ) \subset S $
 
-\end{sketch}
-
+% todo
 Let $U$ be an open subset of a profinite set $S$. Then $U$ is a union of clopen subsets, so we can write $U = \bigcup_{n} S_n$ where each $S_n$ is clopen in $S$. More precisely, choose a presentation $S = \varprojlim S_n$ where the transition maps $S_{n+1} \to S_n$ are surjective. Then $U$ is the union over all $n$ of the images of $S_n \setminus f_n^{-1}(S \setminus U)$.
 
+% 51:02
 So now you've at least written it as a sequential union of closed subsets. 
 
+\end{sketch}
+
 % 51:30
-Maybe I should have said, one way to think about open subsets purely in this language of pro-categories and profinite sets is to think about the closed things instead. Closed subsets should themselves be profinite sets, and then the closed subsets are precisely the injective maps of profinite sets.
+Maybe I should have said, one way to think about open subsets, purely in this language of pro-categories and profinite sets, is to think about the closed things instead. Closed subsets should themselves be profinite sets, and then the closed subsets are precisely the injective maps of profinite sets.
 
 % 51:47
-The closed complement should itself be a profinite set and injective \note{could not hear this well}, 
+The closed complement should itself be a profinite set and injective \note{could not hear this well}. 
 
 % 52:10
-% Each $\pi^{-1}(S_n \ Z_n) \subset_clopen S $
+Each $\pi^{-1}(S_n \ Z_n) \subset_{\text{clopen}} S $
 you take the preimage of this. Then if you want, you can write $U$ as a union over all $n$. 
 
-% todo
-$U = \bigsqcup_n (\pi^{-1})$
+% todo, can't read the indexes wel 
+$ \implies U_i = \bigsqcup_n (\pi_{n+1}^{-1} (S_{n+1} \backslash Z_{n+1}) \backslash \pi_{n}^{-1} (S_{n} \backslash Z_{n} ) )$
 
-Now these are subsets and are themselves profinite sets. 
+% 52:55
+Now these are subsets and are themselves light profinite sets. 
 % 53:06
 Okay, so that's one nice thing.
 
@@ -436,11 +440,11 @@ So you can assume that $S_n$ is just a point, but then $S_{n+1}$ is just some fi
 
 Exercise: Figure out why this argument doesn't apply to a general profinite set. You might still think that you can similarly extend as a limit along surjective maps. You can always do that and then try to inductively extend.
 
-\begin{remark}
+% 58:47
+\textbf{Question:} Just a small remark. If $Z$ and $S$ are both empty, do you need something? Maybe if $Z$ and $S$ are both empty, do you need some non-empty... ? \note{can't hear this well}
 
-Just a small remark. If $Z$ and $S$ are both empty, do you need something? No, $Z$ is empty and $X$ is not empty. Okay, if $S$ is not empty, it's okay.
-
-\end{remark}
+% 59:12
+\textbf{Answer:} $Z$ is empty and $X$ is not empty. \note{can't heart this discussion well}
 
 % 1:00:19
 I think that's it for my general preparations about light profinite sets. Let's now finally come to the definition of light profinite condensed sets.
@@ -462,26 +466,50 @@ on a site with the following covers. We always take a profinite set $S$ and a co
 Let me, as last time, spell out what this really means.
 
 \underline{Equivalent} A functor from light profinite sets $\Pro_{N}(\Fin)^{\op} \to \Set$
- A profinite condensed set $X$ is a functor from profinite sets to sets satisfying the following conditions:
+A profinite condensed set $X$ is a functor from profinite sets to sets satisfying the following conditions:
 
 Just need to $M$ both of them individually, and then there is this funny condition. This comes from allowing all the surjective maps. This means that whenever you have any surjective map of profinite sets, then to give a map $S \to X$, it's sufficient to give a map $T \to X$. 
 
 At least as a first approximation, you want that any map $S \to X$ is determined by what it does on $T$. But actually, you also want to characterize which maps from $T$ to $X$ actually come from $S$, and these should be the ones that agree on fibers of this map, so to speak. The good way to say this is that the two ways you can make a map out of the fiber product, either first projecting to the first coordinate or the second coordinate, this should agree. This is what the sheaf condition for this surjection says.
 
-Before expanding machinery, let me just tell you this key example to have in mind. Let's say $A$ is a compact Hausdorff topological space. Then we can define $\underline{A}$, and this is the thing that takes any $S$ to the continuous maps $S \to A$. Here the presheaf on profinite sets precisely remembers how profinite sets map continuously into your topological space. This has all the fun properties.
+% 1:06:05
+Before expanding machinery, let me just tell you this key example to have in mind. 
 
-Whenever you have a map between profinite sets, that remembers how a continuous map from one gives one to the other. It turns out that this condition is always satisfied. There's actually not a concrete topology, so if you would omit continuity then this would be clear. If you want a map from $S$ into $A$, it's sufficient to give one from $T$ into $A$, and then it factors over $S$ if and only if on the fibers the map is constant, which is kind of expressed by this.
+\begin{example}[\yt{1h06m05s}{}] \label{ex:02-}
+Let's say $A$ is a topological space. Then we can define the light condensed set $\underline{A}$. This is the thing that takes any $S$ to the continuous maps $S \to A$. \note{can't hear the last part of the sentence well}
 
-But you're saying more than that here, because you ask that the maps have the continuous property. In other words, if you have just any map from $S$ into $X$ and you know that if you restrict to $T$ it becomes continuous, then it was actually continuous to start with. Equivalently, $S$ is actually a quotient and has a quotient topology from $T$. This is actually a general property for profinite compact Hausdorff spaces - they are actually quotients. In particular, $|A|$ is just $A$ as a set.
+$ \underline{A}: S \mapsto \Cont(S, A) $
 
-In general, for any condensed set $X$, we think of $|X|$ as the underlying set. But you can also evaluate on some of our other favorite profinite sets, and maybe the most important one is this one-point compactification of the integers. What does this correspond to?
+Here the ... \note{can't hear this well} on light condensed sets precisely remembers how light profinite sets map continuously into your topological space. 
+% 1:07:02
+This has all the functoriality.
 
-It's a continuous map from $\N \cup \{\infty\} \to A$. In other words, it's a sequence in $A$ together with a limit point. So in other words, it's a convergent sequence, generally with the choice of a limit point, though most often there's at most one limit point. 
+Whenever you have a map between light profinite sets, that remembers how a continuous map from one gives one to the other. It turns out that this condition is always satisfied. There's actually not a complete tautology, so if you would omit continuity then this would be clear. If you want a map from $S$ into $A$, it's sufficient to give one from $T$ into $A$, and then it factors over $S$ if and only if on the fibers the map is constant, which is kind of expressed by this.
+
+% 1:07:38
+But you're saying more than that here, because you ask that the continuous maps have the property. In other words, if you have just any map from $S$ into $X$ and you know that if you restrict to $T$ it becomes continuous, then it was actually continuous to start with. Equivalently, $S$ is actually a quotient and has a quotient topology from $T$. This is actually a general property for profinite compact Hausdorff spaces - they are actually quotients. In particular, $|A|$ is just $A$ as a set.
+
+In general, for any condensed set $X$, we think of $|X|$ as the underlying set. 
+
+% 1:08:48
+But you can also evaluate on some of our other favorite light profinite sets, and maybe the most important one is this one-point compactification of the integers. 
+
+$ A ( \N \cup \{\infty\} ) = \text{convergent sequences in A (with choice of limit point) }$ % todo, math notation for A
+
+So what does this unravel to here?
+
+
+It's a continuous map from $\N \cup \{\infty\} \to A$. In other words, it's a sequence by all the $\N$ in $A$, together with a limit point. 
+% 1:09:12
+So in other words, it's a convergent sequence, generally with the choice of a limit point, though most often there's at most one limit point. 
 
 Similarly, when evaluating $X$ on this, where giving such a convergent sequence, we also have to give a witness for what the limit is.
 
 And then you can do more wild things. You can evaluate this at the Cantor set, and well, this is what it is. One thing to note however is that it's just a set, but it comes equipped with all the continuous endomorphisms of the Cantor set.
 
+\end{example}
+
+% 1:11:12
 \begin{remark}
 Let me just give one remark here and then forget about this forever. If you have a condensed set, it's completely determined by what I will describe as a functor from profinite sets to sets. By $|X|$, the Cantor set together with the actions, where this is really just an abstract set. This guy here is just, so you could think of a condensed set purely algebraically as a set equipped with an action of the profinite monoid. But I think this is a strictly worse way to think about this. Don't do that.
 
