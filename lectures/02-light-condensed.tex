@@ -532,22 +532,22 @@ Right, so this functor that takes a topological space to light condensed sets. A
 % 1:14:59
 So this has a left adjoint that takes any condensed set $X$ and maps it to the underlying set (what you want to think of as the underlying set) and canonically equips it with a certain quotient topology.
 
-$ X(*)_{top} X$
+$ X(\ast)_{top} X$
 
 % 1:16:22
-$ X(*)_{top} = X(*) $
+$ X(\ast)_{top} = X(\ast) $
 with the quotient topology 
 
 % 1:16:33
-So whenever you have anything that you want to think of as a continuous map $S \to X$, you in particular get a map from $S$ (or rather, just the underlying set of $S$) to this $X(*)$. This gives us a map from $S^*$ to $X(*)$. Take disjoint union here and endow all of these with their natural topology as a compact Hausdorff space, and this was the quotient topology.
+So whenever you have anything that you want to think of as a continuous map $S \to X$, you in particular get a map from $S$ (or rather, just the underlying set of $S$) to this $X(\ast)$. This gives us a map from $S^{\ast}$ to $X(\ast)$. Take disjoint union here and endow all of these with their natural topology as a compact Hausdorff space, and this was the quotient topology.
 
-$ \bigsqcup_{\alpha \in X(S} S \to X(*)$
+$ \bigsqcup_{\alpha \in X(S} S \to X(\ast)$
 
 % 1:17:19
 So the image actually lands in... This will always be like "metrizable compactly generated". What is this? This is for fixed $S$, and all $X$. Or if you want, you could just take the full subcategory, because everything is a presheaf on this.
 
 % 1:18:28
-For topological spaces, there's a notion of a compactly generated topological space, which is one where, when you want to test whether a map is continuous, it's enough to test it on compact spaces mapping to it. And this is by definition the case for this $X(*)$, because if you want to test continuity from here to somewhere, by definition of the quotient topology, you only have to test it from here.
+For topological spaces, there's a notion of a compactly generated topological space, which is one where, when you want to test whether a map is continuous, it's enough to test it on compact spaces mapping to it. And this is by definition the case for this $X(\ast)$, because if you want to test continuity from here to somewhere, by definition of the quotient topology, you only have to test it from here.
 
 So you only have to test continuity on these Cantor sets, but these are actually metrizable. So it's actually in this sense "metrizable compactly generated". I hope you can imagine what this should mean.
 
@@ -555,7 +555,7 @@ And conversely, if you start with a mildly compactly generated space, first trea
 
 In other words, there is any... Basically, any underlying... So in other words, the kind of unit of the adjunction map in this case.
 
-So they have the... I mean generally, any $X$ maps to this $X(*}$, the unit of the adjunction. And on these guys, it's an isomorphism.
+So they have the... I mean generally, any $X$ maps to this $X(\ast}$, the unit of the adjunction. And on these guys, it's an isomorphism.
 
 And so in particular, this means that these guys will form a full subcategory of all condensed sets. And it's... This is a very weak condition to be in this subcategory. I mean, virtually all the topological spaces that ever arise in nature... I mean, for example, we're mostly using these condensed sets in our functional analysis, so to say, for topological modules. And any kind of Banach spaces, Fréchet spaces, whatever, they all have this property. They are all usable. So it's not so bad.
 
@@ -630,7 +630,7 @@ You can actually prove that you don't have to sheafify in this case, and this is
 % 1:32:53
 Let's do the more drastic thing where you modify all of $\R$ by a discrete guy. Then the underlying set is just zero, right? It's $\R/\R$, which is zero.
 
-% $ (\R / R) (*) = R / R = 0 $
+% $ (\R / R) (\ast) = R / R = 0 $
 
 % 1:33:14
 But it's not an isomorphism, there should be a cokernel. To see what is is we have to evaluate
