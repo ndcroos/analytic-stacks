@@ -192,42 +192,83 @@ Then you can also wonder more generally, if it drops the compactness hypothesis,
 So we know that the metrizable compact Hausdorff spaces are allowed. And in general, you should think of these guys as being rising unions of quasicompact subsets. In fact, they are exactly the ind-category, where all the transition maps are closed immersions of metrizable compact spaces. Let me write injections---I really mean all maps are injective, in which case they're automatically closed immersions of metrizable compact spaces. In the ind-category. So last time I was talking about the pro-category, which were formal inverse systems, and these are formal directed systems. So there is a category, where the objects are functors from a filtered poset towards metrizable compact Hausdorff spaces with all the maps injective. And functors, I mean maps, are the usual thing on ind-objects.
 
 % 23:20
-So you could also drop the Hausdorff here and then drop this here. And let me just point out that within this category you have what algebraic topologists call the metrizable compactly generated weak spaces (CGWH). Metrizable meaning sequential. 
+So you could also drop the Hausdorff here and then drop this here. And let me just point out that within this category you have what algebraic topologists call the metrizable compactly generated weak spaces (mCGWH). Metrizable meaning sequential. 
 %23:55
 But note that they are not the same, because in this category, as I said previously, you can write the Cantor set as a huge colimit of countable closed subsets, but not in the category of quasiseparated condensed sets.
 
 $\text{Cantor set} = \colim (\text{countable closed subsets})$
 
-I mean, these are both condensed sets. This is the prototypical example of an ind-system of metrizable compact Hausdorff spaces. This is also an ind-system where you just have one term, it's actually some quasicompact quasiseparated guy. But as condensed sets, they are very different. 
+I mean, these are both condensed sets. This is the prototypical example of an \Ind$-system of metrizable compact Hausdorff spaces. This is also an \Ind$-system where you just have one term, it's actually some quasicompact quasiseparated guy. But as condensed sets, they are very different. 
 % 24:57
 Because this is really just a formal colimit, and this is just one object. In particular, this guy is quasicompact and this one is not.
 
 % 24:12
-But actually, if you ask for ind-systems that are countable, then on such things, these all come from here. So some of the difference between these two categories only comes when the colimit category is pretty large, as it is in this case.
+But actually, if you ask for $\Ind$-systems that are countable, then on such things, these all come from here. So some of the difference between these two categories only comes when the colimit category is pretty large, as it is in this case.
 
 % 25:27
-\textbf{Question:} So I don't understand the subtlety. Is there a condition on---so if you take the condensed set which is the direct limit of the injections of the countable unions of images of the sequence space, does this give something by the equivalence of categories which is in this category MCG? It's not an equivalence of categories, right? This is just a full inclusion.
+\textbf{Question:} So I don't understand the subtlety. Is there a condition on the---so if you take under this equivalence the light condensed set which is the direct limit of the injections of... is the Cantor set of countable of this yes all finite unions of images of the sequence space.
+% 25:55
+So does this give something by the equivalence of categories which is in this category mCGMWH? 
 
-What is included in that? Ah okay, this one is included. Okay, I did not realize that this is what you were saying. 
+% 26:02
+\textbf{Answer:} It's not an equivalence of categories, right? This is just a full inclusion. \note{todo, add what is being pointed at}
 
-All right. So let me just say something that's implicit. We said that something very nice, like the interval, is definitely a nice metrizable compact Hausdorff space. We said it should be quasicompact as a condensed set. And I said that quasicompact means that there must be a surjection from the countable set. In fact, that is true. You can find a surjection from the countable set, and in fact some kind of canonical one.
+$\mCGWH \subset \Ind_{inj} \{ \text{metrizable compact Hausdorff spaces} \}$
 
-I mean, if you have a sequence $a_0, a_1, a_2, \ldots$ of either zeros or ones, you can send this to the number in binary $0.a_0 a_1 a_2 \ldots$, the binary expansion, which is an element in the interval. And any point in the interval admits such a representation. So you get the surjective map.
+% \textbf{Question:} What is included in that? Ah okay, this one is included. Okay, I did not realize that this is what you were saying. 
 
-But we definitely need the countable set, or something as large as a countable set, to surject onto here. And so you can then recover this whole guy as a certain closed equivalence relation here, where the equivalence relation is precisely this nasty thing that $0.111\ldots = 1.000\ldots$. All right
-Okay, so we're mainly interested in this formalism of condensed sets as a framework for doing some kind of algebra where all the objects have something like a topology.
+% 27:28
+Let me just say something that's implicit in 1). We said in particular something very nice, like the interval $[0,1]$, is definitely a nice metrizable compact Hausdorff space. We said it should be quasicompact as a condensed set. And I said that quasicompact means that there must be a surjection from the Cantor set. In fact, that is true. You can find a surjection from the Cantor set, and in fact some kind of canonical one.
 
-To get this started, let's talk about condensed abelian groups. There are actually two ways to think about this, which I didn't say last time. Either these are abelian group objects in condensed sets, or these are sheaves on this category of condensed sets with values in abelian groups. Let me just write in symbols: sheaves on $\mathsf{Cond}$ with values in $\mathsf{Ab}$. Similar remarks apply to any kind of algebraic structure. If you have rings, for example, you can view them as ring objects in condensed sets or as sheaves of rings.
+$\{ 0,1 \}^{\N} \epi [0,1]$
 
-From the general theory of sheaves and Grothendieck topologies, we know that this is an abelian category, in fact a Grothendieck abelian category. So it has filtered colimits, etc. It also has a tensor product. Let me describe a little bit what the properties are.
+If you have a sequence $(a_0, a_1, a_2, \ldots)$ of either zeros or ones, you can send this to the number in binary $0.a_0 a_1 a_2 \ldots$, the binary expansion, which is an element in the interval. And any point in the interval admits such a representation. 
+% 28:28
+So you get the surjective map.
 
-The unit object is just the condensed set $\underline{\Z}$ associated to the integers as a discrete set. If you have two condensed abelian groups $M$ and $N$, then $M\otimes N$ is the sheafification of the presheaf that sends a condensed set $S$ to the tensor product $M(S)\otimes N(S)$. This is just a functor from condensed sets to abelian groups, a "presheaf", and then you can always sheafify.
+But we definitely need the Cantor set, or something as large as the Cantor set, to surject onto here. You can then recover this whole guy as a certain closed equivalence relation here, where the equivalence relation is precisely this nasty thing that $0.111\ldots = 1.000\ldots$.
+% 29:14
+So we're mainly interested in this formalism of light condensed sets as a framework for doing some kind of algebra, where all the objects have something like a topology.
 
-There's a further property that I want to stress, which is also completely general. If you have a condensed abelian group, then you can forget its abelian group structure and just have an underlying condensed set. But this has a left adjoint, a kind of free construction. A "free condensed abelian group"---let me drop the "condensed" when I say that now---takes any condensed set $X$ to the free abelian group on $X$. Here, as in general for these colimit-type constructions like tensor products and left adjoints, you always have to sheafify. So it's the sheafification of the presheaf that takes any $S$ to the free abelian group on $X(S)$.
+% 29:29
+To get this started, let's talk about light condensed abelian groups. So we have this category of light condensed abelian groups. There are actually two ways to think about this, which I said last time. Either these are abelian group objects in condensed sets, or these are sheaves on this category of condensed sets with values in abelian groups. 
 
-There is already some structure here that you don't often think about in topological abelian groups. You don't really often take the free group on a topological space. Here it exists, and it's actually a completely fundamental structure.
+$\Cond\Ab^{\light} = \text{abelian group objects in $\Cond\Set^{\light}$} = \Shv(\Pro_{\N}(\Fin),\Ab)$ 
 
-The idea is that this free abelian group on $X$ is some topological abelian group. What is its underlying group? It's just the free abelian group on the underlying set $X(\ast)$. So if you have any kind of topological space, you can just take its free abelian group. Of course, this machinery will then put some kind of topology on the free abelian group.
+% 
+Similar remarks apply to any kind of algebraic structure. If you have rings, for example, you can view them as ring objects in condensed sets or as sheaves of rings.
+
+% 31:08
+From the general theory of sheaves and topoi, we know that this is an abelian category, in fact a Grothendieck abelian category. So it has filtered colimits, etc. \note{could not hear this} 
+% 31:40
+It also has a tensor product. Let me describe a little bit what the properties are.
+
+The unit object is just the condensed set $\underline{\Z}$ associated to the integers as a discrete set. If you have two guys,  $M$ and $N$, then $M\otimes N$ is the sheafification of the presheaf that sends any $S$ to the tensor product $M(S)\otimes N(S)$. 
+
+$S \mapsto M(S)\otimes N(S)$
+
+% 32:30
+This is just some functor from light profinite sets to abelian groups, what's called a presheaf, and then you can always sheafify.
+
+% 33:25
+There's a further property that I want to stress, which is also completely general. If you have a light condensed abelian group, then you can forget its abelian group structure and just have an underlying condensed set. 
+
+$\Cond\Ab^{\light} = \Cond\Set^{\light}$
+
+% 33:44
+But this has a left adjoint, a kind of free construction. A "free condensed abelian group"---let me drop the "condensed" when I say that now---takes any light condensed set $X$ to the free abelian group on $X$, where $Z$ adjoin $X$
+
+% 34:17
+In general, for these colimit-type constructions like tensor products and left adjoints, you always have to sheafify. So it's the sheafification of the presheaf that takes any $S$ to the free abelian group on $X(S)$.
+
+%todo 
+$ \Z[x]: \text{sheafification of } S \mapsto \Z[x(J)]$
+
+% 34:44
+There is already some structure here that you don't often think about in topological abelian groups. You don't really often take the \emph{free} group on a topological space. Here it exists, and it's actually a completely fundamental structure.
+
+% 35:00
+The \underline{idea} is that this $\Z[x]$ is "some topology" on $\Z[X(\ast)]$. What is its underlying group? It's just the free abelian group on the underlying set $X(\ast)$. So if you have any kind of topological space, you can just take its free abelian group. Of course, this machinery will then put some kind of topology on the free abelian group.
 
 Let me actually discuss this in an example. Sheafification won't change the value on the point, because any cover of the point is split, so the sheaf condition is kind of vacuous on the point.
 
