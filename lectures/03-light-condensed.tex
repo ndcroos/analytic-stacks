@@ -198,7 +198,7 @@ But note that they are not the same, because in this category, as I said previou
 
 $\text{Cantor set} = \colim (\text{countable closed subsets})$
 
-I mean, these are both condensed sets. This is the prototypical example of an \Ind$-system of metrizable compact Hausdorff spaces. This is also an \Ind$-system where you just have one term, it's actually some quasicompact quasiseparated guy. But as condensed sets, they are very different. 
+I mean, these are both condensed sets. This is the prototypical example of an $\Ind$-system of metrizable compact Hausdorff spaces. This is also an \Ind$-system where you just have one term, it's actually some quasicompact quasiseparated guy. But as condensed sets, they are very different. 
 % 24:57
 Because this is really just a formal colimit, and this is just one object. In particular, this guy is quasicompact and this one is not.
 
@@ -270,42 +270,91 @@ There is already some structure here that you don't often think about in topolog
 % 35:00
 The \underline{idea} is that this $\Z[x]$ is "some topology" on $\Z[X(\ast)]$. What is its underlying group? It's just the free abelian group on the underlying set $X(\ast)$. So if you have any kind of topological space, you can just take its free abelian group. Of course, this machinery will then put some kind of topology on the free abelian group.
 
-Let me actually discuss this in an example. Sheafification won't change the value on the point, because any cover of the point is split, so the sheaf condition is kind of vacuous on the point.
+Let me actually discuss this in an example. 
+% todo
+Sheafification won't change the value on the point, because any cover of the point is split, so the sheaf condition is kind of vacuous on the point.
 
-Here's an example, which is kind of related to the introduction I gave last time. We can take the real numbers $\underline{\R}$. Very soon I will forget to write the underline all the time, because implicitly everything has become a condensed set. But okay, so we have the real numbers as a condensed set, and then we can take the free condensed abelian group on that.
+% 36:14
+Here's an example, which is kind of related to the introduction I gave last time. 
 
+% todo
+$\Z[\underline{\R}] = \{  \Sum \}$
+
+We can take the real numbers $\underline{\R}$. Very soon I will forget to write the underline all the time, because implicitly everything has become a condensed set. So we have the real numbers as a condensed set, and then we can take the free condensed abelian group on that.
+
+% todo, name for example
+\begin{example}[\yt{36m14s}{}]
+\end{example}
+
+% 36:45
 What kind of object is this? It's sums, if you want, of real numbers $x$ weighted by integers $n_x$, where the $n_x$ are almost all zero. You might think of these points $x$ as measures, and then these are finite sums of measures.
 
-But now it also has some topology, where you kind of remember that these $x$'s are allowed to move continuously. But then, if you have $x + y$ in general, that's a non-zero element. However, when $x$ and $y$ become the same, then suddenly this collapses.
+% 37:16
+But now it also has some topology, where you kind of remember that these $x$'s are allowed to move continuously. But then, you can have $x - y$. In general, that's a non-zero element. However, when $x$ and $y$ become the same, then suddenly this collapses to \note{can't hear this}.
 
-It's maybe not so clear how you would actually describe this topologically. If you wanted to describe this as a topological abelian group, you would have to declare what the open subsets are, and I think that's a little bit tricky to visualize.
+% 37:45
+It's maybe not so clear how you would describe this topologically. If you wanted to describe this as a topological abelian group, you would have to declare what the open subsets are, and I think that's a little bit tricky to visualize \note{can't hear the last part of this}.
 
-But you can actually say what it is as a condensed set. First
+% 38:06
+But you can actually say what it is as a condensed set. First of all, because this free construction commutes with this colimit, this is definitely the colimit over all intervals in $\R$ of the free guy on an interval.
+% 38:27 todo
+I'm doing this because now it has a nice feature that it's not compact again. And the c adjoin $C_0(\Z)$ itself can be written as a rising union over all integers $n$ of subsets, where you are only allowing sums $\sum_{i\in I} n_{x_i}[x_i]$ of at most $n$ elements, where the sum of the absolute values of the $n_{x_i}$'s is at most $n$. Everything is contained in something like this, as condensed sets.
 
-Again, the $C_0(\Z)$ itself can be written as a rising union over all integers $n$ of subsets where you are only allowing sums $\sum_{i\in I} n_{x_i}[x_i]$ where the sum of the absolute values of the $n_{x_i}$'s is at most $n$. Everything is contained in something like this, as condensed sets.
+% 39:23
+So whenever you have a profinite set mapping into here, it will actually factor over one of these subsets. And these guys, they are compact Hausdorff and metrizable. 
+% 39:40
+It's a kind of fun exercise to figure out how to describe such a compact Hausdorff space.
 
-So whenever you have a profinite set mapping into here, it will actually factor over one of these subsets. And these guys, they are compact Hausdorff and metrizable. It's a kind of fun exercise to figure out how to describe such a compact Hausdorff space.
+% 39:45
+I claim that whenever you have any compact Hausdorff space and you look at finite integer valued sums of points of them, where the sum of the coefficients is at most $n$, there is a canonical compact Hausdorff topology on that. Classically, this takes a little bit of thinking. But in this formalism, this free construction just produces it for you automatically.
 
-I claim that whenever you have any compact Hausdorff space and you look at finite integral sums of points of them where the sum of the coefficients is at most $n$, there is a canonical compact Hausdorff topology on that. Classically, this takes a little bit of thinking. But in this formalism, this free construction just produces it for you automatically.
+% 40:20
+The subtle part is that there are some kind of non-trivial identifications you have to make. In general, $x-y$ is a non-zero element, but when they become equal, you have to collapse this to zero. To make this true, you actually already have to use that in our Grothendieck topology, we didn't just allow finite disjoint unions but also injective maps. Otherwise, this wouldn't come out right.
 
-The subtle part is that there are some kind of non-trivial identifications you have to make. In general, $x+y$ is a non-zero element, but when they become equal, you have to collapse this to zero. To make this true, you actually have to use that in our Grothendieck topology, we didn't just allow finite disjoint unions but also effective epimorphisms. Otherwise, this wouldn't come out right.
+% 41:07
+Also, by general nonsense, if you start with something that already had a group structure, then if you pass to the free guy, this now has a ring structure where the multiplication comes from the addition. In particular, this is actually a condensed ring completely naturally. This is kind of related to the question I had in my first lecture, like how do you adjoin an element in all its real powers? It's just done by this construction.
 
-Also, by general nonsense, if you start with something that already had a group structure, then if you pass to the free ring, this now has a ring structure where the multiplication comes from the addition. In particular, this is actually a condensed ring completely naturally. This is kind of related to the question I had in my first lecture, like how do you draw an element in all its real powers? It's just done by this construction.
+% 41:50
+These are general features. Now I want to mention a few features that are quite specific to this light condensed setting. The first thing is that countable products are exact. 
 
-These are general features. Now I want to mention a few features that are quite specific to this light condensed setting. The first thing is that countable products are exact. This might seem like an operation you're maybe not so often doing, but something you are certainly very often doing when you do some kind of functional analysis is to take sequential limits of surjective maps, and they are still surjective.
+\begin{theorem}
+\begin{enumerate}
+\item Countable products are exact.
+\item Sequential limits of surjective maps are surjective. 
+\item $Z[\N \cup \{\infty\}]$ is \emph{internally projective}.
+\end{enumerate}
 
+$\IntExt^i(M,N) = \text{sheafification of } $S \mapsto \Ext^i(M \otimes \Z[s], N)$
+
+\end{theorem}
+
+This might seem like an operation you're maybe not so often doing, but something you are certainly very often doing when you do some kind of functional analysis is to take sequential limits of surjective maps, and they are still surjective.
+
+% 42:40
 For example, in functional analysis, maybe you have some kind of Fréchet space and it's a sequential limit of Banach spaces. Maybe in that case it's not even surjective, but it will also come out right. You definitely want sequential limits to behave nicely. For example, if all the transition maps are surjective, you definitely want the limit to still be surjective. As I will argue in a second, this more or less forces you to go where your basic objects that define your site must be some kind of totally disconnected things.
 
-You have these, and there is this other property that I will explain in a second. You have the sequence space $\Z^\N$, it's a profinite set or light condensed set, and you take the free ring on that. This turns out to be internally projective.
+% 43:17
+You have these, and there is this other property that I will explain in a second. You have the sequence space $\Z^\N$, it's a light profinite set or light condensed set, and you take the free guy on that. This turns out to be internally projective.
 
-Recall that one way to say what projective means is that in any abelian category, you can define Ext groups. It means that $\Ext^i(P,-)=0$ for $i>0$. Internally projective makes sense when your category also has a tensor product, because if you have a tensor product, then you can define an internal Ext, and internally projective means that the internal $\Ext^i(P,-)=0$ for $i>0$.
+% 43:45
+Recall that one way to say what \emph{projective} means, is that in any Grothendieck abelian category, you can define $\Ext^i$ groups. It means that $\Ext^i(P,-)=0$ for $i>0$. \emph{Internally projective} makes sense when your category also has a tensor product, because if you have a tensor product, then you can define an internal $\IntExt$-group, and internally projective means that the internal $\IntExt}^{i}(P,-)=0$ for $i>0$.
 
-The first two properties are actually things that are better in all condensed abelian groups, because all products are exact. Well okay, the third property is also solely still true. However, the third property is something that's only true in the light setting.
+% 44:37
+The first two properties are actually things that are better in all condensed abelian groups, because all products are exact. Well okay, the third property is also solely still true \note{I did not hear this well}. However, the third property is something that's only true in the light setting.
 
-Let me just define the internal Ext. Basically, if you have a tensor product, then you can also ask for an internal Hom, which is some kind of adjoint of the tensor product. Similarly, the internal Ext will be some version of the same thing on Ext groups.
+% 45:02
+Let me just define the internal $\Ext$. Basically, if you have a tensor product, then you can also ask for an internal $\Hom$, which is some kind of adjoint of the tensor product. Similarly, the internal $\Ext$ will be some version of the same thing on $\Ext$-groups.
 
-Okay, so let me prove this actually. Let me first note that one reduces to showing that taking products of surjections is surjective. The only thing that's not true for general products is that a product of injective maps is always injective and so on. The only thing that's not clear is that the countable product of surjections
+Okay, so let me prove this actually.
 
+\begin{sketch}
+% 46:20
+Let me first note that one reduces to showing that taking products of surjections is surjective. The only thing that's not true for general products is that a product of injective maps is always injective and so on. The only thing that's not clear is that the countable product of surjections
+
+(1) reduces to (2) need $\forall: M_n \epi N_n$, also $\prod f_n: \prod$ % todo
+\end{sketch}
+
+% todo, all of this for the proof
 For all $M$, you can take the product over all $n$ at most $M$ of $M_n$, and then the product over $N$ bigger than $M$ of $N_n$, and this surjects onto the product of the $N_n$'s. Now because a finite product is the same thing as a finite direct sum, they always preserve surjective maps. They're always exact, and so you can always, like, for finitely many coordinates, kind of do the lift. But then this guy here, I mean, this map is the limit now over $M$ of these things.
 
 And so if we're asking whether a countable limit of surjections is still surjective, let's assume you have such a diagram. We have $M_0$, $M_1$, $M_2$, and $M_\infty$ is the limit of these, which certainly maps to $M_0$. We ask ourselves whether this is surjective. So what does it mean to be surjective in the sense of sheaves?
@@ -316,26 +365,49 @@ But let's just see what happens. We definitely, well, right, so this is this map
 
 And so now you can just take $S$ to be the limit of this diagram. So inductively, you construct light profinite sets with a map to here, and then take the countable limit of these surjective maps. As I said last time, and I think I recalled today, countable limits of surjections are still surjections in light profinite sets. Hence, this guy is still allowed as a cover in our Grothendieck topology.
 
-So in the definition of your $X$ group in the sheafification, you drop the underline and the left $p$. So $\Z_p$ $s$, you mean $\Z_p$ $s$ underline? Let me drop the underlines. Okay, so $S$ is for me a light profinite set, and they sit inside of light condensed sets. So if you feel better, make an underline. And like, the Yoneda embedding has no decoration for me, it's just the same thing. But yeah, also in three, like, this threefold guy, it's like, maybe I should also underline $10$ here.
+So in the definition of your $X$ group in the sheafification, you drop the underline and the left $p$. So $\Z_p$ $s$, you mean $\Z_p$ $s$ underline? Let me drop the underlines. Okay, so $S$ is for me a light profinite set, and they sit inside of light condensed sets. So if you feel better, make an underline. 
+% 52:32
+And like, the Yoneda embedding has no decoration for me, it's just the same thing. But yeah, also in three, like, this threefold guy, it's like, maybe I should also underline $10$ here.
 
-Okay, so before I go on to the proof of three, let me reflect a little bit on what happened here. This finishes one and two, and let me come back to that in a second.
+% 53:12
+Okay, so before I go on to the proof of (3), let me reflect a little bit on what happened here. This finishes (1) and (2), and let me come back to three in a second.
 
-So here, the critical thing---we definitely, for doing good homological algebra, like a functional analysis kind of homological algebra, you definitely want property two. But critical for two was exactly this property that countable limits of surjective maps are still surjective, that limits of covers in your Grothendieck topology are covers.
+% 53:28
+So here, the critical thing---for doing good homological algebra, like a functional analysis kind of homological algebra, you definitely want property (2). But critical for (2) was exactly this property that countable limits of surjective maps are still surjective, countable limits of covers in your Grothendieck topology are covers.
 
-And I claim that this basically forces you to use totally disconnected spaces as building blocks. Why? You might also have the idea, and I think people are doing that, that if you want some kind of nice category of something like topological real vector spaces, you might work in this kind of smooth setting where you take your defining site to be like smooth manifolds, and the Grothendieck topology just the usual one of open covers of smooth manifolds.
+% 54:05
+And I claim that this forces you to use totally disconnected spaces as building blocks. Why? You might also have the idea, and I think people are doing that, that if you want some kind of nice category of something like topological real vector spaces, you might work in this kind of smooth setting where you take your defining site to be like smooth manifolds, and the Grothendieck topology just the usual one of open covers of smooth manifolds.
 
-But in that case, this property that countable limits of covers are covers is just not true. Because if you have, like, maybe just the real line, then you can cover it by two intervals. Each one of them you can again cover by two intervals, and then keep doing that. But then the intervals shr
+% 55:03
+But in that case, this property that countable limits of covers are covers is just not true. Because if you have, for example the real line, or a small interval, then you can cover it by two intervals. Each one of them you can again cover by two intervals, and then keep doing that. But then the intervals shrink and shrink, and in the limit all you've left is this cloud of dust which is a Cantor set. So even if you start with some nice spaces like some interval, and then cover this by one interval and another interval, and then cover it by smaller intervals, in the limit we get something totally disconnected.
+% 55:57
+Of course, the limit doesn't have any reasonable sense of a smooth structure anymore. So I want to claim that this basically forces you to take as your building blocks basically totally disconnected compact Hausdorff spaces. 
 
-Disconnected compact Hausdorff spaces. And initially, we took all of them. We realized it's slightly better to restrict to symmetrizable ones and to have all surjective maps as covers. Because you can actually show that any surjective map of topological spaces can be written as a sequential limit of actually open covers. So if you want open covers and their sequential limits, you need all of them.
+% 56:15
+Initially, we took all of them. We realized it's slightly better to restrict to symmetrizable ones and to have \emph{all} surjective maps as covers. Because you can actually show that any surjective map of light profinite sets can be written as a sequential limit of actually open covers. So if you want open covers and their sequential limits, you need all of them.
 
-Actually, I should maybe say that this is not some kind of ahistorical comment. This pro-étale topology was, in fact, first---I mean, so this stuff about condensed sets, this comes from something called the pro-étale topology, like originally in Bhatt-Scholze for schemes. And there, the wish was precisely that limits of surjective maps should still be surjective. Because this was---we wanted to have certain sheaves which were naturally certain inverse limits, and we want them to be well-behaved. And for this reason, we allowed these countable limits, or all limits of covers, to still be covers. So this is really the origin of this whole theory.
+% 57:07
+Actually, I should maybe say that this is not some kind of ahistorical comment. This pro-étale topology was, in fact, first---I mean, so this stuff about condensed sets, this comes from something called the pro-étale topology, like originally in $p$-adic geometry and then in for schemes. 
+% 57:28
+And there, the wish was precisely that limits of surjective maps should still be surjective. Because we wanted to have certain sheaves which were naturally certain inverse limits, and we want them to be well-behaved. And for this reason, we allowed these countable limits, or all limits of covers, to still be covers. So this is really the origin of this whole theory.
 
-All right, so this was a small interlude. Excuse me. So if you have a surjective map of topological spaces, for example, you take the $\N \cup \{\infty\}$, two copies of $\N \cup \{\infty\}$. So all of the two sequences will converge to infinity. And then this is covered by two copies of $\N \cup \{\infty\}$, and they intersect at infinity.
+% 58:09
+So this was a small interlude. 
 
-You made a statement to the effect that--- not all transition maps are surjective. But actually something slightly stronger is true. I don't need all the transition maps to be surjective. I only need that the maps down to $S$ are surjective, and the limit is still okay. And in that sense, you can realize $S$ as okay in this other sense.
+% 58:17
+\textbf{Question:} So if you have a surjective map of light profinite sets, for example, you take the $\N \cup \{\infty\}$, two copies of $\N \cup \{\infty\}$. So the two sequences will converge to infinity. And then this is covered by two copies of $\N \cup \{\infty\}$, and they intersect at infinity. So you want, you said this surjection is in some sense a limit of open---
 
+You made a statement to the effect that--- 
+
+% 58:51
+\textbf{Answer:} Not all transition maps are surjective. But actually something slightly stronger is true. I don't need all the transition maps to be surjective. I only need that the maps down to $S$ are surjective, and the limit is still okay. And in that sense, you can write it as a limit.
+
+% 59:14
 Okay, something slightly weaker would be---I'm not sure. I would have to think how much difference it makes.
 
+\begin{sketch}
+$Z[\N \cup \{\infty\}]$ is internally projective
+\end{sketch}
 Okay, so I want to prove this thing that this is internally projective. But before I do that, let me make a warning that this is a phenomenon that's only true once you pass to groups. So $\N \cup \{\infty\}$ is not at all projective in condensed sets.
 
 And I actually kind of expected Gabber wanted to go there with this remark. Because this is precisely the example that I need to do. So you can have a surjective map of topological spaces and the convergent sequence downstairs, so that there does not exist a lift. And one example for this would be to just take this to be the convergent sequence itself, and this to be like, I don't know, $2\N \cup \{\infty\}$ disjoint union $2\N+1 \cup \{\infty\}$. Some breakup of $\{\infty\}$ as like the limit of the even guys and the odd guys.
