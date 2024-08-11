@@ -327,21 +327,19 @@ Let me actually discuss this in an example.
 % todo
 Sheafification won't change the value on the point, because any cover of the point is split, so the sheaf condition is kind of vacuous on the point.
 
-\begin{unfinished}{36:14}
-% 36:14
+
+% todo, name for example
+\begin{example}[\yt{36m14s}{}]
+
 Here's an example, which is kind of related to the introduction I gave last time. 
+
+We can take the real numbers $\underline{\R}$. Very soon I will forget to write the underline all the time, because implicitly everything has become a condensed set. So we have the real numbers as a condensed set, and then we can take the free condensed abelian group on that.
 
 % todo
 $\Z[\underline{\R}] = \{  \Sum_{x \in \R} n_x [x], n_x \in \Z, \text{almost all 0} \}$
 
-We can take the real numbers $\underline{\R}$. Very soon I will forget to write the underline all the time, because implicitly everything has become a condensed set. So we have the real numbers as a condensed set, and then we can take the free condensed abelian group on that.
-
-% todo, name for example
-\begin{example}[\yt{36m14s}{}]
-\end{example}
-
 % 36:45
-What kind of object is this? It's sums, if you want, of real numbers $x$ weighted by integers $n_x$, where the $n_x$ are almost all zero. You might think of these points $x$ as measures, and then these are finite sums of measures.
+What kind of object is this? It is sums, if you want, of real numbers $x$ weighted by integers $n_x$, where the $n_x$ are almost all zero. You might think of these guys represented by $x$ as, I don't know, Dirac measures, and then these are finite sums of Dirac measures.
 
 % 37:16
 But now it also has some topology, where you kind of remember that these $x$'s are allowed to move continuously. But then, you can have $x - y$. In general, that's a non-zero element. However, when $x$ and $y$ become the same, then suddenly this collapses to \note{can't hear this}.
@@ -350,17 +348,32 @@ But now it also has some topology, where you kind of remember that these $x$'s a
 It's maybe not so clear how you would describe this topologically. If you wanted to describe this as a topological abelian group, you would have to declare what the open subsets are, and I think that's a little bit tricky to visualize \note{can't hear the last part of this}.
 
 % 38:06
-But you can actually say what it is as a condensed set. First of all, because this free construction commutes with this colimit, this is definitely the colimit over all intervals in $\R$ of the free guy on an interval.
+But you can actually say what it is as a condensed set. First of all, because this free construction commutes with this colimit, this is definitely the colimit over all intervals in $\R$ of the free guy on an interval
+
+% todo
+$\colim \Z[I] = \{ \sum_{x \in I} n_x [x] | \sum |n_x| \leq n \}$
+
+
+% todo bracket
+$ \Z[I] = \bigcup_{n \in \N} \Z[I]_{\leq x}
+
 % 38:27 todo
-I'm doing this because now it has a nice feature that it's not compact again. And the c adjoin $C_0(\Z)$ itself can be written as a rising union over all integers $n$ of subsets, where you are only allowing sums $\sum_{i\in I} n_{x_i}[x_i]$ of at most $n$ elements, where the sum of the absolute values of the $n_{x_i}$'s is at most $n$. Everything is contained in something like this, as condensed sets.
+I'm doing this because now it has a nice feature that it's not compact again. And the $(\Z[I])$ itself can be written as a rising union over all integers $n$ of subsets, where you are only allowing sums of at most $n$ elements, where the sum of the absolute values of the $n_x$'s is at most $n$. Everything is contained in something like this \note{todo}. This is also true as condensed sets.
 
 % 39:23
-So whenever you have a profinite set mapping into here, it will actually factor over one of these subsets. And these guys, they are compact Hausdorff and metrizable. 
+So whenever you have a profinite set mapping into $\Z[I]$, it will actually factor over one of these subsets of $\bigcup_{n \in \N} \Z[I]_{\leq x}$. And these guys $\Z[I]_{\leq x}$, they are compact Hausdorff and metrizable.
+
 % 39:40
 It's a kind of fun exercise to figure out how to describe such a compact Hausdorff space.
 
 % 39:45
-I claim that whenever you have any compact Hausdorff space and you look at finite integer valued sums of points of them, where the sum of the coefficients is at most $n$, there is a canonical compact Hausdorff topology on that. Classically, this takes a little bit of thinking. But in this formalism, this free construction just produces it for you automatically.
+I claim that whenever you have any compact Hausdorff space $\Z[I]_{\leq x}$ and you look at finite integer valued sums of points of them ($\sum_{x \in I} n_x [x]$), where the sum of the coefficients is at most $n$ ($ \sum |n_x| \leq n$), there is a canonical compact Hausdorff topology on that. 
+
+\begin{unfinished}{40:00}
+% 40:00
+Classically, this takes a little bit of thinking. But in this formalism, this free construction just produces it for you automatically.
+
+\end{example}
 
 % 40:20
 The subtle part is that there are some kind of non-trivial identifications you have to make. In general, $x-y$ is a non-zero element, but when they become equal, you have to collapse this to zero. To make this true, you actually already have to use that in our Grothendieck topology, we didn't just allow finite disjoint unions but also injective maps. Otherwise, this wouldn't come out right.
