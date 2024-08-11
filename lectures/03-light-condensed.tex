@@ -189,7 +189,7 @@ Quasicompact I very often abbreviate to "qc". In principle I hate abbreviations,
 \end{remark}
 
 % 19:09
-\begin{proposition}
+\begin{proposition} \label{prop:3-lightcondset-hausdorff}
 \begin{enumerate}
 \item $\{ \text{ qcqs light condensed sets } \} \simeq \{ \text{ metrizable compact Hausdorff spaces } \}$
 \end{enumerate}
@@ -206,7 +206,7 @@ For this, we need:
 So you can wonder, what are the compact Hausdorff, so to say, light condensed sets?
 
 % 19:59
-So this means that the topos, abstract topos theoretic notion of quasicompactness really very closely mirrors the idea of what a compact space is. 
+So this means that the abstract topos theoretic notion of quasicompactness really very closely mirrors the idea of what a compact space is. 
 % 20:05
 And similarly, the general topos theoretic notion of what Hausdorff means, mirrors precisely what you think Hausdorff should mean. And so this forces our Grothendieck topology to be finitary, because otherwise the basic objects wouldn't be quasicompact. And it forces us to include the Cantor set in the formalism.
 
@@ -248,39 +248,58 @@ $\mCGWH \subset \Ind_{inj} \{ \text{metrizable compact Hausdorff spaces} \}$
 
 % \textbf{Question:} What is included in that? Ah okay, this one is included. Okay, I did not realize that this is what you were saying. 
 
-\begin{unfinished}{27:00}
-% 27:28
-Let me just say something that's implicit in 1). We said in particular something very nice, like the interval $[0,1]$, is definitely a nice metrizable compact Hausdorff space. We said it should be quasicompact as a condensed set. And I said that quasicompact means that there must be a surjection from the Cantor set. In fact, that is true. You can find a surjection from the Cantor set, and in fact some kind of canonical one.
 
+% 27:28
+Let me just say something that is implicit in \ref{prop:3-lightcondset-hausdorff}. We said in particular something very nice, like the interval $[0,1]$, is definitely a nice metrizable compact Hausdorff space. We said it should be quasicompact as a condensed set. And I said that quasicompact means that there must be a surjection from the Cantor set. In fact, that is true. You can find a surjection from the Cantor set, and in fact some kind of canonical one.
+
+$ \exists$ surjection
 $\{ 0,1 \}^{\N} \epi [0,1]$
 
-If you have a sequence $(a_0, a_1, a_2, \ldots)$ of either zeros or ones, you can send this to the number in binary $0.a_0 a_1 a_2 \ldots$, the binary expansion, which is an element in the interval. And any point in the interval admits such a representation. 
+If you have a sequence $(a_0, a_1, a_2, \ldots)$ of either zeros or ones, you can send this to the number in binary $0.a_0 a_1 a_2 \ldots$, the binary expansion, which is an element in the interval. And any point in the interval admits such a representation.
+
+$(a_0, a_1, a_2, \ldots) \epi 0.a_0 a_1 a_2 \ldots$
+% todo inclusion symbols
+
 % 28:28
 So you get the surjective map.
 
-But we definitely need the Cantor set, or something as large as the Cantor set, to surject onto here. You can then recover this whole guy as a certain closed equivalence relation here, where the equivalence relation is precisely this nasty thing that $0.111\ldots = 1.000\ldots$.
+But we definitely need the Cantor set $\{ 0,1 \}^{\N}$, or something as large as the Cantor set, to surject onto $[0,1]$. You can then recover this whole guy $[0,1]$ as a certain closed equivalence relation here ($\{ 0,1 \}^{\N}$), where the equivalence relation is precisely this nasty thing that $0.111\ldots = 1.000\ldots$.
+
+\subsection{Light condensed abelian groups}
+
 % 29:14
 So we're mainly interested in this formalism of light condensed sets as a framework for doing some kind of algebra, where all the objects have something like a topology.
 
 % 29:29
-To get this started, let's talk about light condensed abelian groups. So we have this category of light condensed abelian groups. There are actually two ways to think about this, which I said last time. Either these are abelian group objects in condensed sets, or these are sheaves on this category of condensed sets with values in abelian groups. 
+To get this started, let's talk about light condensed abelian groups. We have this category of light condensed abelian groups. There are actually two ways to think about this, which I said last time. Either these are abelian group objects in light condensed sets, or these are sheaves of the category of light condensed sets with values in abelian groups. 
 
-$\Cond\Ab^{\light} = \text{abelian group objects in $\Cond\Set^{\light}$} = \Shv(\Pro_{\N}(\Fin),\Ab)$ 
+$\Cond\Ab^{\light} = \text{abelian group objects in $\Cond\Set^{\light}$} = \Sh(\Pro_{\N}(\Fin),\Ab)$ 
 
-% 
-Similar remarks apply to any kind of algebraic structure. If you have rings, for example, you can view them as ring objects in condensed sets or as sheaves of rings.
+% 30:24
+Similar remarks apply to any kind of algebraic structure. If you have condensed rings, for example, you can view them as ring objects in light condensed sets, or as sheaves of rings.
 
 % 31:08
-From the general theory of sheaves and topoi, we know that this is an abelian category, in fact a Grothendieck abelian category. So it has filtered colimits, etc. \note{could not hear this} 
+From the general theory of sheaves and topoi, we know that this is an abelian category. In fact, it is a Grothendieck abelian category. So it has filtered colimits, etc. \note{could not hear this} 
 % 31:40
 It also has a tensor product. Let me describe a little bit what the properties are.
 
-The unit object is just the condensed set $\underline{\Z}$ associated to the integers as a discrete set. If you have two guys,  $M$ and $N$, then $M\otimes N$ is the sheafification of the presheaf that sends any $S$ to the tensor product $M(S)\otimes N(S)$. 
+The unit object is just the condensed set $\underline{\Z}$ associated to the integers as a discrete set. If you have two guys, $M$ and $N$, then $M \otimes N$ is the sheafification of the presheaf that sends any $S$ to the tensor product $M(S) \otimes N(S)$. 
 
 $S \mapsto M(S)\otimes N(S)$
 
 % 32:30
 This is just some functor from light profinite sets to abelian groups, what's called a presheaf, and then you can always sheafify.
+
+% So to summarize, just writing down what he wrote on the board.
+To summarize:
+
+General theoroy of sheaves:
+\begin{itemize}
+\item Grothendieck abelian category
+\item has tensor product 
+\item $M \otimes N$ sheafification of $S \mapsto M(S)\otimes N(S)$
+\item unit $\Z$ % todo
+\end{itemize}
 
 % 33:25
 There's a further property that I want to stress, which is also completely general. If you have a light condensed abelian group, then you can forget its abelian group structure and just have an underlying condensed set. 
@@ -288,29 +307,32 @@ There's a further property that I want to stress, which is also completely gener
 $\Cond\Ab^{\light} = \Cond\Set^{\light}$
 
 % 33:44
-But this has a left adjoint, a kind of free construction. A "free condensed abelian group"---let me drop the "condensed" when I say that now---takes any light condensed set $X$ to the free abelian group on $X$, where $Z$ adjoin $X$
+But this has a left adjoint, a kind of free construction. A "free condensed abelian group"---let me drop the "condensed" when I say that now---takes any light condensed set $X$ to the free abelian group on $X$, where $Z$ adjoin $X$...
 
 % 34:17
 In general, for these colimit-type constructions like tensor products and left adjoints, you always have to sheafify. So it's the sheafification of the presheaf that takes any $S$ to the free abelian group on $X(S)$.
 
-%todo 
-$ \Z[x]: \text{sheafification of } S \mapsto \Z[x(J)]$
+%todo, capital X or little x?
+$ \Z[x]: \text{sheafification of } S \mapsto \Z[X(J)]$
 
 % 34:44
 There is already some structure here that you don't often think about in topological abelian groups. You don't really often take the \emph{free} group on a topological space. Here it exists, and it's actually a completely fundamental structure.
 
 % 35:00
-The \underline{idea} is that this $\Z[x]$ is "some topology" on $\Z[X(\ast)]$. What is its underlying group? It's just the free abelian group on the underlying set $X(\ast)$. So if you have any kind of topological space, you can just take its free abelian group. Of course, this machinery will then put some kind of topology on the free abelian group.
+\begin{idea}
+The idea is that this $\Z[x]$ is "some topology" on $\Z[X(\ast)]$. What is its underlying group? It's just the free abelian group on the underlying set $X(\ast)$. So if you have any kind of topological space, you can just take its free abelian group. Of course, this machinery will then put some kind of topology on the free abelian group.
+\end{idea}
 
 Let me actually discuss this in an example. 
 % todo
 Sheafification won't change the value on the point, because any cover of the point is split, so the sheaf condition is kind of vacuous on the point.
 
+\begin{unfinished}{36:14}
 % 36:14
 Here's an example, which is kind of related to the introduction I gave last time. 
 
 % todo
-$\Z[\underline{\R}] = \{  \Sum \}$
+$\Z[\underline{\R}] = \{  \Sum_{x \in \R} n_x [x], n_x \in \Z, \text{almost all 0} \}$
 
 We can take the real numbers $\underline{\R}$. Very soon I will forget to write the underline all the time, because implicitly everything has become a condensed set. So we have the real numbers as a condensed set, and then we can take the free condensed abelian group on that.
 
