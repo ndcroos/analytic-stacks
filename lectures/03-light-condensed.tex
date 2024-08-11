@@ -425,16 +425,23 @@ Now how do covers of $\N \cup \{\infty\}$ look like? $\N \cup \{\infty\}$ is lik
 
 You can assume that this $S$ here is somehow a different compactification of $\N$. Without loss of generality, we can always make $S$ smaller here, as long as it's surjective. So we can assume that $S$, the part over any finite thing, is just a point. Okay, but there are many compactifications of the natural numbers. For example, this one, so we can't expect that we can directly split that.
 
-But now we actually use a property of profinite sets that I mentioned last time. Okay, so let $S_\infty$ be the fiber over $\infty$. This might be profinite, so there's a certain subspace in this, but everything here is profinite. In particular, $S_\infty$ is profinite. I stress it here because here it's really the critical point where profiniteness is used. This means that it's injective in profinite sets. In all profinite sets, it's also non-empty. And so there exists a retraction $r$ from $S$ to $S_\infty$.
+But now we actually use a property of profinite sets that I mentioned last time. Okay, so let $S_\infty$ be the fiber over $\infty$. This might be profinite, so there's a certain subspace in this, but everything here is light. In particular, $S_\infty$ is light. 
+% 1:08:58
+I stress it here because here it's really the critical point where lightness is used. This means that it's injective in $\Pro(\Fin)$. In all profinite sets, it's also non-empty. And so there exists a retraction $r$ from $S$ to $S_\infty$.
 
-Okay, so let me call this inclusion here $i$. Maybe this was my original map $f$ and this was a map $g$. Now we can just write down the lift. Consider the following map from $S$ to $\N^\sim$, which is the map $g$ that we had. But then from it, you subtract what you would get if you first use the retraction and then re-embed into $S$ and then apply $g$.
+$ \implies \exists r: S \to S_{\infty}$
+
+% 1:09:29
+Okay, so let me call this inclusion here $i$. Maybe this was my original map $f$ and this was a map $g$. Now we can just write down the lift. Consider the following map $S \to \N^{\sim}$, which is the map $g$ that we had. But then from it, you subtract what you would get if you first use the retraction and then re-embed into $S$ and then apply $g$.
 
 So if you look at $S_\infty$, then on $S_\infty$, these two maps are just the same because this was a retraction. Am I frozen again? So on $S_\infty$, it's actually just the constant map $0$. Was that a question? Am I frozen again? Do you see me now?
 
 But $S$ surjects onto $\N \cup \{\infty\}$ and this map to $\infty$. Because this is actually a surjective map here, you can show that this is a pushout in profinite condensed sets. That's basically a version of this gluing condition that I gave. If I want to give a continuous map from here to somewhere, it's enough to give one here and here which agree on the overlap. But it's definitely enough to give one here, and then the question is just when does it descend down to $\N \cup \{\infty\}$? This means that on fibers it must be constant, but there's only one fiber in some sense where there's something to check, which is the fiber at infinity. And there we precisely assume that it all just comes from a point.
 
-But now you're precisely in this situation. You have a map from $S$, you have the zero map, and they agree on $S_\infty$. So this means that actually this whole map factors over a map from $\N \cup \{\infty\}$ to here. Let me call that map $f$.
+% 1:12:21
+But now you're precisely in this situation. You have a map from $S$, you have the zero map, and they agree on $S_\infty$. So this means that actually this whole map factors over a map from $\N \cup \{\infty\}$ to here. Let me call that map $f\~}$.
 
+% 1:13:03
 And now we basically have all the structure we need, and we just need to check that we actually produce the lift. So what do we have now? Now we have a map from $\N \cup \{\infty\}$ to $\N^\sim$ which vanishes on $\infty$. So in other words
 Because this was a retraction, and so this means that, because of this pushout property, you really get an exact sequence. You have a map from the convergent sequence modulo infinity to $N$.
 
@@ -444,35 +451,69 @@ The point is that if I take this thing that I used here as a correction term and
 
 For internal projectivity, let me just not do it. It's essentially the same argument, you just have an auxiliary profinite set floating around that you also need to cover a bit. Again, it's critical that sequential limits of surjections are surjective.
 
-Here's just one remark about the comparison to all condensed abelian groups. This is something that I already said a bit earlier, but just to say it more explicitly:
+% 1:17:51
+Here's just one remark about the comparison to all condensed abelian groups $\Cond\Ab$. This is something that I already said a bit earlier, but just to say it more explicitly.
 
-In all condensed abelian groups, products are exact and you have projective generators $\Z[S]$ where $S$ is what's called an extremely disconnected set. For example, it's a Stone-Čech compactification of some discrete set. These are huge things, they have cardinality $2^{2^{\aleph_0}}$.
+There, all products are exact. 
 
-One thing that's better there is that you really have projective generators. You don't have projective generators in light condensed groups. You have this one guy which is the free guy on a null sequence, but the free guy on a countable set cannot be covered by a projective object. This is slightly unfortunate, but actually not that bad in practice.
+In all condensed abelian groups, all products are exact and you have projective generators $\Z[S]$ where $S$ is what's called an extremely disconnected set. For example, it's a Stone-Čech compactification of some discrete set $I$.
 
-The good thing is that in $\CondAb^\light$, you have this really explicit projective object which is the free guy on the $\N$ sequence. Whereas here, these projective guys exist by the axiom of choice, but they are completely inexplicit and their precise structure depends on which model of set theory you're working with.
+$S = \beta I$
 
-But one thing I want to point out is that none of those projective generators there are internally projective. Basically, if you take a product of two Stone-Čech compactifications, and $I$ and $J$ are infinite, this product is never projective. That's actually not so easy to see, but we can prove it. This is a rather severe technical issue in the category of all condensed abelian groups. It's extremely nice that you have these projective guys, but for many arguments you would really like to know that they are internally projective, and they are not. That's bad.
+% 1:18:50
+These are huge things, they have cardinality $2^{2^{\aleph_0}}$.
 
-In light condensed groups, at least we have this one really nice internally projective object. That's good.
+% 1:19:03
+One thing that's better there is that you really have projective generators. You don't have projective generators in light condensed abelian groups. You have this one guy, which is the free guy on a null sequence, but the free guy on a Cantor set cannot be covered by a projective object. This is slightly unfortunate, but actually not that bad in practice.
 
-The other thing I wanted to point out explicitly is that the free guy on the $\N$ sequence is not projective in all condensed abelian groups. The light ones embed into the category of all condensed abelian groups, and you could ask if it's still projective there. But there, precisely the Stone-Čech nonsense gives the obstruction. When some universal compactification of the integers, the biggest one, is the Stone-Čech compactification, this rejects. You can show that there does not exist a splitting here.
+% 1:19:32
+The good thing is that in $\Cond\Ab^\light$, you have this really explicit projective object which is the free guy on the null sequence. Whereas here, these projective guys exist by the axiom of choice, but they are completely inexplicit and their precise structure depends on which model of set theory you're working with.
 
-Maybe another thing I should say is that this is also related to certain questions about Banach spaces that people have studied in literature. There, the only known injective Banach spaces—there's some kind of duality that what used to be projective in this condensed stuff will become injective in the category of Banach spaces—are continuous functions from some $S$ into $\R$, where $S$ is one of these extremely disconnected guys which I could have also allowed. Basically, such a Stone-Čech compactification or a retract of it.
+% 1:20:03
+But one thing I want to point out, is that none of those projective generators there are internally projective! Basically, if you take a product of two Stone-Čech compactifications, and $I$ and $J$ are infinite, this product is never projective. 
+
+$\Z[\beta I \times \beta J]$ never projective
+($I,J$ infinite)
+
+That's actually not so easy to see, but we can prove it. This is a rather severe technical issue in the category of all condensed abelian groups. It's extremely nice that you have these projective guys, but for many arguments you would really like to know that they are internally projective, and they are not. That's bad.
+
+% 1:21:09
+In light condensed abelian groups, at least we have this one really nice internally projective object. That's good.
+
+% 1:21:19
+The other thing I wanted to point out explicitly is that the $\Z[\N \cup \{\infty\}]$ is not projective in $\Cond\Ab$. The light ones embed into the category of all condensed abelian groups, and you could ask if it's still projective there. But there, precisely the Stone-Čech nonsense gives the obstruction. When some universal compactification of the integers, the biggest one, is the Stone-Čech compactification, this surjects. You can show that there does not exist a splitting here.
+
+$\Z[\beta \N] $ %todo, arrow
+
+
+% 1:22:08
+Maybe another thing I should say is that this is also related to certain questions about Banach spaces that people have studied in literature. There, the only known injective Banach spaces--- so there's some kind of duality that what used to be projective in this condensed stuff will become injective in the category of Banach spaces --- are $\Cont(S,\R)$, where $S$ is one of these extremely disconnected guys which I could have also allowed. 
+% 1:22:49
+Basically, such a Stone-Čech compactification or a retract of it.
 
 It's known that all injective Banach spaces are retracts of continuous functions on a Stone-Čech compactification.
 
-What about injectives? In your case, it is for light condensed abelian groups. Is it enough injective? For all condensed abelian groups, there are no nonzero injectives. In all condensed abelian groups, there are no non-zero injective objects.
+% 1:23:19
+\textbf{Question:} What about injectives? In your case, it is for light--- it is a Grothendieck category, so it is enough injective. But for all condensed, there is...
+\textbf{Answer:} there are no nonzero injectives in all \note{can't hear this}. In all condensed abelian groups, there are no non-zero injective objects.
 
-They exist for set-theoretic reasons. For like general nonsense reasons in light condensed abelian groups. But I don't think you can write any of them down.
+% 1:23:36
+They exist for set-theoretic reasons. For general nonsense reasons in light condensed abelian groups. But I don't think you can write any of them down.
 
-And what corresponds to this free abelian group sequence is the Banach space of null sequences. This is not injective as a Banach space. But it is what's known as separably injective, where you only test this injectivity against separable Banach spaces. This is very much related to the thing that this guy is not projective in condensed abelian groups, but it is in light condensed abelian groups.
+% 1:23:50
+And what corresponds to this free ... null sequence is the Banach space of the null sequences. 
+% 1:23:56
+This is not injective as a Banach space. 
+$ co(\N)$ not injective.
+
+But it is what's known as "separably injective", where you only test this injectivity against separable Banach spaces. This is very much related to the thing that this guy $\Z[\N \cup \{\infty\}]$ is not projective in condensed abelian groups, but it is in light condensed abelian groups.
 
 % 1:24:37
-Actually, I think I made this realization that it is projective in light condensed abelian groups after looking up this proof that this guy is separably injective. It was an open question in the Banach space literature whether the continuous functions on this guy is a separably injected Banach space. In the notes on complex geometry, Kan kind of proves that it's not separably injective. 
+Actually, I think I made this realization that it is projective in light condensed abelian groups, after looking up this proof that this guy is separably injective. It was an open question in the Banach space literature whether the continuous functions on this guy $\Z[\beta I \times \beta J]$ is a separably injected Banach space. In the notes on complex geometry, \note{can't hear this} kind of proves that it's not even separably injective. 
 % 1:25:12
-In particular, this guy also doesn't behave like a projective object, even when you test against light condensed abelian groups.
+In particular, this guy $\Z[\beta I \times \beta J]$ also doesn't behave like a projective object, even when you test against light condensed abelian groups.
 
+% 1:25:27
 One thing to take away here is that you might think that all this totally disconnected nonsense shouldn't really appear when you do functional analysis over $\R$. But actually, people that studied Banach spaces intensively, they are very much studying continuous functions on totally disconnected things.
 
 % 1:26:01 
@@ -480,50 +521,71 @@ Let me finish by talking about cohomology.
 
 \textbf{Question:} You also said something, I forgot in which context, about the axioms AB5 and AB6 of abelian categories.
 
-\textbf{Answer:} In Grothendieck's Tohoku paper, you can find a lot of axioms that an abelian category might or might not satisfy. AB5 is the question of whether all products are exact. This is true in all condensed abelian groups. It's not true in light ones, but at least the countable ones are okay. When AB5 is satisfied, you can ask about AB6, which is a certain question about the commutation of infinite products with filtered colimits. This always sounds confusing, but you can actually make a statement that's true.
+% 1:26:15
+\textbf{Answer:} In Grothendieck's Tohoku paper, you can find a lot of axioms that an abelian category might or might not satisfy. (AB5) is the question of whether all products are exact. This is true in all condensed abelian groups. It's not true in light ones, but at least the countable ones are okay. When (AB5) is satisfied, you can ask about (AB6), which is a certain question about the commutation of infinite products with filtered colimits. This always sounds confusing, but you can actually make a statement that's true.
 
 % 1:26:47 
-This property, AB6, is always true if you have enough projective generators. In particular, it's true in condensed abelian groups. If you restrict this question to countable products, then it's also true in light condensed abelian groups. 
+This property is always true if you have enough projective generators. In particular, it's true in condensed abelian groups. If you restrict this question to countable products, then it's also true in light condensed abelian groups. 
 % 1:27:07
-So AB6 holds for countable products in $\Cond\Ab^\light$. One way to see this is that you have this fully faithful embedding of light condensed abelian groups into all condensed abelian groups. This commutes with all colimits and countable limits. In particular, these countable products are some of the correct products there, the ones that you would also compute in condensed abelian groups. But you can also just check it by hand.
+So (AB6) holds for countable products in $\Cond\Ab^{\light}$. One way to see this, is that you have this fully faithful embedding of light condensed abelian groups into all condensed abelian groups. This commutes with all colimits and countable limits. In particular, these countable products are some of the correct products there, the ones that you would also compute in condensed abelian groups. But you can also just check it by hand.
 
+% 1:27:52
 \subsection{Cohomology}
 In the last bit, I want to talk about cohomology. When you study topological spaces, you probably also care about the cohomology, in particular for manifolds where you would want that to be the singular cohomology. When you think about a topological space, we already have an idea of what the cohomology should be, just as we already had an idea of what a complex thing should be like, and so forth. 
 % 1:28:25
 But on the other hand, whenever you work in a topos, that topos somehow comes with its preconceived notions of not only what compact objects are, but also what cohomology is.
 
 % 1:28:38
-If $X$ is any light condensed set and $M$ is any abelian group (it could even be a condensed abelian group, but let's restrict to discrete ones for the moment), you can define the cohomology of $X$ with coefficients in $M$. This is just something that is there whenever you work in the topos.
+If $X$ is any light condensed set and $M$ is any abelian group (it could even be a condensed abelian group, but let's restrict to discrete ones for the moment), you can define the cohomology of $X$ with coefficients in $M$. This is just something that is just there whenever you work in the topos.
 
 One way to define the cohomology of $X$ with integral coefficients, in terms of the formalism that I now introduced: You take R Hom in the category of $X$-groups in light condensed abelian groups (actually they would also be the same as in all condensed abelian groups, oh well, I'm doing light stuff so let me stick.
 
 % Definition
-H(X, M) = \Ext_{\Cond\Ab^\light} (\Z [X], M)
+\begin{definition}
+$H^i(X, \Z) = \Ext_{\Cond\Ab^\light}^i (\Z [X], M)$
+\end{definition
 
-So if say $X$ is a CW complex, this thing is $X_\bullet$ or it's underlined. It's exactly the singular cohomology. 
+% 1:30:27
+If you work in the étale topos, these are the cohomology groups, when you work in \note{could not hear this}...
+% 1:30:34
+When you work in a condensed topos, these are, I don't know, the condensed cohomology groups, whatever you want to call them. 
+% 1:30:41
+If the theory should behave well, this should recover the right cohomology for, like, manifolds or something like this, and it does. So that's a theorem.
 
-% 1:31:07
-% Theorem
-if $X$ CW
-$H^i (X,M) =~ H_sing^i (X, M)$ todo
-is exactly the singular homology 
+% 1:30:53
+\begin{theorem}
+If $X$ CW complex
+$H^i (\underline{X},M) \simeq H_sing^i (X, M)$ todo
+\end{theorem}
+
+So if say $X$ is a $CW$ complex. It's exactly the singular cohomology. 
+
 % 1:31:30
-This might seem a little bit weird because we didn't really put any geometry into the definition of these condensed sets, right? We were just using totally disconnected things, and suddenly using totally disconnected things, we are still able to probe whether that circle is not contractible. But it comes out right.
+This might seem a little bit weird, because we didn't really put any geometry into the definition of these condensed sets., We were just using totally disconnected things, and suddenly using totally disconnected things, we are still able to probe whether, like, the circle is not contractible. But it comes out right.
 
 % 1:32:03 
-Let me make one remark about this and then stop. So as I said, this is here the $\Z$ of these $X_\bullet$ groups, and I told you how to think about this, right? So this was the thing where you take finite sums of $X$-points of $X$ valued by integers. 
-And so this is actually---there's a Dold-Thom theorem which basically tells you that this guy is something like a model for the homology of $X$ once you, once you pass, once you treat this up to homotopy equivalence. 
+Let me make one remark about this and then stop. So as I said, this is here the $\Z$ of these $\Ext$-groups:
+
+$\Ext^i(\Z[x], M$ % todo, must M be underlined,
+
+And I told you how to think about this, right? 
+So this was the thing where you take finite sums of points of $X$, valued by integers. 
+And so this is actually---there's a Dold-Thom theorem which basically tells you that this guy is something like a model for the homology of $X$, once you pass, once you treat this up to homotopy equivalence. 
 % https://en.wikipedia.org/wiki/Dold%E2%80%93Thom_theorem
 % https://ncatlab.org/nlab/show/Dold-Thom+theorem
-This kind of guy is a model for the homology of $X$. For us the interval in condensed sets is like an actual interval, it's not a point. So we didn't yet pass to homotopy, but one way in which you're doing that is by taking $X$'s out of it, because an interval cannot map to something, this being discrete. And so this dualizing, I mean this is like homology, so the dual should be like cohomology, which fits the picture. Let me just stop here.
+% 1:33:03
+This kind of guy is a model for the homology of $X$. For us, the interval in condensed sets is like an actual interval, it's not a point. So we didn't yet pass to homotopy, but one way in which you're doing that is by taking $X$'s out of it, because an interval cannot map to something, this being discrete \note{todo}. And so this dualizing, I mean this is like homology, so the dual should be like cohomology, which fits the picture. Let me just stop here.
 
 % 1:33:51
-Other questions? So we can also consider the internal $\Ext$-functor. In this case, this would just unravel to an adjunction to also replacing $M$ by the continuous functions from $S$ to $M$, which is still an abelian group, so it doesn't really do that much more. 
+\subsection{Questions}
+So we can also consider the internal $\Ext$-functor. In this case, this would just unravel to an adjunction to also replacing $M$ by the continuous functions from $S$ to $M$, which is still an abelian group, so it doesn't really do that much more. 
 % 1:34:19
-Maybe one comment to make is that, and maybe I won't talk much about it, but for all sorts of things like continuous group cohomology and so on, sometimes it's not quite clear, like, what is a continuous representation of a group, what is the right notion of continuous group cohomology? Because often this is just represented by some explicit cochain complex but if you just treat your topological groups as condensed abelian groups then it's clear what an action on a condensed abelian group should be, and it's clear what cohomology should be. There's some kind of general topos-theoretical answer to what it should be, and this always gives you the expected answer. It's not always the same thing as the thing computed by continuous cochains, but when it's not, it's a better answer.
+Maybe one comment to make is that, and maybe I won't talk much about it, but for all sorts of things like continuous group cohomology and so on, sometimes it's not quite clear, like, what is a continuous representation of a group, what is the right notion of continuous group cohomology? Because often this is just represented by some explicit cochain complex, but if you just treat your topological groups as condensed abelian groups, then it's clear what an action on a condensed abelian group should be, and it's clear what cohomology should be. There's some kind of general topos-theoretical answer to what it should be, and this always gives you the expected answer. 
+% 1:34:58
+It's not always the same thing as the thing computed by continuous cochains, but when it's not, it's a better answer.
 
 % 1:35:09
-\textbf{Question:} So here, when you have a CW complex, if you have more generally a local system, I think it will give a sheaf on condensed sets over $\underline{X}$, and then you can say that the usual cohomology, it's like singular sheaf cohomology. It satisfies cohomological descent for at least for compact Hausdorff spaces, it satisfies cohomological descent of surjections of compact Hausdorff spaces. So to compare the two sides, it looks like using the theory of cohomological descent to essentially to do the, should give, to do it with local systems. 
+\textbf{Question:} So here, when you have a CW complex, if you have more generally a local system, I think it will give a sheaf on condensed sets over $\underline{X}$, and then you can say that the usual cohomology, it's like singular sheaf cohomology. It satisfies cohomological descent, for at least for compact Hausdorff spaces, it satisfies cohomological descent of surjections of compact Hausdorff spaces. So to compare the two sides, it looks like using the theory of cohomological descent to essentially to do the, should give, to do it with local systems. 
 
 \textbf{Answer:} You can use any coefficient system, really, on $\underline{X}$. It's a really robust result.
 
