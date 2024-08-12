@@ -190,15 +190,15 @@ Quasicompact I very often abbreviate to "qc". In principle I hate abbreviations,
 
 % 19:09
 \begin{proposition} \label{prop:3-lightcondset-hausdorff}
-\begin{enumerate}
-\item $\{ \text{ qcqs light condensed sets } \} \simeq \{ \text{ metrizable compact Hausdorff spaces } \}$
-\end{enumerate}
+
+$\{ \text{ qcqs light condensed sets } \} \simeq \{ \text{ metrizable compact Hausdorff spaces } \}$
 
 For this, we need:
 \begin{itemize} 
 \item topology finitary
 \item allow Cantor set
 \end{itemize} 
+
 \end{proposition}
 
 
@@ -351,14 +351,14 @@ It's maybe not so clear how you would describe this topologically. If you wanted
 But you can actually say what it is as a condensed set. First of all, because this free construction commutes with this colimit, this is definitely the colimit over all intervals in $\R$ of the free guy on an interval
 
 % todo
-$\colim \Z[I] = \{ \sum_{x \in I} n_x [x] | \sum |n_x| \leq n \}$
+$\colim \Z[I] = \{ \sum_{x \in I} n_x [x] s.t. \sum |n_x| \leq n \}$
 
 
 % todo bracket
 $ \Z[I] = \bigcup_{n \in \N} \Z[I]_{\leq x}
 
 % 38:27 todo
-I'm doing this because now it has a nice feature that it's not compact again. And the $(\Z[I])$ itself can be written as a rising union over all integers $n$ of subsets, where you are only allowing sums of at most $n$ elements, where the sum of the absolute values of the $n_x$'s is at most $n$. Everything is contained in something like this \note{todo}. This is also true as condensed sets.
+I'm doing this because now it has a nice feature that it's not compact again. And the $\Z[I]$ itself can be written as a rising union over all integers $n$ of subsets, where you are only allowing sums of at most $n$ elements, where the sum of the absolute values of the $n_x$'s is at most $n$. Everything is contained in something like this \note{todo}. This is also true as condensed sets.
 
 % 39:23
 So whenever you have a profinite set mapping into $\Z[I]$, it will actually factor over one of these subsets of $\bigcup_{n \in \N} \Z[I]_{\leq x}$. And these guys $\Z[I]_{\leq x}$, they are compact Hausdorff and metrizable.
@@ -379,7 +379,7 @@ Classically, this takes a little bit of thinking. But in this formalism, this fr
 The subtle part is that there are some kind of non-trivial identifications you have to make. In general, $x-y$ is a non-zero element, but when they become equal, you have to collapse this to zero. To make this true, you actually already have to use that in our Grothendieck topology, we didn't just allow finite disjoint unions but also injective maps. Otherwise, this wouldn't come out right.
 
 % 41:07
-Also, by general nonsense, if you start with something that already had a group structure, then if you pass to the free guy, this now has a ring structure where the multiplication comes from the addition. In particular, this is actually a condensed ring completely naturally. This is kind of related to the question I had in my first lecture, like how do you adjoin an element in all its real powers? It's just done by this construction.
+Also, by general nonsense, if you start with something that already had a group structure ($\underline{\R}$), then if you pass to the free guy ($\Z[\underline{\R}]$), this now has a ring structure where the multiplication comes from the addition from $\R$. \note{Not sure if $\R$ or $\underline{\R}$ is meant} In particular, this is actually a condensed ring completely naturally. This is kind of related to the question I had in my first lecture, like how do you adjoin an element in all its real powers? It's just done by this construction.
 
 % 41:50
 These are general features. Now I want to mention a few features that are quite specific to this light condensed setting. The first thing is that countable products are exact. 
@@ -401,7 +401,7 @@ This might seem like an operation you're maybe not so often doing, but something
 For example, in functional analysis, maybe you have some kind of Fréchet space and it's a sequential limit of Banach spaces. Maybe in that case it's not even surjective, but it will also come out right. You definitely want sequential limits to behave nicely. For example, if all the transition maps are surjective, you definitely want the limit to still be surjective. As I will argue in a second, this more or less forces you to go where your basic objects that define your site must be some kind of totally disconnected things.
 
 % 43:17
-You have these, and there is this other property that I will explain in a second. You have the sequence space $\Z^\N$, it's a light profinite set or light condensed set, and you take the free guy on that. This turns out to be internally projective.
+You have these, and there is this other property that I will explain in a second. You have the sequence space $\N \cup \{\infty\}$, it's a light profinite set or light condensed set, and you take the free guy on that: $Z[\N \cup \{\infty\}]$. This turns out to be internally projective.
 
 % 43:45
 Recall that one way to say what \emph{projective} means, is that in any Grothendieck abelian category, you can define $\Ext^i$ groups. It means that $\Ext^i(P,-)=0$ for $i>0$. \emph{Internally projective} makes sense when your category also has a tensor product, because if you have a tensor product, then you can define an internal $\IntExt$-group, and internally projective means that the internal $\IntExt}^{i}(P,-)=0$ for $i>0$.
@@ -410,31 +410,63 @@ Recall that one way to say what \emph{projective} means, is that in any Grothend
 The first two properties are actually things that are better in all condensed abelian groups, because all products are exact. Well okay, the third property is also solely still true \note{I did not hear this well}. However, the third property is something that's only true in the light setting.
 
 % 45:02
-Let me just define the internal $\Ext$. Basically, if you have a tensor product, then you can also ask for an internal $\Hom$, which is some kind of adjoint of the tensor product. Similarly, the internal $\Ext$ will be some version of the same thing on $\Ext$-groups.
+Let me just define the internal $\Ext$: $\IntExt^i (M,N)$. Basically, if you have a tensor product, then you can also ask for an internal $\Hom$, which is some kind of adjoint of the tensor product. Similarly, the internal $\Ext$ will be some version of the same thing on $\Ext$-groups.
 
 Okay, so let me prove this actually.
 
 \begin{sketch}
 % 46:20
-Let me first note that one reduces to showing that taking products of surjections is surjective. The only thing that's not true for general products is that a product of injective maps is always injective and so on. The only thing that's not clear is that the countable product of surjections
+Let me first note that (1) reduces to (2). So taking products --- the only thing that's not true for general products---product of injective maps is always injective and so on. The only thing that's not clear, is that the countable product of surjections \note{did'nt hear this well}.
 
-(1) reduces to (2) need $\forall: M_n \epi N_n$, also $\prod f_n: \prod$ % todo
+(1) reduces to (2) need $\forall f_n: M_n \epi N_n$, also $\prod f_n: \prod M_n \epi \prod_n N_n$
+also $\prod f_n: \prod M_n \epi \prod_n N_n$ % todo surj above arrow
+
+We need for all sequences $f_n$ from some $M_n$ surjecting into some $N_n$, also the product of the 
+
+% 47:31
+But you can actually write this in the following funny way.
+
+But $\forall m, \lim_{m} ( \prod_{n \leq m} M_n \times \prod_{n > m} N_n \epi \prod_n N_n )$
+
+% 49:09
+For (2)
+
+Assume you have such a diagram. We have $M_0$, $M_1$, $M_2$, and $M_\infty$ is the limit of these, which certainly maps to $M_0$. We ask ourselves whether this is surjective. 
+
+$ M_\infty = \lim ( \dots \epi M_2 \epi M_1 \epi M_0 ) \xrightarrow{surjective?} M_0$
+
+So what does it mean to be surjective in the sense of sheaves?
+
+
+This means that whenever you have one of your objects generating your site, so any light profinite set, and a map from here, then, well, if it was a surjection as presheaves, you should immediately be able to lift that to here. But in fact, it's enough to find a surjective map from some---let's call it $S_\infty$---and a lift to here. 
+
+% todo mappings
+$ S_\infty \epi S \in \Pro_{\N}(\Fin)
+
+So does there exist some other light profinite set surjecting onto $S$ and a lift to $M_\infty$? That's the question. That's what surjectivity on coverings unravels to.
+
+% 50:31
+But let's just see what happens. We definitely, well, right, so this is this map to $M_0$. But we know, because this map is surjective, we know that there is a light profinite set $S_1$ and a lift to here. And then again, because this map is surjective, there exists some further light profinite set $S_2$and a lift to here.
+
+And so now you can just take $S$ to be the limit of this diagram. 
+% 51:09
+So inductively, you construct light profinite sets with a map to here, and then take the countable limit of these surjective maps. As I said last time, and I think I recalled today: countable limits of surjections are still surjections in light profinite sets $\Pro_{\N}(\Fin)$. Hence, this guy is still allowed as a cover in our Grothendieck topology.
+
 \end{sketch}
 
 % todo, all of this for the proof
 For all $M$, you can take the product over all $n$ at most $M$ of $M_n$, and then the product over $N$ bigger than $M$ of $N_n$, and this surjects onto the product of the $N_n$'s. Now because a finite product is the same thing as a finite direct sum, they always preserve surjective maps. They're always exact, and so you can always, like, for finitely many coordinates, kind of do the lift. But then this guy here, I mean, this map is the limit now over $M$ of these things.
 
-And so if we're asking whether a countable limit of surjections is still surjective, let's assume you have such a diagram. We have $M_0$, $M_1$, $M_2$, and $M_\infty$ is the limit of these, which certainly maps to $M_0$. We ask ourselves whether this is surjective. So what does it mean to be surjective in the sense of sheaves?
+And so if we're asking whether a countable limit of surjections is still surjective.
 
-This means that whenever you have one of your objects generating your site, so any light profinite set, and a map from here, then, well, if it was a surjection as presheaves, you should immediately be able to lift that to here. But in fact, it's enough to find a surjective map from some---let's call it $S_\infty$---and a lift to here. So does there exist some other light profinite set surjecting onto $S$ and a lift to $M_\infty$? That's the question. That's what surjectivity on coverings amounts to.
 
-But let's just see what happens. We definitely, well, right, so this is this map to $M_0$. But we know, because this map is surjective, we know that there is a light profinite set and a lift to here. And then again, because this map is surjective, there exists some further light profinite set and a lift to here.
+% 51:51
+\textbf{Question:} So in the definition of your $X$ group in the sheafification, you drop the underline and the left $p$. So $\Z_p$ $s$, you mean $\Z_p$ $s$ underline? 
 
-And so now you can just take $S$ to be the limit of this diagram. So inductively, you construct light profinite sets with a map to here, and then take the countable limit of these surjective maps. As I said last time, and I think I recalled today, countable limits of surjections are still surjections in light profinite sets. Hence, this guy is still allowed as a cover in our Grothendieck topology.
-
-So in the definition of your $X$ group in the sheafification, you drop the underline and the left $p$. So $\Z_p$ $s$, you mean $\Z_p$ $s$ underline? Let me drop the underlines. Okay, so $S$ is for me a light profinite set, and they sit inside of light condensed sets. So if you feel better, make an underline. 
+% 52:08
+\textbf{Answer:} Let me drop the underlines. Okay, so $S$ is for me a light profinite set, and they sit inside of light condensed sets. So if you feel better, make an underline. 
 % 52:32
-And like, the Yoneda embedding has no decoration for me, it's just the same thing. But yeah, also in three, like, this threefold guy, it's like, maybe I should also underline $10$ here.
+And like, the Yoneda embedding has no decoration for me, it's just the same thing. But yeah, also in (3), like, this threefold guy, it's like, maybe I should also underline $\N \cup \{\infty\}$ here. \note{todo}
 
 % 53:12
 Okay, so before I go on to the proof of (3), let me reflect a little bit on what happened here. This finishes (1) and (2), and let me come back to three in a second.
@@ -446,7 +478,7 @@ So here, the critical thing---for doing good homological algebra, like a functio
 And I claim that this forces you to use totally disconnected spaces as building blocks. Why? You might also have the idea, and I think people are doing that, that if you want some kind of nice category of something like topological real vector spaces, you might work in this kind of smooth setting where you take your defining site to be like smooth manifolds, and the Grothendieck topology just the usual one of open covers of smooth manifolds.
 
 % 55:03
-But in that case, this property that countable limits of covers are covers is just not true. Because if you have, for example the real line, or a small interval, then you can cover it by two intervals. Each one of them you can again cover by two intervals, and then keep doing that. But then the intervals shrink and shrink, and in the limit all you've left is this cloud of dust which is a Cantor set. So even if you start with some nice spaces like some interval, and then cover this by one interval and another interval, and then cover it by smaller intervals, in the limit we get something totally disconnected.
+But in that case, this property that countable limits of covers are covers is just not true. Because if you have, for example the real line, or a small interval, then you can cover it by two intervals. Each one of them you can again cover by two intervals, and then keep doing that. But then the intervals shrink and shrink, and in the limit all you've left is this cloud of dust which is a Cantor set. So even if you start with some nice spaces, like some interval, and then cover this by one interval and another interval, and then cover it by smaller intervals, in the limit we get something totally disconnected.
 % 55:57
 Of course, the limit doesn't have any reasonable sense of a smooth structure anymore. So I want to claim that this basically forces you to take as your building blocks basically totally disconnected compact Hausdorff spaces. 
 
@@ -454,7 +486,7 @@ Of course, the limit doesn't have any reasonable sense of a smooth structure any
 Initially, we took all of them. We realized it's slightly better to restrict to symmetrizable ones and to have \emph{all} surjective maps as covers. Because you can actually show that any surjective map of light profinite sets can be written as a sequential limit of actually open covers. So if you want open covers and their sequential limits, you need all of them.
 
 % 57:07
-Actually, I should maybe say that this is not some kind of ahistorical comment. This pro-étale topology was, in fact, first---I mean, so this stuff about condensed sets, this comes from something called the pro-étale topology, like originally in $p$-adic geometry and then in for schemes. 
+Actually, I should maybe say that this is not some kind of ahistorical comment. This stuff about condensed sets comes from something called the pro-étale topology, originally in $p$-adic geometry and then in for schemes. 
 % 57:28
 And there, the wish was precisely that limits of surjective maps should still be surjective. Because we wanted to have certain sheaves which were naturally certain inverse limits, and we want them to be well-behaved. And for this reason, we allowed these countable limits, or all limits of covers, to still be covers. So this is really the origin of this whole theory.
 
@@ -472,24 +504,67 @@ You made a statement to the effect that---
 % 59:14
 Okay, something slightly weaker would be---I'm not sure. I would have to think how much difference it makes.
 
+% Proof of (3)
+% 
 \begin{sketch}
-$Z[\N \cup \{\infty\}]$ is internally projective
+$\Z[\N \cup \{\infty\}]$ is internally projective
 \end{sketch}
-Okay, so I want to prove this thing that this is internally projective. But before I do that, let me make a warning that this is a phenomenon that's only true once you pass to groups. So $\N \cup \{\infty\}$ is not at all projective in condensed sets.
+Okay, so I want to prove this thing (3) that this is internally projective. But before I do that, let me make a warning that this is a phenomenon that's only true once you pass to groups. 
 
-And I actually kind of expected Gabber wanted to go there with this remark. Because this is precisely the example that I need to do. So you can have a surjective map of topological spaces and the convergent sequence downstairs, so that there does not exist a lift. And one example for this would be to just take this to be the convergent sequence itself, and this to be like, I don't know, $2\N \cup \{\infty\}$ disjoint union $2\N+1 \cup \{\infty\}$. Some breakup of $\{\infty\}$ as like the limit of the even guys and the odd guys.
+\begin{remark}
+$\N \cup \{\infty\}$ is \emph{not} at all projective in $\Cond\Set^\light
 
-Then like on the integers, you only have one possible lift. But the even guards converge to something else than the odd guards. But miraculously, once you pass to groups---it so happens that if these were condensed abelian groups, in fact you don't---then any convergent sequence can be lifted.
+\note{todo, diagram}
 
-All right, let me actually use a slightly different guy. So let $M$ be the free group on the null sequence. So you can take $\N \cup \{\infty\}$ and mod out by $\{\infty\}$, which is actually a direct factor, right? Because you have $\{\infty\}$ mapping here and then projecting to a point. So this splits, actually has a direct summand.
+And I actually kind of expected Gabber wanted to go there with this remark. Because this is precisely the example that I need to do. So you can have a surjective map of topological spaces and the convergent sequence downstairs, so that there does not exist a lift. And one example for this would be to just take this to be the convergent sequence itself, and this to be like, I don't know, $2\N \cup \{\infty\}$ disjoint union $2\N+1 \cup \{\infty\}$. 
+% 1:00:34
+Some breakup of $\{\infty\}$ as like the limit of the even guys and the odd guys.
 
-And so, and of course, the integers themselves, they are projective. That's okay. So the question is really whether this other part---so this classifies null sequences mapping out of $M$, is the same thing as giving a null sequence in the other guy. Or in other words, it's a free condensed abelian group on a null sequence. And free group on a convergent sequence, but then the limit point should be zero.
+Then like on the integers, you only have one possible lift. But the even guys converge to something else than the odd guys. 
+% 1:00:54
+But miraculously, once you pass to groups---it so happens that if these were light condensed abelian groups, in fact you don't---then any convergent sequence can be lifted.
 
-So if we want that this guy is internally projective---and let me actually focus on the projectivity, and then just
-The property that $\infty$ goes to $0$... Because this is a surjective map of condensed groups, this means that there is some surjective map from a profinite set that lifts to $\N$. That's just what the surjectivity means.
 
-Now how do covers of $\N \cup \{\infty\}$ look like? $\N \cup \{\infty\}$ is like you have a discrete set and then it accumulates towards infinity. Now, in the pullback, you have some complicated $S$ upstairs here. But you can always make that smaller because, for each of the discrete points here, you can just pick any lift. I don't care which one, and then all these lifts together with keeping everything at $\infty$, this is a closed subspace. So there exists $S'$, a closed subspace, so that over the integers, it's just always a point.
 
+\end{remark}
+
+All right, let me actually use a slightly different guy. So let $M$ be the free group on the null sequence. So you can take $\N \cup \{\infty\}$ and mod out by $\{\infty\}$, which is actually a direct factor \note{I don't hear this well}? Because you have $\{\infty\}$ mapping here and then projecting to a point. So this splits, actually has a direct factor.
+
+Let $M = \Z[\N \cup \{\infty\}] \text{mod} \Z[\infty] $ \note{todo, mod}
+(classifies nullsequences)
+
+And so, and of course, the integers $\Z$ themselves, they are projective. That's okay. So the question is really whether this other part---so this classifies null sequences mapping out of $M$, is the same thing as giving a null sequence in the other guy. Or in other words, it's a free condensed abelian group on a null sequence. And free group on a convergent sequence, but then the limit point should be zero.
+
+\begin{desiderata}
+So if we want that $M$ is internally projective---and let me actually focus on the projectivity, and then just at the end say a few words why it even works internally
+
+\note{todo diagram}
+
+$N$ tilde to $N$ is a surjective map of light condensed abelian groups.
+We have a null sequence in $N$, and we would like to lift this to $N$ tilde.
+So this is projectivity.
+
+\end{desiderata}
+
+% 1:05:12
+So let me draw the diagram again. So we have $\N \cup \{\infty\}$ maps to $M$
+
+% todo vertical tilde N
+$\N \cup \{\infty\} \to M \to N $  
+
+The property that $\infty$ goes to $0$... 
+% 1:05:39
+Because this is a surjective map of condensed groups, this means that there is some surjective map from a light profinite set that lifts to $\N$. That's just what the surjectivity means.
+
+% 1:06:02
+Now how do covers of $\N \cup \{\infty\}$ look like? $\N \cup \{\infty\}$ is like you have a discrete set and then it accumulates towards infinity. Now, in a priori, you have some complicated $S$ upstairs here. 
+\note{todo, diagram}
+But you can always make that smaller because, for each of the discrete points here, you can just pick any lift. I don't care which one. Then all these lifts together with keeping everything at $\infty$, this is a closed subspace. So there exists $S^'$, a closed subspace, so that over the integers, 
+you just one lift here, so that $S^'$, the fiber over just the integers is just always a point.
+
+$S^{'} \times_{\N \cup \{\infty\}} \N \xrightarrow{\sim} \N $
+
+% 1:07:13
 You can assume that this $S$ here is somehow a different compactification of $\N$. Without loss of generality, we can always make $S$ smaller here, as long as it's surjective. So we can assume that $S$, the part over any finite thing, is just a point. Okay, but there are many compactifications of the natural numbers. For example, this one, so we can't expect that we can directly split that.
 
 But now we actually use a property of profinite sets that I mentioned last time. Okay, so let $S_\infty$ be the fiber over $\infty$. This might be profinite, so there's a certain subspace in this, but everything here is light. In particular, $S_\infty$ is light. 
