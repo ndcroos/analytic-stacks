@@ -369,7 +369,6 @@ It's a kind of fun exercise to figure out how to describe such a compact Hausdor
 % 39:45
 I claim that whenever you have any compact Hausdorff space $\Z[I]_{\leq x}$ and you look at finite integer valued sums of points of them ($\sum_{x \in I} n_x [x]$), where the sum of the coefficients is at most $n$ ($ \sum |n_x| \leq n$), there is a canonical compact Hausdorff topology on that. 
 
-\begin{unfinished}{40:00}
 % 40:00
 Classically, this takes a little bit of thinking. But in this formalism, this free construction just produces it for you automatically.
 
@@ -379,7 +378,7 @@ Classically, this takes a little bit of thinking. But in this formalism, this fr
 The subtle part is that there are some kind of non-trivial identifications you have to make. In general, $x-y$ is a non-zero element, but when they become equal, you have to collapse this to zero. To make this true, you actually already have to use that in our Grothendieck topology, we didn't just allow finite disjoint unions but also injective maps. Otherwise, this wouldn't come out right.
 
 % 41:07
-Also, by general nonsense, if you start with something that already had a group structure ($\underline{\R}$), then if you pass to the free guy ($\Z[\underline{\R}]$), this now has a ring structure where the multiplication comes from the addition from $\R$. \note{Not sure if $\R$ or $\underline{\R}$ is meant} In particular, this is actually a condensed ring completely naturally. This is kind of related to the question I had in my first lecture, like how do you adjoin an element in all its real powers? It's just done by this construction.
+Also, by general nonsense, if you start with something that already had a group structure ($\underline{\R}$), then if you pass to the free guy ($\Z[\underline{\R}]$), this now has a ring structure where the multiplication comes from the addition from $\R$. \note{Not sure if $\R$ or $\underline{\R}$ is meant} In particular, this is actually a condensed ring completely naturally. This is related to the question I had in my first lecture, like "how do you adjoin an element in all its real powers"? It's just done by this construction.
 
 % 41:50
 These are general features. Now I want to mention a few features that are quite specific to this light condensed setting. The first thing is that countable products are exact. 
@@ -394,6 +393,8 @@ These are general features. Now I want to mention a few features that are quite 
 $\IntExt^i(M,N) = \text{sheafification of } $S \mapsto \Ext^i(M \otimes \Z[s], N)$
 
 \end{theorem}
+
+\begin{unfinished}{40:00}
 
 This might seem like an operation you're maybe not so often doing, but something you are certainly very often doing when you do some kind of functional analysis is to take sequential limits of surjective maps, and they are still surjective.
 
@@ -412,7 +413,7 @@ The first two properties are actually things that are better in all condensed ab
 % 45:02
 Let me just define the internal $\Ext$: $\IntExt^i (M,N)$. Basically, if you have a tensor product, then you can also ask for an internal $\Hom$, which is some kind of adjoint of the tensor product. Similarly, the internal $\Ext$ will be some version of the same thing on $\Ext$-groups.
 
-Okay, so let me prove this actually.
+Let me prove this actually.
 
 \begin{sketch}
 % 46:20
@@ -561,9 +562,9 @@ you just one lift here, so that $S^'$, the fiber over just the integers is just 
 $S^{'} \times_{\N \cup \{\infty\}} \N \xrightarrow{\sim} \N $
 
 % 1:07:13
-You can assume that this $S$ here is somehow a different compactification of $\N$. Without loss of generality, we can always make $S$ smaller here, as long as it's surjective. So we can assume that $S$, the part over any finite thing, is just a point. Okay, but there are many compactifications of the natural numbers. For example, this one, so we can't expect that we can directly split that.
+You can assume that this $S$ here is somehow a different compactification of $\N$. Without loss of generality, we can always make $S$ smaller here, as long as it's surjective. So we can assume that $S$, the part over any finite thing, is just a point. But there are many compactifications of the natural numbers. For example, this one, so we can't expect that we can directly split that.
 
-But now we actually use a property of profinite sets that I mentioned last time. Okay, so let $S_\infty$ be the fiber over $\infty$. This might be profinite, so there's a certain subspace in this, but everything here is light. In particular, $S_\infty$ is light. 
+But now we actually use a property of profinite sets that I mentioned last time. Let $S_\infty$ be the fiber over $\infty$. This might be profinite, so there's a certain subspace in this, but everything here is light. In particular, $S_\infty$ is light. 
 % 1:08:58
 I stress it here because here it's really the critical point where lightness is used. This means that it's injective in $\Pro(\Fin)$. In all profinite sets, it's also non-empty. And so there exists a retraction $r$ from $S$ to $S_\infty$.
 
@@ -572,7 +573,7 @@ $ \implies \exists r: S \to S_{\infty}$
 % 1:09:29
 Okay, so let me call this inclusion here $i$. Maybe this was my original map $f$ and this was a map $g$. Now we can just write down the lift. Consider the following map $S \to \widetilde{\N}$, which is the map $g$ that we had. But then from it, you subtract what you would get if you first use the retraction and then re-embed into $S$ and then apply $g$.
 
-So if you look at $S_\infty$, then on $S_\infty$, these two maps are just the same because this was a retraction. Am I frozen again? So on $S_\infty$, it's actually just the constant map $0$. Was that a question? Am I frozen again? Do you see me now?
+So if you look at $S_\infty$, then on $S_\infty$, these two maps are just the same because this was a retraction. So on $S_\infty$, it's actually just the constant map $0$.
 
 But $S$ surjects onto $\N \cup \{\infty\}$ and this map to $\infty$. Because this is actually a surjective map here, you can show that this is a pushout in profinite condensed sets. That's basically a version of this gluing condition that I gave. If I want to give a continuous map from here to somewhere, it's enough to give one here and here which agree on the overlap. But it's definitely enough to give one here, and then the question is just when does it descend down to $\N \cup \{\infty\}$? This means that on fibers it must be constant, but there's only one fiber in some sense where there's something to check, which is the fiber at infinity. And there we precisely assume that it all just comes from a point.
 
@@ -587,7 +588,7 @@ Now the question is whether we've actually lifted $f$, and the claim is that we 
 
 The point is that if I take this thing that I used here as a correction term and I project that down to $N$, then this map from $S$ to $N$ vanishes on all of $S_\infty$. This term projects to zero in $N$, because its composite map from $S$ and $N$ vanishes on $S_\infty$. So the correction term indeed vanishes, and $g$ was a lift, so we're fine.
 
-For internal projectivity, let me just not do it. It's essentially the same argument, you just have an auxiliary profinite set floating around that you also need to cover a bit. Again, it's critical that sequential limits of surjections are surjective.
+For internal projectivity, let me just not do it. It's essentially the same argument, you just have an auxiliary profinite set floating around, that you also need to cover a bit. Again, it's critical that sequential limits of surjections are surjective.
 
 % 1:17:51
 Here's just one remark about the comparison to all condensed abelian groups $\Cond\Ab$. This is something that I already said a bit earlier, but just to say it more explicitly.
@@ -683,7 +684,7 @@ One way to define the cohomology of $X$ with integral coefficients, in terms of 
 % Definition
 \begin{definition}
 $H^i(X, \Z) = \Ext_{\Cond\Ab^\light}^i (\Z [X], M)$
-\end{definition
+\end{definition}
 
 % 1:30:27
 If you work in the étale topos, these are the cohomology groups, when you work in \note{could not hear this}...
