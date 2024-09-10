@@ -5,6 +5,7 @@
 \usepackage[bbgreekl]{mathbbol}
 \usepackage{amsfonts}
 \usepackage{mathtools}
+\usepackage{quiver}
 \DeclareSymbolFontAlphabet{\mathbb}{AMSb} % to ensure that the meaning of \mathbb does not change
 \DeclareSymbolFontAlphabet{\mathbbl}{bbold}
 \newcommand{\prism}{{\mathlarger{\mathbbl{\Delta}}}} 
@@ -71,6 +72,7 @@
 \newcommand{\cP}{\mathcal P}
 \newcommand{\Q}{\mathbf Q}
 \newcommand{\R}{\mathbf R}
+\newcommand{\Rcond}{\underline{\mathbf R}} % Condensed real numbers
 \let\sec=\S
 \renewcommand{\S}{\mathbf S}
 \newcommand{\T}{\mathbf T}
@@ -120,10 +122,12 @@
 \newtheorem{example}[theorem]{Example}
 \newtheorem{goal}[theorem]{Goal}
 \newtheorem{idea}[theorem]{Idea}
+\newtheorem{formalization}[theorem]{Formalization}
 \newtheorem{question}[theorem]{Question}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem*{sketch}{Proof sketch}
 \newtheorem*{answer}{Answer}
+\newtheorem{variant}[theorem]{Variant}
 \newtheorem{warning}[theorem]{Warning}
 
 \renewcommand{\~}{\widetilde}
@@ -139,13 +143,16 @@
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Ext}{Ext}
-\DeclareMathOperator{\IntExt}{\underline{Ext}} % Internal Ext-group
 \DeclareMathOperator{\Fin}{Fin}
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\IntExt}{\underline{Ext}} % Internal Ext-group
+\DeclareMathOperator{\IntHom}{\underline{Hom}} % Internal Hom
+\DeclareMathOperator{\IntRHom}{\underline{RHom}} % Internal RHom
 \DeclareMathOperator{\Lie}{Lie}
 \DeclareMathOperator{\Map}{Map}
 \DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\Op}{Op} % Open subsets
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\Psh}{Psh}
 \DeclareMathOperator{\Pro}{Pro}
@@ -172,8 +179,10 @@
 \newcommand{\CRing}{\mathrm{CRing}}
 \newcommand{\Cat}{\mathrm{Cat}}
 \newcommand{\Cond}{\mathrm{Cond}}
+\newcommand{\LCA}{\mathrm{LCA_m}} % Locally compact abelian groups
 \newcommand{\Set}{\mathrm{Set}}
 \newcommand{\sing}{\mathrm{sing}} % Singular homology
+\newcommand{\sheaf}{\mathrm{sheaf}} % Sheaf cohomology
 \newcommand{\Solid}{\mathrm{Solid}}
 \newcommand{\Sp}{\mathrm{Sp}}
 \newcommand{\Top}{\mathrm{Top}}
@@ -190,6 +199,7 @@
 \newcommand{\dR}{\mathrm{dR}}
 \newcommand{\fpqc}{\mathrm{fpqc}}
 \newcommand{\gas}{\mathrm{gas}}
+\newcommand{\heart}{\mathrm{\heartsuit}}
 \newcommand{\light}{\mathrm{light}}
 \newcommand{\gq}{\mathbin{\!/\!\!/\!}}
 \newcommand{\liq}{\mathrm{liq}}
@@ -197,10 +207,14 @@
 \newcommand{\solid}{\blacksquare}
 \newcommand{\tri}{\triangleright}
 
+\newcommand{\huber}{\mathrm{Huber}}
 \newcommand{\size}{\mathrm{size}}
 \newcommand{\weight}{\mathrm{weight}}
 \newcommand{\Zar}{\text{Zar}}
 \newcommand{\et}{\text{\'et}}
+\newcommand{\bdd}{\mathrm{bdd}} % bounded
+
+
 
 % Berkovich spaces
 \newcommand{\BerkRing}{\mathcal{A}} % todo, is this needed?
