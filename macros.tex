@@ -113,6 +113,7 @@
 \newtheorem*{theorem*}{Theorem}
 
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{proposition}[theorem]{Proposition}
 
@@ -121,6 +122,7 @@
 \newtheorem{desiderata}[theorem]{Desiderata}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{goal}[theorem]{Goal}
+\newtheorem{motivation}[theorem]{Motivation}
 \newtheorem{idea}[theorem]{Idea}
 \newtheorem{formalization}[theorem]{Formalization}
 \newtheorem{question}[theorem]{Question}
@@ -213,8 +215,7 @@
 \newcommand{\Zar}{\text{Zar}}
 \newcommand{\et}{\text{\'et}}
 \newcommand{\bdd}{\mathrm{bdd}} % bounded
-
-
+\newcommand{\quasi}{\mathrm{quasi}} % quasi-isomorphism
 
 % Berkovich spaces
 \newcommand{\BerkRing}{\mathcal{A}} % todo, is this needed?
@@ -227,6 +228,68 @@
 \newcommand{\Berk}{\mathrm{Berk}}
 \newcommand{\Null}{\mathrm{Null}} % Null sequence of a ring R
 \DeclareMathOperator{\Im}{Im} % Image
+
+% Shortcuts
+
+% Begin/end Shortcuts
+\newcommand{\bc}{\begin{corollary}}
+\newcommand{\ec}{\end{corollary}}
+\newcommand{\bcl}{\begin{claim}}
+\newcommand{\ecl}{\end{claim}}
+\newcommand{\bd}{\begin{definition}}
+\newcommand{\ed}{\end{definition}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bse}{\begin{equation*}}
+\newcommand{\ese}{\end{equation*}}
+\newcommand{\bex}{\begin{example}}
+\newcommand{\eex}{\end{example}}
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\eit}{\end{itemize}}
+\newcommand{\bl}{\begin{lemma}}
+\newcommand{\el}{\end{lemma}}
+\newcommand{\bnn}{\begin{notation}}
+\newcommand{\enn}{\end{notation}}
+\newcommand{\bn}{\begin{note}}
+\newcommand{\en}{\end{note}}
+\newcommand{\bp}{\begin{proposition}}
+\newcommand{\ep}{\end{proposition}}
+\newcommand{\bq}{\begin{proof}}
+\newcommand{\eq}{\end{proof}}
+\newcommand{\br}{\begin{remark}}
+\newcommand{\er}{\end{remark}}
+\newcommand{\bs}{\begin{solution}}
+\newcommand{\es}{\end{solution}}
+\newcommand{\btab}{\begin{table}}
+\newcommand{\etab}{\end{table}}
+\newcommand{\btb}{\begin{tabular}}
+\newcommand{\etb}{\end{tabular}}
+\newcommand{\bter}{\begin{terminology}}
+\newcommand{\eter}{\end{terminology}}
+\newcommand{\bth}{\begin{theorem}}
+\newcommand{\eth}{\end{theorem}}
+\newcommand{\btik}{\begin{tikzpicture}}
+\newcommand{\etik}{\end{tikzpicture}}
+
+% Letter Shortcuts
+% Greek letters
+\newcommand{\al}{\alpha}
+\newcommand{\del}{\delta}
+\newcommand{\g}{\gamma}
+\newcommand{\la}{\lambda}
+\newcommand{\sig}{\sigma}
+
+\newcommand{\cl}{\colon}
+\newcommand{\subs}{\subset}
+\newcommand{\sube}{\subseteq}
+
+\newcommand{\ans}{\textbf{Answer: }}
+\newcommand{\ques}{\textbf{Question: }}
+\newcommand{\clausen}{\textbf{[Clausen]: }}
+\newcommand{\scholze}{\textbf{[Scholze]: }}
+\newcommand{\gabber}{\textbf{[Gabber]: }}
 
 % project macros
 

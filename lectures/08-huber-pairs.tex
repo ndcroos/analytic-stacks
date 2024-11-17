@@ -6,96 +6,117 @@
 \renewcommand{\yt}[2]{\href{https://www.youtube.com/watch?v=dIwBTJNN7a0&list=PLx5f8IelFRgGmu6gmL-Kf_Rl_6Mm7juZO&t=#1}{#2}}
 \vspace{1em}
 
-\begin{unfinished}{0:00}
-Last time Dustin started talking about the relative solid theory and the relation to adic spaces. I want to kind of continue with that.
+Last time, Dustin started talking about the relative solid theory and the relation to adic spaces. I want to continue with that.
 
-I want to talk about the relation between these basic objects that appear in Huber's work, that are called Huber pairs, and the kind of basic objects that appear in our theory, called analytic rings.
+I want to talk about the relation between these basic objects that appear in Huber's work, that are called Huber pairs, and the basic objects that appear in our theory, called analytic rings.
+
+\subsection{Motivation}
 
 % 1:13
-Motivation: by now we've seen several examples of a pair of a light condensed ring $A$+ notion of "complete" condensed $A$-mdoule. 
+By now, we have seen several examples of a pair of a light condensed ring $A$, with a notion of "complete" condensed $A$-modules. 
 % 2:08
-The first one we discussed was the integers ($\Z$) and solid $\Z[1/p]$-modules inside of all condensed $\Z$-modules. 
-
+The first one we discussed was the $\Z$ and solid abelian groups inside of all condensed abelian groups. 
 \begin{align*}
-(\Z, \Solid_{\Z} \subset \Cond(\Ab))
+(\Z, \Solid_{\Z} \subs \Cond(\Ab))
 \end{align*}
 
 % 2:29
-But then last time, Dustin discussed the example where you take the polynomial algebra over $\Z$ in $T$, and then within all condensed $\Z$-modules, you can somehow just take the ones that are complete in the sense of this $T$. So you are taking modules over this algebra inside of solid abelian groups.
-
+But then last time, Dustin discussed the example where you take the polynomial algebra over $\Z[T]$. Then within all $\Cond(\Z[T])$-modules, you can somehow just take the ones that are complete in the sense of this one thing $\Solid_\Z$. This amount to taking modules over this polynomial algebra inside of solid abelian groups ($\Mod_{\Z[T]}(\Solid_{\Z})$).
 \begin{align*}
-\Z[T], \Solid_{\Z[T]} \subset \Mod_{\Z[T]}(\Solid_{\Z}) \subset \Cond(\Z[T])
+\Z[T], \Solid_{\Z[T]} \subs \Mod_{\Z[T]}(\Solid_{\Z}) \subs \Cond(\Z[T])
 \end{align*}
 
 % 3:02
-But then Dustin argued that it is actually quite natural to also isolate a stronger condition, giving the $\Solid_{\Z[T]}$-modules. 
+But then Dustin argued that it is quite natural to also isolate a stronger completeness condition, giving the $\Solid_{\Z[T]}$-modules. 
 % 3:14
-Geometrically speaking, this $\Mod_{\Z[T]}(\Solid_{\Z})$ corresponds to some kind of affine line, and this $\Solid_{\Z[T]}$ corresponds to the unit disk. 
+Geometrically speaking, this $\Mod_{\Z[T]}(\Solid_{\Z})$ corresponds to some affine line, and this $\Solid_{\Z[T]}$ corresponds to the closed \note{not sure} unit disk. 
 % 3:24
-In these cases, the condensed thing was actually just the discrete.
+In these cases, the condensed thing was just discrete.
 
 % 3:31
-But this notion of completeness is still interesting. You could also take, I don't know, $\F_p$ or $\Q_p$ or whatever, and then take solid $\F_p$-modules or solid $\Q_p$-modules. In those cases, these are actually just the ones where the underlying condensed group is solid. 
+But this notion of completeness is still interesting. You could also take for example $\Z_p$ or $\Q_p$ or whatever, and then take solid $\Z_p$-modules. Or you could take $\Q_p$ and solid $\Q_p$-modules. In those cases, these are just the ones where the underlying condensed group is solid. 
+\begin{align*}
+(\Z_p, \Solid_{\Z_p}) (\Q_p, \Solid_{\Q_p})
+\end{align*}
+
 % 3:58
 There is no meaningful way to strengthen this.
 
-The notion of an analytic ring captures this situation.
+The notion of an analytic ring will somehow ... \note{didn't hear this} the situation.
 
-On the other hand, if you learn the adic stuff, then you run into this definition. The basic objects there are these Huber pairs. Let me recall what these are.
+On the other hand, when you learn about adic spaces, the basic objects there are Huber pairs. Let me recall what these are.
 % 4:40
 These are due to Huber, although of course Huber used different names.
 
-\begin{definition}
-$\exists$ finitely generated ideal $J \subset A_0$ such that $A_0$ has the $I$-adic topology.
-\end{definition}
+\bd[Huber ring]
+A \textit{Huber ring} is a topological ring $A$ that admits an open subring $A_0 \subs A$ and an ideal $I \subs A^+$, such that there exists some finitely generated $A_0$-ideal $I \subs I$, such that $A_0$ has the $I$-adic topology.
+\ed
 
-A Huber ring is a topological ring $A$ with an open subring $A^+$ and an ideal $I \subset A^+$ such that there exists some finitely generated ideal $J \subset I$... Because now it is not clear what "ideal" means, because there are two rings in place, $J$ is an ideal of $A^+$, a subset $A_0 \subset A$ that has the same $I$-adic topology.
+% Because now it is not clear what "ideal" means, because there are two rings in place, $J$ is an ideal of $A^+$, a subset 
 
 % 6:15
 Let me give examples in just a second.
 
-Then Huber has this notion of a ring of integral elements. This is an open and integrally closed subring $A^+ \subset A$ containing $A^{\circ}$, the power-bounded elements.
+% 6:25
+Then Huber has this notion of a ring of integral elements. This is an open and integrally closed subring $A^+ \subs A$ containing $A^{\circ}$, the power-bounded elements.
 
-\begin{definition}
-A \underline{ring of integral elements} in a Huber ring $A$ is an open and integrally closed subring $A^{+} \subset A $ todo
-\end{definition}
+\bd[Ring of integral elements]
+A \textit{ring of integral elements} in a Huber ring $A$ is an open and integrally closed subring $A^{+}$ todo containing the powerbounded elements.
+\begin{align*}
+A^{+} \subs A = \{ \text{ powerbounded elements }  \}
+\end{align*}
+\ed
 
 And third, a Huber pair is the pair $(A^+, A)$ satisfying these conditions.
 
-\begin{definition}
-A Huber pair is a pair $(A, A^{+}$ of Huber ring $A$ and a ring of integral elements $A^{+}$ of $A$.
-\end{definition}
+\bd[Huber pair]
+A \textit{Huber pair} is a pair $(A, A^{+})$ of a Huber ring $A$ and a ring of integral elements $A^{+}$ of $A$.
+\ed
 
+% 8:12
 What are the examples to keep in mind? Let me first give some stupid examples:
 
-\begin{example}
+\bex
 Any discrete ring is a Huber ring.
-$(A_0 = A, I = (0))$
-\end{example}
+So you can take:
+\begin{align*}
+(A_0 = A, I = (0))
+\end{align*}
+\eex
 
-\begin{example}
-\end{example}
+% 8:53
+\bex
+Any topological ring $A$ with the $I$-adic topology for some finitely generated ideal $I$ is a Huber ring. So in this case you take 
+\begin{align*}
+(A_0 = A, I = I)
+\end{align*}
+\eex
 
-\begin{example}
-\end{example}
+% 9:35
+An interesting example is when you have a Banach algebra. 
 
-Any discrete ring $A$ is Huber, so in this case you can take $A^+ = A$ and $I = 0$. Any ring that itself is an adic ring for a finitely generated ideal $I$ is Huber. So in this case you take $A^+ = A$ and $I = I$.
+\bex
+$\Q_p$ is a Huber ring. Any non-archimedean field is also a Huber ring. In this case, you take $A_0 = \Z_p$ and $I$ generated by $p \cl I = (p)$, which is only an ideal in $\Z_p$ and not in $\Q_p$.
 
-Maybe actually interesting is when you have something like a Banach algebra. So for example, $\Q_p$ is Huber, or any non-archimedean field is Huber. In this case, you take $A^+ = \Z_p$ and $I$ generated by $p$, which really is only an ideal in $\Z_p$ and not in $\Q_p$.
+\eex
 
+% 10:10
 The idea is that Huber rings are certain kinds of localizations or something like this of such adic rings with some adic topology.
 
 % 10:25
-Also, whenever you have any kind of Banach algebra over $\Q_p$ or some other non-archimedean local field, there is also always a Huber ring. As $A_0$, you can take the unit ball in your Banach algebra, and as the ideal, you can take the one that comes from a uniformizer and \note{did not hear the last part}.
+Also, whenever you have any kind of Banach algebra over $\Q_p$ or some other non-archimedean local field, there is also always a Huber ring. As $A_0$, you can take the unit ball in your Banach algebra. As the ideal, you can take the one that comes from a uniformizer and \note{did not hear the last part}.
 
-\begin{remark}
-The completion $\hat{A}$ of any Huber ring $A$ is again a Huber ring. We will generally only consider complete examples now. In the classical sense, allow all convergent sequences mod $\mathfrak{m}^n$.
+\begin{unfinished}{10:25}
 
-
-$A \subset A_0 \subset I$
-$\hat{A} \subset \hat{A_0} = \text{$I$-adic completion of $A_0$}$
-
-\end{remark}
+\br
+The completion $\hat{A}$ of any Huber ring $A$ is again a Huber ring. We will generally only consider complete \note{not sure} examples now. But completion in the classical sense, like, allow all convergent sequences mod $\mathfrak{m}^n$.
+\begin{align*}
+I \subs A_0 \subs A
+\end{align*}
+\begin{align*}
+\underbrace{\hat{A_0}}_{\text{$I$-adic completion of $A_0$}} \subs \hat{A}
+\end{align*}
+\er
 
 If you start with a so-called ring of definition, one which has the $I$-topology for some finitely generated ideal $I$, then it will be the case that the completion of $A^+$ will be an open subring of the completion of $A$. This is just the definition of a Huber pair.
 
@@ -111,114 +132,143 @@ Last time, Dustin discussed some notions of topologically nilpotent elements, po
 % 13:24
 If you have a Huber ring, then you can define topologically nilpotent elements and power-bounded elements in $A$. This is the set of all $f \in A$ such that $f^n \to 0$ as $n \to \infty$, which once $A$ is assumed to be complete, is really just a condition.
 
-\begin{definition}
-$A$ Huber ring. Then $ \subset A^{0} \subset A$ 
-\end{definition}
+\bd
+$A$ Huber ring. Then $A^{\circ\circ} \subs A^\circ \subs A$ where
 
-These are all the elements such that the set of its powers is bounded. It's actually equivalent to saying that it is contained in some ideal of definition, some ring of definition.
+\begin{align*}
+A^{\circ\circ} = \{ f \in A | \}
+\end{align*}
 
-Actually, a different way to think about this set: 
+and 
+\begin{align*}
+A^\circ = \{ f \in A | \{ f \} \text{ is bounded} \}
+\end{align*}
+\ed
+
+% 13:55
+These are all the elements such that the set of its powers is bounded. It is equivalent to saying that it is contained in some ideal of definition, some ring of definition.
+
+A different way to think about this set: 
 % 15:15
 First of all, you have these canonically defined objects, $A^+$ and $A^{\circ\circ}$. But on the other hand, we used these things in the definition that there is some ring of definition and some ideal $I$ of definition of the same. These will always consist of power-bounded elements, and the ideal consists of topologically nilpotent elements.
 
-In fact, for all $I \subset A_0 \subset A$ as above.
+In fact, for all $I \subs A_0 \subs A$ as above.
 
-% 
+% 15:55
+For example, in the case of $\Q_p$, $\Z_p$ is the $A^\circ$, and $(p)$ is the $A^{\circ\circ}$. 
+\begin{align*}
+(p) \subs \Z_p \subs \Q_p
+\end{align*}
 
-For example, in the case of $\Z_p$, $\Z_p$ is actually the $A^+$, and $(p)$ is actually the $A^{\circ\circ}$. In this case, these inclusions are equalities. 
+In this case, these inclusions are equalities. 
+
 % 16:15
 Of course, this cannot in general be true, because you could also take as ideal of definition the ideal generated by $p^2$, but then you don't have all topologically nilpotent elements.
 
 % 16:25
-But in some sense, the $A^+$ gets, in fact, the collection of all such $A^+$'s, and the collection of all such $I$'s. They form filtered collections, and $A^+$ is actually the colimit of all possible such rings of definition, and similarly, $A^{\circ\circ}$ is the union of all ideals of definition.
+But in some sense, this is as good as it gets. In fact, the collection of all such $A_0$'s, and the collection of all such $I$'s form a filtered collection. $A^\circ$ is the colimit of all possible such rings of definition. Similarly, $A^{\circ\circ}$ is the union of all ideals of definition.
+
+\begin{align*}
+A^{\circ\circ} = \lim_{I \subs A_0 \subs A} I \quad & \subs A^\circ = \lim_{A_0 \subs A} A_0 \subs A
+\end{align*}
 
 This was part one of the definition, together with a little bit of discussion. 
 % 17:24
-Part two was---oh no, sorry, there is no part two. I wanted to define, I wanted to say that if I also have a ring of power-bounded elements, I can define an $A^+$, but it's kind of vacepous because.
+Part two was---oh no, sorry, there is no part two. I wanted to say that if I also have a ring of power-bounded elements, I can define an $A^+$, but it is vaceous because.
 
 % 18:15
-When you learn Huber's theory, at first, I think it is extremely hard to appreciate the significance of this ring of integral elements $A^+$. It is somewhat necessary to set up the theory, but it is kind of hard to feel why it is necessary.
+When you learn Huber's theory, at first, I think it is extremely hard to appreciate the significance of this ring of integral elements $A^+$. It is somewhat necessary to set up the theory, but it is hard to feel why it is necessary.
 
 % 18:42
-But it turns out that the theory that we developed using solid modules gives you a very good understanding of what it actually does. 
+But it turns out that the theory that we developed using solid modules gives you a very good understanding of what it does. 
 % 18;50
-Namely, precisely---here is an example.
+Here is an example.
 
-\begin{example}
-$\Z[T]$ has several possible ring of .. %tdo
+\bex
+$\Z[T]$ has several possible rings of integral elements. 
+In this case, the ring of integral elements has just ... equal to subring 
 
+For example, you could take $\Z$ or $\Z[T]$. In our series sum.. uses and associate to this an analytic ring with category of modules. It is somehow only complete with respect to $\Z$.
 \begin{align*}
-\Z \subset \Z[T] \leadsto \Mod_{\Z[T]} (\Solid_\Z)
+\Z \subs \Z[T] \leadsto \Mod_{\Z[T]} (\Solid_\Z)
 \end{align*}
 
+So this will be 
 \begin{align*}
-\Z[T] \subset \Z[T] \leadsto \Solid_{\Z[T]}
+\Z[T] \subs \Z[T] \leadsto \Solid_{\Z[T]}
 \end{align*}
 
-\end{example}
+So the role that this $A^{+}$ will play is precisely the one of singling out which modules to be considered as complete.
+\eex
 
-I actually have several possible examples. For instance, you could take $A = \Q_p\<T\>$, and in this case, $A^+$ is just $\Z_p\langle T \rangle$. For example, you could take just 
+I have several possible examples. For instance, you could take $A = \Q_p\<T\>$, and in this case, $A^+$ is just $\Z_p\langle T \rangle$. For example, you could take just 
 
 % todo, text seems missing here.
 
 \subsection{Analytic rings}
 
-Maybe I should give this definition of analytic rings. By the way, I can make one notation remark. 
+Maybe I should give this definition of analytic rings. By the way, I can make one notational remark.
+
 % 21:02
-\begin{remark}
+\br
 Huber uses the single letter $A$ to denote the Huber pair $(A^\tri, A^{+})$ consisting of some topological ring and a ring of integral elements. We will follow this notation.
 
 % 21:43
 Also, when I discuss analytic rings, I want to use single letters to denote my analytic rings. 
-But then they will have an underlying condensed ring, that's $\underline{A}$, and we needed some symbol to denote that underlying condensed ring. 
-We did not come up with anything good, so we chose to just follow Huber's lead.
-\end{remark}
-
-
+But then they will have an underlying condensed ring, that is $\underline{A}$, and we needed some symbol to denote that underlying condensed ring. 
+We did not come up with anything good, so we choose to just follow Huber's lead.
+\er
 
 % 22:12
-Let's say $A^\tri$ has now some light condensed ring. Then I want to say what is an analytic ring structure on this thing. So what is an allowed class of complete modules? Here's the definition. It's equivalent to the one that Dustin gave in the first lecture, but presented from a slightly more elementary perspective.
+Let's say $A^\tri$ has now some light condensed ring. Then I want to say what is an analytic ring structure on this thing. So what is an allowed class of complete modules? Here is the definition. It is equivalent to the one that Dustin gave in the first lecture, but presented from a slightly more elementary perspective.
 
-\begin{definition}
+\bd[Analytic ring structure]
 Let $A^\tri$ be a light condensed ring.
-An \underline{analytic ring structure } on $A^\tri$ is a full subcategory that is an abelian category $\Mod(A) \subset \Cond(A^\tri)$ %todo
-So this is a condensed abelian group and togehter with a tensor product.
+An \textit{analytic ring structure} on $A^\tri$ is a full subcategory that is an abelian category
+\begin{align*}
+\Mod(A) \subs \Cond(A^\tri)
+\end{align*}
+% 24:36
+So this is a condensed abelian group, together with a map $A^\tri \tsnr M \to M$,
 stable under all limits, colimits, extensions 
-all $\IntExt^i_{A^{\tri}}(N,-)$
-$N \in \Cond(A^{\tri})$, and contains $A^\tri$.
-\end{definition}
+all $\IntExt^i_{A^\tri}(N,-)$
+$N \in \Cond(A^\tri)$, and contains $A^\tri$.
+\ed
 
-So it is a full subcategory $\mathcal{C}$ of $\mathcal{D}(A^\tri)$, the category of condensed $A^\tri$-modules, together with an $A$-module structure. That is the data I just said. Now I will make a lot of conditions on this, but those are conditions that we had already seen before, twice. 
+So it is a full subcategory of $A$-modules, the category of condensed $A^\tri$-modules, together with an $A$-module structure. 
+% 24:58
+That is the data I just said. Now I will make a lot of conditions on this, but all those are conditions that we had already seen before, twice. 
 % 25:06
-Twice we stated that solid abelian groups and the solid abelian ... \note{did not hear this wll} modules have a lot of nice properties, and it was a long, long list. 
+Twice, we stated that solid abelian groups and the solid abelian ... \note{did not hear this wll} modules have a lot of nice properties, and it was a long, long list. 
 % 25:15
-Sometimes, because we don't want to state this list all the time, we make this definition.
+We make this definition, because sometimes we don't want to state this list all the time.
 
-First of all, it should be stable under kernels and cokernels. But it is also stable, in fact, under all limits and colimits. All extensions, so if you have an extension of two things in a complete guy, it should also be complete. %todo
+% 25:23 
+First of all, it should be an abelian subcategory, stable under kernels and cokernels. It is also stable under all limits and colimits. It is stable under all extensions, so if you have an extension of two things in a complete guy, it should also be complete.
 
 % 26:05
-Then there is a .. condition you want .. to check under all $\IntExt^i_{A^\tri}(N,-)$ where $N \in \Cond(A^\tri)$. It is also stable under all $X \mapsto X^{\oplus I}$ for some set $I$. $\mathcal{C}$ contains $A^\tri$ itself.
+Then there is a slightly tricky condition you want to check that is also stable under all $\IntExt^i_{A^\tri}(N,-)$, where $N \in \Cond(A^\tri)$. It is also stable under all $X \mapsto X^{\oplus I}$, for some set $I$. And it contains $A^\tri$.
 
-[Dustin:] So can I ask a question? Does it imply, maybe one can prove from this in some way, for example, that $\mathcal{C}$ is a Grothendieck category? The condition that I allude to is the existence of a set of generators. Is it automatic under these conditions?
+% 27:20
+\clausen So can I ask a question? Does it imply, maybe one can prove from this in some way, for example, that it ... a Grothendieck category? Where the condition that I allude to is the existence of a set of generators. Is it automatic under these conditions?
 
-[Peter:] Yes, yes. Did you hear his answer?
+\scholze Yes, yes. Did you hear his answer?
 
-[Dustin:] Yes, he said yes. 
+\clausen Yes, he said yes. 
 
 
-Ofer: Does it imply that the $\Ext$ groups in the subcategory are the same as the $\Ext$ groups in the full category?
+\gabber Does it imply that the $\Ext$ groups in the subcategory are the same as the $\Ext$ groups in the full category?
 
-Dustin Yes. I don't know what he said, but the answer is yes.
+\clausen Yes. I don't know what he said, but the answer is yes.
 
-[Peter:] I know the answer is yes, but you didn't hear... In this presentation, the derived category might not be in degree zero. So if you really phrase it at the derived level, you have to be slightly careful when you say that. 
+\scholze I know the answer is yes, but you didn't hear... In this presentation, the derived category might not be in degree zero. So if you really phrase it at the derived level, you have to be slightly careful when you say that. 
 % 28:22
 Because it might not be the case that the thing I will define, the derived category of $A$-modules, is the derived category of abelian category. \note{todo}
 
-
-Ofer: It's not? do you hear what I say?
+\gabber It is not? do you hear what I say?
 
 % 23:37
-[Dustin:] Yes, I hear what you say. 
+\clausen Yes, I hear what you say. 
 
 % 28:41
 You said that in the derived category,
@@ -226,28 +276,26 @@ You said that in the derived category,
 the thing I will define as a certain triangulated category or stable $\infty$-category as a full subcategory of condensed derived category of $\Cond(A^\tri)$, which is the correct one. But in general it will not be the same thing as the derived category of this abelian category $\Mod(A)$ \note{todo}.
 
 % 29:05
-Ofer: So in this case, when you have this full subcategory you say that you have a derived category, which is not the derived category of this subcategory?
+\gabber So in this case, when you have this full subcategory you say that you have a derived category, which is not the derived category of this subcategory?
 
 % 29:18
-[Peter:] Yes, 
+\scholze Yes, 
 
+\clausen this is the heart of a $t$-structure. 
 
-[Dustin:] this is the heart of a $t$-structure. 
-
-
-This is those whose homological groups are in this. So it doesn't imply that the $\Ext$'s are the same. It does not. Sometimes it does, sometimes it is true.
+This is those whose homological groups are in this. So it does not imply that the $\Ext$'s are the same. Sometimes it does, sometimes it is true.
 
 % 29:31
-[Peter:] In most practical cases it will end up being true. In full generality, no.
+\scholze In most practical cases it will end up being true. In full generality, no.
 
 % 29:51
-[Peter:] Now Dustin made me confused. I want to claim that there is automatically a left adjoint to the inclusion.
+\scholze Now Dustin made me confused. I want to claim that there is automatically a left adjoint to the inclusion.
 % 30:09
-[Peter:] Dustin do I really need somethinng for this?
+\scholze Dustin do I really need somethinng for this?
 No, I think that is fine.
 
 % 30:15
-[Peter:] What is the argument again for this?
+\scholze What is the argument again for this?
 
 % 30:20
 It is again this general principle. I think it is not quite trivial, but I think it is a general principle that if you have a presentable category and a full subcategory closed under limits and sufficiently filtered colimits, in this case all filtered colimits, then the inclusion has a left adjoint. 
@@ -255,99 +303,111 @@ It is again this general principle. I think it is not quite trivial, but I think
 % 30:40
 There is a very related statement that involves this set-theoretic nonsense that is called ... principle \note{todo}, but I think there you don't have the limits, right?
 
-[Dustin:] Yes, or maybe you don't have this sufficiently filtered colimits for something. I believe this statement that I just mentioned, which I believe you also mentioned at some point earlier.
+\clausen Yes, or maybe you don't have this sufficiently filtered colimits for something. I believe this statement that I just mentioned, which I believe you also mentioned at some point earlier.
 % 30:55
 It is just a fact in ZFC.
 
 % 31:00
-[Peter:] If not, then just assume that there is a left adjoint.
+\scholze If not, then just assume that there is a left adjoint.
 
-[Ofer:] What is the fact that there is 
+\gabber What is the fact that there is 
 
 % 31:05
-[Dustin:] It is like if you have a presentable category and then you have a full subcategory closed under all limits and under all sufficiently filtered colimits, then the inclusion has a left adjoint. 
+\clausen It is like if you have a presentable category and then you have a full subcategory closed under all limits and under all sufficiently filtered colimits, then the inclusion has a left adjoint. 
 
 % 31:16
-[Ofer:] Is the category presentable?
+\gabber Is the category presentable?
 
 
-[Dustin:] Only the big category has to be presentable, the small one will automatically be.
+\clausen Only the big category has to be presentable, the small one will automatically be.
 
 % 31:23
-[Ofer:] Yes, but it is not clear from the stability that it ... the set of generators 
+\gabber Yes, but it is not clear from the stability that it ... the set of generators 
 
 % 31:28
-[Dustin:] No, that is right, it is a non-trivial claim.
+\clausen No, that is right, it is a non-trivial claim.
 
 
-[Ofer:] It is a non-trivial claim which is true in
+\gabber It is a non-trivial claim which is true in
 
 % 31:52 end of definition.
 
 % 32:02
-First I want to explain some general structures of this. First on the idea level.
+First, I want to explain some general structures of this. First on the idea level.
 % 32:18
 The claim is that the left adjoint---which I will write as sending a module $M$ to its base change from $A_\infty$ to $A$---mod $A$ is just purely notational for now, but I will think of it as the modules over this analytic ring $A$.
 
 sufficiently filtered colimit
 
-\begin{proposition}
-$\exists$ left adjoint
-The kernel of this functor is a $\otimes$-ideal, and $\Mod(A)$ acquires unique symmetric monoidal structure making $\otimes A$ \note{todo} symmetric monoidal.
-\end{proposition}
+\bp
+There exists a left adjoint. The kernel of this functor is a $\tnsr$-ideal, and $\Mod(A)$ acquires unique symmetric monoidal structure making $\tnsr A$ \note{todo} symmetric monoidal.
+\ep
 
 % 33:11
-This base change functor has kernel, the $\otimes$-ideal in $\Mod(A_\infty)$, and $\Mod(A)$ acquires a unique symmetric monoidal structure making the base change a symmetric monoidal functor.
+This base change functor has kernel, the $\tnsr$-ideal in $\Mod(A_\infty)$, and $\Mod(A)$ acquires a unique symmetric monoidal structure making the base change a symmetric monoidal functor.
 
-Let's sketch the proof. We already discussed the existence of the left adjoint, which is formal nonsense. If it's not, just make it part of the definition. 
+Let's sketch the proof. We already discussed the existence of the left adjoint, which is formal nonsense. If it is not, just make it part of the definition. 
 % 34:53
-The question is about this ... being a $\otimes$-ideal.
+The question is about this ... being a $\tnsr$-ideal.
 
 \begin{sketch}
 Existence of left adjoint: formal nonsense.
-Assume $M \in \Cond(A^\tri)$ such that $M \otimes_{A^\tri} A = 0$
-Let $N \in Cond(A^\tri)$ arbitrary.
-To show $(N \otimes_{A^\tri} M) \otimes_{A^\tri} A = 0$
-$\forall L \in \Mod(A)$.
-
+Assume $M \in \Cond(A^\tri)$ such that $M \tnsr_{A^\tri} A = 0$
+Let $N \in \Cond(A^\tri)$ arbitrary.
+To show:
+\begin{align*}
+(N \tnsr_{A^\tri} M) \tnsr_{A^\tri} A = 0 \quad & \forall L \in \Mod(A)
+\end{align*}
 
 to check $\forall M, N \in \Cond(A^\tri)$
 \end{sketch}
 
-What does it mean to be a $\otimes$-ideal? 
+What does it mean to be a $\tnsr$-ideal? 
 % 34:59
-The left adjoint functor definitely preserves colimits \note{todo}. To show it is a $\otimes$-ideal, we have to show that I have something in the kernel and $N$ is anything, then $M \otimes N$ is still in the kernel.
+The left adjoint functor definitely preserves colimits \note{todo}. To show it is a $\tnsr$-ideal, we have to show that I have something in the kernel and $N$ is anything, then $M \tnsr N$ is still in the kernel.
 
-Assume a module $M \in \Mod(A_\infty)$ such that $F(M) = 0$, meaning it has no maps to any $A$-module. We want to show that for all $N \in \Mod(A_\infty)$, we have $F(M \otimes N) = 0$. 
+Assume a module $M \in \Mod(A_\infty)$ such that $F(M) = 0$, meaning it has no maps to any $A$-module. We want to show that for all $N \in \Mod(A_\infty)$, we have 
+\begin{align*}
+F(M \tnsr N) = 0
+\end{align*}
 
-This means showing that for all $L \in \Mod(A)$, $\Hom(F(M \otimes N), L) = 0$. By definition of $F$ being a left adjoint, this is equivalent to showing $\Hom(M \otimes N, L) = 0$.
+This means showing that for all $L \in \Mod(A)$, $\Hom(F(M \tnsr N), L) = 0$. By definition of $F$ being a left adjoint, this is equivalent to showing 
+\begin{align*}
+\Hom(M \tnsr N, L) = 0
+\end{align*}
 
-Using the $\Hom$-tensor adjunction, this is the same as $\Hom(M, [N,L])$, where $[N,L]$ is the internal $\Hom$. But we assumed $\Mod(A)$ is stable under all limits, in particular internal $\Hom$'s. So $[N,L] \in \Mod(A)$. Then again $\Hom(M, [N,L]) = 0$ because $F(M) = 0$ by assumption.
+Using the $\Hom$-tensor adjunction, this is the same as $\Hom(M, [N,L])$, where $[N,L]$ is the internal $\Hom$. But we assumed $\Mod(A)$ is stable under all limits, in particular internal $\Hom$'s. So $[N,L] \in \Mod(A)$. 
+
+Then again 
+\begin{align*}
+\Hom(M, [N,L]) = 0
+\end{align*}
+because $F(M) = 0$ by assumption.
 
 The symmetric monoidal structure on $\Mod(A)$ has to be given by taking the tensor product in $\Mod(A_\infty)$, seeing this as a colimit in modules, and then completing again. The question is whether this makes the base change functor symmetric monoidal.
 
 39:50
-To check this, for all $M,N \in \{Mod}A_\infty)$, we can either first tensor $M$ and $N$ and then apply $F$, or we can first apply $F$ to both of them and then tensor in $\Mod(A)$. This has to give the same result.
+To check this, for all $M,N \in \Mod(A_\infty)$, we can either first tensor $M$ and $N$ and then apply $F$, or we can first apply $F$ to both of them and then tensor in $\Mod(A)$. This has to give the same result.
 
-I think a better statement is that if a map in $\Mod(A_\infty)$ becomes an isomorphism under localization, then tensoring it with anything else also makes it an isomorphism. This follows from the same type of argument, by mapping into the subcategory and using the internal $\Hom$. I did this in the solid case, and it's the same argument here.
+I think a better statement is that if a map in $\Mod(A_\infty)$ becomes an isomorphism under localization, then tensoring it with anything else also makes it an isomorphism. This follows from the same type of argument, by mapping into the subcategory and using the internal $\Hom$. I did this in the solid case, and it is the same argument here.
 
 Then the point is that, for example, $f$ is from $M$ to its completion, which becomes an item of localization because an important operation. So if I-- this within some-- the same-- stage it.
 
 % 44:40
-\begin{definition}
+\bd
 Let $A$ be an analytic ring structure on $A^\tri$.
-Then $D(A) \subset D(\Cond(A^\tri))$ is the full subcategory of all $M \in D(\Cond(A^\tri))$, such that $\forall i \in \Z, H_i(M)$ of all $M \in D(\Cond(A^\tri))$ 
-\end{definition}
+Then $D(A) \subs D(\Cond(A^\tri))$ is the full subcategory of all $M \in D(\Cond(A^\tri))$, such that $\forall i \in \Z, H_i(M)$ of all $M \in D(\Cond(A^\tri))$ 
+\ed
 
-This is some structure you automatically have on a triangulated category $C$ of modules, some kind of localization of condens-- the underlying ring. Requires in terms of product. Now we pass-- D-- let not just say that a structure on an underlying lightens string a triangle.
+This is some structure you automatically have on a triangulated category $C$ of modules, some localization of condens-- the underlying ring. Requires in terms of product. Now we pass-- D-- let not just say that a structure on an underlying lightens string a triangle.
 
 Then undine the of a modules, the full sub-subset for all $Z$ of all-- let me still just call them $N$, so compx of modules. So group-- let me think homologically, all the homo groups line. Define for .
 
 % warning env
 \begin{warning}
-Tere is a natural comparison functor $D(\Mod(A))\to D(A)$, but it is not always an equivalence
+There is a natural comparison functor $D(\Mod(A))\to D(A)$, but it is not always an equivalence
 % 46:30
-In essentially all cases I'm aware, it will come out to be an equivalence, but it's just not a general effect.
+In essentially all cases I am aware, it will come out to be an equivalence, but it is just not a general effect.
 \end{warning}
 
 % 46:45
@@ -355,35 +415,36 @@ So the good thing we are to focus on is the thing that we simply call $D(A)$.
 % 46:55
 The previous proposition has an analog on the derived double \note{todo}.
 
-\begin{proposition}
-$D(A) \subset D(\Cond(A^\tri))$ triangulated.
+\bp
+$D(A) \subs D(\Cond(A^\tri))$ triangulated.
 subcategory stable under all $\bigoplus$, all $\prod$.
 
 The inclusion has a left adjoint
-- $\otimes_{A^\tri}^L A: D(\Cond(A^\tri)) \to D(A)$
+- $\tnsr_{A^\tri}^L A: D(\Cond(A^\tri)) \to D(A)$
 
-The kernel is a $\otimes$-ideal.
-\end{proposition}
+The kernel is a $\tnsr$-ideal.
+\ep
 
-So E of A triangle triang--probably in one or two lectures we will probably switch to the infinity categorical language, where we would say "stable infinity category" instead. For now, it's not really requir--, so let me just TR more classical terms.
+So E of A triangle triang--probably in one or two lectures we will probably switch to the infinity categorical language, where we would say "stable infinity category" instead. For now, it is not really required. So let me just TR more classical terms.
 
 Stable under all-- so again, in stable infinity case we could say "stable under all limits and colimits", but general limits and colimits are not well behaved work Str categories. But you can say something equivalent-- and stable under all direct sums -- and for product, which are well behaved to what they're supposed to do.
 
 % 48:31
-The inclusion again has a left adjoint, that I will call the derived tensor product. Again, this has a property that if you have something, it becomes an isomorphism here. Then if you tensor it with anything else, it's still the same. 
+The inclusion again has a left adjoint, that I will call the derived tensor product. Again, this has a property that if you have something, it becomes an isomorphism here. Then if you tensor it with anything else, it is still the same. 
 % 49:09
-Because this is now a triangulated category, you can actually phrase this equ-- in terms of the co--. So if you have something in the kernel of this, then you tend up with something sa-- the.
+Because this is now a triangulated category, you can phrase this equ-- in terms of the co--. So if you have something in the kernel of this, then you tend up with something sa-- the.
 
 % 49:30
 Then again, this the T-- here. 
+
 % 50:21
-[Ofer:] If one wants to to do the previous type of argument for this fact, then one lends into the question of whether-- of course there is internal or in the full derived category by unbounded and so on. But is the question is whether if you have internal $\Hom$ -- from anything to something in $D(A)$, then it lies in $D(A)$, 
+\gabber If one wants to to do the previous type of argument for this fact, then one lends into the question of whether-- of course there is internal or in the full derived category by unbounded and so on. But is the question is whether if you have internal $\Hom$ -- from anything to something in $D(A)$, then it lies in $D(A)$, 
 
 
-[Peter] right? 
+\scholze right? 
 
 
-[Ofer:] This is not-- because of unboundedness, I don't-- of course you have a bounded complex, you have a spectral sequence. You still have to work with that. Here you have unbounding in both directions, I can see in one direction you have 
+\gabber This is not-- because of unboundedness, I don't-- of course you have a bounded complex, you have a spectral sequence. You still have to work with that. Here you have unbounding in both directions, I can see in one direction you have 
 
 IND light conding is still repete. So the derived category is left complete and so I think you can control the question. Let let me do this in a second when I come to the proof-- the product maying base changed.
 
@@ -391,17 +452,17 @@ You have-- I don't know, $M'$ to $M$, $M'$, $M'_1$, $M'$, and there a modules. l
 
 
 % todo proper placement
-There is a unique symmetric monoidal tensor prodict $ - \otimes^L_A -$ on $D(A) making $ - \otimes^L_{A^\tri} A$ symmetric monoidal.
+There is a unique symmetric monoidal tensor product $ - \tnsr^L_A -$ on $D(A)$ making $ - \tnsr^L_{A^\tri} A$ symmetric monoidal.
 
 
 \begin{sketch}
 \underline{triangulated:}
 $ M^{'} \to M \to M^{''} \to M^{'}[i]$
-triangle in $D(\Cond(A^\tri))
+triangle in $D(\Cond(A^\tri))$
 and $M^{'}, M^{''} \in D(A)$
 to show $M \in D(A)$
 
-But for this we just look at long exact sequence. So we have 
+But for this, we just look at long exact sequence. So we have 
 
 $H(M')$ have $H$, and these are $A$. 
 
@@ -416,13 +477,13 @@ So if I have some quotient here and have some cokernel. This is a kernel of the 
 $K, Q \in Mod(A)$
 
 % 53:55
-Here we use stability on the kernels and quotients, and then we use stability on extensions. 
+Here, we use stability on the kernels and quotients, and then we use stability on extensions. 
 
 
 % 55:23
 Stability under $\bigoplus$ reduces to $H_i$'s 
 
-No I think standing here actually realize. So and the directed to the $H$, and not standing realize that possibility the product, countable ones, they definitely reduce to $H_i$'s.
+Now standing here, I realize. So and the directed to the $H$, and not standing realize that possibility the product, countable ones, they definitely reduce to $H_i$'s.
 
 \begin{align*}
 \prod_\N \to H_i % todo 's
@@ -437,9 +498,9 @@ then the uncountable ones? That was okay when we were working in the full conden
 Dustin, should I just assume that there is a left adjoint on the level of the right categories? 
 
 
-[Dustin:] I'm sorry, I was busy with the chat. What's going on? 
+\clausen I'm sorry, I was busy with the chat. What's going on? 
 
-[Peter:] Why is it stable under all products?
+\scholze Why is it stable under all products?
 
 Why is what stable under all products? 
 
@@ -450,22 +511,22 @@ The subcategory of complete ones?
 all products! Instead of just countable products, right? 
 
 % 56;26
-[Ofer:] all products exist, but is it exact in your category? 
+\gabber all products exist, but is it exact in your category? 
 
 
-[Dustin:] Yeah, this is a problem. 
+\clausen Yes, this is a problem. 
 
 
 the problem in light condensed abelian groups limits, all products are not exact. 
 
 % 56:35
-[Dustin:] This is a problem. We'll have to think about this. 
+\clausen This is a problem. We will have to think about this. 
 
 % 56:47
-[Peter:] It's not an actual issue in some sense, but I screwed up the definition. So we should ask for the existence of left adjoints. 
+\scholze It is not an actual issue in some sense, but I screwed up the definition. So we should ask for the existence of left adjoints. 
 
 \begin{question}
-Should ask for existence of left adjoints to the inclusion $D(A) \subset D(\Cond(A^\tri))$ definion \note{todo}.
+Should ask for existence of left adjoints to the inclusion $D(A) \subs D(\Cond(A^\tri))$ definion \note{todo}.
 \end{question}
 
 % 57:57
@@ -473,12 +534,17 @@ Dustin did in the first lecture and I just threw it out when I prepared the lect
 % 57:03
 For existence of left adjoints. The definition, I definitely want the admitted left adjoints.
 
-Now I made this next thing actually part of the definition that exists.
+Now I made this next thing part of the definition that exists.
 
 Let's say $M$ is complete. Then, is any condensed... No, sorry. What I want to show is $N$ is in $D^-(A)$. Then there anything... Then you have to show that:
 
 
-for all $L$ in $D(A)$, $\Hom_{D(\Cond(A^\tri))}(M \otimes^L_{A^\tri} N, L) = 0$ are complete. \note{todo} \label{eq:08-}
+for all $L$ in $D(A)$, 
+\begin{align*}
+\Hom_{D(\Cond(A^\tri))}(M \tnsr^L_{A^\tri} N, L) = 0$ 
+\end{align*}
+
+are complete. \note{todo} \label{eq:08-}
 
 % 1:00:28
 First of all, because light condensed sets are what is known as replete topos. 
@@ -487,7 +553,7 @@ This means that countable limits of surjections are surjections.
 % 1:00:58
 This notion was introduced in my paper with Bhargav Bhatt \note{not sure}, but on the pro-side.
 % 1:01:05
-One thing we saw there is that this implies that any such... Sorry, for all $K$, I didn't use the letter $K$, right? So for any $K$ which is, for example, a condensed abelian group or module, $K$ is isomorphic to the derived limit of its truncations in degrees at most $n$. Some kind of limit, usually of abelian groups.
+One thing we saw there is that this implies that any such... Sorry, for all $K$, I didn't use the letter $K$, right? So for any $K$ which is, for example, a condensed abelian group or module, $K$ is isomorphic to the derived limit of its truncations in degrees at most $n$. Some limit, usually of abelian groups.
 
 
 Countable limits of surjections are surjections. \label{assumption:08-countable-limits}
@@ -519,7 +585,7 @@ Sorry, it is not complete,
 Because then you can rewrite this as a $\Hom$ from $N$ \note{not sure if N or L} into this guy. But I assume that $M$ has trivial completion, so it doesn't have to do anything.
 
 %
-This I want to reduce to the level where I kind of had the statement that if $L$ is in $D^-(A)$ and $M$ is in $D^+(A)$, then all the internal $\Hom$'s are in $D^+(A)$. 
+This I want to reduce to the level where I had the statement that if $L$ is in $D^-(A)$ and $M$ is in $D^+(A)$, then all the internal $\Hom$'s are in $D^+(A)$. 
 The issue though, as already pointed out, is that here we need to ask this condition for all possibly unbounded complexes. That is why I mentioned this fact. 
 This at least allows us to assume that $L$ is in $D^-(A)$.
 
@@ -534,10 +600,15 @@ On the other hand, $N$ can be written as a colimit of the truncations to the lef
 N = \colim_n N % todo
 \end{align*}
 
-This is always true, that there is a colimit of truncations $\tau_{\geq -n} N$. $\tau_{\geq -n} N$ is in $D^{\geq -n}(A)$.
+This is always true, that there is a colimit of truncations $\tau_{\geq -n} N$. 
+\begin{align*}
+\tau_{\geq -n} N \in D^{\geq -n}(A)
+\end{align*}
 
-
-But then the spectral sequence reduces one to $L \in \Mod(A), N \in \Cond(A^\tri)$ $\leadsto$ condition $\IntExt^i_{A^{\tri}}(N,L) \in \Mod(A)$
+But then the spectral sequence reduces one to 
+\begin{align*}
+L \in \Mod(A), N \in \Cond(A^\tri) \leadsto \text{ condition } \IntExt^i_{A^\tri}(N,L) \in \Mod(A)
+\end{align*}
 
 %
 This is much easier because colimits forgetful to direct sums are always good. 
@@ -549,19 +620,23 @@ Because we know I think that is fine.
 Once you have that, the existence of the tensor product is just the same formal diagram chase that I did not execute previously, but did earlier.
 
 % 1:08:10
-Another thing I should have mentioned as part of the general theory, but did not, is that $D^{\\leq 0}(A)$ has a natural $t$-structure, making it a stable $\\infty$-category. 
+Another thing I should have mentioned as part of the general theory, but did not, is that $D^{\leq 0}(A)$ has a natural $t$-structure, making it a stable $\infty$-category. 
 The left adjoint is not generally $t$-exact, as we've already seen that solidification could turn something unbounded on the left. 
 Still, this left adjoint preserves connective objects.
 
-\begin{proposition}
-$D(A)$ has a natural $t$-structure.  Taking inclusions is $t$-exact:
+\bp
+$D(A)$ has a natural $t$-structure. This makes taking inclusions $t$-exact:
 \begin{align*}
-(D(A) \into D(\Cond(A^\tri))
+(D(A) \mono D(\Cond(A^\tri)) \quad & \text{$t$-exact}
 \end{align*}
-$\otimes^L_{A^\tri}$ preserves $D_{\geq 0}$.
-\end{proposition}
+$\tnsr^L_{A^\tri}$ preserves $D_{\geq 0}$.
+\ep
 
 \begin{sketch}
+
+
+
+
 \end{sketch}
 
 %
@@ -573,7 +648,7 @@ Let me check whether this maps to anything which is concentrated on the right, b
 But then this is still in this category.
 
 % 1:11:42
-In particular, you can talk about the heart: $\D(A)^\heart$. 
+In particular, you can talk about the heart: $D(A)^\heart$. 
 The heart is also definitionally just $\Mod(A)$. 
 If you take this and pass to the heart, this is $A$. 
 % todo
@@ -587,7 +662,7 @@ I think if you do recover the correct categories, you also recover the correct f
 But the tensor product is a bit subtle. Again, in practice it is true that $C(A)$ is just the animation, and all these functors are correct.
 
 % 1:13:40
-With that out of the way, I'm almost done with my lecture, unfortunately.
+With that out of the way, I am almost done with my lecture, unfortunately.
 
 %
 Back to the comparison. 
@@ -595,7 +670,7 @@ Back to the comparison.
 When we had Huber rings, we had these topologically nilpotent elements and so on. Dustin already gave a variant of this. 
 % 1:14:20
 First of all, Huber rings themselves are Huber pairs $(A, A^+)$. These condense to rings of course. 
-All this is actually fully faithful. All my ones are complete. \note{todo}
+All this is fully faithful. All my ones are complete. \note{todo}
 
 % https://q.uiver.app/#q=WzAsNSxbMCwxLCJcXHRleHR7SHViZXIgcmluZ3N9Il0sWzEsMCwiXFx0ZXh0e1NvbGlkIHJpbmdzfSJdLFsyLDEsIlxcdGV4dHtDb25kZW5zZWQgcmluZ3N9Il0sWzAsMiwiQV5cXHRyaSJdLFsyLDIsIlxcdW5kZXJsaW5le0F9XlxcdHJpIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMCwyLCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFsxLDIsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzMsNCwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dXQ==
 \[\begin{tikzcd}
@@ -609,13 +684,13 @@ All this is actually fully faithful. All my ones are complete. \note{todo}
 \end{tikzcd}\]
 
 %
-Actually, I should denote these as $A^\solid$ and $A^{\solid+}$ where the $\solid$ means solid. 
+I should denote these as $A^\solid$ and $A^{\solid+}$, where the $\solid$ means solid. 
 % 1:15:19
 Last time, Dustin already gave a definition that for a solid ring $A^\solid$, we can define subsets $A^\blacksquare \circ$ and $A^{\blacksquare \circ\circ}$ of the underlying condensed ring.
 
-\begin{definition}
+\bd
 $A^\solid$ solid ring, can define 
-$ A \subset A^0 \subset A^\tri(x)$
+$ A \subs A^0 \subs A^\tri(x)$
 
 $A = \{ f \in A^\tri(x)| \Z[T] \to $
 %todo diagram
@@ -625,10 +700,10 @@ $A$ integrally closed subring
 
 $A$ solid ideal
 
-\end{definition}
+\ed
 
 %
-Let me recall, $A^\blacksquare \circ$ was the set of elements in the underlying ring such that the corresponding map $\Z[T] \to A^\blacksquare$ factors through $\Z\langle T \rangle$. There was some discussion about how much structure you need to check here. The condition was that it factors as condensed rings. It is actually enough to check that it factors as condensed modules over $\Z$.
+Let me recall, $A^\blacksquare \circ$ was the set of elements in the underlying ring such that the corresponding map $\Z[T] \to A^\blacksquare$ factors through $\Z\langle T \rangle$. There was some discussion about how much structure you need to check here. The condition was that it factors as condensed rings. It is enough to check that it factors as condensed modules over $\Z$.
 
 %
 Then $A^{\solid\circ\circ}$ was defined as the set of elements $f$ such that there is a sequence $(f_n)_{n \geq 0}$ with $f_0 = f$, $f_{n+1}^p \in f_n A^\blacksquare \circ$ for all $n$, and $f_n \to 0$. This comes together with a smallness condition that $f$ times the shifted sequence makes it $I$-adically Cauchy.
@@ -637,7 +712,7 @@ Then $A^{\solid\circ\circ}$ was defined as the set of elements $f$ such that the
 If you apply this to the case where this solid ring $A^\solid$ arose from a Huber ring, then this is precisely the set of topologically nilpotent elements, and those define the $\circ\\circ$-elements. When you regard 
 
 %
-Is precisely the same thing as $H \subseteq A$ being power-bounded. Dustin showed last time that this is always an integral statement.
+Is precisely the same thing as $H \se A$ being power-bounded. Dustin showed last time that this is always an integral statement.
 
 %
 This here is always a what is the definition? Given $f$, I can again---let me write again why this means I can "$a$" and then the condition is, I am already speaking of modules over $C$, modules over the closed unit disc, as we motivated last time. This means that $\lvert f(a) \rvert$ should be at most $1$. So it should be also power-bounded.
@@ -647,7 +722,7 @@ This here is always a what is the definition? Given $f$, I can again---let me wr
 \begin{definition}
 Assume $A$ analytic ring structure on solid ring $A$
 \begin{align*}
-A^{+} = \{ f \i A¨\tri | todo \}
+A^{+} = \{ f \in A^\tri | T \mapsto f, \Z[T] \to A^\tri \text{ induces map of analytic ring } \} %todo
 \end{align*}
 \end{definition}
 
@@ -663,17 +738,19 @@ I realized I did not define this, so let me do this in just a second. Such that 
 This map induces a map of analytic rings, from $\mathbf{V}$ (the corresponding solid module). Yeah, that's precise.
 
 % todo proper placement
-\begin{definition}
-Given $A = (A^\tri, \Mod(A))$ and $B = (B^\tri, \Mod(B)), a map of analytic rings $A \to B$ is a map $A^\tri \to B^\tri$ such that 
+\bd[Map of analytic rings]
+Given $A = (A^\tri, \Mod(A))$ and $B = (B^\tri, \Mod(B)$), a \textit{map of analytic rings} $A \to B$ is a map $A^\tri \to B^\tri$ such that 
 % todo diagram
-$\leadsto$ Pass to left adjoint. get $\otimes_A B: \Mod(A) \to Mod(B)$ todo
-
+$\leadsto$ Pass to left adjoint. get 
+\begin{align*}
+\tnsr_A B: \Mod(A) \to Mod(B) %todo
+\end{align*}
 % 1:24:00
 Once you pass left adjoints, the left adjoint to restriction of scalars (i.e., what I term the base change functor) becomes the left adjoint here. 
 So you get it also left adjoint here, which is base change. 
 If you want, you can compute it by first base changing as condensed modules and then completing it. You also get a derived functor.
 
-\end{definition}
+\ed
 
 %
 Something that I should have said previously but forgot. Let $\phi\colon R \to S$ be a map of condensed rings, $M$ an $S$-module, and $N$ an $R$-module. 
@@ -684,13 +761,13 @@ In this case, you can pass to the left adjoints on the level of derived categori
 
 %
 So the claim is that first of all, once you have such an analytic ring, you can get data as in Huber. 
-I will immediately check that this actually automatically satisfies his list of conditions that he puts on his ring of integral elements.
+I will immediately check that this automatically satisfies his list of conditions that he puts on his ring of integral elements.
 
 %
-Conversely, whenever you have a ring of integral elements in Huber's theory, you can actually produce an analytic ring which is in some sense the initial one.
+Conversely, whenever you have a ring of integral elements in Huber's theory, you can produce an analytic ring which is in some sense the initial one.
 
 % 1:26:20
-First of all, I can also rewrite this power-boundedness condition. It's all those things such that $1 - sT^*$ (which is an endomorphism) maps $D(T)$ into $A^+$.
+First of all, I can also rewrite this power-boundedness condition. It is all those things such that $1 - sT^*$ (which is an endomorphism) maps $D(T)$ into $A^+$.
 
 
 $ = \{ f \in  \}$
@@ -698,33 +775,33 @@ $ = \{ f \in  \}$
 %
 Changing notation: $P$ was this "$P$" called---it is always the spectrum based on the normed $R$-algebra. We characterized being solid over $\Z[[T]]$ by being solid (but this we already asked), and that $1-sT^*$ is a morphism on this projective generator.
 
-% 1:27;11
-What is actually equivalent to ask is that if I look at this thing here (an object in ${D}(A)$), then this is an isomorphism. 
+% 1:27:11
+What is equivalent to ask is that if I look at this thing here (an object in ${D}(A)$), then this is an isomorphism.
+
+
 % 1:27:32
-Why? If I admit such a map, then this already happens here---like, already here, $1-sT^*$ becomes an automorphism of this object (definitionally). 
+Why? If I admit such a map, then this already happens here $\Z[T]$ \note{todo ref}---like, already here, $1-sT^*$ becomes an automorphism of this object definitionally. 
 But on the other hand, because this precisely characterizes the solid modules here, you can also show the converse.
 
-%
-If I want to show that I have such $A^+$, I need to show that all complete $A^+$-modules here restrict to complete $A$-modules here. 
-But being complete precisely meant that if I tensor $1-sT^*$ into there, it becomes an isomorphism. So just translates.
+% 1:27:55
+If I want to show that I have such condensed, I need to show that all complete $A^+$-modules here restrict to complete $A$-modules here. 
+But being complete precisely meant that if I tensor $1-sT^*$ into there, it becomes an isomorphism. So it just translates.
 
 %
-\textbf{Question:} Basically, whenever you have any element $s$ of your underlying ring, you can ask this condition that $1-sT^*$ becomes a morphism of $P$. 
+Whenever you have any element $s$ of your underlying ring, you can ask this condition that $1-f-\shift$ becomes a morphism of $P$. 
 And this will define for you an analytic ring structure by general theory. 
-Basically whenever you have an endomorphism of your complete projective object $P$, declaring that this should be an "as morphism" for all $s$ in the ring structure---so you can take
+Whenever you have an endomorphism of your complete projective object $P$, declaring that this should be an "as morphism" for all $s$ in the ring structure---so you can take
 Modules... 
 % 1:29:50
-But then probably it's equivalent to what you have written, if you think about it, but in the derived way. 
+But then it is probably equivalent to what you have written, if you think about it, but in the derived way. 
 I just want to confirm that the two versions are equivalent. Yes, right? 
 
-\textbf{Answer:} Because you can actually detect analytic $R$-structures on the level of modules. 
-It's enough to check it on the underlying level, the $\Ind$-level. That is also true, yes. 
+\ans Because you can detect analytic $R$-structures on the level of modules. 
+It is enough to check it on the underlying level, the $\Ind$-level. That is also true, yes. 
 
-\textbf{Question:} So it's equivalent.
+\ques So it is equivalent.
 
-\textbf{Answer:} Yes.
-
-
+\ans Yes.
 
 % 1:30:42
 So with derived $I$ would be more confident, but I think the argument just sketched goes through. 
@@ -732,29 +809,29 @@ So with derived $I$ would be more confident, but I think the argument just sketc
 
 The point is that this subset $A_L$ automatically satisfies the conditions. 
 It always contains the topologically nilpotent elements, which are always an open subset. $\{u\in R\mid \sum_{i\geq 0} a_i u^i$ converges$\}$ in particular, this is open. 
-When $R$ comes from $\Q_p\langle T \rangle$, it's always containing the power-bounded elements, and it's always integrally closed.
+When $R$ comes from $\Q_p\langle T \rangle$, it is always containing the power-bounded elements, and it is always integrally closed.
 
-\begin{proposition}
-$ \subset A^{+} \subset A^{0} (\subset A^{\tri}) $ is an integrally closed subring.
-\end{proposition}
+\bp
+$ \subs A^{+} \subs A^{0} (\subs A^{\tri}) $ is an integrally closed subring.
+\ep
 
-\begin{proof}
+\bq
 $f \in A \leadsto $
-\end{proof}
+\eq
 
 %
-Wy is that? If $f\in R\langle T \rangle$ is an element, then we actually get a power series... 
-That is almost... if I have a module that's actually $\Z_p[[T]]$-module in $\Solid_A$, that's automatically $p$-torsion-free, actually. 
-This proof is exactly the same as last time, just because all I used was arguments about modules being solid over one ring implying they're solid over another, and so on. 
+Why is that? If $f\in R\langle T \rangle$ is an element, then we get a power series... 
+That is almost... if I have a module that is a $\Z_p[[T]]$-module in $\Solid_A$, that is automatically $p$-torsion-free. 
+This proof is exactly the same as last time, just because all I used was arguments about modules being solid over one ring implying they are solid over another, and so on. 
 Yes, let me just state it again.
 
 %
-These are actually all there. But this means that whenever I have a module here over $A$, it in particular becomes a module here, which is solid. 
+These are all there. But this means that whenever I have a module here over $A$, it in particular becomes a module here, which is solid. 
 Everything is solid. So it must be an underlying solid ring.
 
 % todo timestamp and place in text
 
-\underline{Thus} for a Huber ring $A^\tri$
+Thus for a Huber ring $A^\tri$
 
 \[
 \left\{ \parbox{3cm}{\centering rings of \\ integral elements} \right\} \leftarrow \left\{ \parbox{3cm}{\centering solid analytic ring \\ structures on $A^{\tri}$} \right\}
@@ -762,11 +839,11 @@ Everything is solid. So it must be an underlying solid ring.
 % todo map
 
 %
-If $A^+$ is integrally closed, then I get a map from here, $\{a\in A\mid \forall M\in A\text{-}\Mod, M \text{ solid} \implies aM \subseteq M\}$, to $A$. 
+If $A^+$ is integrally closed, then I get a map from here, $\{a\in A\mid \forall M\in A\text{-}\Mod, M \text{ solid} \implies aM \se M\}$, to $A$. 
 But in particular this means that $A^+$, the underlying condensed ring which we always assume is a complete $\Z_p$-module, by restriction... So if $f$ is an element in $A$, so this group scheme inclusions $A^+\to A$... 
-Therefore, something that's the same argument. 
+Therefore, something that is the same argument. 
 So in fact, the argument that Dustin gave there was already talking not just about a triangle, but about any module. 
-And so if you just run his argument, to see this is what he actually...
+And so if you just run his argument, to see this is what he...
 
 % 
 Therefore, if $A$ is any triangle, I have the solid analytic $R$-structure $\mathcal{A}_1$ which lives over $\Z_p\langle T \rangle$ and consider this morphism of rings of integral elements. 
@@ -774,57 +851,106 @@ I just gave you a recipe here that was taking some such analytic ring structure 
 
 
 %
-It is actually functorial. So you can actually show that $f:A\to B$, one arrow is contained in the other. You get an inclusion of the analytic rings. 
+It is functorial. So you can show that $f:A\to B$, one arrow is contained in the other. You get an inclusion of the analytic rings. 
 % 1:37:05
-This actually has a left adjoint, I assume.
+This has a left adjoint, I assume.
 
 %
 So whenever I have a ring $A$, so I can produce an $\mathcal{A}_1$-ring structure on the solid $A$-modules. 
 Yes, so $\Solid_A$ admits an $\mathcal{A}_1$-ring structure. 
 It is unique because the ring of endomorphisms is unique, and then it is just a condition. 
-It is just a condition that all the $A$-modules are actually solid.
+It is just a condition that all the $A$-modules are solid.
 
 % 1:38:35
-\begin{definition}
-An analytic ring $A = (A^\tri, \Mod(A))$ is \underline{solid} if it admits a (necessarily unique) map $\Z_\solid \to A$, where $\Z_\solid = (\Z, \Solid_\Z)$.
+\bd[Solid analytic ring]
+An analytic ring $A = (A^\tri, \Mod(A))$ is \textit{solid} if it admits a (necessarily unique) map 
+\begin{align*}
+\Z_\solid \to A$, 
+\end{align*}
+where $\Z_\solid = (\Z, \Solid_\Z)$.
 
-$\iff$ $1-\text{shift}: P \otimes_\Z A $ is an isomorphism. %todo
-\end{definition}
+$\iff$ $1-\text{shift}: P \tnsr_\Z A $ is an isomorphism. %todo
+\ed
 
-A different way to phrase this is to ask that $1-\varphi$ is an automorphism of $A^+\otimes\Q_p$. It doesn't matter.
+A different way to phrase this, is to ask that $1- \shift$ is an automorphism of $P \tnsr_\Z A$. It doesn't matter.
 
 % 1:39:37
 So I wanted to say that it has a left adjoint. 
 % 1:39:43
-If I have a Huber pair $(A^\tri,A^{+})$, then I can send it to $A = (A^\tri,A^{+})_\solid$
-if I have a morphism of pairs $(A,A^+)\to (B,B^+)$, then I can send this to the ring $B$ associated, where mod $B^+$ by definition, all those
+If I have a Huber pair $(A^\tri, A^{+})$, then I can send it to $A = (A^\tri,A^{+})_\solid$
+\begin{align*}
+(A^\tri, A^{+}) \mapsto (A^\tri,A^{+})_\solid
+\end{align*}
+where
+where I have $1-f\shift$ acting on $\IntHom(P,M)$.
+\begin{align*}
+\Mod(A) = \{ M \in \Cond(A^{\tri}) | \IntHom(P,M) \to \IntHom(P,M) \}
+\end{align*}
 
-$\Mod(A) = \{ M \in \Cond(A^{\tri}) | \IntHom(P,M) $ %todo
+% if I have a morphism of pairs $(A,A^+)\to (B,B^+)$, then I can send this to the ring $B$ associated, where mod $B^+$ by definition, all those
 
-%
-Usually there's just one or two elements, something where you really have to check. All the same thing as those modules, and only for those two elements.
+% $\Mod(A) = \{ M \in \Cond(A^{\tri}) | \IntHom(P,M) \} $ %todo
 
+% 1:41:17
+Because these $A^{+}$ are integrally closed, it is enough to ask for a kind generating set.
+% 1:41:25
+Whenever you have the subset of $A^{+}$ that generates that ...integrally closed subring or ring of integral elements, then it is enough to check for the subset.
+
+% 1:41:34
+Usually there is just one or two elements, something where you really have to check. All the same thing as those modules, and only for those two elements.
+\begin{align*}
+\Mod((A^\tri, A^{+})) = \{ M | \forall f \in S, 1-f \dot \shift: \IntHom(P,M) \iso \IntHom(P,M) \}
+\end{align*}
+
+% 1:42:45
+\bex
+To connect to the beginning, for example, $(\Z, \Z)_\solid$ is a Huber pair, these are just $\Z_\solid$-modules.
+\begin{align*}
+(\Z, \Z)_\solid = \Z_\solid = (\Z, \Solid_\Z)
+\end{align*}
+
+\begin{align*}
+(\Z[T], \Z)_\solid = (\Z[T], \Mod_{\Z[T]}(\Solid_\Z))
+\end{align*}
 %
-To connect to the beginning, for example, like $Z[Z]$-pairs, these are just $Z[Z]$-modules. 
-%
-If I take $Z$, that's the pair. So if I only put $Z$ here, then I'm only asking that it's $Z$-solid over $Z$. So I take all $Z[T]$-modules and $Z$-solid $Z$-modules. 
-But then when I take this, it becomes $R_0$ for $A^+$. So let me just state one last proposition.
+If I take $Z$, that is the pair. So if I only put $Z$ here, then I am only asking that it is $Z$-solid over $Z$. So I take all $Z[T]$-modules and $Z$-solid $Z$-modules.
+\eex
+
+
+\bex
+\begin{align*}
+(\Z[T], \Z[T])_\solid = (\Z[T], \Solid_{\Z[T]})
+\end{align*}
+\eex
+But then when I take this, it becomes $R_0$ for $A^+$. 
+
+
+% 1:43:30
+So let me just state one last proposition.
 
 % 1:44:06
-\begin{proposition}
-Equivalently, get fully faithful functor
-$ \{ \}$
-\end{proposition}
+\bp
+If $(A^\tri, A^{+}) \mapsto A = (A^\tri, A^{+})_\solid$
+\ep
 
 %
-When you start with $H$, and then go to $A^+$, then if I go back, this actually matches back to $A^+$. 
-If I write, I have an analytic ring and then I can take its plus ring. So this is actually a plus equivalence, the left adjoint functor, from $R_0$ to $A^+$.
+When you start with $H$, and then go to $A^+$, then if I go back, this matches back to $A^+$. 
+If I write, I have an analytic ring and then I can take its plus ring. So this is a plus equivalence, the left adjoint functor, from $R_0$ to $A^+$.
 
+
+% 1:44:55
+Equivalently, get fully faithful functor
+\begin{align*}
+\{ \text{Huber pairs \} \mono \{ \text{(solid) analytic rings} \}
+\end{align*}
+\begin{align*}
+(A^\tri, A^{+}) \mapsto (A^\tri, A^{+})_\solid
+\end{align*}
 %
 So all brings, but they are all---I am really still quite struck by how closely the theory of solid analytic rings really matches Huber's classical theories. 
 %
 If you restrict to analytic rings where you only allow yourself to put conditions that one minus some element times the shift operator on $T$ becomes an isomorphism, then you are precisely getting those analytic ring structures that are induced by rings of integral elements in Huber's sense. 
 %
-Which is kind of very strong a posteriori motivation for this definition.
+Which is very strong a posteriori motivation for this definition.
 
 \end{unfinished}
