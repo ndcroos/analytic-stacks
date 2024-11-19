@@ -15,13 +15,13 @@ I want to talk about the relation between these basic objects that appear in Hub
 % 1:13
 By now, we have seen several examples of a pair of a light condensed ring $A$, with a notion of "complete" condensed $A$-modules. 
 % 2:08
-The first one we discussed was the $\Z$ and solid abelian groups inside of all condensed abelian groups. 
+The first one we discussed was $\Z$ and solid abelian groups inside of all condensed abelian groups. 
 \begin{align*}
 (\Z, \Solid_{\Z} \subs \Cond(\Ab))
 \end{align*}
 
 % 2:29
-But then last time, Dustin discussed the example where you take the polynomial algebra over $\Z[T]$. Then within all $\Cond(\Z[T])$-modules, you can somehow just take the ones that are complete in the sense of this one thing $\Solid_\Z$. This amount to taking modules over this polynomial algebra inside of solid abelian groups ($\Mod_{\Z[T]}(\Solid_{\Z})$).
+But last time, Dustin discussed the example where you take the polynomial algebra over $\Z[T]$. Then within all $\Cond(\Z[T])$-modules, you can somehow just take the ones that are complete in the sense of this one thing $\Solid_\Z$. This amount to taking modules over this polynomial algebra inside of solid abelian groups ($\Mod_{\Z[T]}(\Solid_{\Z})$).
 \begin{align*}
 \Z[T], \Solid_{\Z[T]} \subs \Mod_{\Z[T]}(\Solid_{\Z}) \subs \Cond(\Z[T])
 \end{align*}
@@ -36,7 +36,7 @@ In these cases, the condensed thing was just discrete.
 % 3:31
 But this notion of completeness is still interesting. You could also take for example $\Z_p$ or $\Q_p$ or whatever, and then take solid $\Z_p$-modules. Or you could take $\Q_p$ and solid $\Q_p$-modules. In those cases, these are just the ones where the underlying condensed group is solid. 
 \begin{align*}
-(\Z_p, \Solid_{\Z_p}) (\Q_p, \Solid_{\Q_p})
+(\Z_p, \Solid_{\Z_p}), (\Q_p, \Solid_{\Q_p}), \ldots
 \end{align*}
 
 % 3:58
@@ -46,7 +46,7 @@ The notion of an analytic ring will somehow ... \note{didn't hear this} the situ
 
 On the other hand, when you learn about adic spaces, the basic objects there are Huber pairs. Let me recall what these are.
 % 4:40
-These are due to Huber, although of course Huber used different names.
+These are due to Huber, although Huber used different names of course.
 
 \bd[Huber ring]
 A \textit{Huber ring} is a topological ring $A$ that admits an open subring $A_0 \subs A$ and an ideal $I \subs A^+$, such that there exists some finitely generated $A_0$-ideal $I \subs I$, such that $A_0$ has the $I$-adic topology.
@@ -104,27 +104,32 @@ $\Q_p$ is a Huber ring. Any non-archimedean field is also a Huber ring. In this 
 The idea is that Huber rings are certain kinds of localizations or something like this of such adic rings with some adic topology.
 
 % 10:25
-Also, whenever you have any kind of Banach algebra over $\Q_p$ or some other non-archimedean local field, there is also always a Huber ring. As $A_0$, you can take the unit ball in your Banach algebra. As the ideal, you can take the one that comes from a uniformizer and \note{did not hear the last part}.
+Also, whenever you have any kind of Banach algebra over $\Q_p$ or some other non-archimedean local field, there is also always a Huber ring. As $A_0$, you can take the unit ball in your Banach algebra. As the ideal, you can take the one that comes from an uniformizer and \note{did not hear the last part}.
 
-\begin{unfinished}{10:25}
 
+
+% 10:55
 \br
-The completion $\hat{A}$ of any Huber ring $A$ is again a Huber ring. We will generally only consider complete \note{not sure} examples now. But completion in the classical sense, like, allow all convergent sequences mod $\mathfrak{m}^n$.
+The completion $\hat{A}$ of any Huber ring $A$ is again a Huber ring. Generally, we will only consider complete \note{not sure} examples now. But completion in the classical sense, like, allow all convergent sequences mod $\mathfrak{m}^n$.
 \begin{align*}
 I \subs A_0 \subs A
 \end{align*}
+
+If you start with a so-called ring of definition, one which has the $I$-topology for some finitely generated ideal $I$, then it will be the case that $\hat{A_0}$ will be an open subring of the completion of $A$. This is just the $I$-adic completion of $A_0$.
 \begin{align*}
 \underbrace{\hat{A_0}}_{\text{$I$-adic completion of $A_0$}} \subs \hat{A}
 \end{align*}
-\er
 
-If you start with a so-called ring of definition, one which has the $I$-topology for some finitely generated ideal $I$, then it will be the case that the completion of $A^+$ will be an open subring of the completion of $A$. This is just the definition of a Huber pair.
+% 12:10
+At least when one uses Huber rings and Huber pairs to do adic spaces, then the adic spaces associated with a Huber ring and its completion are definitionally the same. In this sense, non-complete Huber rings have at most a technical role in the whole theory.
 
-At least when one uses Huber rings and Huber pairs to do adic spaces, then the adic spaces associated with a Huber ring and its completion are definitionally the same. In this sense, non-complete Huber rings have at most a technical role.
+% 12:30
+We will only consider complete ones.
 
-We will only consider complete ones. 
 % 12:47
 So from the following, whenever I say Huber ring, Huber pair, and so on, I always assume that the underlying Huber ring is complete.
+
+\er
 
 % 13:08
 Last time, Dustin discussed some notions of topologically nilpotent elements, power-bounded elements, and so on. This can also be defined here.
@@ -134,7 +139,6 @@ If you have a Huber ring, then you can define topologically nilpotent elements a
 
 \bd
 $A$ Huber ring. Then $A^{\circ\circ} \subs A^\circ \subs A$ where
-
 \begin{align*}
 A^{\circ\circ} = \{ f \in A | \}
 \end{align*}
@@ -146,11 +150,20 @@ A^\circ = \{ f \in A | \{ f \} \text{ is bounded} \}
 \ed
 
 % 13:55
-These are all the elements such that the set of its powers is bounded. It is equivalent to saying that it is contained in some ideal of definition, some ring of definition.
+These are all the elements such that the set of its powers is bounded. 
+% 14:11
+It is equivalent to saying that it is contained in some such $A_0$ \note{not sure}, some such ring of definition.
 
+% 15:10
 A different way to think about this set: 
 % 15:15
-First of all, you have these canonically defined objects, $A^+$ and $A^{\circ\circ}$. But on the other hand, we used these things in the definition that there is some ring of definition and some ideal $I$ of definition of the same. These will always consist of power-bounded elements, and the ideal consists of topologically nilpotent elements.
+First of all, you have these canonically defined objects, $A^\circ$ and $A^{\circ\circ}$.
+\begin{align*}
+A^\circ \subs A^{\circ\circ}
+\end{align*}
+
+But on the other hand, we used these things in the definition that there is some ring of definition and some ideal $I$ of definition of the same. These will always consist of power-bounded elements, and the ideal consists of topologically nilpotent elements.
+\note{notation}
 
 In fact, for all $I \subs A_0 \subs A$ as above.
 
@@ -160,28 +173,29 @@ For example, in the case of $\Q_p$, $\Z_p$ is the $A^\circ$, and $(p)$ is the $A
 (p) \subs \Z_p \subs \Q_p
 \end{align*}
 
-In this case, these inclusions are equalities. 
+% 16:10
+So in this case, these inclusions are equalities. 
 
 % 16:15
-Of course, this cannot in general be true, because you could also take as ideal of definition the ideal generated by $p^2$, but then you don't have all topologically nilpotent elements.
+Of course, this cannot be true in general, because you could also take as ideal of definition the ideal generated by $p^2$, but then you don't have all topologically nilpotent elements.
 
 % 16:25
-But in some sense, this is as good as it gets. In fact, the collection of all such $A_0$'s, and the collection of all such $I$'s form a filtered collection. $A^\circ$ is the colimit of all possible such rings of definition. Similarly, $A^{\circ\circ}$ is the union of all ideals of definition.
-
+But in some sense, this is as good as it gets. In fact, the collection of all such $A_0$'s, and the collection of all such $I$'s form a filtered collection. $A^\circ$ is the filtered colimit of all possible such $A_0$'s. Similarly, $A^{\circ\circ}$ is the union of all ideals of definition.
+\note{todo}
 \begin{align*}
 A^{\circ\circ} = \lim_{I \subs A_0 \subs A} I \quad & \subs A^\circ = \lim_{A_0 \subs A} A_0 \subs A
 \end{align*}
 
 This was part one of the definition, together with a little bit of discussion. 
 % 17:24
-Part two was---oh no, sorry, there is no part two. I wanted to say that if I also have a ring of power-bounded elements, I can define an $A^+$, but it is vaceous because.
+I wanted to say that if I also have a ring of integral elements, I can define an $A^+$, but it is vaceous, because...
 
 % 18:15
 When you learn Huber's theory, at first, I think it is extremely hard to appreciate the significance of this ring of integral elements $A^+$. It is somewhat necessary to set up the theory, but it is hard to feel why it is necessary.
 
 % 18:42
 But it turns out that the theory that we developed using solid modules gives you a very good understanding of what it does. 
-% 18;50
+% 18:50
 Here is an example.
 
 \bex
@@ -198,10 +212,10 @@ So this will be
 \Z[T] \subs \Z[T] \leadsto \Solid_{\Z[T]}
 \end{align*}
 
-So the role that this $A^{+}$ will play is precisely the one of singling out which modules to be considered as complete.
+So the role that this $A^{+}$ will play, is precisely the one of singling out which modules to be considered as complete.
 \eex
 
-I have several possible examples. For instance, you could take $A = \Q_p\<T\>$, and in this case, $A^+$ is just $\Z_p\langle T \rangle$. For example, you could take just 
+I have several possible examples. For instance, you could take $A = \Q_p\<T\>$, and in this case, $A^+$ is just $\Z_p\langle T \rangle$. For example, you could take just \note{todo}
 
 % todo, text seems missing here.
 
@@ -219,18 +233,21 @@ But then they will have an underlying condensed ring, that is $\underline{A}$, a
 We did not come up with anything good, so we choose to just follow Huber's lead.
 \er
 
+\begin{unfinished}{22:00}
 % 22:12
-Let's say $A^\tri$ has now some light condensed ring. Then I want to say what is an analytic ring structure on this thing. So what is an allowed class of complete modules? Here is the definition. It is equivalent to the one that Dustin gave in the first lecture, but presented from a slightly more elementary perspective.
+Let's say $A^\tri$ has now some light condensed ring. Then I want to say what is an analytic ring structure on this thing. So what is an allowed class of complete modules? 
+
+Here is the definition. It is equivalent to the one that Dustin gave in the first lecture, but presented from a slightly more elementary perspective.
 
 \bd[Analytic ring structure]
 Let $A^\tri$ be a light condensed ring.
-An \textit{analytic ring structure} on $A^\tri$ is a full subcategory that is an abelian category
+An \textit{analytic ring structure} on $A^\tri$ is a full subcategory $Mod(A)$ that is an abelian category
 \begin{align*}
 \Mod(A) \subs \Cond(A^\tri)
 \end{align*}
 % 24:36
-So this is a condensed abelian group, together with a map $A^\tri \tsnr M \to M$,
-stable under all limits, colimits, extensions 
+So this is a condensed abelian group, together with a map $A^\tri \tsnr M \to M$.
+It is stable under all limits, all colimits, all extensions,
 all $\IntExt^i_{A^\tri}(N,-)$
 $N \in \Cond(A^\tri)$, and contains $A^\tri$.
 \ed
@@ -250,12 +267,11 @@ First of all, it should be an abelian subcategory, stable under kernels and coke
 Then there is a slightly tricky condition you want to check that is also stable under all $\IntExt^i_{A^\tri}(N,-)$, where $N \in \Cond(A^\tri)$. It is also stable under all $X \mapsto X^{\oplus I}$, for some set $I$. And it contains $A^\tri$.
 
 % 27:20
-\clausen So can I ask a question? Does it imply, maybe one can prove from this in some way, for example, that it ... a Grothendieck category? Where the condition that I allude to is the existence of a set of generators. Is it automatic under these conditions?
+\clausen So can I ask a question? Does it imply, maybe one can prove from this in some way, for example, that it ... a Grothendieck category, where the condition that I allude to is the existence of a set of generators. Is it automatic under these conditions?
 
 \scholze Yes, yes. Did you hear his answer?
 
-\clausen Yes, he said yes. 
-
+\clausen Yes, he said yes.
 
 \gabber Does it imply that the $\Ext$ groups in the subcategory are the same as the $\Ext$ groups in the full category?
 
@@ -268,56 +284,54 @@ Because it might not be the case that the thing I will define, the derived categ
 \gabber It is not? do you hear what I say?
 
 % 23:37
-\clausen Yes, I hear what you say. 
+\scholze Yes, I hear what you say. 
 
 % 28:41
 You said that in the derived category,
 
-the thing I will define as a certain triangulated category or stable $\infty$-category as a full subcategory of condensed derived category of $\Cond(A^\tri)$, which is the correct one. But in general it will not be the same thing as the derived category of this abelian category $\Mod(A)$ \note{todo}.
+the thing I will define as a certain triangulated category or stable $\infty$-category as a full subcategory of condensed derived category of $\Cond(A^\tri)$, which is the correct one. But in general, it will not be the same thing as the derived category of this abelian category $\Mod(A)$ \note{todo}.
 
 % 29:05
-\gabber So in this case, when you have this full subcategory you say that you have a derived category, which is not the derived category of this subcategory?
+\gabber So in this case, when you have this full subcategory, you say that you have a derived category, which is not the derived category of this subcategory?
 
 % 29:18
-\scholze Yes, 
+\scholze Yes.
 
-\clausen this is the heart of a $t$-structure. 
+\clausen This is the heart of a $t$-structure. 
 
-This is those whose homological groups are in this. So it does not imply that the $\Ext$'s are the same. Sometimes it does, sometimes it is true.
+\gabber This is those whose homological groups are in this. So it does not imply that the $\Ext$'s are the same. Sometimes it does, sometimes it is true.
 
 % 29:31
 \scholze In most practical cases it will end up being true. In full generality, no.
 
 % 29:51
-\scholze Now Dustin made me confused. I want to claim that there is automatically a left adjoint to the inclusion.
+\scholze Now Gabber made me confused. I want to claim that there is automatically a left adjoint to the inclusion.
 % 30:09
-\scholze Dustin do I really need somethinng for this?
-No, I think that is fine.
+\scholze Dustin do I really need something for this?
+
+\clausen No, I think that is fine.
 
 % 30:15
 \scholze What is the argument again for this?
 
 % 30:20
-It is again this general principle. I think it is not quite trivial, but I think it is a general principle that if you have a presentable category and a full subcategory closed under limits and sufficiently filtered colimits, in this case all filtered colimits, then the inclusion has a left adjoint. 
+\clausen It is again this general principle. I think it is not quite trivial, but I think it is a general principle that if you have a presentable category and a full subcategory closed under limits and sufficiently filtered colimits, in this case all filtered colimits, then the inclusion has a left adjoint. 
 
 % 30:40
-There is a very related statement that involves this set-theoretic nonsense that is called ... principle \note{todo}, but I think there you don't have the limits, right?
+\scholze There is a very related statement that involves this set-theoretic nonsense that is called ... principle \note{todo}, but I think there you don't have the limits, right?
 
-\clausen Yes, or maybe you don't have this sufficiently filtered colimits for something. I believe this statement that I just mentioned, which I believe you also mentioned at some point earlier.
-% 30:55
-It is just a fact in ZFC.
+\clausen Yes, or maybe you don't have this sufficiently filtered colimits or something. I believe this statement that I just mentioned, which I believe you also mentioned at some point earlier. It is just a fact in ZFC.
 
 % 31:00
 \scholze If not, then just assume that there is a left adjoint.
 
-\gabber What is the fact that there is 
+\gabber What is the fact, that there is...?
 
 % 31:05
-\clausen It is like if you have a presentable category and then you have a full subcategory closed under all limits and under all sufficiently filtered colimits, then the inclusion has a left adjoint. 
+\clausen It is like, if you have a presentable category and then you have a full subcategory closed under all limits and under all sufficiently filtered colimits, then the inclusion has a left adjoint. 
 
 % 31:16
 \gabber Is the category presentable?
-
 
 \clausen Only the big category has to be presentable, the small one will automatically be.
 
@@ -328,14 +342,24 @@ It is just a fact in ZFC.
 \clausen No, that is right, it is a non-trivial claim.
 
 
-\gabber It is a non-trivial claim which is true in
+\gabber It is a non-trivial claim, which is true in 
 
-% 31:52 end of definition.
+% 31:36
+\clausen I think it maybe implies you can leave out sufficiently filtered colimits or something. Don't quote me.
+
+% 31:52 
+\scholze end of definition.
 
 % 32:02
 First, I want to explain some general structures of this. First on the idea level.
 % 32:18
-The claim is that the left adjoint---which I will write as sending a module $M$ to its base change from $A_\infty$ to $A$---mod $A$ is just purely notational for now, but I will think of it as the modules over this analytic ring $A$.
+The claim is that there exists a left adjoint---which I will write as sending a module $M$ to its base change from $A_\infty$ to $A$---mod $A$ is just purely notational for now, but I will think of it as the modules over this analytic ring $A$.
+\begin{align*}
+\Cond(A^\tri) \to \Mod(A) \text{ to inclusion}
+\end{align*}
+\begin{align*}
+M \mapsto M \tnsr_{A^\tri} A
+\end{align*}
 
 sufficiently filtered colimit
 
@@ -386,7 +410,7 @@ because $F(M) = 0$ by assumption.
 
 The symmetric monoidal structure on $\Mod(A)$ has to be given by taking the tensor product in $\Mod(A_\infty)$, seeing this as a colimit in modules, and then completing again. The question is whether this makes the base change functor symmetric monoidal.
 
-39:50
+% 39:50
 To check this, for all $M,N \in \Mod(A_\infty)$, we can either first tensor $M$ and $N$ and then apply $F$, or we can first apply $F$ to both of them and then tensor in $\Mod(A)$. This has to give the same result.
 
 I think a better statement is that if a map in $\Mod(A_\infty)$ becomes an isomorphism under localization, then tensoring it with anything else also makes it an isomorphism. This follows from the same type of argument, by mapping into the subcategory and using the internal $\Hom$. I did this in the solid case, and it is the same argument here.
