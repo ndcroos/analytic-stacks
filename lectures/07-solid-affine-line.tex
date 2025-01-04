@@ -409,47 +409,52 @@ Note that this does have the required map from $M$, because $M$ is $\RHom$. \not
 
 % 31:07
 \begin{sketch}
-The proof of the claim: This follows formally from the fact that this ring $\Z[[T^{-1}]]$ is idempotent over $\Z[T]$, which follows from the very first description we gave of it as the base change of---we check that the power series ring is idempotent and we put that at infinity. The idempotency is preserved.
+The proof of the claim: This follows formally from the fact that this ring $\Z[[T^{-1}]]$ is idempotent over $\Z[T]$, which follows from the very first description we gave of it as the base change of the---we check that the power series ring is idempotent, and we put that at infinity. The idempotency is preserved.
+
+\begin{align*}
+\Z((T^{-1})) \tnsr_{\Z[T]}^{L\solid} \Z((T^{-1})) \iso \Z((T^{-1}))
+\end{align*}
 
 % 32:50
-For example, using the idempotency of that, what is this object here? It is just the homotopy fiber of the inclusion of this into this, and this is the base ring. We can easily check that idempotency is equivalently to equivalent to the derived idempotency of this object. 
-That means that if we take this expression and we apply it again, we get the same object back. So that is an idempotent operation.
+For example, using the idempotency of that, what is this object here (\note{add label}? 
 
-Again, the same idempotence will prove to us that if we take this operation and $\RHom$ from this object $\Z[T]$, we get zero. So this thing is $\Z[T]$-solid. That is not quite everything we need to check, but it is everything we need to check. 
-It is an idempotent operation, and $M$ is solid if and only if this map is an isomorphism. So it is just completely formal, and I will not write out all of the details.
+It is just the homotopy fiber of the inclusion of this into this \note{add what he points at}, and this is the base ring. We can easily check that this idempotency is equivalent to the derived idempotency of this object. 
+That means that if we take this expression and we apply it again, we get the same object back. So that is an idempotent operation.
+% 33:15
+Again, the same idempotence will prove to us that if we take this operation and $\RHom$ from this object $\Z[T]$, we get zero. So this thing is $\Z[T]$-solid. That is not quite everything we need to check, but it is basically everything we need to check. 
+It is an idempotent operation, and $M$ is solid if and only if this \note{add what he points at} map is an isomorphism. So it is just completely formal, and I will not write out all of the details.
 
 
 \end{sketch}
 
-Note: This is a formula for the derived solidification of a general $\Z\langle T \rangle$-module. 
+Note: This is a formula for the derived solidification of a general $\Z[T]$-module. 
 % 34:04
-But something nice happens if your $\Z\langle T \rangle$-module is base changed from a solid $\Z$-module.
-
-% todo right timestamp
-\bd[Topologically nilpotent]
-$f$ is \textit{topologically nilpotent} if 
-\ed
-
-
-\bd[Power-bounded]
-$f$ is \textit{power-bounded} if $R \in \Solid_{\Z[T]} \iff \IntHom(P,R)$
-\ed
+But something nice happens if your $\Z[T]$-module is base changed from a solid $\Z$-module.
 
 % 34:17
-And next claim is that the pullback functor from $\Solid_\Z$ to $\Solid_\Z[T]$, sending a module $M$ to $M\tnsr_\Z\Z[T]$ and then you solidify---this functor is $T$-exact, preserves limits and colimits, and it sends $\Z$ to $\Z[T]$.
+And the next claim is that the pullback functor from $\Solid_\Z$ to $\Solid_\Z[T]$, sending a module $M$ to $M\ tnsr_\Z \Z[T]$ and then you solidify---
 
 \begin{claim}
-\
+
+\begin{align*}
+D(\Solid_\Z) \to D(\Solid_{\Z[T]})
+\end{align*}
+
+\begin{align*}
+M \mapsto (M \tnsr_\Z \Z[T])^{T}^{\solid}
+\end{align*}
 
 \end{claim}
 
+This functor is $T$-exact, preserves limits and colimits, and it sends $\Z$ to $\Z[T]$.
+
 % 35:11
-If we prove this, then in particular we get this claim in todo ref , because this is that functor applied to product of copies of $\Z$. 
+If we prove this, then in particular we get this claim \note{todo: add label}, because this is that functor applied to $\prod_\N \Z$. 
 % 35:22
-I claim the functor commutes with products, so then it is enough to understand what happens with $\Z$. But I already also claimed that $\Z$ goes to $\Z[T]$, so we would be done.
+I claim that the functor commutes with products, so then it is enough to understand what happens with $\Z$. But I already also claimed that $\Z$ goes to $\Z[T]$, so we would be done.
 
 \begin{sketch}
-Proof: We just take this formula for the solidification, and we plug in the case where $m$ is also induced. We get that $(M \tnsr \Z[T])^{LT,\solid}$ is the same thing as $m\langle T\rangle$ (by that I mean $m[T]/\Z\langle T\rangle$). 
+We just take this formula for the solidification, and we plug in the case where $M$ is also induced. We get that $(M \tnsr \Z[T])^{LT^\solid}$ is the same thing as $m [T]$ (by that I mean $m[T]/\Z[T]$) \note{todo}. 
 \begin{align*}
 (M \tnsr \Z[T])^{LT^\solid} = \IntRHom_{\Z[T]} ( , M[T])
 \end{align*}
@@ -463,6 +468,7 @@ Now we are computing an $\IntRHom$ over $\Z[T]$. The way to do that is to disamb
 Then you equalize $T$ and the shift operator on here, which is induced by multiplication by $T$
 % todo
 
+\note{todo}
 
 \end{sketch}
 
@@ -482,10 +488,10 @@ Now we are done. Now this functor again---this is internally projective in $\Sol
 
 % 40:12
 The last claim is that $\Z$ goes to just the usual polynomial ring in one variable. 
-What happens when you plug $\Z$ in $\RHom(...)$? You are taking $\RHom$s from this product of copies of $\Z$ to $\Z$. It turns into a direct sum of copies of $\Z$. You can check that what you get is just the usual $\Z[T]$, even with the $\Z[T]$-module structure. There us a natural comparison map which you see to be an isomorphism.
+What happens when we plug $\Z$ in $\RHom(...)$? we are taking $\RHom$s from this product of copies of $\Z$ to $\Z$. It turns into a direct sum of copies of $\Z$. We can check that what we get is just the usual $\Z[T]$, even with the $\Z[T]$-module structure. There is a natural comparison map which we see to be an isomorphism.
 
 % 40:45
-\ques someone proved (it is not related directly to the theory) $R\Hom$ from the infinite product of copies of $\Z$ to $\Z$ is a direct sum. But this is not---here you are doing it in---
+\ques Someone proved (it is not related directly to the theory) $R\Hom$ from the infinite product of copies of $\Z$ to $\Z$ is a direct sum. But this is not---here you are doing it in---
 
 % 41:03
 \ans this is easier.
@@ -497,22 +503,21 @@ I want to advance the interpretation that the $\Solid_{\Z[T]}$ theory is like wo
 
 \bex
 % 41:45
-Let's do an example again in non-archimedean. Let's base change to a non-archimedean field and see what happens.
+Let's do an example again in a non-archimedean field. Let's base change to a non-archimedean field and see what happens.
 Let's look at $\Q_p[T]$. That is functions on the affine line. 
-Now we want to restrict to the closed unit disk in the sense that we have just described. 
+Now we want to restrict to the closed unit disk, in the sense that we have just described. 
 
 So we take the $T$-solidification $(\Q_p[T])^{T^\solid}$ of this.
 
 % 42:12
-This is an instance of this functor here $$ \note{todo}, and I just said this functor has all the properties in the world. It commutes with colimits, so I can again take the $\frac{1}{p}$ to the outside. 
-so I can take the limit over $n$ of $\Z/p^n\Z[T]$, $T$-solidified, and then $\frac{1}{p}$ at the end.
+This is an instance of this functor here \note{todo}, and I just said this functor has all the properties in the world. It commutes with colimits, so I can again take the $\frac{1}{p}$ to the outside. It also commutes with limits, so I can take the limit over $n$ of $\Z/p^n\Z[T]$, $T$-solidified, and then $\frac{1}{p}$ at the end.
 
 \begin{align*}
 (\Q_p[T])^{T^\solid} = (\Z_p[T]^{T^\solid})[\frac{1}{p}] = \lim_n .. [\frac{1}{p}]
 \end{align*}
 
 % 42:49
-Now we are applying this functor there to $\Z_p^n$, but that is just two copies of $\Z$. So you get the same answer as for $\Z$, it is just discrete. This is just inverse limit over $n$ of $\Z_p^n\Z[T]$, $\frac{1}{p}$.
+Now we are applying this functor there to $\Z_p^n$, but that is just two copies of $\Z$. So we get the same answer as for $\Z$, it is just discrete. This is just inverse limit over $n$ of $\Z_p^n\Z[T]$, $\frac{1}{p}$.
 
 \begin{align*}
 = (\lim_n \Z / p \Z [T])[\frac{1}{p}]
@@ -522,16 +527,16 @@ Now we are applying this functor there to $\Z_p^n$, but that is just two copies 
 In other words, it is $\Z[T]$, $p$-completed, $\frac{1}{p}$. These are the functions on the closed unit disk, as desired.
 
 \begin{align*}
-\Z[T]_{\hat{p}}[\frac{1}{p}]
+= \Z[T]_{\hat{p}}[\frac{1}{p}]
 \end{align*}
 
 \eex
 
 % 43:36
 Maybe I forgot to give an interpretation of the coefficients here.
-So again, this is some power series with coefficients in $Q_p$, but here the coefficients tend to 0, $p$-adically. 
+So again, this is some power series with coefficients in $Q_p$, but here (\Z[T]_{\hat{p}} [\frac{1}{p}]) the coefficients tend to 0, $p$-adically. 
 % 44:00
-So it is a smaller ring of functions, that converges on a bigger region. Then you are allowed to be .. \note{todo} on the boundary, so to speak. 
+So it is a smaller ring of functions, that converges on a bigger region. Then we are allowed to be .. \note{todo} on the boundary, so to speak. 
 
 % 44:15
 Let's play a fun game. I have been talking about the open unit disk and the closed unit disk, or the closed unit disk and the complement of the closed unit disk. 
@@ -577,7 +582,7 @@ I think someone asked before, but I forgot that you had the solidification, whic
 
 % 46:52
 It is a forgetful functor. 
-A priori, you are forgetting the extra module structure, but it is in fact a fully faithful inclusion because of the idempotency. The idempotency of this thing means that there is at most one $\Z[T]$-module structure on any $\Z((T^{-1}))$-module structure on a $\Z[T]$-module.
+A priori, we are forgetting the extra module structure, but it is in fact a fully faithful inclusion because of the idempotency. The idempotency of this thing means that there is at most one $\Z[T]$-module structure on any $\Z((T^{-1}))$-module structure on a $\Z[T]$-module.
 
 % 
 This is like a localization sequence, or what have you. 
@@ -654,10 +659,10 @@ For example a distinguished open is just the ring with the function inverted - t
 \ans Yes.
 
 % 53:41
-By the way, we are going to be guided by this sort of thing in setting up the definition of analytic stack and so on. One of the things we discovered is that when you move to this condensed/solid/whatever context, you get six functor formalisms in large generality on derived categories of "quasi-coherent sheaves". They have really nice interpretations.
+By the way, we are going to be guided by this sort of thing in setting up the definition of analytic stack and so on. One of the things we discovered is that when we move to this condensed/solid/whatever context, we get six functor formalisms in large generality on derived categories of "quasi-coherent sheaves". They have really nice interpretations.
 
 % 54:08
-For example, if you think of this thing \note{add what is being pointed at} as being what sits at infinity, then it makes sense that this is extension by zero. You are taking your sections and killing the ones that live near the boundary. 
+For example, if we think of this object \note{add what is being pointed at} as being what sits at infinity, then it makes sense that this is extension by zero. We are taking our sections and killing the ones that live near the boundary. 
 It all plays quite nicely, and we showed how to give proofs of things like Serre duality and so on using these formalisms.
 
 % 54:25
@@ -725,13 +730,13 @@ Also $g \neq 0$  and %todo
 I am saying that this localizes on this meaning. 
 You have a sheaf of categories, a sheaf of symmetric monoidal categories. 
 % 59:53
-What you are going to attach to this thing $X(...)$ is a version of the solid theory. 
+What we are going to attach to this thing $X(...)$ is a version of the solid theory. 
 % 1:00:00
-So you look at those $M$ in $D(\Mod_R(\Solid_{\Z}))$ such that, 
+So we look at those $M$ in $D(\Mod_R(\Solid_{\Z}))$ such that, 
 
 \ben
 	\item 
-	\item 
+	\item $\IntHom(P,M) \xrightarrow \IntHom(P,M)$
 \een
 first you want to say that multiplication by $g$ on $M$ is an isomorphism. 
 $g \cl M \iso M$
@@ -739,24 +744,30 @@ Second, you want to say that if you take $\IntHom(P, M)$, and you take $f_i^\ast
 
 $\IntHom(P,M) \to  \IntHom(P,M)$ % todo
 % 1:00:30
-Or in other words, $\frac{f_i}{g}$. Sorry, so in other words, you want---so you think of all these guys as maps from say $\Spec(R)$, so to speak, to the affine line.
+Or in other words, $\frac{f_i}{g}$. Sorry, so in other words, <e think of all these objects as maps from say $\Spec(R)$, so to speak, to the affine line.
 % 1:00:58
-Then you want that $g$ lands in the standard Zariski nonzero locus, and you want that the $\frac{f_i}{g}$ land inside the closed unit disk.
+Then we want that $g$ lands in the standard Zariski nonzero locus. We want that the $\frac{f_i}{g}$ land inside the closed unit disk.
 
 $ g \cl \Spec(R) \to M $
 
 $ \frac{f_i}{g} \cl \Spec(R) \to $ % todo triangles
 
 % 1:01:40
-So I am not going to go into details about that. 
-Here, this $|P|_B$ just refers to the local correspond to... You can think of it as a locale, but it is also a topological space. 
+So I am not going to go into details about that.
+
+
+\ques Here, this $|P|_B$ just refers to the locale correspond to... 
+
+% 1:02:05
+\ans We can think of it as a locale, but it is also a topological space.
+
 % 1:02:13
 The points have a nice description and so on.
 
 % 1:02:23
-In particular, I am claiming this category $D(\Mod_R (\Solid_{\Z}))$ localizes along the space $\Spv(R(\ast))$
+In particular, I am claiming this category $D(\Mod_R (\Solid_{\Z}))$ localizes along the space $\Spv(R(\ast))$.
 % 1:02:27
-In particular, you get a structure sheaf on the space $\Spv(R(\ast))$. The goal for the rest of lecture, is make this structure sheaf explicit and probably start to compare, to Huber's theory. 
+In particular, we get a structure sheaf on the space $\Spv(R(\ast))$. The goal for the rest of lecture, is make this structure sheaf explicit and probably start to compare to Huber's theory. 
 % 1:03:22
 We are eventually going to produce this data by very easy formal means, but it requires some language and setup. 
 So we can not do it yet, but I want to make at least this part of it explicit already at the beginning.
@@ -799,7 +810,6 @@ $R$ is an algebra over $\Z[T]$ In particular, it is a module over $\Z[T]$, and w
 \bd[Power bounded]
 $f$ is \textit{power bounded} if $R \in \Solid_{\Z[T]} \iff \IntHom(P, R) \to \IntHom(P, R)$ % todo
 \ed
- 
 
 %
 \ques In the first definition, the factorization is unique. 
@@ -810,7 +820,7 @@ $f$ is \textit{power bounded} if $R \in \Solid_{\Z[T]} \iff \IntHom(P, R) \to \I
 Even though there are Hausdorff solid abelian groups that have non-Hausdorff behavior, this limit is still unique if it exists.
 
 % 1:06:10
-So in the definition of solid, you are imposing that certain limits exist uniquely, even though you have non-Hausdorff behavior. That is the same thing as saying that if you take $\IntHom(P, R)$, $f^{\ast} \tnsr [-1]$, that this is an isomorphism. That is just... Oh, someone is talking.
+So in the definition of solid, we are imposing that certain limits exist uniquely, even though we have non-Hausdorff behaviour. That is the same thing as saying that if we take $\IntHom(P, R)$, $f^{\ast} \tnsr [-1]$, that this is an isomorphism. That is just... Oh, someone is talking.
 
 %
 Yes, the first condition is saying that it is a nullsequence which is the $p^n$ go to zero. 
