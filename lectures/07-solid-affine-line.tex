@@ -301,7 +301,7 @@ So the derived analogs of all these claims hold. Moreover, the derived theory is
 So that is all the formal stuff. But in the $\Solid_\Z$-theory, it was also important to understand the basic compact projective generator $\prod_\N \Z$, which is always gotten by solidifying the sequence space.
 
 % 23:35
-Let me make a claim about that. If we take the $\Z$ power series--- I will just say let's not think of it as a ring; we are thinking of it as a module now. If we take a product of copies of $\Z$, base change it to $\Z[T]$, and then solidify, we get a product of copies of $\Z[T]$.
+Let me make a claim about that. If we take the $\Z$ power series--- I will just say let's not think of it as a ring; we are thinking of it as a module now. If we take a product of copies of $\Z$, base change it to $\Z[T]$, and then we solidify, we get a product of copies of $\Z[T]$.
 
 \bcl[Solidification of product of copies of $\Z$]
 \begin{align*}
@@ -309,24 +309,27 @@ Let me make a claim about that. If we take the $\Z$ power series--- I will just 
 \end{align*}
 \ecl
 
-\begin{unfinished}{24:20}
 \br
 % 24:25
-A little remark about an interpretation of it. I said $\Solid_\Z$ was analogous to complete non-archimedean topological abelian groups. By definition, non-archimedean means that there is a basis of neighborhoods of the identity consisting of abelian subgroups.
+A little remark about an interpretation of it. I said $\Solid_\Z$ was analogous to complete non-archimedean topological abelian groups. By definition, non-archimedean means that there is a basis of neighborhoods of the identity, consisting of abelian subgroups.
 
 % 24:45
-What would be the analogous interpretation of $\Solid_\Z$?
+What would be the analogous interpretation of $\Solid_{\Z[T]}$?
 It would be that we have a complete non-archimedean object where, moreover, there is a basis of neighborhoods consisting of $\Z[T]$-submodules. 
 
+\begin{unfinished}{25:00}
 % 25:00
-For a basic example of a $\Z[T]$-module which is non-archimedean but does not satisfy that property, you can think of this ring $\Z((T^{-1}))$. 
+For a basic example of a $\Z[T]$-module which is non-archimedean, but does not satisfy that property, you can think of this ring $\Z((T^{-1}))$. 
 \er
-
 
 We cannot find a basis of neighborhoods of zero which are stable under multiplication by $T$, because they are stable under multiplication by $T^{-1}$ instead. 
 But in some sense, the theorem is that if we kill just that one object, then we have explained the difference between the two notions.
 
-So in the previous theory without $[T]$ it was a little bit different. It was not defined using this "$p$". Okay, it was done this way. Maybe we did not make this explicit and we maybe more talked about just this, but we definitely talked about this. But it does make it more clear to think of it that way with the $p$.
+
+% 25:35
+\ques In the previous theory without $[T]$ it was a little bit different. It was not defined using this "$p$". 
+
+\ans Well, it was basically done this way. Maybe we did not make this explicit and we maybe more talked about just this \todo{add what he points at}, but we definitely talked about this \todo{add what he points at}. But it does make it more clear to think of it that way with the $p$.
 
 \begin{sketch}
 All except last property: exactly the same.
@@ -336,46 +339,87 @@ $ M = \RHom_{\Z[T]}$
 
 \end{sketch}
 
-Yes, confused about the $\Z[T]$ itself. Is $\Z[T]$ solid? Ah, so it is. That is part of the theorem, because I am claiming in particular that this is $\Z[T]$-solid and $\Z[T]$ is a retract of this. 
-So it is something that we need to prove and we will prove it. 
-But it is not "solid", what $\Z[T]$ is un-"solid $\Z[T]$". Oh no, it is. As an abelian group, you mean? Yes. No, every discrete abelian group is solid because it is generated under colimits by $\Z$. No, it is an important point. 
-Thank you for bringing it up. $\Z[[T]]$ power series is also solid. $\Z[[T]]$ power series is also solid, yes, because well, it is a limit of things. 
-I mean, you can build it from limits and colimits from $\Z[T]$. So it is all right.
+\ques Yes, confused about the $\Z[T]$ itself. Is $\Z[T]$ solid? 
 
-For the proof, all of these properties, all except the last. 
-Those are exactly the same. The arguments for all of those things were completely formal, just based on the fact that we have this internally projective object $P$ and you are asking that some endomorphism of $\IntHom(P,M)$ become an isomorphism. 
-That was all that Peter used when he was proving the analog of these claims for $\Solid_\Z$. 
+
+\ans Ah, it is that part of the theorem, because I am claiming in particular that this $\prod_\N \Z[T]$ is $\Z[T]$-solid and $\Z[T]$ is a retract of this. 
+So it is something that we need to prove, and we will prove it. 
+
+\ques But $\Z[T]$ is not solid, right?
+
+\ans Oh no, it is. As an abelian group, you mean?
+
+\ques Yes. 
+
+\ans No, every discrete abelian group is solid, because it is generated under colimits by $\Z$. No, it is an important point. Thank you for bringing it up. 
+
+% 26:54
+\ques $\Z[[T]]$ (power series) is also solid? 
+
+\ans $\Z[[T]]$ power series is also solid, because it is a limit of objects. You can build it from limits and colimits from $\Z[T]$ \note{not sure $\Z[T]$ or $\Z[[T]]$}. So it is all right.
+
+
+
+For the proof, all of these properties, all except the last, those are exactly the same. 
+% 27:35
+The arguments for all of those things were completely formal, based on the fact that we have this internally projective object $P$ and you are asking that some endomorphism of $\IntHom(P,M)$ become an isomorphism. 
+
+% 27:47
+That was all that Peter used when he was proving the analogues of these claims for $\Solid_\Z$.
+% 27:55
 The fact that we have a good formal theory is already contained in there. 
-Then in Peter's lecture, the hard part was identifying the free modules, that when you solidify this sequence space $p$, we just get a product of copies of $\Z$ fills up the whole thing. Thankfully, that part is going to be easier here, because we already have $\Solid_\Z$ and 
+Then in Peter's lecture, the hard part was identifying the free modules, that when you solidify this sequence space $P$ \note{todo: add what he points at}, we just get a product of copies of $\Z$ ($\prod_\N \Z[T]$). It fills up the whole thing. Thankfully, that part is going to be easier here, because we already have $\Solid_\Z$, and basically thanks to this interpretation of killing some object \note{todo: add what he points at}. 
 
-Then we can give an explicit formula for the derived solidification.
+% 28:35
+The key claim is that we can give an explicit formula for the derived solidification. Derived solidification with respect to $T$. This is just an $\IntRHom$ over $\Z$ quotient of this ring by this ring.
 
-Notation
+\bcl
+\begin{align*}
+M^{LT}^\solid = \IntRHom_{\Z[T]}(\Z((T^{-1}))/\Z(T), M)
+\end{align*}
+\ecl
 
-Derived solidification with respect to $T$. This is just an $\IntRHom$ over $\Z$ quotient of this ring by this ring.
+% 29:10
+Note that this does have the required map from $M$, because $M$ is $\RHom$. \note{add equation}
+\begin{align*}
+\IntRHom_{\Z[T]}(\Z(T), M) \iso M
+\end{align*}
 
-% 29:35
-Note that this does have the required map from $M$, because $M$ is $\RHom$.
+\ques ...
+
+\ans L derived solidification . The derived functor of this thing here \note{add what he points at, it isn't visible}. I prefer to think of it as the derived analogue of it. 
+
+\ques ... All condensed or all solid?
+
+\ans It is the same. Basically, because of this \note{add what he points at}. I mean the derived...
+
+\ques So when you compute, Grothendieck category, so you have a ... check exactly ... I don't remember ... How do you check underlying are the same? Maybe there is some adjunction... 
 
 % todo, place in right order
 % 31:10
-Grothendieck category
 
-\ans Exactly. I do not know. Like I said, I tend to think on the derived level from the beginning, but the basic point is that everything has a resolution by these internally projective objects. Then on those, they are the same, and then it is some derived limit of that. 
-It is just internally projective in $h$ in all condensed, in light condensed. But it is really not... that is really not necessary either. 
-This also works in all condensed. I claim it is formal, and I also claim I do not want to get into the detail right now. Let's maybe discuss after if you still have questions.
+% 31:22
+\ans Basically, I do not know. Like I said, I tend to think on the derived level from the beginning, but the basic point is that everything has a resolution by these internally projective objects. Then on those, they are the same, and then it is some derived limit of that. 
 
-The proof of claim: This follows formally from the fact that this ring $\Z[[T^{-1}]]$ is idempotent over $\Z[T]$, which follows from the very first description I gave of it as the base change of---we check that the power series ring is idempotent and we put that at infinity. The idempotency is preserved.
+% 31:40
+\ques ... internally projective in $h$ in all condensed, 
+
+\ans In light condensed. But it is really not... that is really not necessary either. This also works in all condensed. I claim it is formal, and I also claim---I do not want to get into the detail right now. Let's maybe discuss after if you still have questions.
+
+
+% 31:07
+\begin{sketch}
+The proof of the claim: This follows formally from the fact that this ring $\Z[[T^{-1}]]$ is idempotent over $\Z[T]$, which follows from the very first description we gave of it as the base change of---we check that the power series ring is idempotent and we put that at infinity. The idempotency is preserved.
 
 % 32:50
-For example, using the idempotency of that, what is this thing here? It is just the homotopy fiber of the inclusion of this into this, and this is the base ring. You can easily check that idempotency is equivalently to equivalent to the derived idempotency of this object. 
-That means that if you take this expression and you apply it again, you get the same thing back. So that is an idempotent operation.
+For example, using the idempotency of that, what is this object here? It is just the homotopy fiber of the inclusion of this into this, and this is the base ring. We can easily check that idempotency is equivalently to equivalent to the derived idempotency of this object. 
+That means that if we take this expression and we apply it again, we get the same object back. So that is an idempotent operation.
 
-Again, the same idempotence will prove to you that if you take this operation and $\RHom$ from this guy $\Z[T]$, you get zero. So this thing is $\Z[T]$-solid. That is not quite everything you need to check, but it is everything you need to check. 
+Again, the same idempotence will prove to us that if we take this operation and $\RHom$ from this object $\Z[T]$, we get zero. So this thing is $\Z[T]$-solid. That is not quite everything we need to check, but it is everything we need to check. 
 It is an idempotent operation, and $M$ is solid if and only if this map is an isomorphism. So it is just completely formal, and I will not write out all of the details.
 
 
-
+\end{sketch}
 
 Note: This is a formula for the derived solidification of a general $\Z\langle T \rangle$-module. 
 % 34:04
