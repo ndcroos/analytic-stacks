@@ -50,14 +50,14 @@ Now I want to start doing a little bit of geometry. We are going to be modest an
 
 % 3:10
 $P$ is a ring, and there exists a ring map. So this is the polynomial ring in one variable to $P$.
-\begin{align*} \label{07:poly-ring}
+\begin{align*} \label{eq:07-polynomial-ring}
 \Z[T] \to P
 \end{align*}
 
 The shift is multiplication by $T$. 
 
 % 3:30
-That is what you had have before solidification. But after solidification of \ref{07:poly-ring}, something extremely nice happens.
+That is what we had before solidification. But after solidification of \ref{07:poly-ring}, something extremely nice happens.
 
 % 3:38
 We already explained what the free module on $P$ is. There is a compact projective generator here on $\Solid_\Z$, which is a countable product of copies of $\Z$.
@@ -65,15 +65,16 @@ We already explained what the free module on $P$ is. There is a compact projecti
 $\text{compact projective generator} = \prod_\N \Z$
 
 % 3:55
-That is the basic object from which everything is built. You can get that object by solidifying this basic sequence space $P$. 
-If you take into account the ring structure, when you solidify \ref{07:poly-ring}, you just get the power series ring in one variable. 
-\begin{align*} \label{07:power-series-ring}
+That is the basic object from which everything is built. We can get that object by solidifying this basic sequence space $P$. 
+If we take into account the ring structure, when we solidify \ref{eq:07-polynomial-ring}, we get the power series ring in one variable.
+
+\be \label{eq:07-power-series-ring}
 \Z[T] \to \Z[[T]] 
-\end{align*}
+\ee
 \note{not sure of this notation $[[]]$}
 
 % 4:18
-So in the solid context, the universal carrier of a nullsequence is just this power series ring $\Z[[T]]$.
+So in the solid context, the universal carrier of a nullsequence is this power series ring $\Z[[T]]$.
 
 % 4:30
 But moreover, there is a very nice property of this situation, given by the following lemma. 
@@ -203,7 +204,7 @@ After an arbitrary non-archimedean field extension of $\Q_p$, we could ask: when
 The interpretation that this suggests is that $\Z[[T]]$ should be thought of as corresponding to some sort of open unit disk. 
 
 % 13:50
-Over a discrete ring like $\Z$, we cannot tell the difference between the open unit disk and the formal completion at the origin. But the difference pops out when you make a base change to something that has more freedom to play with.
+Over a discrete ring like $\Z$, we cannot tell the difference between the open unit disk and the formal completion at the origin. But the difference pops out when we make a base change to something that has more freedom to play with.
 
 % 14:14
 But in rigid geometry, it is not really the open unit disk that is fundamental. Usually, it is the closed unit disk. So what about the closed unit disk?
@@ -238,9 +239,9 @@ I am going to make a preliminary note. This $\Z((T^{-1}))$ is a module over $\Z[
 \Z[[U]][T] / (UT - 1)
 \end{align*}
 
-Note that $\Z((T^{-1}))$---let's disambiguate and call the variable $U$---we can think of that as $\Z[[U]]$ and then invert $U$. One way to invert $U$ is to adjoin the object that you want to be the inverse, and then enforce the equation that says that they are inverse to each other. When we look at it like this...
+Note that $\Z((T^{-1}))$---let's disambiguate and call the variable $U$---we can think of that as $\Z[[U]]$ and then invert $U$. One way to invert $U$ is to adjoin the object that we want to be the inverse, and then enforce the equation that says that they are inverse to each other. When we look at it like this...
 
-I will rewrite that. We get $\Z((T^{-1}))$ has a two-term resolution, where you have $\Z[[U]][T]$ and $\Z[[U]][T]$. Here you have $U-1$, so it is a two-term resolution.
+I will rewrite that. We get $\Z((T^{-1}))$ has a two-term resolution, where we have $\Z[[U]][T]$ and $\Z[[U]][T]$. Here we have $U-1$, so it is a two-term resolution.
 \begin{align*} \label{07:UT-map}
 \Z[[U]][T] \xrightarrow{UT-1} \Z[[U]][T] \rightarrow \Z((T^{-1}))
 \end{align*}
@@ -273,7 +274,7 @@ Then this note up here is saying that that is the same thing as requesting that 
 % 20:30
 Now the theorem is that in this definition \ref{def:07-Z-solid}, the name \textit{$\Z[T]$-solid} is well chosen. This $\Z[T]$-solid theory over $\Z[T]$ is very similar to the $\Solid_\Z$ theory over $\Z$.
 
-\bth
+\begin{theorem}
 
 \begin{align*}
 \Solid_{\Z[T]} \subs \Mod_{\Z[T]}(\Solid_\Z) \subs \Mod_{\Z[T]}(\Cond^\light_\Z)
@@ -283,19 +284,19 @@ $\Solid_{\Z[T]}$:
 \bit
 	\item is an abelian category, closed under limits, colimits and extensions.
 	\item if $M \in \Cond_{\Z[T]}$ and $N \in \Solid_{\Z[T]} \implies \Ext^i_{\Z[T]}(M,N) \in \Solid_{\Z[T]}$.
-	\item $\exists$ left adjoint to inclusion, $(-)^{\T}^{\solid}$.
-	\item $\exists$ symmetric monoidal structure on $(-)^{\T}^{\solid}$.
-	\item The derived analog holds as well.
+	\item $\exists$ left adjoint to inclusion, $(-)^{\T^\solid}$.
+	\item $\exists$ symmetric monoidal structure on $(-)^{\T^\solid}$.
+	\item The derived analogue holds as well.
 \eit
 
-\eth
+\end{theorem}
 
 % todo
 % 22:30
 % $\Cond_{\Z[T]}$ in $M \in \Cond_{\Z[T]}$ is supposed to be the same as \Mod_{\Z[T]}(\Cond^\light_\Z)
 
 % 22:58
-So the derived analogs of all these claims hold. Moreover, the derived theory is naive, in the sense that an object in the derived category is derived solid if and only if each homology group is solid in the sense of the abelian category and it is the derived category of the abelian category. 
+So the derived analogues of all these claims hold. Moreover, the derived theory is naive, in the sense that an object in the derived category is derived solid if and only if each homology group is solid in the sense of the abelian category and it is the derived category of the abelian category. 
 
 % 23:15
 So that is all the formal stuff. But in the $\Solid_\Z$-theory, it was also important to understand the basic compact projective generator $\prod_\N \Z$, which is always gotten by solidifying the sequence space.
@@ -309,7 +310,7 @@ Let me make a claim about that. If we take the $\Z$ power series--- I will just 
 \end{align*}
 \ecl
 
-\br
+\begin{remark}
 % 24:25
 A little remark about an interpretation of it. I said $\Solid_\Z$ was analogous to complete non-archimedean topological abelian groups. By definition, non-archimedean means that there is a basis of neighborhoods of the identity, consisting of abelian subgroups.
 
@@ -317,10 +318,10 @@ A little remark about an interpretation of it. I said $\Solid_\Z$ was analogous 
 What would be the analogous interpretation of $\Solid_{\Z[T]}$?
 It would be that we have a complete non-archimedean object where, moreover, there is a basis of neighborhoods consisting of $\Z[T]$-submodules. 
 
-\begin{unfinished}{25:00}
 % 25:00
-For a basic example of a $\Z[T]$-module which is non-archimedean, but does not satisfy that property, you can think of this ring $\Z((T^{-1}))$. 
-\er
+For a basic example of a $\Z[T]$-module which is non-archimedean, but does not satisfy that property, we can think of this ring $\Z((T^{-1}))$. 
+\end{remark}
+\begin{unfinished}{25:20}
 
 We cannot find a basis of neighborhoods of zero which are stable under multiplication by $T$, because they are stable under multiplication by $T^{-1}$ instead. 
 But in some sense, the theorem is that if we kill just that one object, then we have explained the difference between the two notions.
@@ -362,20 +363,20 @@ So it is something that we need to prove, and we will prove it.
 
 For the proof, all of these properties, all except the last, those are exactly the same. 
 % 27:35
-The arguments for all of those things were completely formal, based on the fact that we have this internally projective object $P$ and you are asking that some endomorphism of $\IntHom(P,M)$ become an isomorphism. 
+The arguments for all of those things were completely formal, based on the fact that we have this internally projective object $P$ and we are asking that some endomorphism of $\IntHom(P,M)$ become an isomorphism. 
 
 % 27:47
 That was all that Peter used when he was proving the analogues of these claims for $\Solid_\Z$.
 % 27:55
 The fact that we have a good formal theory is already contained in there. 
-Then in Peter's lecture, the hard part was identifying the free modules, that when you solidify this sequence space $P$ \note{todo: add what he points at}, we just get a product of copies of $\Z$ ($\prod_\N \Z[T]$). It fills up the whole thing. Thankfully, that part is going to be easier here, because we already have $\Solid_\Z$, and basically thanks to this interpretation of killing some object \note{todo: add what he points at}. 
+Then in Peter's lecture, the hard part was identifying the free modules, that when we solidify this sequence space $P$ \note{todo: add what he points at}, we just get a product of copies of $\Z$ ($\prod_\N \Z[T]$). It fills up the whole thing. Thankfully, that part is going to be easier here, because we already have $\Solid_\Z$, and basically thanks to this interpretation of killing some object \note{todo: add what he points at}. 
 
 % 28:35
 The key claim is that we can give an explicit formula for the derived solidification. Derived solidification with respect to $T$. This is just an $\IntRHom$ over $\Z$ quotient of this ring by this ring.
 
 \bcl
 \begin{align*}
-M^{LT}^\solid = \IntRHom_{\Z[T]}(\Z((T^{-1}))/\Z(T), M)
+M^{LT^\solid} = \IntRHom_{\Z[T]}(\Z((T^{-1}))/\Z(T), M)
 \end{align*}
 \ecl
 
@@ -429,10 +430,10 @@ It is an idempotent operation, and $M$ is solid if and only if this \note{add wh
 
 Note: This is a formula for the derived solidification of a general $\Z[T]$-module. 
 % 34:04
-But something nice happens if your $\Z[T]$-module is base changed from a solid $\Z$-module.
+But something nice happens if our $\Z[T]$-module is base changed from a solid $\Z$-module.
 
 % 34:17
-And the next claim is that the pullback functor from $\Solid_\Z$ to $\Solid_\Z[T]$, sending a module $M$ to $M\ tnsr_\Z \Z[T]$ and then you solidify---
+And the next claim is that the pullback functor from $\Solid_\Z$ to $\Solid_\Z[T]$, sending a module $M$ to $M\ \tnsr_\Z \Z[T]$ and then we solidify---
 
 \begin{claim}
 
@@ -441,7 +442,7 @@ D(\Solid_\Z) \to D(\Solid_{\Z[T]})
 \end{align*}
 
 \begin{align*}
-M \mapsto (M \tnsr_\Z \Z[T])^{T}^{\solid}
+M \mapsto (M \tnsr_\Z \Z[T])^{T^\solid}
 \end{align*}
 
 \end{claim}
@@ -465,7 +466,7 @@ Now we are computing an $\IntRHom$ over $\Z[T]$. The way to do that is to disamb
 = (\IntRHom_\Z ( U \Z[[U]] [-1], M[T]) )
 \end{align*}
 
-Then you equalize $T$ and the shift operator on here, which is induced by multiplication by $T$
+Then we equalize $T$ and the shift operator on here, which is induced by multiplication by $T$
 % todo
 
 \note{todo}
@@ -475,7 +476,7 @@ Then you equalize $T$ and the shift operator on here, which is induced by multip
 
 % 
 Multiplication by $T$ is here given by sending $U$ to zero, $U^2$ to $U$, $U^3$ to $U^2$, etc. 
-So if you do that there, then that induces an endomorphism here, and that is the multiplication by $T$ on this resulting thing.
+So if we do that there, then that induces an endomorphism here, and that is the multiplication by $T$ on this resulting thing.
 
 % 39:25
 \ques Sorry, I missed what you said. What is the isomorphism to this? 
@@ -534,7 +535,7 @@ In other words, it is $\Z[T]$, $p$-completed, $\frac{1}{p}$. These are the funct
 
 % 43:36
 Maybe I forgot to give an interpretation of the coefficients here.
-So again, this is some power series with coefficients in $Q_p$, but here (\Z[T]_{\hat{p}} [\frac{1}{p}]) the coefficients tend to 0, $p$-adically. 
+So again, this is some power series with coefficients in $\Q_p$, but here ($\Z[T]_{\hat{p}} [\frac{1}{p}]$) the coefficients tend to 0, $p$-adically. 
 % 44:00
 So it is a smaller ring of functions, that converges on a bigger region. Then we are allowed to be .. \note{todo} on the boundary, so to speak. 
 
@@ -666,7 +667,7 @@ For example, if we think of this object \note{add what is being pointed at} as b
 It all plays quite nicely, and we showed how to give proofs of things like Serre duality and so on using these formalisms.
 
 % 54:25
-So we take this perspective seriously - the derived categories and functors between them are going to dictate to us what the geometry looks like.
+So we take this perspective seriously --- that the derived categories and functors between them are going to dictate to us what the geometry looks like.
 
 % 54:36
 There was another thing I remembered in the break that I forgot to mention. 
@@ -679,20 +680,18 @@ Everything connective goes to something connective, and everything anti-connecti
 
 \ans Yes. Exactly.
 
-The first map in the composition is $t$-exact, but the second is not. 
-% todo
+\ques The first map in the composition is $t$-exact, but the second is not?
 
-
-\ans Yes. It is a bit funny.
+\ans That's right. Yes, it is a bit funny.
 
 
 % 55:30
 So now I want to motivate what I am going to do in the rest of this lecture.
 What is one place where we are probably going to go? 
-\begin{vista} % motivation, todo macro
-We want to look at solid rings, i.e. commutative algebra objects in this tensor category $\Solid_{\Z}$.
+\begin{vista}
+We want to look at solid rings, i.e. commutative algebra objects $\CAlg$ in this tensor category $\Solid_{\Z}$.
 
-$R \in \CAlg(\Solid_{\Z}, \tnsr)$ % todo macro
+$R \in \CAlg(\Solid_\Z, \tnsr)$
 \end{vista}
 
 Generalizing our discussion when $R$ is $\Z[T]$, we want to see subsets like closed/open unit disks. Of course, when you have a big algebra, you will get many more such subsets.
@@ -703,32 +702,39 @@ We want to organize what you see in a nice way.
 It is not necessarily the most general thing, but we are going to take the things you see over $\Z[T]$ and base change them along all possible maps $\Z[T] \to R$, i.e. all possible functions in $R$.
 
 % 56:45
-What we will end up with is the statement that the derived category of $\Solid_\Z$-modules localizes along the valuative spectrum of the underlying discrete commutative ring of this solid ring. 
+What we will end up with is the statement that the derived category of $\Solid_\Z$-modules localizes along the valuative spectrum of the underlying usual discrete commutative ring of this solid commutative ring. 
+% \begin{align*}
+% D(\Mod_R (\Solid_{\Z})) \text{ localizes along } \Spv(R(\ast})
+% \end{align*}
 
-$D(\Mod_R (\Solid_{\Z}))$ localizes along $\Spv(R(\ast})$
+\ques Localize this... You take the valuative spectrum of $R$, viewed as a discrete ring.
 
-You take the valuative spectrum of $R$ viewed as a discrete ring.
+% 57:32
+\ques The valuative spectrum is a residue field and valuation. 
+The valuation does not have to be integral on $R$, 
 
-%
-The valuative spectrum is a residue field and valuation. 
-The valuation does not have to be integral on $R$, just any valuation. It has a topology which induces the topology on things like $\Spa$, but it is more general - sometimes one gets points which are not in $\Spa$.
+\ans No.
 
-%
-This space is similar to the usual spectrum of a commutative ring. 
-It is a spectral space with a basis of quasi-compact opens, and even a particularly nice basis analogous to distinguished affine opens in algebraic geometry.
+\ques Just any valuation. It has a topology which induces the topology on things like $\Spa$, but it is more general --- sometimes one gets points which are not in $\Spa$. \note{todo}
+
+% 58:16
+I will not remind you what a valuation is right now. But I will remind you that this space is similar to the usual spectrum of a commutative ring. 
+
+% 58:30
+It is a spectral space with a basis of quasi-compact opens. It is even a particularly nice basis, analogous to distinguished affine opens in algebraic geometry.
 % 58:44
-While a distinguished open in algebraic geometry is parameterized by a single element of the ring, here you have to take a bit more data.
+While a distinguished open in algebraic geometry is parameterized by a single element of the ring, here we have to take a bit more data.
 
 %
-The basic opens are the so-called rational opens. 
-You take finitely many functions $f_1, \ldots,f_n, g$ and form $\{x \mid |f_i(x)| \le |g(x)|\text { for all i}\}$. %todo
+The basic opens are the so-called \emph{rational} opens. 
+We take finitely many functions $f_1, \ldots,f_n, g$ and form $\{x \mid |f_i(x)| \le |g(x)|\text { for all i}\}$. %todo
 
-The interpretation is that you invert $g$, so we are inside the Zariski distinguished open for $g$, but then we shrink further by requiring that $|f_i| \le |g|$, $\forall i$.
+The interpretation is that we invert $g$, so we are inside the Zariski distinguished open for $g$, but then we shrink further by requiring that $|f_i| \le |g|$, $\forall i$.
 Also $g \neq 0$  and %todo 
 
 % 59:45
 I am saying that this localizes on this meaning. 
-You have a sheaf of categories, a sheaf of symmetric monoidal categories. 
+We have a sheaf of categories, a sheaf of symmetric monoidal categories. 
 % 59:53
 What we are going to attach to this thing $X(...)$ is a version of the solid theory. 
 % 1:00:00
@@ -974,7 +980,7 @@ $\exists$ initial solid ring $R \frac{f_1,\ldots,f_n}{g}^\solid$ such that
 \ben
 	\item $g$ is invertible in $R$
 	\item $\frac{f_i}{g}$ is power bounded in $R \frac{f_1,\ldots,f_n}{g} \forall i$
-\en
+\een
 \ecl
 
 % 1:20:18
@@ -984,7 +990,7 @@ That encodes the idea I was talking about, where you want $f_i/g$ to go to the c
 The proof is that you can just construct the object. 
 
 \bq
-$R[x_1,\dots, x_n]^{x_1^\solid, x_2^\solid, \ldots, x_n^\solid}
+$R[x_1,\dots, x_n]^{x_1^\solid, x_2^\solid, \ldots, x_n^\solid}$
 \eq
 
 % 1:21:42
@@ -1055,7 +1061,9 @@ You could ask what the relationship is with this thing that comes from the solid
 This is the "quasi-separification" of this more generally defined thing that we have here. 
 
 %todo
-\pi_0 $ R < \frac{f_1, \ldots, \f_n}{g} > ^ \text{solid} $ 
+%\begin{align*}
+%\pi_0 $ R < \frac{f_1, \ldots, \f_n}{g} > ^\text{solid}
+%\end{align*}
 
 So the solid thing, or for emphasis I should put the $\pi_i = 0$ as well---you can get the Huber thing functorially from this more general thing, in particular from our structure sheaf. 
 But they are not necessarily equal in general. But in all practical cases, they are equal. That is the general outline of the story.
