@@ -8,168 +8,983 @@
 
 \begin{unfinished}{0:00}
 
-Welcome back, everyone. Today, we're going to be doing a little bit of localization in the setting of solid analytic rings. But first, I want to start with a recap of last time.
+Today, we will explore localization in the setting of solid analytic rings. But first, I want to start with a recap of last time.
 
-Last time, we defined the notion of an analytic ring, which is a pair $(R, \triangle R)$ where $R$ is the whole object and $\triangle R$ is the category of $R$-modules. This $\triangle R$ is a full subcategory of the category of $R$-modules, satisfying some closure axioms. Specifically, $\triangle R$ is closed under all limits, colimits, and extensions. Additionally, for any $M$ in $\triangle R$ and $N$ in $\operatorname{Mod} R$, the internal $\operatorname{Hom}$ from $M$ to $N$ also lies in $\triangle R$. Finally, the unit $R$ itself lies in $\triangle R$.
+Last time, we defined the notion of an analytic ring, which is a pair $R = (R^\tri, M)$ where $R$ represents the entire structure, comprising: 
+\begin{itemize}
+\item $R^\tri$, a commutative condensed ring.
+\item $\Mod_R$, the category of $R$-modules. $\Mod_R$ is full subcategory of $\Mod_{R^\tri}$, satisfying certain closure axioms. 
+\end{itemize}
 
-There were a couple of technical points that came up last time that I'll take the time to address now. One was regarding the existence of left adjoints. There was a claim that this was automatic, justified by a theorem of Adamek and Rosický called the "reflection principle." This states that if $C$ is a presentable category and $D$ is a full subcategory of $C$ closed under all limits, and if there exists a regular cardinal $\kappa$ such that $D$ is closed under all $\kappa$-filtered colimits, then $D$ is presentable and the inclusion $D \to C$ has a left adjoint.
+Key properties of $\Mod_R$  include:
+% 2:00
+\bit
+\item Closure under limits, colimits, and extensions: The first one is that $\Mod_R$ is closed under all limits, colimits, and extensions. In particular, it should be an abelian subcategory. But even more, because I am allowing infinite colimits and limits here.
+\item Internal Ext condition: If $M \in \Mod_{R^\tri}$ and $N \in Mod_R$, then $\IntExt^i_{R^\tri}(M,N) \in \Mod_R, \forall i$. This condition was necessary to get a good tensor product on this category and on the derived analog as well. I will make a couple more remarks in a second.
+\item Containment of the unit: $R^\tri$ itself, the unit in this category $\Mod_{R^\tri}$, must belong to $\Mod_R$, meaning 
+\begin{align*}
+R^\tri \in \Mod_R.
+\end{align*}
 
-I also want to make another remark concerning a technical point that came up in the last talk. Recall that we were discussing the derived analog of this definition, where we defined the derived category of $\triangle R$ as the full subcategory of the derived category of $\operatorname{Mod} R$ consisting of those objects whose homology groups all lie in $\triangle R$. We wanted to show that this derived category satisfies analogous closure properties under limits and colimits. The key point for proving closure under limits was to show that the product of a family of objects in $\triangle R$, viewed as objects in the derived category concentrated in degree 0, still satisfies the condition of lying in $\triangle R$. The subtlety here is that while countable infinite products are exact in the setting of condensed abelian groups, arbitrary infinite products are not. So the product functor has right derived functors, and we need to ensure that the product lies in $\triangle R$ for all degrees. This can be proved by considering the direct sum instead of the product.
+\eit
 
-Alpha, then this guy is a retract of $\R^I$ product $\alpha$ in $M$, because termwise it's obviously this system is a retract of this system here. But this is just the same thing as $X \in \text{Hom}_M(\oplus_I \R, M)$. Okay, and what about product of infinite complexes, unbounded below complexes? Yeah, the argument given in the last lecture, I mean this was treated in the last lecture, ah, because there are kind of it's possible, so that you can reduce to countable. Exactly, okay. 
+%and $N$ in $\operatorname{Mod} R$, the internal $\operatorname{Hom}$ from $M$ to $N$ also lies in $\triangle R$. Finally, the unit $R$ itself lies in $\triangle R$.
 
-So that's that, and I think also that I don't know, maybe you know the reference. So if you have in general a category $\mathcal{C}$ and subcategories $\mathcal{C}_i$ that are closed under coproducts and filtered direct limits, then in the derived category when you consider objects whose cohomology lies in the subcategories, this is also present. This, I think, can be shown. I don't know the reference for this, I don't know. Okay, but this is just an elementary thing and you can do it for complexes, and I think this can be used to give a less...I mean, once you know this, which actually one can formulate in terms of every complex being the limit of smaller ones with some bound, then this can slide well.
+% 3:15
+There were a few technical points that came up last time that I would like to address now. One question concerned whether the existence of left adjoints is automatic. There was a claim that it was, justified by a theorem of Adamek and Rosický, known as the \emph{reflection principle} \note{add ref, Locally Presentable and Accessible Categories 1994?}. 
 
-Yeah, I don't think, yeah, to this without using the, I don't think it's necessary to use this. I mean, actually you can kind of explicitly construct the left adjoint on the derived level just by taking left derived functors of the left adjoint you have on the abelian level. Well, maybe it doesn't quite work like that, but you can. Well, yeah, I'm willing to believe that the $\infty$-category version can be avoided anyway. Let's... you can first... the actually presentable, because you're just... that all the... right, right, right, right, yeah, category. Yeah, that's a good argument, yeah, because this is not necessarily the derived category of $\text{Mod}_R$, but what Peter said was that there's a general principle about presentable categories being closed under limits and the category of categories as long as you have functors that commute with colimits, and the homology functors commute with colimits, so then you can see that this thing has to be presentable, and then the $\infty$-categorical adjoint function theorem, the more naive version proved by LRI, would give you the left adjoint. Okay, anyway, enough of that. 
+This theorem states that if $C$ is a presentable category and $D$ is a full subcategory of $C$ that is closed under all limits, and if there exists a regular cardinal $\kappa$ such that $D$ is also closed under all $\kappa$-filtered colimits, then $D$ itself is presentable, and the inclusion functor $D \to C$ admits a left adjoint.
+% todo
+% 4:50
+If $\kappa$ is the first infinite cardinal $\aleph_0$, if not then this is the $\kappa$-filtered colimit % todo. 
+you make $\kappa$ bigger it is a weaker condition that it be closed under $\kappa$-filtered colimits. Then $D$ is presentable and ... \note{todo}.
 
-Right, uh, let's move on to some real math. Okay, so and when you did before without light, you did everything, so is there a close relation between the notions in the light and the general set, that is, so a condensed ring in the light gives one in the general, and subcategory, subcategory, and so on, maybe, or is it more twisted? Well, the first statement is completely accurate: light condensed rings embed fully faithfully into all condensed rings. But when it comes to the analytic ring structure, it's a little bit more subtle.
+\ques What about the derived category?
 
-In general, $R^+$ is an integrally closed subring containing all the topologically nilpotent elements. We saw that if you have a solid analytic ring structure on a solid ring, such that every module over it is solid as an underlying Abelian group, then the collection of $f$ for which this is an isomorphism for all $M$ is actually an integrally closed subring containing all the topologically nilpotent elements. So you could always just throw in these guys, take the subring generated by them, and take the integral closure, and that will not change the theory.
+\ans The $\infty$-category version is proved by Regonov-Schlank. \note{todo, add ref}
+% The ∞-Categorical Reflection Theorem and Applications
+% https://arxiv.org/abs/2207.09244
 
-Okay, and then there was an example. If this is a Huber pair, meaning this is a Huber ring, then the integrally closed subrings $R^+$ like this are the same thing as the open integrally closed subrings, and these are exactly the $R^+$'s in Huber's theory. So the general setup we have for an arbitrary solid ring of the possible choices of $R^+$ when you specialize to the case of a Huber ring, it recovers exactly the choices of $R^+$ you have in Huber's theory.
+% 6:10
+\begin{remark}
+I would like to address another technical point that came up in the previous talk. Recall that we were discussing the derived analog of this definition, where we defined the derived category of $R$, denoted $D(R)$ as a full subcategory of the derived category of $\Mod_{R^\tri}$. This subcategory consists of those objects $M$ for which all homology groups $H_i(M)$, belong to the abelian category $\Mod_R$ (for all $i$ $R^\tri$).
+\begin{align*}
+D(R) \sube D(\Mod_{R^\tri}) (= D(R^\tri))
+\end{align*}
+\begin{align*}
+D(R) = { M \in \Mod_{R^\tri} \mid H_i(M) \in \Mod_R \text{ for all } i }.
+\end{align*}
+\end{remark}
+\note{todo, check this}
 
-From now on, whenever I say Huber ring, I'll mean complete Huber ring unless otherwise specified. There is also sometimes people use derived complete things, and if you have a derived complete thing, it also seems to give a condensed thing, and then it's also possible to say that this is also solid. Yes, actually I might talk about that fun story later in the lecture.
+% 6:50
+We wanted to show that this derived category satisfies the analogs of all of these conditions, particularly its closure properties under limits and colimits.
+To establish closure under limits, the key step is proving that the category is closed under products.
+% 7:05 
+A technical issue arose in this proof: that we needed, that, say $(M_\al)_{\al \in A}$ is collection of objects in $\Mod_R$, need \note{todo}
 
-Moreover, in the Huber case, the $R^+$ is actually recovered from the analytic ring structure---it's basically equivalent to the $R^\triangle$ in Huber's theory. In the general case, I didn't quite claim that if you start with an integrally closed subring satisfying these conditions and you form that theory, there might for some other reasons also be other things that $f$ that satisfy this property for all your $M$, but in the Huber case, you can show that there aren't---we didn't do it last lecture, but it was done in a previous lecture.
+viewed as objects in the derived category concentrated in degree 0, their product in the derived category must still satisfy this condition.
+% 7:36
+The subtlety here is that while countable infinite products remain exact in our setting of light condensed abelian groups, arbitrary infinite products do not.
+% 7:48
+As a result, the product functor has right derived functors, and we must ensure that the product remains in $\Mod_R$ for all $i$.
 
-Okay, questions. Now we're going to discuss localization. Let me make a remark which might be a bit shocking at first glance, but it's actually trivial. If $R$ is a solid ring, and we have this $R^+$ satisfying these conditions, and again you can feel free to assume it's an integrally closed subring containing the topologically nilpotent elements, note that this condition defining the analytic ring structure is just a condition that you're imposing for all $f$ in $R^+$, and $R^+$ was by definition a subset of the underlying discrete ring $R$. So all the data that you're using to define the analytic ring structure actually already appears at the discrete level. 
+% The key point for proving closure under limits was to show that the product of a family of objects in $R^\tri$, 
+
+ 
+%still satisfies the condition of lying in $R^\tri$. So the product functor has right derived functors, and we need to ensure that the product lies in $R^\tri$ for all degrees. 
+ 
+% 7:56
+This can be proved as follows from the axioms.
 
-Then you get another pair, just with the same $R^+$ and the power-bounded elements in the discrete case are just all the elements, so certainly it's still going to be power-bounded inside there. And this observation shows that if you're interested in solid modules over your original $R$, $R^+$, you can take the ones over where you have a discrete ring, and then that already has all of the information about the analytic ring structure. And all that remains is to observe that $R$ will be a commutative algebra object in here, and you just kind of abstractly take $R$-modules in this Abelian category. It's important to note that since we're doing condensed modules, even when you have a discrete ring, you have a huge amount of
+Set $M = \bigoplus_{\al \in A} M_\al$.
+
+% 
+Alpha, then this guy is a retract of $\R^I$ product $\alpha$ in $M$, because termwise it is obviously this system is a retract of this system here. But this is equivalent to saying that $X$belongs to $\Hom_M(\oplus_I \R, M)$. 
+
+% 8:50
+\ques What about products of infinite complexes, unbounded below complexes? 
+
+\ans Yes, the argument was addressed in the last lecture.
+
+\ques Because there are kind of it is possible, so that we can reduce to countable cases? 
+
+\ans Exactly.
+
+% 9:15
+\ques I think also that, I don't know, maybe you know the reference. In general, if we have a Grothendieck category and Grothendieck subcategories that are closed under kernel and cokernel  % todo 
+
+ coproducts and filtered direct limits,
+% 9:35
+Then in the derived category when we consider objects whose cohomology lies in the subcategories, this is also present. This, I think, can be shown. I don't know the reference for this, 
+
+% 9:48
+\ans I don't know. 
+
+
+% 9:50
+\ques But this is just an elementary thing. We can do it for complexes, and I think this can be used to give a less... Once we know this, which actually one can formulate in terms of every complex being the limit of smaller ones with some bound, % then this can slide well.
+
+% 10:09
+\ans I don't think it's necessary to use this. In fact, we can explicitly construct the left adjoint at the derived level by taking the left derived functors of the left adjoint we already have at the abelian level. Maybe it does not quite work like that, but it is possible. I am willing to believe that the $\infty$-category version can be avoided.
+
+\scholze Let us... We can first... the actually presentable, because we are just... that all the... right, category. % todo
+
+
+\clausen That is a good argument, because this is not necessarily the derived category of $\Mod_R$. However, what Peter mentioned is that there is a general principle regarding presentable categories being closed under limits and the category of categories, provided we have functors that commute with colimits, and the homology functors also commute with colimits. 
+% 11:20
+From this, we can conclude that $D(R)$ must be presentable. Then, the $\infty$-categorical adjoint function theorem (the more naive version proved by Lurie) would provide us with the left adjoint.
+
+%  11:36
+Let's move on to some real mathematics.
+
+\ques When you did before without light, you did everything... Is there a close relationship between the notions in the light setting and the general one? Specifically, that is, so a condensed ring in the light gives one in the general, and subcategory, subcategory, and so on, maybe, or is there something more complicated involved 
+
+% 12:04
+\ans The first statement is entirely accurate: light condensed rings embed fully faithfully into all condensed rings. However, when it comes to the analytic ring structure, it is a bit more subtle.
+% 12:18
+This is because, a priori, if we have a light analytic ring in the light sense, we have only decided what the free module should be on light condensed sets.
+% 12:35
+In the previous lecture, we also discussed examples of analytic ring structures in the solid context. 
+
+Let's consider  a solid ring. It is a condensed ring whose underlying condensed abelian group happens to be solid. In this context, we introduced the subset of power bounded elements:
+\begin{align*}
+R^\tri \in \CAlg(\Solid_\Z) \leadsto R^\circ \subs R(\ast) \text{ power bounded elements}.
+\end{align*}
+
+For any subset $R^+$ contained within the power-bounded elements with the additional assumption that $1 \in R^+$), we obtain an analytic ring structure.
+\begin{align*}
+\text{For any } R^+ \subs R^\circ, 1 \in R^+ \cl \text{ get analytic ring structure on } R^\tri \text{, denoted } (R^\tri, R^+)^\solid.
+\end{align*}
+
+% 13:48
+As indicated by the notation, the underlying condensed ring is simply our ring $R^\tri$. The category of modules is then defined as follows:
+\begin{align*}
+\Mod_{(R, R^+)^\tri} = \{ M \in \Mod_{R^\tri} | \IntHom(P,M) \}.
+\end{align*}
+
+% 14:40
+\begin{remark}
+The condition that $1 \in R^+$ ensures that every $M \in \Mod_R$ belongs to $\Solid_\Z$. If we plug in $f = 1$, that was our definition of $\Solid_\Z$. Additionally, the condition $R^+ \subs R^\circ$ guarantees that $R^\tri$ is complete.
+\end{remark}
+
+% 15:15
+Recall that the interpretation of this second coordinate in the analytic ring structure was that it is specifying a notion of complete modules, adapted to the specific situation at hand. 
+% 15:22
+We require the ring itself to be complete; otherwise, we would complete it. So that is the condition on power bounded elements. By definition, this translates to saying that the underlying ring itself should be complete, which is one of our required axioms \note{todo, add what he points at, probably axioms at the beginning}.
+
+% 15:40
+\begin{remark}
+Another point to note is that there is no loss of generality that $R^+$ is an integrally closed subring containing all topologically nilpotent elements. 
+
+% 16:15
+We observed that if a solid analytic ring structure on a solid ring \footnote{This means: an analytic ring structure \note{add what he points at } such that every module over it is solid as an underlying abelian group}, then the collection of $f$ for which this is an isomorphism for all $M$ \note{add what he points at} forms an integrally closed subring containing all the topologically nilpotent elements. 
+
+Thus, we can always include these elements $R^{\circ\circ}$, take the subring they generate, and take the integral closure. This does not affect the theory.
+\end{remark}
+
+% 16:58
+\begin{example}
+Consider a Huber ring when those things can always be considered as solid condensed rings, just by taking the associated condensed ring. In this context, the integrally closed subrings $R^+$ are equivalent to the open integrally closed subrings. These subrings are precisely the $R^+$'s in Huber's theory. \note{todo}
+\begin{align*}
+R^\tri \text{ Huber ring}
+\end{align*}
+\begin{align*}
+R^{\circ\circ} \subs R^+ \subs R^\circ
+\end{align*}
+% not sure what the integrally closed subrings are here.
+
+\end{example}
+
+% 18:30
+In general, for an arbitrary solid ring, the possible choices for $R^+$, when we specialize to the case of a Huber ring, it recovers exactly the choices of $R^+$ we have in Huber's theory. \note{todo, improve phrasing}
+
+% 18:48
+From now on, unless specified otherwise, when I refer to a Huber ring, I will mean a complete Huber ring.
+% 18:55
+\ques Sometimes, people use derived complete things. If we have something that is derived complete, it also seems to give a condensed $\Spec$ object. Is it possible to say that this is also solid? 
+%19:10
+\ans Yes, there's a fun story with that. Maybe I will cover it later in the lecture. But to answer your question, yes, it is indeed possible.
+
+% 19:25
+Moreover, in this case, $R^+$ is recovered by the solid analytic ring $(R^\tri, R^+)^\solid$. Essentially, it is basically to the ...\note{todo}. 
+% 19:43
+Thus, Huber's pair $(R^\tri, R^+)$ is exactly the same as this solid analytic ring structure:
+\begin{align*}
+(R^\tri, R^+) \iff (R^\tri, R^+)^\solid.
+\end{align*}
+
+In the general case, I did not claim that starting with an integrally closed subring satisfying these conditions and forming the theory, there might for some other reasons also be other things that $f$ that satisfy this property for all our $M$.
+However, in the case of Huber rings, we can show that there are not---we did not do it last lecture, but it was done in a previous lecture. \note{todo, clarify this paragraph}
+
+% 20:48
+Okay, questions. 
+
+% 21:02
+\subsection{Localization}
+
+Now we are going to discuss localization. 
+
+% 
+\begin{remark}
+Let me make a remark which might seem shocking at first glance, but it is actually trivial. 
+
+If $R$ is a solid ring, and $R^+$ satisfies the following conditions:
+\begin{align*}
+R^+ \subs R^\circ
+\end{align*}
+\begin{align*}
+1 \in R^+
+\end{align*}
+
+You can also assume that $R^+$ is an integrally closed subring containing the topologically nilpotent elements. The condition that defines the analytic ring structure is simply an additional condition imposed on all $f \in R^+$. 
+
+By definition, $R^+$ is a subset of the underlying discrete ring $R$. Thus, all the data used to define the analytic ring structure is already present at the discrete level. 
+
+% 22:10
+This gives us another pair
+\begin{align*}
+(R(\ast), R^+),
+\end{align*}
+
+where $R^+$ remains unchanged. In the discrete case, all elements are power-bounded, so they are certainly still power-bounded in this setting as well.
+% 22:30
+This observation shows that if we are interested in solid modules over our original $\Mod_{(R,R^+)^\solid}$, we can take the ones over where we have a discrete ring. This already captures all  the relevant information about the analytic ring structure:
+\begin{align*}
+\Mod_{(R,R^+)^\solid} = \Mod_{(R(\ast),R^+)^\solid}.
+\end{align*}
+
+% 22:55
+All that remains is to observe that $R$ will be a commutative algebra object in here:
+\begin{align*}
+R \in \Mod_R (\Mod_{(R(\ast),R^+)^\solid}).
+\end{align*}
+
+We consider $R$-modules abstractly within this abelian category. 
+% 23:15
+It is important to note that since we are working with condensed modules, even when we have a discrete ring, we have a huge amount of new modules beside that it discrete modules that we can consider.\note{todo, check}
+% 23:20
+In particular, over the discrete condensed ring $R(\ast)$, we still have $R$, the genuine condensed ring. The theory for an arbitrary $R$ is, in fact, obtained from from the discrete case via a completely straightforward base change.
+
+\end{remark}
+
+% 24:21
+We are now going to discuss localization and how these categories,
+\begin{align*}
+\Mod_R (\Mod_{(R(\ast),R^+)^\solid})
+\end{align*} 
+
+glue together. However, it will actually be sufficient to consider only the discrete case.
+% 24:30
+The reason is that if we understand how the category $\Mod_{(R(\ast),R^+)^\solid}$ glues, then we can then impose the $R$-module structure on top of it.
+
+This allows us to deduce how the larger category
+\begin{align*}
+\Mod_R (\Mod_{(R(\ast),R^+)^\solid})
+\end{align*} 
+glues as well. 
+% 24:41
+I want to emphasize from the outset that I am discussing only one specific example of gluing. I am not claiming this is the most general kind, but it is nonetheless quite general. You could think of it as a particular approach to gluing.
+
+% 25:00
+To draw an analogy, let's consider the familiar setting of discrete rings. If $R$ is a commutative ring, then we have its usual derived category of $R$-modules:
+\begin{align*}
+R \text{ commutative ring} \rightsquigarrow D(R).
+\end{align*}
+
+\begin{remark}
+% todo
+% 25:35
+discrete $R$-modules
+\end{remark}
+
+This localizes over the Zariski spectrum of $R$, $\Spec(R)$. I will clarify the precise meaning of this shortly.
+
+% 26:05
+$\Spec(R)$ is the set of prime ideals 
+\begin{align*}
+\{ \text{prime ideals } p \subseteq R  \},
+\end{align*}
+and there is a basis of quasicompact opens closed under finite intersection.
+
+% 26:15
+These are the so-called "distinguished opens". Let us say $U(f)$ are the set of prime ideals $P$ such that $f$ is not in $P$:
+\begin{align*}
+U(f) = \{ p: f \notin p \}.
+\end{align*}
+
+So $f$ maps to something nonzero in the residue field.
+
+% 27:18
+There is a structure sheaf, and its value on this distinguished open $U(f)$ is 
+\begin{align*}
+O(U(f)) = R[\frac{1}{f}], 
+\end{align*}
+
+the localization of $R$ at $f$. 
+
+% 27:34
+It is important to note that neither $U(f)$ nor $R[\frac{1}{f}]$ determine $f$, but they do determine each other. In fact, $U(f)$ is naturally identified with $\Spec(R[\frac{1}{f})$, and this matches up the distinguished opens:
+\begin{align*}
+U(f) = \Spec(R[\frac{1}{f}).
+\end{align*}
+
+% 28:30
+If $U$ is a distinguished open set, we can associate to it the derived category
+\begin{align*}
+U \text{ dist} \leadsto D(\O(U)).
+\end{align*}
+
+% 28:41
+If $V \sube U$, we obtain a base change functor:
+\begin{align*}
+V \sube U \leadsto \text{ base change } D(\O(U)) \to D(\O(V)).
+\end{align*}
 
-Is actually base changed from the discrete case in this completely naive way. Okay, so we're going to discuss localization. How these categories glue, but it's actually going to be sufficient to treat the discrete case, because if you understand how this category glues, then you could just put the $R$-module structure on top of that and you'll understand how this category glues. And I want to stress from the beginning that I'm talking just about one kind of example of gluing---I'm not claiming this is the most general, but it is nonetheless quite general. It's just a certain framework for gluing, you can call it.
+The following theorem, which is entirely classical, states that this presheaf is, in fact, a sheaf of $\infty$-categories.
 
-So now, let me make an analogy. So we're going to be in the world of discrete rings now. If $R$ is a commutative ring, then we have its usual derived category of $R$-modules. This localizes over the Zariski spectrum of $R$, and I'll say more precisely what that means in a second.
+\begin{theorem}[Lurie]
+This presheaf is a sheaf of $\infty$-categories.
+\end{theorem}
 
-What is this $\text{Spec}\,R$? It's the set of prime ideals, and there's a basis of quasi-compact opens closed under finite intersection---these are the so-called distinguished opens. Let's say $U_f$ are the set of prime ideals $P$ such that $f$ is not in $P$, so $f$ maps to something nonzero in the residue field. There's a structure sheaf, and its value on this distinguished open $U_f$ is $R_1/f$, the localization of $R$ at $f$. It's important to note that neither $U_f$ nor $R_1/f$ determine $f$, but they do determine each other. In fact, $U_f$ gets identified with $\text{Spec}\,(R_1/f)$, and this matches up the distinguished opens.
+% 29:17
+In this setting, we also obtain a sheaf of abelian categories. In fact, we could have formulated same story with mod the usual abelian... (points to $D(\O(U))$)
 
-If $V$ is contained in $U$, then you get a base change functor. The theorem, which is completely classical, is that this pre-sheaf is actually a sheaf of $\infty$-categories. In this setting, you also have a sheaf of abelian categories, and even a hypersheaf, but I'll just focus on the derived categories here. The key difference is that in the setting I'm about to discuss, the localization maps won't be flat in general, unlike in the discrete case.
+% 29:24
+\ques ... category \note{did not hear this well}
 
-So, this is in $L$ also. First of all, what I said should be correct, I think. I'm sorry, my brain is a little not working very well right now. I actually zoned out while you were talking. My apologies. Do you have any object, and you have any object, in the right category of the topos restricted to you? Val, in the sense, yes, then this is a hypersheaf, no, chief, yeah, hypersheaf, well, why would it automatically be a hypersheaf?
+\ans Yes. 
 
-No, I think I was able to do it in some classical, more classical formulation, but it's a... Is it? So, what do you know about this statement? Oh, yeah, the usual derived category. I maybe it is, maybe it is a hypersheaf, yeah. I don't know, I don't know. I mean, I don't know the statement. It's, I guess, now that I think about it, it sounds plausible, but I mean the hypersheaf, but there's certainly Lurie proves it's a sheaf, yeah, and hypersheaf, maybe, I don't think proves it in one of his books, yeah, I'm sure.
+% 29:30
+\ques ... sheaf, hypercover 
 
-Yeah, there is also something that I saw that you mentioned, I mean, in some text that they found on the internet, instead of looking at the derived category, you can look at Fun$_\infty$ or Shv and this is the same as the derived category of the hypersheaves, if you do hypersheaves with values in the derived category of abelian groups, that's the same thing as the derived category of the category of sheaves of abelian groups. Yeah, and this is also proved, I assume, somewhere in Lurie.
+% 29:38
+\ans Yes, that is right.
 
-Now, I'd like to move on. So, maybe we have this discussion at another time. Okay, so that's one part of the analogy. And the second part is, so now we have this $\R$, $\R^+$, a discrete Huber pair. So, that just means $\R$ is an ordinary commutative ring and $\R^+$ is an integrally closed subring.
+% 29:38
+\ques So this is proved in Lurie somewhere?
 
-Well, then we've assigned to this this $\mathcal{D}_{\R,\R^+}$ solid, and the claim is that this localizes on something else, on the valuative spectrum of this pair $\R, \R^+$. Okay, so what is this? 
+\ans I assume it is proved in Lurie somewhere, yes.
+
+\ques But ... sometimes don't know ...
+
+\ans In this language, I am sure it is Lurie, yes. I will explain the argument in a second.
+
+% 30:00
+In this case, we also have a sheaf on the level of abelian categories, and even more as Gabber said hypersheaf. 
+
+\begin{warning}
+% 30:09
+In the setting we are about to discuss, we obtain a sheaf only at level of the derived category. However, we do \emph{not} get a sheaf at the level of abelian categories.
+% 30:21
+The core issue, which also appeared in my previous lecture. So in this situation \note{todo}, the localization maps are flat.
+
+Specifically,
+\begin{align*}
+\O(U) \to \O(V)
+\end{align*}
+is a flat map, as it is simply a localization.
+% 30:39
+Thus, when working with derived statements, it is not too difficult to deduce corresponding abelian statements using the flatness of localization. However, in the setting we are about to discuss, these localization maps will \emph{not} be flat in general.
+
+\end{warning}
+
+\begin{example}
+% unlike in the discrete case.
+% 30:33
+One example of such a localization map is going to be this localization from the affine line to the closed unit disk, which was this $t$-solidification. I previously mentioned that $t$-solidification is not precisely $t$-exact; there is a discrepancy by one. 
+% 31:08
+This discrepancy is what obstructs the sheaf condition at the level of abelian categories.
+
+\end{example}
+
+% 31:14
+\ques ... closely related statement ... statement, that the derived category .. ring, is the same as the quasicoherent derived category ... $\Spec$ of the ring. In general, I think ... that in some bounded proved ... stacks project.
+% 31:32
+Then there is another statement about sheaf property, which I also do not refer, but I think ...
+If you have any thing ... topos
+derived category of this $U$. This should also be a hypersheaf. Is it? So is this also in Lurie?
+
+% 
+% So, this is in $L$ also. First of all, what I said should be correct, I think. 
+
+% 31:10
+\ques Given any topos, associated to do you have any object, and you have any object in the right category of the topos restricted to $U$? \note{todo}
+
+\ans Yes.
+
+\ques Is this a hypersheaf?
+
+\ans It is not a hypersheaf, but it is a sheaf.
+
+\ques ... \note{todo}
+
+% 32:26
+\ans Why would it automatically be a hypersheaf?
+
+% 
+\gabber I think I was able to do it in a more classical formulation, but it is a... Is it. What do you know about this statement?
+
+\ans Oh, the usual derived category? Maybe it is a hypersheaf, yes. I don't know.
+
+\ques You don't know the reference?
+
+\ans Well, I don't know the exact statement. Now that I think about it, a hypersheaf does sound plausible. But I'm certain that Lurie proves it's a sheaf. As for hypersheaf... Maybe, I'm not sure.
+
+\ques Does Lurie prove this in one of his books?
 
-So, that was the set of prime ideals, and the kind of purpose of a prime ideal in this setting is to let you know where functions vanish or don't vanish, so kind of you could think of it that way, so kind of a binary condition of whether you're zero or nonzero. And in the valuative spectrum, you are allowed some more refined information, not just information about whether a given function vanishes or doesn't, but given two functions, you can ask whether one is bigger than the other. And the way you can measure that is by means of evaluation, so this is a function from $\R$ to $\Gamma \cup \{0\}$, where $\Gamma$ is an abelian group written multiplicatively. And then there are axioms, like multiplicativity, $v(fg) = v(f)v(g)$, and the non-archimedean condition, $v(f+g) \le \max\{v(f), v(g)\}$. And we also involve the sub
+% 33:00
+\ans Yes, I'm sure.
 
-Okay, so the point here is that we now have a much bigger category, and there's more flexibility for how to localize. It connects with this classical discussion of valuations. If you've never seen this before, then you can look, for example, at the rational numbers. Maybe you know the classification of valuations there. There's the trivial valuation, which I guess corresponds to equality, where for every prime ideal, you have the trivial valuation, where it's zero if your element is zero and one otherwise. But then also for every prime $p$, you have a $p$-adic valuation.
+% 33:303
+\ques I also came across something you mentioned in a text I found online. Instead of looking at the derived category, we could look at Fun$_\infty$ or $\Shv$ and this would be equivalent to the derived category of the hypersheaves. 
+
+% 
+If we do hypersheaves with values in the derived category of abelian groups, that is the same thing as the derived category of the category of sheaves of abelian groups. I assume this is also proved somewhere in Lurie. 
+
+I would like to move on. Maybe we have this discussion at another time. 
+
+% 33:50
+So, that is one part of the analogy. The second part involves the pair $(R, R^+)$, a discrete Huber pair. This simply means that $R$ is an ordinary commutative ring, and $R^+$ is an integrally closed subring.
+
+% 34:35
+Then we have assigned to this pair the solid category $D((R,R^+)^\solid)$. The claim is that this localizes on something else---the valuative spectrum of the pair $(R, R^+)$, denoted $\Spv(R, R^+)$. So, what does this mean?
+
+% 35:06
+The set of prime ideals serves as a way to identify where functions vanish or do not vanish.
+% 35:18
+In this context, we can think of it as a binary condition: whether a funtion is zero or nonzero. 
+
+% 35:26
+In the valuative spectrum, we are allowed some more refined information. This is not just information about whether a given function vanishes or not, but we can also compare two functions to see if one is greater than the other.
+% 35:39
+We can measure this comparison through a valuation, which is a function $v \cl R \to $\Gamma \cup \{0\}$, where $\Gamma$ is an ordered abelian group written multiplicatively.
+\begin{align*}
+\Spv(R, R^+) = \{ v \mid v \cl R \to \Gamma \cup \{0\} \}
+\end{align*}
+
+% 36:01
+The axioms for a valuation include multiplicativity: $v(fg) = v(f)v(g)$, and the obvious rule that $v(0) = 0$ for any function.
+% 36:13
+There is also the non-archimedean condition: $v(f+g) \le \max\{v(f), v(g)\}$. 
+
+Additionally, we have the basic values:
+\begin{align*}
+v(0) = 0, v(1) = 1.
+\end{align*}
+
+% 36:36
+Next, we consider the subring $R^+$, and require that all elements in $R^+$ are integral with respect to the valuation:
+\begin{align*}
+v(R^+) \leq 1.
+\end{align*}
+
+% 36:49
+There is an equivalence relation on valuations. For instance, we can always enlarge the ordered abelian group in an arbitrary way, without fundamentally changing what is going on.
+% 37:02
+One way to describe this equivalence relation is as follows:
+\begin{align*}
+v \sim w \iff \forall f, g \in R, v(f) \leq v(g) \iff w(f) \leq w(g).
+\end{align*}
+
+% 37:24
+In other words, the key aspect of a valuation is the binary relation it defines on functions, which is testing whether one is greater than the other.
+
+% 37:32
+\ques Is it the same as $\Spa$ in this case, in the sense...?
+
+% 37:67
+\ans Yes, it is also $\Spa$, because the continuity condition is trivially satisfied when the ring is discrete. 
+
+% 37:48
+That is a bit of a mouthful if you have seen it before. There is  another way to look at this that maybe explains exactly in what sense it is larger than $\Spec(R)$ is.
+% 38:00
+Essentially, it's equivalent to a pair of a prime ideal and a valuation subring, where $A$ is a valuation domain in the residue field:
+\begin{align*}
+(\cP, A \sube K(\cP))
+\end{align*}
+% 38:59
+\note{todo, I don't understand the correction made at 38:59}
+
+% 38:20
+We have the information which records whether a given function vanishes or not. Additionally, we introduce an extra piece of data $A$, which specifies when a function---or a fraction of functions ($K(\cP)$), where the denominator does not vanish---should satisfy the condition $\leq 1$. 
+% 38:36
+This condition is essentially equivalent to the one described earlier.
+
+% 39:10
+The key point is that by working within a much larger category, we gain greater flexibility in how we perform localization. This approach connects with this classical discussion of valuations. 
+
+\begin{example}
+
+If you have never seen this before, a good example to look at is $\Q$. 
+
+% 39:30
+You might be familiar with the classification of valuations there. There is the trivial valuation, which corresponds to equality in this case ($A = K(\cP)$), where for every prime ideal, we have the trivial valuation---zero if the element lies in the prime ideal and one otherwise. Additionally, for every prime $p$, we have the $p$-adic valuation.
+
+% 39:53
+For the generic point of $\Spec(\Z)$, we have the special points of $\Spec(\Z)$. But then we have these things in between, which are nearby $p$ but not equal to $p$, these $p$-adic valuations.
+
+Sorry, I was referring to $\Z$ here, not $\Q$. But the fact that we can classify these valuations can be a bit misleading, because once we introduce an extra variable, then all of a sudden things explode.
+
+% 40:20
+There are many different types of valuations, because in a surface, we can have lots of different kinds of curves passing through a given point. We have valuations of so-called higher rank, which add significant complexity to the theory. 
+
+\end{example}
+
+% 40:35
+I am not going to go too much into this, but I will stick to mostly formal aspects for now. Let's continue with the table of analogies.
+
+% 40:46
+\note{Point at $\U(f) \sim \Spec (R ...)$}
+We considered $\Spec(R)$, where we had a particularly nice basis for the topology: quasi-compact open sets, closed under finite intersections. Each of these sets was also of the same form as the global one, but with a different input datum, $R[\frac{1}{f}]$. 
+The situation is analogous here. We have a basis of quasi-compact open sets, also closed under finite intersections. These sets are referred to as the \emph{rational opens}. 
+
+% 41:24
+They depend on the choice of certain elements in our ring. We select arbitrary $f_1, \ldots, f_n, g \in R$ from the ring. Then, we can define the following set:
+\begin{align*}
+U(\frac{f_1, \ldots, f_n}{g}).
+\end{align*}
+
+This is the set of valuations $v$ satisfying all of these conditions, such that moreover $v(g)$ is non-zero, and $v(f_i) \leq v(g)$ for all $i$:
+\begin{align*}
+\{ v | v(g) \neq 0,  v(f_i) \leq v(g) \forall i \}.
+\end{align*}
+
+% 41:52
+In a certain sense, it resides within the distinguished open set, the Zariski open, given by the condition $g \neq 0$. We then make use of the additional flexibility, of \note{todo} we can also impose inequalities.
+% 42:02
+Thus, by slightly shrinking this Zariski open using these inequalities, we still obtain an open subset.
+
+% 42:40
+There is a structure sheaf, but more precisely, there are structure \emph{sheaves}. On this $\O(U(\frac{f_1, \ldots, f_n))}{g}$, we have one thing which just takes the Zariski localization. 
+\begin{align*}
+\O(U(\frac{f_1, \ldots, f_n}{g})) = R[\frac{1}{g}]
+\end{align*}
+
+% 42:57
+But then we also get a choice of integral elements. It is going to be a subring of $R[\frac{1}{g}]$. We get it by taking the integral elements we had before, or rather their image in there, and then adjoint, and then looking also at these elements $\frac{f_1}{g}, \ldots, \frac{f_n}{g}$. That might not be integrally closed, so we take the integral closure. 
+\begin{align*}
+\O^+(U(\frac{f_1, \ldots, f_n}{g})) = R^+[\frac{f_1}{g}, \ldots , \frac{f_n}{g} ]
+\end{align*}
+\begin{align*}
+\sube R[\frac{1}{g}]
+\end{align*}
+\note{todo, integral closure}
+
+% 43:31
+Essentially, we conside all of the elements which the valuations in our open subset think should be $\leq 1$. For $R^+$, this is already given by definition, and we have enforced it for the elements $\frac{f_i}{g}$. The collection of these elements forms an integrally closed subring, and we have this property for all such objects.
+
+% 43:52
+Moreover, we again encounter a nice recursive property: $U(\frac{F_1, \ldots, F_n}{G})$ is equivalent to the valuative spectrum of $\O_U^+$.
+\begin{align*}
+\O(U(\frac{f_1, \ldots, f_n}{g})) \equiv \Spv(\O(U), \O^+(U))
+\end{align*}
+This matches up with the rational opens.
 
-So you have the generic point of $\Spec \Z$, you have the special points of $\Spec \Z$, but then you have these things in between, which are nearby $p$ but not equal to $p$, these $p$-adic valuations. Oh, sorry, I was talking about $\Z$ not $\Q$. But then the fact that you can classify those is kind of misleading, because once you add an extra variable, then all of a sudden things explode, and there's many different kinds of valuations, basically because in a surface, you can have lots of different kinds of curves passing through a given point, and you have valuations of so-called higher rank, which introduce additional complications into the theory. 
+% 44:20
+Here is another place we can see the necessity of including the data of $R^+$ in the general theory. One could have argued, "I want a larger space, so I'll omit the condition $v(gf) \leq 1$ for all $f \in R^+$. Why is this necessary?"
 
-I'm not going to go too much into this, but yeah, so I'll stick to mostly formal aspects for now. Okay, so let's continue the table of analogies.
+% 44:37
+However, by defining these rational open subsets, they will no longer take the form $\Spv(R,R^+)$, for some ring $R$, because you have enforced the condition that $\frac{f_i}{g} \leq 1$. 
+% 44:50
+The abstract ring $R[\frac{1}{g}]$ \note{todo: add ref} does not  retain this information. Therefore, if we want this condition that the rational opens themselves should be of the same form as the global object, it is essential to include the extra data of $R^+$ from the outset.
 
-So we had $\Spec R$, and we had this particularly nice basis for the topology, quasi-compact, closed under finite intersections, and each of them was also of the same form as the global guy, just for a different input datum, $R_1$ over $F$. And we have the same thing here. We have a basis of quasi-compact opens, closed under finite intersection, and these are called the rational opens in this case. They depend on the choice of some elements in your ring. You choose $F_1, \dots, F_n$ and $G$ inside your ring, then you can form this thing, and what is it? It's the set of those valuations $V$ satisfying all of these conditions, such that moreover $V(G)$ is non-zero, and $V(f_i) \leq V(G)$ for all $i$.
+% 45:06
+\ques Of course, this ... \note{todo}
 
-So in some sense, it lives inside the distinguished open, the Zariski open, given by just deciding $G$ should be non-zero, and then we use this extra flexibility of we can also impose inequalities, so we're shrinking this Zariski open a little bit using some inequalities, and we still get an open subset. Okay, continuing.
+% 45:23
+\ans There is a continuous map from this to this \note{todo}.
+\begin{align*}
+\Spv(O(U), \O^+(U)) \to \Spv(R,R^+)
+\end{align*}
 
-So there's a structure sheaf, but actually, there are structure sheaves. On this $F_1, \dots, F_n$ over $G$, you have one thing which just takes the Zariski localization, but then you also get a choice of integral elements, and that you get by it's going to be, it has its going to be a subring of here, and you get it by taking the integral elements you had before, or rather their image in there, and then adjoint, and then looking also at these elements $F_1/G, \dots, F_n/G$, and then that might not be integrally closed, so you take the integral closure. Basically, you just look at all of the elements which the valuations in your open subset think should be less than or equal to one, so you've kind of already have it for this by fiat, and you forced it for these, and then the collection of those things is an integrally closed subring. 
+% 45:33
+It induces a bijection. Say, the pullback induces a bijection between rational opens here, which are contained in this open subset \note{todo} $\O(U(\frac{f_1, \ldots, f_n}{g}))$ and rational opens in here $ \Spv(\O(U), \O^+(U))$.
 
-And then again, you have this nice recursive property that $U(F_1, \dots, F_n/G)$ is just the same thing as the valuative spectrum of $\mathcal{O}_U^+$, and this matches up rational opens. And here is another place you can see the kind of necessity of including the data of this $\mathcal{R}^+$ in the general theory, because if you could have said, "Okay, well, I want a bigger
+\ques \note{todo}
 
-Let me put this: If $U$ is contained in $V$, then we get the pullback map. In fact, there's a map of analytic rings from $\mathcal{O}_U$ to $\mathcal{O}_V$ in the sense of the previous lecture. So we have a map of condensed rings, which is just in this case a map of discrete rings, such that if you have a complete module here, then when you restrict scalars, it's also complete here. That's the kind of forgetful functor, and then that always has a left adjoint, which is this base change functor. Explicitly, you get it by taking your module here, abstractly tensoring up from this ring to this ring, and then re-completing in this theory here.
+% 46:10
+To $U$ a rational open, we can attach $D(\O(U), \O^+(U))^\solid$: \note{todo}
+\begin{align*}
+\leadsto D(\O(U), \O^+(U))^\solid
+\end{align*}
 
-The theorem---I've kind of run out of space, but maybe I'll put it. This precedes that one over there is a sheaf of $\infty$-categories, and I'll put the warning that this is not true on the level of abelian categories. In contrast to the classical case, these pullback functors are not t-exact in general, because the pullback involves a solidification, which, as I said, is not a flat operation and does bound topological dimension. Yes, it does, it'll be bounded by $n$, the solidification is bounded by---I mean, the homology is zero up to $n$, yeah.
+% 46:30
+Then if $U \sube V$ inclusion, 
 
-Okay, so I think we'll take a 5-minute break before I get to the proofs. The proof---is it complete or not? Probably not in general, but there's an abstract result that if the space has finite cohomological dimension, then hypercompleteness is automatic. This is sometimes useful. If I start with a solid ring, I can take its underlying set, which is discrete, and we mentioned it's the same as the module versus the condensed thing. Is there a case where this is actually a point of this algebra? Hmm, I don't think so. So these tend---for example, like, I don't know, $\Z$. We showed that the $\Z$ power series $T$ is idempotent over the $\Z$ polynomial $T$, but this discrete ring is going to be way too big. I think this is not going to be idempotent; there's no extra reason why this should be, I mean, I didn't think about it carefully, but I would assume the answer is no.
+% 
+Let me put this: If $U$ is contained in $V$, then we get the pullback map. \note{todo, equations}
 
-Okay, so I've stated the theorem, and now I want to explain the proof. But to motivate it, I'll give a certain proof of this classical theorem here. There are many different possible arguments in the classical case, especially because these localizations are flat, there's lots of flexibility in how you set things up. But I want to describe a particular argument for this claim here, which will kind of translate over without too much difficulty to this case here. So let me erase some boards. There was maybe one remark that one can make in both settings that I forgot to make. I said I defined a sheaf of $\infty$-categories on these rational opens. Okay, not every open subset is rational; they're just a basis for the topology. But there's this general result that when you have a basis for the topology closed under finite intersections---that condition being actually necessary in the $\infty$-context---then a sheaf on that basis uniquely extends to a sheaf on the whole space in the naive manner of taking limits of an arbitrary open. Yeah, so we're only describing this sheaf of categories on the rational opens, but after the fact, you get also a category attached to an arbitrary open, whether or
+% 46:55
+In fact, it comes from a map of analytic rings from $\O(U)$ to $\O(V)$ in the sense of the previous lecture. 
+\begin{align*}
+( , )^\solid \mapsto ( , )^\solid
+\end{align*}
 
-Okay, this is a very simple example of two elements which generate the unit ideal inside this ring. The claim is that if you want to check something as a sheaf, you only need to check the sheaf condition in this one specific situation. This was originally in Quince's proof of the---anyway, it's easy, but there was something of Qu and he proved the cell conjecture.
+% 47:25
+So we have a map of condensed rings, which is in this case a map of discrete rings, such that if we have a complete module here \note{RHS}, then when we restrict scalars, it is also complete here \note{LHS}. 
 
-Okay, it reduces to the fact that if you have some vector bundle on a fine space over a ring which is derived over a local ring, then it is extended from the ring, and he did it by reducing to this, and it was a bit trickier. Quince is a clever guy, so let's give the proof.
+% 47:36
+That is the kind of forgetful functor, and then that always has a left adjoint, which is this base change functor. We get it explicitly by taking our module here \note{LHS}, abstractly tensoring up from this ring to this ring, and then re-completing in this theory here \note{RHS}. That is the base change functor.
 
-Well, I said you know we can describe algebraically the covers. If you, in general, the covers would be described like this: you take $F_1$ up to $F_N$ in $O$ generating the unit ideal, such that there exist $X_1$ to $X_N$ in $O$ with $X_1 F_1 + \dots + X_N F_N = 1$. And the general cover is the $U$ of $F_i$---oh, darn it, I can't believe I didn't think of that, will not be okay, because you cannot generate the empty set from non-empty things. Damn it, I should know better by now.
+% 
+\begin{theorem}
+The theorem---
+This presheaf (over there)s is a sheaf of $\infty$-categories.
+\end{theorem}
 
-But, um, plus empty cover of empty set. Okay, checking the sheaf condition there just means you check that the value of your sheaf on the empty set is the terminal object in the category that is the target of your sheaf. Okay, so that usually can be done without much difficulty.
+% 48:30
+\begin{warning}
+This is not true at the abelian level, in contrast to the classical case. These pullback functors are not $t$-exact in general, because the pullback involves a $t$-solidification. As mentioned, this is not a flat operation. 
+\end{warning}
 
-Okay, any question or comment from Bon? No? Okay, but note that this cover here is refined by another cover where you take $F_i * X_i$. This is a smaller distinguished open, and those still generate the unit ideal because of the same expression. So then we can assume just that $F_1 + \dots + F_N = 1$, and then you can do an induction on $N$.
+% 49:00
+\ques Does it have bounds.. cohomological dimension? \note{todo}
 
-Here, we have an object in the derived category and an object in the DED category, and then you give yourself extra data of an isomorphism between them. But it's not an isomorphism in the usual derived category, it's an isomorphism in some infinity version. So you can imagine, for example, if this is represented by a complex of projective objects, then you'd actually want to give a chain homotopy equivalence between their images.
+% 49:05
+\ans Yes, it does. It will be bounded by $n$ \note{add what he points at}. 
 
-Let's say they're bounded above just for simplicity, and then you make an infinity category out of that. So you define some notion of chain homotopy there, and so on.
+% 49:15
+\ques The solidification is bounded by $n$ ---I mean, the homology is zero up to $n$.
 
-Right, so then what does essential surjectivity mean? It means you can glue in the derived category. If you have a chain complex here, a chain complex here, and an explicit identification between them, maybe you choose some quasi-isomorphic models and make a chain homotopy equivalence between them. Then that collection of data uniquely comes from an element here, up to quasi-isomorphism. So the point being that you actually have to specify the data of the chain homotopy equivalence here in order to get the well-defined object there. That's the essential surjectivity.
+% So I think we will take a 5-minute break before I get to the proofs. 
 
-The fully faithfulness says something else. It says that if you have two objects here, and you want to know the homs between them, so you can think of calculating Ext groups, for example, the Rhoms between two objects here, you can get it by base changing here and taking Rhoms, base changing here and taking Rhoms, and then doing a homotopy pullback of those complexes for Rhoms.
+\ques Is the proof complete or not?
 
-Okay, so that's kind of how to think about this result. It lets you glue objects that are defined locally in a derived sense, but it also lets you do global Ext calculations by localizing.
+% 49:37
+\ans Probably not in general, but there is an abstract result that if the space has finite Krull dimension, then hypercompleteness is automatic. This is sometimes useful.
 
-Okay, but how do you formally prove such a statement? Note that each base change functor has a right adjoint, which is just the forgetful functor, from the derived category of $R_1$ over $F$ to the derived category of $R$. And then it actually follows formally that this functor also has a right adjoint.
+% 49:52
+\ques If we start with a solid ring, we can take its underlying set, which is discrete. We mentioned it is the same as the module versus ... \note{todo} . Is there a case where this is actually idempotent of this ring \note{todo} .. algebra?
 
-You can explicitly describe what this right adjoint is. If you have a pair $M, N, \alpha$ where $\alpha$ is an isomorphism, you just apply the right adjoints to each of these objects and then take a limit. So you take $M$ crossed over $N$ with $M_1$ over $F$, which is the same thing as $N_1$ over $F$.
+% 50:10
+\ans I don't think so. For example, $\Z$. 
+\begin{align*}
+\Z \mapsto \Z[[T]]
+\end{align*}
 
-Okay, so the trick to get used to conversing by two op is just to have an easy diagram, yes, in principle you could also do this argument without doing the reduction, but it's certainly easier to talk about it this way, because it's finite many intersections.
+\ans We demonstrated that the $\Z$-power series $T$ is idempotent over $\Z[T]$, but this discrete ring is too large for that to hold in general. This is not going to be idempotent; there is no extra reason why it should. While I haven't considered it in detail, I would expect the answer to be no.
 
-I think in the end, once you get to the statement we're trying to prove with the valuative spectrum, then you really probably don't want to - well, I don't know, maybe you could organize it cleverly, but I think doing the reductions makes it much easier.
+\subsection{Proof}
 
-Okay, right. This is good news, I mean, this is the great thing about proving something as a sheaf of categories---you have an automatic candidate for the inverse, it's some right adjoint. So you have a functor you want to prove is an equivalence, you have a right adjoint, that means you have a unit and a counit you need to check are isomorphisms. So then you need to check, one of them will be a map in this category, and one of them will be a map in this category.
+% 50:50
+We have stated the theorem, and now we aim to explain the proof. To motivate it, we will give a certain proof of this classical theorem here \note{add what he pointed at}. 
 
-For example, for the unit, you need that if $M$
+% 51:08
+In the classical case, there are many different possible arguments for this, especially since these localizations are flat, there is lots of flexibility in how we set things up.
 
-Okay, so then the proof of the solid analog. You use the fact that when you invert $1 - f$, this is the intersection of the two, that is, those which are---yes, yes, yes, yeah, you want to know that when you pass to right adjoints, this thing is just the intersection of those two things as well. Yeah, maybe I should have added that to the list. Um, yeah, thanks.
+% 51:18
+But we want to describe a particular argument for this claim here \note{add what he pointed at}. This argument will translate without too much difficulty to this case here \note{add what he pointed at}. 
 
-Well, we have to understand it in a sensible way, I guess you're right. And of course, we have to know the language of $\mathcal{L}$ to make it precise. Yes, so it's not---maybe to well, I mean, it's the right adjoints are fully faithful, so it really is just kind of an object-wise condition you could say, just---yeah.
+% 51:58
+There is one remark that could be made in both settings, which we forgot to mention.
 
-Okay, so what's the analog? So again, we have the site of rational opens $U$ in this Valuation spectrum, and the Grothendieck topology, open covers. And then we have a lemma that this topology is generated by---the empty set cover, and for all rational opens $U$ and all $f$ in $\mathcal{O}_R$, we have to take care of two different kinds of covers. So, we have $U$ covered by $1/f$ and $U \setminus V(f)$. This is a refinement of the Zariski cover we had previously, where you just inverted $f$ and $1/f$, and that was a cover. This is a smaller, a refinement of that, which still covers.
+% 52:05
+We defined a sheaf of $\infty$-categories on the rational opens. While not every open subset is rational, the rational opens form a basis for the topology. There is a general result that when we have a basis for the topology closed under finite intersections---this condition being essential in the $\infty$-context---a sheaf on that basis uniquely extends to a sheaf on the entire space in the naive manner: by taking limits over arbitrary opens.
 
-The last thing I think---one, it's enough to do it when $f$ is in $\R_+$. Okay, I don't think that will be helpful, but uh, it's---that's nice to know. Yeah, it's like in rigid geometry, in Tate's original work, where he proved a simplicity theorem. He reduces to---he didn't have rational domains, but he has this two types of covers, for which you can prove acyclicity, and it turns out that it generalizes to the analytic case.
+% 52:40
+We are currently only describing the sheaf of categories on the rational opens. However, after the fact, we also obtain a category associated with an arbitrary open subset, whether or not it is rational.
 
-I will not give the argument for this, it's---it's just it's a bit more complicated, because well, the Valuation spectrum is more complicated than Spec, but the idea is basically---well, the idea is somewhat similar, you could say, but it's actually a somewhat complicated argument. So, but it's---Uber, there is maybe a statement.
+\begin{sketch}
+% 52:55
+Proof of classical theorem, meaning Zariski discent, you could call it, for $D(R)$. We are interested in this site of distinguished opens inside $\Spec(R)$. We have this ... with an open cover topology. We have somewhat an understanding of what it means to have a cover: the distinguished opens cover $\Spec(R)$ for some ring $R$, iff we are inverting some elements and the elements should generate the unit ideal.
 
-That it's enough to have a rational $f_1, \dots, f_n$ generating the unit ideal, and then you can check just for those. Yes, yes, yes, you can do some little bit of work to reduce to exactly, exactly, exactly, yes.
+% 54:00
+However, through a series of reductions, we can show that it suffices to check the sheaf condition for a very specific case of such a situation.
 
-So, Huber shows that every $G$-cover is refined by one of the following form: take $f_1, \dots, f_n$ generating the unit ideal, and then look at $U(f_1, \dots, f_i^\wedge, \dots, f_n)$. The collection of these $U$'s is a refinement of the usual Zariski cover you get when $f_1, \dots, f_n$ generate the unit ideal, but you can check just on valuations that it still covers the valuative spectrum. Then you do something similar to what we did previously---you can assume one of the elements is equal to 1. You keep playing and playing and eventually you get the desired thing.
+So the lemma is that this Grothendieck topology
 
-Okay, so now what are we reduced to, analogous to there? If $(R, R^+)$ is a discrete Huber pair and we take $f \in R$, then we need...
+Lemma: The Grothendieck topology is generated by covers of the following form.
+Take $U \subs \Spec(R)$ a distinguished open, $f \in \O(U)$, and you form a cover, which is \note{todo, diagram}
+% 54:59
 
-There were two different kinds of covers: $U(f)$ and $U(1/f)$. So I'll do the first one. $D(R, R^+) \to D(R[1/f], R^+ + fR^+)$ is just the solidification, $T$-solidification, from $\Z[T] \to R$ with $T \mapsto f$. By definition, these are both analytic ring structures on the same ring, and the only difference is that in the second case, we've enforced the extra condition that $x \in R^+$ is solid in $R[1/f]$. This gives us the category we want.
+\end{sketch}
 
-For the second cover $U(1/f)$, this is $D(R, R^+) \to D(R[1/f], (R^+ + R^+f)^\mathrm{int})$. This is first inverting $f$, then $T$-solidifying for $\Z[T] \to R$ with $T \mapsto 1/f$. The modules here are a full subcategory of $R[1/f]$-modules where $fx$ is invertible, with the extra condition of being "solid".
+% 55:09
+This is a very simple example of two elements which generate the unit ideal inside this ring. The claim is that if we want to check something as a sheaf, we only need to check the sheaf condition in this one specific situation. 
 
-I claim that this whole process of inverting $f$ and then solidifying with respect to $1/f$ is also described by just an $\R\mathrm{hom}$. Namely, take $\Z[T] \to R$ with $T \mapsto f$, not $1/f$, and take $\R\mathrm{hom}_{\Z[T]}(-, R)$. This is the localization which kills the idempotent algebra $\Z[[T]]$ in solid $\Z$-modules.
 
-So, this is kind of the new notation fitting it in the general framework. Before, for Uber pairs, you wrote the $\mathcal{D}R^+$ integral clause. Okay, you wrote $\mathcal{D}$, so let me explain what the point is here. This localization was supposed to be given by first inverting $F$ and then doing the solidification. But again, this solidification---the first claim is that this functor already inverts $F$. 
+\gabber This was originally in Quince's \note{todo,name} proof of the---anyway, it is easy, but there was something of Qu \note{todo,name} and he proved the Serre conjecture.
 
-If you have something $F$-torsion, it's going to be killed by this, and the reason is you're killing this whole guy. And therefore, in particular, you're killing any module over this guy. But everything $T$-torsion is a module over $\Z[[T]]$. So this automatically inverts $F$, because anything $T$-torsion is a $\Z[[T]]$-module. 
+% 
+\gabber He wants to prove that if we have some vector bundle on affine space over a ring which is derived over a local ring, then it is extended from the ring. He did it by reducing to this, and it was a bit trickier. 
 
-So if you have a solid Abelian group, which is a filtered colimit of things killed by powers of $T$, then it is a $\Z[[T]]$-module. That's just a condition, so you can reduce to checking for something which is uniformly killed by some power of $T$, but then it's obviously a $\Z[[T]]$-module because it's a module over the truncated power series ring.
+% 55:42
+\clausen Quince is a clever guy, so let us give the proof.
 
-So then it would be the same thing to write this formula where you invert $T$, but then if you do that, it's exactly the same thing as $T$-solidification as described by the previous formula. Inverting $F$ and then solidifying $1/F$ is just the same thing as doing this here.
+% 
+We can describe the cover algebraically. In general, the covers would be described like this: we take $f_1, \ldots, f_n$ in $\O$ generating the unit ideal, such that there exist $x_1, \ldots, x_n in \O(u)$ with $x_1 f_1 + \ldots + x_n f_n = 1$. The general cover is the $U(f_i)$.
 
-Okay, so basically all you need to check now, if you look at those conditions, most of them we already know. It's a localization, kind of by construction, the localizations commute, because they're both given by $\mathcal{R}$-homing out of some object, and any two functors $\mathcal{R}$-homing out of an object commute with each other, just because the tensor product by a functor and the tensor product being commutative.
+% 
+oh, I can't believe I didn't think of that, 
 
-So what does this translate to in terms of these idempotent algebras which determine these localization functors? It translates to a simple condition on these idempotent algebras. If you take $\Z[[T]]$ and tensor it in solid $\Z$-modules over $\Z[[T]]$ with $\Z((T^{-1}))$, you get zero. If you have something that dies on $\mathcal{R}$-hom out of this and dies on $\mathcal{R}$-hom out of that, then by messing around using this condition, you conclude that it just has to be zero.
 
-What's the interpretation here? You can think of this as localizing away from the open unit disc, and this was localizing to the closed unit disc or away from the open unit disc centered at infinity. The reason those two cover intuitively is because if you take the closed unit disc centered at infinity and the closed unit disc centered at zero, then their union is the whole space. But in terms of the complements, that's saying if you take the open unit disc and the open unit disc at infinity, then they don't intersect, and that's exactly the algebraic translation of that fact.
+\gabber will not be okay, because we cannot generate the empty set from non-empty things.
 
+% 
+But plus empty cover of empty set. Checking the sheaf condition there means that we check that the value of our sheaf on the empty set is the terminal object in the category that is the target of our sheaf. Usually, that can be done without much difficulty.
+
+% 57:28
+But note that this cover here \note{todo, add what he points at} is refined by another cover where we take $f_i * x_i$. 
+This is a smaller distinguished open. Those still generate the unit ideal because of the same expression. 
+Then we can assume that $f_1 + \ldots + f_n = 1$. Then we can do an induction on $n$.
+
+% 58:17
+Suppose we have $f_1 + f_2 + f_3 = 1$ and we want to check the sheaf condition. We can localize to $U()$ \note{todo}, since we assume the sheaf condition holds for covers of this form. It is enough to check the sheaf condition when we do these localizations. But when you localize to here, 
+
+when $f_3$ is the unit, there is something similar.
+
+\gabber grothendieck topology. Under some conditions it is enough to check. Assuming that things like the intersections exist.
+
+
+\clausen Yes, exactly, but I chose this collection to be compatible under base change. This collection here \note{todo} is closed under base change. That is an important technical point, when we get into making this argument completely precise. 
+I have set it up to ensure this property holds. .. We get the sheaf condition by induction. That is essentially the core of the argument.
+
+% 1:00:25
+What about this case here?
+
+% 1:00:32
+What we are trying to show, checking the sheaf condition for ... Well, it is a distinguished open in an element $f \in R$, but now there is no loss of generality assuming $U = \Spec R$.
+
+\note{todo diagram 1:01:00}
+
+% 1:01:04
+What is the sheaf condition in this case? In this \note{add what he points at} case, we have just two elements, and then we have their intersection. The sheaf condition says that if we look at the derived category of $R$, and the derived category of $R[\frac{1}{f}]$, todo.., this should be a pullback of $\infty$-categories.
+
+
+\note{todo diagram 1:01:25}
+
+% 1:01:38
+Let me pause here, as I haven't spent much time discussing what this notions mean, such as sheaves of $\infty$-categories, limits of $\infty$-categories, and so on. However I can presents a completely (so to speak) elementary case of these pullbacks, to give us a better intuition for the claim.
+
+% 1:01:55
+Claiming that this \note{add ref to diagram} is a pullback of $\infty$-categories, what does that mean concretely? The functor from $D(R)$ to the pullback category 
+\begin{align*}
+D(R) \to D(R[\frac{1}{f}]) \times_{D(R[\frac{1}{1-f}])} D(R[\frac{1}{1-f}])
+\end{align*}
+
+should be an equivalence of categories. So, how should we interpret this $\infty-$category \note{points to RHS}? We start with an object in the derived category $D(R[\frac{1}{f}])$ and an object in the derived category $D(R[\frac{1}{1-f}])$. Then, we  introduce additional data---an isomorphism between these objects \note{todo, what he points at, it is the cross produt}. However, this is not an isomorphism in the usual derived category, but rather an isomorphism in some $\infty$-category version. 
+
+% 1:02:50
+For example, imagine that $D(R[\frac{1}{f}])$ is represented by a complex of projective objects, and $D(R[\frac{1}{1-f}])$ is represented by a complex of projective objects as well. In this case, we would want to construct a chain homotopy equivalence between their images there. For simplicity, let's assume they are bounded above. From this, we can build an $\infty$-category. We then define a notion of chain homotopy within this context, and so on.
+
+% 1:03:14
+\emph{Essential surjectivity} means that we can glue objects together in the derived category. 
+If we have a chain complex in $D(R[\frac{1}{f}])$, and a chain complex $D(R[\frac{1}{1-f}])$, along with an explicit identification between them \footnote{So maybe we choose some quasi-isomorphic models and make a chain homotopy equivalence between them.} \note{todo, add what he points at}, then this collection of data uniquely comes from an element here, up to quasi-isomorphism. 
+% 1:03:40
+The key point is that we must specify the data of the chain homotopy equivalence here \note{todo, add what he points at}, to obtain a well-defined object there \note{todo, add what he points at}. This is what we mean by essential surjectivity.
+
+% 1:03:50
+\emph{Full faithfulness} describes a different condition. It says that if we have two objects in $D(R)$, and we want to know the $\Hom$-spaces between them \footnote{For example, we can compute $\Ext$ groups, or the $\RHom$-spaces between two objects.}, we can get it by base changing here $$D(R[\frac{1}{f}])$ and taking $\RHom$'s, base changing here $D(R[\frac{1}{1-f}])$ and taking $\RHom$'s, and then taking the homotopy pullback of those complexes for $\RHom$'s we have there ($D(R[\frac{1}{f}]) \times_{D(R[\frac{1}{1-f}])} D(R[\frac{1}{1-f}])$). This is the same thing like a shift of a mapping cone of some direct sum of these two mapping to that.
+
+% 1:04:18
+\ques But is it equivalent to like the derived category of this diagram? You can say, on the abelian level, modulo a diagram is just giving a modulo over every ring. And maps ... then you take the derived category .. something condition homology?
+
+% 1:04:33
+\ans It sounds reasonable, but I am not entirely sure. That is certainly not how I think about it.
+
+% 1:04:48
+So that is how to think about this result \note{add ref}. It lets us glue objects that are defined locally in a derived sense, but it also lets us do global $\Ext$ calculations by localizing.
+
+% 
+\begin{question}
+How do we formally prove such a statement?
+\end{question}
+
+\begin{sketch}
+Note that each base change functor has a right adjoint, which is the forgetful functor
+\begin{align*}
+D(R[\frac{1}{f}]) \to D(R).
+\end{align*}
+
+That is for each of the individual maps in diagram \note{todo, add ref}.
+From this, it follows formally that this \note{todo, add ref} functor also has a right adjoint.
+
+% 1:06:02
+We can explicitly describe the right adjoint. Suppose we have a pair $(M, N, \alpha)$ where $M$ is module in $D(R[\frac{1}{f}])$, $N$ is a module in $D(R[\frac{1}{1-f}])$, and $\alpha$ is an isomorphism between their common base changes:
+\begin{align*}
+\alpha \cl M[\frac{1}{1-f}] \equiv N[\frac{1}{f}].
+\end{align*}
+
+Then we apply the right adjoints to each of these objects \note{todo, add what he points at}, and then we take a limit. 
+So we take $M$ cross $N$ with $M[\frac{1}{f}]$ , which is the same thing as $N[\frac{1}{1-f}]$.
+\begin{align*}
+M \times_{M[\frac{1}{f}]} N = M \times_{M[\frac{1}{1-f}]} N
+\end{align*}
+
+\end{sketch}
+
+\ques \note{Can't hear a question/remark}
+
+\ans Yes, you have to open up Lurie to find the precise version. But it works.
+
+% 1:07:02
+\ques The trick to get used to conversing by two op is just to have an easier diagram?
+
+\ans Yes. In principle, we could also do this argument without doing the reduction, that is correct. But it is certainly easier to talk about it this way.
+
+\gabber Because ... finitely many intersections, just to ... like alternating circles ... finite \note{can't hear this question/remark well}
+
+% 1:07:32
+\ans I think that once we get to the statement we are trying to prove with the valuative spectrum, then we really probably do not want to do it this way. Maybe we could organize it cleverly, but I think doing the reductions makes it much easier.
+
+% 1:07:50
+This is good news. This is the great thing about proving something as a sheaf of categories. We have an automatic candidate for the inverse, it is some right adjoint. So we have a functor we want to prove is an equivalence. 
+
+% 
+We have a right adjoint, that means we have a unit and a counit we need to check are isomorphisms. Then we need to check, one of them will be a map in this category, and one of them will be a map in this category.
+
+% 1:08:30
+\begin{example}
+For example, for the unit, we need that if $M$
+
+\end{example}
+
+% 
+So then the proof of the solid analog. We use the fact that when we invert $1-f$, this is the intersection of the two. That is, those which are---yes, we want to know that when we pass to right adjoints, this thing is just the intersection of those two things as well. Maybe I should have added that to the list.
+
+We have to understand it in a sensible way, I guess you are right. Of course, we have to know the language of $\L$ to make it precise. 
+
+
+
+Yes, so it is not---maybe to well, it is the right adjoints are fully faithful, so it is kind of an object-wise condition you could say, just---yeah.
+
+% 
+What is the analog? Again, we have the site of rational opens $U$ in this valuation spectrum, and the Grothendieck topology, open covers. 
+Then we have a lemma that states that this topology is generated by the empty set cover. 
+For all rational opens $U$ and all $f \in \O_R$, we have to take care of two different kinds of covers. 
+
+% 
+So, we have $U$ covered by $\frac{1}{f}$ and $U \setminus V(f)$. 
+This is a refinement of the Zariski cover we had previously, where we just inverted $f$ and $\frac{1}{f}$, and that was a cover. 
+This is a smaller, a refinement of that, which still covers.
+
+% 
+The last thing I think---one, it is enough to do it when $f$ is in $\R^+$. Okay, I do not think that will be helpful, but that is nice to know. Yes, it is like in rigid geometry, in Tate's original work, where he proved a simplicity theorem. 
+
+% 
+He did not have rational domains, but he has two types of covers, for which we can prove acyclicity. It turns out that it generalizes to the analytic case.
+
+% 
+I will not give the argument for this. It is a bit more complicated, because the valuation spectrum is more complicated than $\Spec$. 
+The idea is somewhat similar, you could say. But it is actually a somewhat complicated argument. So, but it is---Uber, there is maybe a statement.
+
+% 
+That it is enough to have a rational $f_1, \ldots, f_n$ generating the unit ideal. Then we can check just for those. Yes, we can do some little bit of work to reduce to exactly.
+
+% 
+So, Huber shows that every $G$-cover is refined by one of the following form: take $f_1, \ldots, f_n$ generating the unit ideal, and then look at $U(f_1, \ldots, f_i^\wedge, \ldots, f_n)$. 
+The collection of these $U$'s is a refinement of the usual Zariski cover we get when $f_1, \ldots, f_n$ generate the unit ideal, but we can check on valuations that it still covers the valuative spectrum. 
+
+% 
+Then we do something similar to what we did previously. We can assume one of the elements is equal to 1. We keep playing and playing and eventually we get the desired thing.
+
+So now what are we reduced to, analogous to there? If $(R, R^+)$ is a discrete Huber pair and we take $f \in R$, then we need...
+
+% 
+There were two different kinds of covers: $U(f)$ and $U(\frac{1}{f})$. 
+We will do the first one. 
+
+$D(R, R^+) \to D(R[\frac{1}{f}], R^+ + fR^+)$ is just the $T$-solidification, from $\Z[T] \to R$ with $T \mapsto f$. 
+
+% 
+By definition, these are both analytic ring structures on the same ring. The only difference is that in the second case, we have enforced the extra condition that $x \in R^+$ is solid in $R[\frac{1}{f}]$. This gives us the category we want.
+
+% 
+For the second cover $U(\frac{1}{f})$, this is $D(R, R^+) \to D(R[\frac{1}{f}], (R^+ + R^+f)^\mathrm{int})$. This is first inverting $f$, then $T$-solidifying for $\Z[T] \to R$ with $T \mapsto \frac{1}{f}$. 
+The modules here are a full subcategory of $R[\frac{1}{f}]$-modules where $fx$ is invertible, with the extra condition of being "solid".
+
+% 
+I claim that this entire process of inverting $f$ and then solidifying with respect to $\frac{1}{f}$ is also described by just an $\RHom$. 
+Namely, take $\Z[T] \to R$ with $T \mapsto f$, not $\frac{1}{f}$, and take $\RHom_{\Z[T]}(-, R)$. 
+This is the localization which kills the idempotent algebra $\Z[[T]]$ in solid $\Z$-modules.
+
+% 
+So, this is kind of the new notation fitting it in the general framework. Before, for Uber pairs, we wrote the $D R^+$ integral clause. 
+Okay, you wrote $D$, so let me explain what the point is here. 
+This localization was supposed to be given by first inverting $F$ and then doing the solidification. 
+But again, this solidification---the first claim is that this functor already inverts $F$. 
+
+% 
+If we have something $F$-torsion, it is going to be killed by this. The reason is we are killing this whole guy. Therefore, in particular, we are killing any module over this object. But everything $T$-torsion is a module over $\Z[[T]]$. 
+So this automatically inverts $F$, because anything $T$-torsion is a $\Z[[T]]$-module.
+
+% 
+If we have a solid Abelian group, which is a filtered colimit of things killed by powers of $T$, then it is a $\Z[[T]]$-module. 
+That is just a condition, so we can reduce to checking for something which is uniformly killed by some power of $T$. But then it is obviously a $\Z[[T]]$-module, because it is a module over the truncated power series ring.
+
+% 
+Then it would be the same thing to write this formula where we invert $T$. But if we do that, it is exactly the same thing as $T$-solidification as described by the previous formula. Inverting $F$ and then solidifying $1/F$ is just the same thing as doing this here.
+
+% 
+All we need to check now, if we look at those conditions, most of them we already know. It is a localization, kind of by construction, the localizations commute, because they are both given by $\RHom$'ing out of some object. 
+Two functors $\RHom$'ing out of an object commute with each other, just because the tensor product by a functor and the tensor product being commutative.
+
+% 
+What does this translate do in terms of these idempotent algebras which determine these localization functors? It translates to a simple condition on these idempotent algebras. If we take $\Z[[T]]$ and tensor it in solid $\Z$-modules over $\Z[[T]]$ with $\Z((T^{-1}))$, we get zero. 
+If we have something that dies on $\RHom$ out of this and dies on $\RHom$ out of that, then by messing around using this condition, we conclude that it just has to be zero.
+
+% 
+What is the interpretation here? We can think of this as localizing away from the open unit disc. This was localizing to the closed unit disc or away from the open unit disc centered at infinity. 
+The reason those two cover intuitively, is because if we take the closed unit disc centered at infinity and the closed unit disc centered at zero, then their union is the whole space. 
+
+% 
+But in terms of the complements, that is saying if we take the open unit disc and the open unit disc at infinity, then they do not intersect. That is exactly the algebraic translation of that fact.
+
+% 
 Similarly, for the second kind of cover, you need that $\Z[[T]]$ tensor
 
-We assigned to this discrete Huber pair. But if you then want to get a sheaf, you send a rational open. You have to send that to modules, our modules in this D-O-of-U, discrete... I don't, maybe I want to say, so O for the discrete ring, okay?
+% 
+We assigned to this discrete Huber pair. But if we then want to get a sheaf, we send a rational open. We have to send that to modules, our modules in this D-O-of-U, discrete... 
+I don't, maybe I want to say, so $O$ for the discrete ring, okay?
 
-So this recovers the topology in the G-model, nisr, okay, yeah. So the and in particular, so what is the unit object in this category? So you take R, and then you invert G, and then you derive-solidify with respect to all the FI over G's.
+% 
+So this recovers the topology in the $G$-model, nisr. So the and in particular, so what is the unit object in this category? We take $R$, and then we invert $G$, and then we derive-solidify with respect to all the $FI$ over $G$'s.
 
-So necessarily when you do this object for a completely general solid ring, you're going to end up with some derived phenomena here. I was hoping to get to it today, but we'll probably discuss exactly how that happens later. I want to also make another remark, which is that this sheaf, Dr-r+, actually lives over a much smaller subset, a closed subset. Let's say SP-R-star-R-plus-r. If you remember the set of topologically nilpotent elements, then here you add the condition that if F here is topologically nilpotent, the valuation has to be strictly less than one. 
+% 
+When we do this object for a completely general solid ring, we are necessarily going to end up with some derived phenomena here. I was hoping to get to it today, but we will probably discuss exactly how that happens later. 
 
-So for an individual F, that's a closed subset, and then it's a big intersection of such things that's a closed subset of this topological space. My claim is just that if you take this sheaf of categories and you restrict it to the open complement, you just get zero, so it's really living over this closed subset here.
 
-On the other hand, Huber considers Spa-R-r+, which is the continuous valuations less than or equal to one on r+, and that's the same thing as a potentially smaller subset, generally smaller subset, satisfying a stronger condition, saying that if you're topologically nilpotent, then for all gamma in gamma, there exists an N in N such that the valuation of f to the N is less than gamma. So there's some subtlety here.
+\begin{remark}
+%
+I want to also make another remark, which is that this sheaf, $Dr-r+$, actually lives over a much smaller, closed subset. 
 
-The space that Huber localizes over is actually smaller than the space that we localize over. But Huber shows, and I should say that this Dr-r-plus does not live over, but there does exist a retraction, which is actually a quotient. By definition, it was a subspace, but you can actually realize it as a quotient, and then you do get a sheaf of categories on Spa, and that's the correct way to get a sheaf of categories on Huber's topological space. It's the retraction that's kind of the good map in the sense that this is the quasi-compact map. So in general, you get more flexibility for localization using this picture than with Huber's picture, and the kinds of extra things you get are something that we already discussed, like the so-called functions on the closed unit disc, which arise from the structure sheaf in this general setting but don't arise from the structure sheaf in Huber's setting. You can analyze these things, but I think I've now said enough. Thank you for your attention.
+% 
+Let us say SP-R-star-R-plus-r. 
+If we remember the set of topologically nilpotent elements, then here we add the condition that if $F$ here is topologically nilpotent, the valuation has to be strictly less than one. 
 
-Rational opens here you can actually parameterize it by similar data, but with an extra condition that these things generate an open ideal. And then if you pull those rational opens back here, you get exactly the corresponding rational opens as expected. But if you take a general rational open here not satisfying that condition, and then restrict it---no, no, if it does satisfy that condition and you restrict it, you get the correct thing. But if it doesn't satisfy that condition and you restrict it, you get something new which is not necessarily even quasi-compact, not a rational open. So you have to write it as a union of rational opens, and this is kind of like taking the open unit disc and writing it as a union of closed unit discs, which is a typical example of that phenomenon.
+% 
+So for an individual $F$, that is a closed subset, and then it is a big intersection of such things that is a closed subset of this topological space. My claim is just that if we take this sheaf of categories and we restrict it to the open complement, we get zero.  So it is really living over this closed subset here.
 
-You said something about getting a structural shift last time. Can you comment on this, or will it come later? I was hoping to get to it again today, but I didn't. So the structural shift would just be you take $R$, which is living globally, and you apply the localization functor to get something living here instead. And that's this object here, and one can analyze it and so on and so forth. And it's also some center of a certain category. Is there a way to think of it as a center of a center? I don't know, but these are your symmetric monoidal categories, so it's just the unit, I mean, the unit of the symmetric monoidal derived category in this sense.
+% 
+On the other hand, Huber considers $\Spa (R, R^+) $, which is the continuous valuations less than or equal to one on $R^+$. That is the same thing as a potentially smaller subset, generally smaller subset, satisfying a stronger condition, saying that if we are topologically nilpotent, then for all $\gamma$ in $\gamma$, there exists an N in $N$ such that the valuation of $f$ to the N is less than $\gamma$. So there is some subtlety here.
 
-You claim that when you take $\mathcal{M}od_R$ of this, this is actually a good thing, which so it is associated to the---in good cases it is associated to the rational---except that sometimes you have to do. So this is, I mean, this will also correspond to an analytic ring, but you know, in the derived sense. So you have to---the notion of analytic ring that we've discussed so far, you had an ordinary condensed ring in a full subcategory. Here you need to not just remember that ordinary derived, you need to remember some derived enhancement of it as well. But then it is enough to just remember the ordinary abelian category of modules over the ordinary thing.
+\end{remark}
 
-And besides the derived stuff, there's also a quasi-separated issue, where the value of the structure sheaf might be different from Huber's, even if it lives in degree zero, it might---the quotient might not be by a closed ideal, and so it might still differ from Huber's. But again, in practical cases, that doesn't show up. And I guess even inverting $G$ can introduce non-quasi-separated behavior in general. We'll discuss this in coming lectures, all of these.
+% 
+The space that Huber localizes over is actually smaller than the space that we localize over.  But Huber shows, and I should say that this $D(R,R^+)$ does not live over, but there does exist a retraction, which is actually a quotient. 
+By definition, it was a subspace, but we can actually realize it as a quotient. Then we do get a sheaf of categories on $\Spa$. That is the correct way to get a sheaf of categories on Huber's topological space. 
 
-In the so, considering those two spaces in $\mathcal{U}$-theory where you have a retraction, which I think he maybe used a slightly different notation, but anyway, this $\mathcal{S}^{p,v}$ and $\mathcal{A}^{i}$. So you have this subspace living in a slightly bigger thing, and there is a retraction which is spectral. So you have shifts, you can consider shifts on both things. What I said, I think, is correct, that the restriction to the subspace is like the direct image. Okay, then you have a shift, like in this shift of categories and some sense on the full $\mathcal{S}$, and then you take the direct image yes to the subspace, which is like restriction.
+It is the retraction that is kind of the good map, in the sense that this is the quasi-compact map. So in general, we get more flexibility for localization using this picture than with Huber's picture.
 
-Something I probably, but the question can also be asked about, so you have particular sheaves on the full $\mathcal{S}$, which are direct images by the inclusion of sheaves on the subspace. So the question is, like, in this context, so you have your, let us say, you have a rational open in the figure $\mathcal{C}$, and you consider its intersection with the smaller $\mathcal{S}$. You said that you can write it as the union of $\mathcal{C}$, so you can evaluate your shift by in this way, by inverse limit of those. Is it equivalent to the shift to the value on the original thing in the big $\mathcal{S}^{p,v}$? So like, whether the shift of categories is the direct image of its restriction to the subspace, which---so you have on $\mathcal{S}^{p,v}$ $\mathcal{R}$ plus
+% 
+The kinds of extra things we get are something that we already discussed, like the so-called functions on the closed unit disc. These arise from the structure sheaf in this general setting, but do not arise from the structure sheaf in Huber's setting. We can analyze these things, but I think I have said enough now.
+
+% 
+Rational opens here we can actually parameterize it by similar data, but with an extra condition that these things generate an open ideal. If we pull those rational opens back here, we get exactly the corresponding rational opens as expected. But if we take a general rational open here not satisfying that condition, and then restrict it---no, if it does satisfy that condition and we restrict it, we get the correct thing. 
+
+% 
+But if it does not satisfy that condition and we restrict it, we get something new which is not necessarily even quasi-compact, not a rational open. So we have to write it as a union of rational opens. This is like taking the open unit disc and writing it as a union of closed unit discs, which is a typical example of that phenomenon.
+
+% 
+\ques You said something about getting a structural shift last time. Can you comment on this, or will it come later? 
+
+\ans I was hoping to get to it again today, but I didn't. So the structural shift would just be we take $R$, which is living globally, and we apply the localization functor to get something living here instead. That is this object here, and one can analyze it and so on and so forth. 
+
+% 
+It is also some center of a certain category. Is there a way to think of it as a center of a center? 
+
+I don't know, but these are your symmetric monoidal categories, so it is just the unit of the symmetric monoidal derived category in this sense.
+
+% 
+You claim that when you take $\Mod_R$ of this, this is actually a good thing, which so it is associated to the---in good cases it is associated to the rational---except that sometimes you have to do. This will also correspond to an analytic ring, but in the derived sense. 
+
+% 
+In the notion of analytic ring that we have discussed so far, we had an ordinary condensed ring in a full subcategory. Here, we need to not just remember that ordinary derived. We need to remember some derived enhancement of it as well. But then it is enough to just remember the ordinary abelian category of modules over the ordinary thing.
+
+% 
+Besides the derived stuff, there is also a quasi-separated issue, where the value of the structure sheaf might be different from Huber's setting, even if it lives in degree zero. 
+The quotient might not be by a closed ideal, so it might still differ from Huber's setting. But again, in practical cases, that does not show up. I guess even inverting $G$ can introduce non-quasi-separated behavior in general. We will discuss all of these this in coming lectures.
+
+% 
+In the so, considering those two spaces in $U$-theory where we have a retraction, which I think Huber maybe used a slightly different notation, but anyway, this $\Spv$ and $\A^i$. So we have this subspace living in a slightly bigger thing, and there is a retraction which is spectral. So we have shifts, we can consider shifts on both things. 
+What I said, I think, is correct, that the restriction to the subspace is like the direct image. Then we have a shift, like in this shift of categories and some sense on the full $\S$, and then we take the direct image yes to the subspace, which is like restriction.
+
+% 
+Something I probably, but the question can also be asked about, so we have particular sheaves on the full $\S$, which are direct images by the inclusion of sheaves on the subspace. 
+So the question is, like, in this context, so you have your, let us say, you have a rational open in the figure $\C$, and you consider its intersection with the smaller $\S$. 
+You said that you can write it as the union of $\C$, so you can evaluate your shift by in this way, by inverse limit of those. 
+Is it equivalent to the shift to the value on the original thing in the big $\Spv$? 
+So like, whether the shift of categories is the direct image of its restriction to the subspace, which---so you have on $\Spv$ $R^+$
 
 \end{unfinished}

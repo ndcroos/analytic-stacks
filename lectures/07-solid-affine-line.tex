@@ -6,91 +6,92 @@
 \renewcommand{\yt}[2]{\href{https://www.youtube.com/watch?v=fUjn2rGw9SA&list=PLx5f8IelFRgGmu6gmL-Kf_Rl_6Mm7juZO&t=#1}{#2}}
 \vspace{1em}
 
-Today we are going to be talking about a little bit of geometry, namely the solid affine line. Let me start with a recap of what we have seen so far.
+Today, we are going to be delve into a bit of geometry, specifically the solid affine line. Let's begin with a recap of what we have covered so far.
 
 \subsection{Recap}
 
-We had this category $\Solid_\Z$ of solid abelian groups, which was a full subcategory of light condensed abelian groups. 
+We introduced the category $\Solid_\Z$ of solid abelian groups, which is a full subcategory of light condensed abelian groups:
 \begin{align*}
-\Solid_\Z \subseteq \Cond_\Z^\light
+\Solid_\Z \subseteq \Cond_\Z^\light.
 \end{align*}
 
-This $\Solid_\Z$ was an analog of complete non-archimedean topological abelian groups, but from a formal perspective, it is easier to work with. It is an abelian category, closed under limits, colimits, extensions, and many other things besides. 
+This $\Solid_\Z$ serves as an analog of complete non-archimedean topological abelian groups, but from a formal perspective, it is easier to work with. It is an abelian category that is closed under limits, colimits, extensions, and many other constructions.
 % 1:30
-Also, we had this left adjoint $(\ldots)^\solid$ called solidification. 
+Additionally, we introduced the left adjoint $(\ldots)^\solid$, known as solidification. 
 
 \note{todo, equation for left adjoint}
 
-There is a symmetric monoidal structure here, which we can think of as a completed tensor product, such that this completion functor is symmetric monoidal.
+There is a symmetric monoidal structure here, which we can think of as a completed tensor product. The completion functor in this context is symmetric monoidal.
 
 % 1:50
-The definition was in terms of this object $P$, which was the free module on a nullsequence. 
+The definition of this structure is based on the object$P$, which is the free module on a nullsequence:
 \begin{align*}
-P = \Z[\N \cup \infty] / \Z(\infty)
+P = \Z[\N \cup \infty] / \Z(\infty).
 \end{align*}
 
 % 2:00
-The definition was that $M$ is solid if this map from nullsequences to nullsequences given by $\id - \sigma$ is an isomorphism. ($\id - \sigma$ here is a shift on $\N$.)
+The definition was that $M$ is considered solid if the map from nullsequences to nullsequences ,given by $\id - \sigma$, is an isomorphism. (Here, $\id - \sigma$ represents a shift on $\N$.)
+The condition can be written as:
 \begin{align*}
-M \text{solid} \iff \IntHom(P,M) \xrightarrow[\iso]{\id - \sigma} \IntHom(P,M)
+M \text{solid} \iff \IntHom(P,M) \xrightarrow[\iso]{\id - \sigma} \IntHom(P,M).
 \end{align*}
 
 % 2:54
-\ques There are two shifts one can look at, because you can shift one to the left and one to the right. Both equivalent? \note{Can't hear this question well.}
+\ques There are two shifts to consider, one shifts to the left and the other to the right. Are both equivalent? \note{The question is unclear due to poor audio.}
 
 % 3:03
-\ans I think only one is good. I want the one that is injective.
+\ans I think only one is suitable. I prefer the one that is injective.
 
 \subsection{Geometry of the affine line}
 
-So that is what we had last time.
+So, that was the context we discussed last time.
 
 % 2:35
-Now I want to start doing a little bit of geometry. We are going to be modest and look at the affine line, which is the most important case. It turns out that $P$ is a ring, even before solidification. 
+Now, let's start doing a little bit of geometry. We will start with a modest example: the affine line, which is the most important case in this context. It turns out that $P$ is a ring, even before solidification. 
 
 % 3:10
-$P$ is a ring, and there exists a ring map. So this is the polynomial ring in one variable to $P$.
+$P$ is indeed a ring, and there exists a ring map from the polynomial ring in one variable to $P$given by:
 \begin{align*} \label{eq:07-polynomial-ring}
-\Z[T] \to P
+\Z[T] \to P.
 \end{align*}
 
-The shift is multiplication by $T$. 
+This map is simply the shift, which corresponds to multiplication by $T$. 
 
 % 3:30
-That is what we had before solidification. But after solidification of \ref{07:poly-ring}, something extremely nice happens.
+That is the situation before solidification. However, after solidification of \ref{07:poly-ring}, something extremely nice happens.
 
 % 3:38
-We already explained what the free module on $P$ is. There is a compact projective generator here on $\Solid_\Z$, which is a countable product of copies of $\Z$.
+We already discussed what the free module on $P$ is. There is a compact projective generator in $\Solid_\Z$, which is given by a countable product of copies of $\Z$:
 
-$\text{compact projective generator} = \prod_\N \Z$
+$\text{compact projective generator} = \prod_\N \Z$.
 
 % 3:55
-That is the basic object from which everything is built. We can get that object by solidifying this basic sequence space $P$. 
-If we take into account the ring structure, when we solidify \ref{eq:07-polynomial-ring}, we get the power series ring in one variable.
+That is the basic object from which everything is constructed. We can obtain this object by solidifying this basic sequence space $P$. 
+When we take into account the ring structure, solidifying the map in \ref{eq:07-polynomial-ring} yields the power series ring in one variable.
 
 \be \label{eq:07-power-series-ring}
-\Z[T] \to \Z[[T]] 
+\Z[T] \to \Z[[T]]3.
 \ee
 \note{not sure of this notation $[[]]$}
 
 % 4:18
-So in the solid context, the universal carrier of a nullsequence is this power series ring $\Z[[T]]$.
+in the solid context, the universal carrier of a nullsequence is the power series ring $\Z[[T]]$.
 
 % 4:30
-But moreover, there is a very nice property of this situation, given by the following lemma. 
+Moreover, there is a very nice property of this situation, which is given by the following lemma. 
 
 
 % 4:33
-\ques How do you multiply things in $P$ that look like a quotient, by something which is not... The nullsequences is like a ring without unit usually.
+\ques How do you multiply elements in $P$ that look like quotients by something that is not... The nullsequences is like a ring without unit usually.
 
 % 4:45
-\ans Yes. Let me briefly explain how you get the ring structure. It is better to think of this construction as being attached to $\N$, rather than $\N \cup \infty$. More generally, if you have any countable set, you can define measures on it as the free module on any compactification, modulo the free module on the boundary. It is independent of the compactification, functorial for proper maps and symmetric monoidal. You can see that using independence of compactification. If you take the product of two countable sets, then measures on set $A$ tensor measures on set $B$ is measures on the product of set $A$ and set $B$.
+\ans Yes, let me briefly explain how we get the ring structure. It is better to think of this construction as being attached to $\N$, rather than $\N \cup \infty$. More generally, for any countable set, we can define measures on it as the free module on any compactification, modulo the free module on the boundary. This construction is independent of the compactification, functorial for proper maps, and symmetric monoidal. We can observe this using the independence of compactification. If we take the product of two countable sets, then measures on set $A$ tensor measures on set $B$ correspond to measures on the product of sets $A$ and $B$. \note{Equation to be added.}
 % 5:26
-So using that, and the fact that addition on $\N$ is a proper map that has finite fibers, you can see that addition on $\N$ induces this ring structure on $P$. Addition on natural numbers also induces this. \note{Does he point at $\Z[T]$, or the map?}
+Using this, along with the fact that addition on $\N$ is a proper map with finite fibers, we can see that addition on $\N$ induces this ring structure on $P$. Addition on the natural numbers also induces this structure. \note{Does he point at $\Z[T]$, or the map?}
 
 
 % 6:05
-If we do the tensoring in the solid world of this power series ring $\Z[[T]]$ with itself, over the polynomial ring $\Z[T]$, we get the power series ring $\Z[[T]]$ again.
+If we tensor the power series ring $\Z[[T]]$ with itself in the solid world over the polynomial ring $\Z[T]$, we get the power series ring $\Z[[T]]$ again. This is captured by the following lemma:
 \bl \label{07:iso}
 \be
 \Z[[T]] \tnsr_{\Z[T]}^{L\solid} \Z[[T]] \iso \Z[[T]]
@@ -113,61 +114,60 @@ Maybe we have to worry a little bit about this, but morally, if we want to check
 \end{sketch}
 
 % 7:46
-\ques Is the derived solid tensor product defined as the derived $T$-product, and then you solidify? How is it defined exactly?
+\ques Is the derived solid tensor product defined as the derived $T$-product, followed by solidification? How is it exactly defined?
 
 % 8:00
-\ans You can either say it is the left derived functor of the solid tensor product, or you can say that you take the derived tensor product and then derived solidify it. It is all the same.
+\ans We can either describe it is the left derived functor of the solid tensor product, or alternatively, we can say that we take the derived tensor product and then derived solidify it. Both descriptions are equivalent.
 
 % 8:15
-\ques Do you need to know there are somehow enough flat objects to construct the---
+\ques Do we need to know there are somehow enough flat objects to construct the---
 
 % 8:23
-\ans You do not need to know that. But it is true that all of these objects are flat. I do not know, did Peter mention that? I forgot.
+\ans We don't need to know that. However, it is true that all of these objects are flat. I’m not sure if Peter mentioned that---I've forgotten.
 
-So a priori, you need to resolve both variables, but since you have flat objects, you only need to resolve one.
+Apriori, we would need to resolve both variables, but since we have flat objects, we only need to resolve one.
 
 % 8:47
-Okay. So what is the interpretation of \ref{07:power-series-ring}? This $\Z[T]$ corresponds to the affine line $\A^1$, we could say. 
+Okay. So what is the interpretation of \ref{07:power-series-ring}? We could say this $\Z[T]$ corresponds to the affine line $\A^1$. 
 % 8:57
-Then, since this \ref{07:iso} satisfies this idempotence property---sort of like when we invert an element in a ring, we get the same thing. We can think of this $\Z[[T]]$ as corresponding to some subspace $\A^1$. 
+Then, since \ref{07:iso} satisfies this idempotence property---similar to when we invert an element in a ring and get the same element---we can think of $\Z[[T]]$ as corresponding to some subspace of $\A^1$. 
 
 % 9:13
-So a \emph{subspace}, as opposed to just a random space with a map to the affine line. 
-That is the interpretation of this idempotency.
+So a \emph{subspace}, as opposed to just an arbitrary space with a map to the affine line. That is the interpretation of this idempotency.
 
 % 9:21
-Then we could ask: how should one think of this subspace? What subspace is this? The naive thing to say would be that it is the formal completion of $\A^1$ at the origin, because it is a power series ring. 
+Then we might ask: how should one think of this subspace? What subspace is it? The natural assumption would be that it is the formal completion of $\A^1$ at the origin, since it is a power series ring. 
 % 9:35
-But that naive interpretation is not the correct one.
+However, that naive interpretation is not correct.
 
-So $\Z[[T]]$ does not correspond to a formal neighborhood of 0 in $\A^1$. 
+So, $\Z[[T]]$ does not correspond to a formal neighborhood of 0 in $\A^1$. 
 
-The reason is that that interpretation is not stable under base change.
+The reason is that this interpretation is not stable under base change.
 
 % 10:00
-To look at base change, by which I mean, this is all implicitly over $\Z$, but we could tensor it to any ring, or any solid ring, and see what pops up. Let me do a little calculation.
+To examine base change---by which I mean, although everything here is implicitly over $\Z$, we could tensor it with any ring or solid ring and see what emerges---let me do a small calculation.
 
 % 10:17
-Let's base change to a non-archimedean field. I will just take the simplest example, $\Q_p$. We will see what pops up. 
+Let's perform a base change to a non-archimedean field, starting with the simplest example, $\Q_p$, and see what arises.
 % 10:26
-We take $\Q_p$ and then we do a solid tensor product with $\Z[[T]]$, and we want to compare this to $\Q_p[T]$.
+We take $\Q_p$ and then we take a solid tensor product with $\Z[[T]]$, aiming to compare this to $\Q_p[T]$.
 \begin{align*}
 \Q_p \tnsr^\solid_\Z \Z[[T]]
 \end{align*}
 
 % todo
 %
-So $\Q_p$ is $\Z_p$ with $p$ inverted, and the solid tensor product commutes with colimits in both variables. So this is the same thing as $\Z_p$ solid tensor product $\Z[[T]]$, and then we invert $p$.
+So, $\Q_p$ is $\Z_p$ with $p$ inverted, and the solid tensor product commutes with colimits in both variables. Therefore, this is equivalent to taking the solid tensor product of $\Z_p$ and $\Z[[T]]$, and then inverting $p$:
 
 \begin{align*}
-\Q_p \tnsr^\solid_\Z \Z[[T]] = (\Z_p \tnsr \Z[[T]])[\frac{1}{p}]
+\Q_p \tnsr^\solid_\Z \Z[[T]] = (\Z_p \tnsr \Z[[T]])[\frac{1}{p}].
 \end{align*}
 
 % 11:05
 But this $\Z_p$ has a resolution by two copies of---so $\Z[[U]]/(U-p)$, it has a resolution by two copies of this power series ring. So we know how to do these tensor products, and it just does the naive thing of pulling in the limits.
 
 % 11:28
-The result of that is that we get $\Z_p[[T]]$, and then invert $p$ on the outside, which is not the same object as the formal completion at the origin, namely $\Q_p[[T]]$. It is contained in there, and it is the subset where the coefficients are bounded in $p$-adic norm.
+As a result, we obtain $\Z_p[[T]]$, and then we invert $p$ afterwards. However, this is not the same object as the formal completion at the origin, namely $\Q_p[[T]]$. Instead, it is a subset of $\Q_p[[T]]$, where the coefficients remain bounded in the $p$-adic norm.
 
 \begin{align*}
 = \Z_p [[T]][\frac{1}{p}] \neq \Q_p[[T]]
@@ -178,15 +178,15 @@ The result of that is that we get $\Z_p[[T]]$, and then invert $p$ on the outsid
 \end{align*}
 
 % 12:06
-What is the interpretation then of this ring $\Z_p [[T]][\frac{1}{p}]$? This ring is the ring of bounded functions on the open unit disk in $\A^1_{\Q_p}$.
+What, then, is the interpretation then the ring $\Z_p [[T]][\frac{1}{p}]$? It is the ring of bounded functions on the open unit disk in $\A^1_{\Q_p}$.
 
 % 12:36
-After an arbitrary non-archimedean field extension of $\Q_p$, we could ask: when we plug in a value in that field $T$ of $\Z[[T]][\frac{1}{p}]$, when will such a series converge? The answer is, it will converge if and only if the number we plug in has absolute value strictly less than one. 
+More generally, after an arbitrary non-archimedean field extension of $\Q_p$, we can ask: when we plug in a value in that field $T$ of $\Z[[T]][\frac{1}{p}]$, when will such a series converge? The answer is that series converges if and only if the substituted value has absolute value strictly less than one. 
 
 % 12:52 
-\gabber It is the ring of \emph{bounded} holomorphic functions on the open unit disk. Not the full, because sometimes, there is another one. \note{not sure of the last part of this sentence}
+\gabber It is the ring of \emph{bounded} holomorphic functions on the open unit disk. Not the full ring, because sometimes, there is another one. \note{not sure of the last part of this sentence}
 
-\clausen That is true, that is the bounded one. Thank you. 
+\clausen That's true, it is the bounded one. Thank you.
 
 % 13:03
 \gabber Sometimes people use the all kinds of things...
@@ -201,21 +201,23 @@ After an arbitrary non-archimedean field extension of $\Q_p$, we could ask: when
 % Unit disk is you can imagine putting the open unit disk at infinity instead. So then you are looking at the complement of the closed unit disk. The complement of a thing is just as good as describing the thing.
 
 % 13:35
-The interpretation that this suggests is that $\Z[[T]]$ should be thought of as corresponding to some sort of open unit disk. 
+This interpretation suggests that $\Z[[T]]$ should be thought of as corresponding to some kind of open unit disk. 
 
 % 13:50
-Over a discrete ring like $\Z$, we cannot tell the difference between the open unit disk and the formal completion at the origin. But the difference pops out when we make a base change to something that has more freedom to play with.
+Over a discrete ring like $\Z$, there is no distinction between the open unit disk and the formal completion at the origin. However, this difference becomes apparent when we perform a base change to a setting that has more freedom to play with.
 
 % 14:14
-But in rigid geometry, it is not really the open unit disk that is fundamental. Usually, it is the closed unit disk. So what about the closed unit disk?
+In rigid geometry, though, the fundamental object is not usually the open unit disk, but rather the \emph{closed} unit disk. So what about the closed unit disk?
 
 \subsection{Closed unit disk}
 
 % 14:40
-One way to understand the closed unit disk is, if we understand what an open unit disk is, we can imagine putting the open unit disk at infinity instead. Then we get the complement of the closed unit disk. The complement of the unit disk is just as good as describing the unit disk.
+One way to understand the closed unit disk is, if we understand what an open unit disk is, we can imagine putting the open unit disk at infinity instead. Then we obtain the complement of the closed unit disk. The complement of the unit disk is just as good as describing the unit disk.
 
 % 15:00
-So let's take this object and put it at infinity instead. This is all just at the level of loose thinking. We can take this power series ring $\Z[[T^{-1}]]$ in one variable and tensor it over... but let me call the variable $T^{-1}$ instead, because I want to be thinking of putting it at infinity. Then I tensor over $\Z[T^{-1}]$ with $\Z[T, T^{-1}]$, so then I am puncturing at infinity, so that I actually  live in the affine line.
+So, let's take this object and place it at infinity instead. This is all just intuition for now. We consider this power series ring $\Z[[T^{-1}]]$ in one variable and tensor it over... but let me call the variable $T^{-1}$ instead, to reinforce the idea of focusing on behavior at infinity.
+
+Then, we tensor it over $\Z[T^{-1}]$ with $\Z[T, T^{-1}]$. This operation effectively removes the point at infinity, ensuring that we are now working within the affine line.
 
 I have a homomorphism from $\Z[T]$... 
 
@@ -228,51 +230,53 @@ What is this ring $\Z[[T^{-1}]]$? I am taking this power series ring and inverti
 
 
 % 16:17
-If we want to understand the closed unit disk, we should in some sense be localizing away from this complement. Another way of saying that is that we should be killing this object $\Z((T^{-1}))$. 
-So to get the closed unit disk, we need to kill $\Z((T^{-1}))$.
+To understand the closed unit disk, we should, in a sense, localize away from this complement. Another way to express this is that we need to eliminate this object $\Z((T^{-1}))$. 
+Thus, to obtain the closed unit disk, we effectively need to \emph{kill} $\Z((T^{-1}))$.
 
 % 16:50
-I am going to make a preliminary note. This $\Z((T^{-1}))$ is a module over $\Z[T]$, as I just exhibited, and it also has a very simple resolution.
-
+A preliminary observation: this $\Z((T^{-1}))$ is a module over $\Z[T]$, as we have just described, and it also admits a very simple resolution:
 % Note
 \begin{align*}
 \Z[[U]][T] / (UT - 1)
 \end{align*}
 
-Note that $\Z((T^{-1}))$---let's disambiguate and call the variable $U$---we can think of that as $\Z[[U]]$ and then invert $U$. One way to invert $U$ is to adjoin the object that we want to be the inverse, and then enforce the equation that says that they are inverse to each other. When we look at it like this...
+Note that $\Z((T^{-1}))$---
 
-I will rewrite that. We get $\Z((T^{-1}))$ has a two-term resolution, where we have $\Z[[U]][T]$ and $\Z[[U]][T]$. Here we have $U-1$, so it is a two-term resolution.
+To clarify, let's rename the variable as $U$ to avoid ambiguity. We can think of that \note{todo} as $\Z[[U]]$ with $U$ inverted. One way to invert $U$ is to adjoin the object that that serves as the inverse, and then enforce the equation that says that they are inverse to each other. When we look at it like this...
+
+Let me rewrite that more clearly. $\Z((T^{-1}))$ admits a two-term resolution, involving two copies of $\Z[[U]][T]$. Here we have $U-1$, so it is a two-term resolution.
 \begin{align*} \label{07:UT-map}
 \Z[[U]][T] \xrightarrow{UT-1} \Z[[U]][T] \rightarrow \Z((T^{-1}))
 \end{align*}
 
 % 17:59
-What are these objects? These are just the base changes of our fundamental $p$, not to $\Solid_{\Z}$ but to $\Solid_\Z[T]$. So these are resolutions by the compact projective generator of $\Mod_\Z[T](\Solid_\Z)$.
+What are these objects? They are simply base changes of our fundamental object $p$, not to $\Solid_{\Z}$ but to $\Solid_\Z[T]$. In other words, these are resolutions by the compact projective generator of $\Mod_\Z[T](\Solid_\Z)$.
 
-So it is a 2-term resolution by the compact projective generator of $\Mod_{\Z[T]}(\Solid_\Z)$.
+So it is a two-term resolution by the compact projective generator of $\Mod_{\Z[T]}(\Solid_\Z)$.
 
 % 18:40
-Killing $\Z((T^{-1}))$ should be the same thing as requesting this map $UT-1$ in \ref{07:UT-map} to become an isomorphism.
+Killing $\Z((T^{-1}))$ should be equivalent to requiring the map $UT-1$ in \ref{07:UT-map} to become an isomorphism.
 % 18:45
-Now this suggests the following, based on an analogy with the definition of $\Solid$ up there.
-Let's say we have one of these objects. 
+This leads to the following suggestion, based on an analogy with the definition of $\Solid$ discussed earlier.
 
-Let's say that $M$ is $\Z[T]$-solid if and only if when we take $\IntHom(P, M)$ and then $\IntHom(P, M)$, and then we take the map which is given by---so now $U$ corresponds to the shift, and $T$ is the extra thing we have acting on $M$, because $M$ is a $\Z[T]$-module, so we have $(\operatorname{shift}T - 1)$. We want this map to be an isomorphism.
+Let's consider one of these objects. 
+
+We say that $M$ is $\Z[T]$-solid if and only if, when we take $\IntHom(P, M)$, and then again $\IntHom(P, M)$, and then we take the map which is given by---so now $U$ corresponds to the shift, and $T$ is the extra thing we have acting on $M$, because $M$ is a $\Z[T]$-module, so we have $(\operatorname{shift}T - 1)$. We want this map to be an isomorphism.
 
 \bd \label{def:07-Z-solid}
 $M \in \Mod_{\Z[T]}(\Solid_\Z)$ is \textit{$\Z[T]$-solid} $\iff \IntHom(P,M) \xrightarrow{\sigma T - 1} \IntHom(P,M)$.
 
 % 19:45
 % todo: ref to note
-
+Alternatively, this is equivalent to:
 $\iff \RHom_{\Z[T]}(\Z[[T^{-1}]],M) = 0$
 
 \ed
 
-Then this note up here is saying that that is the same thing as requesting that if --- now I should pass to $\RHom$. It is the same thing as requesting that there are no $IntRHom$s from this object we are trying to kill into $M$.
+The note above indicates that this is equivalent to requesting that there are no $IntRHom$s maps from the object we aim to kill into $M$.
 
 % 20:30
-Now the theorem is that in this definition \ref{def:07-Z-solid}, the name \textit{$\Z[T]$-solid} is well chosen. This $\Z[T]$-solid theory over $\Z[T]$ is very similar to the $\Solid_\Z$ theory over $\Z$.
+Now, the theorem states that in this definition \ref{def:07-Z-solid}, the name \textit{$\Z[T]$-solid} is well-chosen. This $\Z[T]$-solid theory over $\Z[T]$ closely mirrors to the $\Solid_\Z$ theory over $\Z$.
 
 \begin{theorem}
 
@@ -296,13 +300,13 @@ $\Solid_{\Z[T]}$:
 % $\Cond_{\Z[T]}$ in $M \in \Cond_{\Z[T]}$ is supposed to be the same as \Mod_{\Z[T]}(\Cond^\light_\Z)
 
 % 22:58
-So the derived analogues of all these claims hold. Moreover, the derived theory is naive, in the sense that an object in the derived category is derived solid if and only if each homology group is solid in the sense of the abelian category and it is the derived category of the abelian category. 
+So the derived analogues of all these claims hold. Moreover, the derived theory is naive, in the sense that an object in the derived category is derived solid if and only if each homology group is solid in the sense of the abelian category, which is the derived category of the abelian category. 
 
 % 23:15
-So that is all the formal stuff. But in the $\Solid_\Z$-theory, it was also important to understand the basic compact projective generator $\prod_\N \Z$, which is always gotten by solidifying the sequence space.
+That covers the formal aspects. However, in the $\Solid_\Z$-theory, it was also important to understand the basic compact projective generator $\prod_\N \Z$, which is always obtained by solidifying the sequence space.
 
 % 23:35
-Let me make a claim about that. If we take the $\Z$ power series--- I will just say let's not think of it as a ring; we are thinking of it as a module now. If we take a product of copies of $\Z$, base change it to $\Z[T]$, and then we solidify, we get a product of copies of $\Z[T]$.
+Let me make a claim about this. If we take the $\Z$ power series---let's not think of it as a ring, but rather as a module---then, if we take a product of copies of $\Z$, base-change it to $\Z[T]$, and then solidify, we get a product of copies of $\Z[T]$.
 
 \bcl[Solidification of product of copies of $\Z$]
 \begin{align*}
@@ -312,25 +316,22 @@ Let me make a claim about that. If we take the $\Z$ power series--- I will just 
 
 \begin{remark}
 % 24:25
-A little remark about an interpretation of it. I said $\Solid_\Z$ was analogous to complete non-archimedean topological abelian groups. By definition, non-archimedean means that there is a basis of neighborhoods of the identity, consisting of abelian subgroups.
+A brief remark on the interpretation: I previously mentioned that $\Solid_\Z$ was analogous to complete non-archimedean topological abelian groups. By definition, non-archimedean means that there is a basis of neighborhoods of the identity, consisting of abelian subgroups.
 
 % 24:45
-What would be the analogous interpretation of $\Solid_{\Z[T]}$?
-It would be that we have a complete non-archimedean object where, moreover, there is a basis of neighborhoods consisting of $\Z[T]$-submodules. 
+What would the analogous interpretation for $\Solid_{\Z[T]}$ be? It would be a complete non-archimedean object where, in addition, there is a basis of neighborhoods consisting of $\Z[T]$-submodules. 
 
 % 25:00
-For a basic example of a $\Z[T]$-module which is non-archimedean, but does not satisfy that property, we can think of this ring $\Z((T^{-1}))$. 
+As a basic example of a $\Z[T]$-module that is non-archimedean but does not satisfy this property, we can consider the ring $\Z((T^{-1}))$. 
 \end{remark}
 \begin{unfinished}{25:20}
 
-We cannot find a basis of neighborhoods of zero which are stable under multiplication by $T$, because they are stable under multiplication by $T^{-1}$ instead. 
-But in some sense, the theorem is that if we kill just that one object, then we have explained the difference between the two notions.
-
+We cannot find a basis of neighborhoods of zero that are stable under multiplication by $T$, because instead, they are stable under multiplication by $T^{-1}$. However, in a sense, the theorem states that if we eliminate just that one object, we can fully explain the difference between the two notions.
 
 % 25:35
-\ques In the previous theory without $[T]$ it was a little bit different. It was not defined using this "$p$". 
+\ques In the previous theory without $[T]$, it was a bit different. It was not defined using this "$p$". 
 
-\ans Well, it was basically done this way. Maybe we did not make this explicit and we maybe more talked about just this \todo{add what he points at}, but we definitely talked about this \todo{add what he points at}. But it does make it more clear to think of it that way with the $p$.
+\ans Well, it was essentially done this way. Maybe we did not make this explicit, and we  might have focused more on just this \todo{add what he points at}, but we definitely discussed this \todo{add what he points at}. That said, it does make things clearer to think of it in terms of the $p$.
 
 \begin{sketch}
 All except last property: exactly the same.
@@ -340,39 +341,35 @@ $ M = \RHom_{\Z[T]}$
 
 \end{sketch}
 
-\ques Yes, confused about the $\Z[T]$ itself. Is $\Z[T]$ solid? 
+\ques I am confused about the $\Z[T]$ itself. Is $\Z[T]$ solid? 
 
-
-\ans Ah, it is that part of the theorem, because I am claiming in particular that this $\prod_\N \Z[T]$ is $\Z[T]$-solid and $\Z[T]$ is a retract of this. 
-So it is something that we need to prove, and we will prove it. 
+\ans Ah, that's part of the theorem. In particular, I am claimings that $\prod_\N \Z[T]$ is $\Z[T]$-solid, and $\Z[T]$ is a retract of this. So, yes, it is something that we need to prove, and we will prove it.
 
 \ques But $\Z[T]$ is not solid, right?
 
-\ans Oh no, it is. As an abelian group, you mean?
+\ans Oh no, it is solid. Are you asking about it as an abelian group?
 
-\ques Yes. 
+\ques Yes.
 
-\ans No, every discrete abelian group is solid, because it is generated under colimits by $\Z$. No, it is an important point. Thank you for bringing it up. 
+\ans No, every discrete abelian group is solid, because it is generated under colimits by $\Z$. It is an important point---thank you for bringing it up.
 
 % 26:54
-\ques $\Z[[T]]$ (power series) is also solid? 
+\ques Is $\Z[[T]]$ (the power series ring) also solid?
 
-\ans $\Z[[T]]$ power series is also solid, because it is a limit of objects. You can build it from limits and colimits from $\Z[T]$ \note{not sure $\Z[T]$ or $\Z[[T]]$}. So it is all right.
+\ans Yes, $\Z[[T]]$ is also solid, because it can be constructed as a limit of objects. Specifically, it can be built from limits and colimits of $\Z[T]$ \note{not sure $\Z[T]$ or $\Z[[T]]$}. Thus, it satisfies the solid condition as well.
 
 
-
-For the proof, all of these properties, all except the last, those are exactly the same. 
+For the proof, all of these properties, except the last one, are exactly the same.
 % 27:35
-The arguments for all of those things were completely formal, based on the fact that we have this internally projective object $P$ and we are asking that some endomorphism of $\IntHom(P,M)$ become an isomorphism. 
+The arguments for all of those things were entirely formal, relying on the fact that we have this internally projective object $P$, and we are requiring that some endomorphism of $\IntHom(P,M)$ become an isomorphism.
 
 % 27:47
-That was all that Peter used when he was proving the analogues of these claims for $\Solid_\Z$.
+That was all that Peter relied on when proving the analogues of these claims for $\Solid_\Z$.
 % 27:55
-The fact that we have a good formal theory is already contained in there. 
-Then in Peter's lecture, the hard part was identifying the free modules, that when we solidify this sequence space $P$ \note{todo: add what he points at}, we just get a product of copies of $\Z$ ($\prod_\N \Z[T]$). It fills up the whole thing. Thankfully, that part is going to be easier here, because we already have $\Solid_\Z$, and basically thanks to this interpretation of killing some object \note{todo: add what he points at}. 
+The fact that we have a good formal theory is already contained in there. In Peter's lecture, the hard part was identifying the free modules. Specifically, when we solidify this sequence space $P$ \note{todo: add what he points at}, we end up with a product of copies of $\Z$ ($\prod_\N \Z[T]$), which fills the entire space. Fortunately, that part is going to be easier here because we already have $\Solid_\Z$, and thanks to this interpretation of killing certain objects \note{todo: add what he points at}. 
 
 % 28:35
-The key claim is that we can give an explicit formula for the derived solidification. Derived solidification with respect to $T$. This is just an $\IntRHom$ over $\Z$ quotient of this ring by this ring.
+The key claim is that we can provide an explicit formula for the derived solidification with respect to $T$. This derived solidification is essentially an $\IntRHom$ over $\Z$ quotient of this ring by this ring.
 
 \bcl
 \begin{align*}
@@ -388,19 +385,19 @@ Note that this does have the required map from $M$, because $M$ is $\RHom$. \not
 
 \ques ...
 
-\ans L derived solidification . The derived functor of this thing here \note{add what he points at, it isn't visible}. I prefer to think of it as the derived analogue of it. 
+\ans L derived solidification. The derived functor of this thing here \note{add what he points at, it isn't visible}. I prefer to think of it as the derived analogue of it. 
 
 \ques ... All condensed or all solid?
 
 \ans It is the same. Basically, because of this \note{add what he points at}. I mean the derived...
 
-\ques So when you compute, Grothendieck category, so you have a ... check exactly ... I don't remember ... How do you check underlying are the same? Maybe there is some adjunction... 
+\ques So when we compute, Grothendieck category, so we have a ... check exactly ... I don't remember ... How do we check underlying are the same? Maybe there is some adjunction... 
 
 % todo, place in right order
 % 31:10
 
 % 31:22
-\ans Basically, I do not know. Like I said, I tend to think on the derived level from the beginning, but the basic point is that everything has a resolution by these internally projective objects. Then on those, they are the same, and then it is some derived limit of that. 
+\ans Essentially, I do not know. As I mentioned earlier, I tend to think on the derived level from the outset. However, the key idea is that everything has a resolution by these internally projective objects. Then on those, they are the same, and then it is some derived limit of that.
 
 % 31:40
 \ques ... internally projective in $h$ in all condensed, 
@@ -410,8 +407,7 @@ Note that this does have the required map from $M$, because $M$ is $\RHom$. \not
 
 % 31:07
 \begin{sketch}
-The proof of the claim: This follows formally from the fact that this ring $\Z[[T^{-1}]]$ is idempotent over $\Z[T]$, which follows from the very first description we gave of it as the base change of the---we check that the power series ring is idempotent, and we put that at infinity. The idempotency is preserved.
-
+The proof of the claim: This follows formally from the fact that this ring $\Z[[T^{-1}]]$ is idempotent over $\Z[T]$, which can be derived from the very first description we gave of it as the base change of the--- We verify that the power series ring is idempotent, and we put that at infinity. The idempotency is preserved under this operation.
 \begin{align*}
 \Z((T^{-1})) \tnsr_{\Z[T]}^{L\solid} \Z((T^{-1})) \iso \Z((T^{-1}))
 \end{align*}
@@ -419,21 +415,21 @@ The proof of the claim: This follows formally from the fact that this ring $\Z[[
 % 32:50
 For example, using the idempotency of that, what is this object here (\note{add label}? 
 
-It is just the homotopy fiber of the inclusion of this into this \note{add what he points at}, and this is the base ring. We can easily check that this idempotency is equivalent to the derived idempotency of this object. 
-That means that if we take this expression and we apply it again, we get the same object back. So that is an idempotent operation.
+It is simply the homotopy fiber of the inclusion of this object into that one \note{add what he points at}. This serves as the base ring. We can easily verify that this idempotency is equivalent to the derived idempotency of this object.
+This means that if we apply this operation again to the expression, we obtain the same object. Therefore, this operation is idempotent.
 % 33:15
-Again, the same idempotence will prove to us that if we take this operation and $\RHom$ from this object $\Z[T]$, we get zero. So this thing is $\Z[T]$-solid. That is not quite everything we need to check, but it is basically everything we need to check. 
-It is an idempotent operation, and $M$ is solid if and only if this \note{add what he points at} map is an isomorphism. So it is just completely formal, and I will not write out all of the details.
+Once again, the same idempotence will prove to us that if we take this operation and $\RHom$ from this object $\Z[T]$, we get zero. Thus, this object is $\Z[T]$-solid. While this doesn’t cover every detail, it essentially covers everything we need to verify.
 
+It is an idempotent operation, and $M$ is solid if and only if this map \note{add what he points at} is an isomorphism. This is entirely formal, so I won’t go through all the details.
 
 \end{sketch}
 
 Note: This is a formula for the derived solidification of a general $\Z[T]$-module. 
 % 34:04
-But something nice happens if our $\Z[T]$-module is base changed from a solid $\Z$-module.
+However, something nice happens if our $\Z[T]$-module is obtained by base-changing from a solid $\Z$-module.
 
 % 34:17
-And the next claim is that the pullback functor from $\Solid_\Z$ to $\Solid_\Z[T]$, sending a module $M$ to $M\ \tnsr_\Z \Z[T]$ and then we solidify---
+The next claim is about the pullback functor from $\Solid_\Z$ to $\Solid_\Z[T]$. This functor takes a module $M$ to $M\ \tnsr_\Z \Z[T]$, and then solidifies.
 
 \begin{claim}
 
@@ -447,102 +443,124 @@ M \mapsto (M \tnsr_\Z \Z[T])^{T^\solid}
 
 \end{claim}
 
-This functor is $T$-exact, preserves limits and colimits, and it sends $\Z$ to $\Z[T]$.
+This functor is $T$-exact, preserves limits and colimits, and sends $\Z$ to $\Z[T]$.
 
 % 35:11
-If we prove this, then in particular we get this claim \note{todo: add label}, because this is that functor applied to $\prod_\N \Z$. 
+If we prove this, we can deduce the following claim \note{todo: add label}, because this is that functor applied to $\prod_\N \Z$. 
 % 35:22
-I claim that the functor commutes with products, so then it is enough to understand what happens with $\Z$. But I already also claimed that $\Z$ goes to $\Z[T]$, so we would be done.
+I claim that the functor commutes with products, so it suffices to understand its action on $\Z$. But as I've already stated, $\Z$ maps to $\Z[T]$, so we would be done.
 
 \begin{sketch}
-We just take this formula for the solidification, and we plug in the case where $M$ is also induced. We get that $(M \tnsr \Z[T])^{LT^\solid}$ is the same thing as $m [T]$ (by that I mean $m[T]/\Z[T]$) \note{todo}. 
+We just take this formula for the solidification, and plug in the case where $M$ is also induced. We get that $(M \tnsr \Z[T])^{LT^\solid}$ is equivalent to $m [T]$ (by which I mean $m[T]/\Z[T]$) \note{todo}. 
 \begin{align*}
 (M \tnsr \Z[T])^{LT^\solid} = \IntRHom_{\Z[T]} ( , M[T])
 \end{align*}
 
 % 36:23
-Now we are computing an $\IntRHom$ over $\Z[T]$. The way to do that is to disambiguate the two occurrences of $T$ and then equalize them at the end. So that is calculated as $\Z[[U]]$, and a two-term complex (I will write it vertically so to speak). 
+Now, we are computing an $\IntRHom$ over $\Z[T]$. To do this, we need to disambiguate the two occurrences of $T$ and then equalize them at the end. So that is calculated as $\Z[[U]]$, and a two-term complex (I will write it vertically for clarity). 
 \begin{align*}
 = (\IntRHom_\Z ( U \Z[[U]] [-1], M[T]) )
 \end{align*}
 
-Then we equalize $T$ and the shift operator on here, which is induced by multiplication by $T$
+% 37:05
+Then, we equalize $U$ and $T^{-1}$ and the shift operator on here, which is induced by multiplication by $T$.
 % todo
+
+% 37:29
+I should say that we rather equalize $T$ and the shift operator on here, which is induced by the multiplication by $T$ here. Let us denote that by shift here. $T = \sigma$
+
+% 37:42
+Next, I am switching variables from $T$ to $U$.
+% 38:00
+Note that now we are taking $RHom$'s in $\Solid_\Z$, but this is one of our projective guys. So $\RHom$'ing that commutes with colimits. Since $M[T]$ is a colimit, we can move that \note{todo} outside, like this.
+% 38:22
+Then we are taking this thing, bracket $T$, and we are modding out by $T$ minus something. We are not modding out, modding out would be the cofiber, we are doing the fiber instead. But we also had a shift. Those two actually cancel. In the end, what we get is this $\RHom$ over $\Z$ \note{todo}...
+
+% 38:46
+That is the key formula. Along the way, we have somehow lost the $\Z[T]$-module structure on this \note{todo, add ref} thing. But we can recover it. It is induced by...
+
 
 \note{todo}
 
 \end{sketch}
 
 
-% 
-Multiplication by $T$ is here given by sending $U$ to zero, $U^2$ to $U$, $U^3$ to $U^2$, etc. 
-So if we do that there, then that induces an endomorphism here, and that is the multiplication by $T$ on this resulting thing.
+% 39:04
+Multiplication by $T$ is here given by sending $U$ to zero, $U^2$ to $U$, $U^3$ to $U^2$, etc.
+\begin{align*}
+U \mapsto 0
+U^2 \mapsto U
+U^3 \mapsto U^2
+\end{align*}
+
+% 39:13
+So if we do that there, then that induces an endomorphism here \note{todo, add ref}, and that is the multiplication by $T$ on this resulting thing.
 
 % 39:25
 \ques Sorry, I missed what you said. What is the isomorphism to this? 
 
-
-\ans This bit of somewhat silly notation is the homotopy fiber of this map, or some shift of a mapping cone. That is the same as this. It is also the same as this.
+% 39:32
+\ans This somewhat silly notation represents the homotopy fiber of this map, or some shift of a mapping cone.  It is equivalent to this \note{todo, add ref}, and also to this \note{todo, add ref}.
 
 % 39:50
-Now we are done. Now this functor again---this is internally projective in $\Solid_\Z$, so this functor is $t$-exact and it preserves limits and colimits in $\Solid_\Z$. But limits and colimits in $\Solid_{\Z[T]}$ are calculated on the underlying level, because it is just part of a module category.
+Now we are finished. Now this functor again---this is internally projective in $\Solid_\Z$. So this functor is $t$-exact and it preserves both limits and colimits in $\Solid_\Z$. In $\Solid_{\Z[T]}$, limits and colimits are calculated at the underlying level, since it is part of the module category structure.
 
 % 40:12
-The last claim is that $\Z$ goes to just the usual polynomial ring in one variable. 
+Finally, the last claim is that $\Z$ maps the usual polynomial ring in one variable:
+\begin{align*}
+\Z \mapsto \Z[T].
+\end{align*}
+
 What happens when we plug $\Z$ in $\RHom(...)$? we are taking $\RHom$s from this product of copies of $\Z$ to $\Z$. It turns into a direct sum of copies of $\Z$. We can check that what we get is just the usual $\Z[T]$, even with the $\Z[T]$-module structure. There is a natural comparison map which we see to be an isomorphism.
 
 % 40:45
 \ques Someone proved (it is not related directly to the theory) $R\Hom$ from the infinite product of copies of $\Z$ to $\Z$ is a direct sum. But this is not---here you are doing it in---
 
 % 41:03
-\ans this is easier.
+\ans This is easier.
 
 % 41:15
-We can also do other examples of such a thing. Let's do another example. 
-That finishes the proof of the theorem, so we now have a grip on this $\Solid_{\Z[T]}$ theory. 
-I want to advance the interpretation that the $\Solid_{\Z[T]}$ theory is like working over $\Z[T]$ without the solidification, is like the affine line. $\Z[T]$ with the solidification is like the closed unit disk. That was the interpretation that I started with.
+We can explore other examples of this type. That concludes the proof of the theorem. Now we have a grip on the $\Solid_{\Z[T]}$ theory. 
+I want to advance the interpretation: that the $\Solid_{\Z[T]}$ theory is like working over $\Z[T]$ without the solidification, is like the affine line. $\Z[T]$ with the solidification corresponds to the closed unit disk. That was the interpretation I started with.
 
 \bex
 % 41:45
-Let's do an example again in a non-archimedean field. Let's base change to a non-archimedean field and see what happens.
-Let's look at $\Q_p[T]$. That is functions on the affine line. 
-Now we want to restrict to the closed unit disk, in the sense that we have just described. 
+Let's consider an example in a non-archimedean field, by base-changing to a non-archimedean field and examining what happens. Take $\Q_p[T]$, which represents functions on the affine line. Now, we want to restrict to the closed unit disk, in the sense that we have just described. 
 
-So we take the $T$-solidification $(\Q_p[T])^{T^\solid}$ of this.
+To do this, we take the $T$-solidification $(\Q_p[T])^{T^\solid}$ of this.
 
 % 42:12
-This is an instance of this functor here \note{todo}, and I just said this functor has all the properties in the world. It commutes with colimits, so I can again take the $\frac{1}{p}$ to the outside. It also commutes with limits, so I can take the limit over $n$ of $\Z/p^n\Z[T]$, $T$-solidified, and then $\frac{1}{p}$ at the end.
-
+This is an instance of this functor here \note{todo}. As I mentioned, this functor has all the desirable properties: it commutes with colimits, so I can pull the $\frac{1}{p}$ term outside. It also commutes with limits, so I can first take the limit over $n$ of $\Z/p^n\Z[T]$, $T$-solidified, and then apply the $\frac{1}{p}$ at the end.
+Thus, we get the following expression:
 \begin{align*}
-(\Q_p[T])^{T^\solid} = (\Z_p[T]^{T^\solid})[\frac{1}{p}] = \lim_n .. [\frac{1}{p}]
+(\Q_p[T])^{T^\solid} = (\Z_p[T]^{T^\solid})[\frac{1}{p}] = \lim_n .. [\frac{1}{p}].
 \end{align*}
 
 % 42:49
-Now we are applying this functor there to $\Z_p^n$, but that is just two copies of $\Z$. So we get the same answer as for $\Z$, it is just discrete. This is just inverse limit over $n$ of $\Z_p^n\Z[T]$, $\frac{1}{p}$.
-
+Now we are applying this functor there to $\Z_p^n$, but since that is just two copies of $\Z$, we get the same result as for $\Z$, but in a discrete form. Essentially, we are taking the inverse limit over $n$ of $\Z_p^n\Z[T]$ and then applying the $\frac{1}{p}$ term.
+This gives us the following expression:
 \begin{align*}
-= (\lim_n \Z / p \Z [T])[\frac{1}{p}]
+= (\lim_n \Z / p \Z [T])[\frac{1}{p}].
 \end{align*}
 
 % 43:06
-In other words, it is $\Z[T]$, $p$-completed, $\frac{1}{p}$. These are the functions on the closed unit disk, as desired.
-
+In other words, this is the $p$-completion of $\Z[T]$, followed by adjoining $\frac{1}{p}$. These correspond to the functions on the closed unit disk, as intended.
 \begin{align*}
-= \Z[T]_{\hat{p}}[\frac{1}{p}]
+= \Z[T]_{\hat{p}}[\frac{1}{p}].
 \end{align*}
 
 \eex
 
 % 43:36
-Maybe I forgot to give an interpretation of the coefficients here.
-So again, this is some power series with coefficients in $\Q_p$, but here ($\Z[T]_{\hat{p}} [\frac{1}{p}]$) the coefficients tend to 0, $p$-adically. 
+I may have forgotten to provide an interpretation of the coefficients here.
+To clarify, this is a power series with coefficients in $\Q_p$, but in the case of ($\Z[T]_{\hat{p}} [\frac{1}{p}]$) the coefficients tend to zero $p$-adically. 
 % 44:00
-So it is a smaller ring of functions, that converges on a bigger region. Then we are allowed to be .. \note{todo} on the boundary, so to speak. 
+So it is a smaller ring of functions, that converges on a bigger region. Then we are allowed to be .. \note{todo} on the boundary, so to speak.
 
 % 44:15
 Let's play a fun game. I have been talking about the open unit disk and the closed unit disk, or the closed unit disk and the complement of the closed unit disk. 
 % 44:30
-But there is always this funny question of what is exactly open and what is exactly closed. Because in rigid geometry, the closed unit disk is considered as open. The open unit disk, I suppose it is also open in a sense, but it is not quasi-compact.
+But there is always this curious question of what exactly is considered open and what is considered closed. In rigid geometry, the closed unit disk is regarded as open, while the open unit disk, although open in some sense, is not quasi-compact.
 % 44:50
 So let's play a game. 
 
@@ -554,54 +572,50 @@ So let's play a game.
 
 % 45:15
 \subsection{What is closed and what is open}
-Let's take a look at the categories we have been attaching to the various geometric objects. For the affine line, ... the polynomial ring in one variable, but then the linear algebra category is just $\Z[T]$-modules in solid abelian groups,$ \Mod_{\Z[T]}(\Solid_\Z)$. 
+Let's take a closer look at the categories we have been associating with the various geometric objects. For the affine line, ... the polynomial ring in one variable, but when we shift to the linear algebra category, it becomes $\Z[T]$-modules in solid abelian groups, or $\Mod_{\Z[T]}(\Solid_\Z)$. 
 % 45:42
-Let me go to the derived perspective.
-
+Now, let me shift to the derived perspective:
 \begin{align*}
 D(\Mod_{\Z[T]}(\Solid_\Z))
 \end{align*}
 
-But then, inside there we had this derived solid. So we had 
-
+Inside this, we have the derived solid. So we get:
 \begin{align*}
 D(\Solid_{\Z[T]})
 \end{align*}
 
-But it is better to think of that as a quotient, because the symmetric monoidal functor is the derived solidification functo, which goes like this.
+However, it is more useful to think of this as a quotient, because the symmetric monoidal functor is the derived solidification functor,  which acts as follows:
 
 \begin{align*}
 D(\Mod_{\Z[T]}(\Solid_\Z)) \xrightarrow{ ()^{LT^\solid} } D(\Solid_{\Z[T]})
 \end{align*}
 
 % 46:18
-But then on the other hand, we had the complement. The complement was the open unit disk, or rather, the open unit disk moved to infinity. \note{add what is pointed at}
+On the other hand, we also had the complement, which corresponds to the open unit disk, or more precisely, the open unit disk moved to infinity. \note{add what is pointed at}
 So that is this thing, and that corresponds to $D(\Mod_{\Z((t))} (\Solid) )$.
 % 
-I think someone asked before, but I forgot that you had the solidification, which is $\Z[T]$. There should be another on the other side.
+I think someone asked about this earlier, but I forgot that you had the solidification, which is $\Z[T]$. There should be another on the other side.
 % todo
 
 % 46:52
-It is a forgetful functor. 
-A priori, we are forgetting the extra module structure, but it is in fact a fully faithful inclusion because of the idempotency. The idempotency of this thing means that there is at most one $\Z[T]$-module structure on any $\Z((T^{-1}))$-module structure on a $\Z[T]$-module.
+It is a forgetful functor. A priori, we are forgetting the extra module structure, but it is in fact a fully faithful inclusion because of the idempotency. The idempotency of this thing means that there is at most one $\Z[T]$-module structure on any $\Z((T^{-1}))$-module structure on a $\Z[T]$-module.
 
 % 
-This is like a localization sequence, or what have you. 
-This is the symmetric monoidal quotient of this by this thing, which is an ideal in there. Wat adjoints do we have, and which of them are well-behaved, and so on?
+This is like a localization sequence, or what have you. This is the symmetric monoidal quotient of this by this thing, which is an ideal in there. What adjoints do we have, and which of them are well-behaved, and so on?
 
 % 47:25
-We know that this one \note{todo} has a right adjoint, which is given by the inclusion. But it also has a left adjoint. The left adjoint is given by sending $M$ to the fiber. So you take $M$, and then you base change it to infinity, and you take that cone diagram here. So it is the fiber of $M$ mapping to $M[T]$ over $\Z[T]$ with the $\Z((T^{-1}))$.
+We know that this one functor \note{todo} has a right adjoint, which is given by the inclusion. However, it also has a left adjoint. The left adjoint is given by sending $M$ to its fiber. Specifically, we take $M$, base change it to infinity, and then construct the cone diagram. This gives us the fiber of $M$ mapping to $M[T]$ over $\Z[T]$ with $\Z((T^{-1}))$.
 
 % 48:20
-This left adjoint is, in a sense, better behaved than the right adjoint, the naive inclusion. By the measurement that it is better behaved, they both commute with colimits, but this one satisfies a projection formula with respect to this fundamental functor, which is the symmetric monoidal functor. So this left adjoint is linear over these two symmetric monoidal categories. So this is better.
+In some sense, this left adjoint behaves better than the right adjoint (the naive inclusion). By the measurement that it is better behaved, they both commute with colimits, but this one satisfies a projection formula with respect to this fundamental functor, which is the symmetric monoidal functor. Thus, this left adjoint is linear over these two symmetric monoidal categories. So this is better.
 
-I am going to call this one $j^\ast$, and this one $j_!$, and this one $j_\ast$, this inclusion here. 
+I will refer to this functor as $j^\ast$, and this one $j_!$, and this one $j_\ast$, this inclusion here. 
 
 % 48:57
 On the other hand, for here, we have this functor here, which I will call $i_\ast$, the inclusion there. 
-So it has a left adjoint, also $i^\ast$, which is just the base change functor, which is symmetric monoidal. 
-So that is the more fundamental one from this perspective. 
-But it also has a right adjoint $i^!$, which is given by some $\RHom$, but it is less well-behaved again, because here, this one satisfies a projection formula with respect to this $i^\ast$. So this functor is linear over this symmetric monoidal category, just like this functor is linear over this symmetric monoidal category.
+This functor has a left adjoint, $i^\ast$, which is simply the base change functor and is symmetric monoidal. From this perspective, that \note{todo} is the more fundamental functor.
+
+Additionally, it \note{todo} also has a right adjoint, $i^!$, which is given by some $\RHom$-type construction. However, this right adjoints is less well-behaved, because here, this one satisfies a projection formula with respect to this $i^\ast$. So this functor is linear over this symmetric monoidal category, just like this functor is linear over this symmetric monoidal category.
 
 $\ast$ is an adjoint, the inclusion has $!$ on it.
 
@@ -614,32 +628,29 @@ $\ast$ is an adjoint, the inclusion has $!$ on it.
 \ans Yes. Because already this one is not as nice as, I mean, the good adjoint is up here.
 
 % 50:00
-The interpretation that this suggests---this is exactly like if you have a topological space $X$, and then you have $Z$ a closed subset, and then $U$ the complement open, then you get, if you have derived categories of sheaves, you have exactly the same thing. 
+The interpretation that this suggests---this is analogous to the situation where we have a topological space $X$, a closed subset $Z$, and the open complement $U$. If we have derived categories of sheaves, we get exactly the same thing. 
 
 \begin{align*}
 D(\Sh(\Z, \Z) \xrightarrow{i_\ast} D(\Sh(X, \Z) \xrightarrow{j^\ast} D(\Sh(U, \Z)
 \end{align*}
 
-Where you have the open over here, you have this thing satisfies a projection formula, you happen to have this other guy, but it is not as well-behaved. 
-Then you have $i_\ast$ from $\mathcal{D}(Z)$, $i^\ast$, and then $i^!$. 
-So formally speaking, it behaves exactly the same way. They are both special cases of the same thing, which is: you have a symmetric monoidal category, and you have an idempotent algebra in it, and it generates the whole situation.
+Where we have the open over here, we have this thing satisfies a projection formula, we happen to have this other guy, but it is not as well-behaved. 
+Then we have $i_\ast$ from $\mathcal{D}(Z)$, $i^\ast$, and then $i^!$. 
+So formally speaking, it behaves exactly the same way. They are both special cases of the same thing, which is: we have a symmetric monoidal category, and we have an idempotent algebra in it, and it generates the whole situation.
 
 % 51:09
-In this case, you have this category $\Solid_\Z$ and this idempotent algebra $\Z[[T^{-1}]]$. Here you have this category $\Sh(X,\Z)$, and then the pushforward of the constant sheaf from the closed subset. These are completely analogous formalisms.
+In this case, we have the category $\Solid_\Z$ and the idempotent algebra $\Z[[T^{-1}]]$. Here we have this category $\Sh(X,\Z)$, and then the pushforward of the constant sheaf from the closed subset. These formalisms are entirely analogous.
 
 % 51:27
-That tells us that from our perspective, the closed unit disks should definitely be thought of as open. 
-The open unit disks should definitely be thought of as closed. 
+That tells us that from our perspective, the closed unit disks should definitely be regarded as open, while the open unit disks should definitely be considered as closed. 
 
 As far as I am concerned, the question is settled. 
 
 % 51:47
-Another funny thing is that if think about this perspective, it also tells you that Zariski opens in usual algebraic geometry should be thought of as closed. I think that is also true. I can explain why, if people want to know. 
+Another interesting point is that if think about this perspective, it also tells us that Zariski opens in usual algebraic geometry should also be thought of as closed. I think that is also true, and I can explain why if anyone is interested.
 
 % 52:15
-\ques You start from the usual theory, like patching a sheaf, 
-usual topology, like Zariski or étale or analytic. But then you somehow ..
-decide that now, the Zariski opens are closed
+\ques You start from the usual theory, like patching a sheaf, usual topology, like Zariski or étale or analytic. But then you somehow .. decide that now, the Zariski opens are closed
 
 % 52:44
 \ans I would like to convince you of that, but not right now. 
@@ -660,21 +671,24 @@ For example a distinguished open is just the ring with the function inverted - t
 \ans Yes.
 
 % 53:41
-By the way, we are going to be guided by this sort of thing in setting up the definition of analytic stack and so on. One of the things we discovered is that when we move to this condensed/solid/whatever context, we get six functor formalisms in large generality on derived categories of "quasi-coherent sheaves". They have really nice interpretations.
+By the way, we are going to be guided by this sort of thing in setting up the definition of analytic stack and related concepts. One key insight we discovered is that when we move to this condensed/solid/whatever context, we get six-functor formalisms in large generality on derived categories of "quasi-coherent sheaves". These formalisms have particularly nice interpretations.
 
 % 54:08
-For example, if we think of this object \note{add what is being pointed at} as being what sits at infinity, then it makes sense that this is extension by zero. We are taking our sections and killing the ones that live near the boundary. 
-It all plays quite nicely, and we showed how to give proofs of things like Serre duality and so on using these formalisms.
+For example, if we consider this object \note{add what is being pointed at} as being what lies at infinity, then it makes sense that this is extension by zero. We are taking our sections and discard those that live near the boundary. 
+The whole setup works quite smoothly, and we  demonstrated how to use these formalisms to prove results like Serre duality, among others.
 
 % 54:25
-So we take this perspective seriously --- that the derived categories and functors between them are going to dictate to us what the geometry looks like.
+We take this perspective seriously: that the derived categories and the functors between them are going to dictate to us what the geometry looks like.
 
 % 54:36
-There was another thing I remembered in the break that I forgot to mention. 
-I said that this \note{add what is being pointed at} is $t$-exact and preserves limits and colimits, but I want to caution you that this $t$-solidification from $\Solid_{\Z[T]}$ is not $t$-exact. It is only off by one. I said it was given by $\RHom$ from this object which has a 2-term compact resolution. So it is only off by one from being $t$-exact.
+There was also something I remembered during the break that I forgot to mention earlier.
+
+\begin{warning}
+I previously stated that this \note{add what is being pointed at} is $t$-exact and preserves limits and colimits. However, I want to caution us that this $t$-solidification from $\Solid_{\Z[T]}$ is not $t$-exact---it is off by one. Specifically, it is given by $\RHom$ from this object \note{todo} which has a 2-term compact resolution. This means that it is only off by one from being $t$-exact.
+\end{warning}
 
 % 55:05
-Everything connective goes to something connective, and everything anti-connective goes to at most a 1-shift of something anti-connective. So $t$-solidification is not exactly exact, but it is very controlled. 
+Everything connective maps to something connective, and everything anti-connective maps to something anti-connective, with at most a 1-shift. While $t$-solidification is not exactly exact, it is highly controlled.
 
 \ques The composed map is?
 
@@ -686,73 +700,72 @@ Everything connective goes to something connective, and everything anti-connecti
 
 
 % 55:30
-So now I want to motivate what I am going to do in the rest of this lecture.
-What is one place where we are probably going to go? 
+So now I want to motivate the direction I am going to take for the rest of this lecture.
+One key area we will explore is:
 \begin{vista}
-We want to look at solid rings, i.e. commutative algebra objects $\CAlg$ in this tensor category $\Solid_{\Z}$.
+We will focus on solid rings, i.e. commutative algebra objects $\CAlg$ within the tensor category $\Solid_{\Z}$.
 
 $R \in \CAlg(\Solid_\Z, \tnsr)$
 \end{vista}
 
-Generalizing our discussion when $R$ is $\Z[T]$, we want to see subsets like closed/open unit disks. Of course, when you have a big algebra, you will get many more such subsets.
+To generalize our discussion when $R = \Z[T]$, we want to study subsets such as closed/open unit disks. Naturally, when we deal with a big algebra, we will ncounter many more such subsets.
 
 % 56:23
-We want to organize what you see in a nice way. 
+Our goal is to organize these observations in a coherent way.
 % 56:30
-It is not necessarily the most general thing, but we are going to take the things you see over $\Z[T]$ and base change them along all possible maps $\Z[T] \to R$, i.e. all possible functions in $R$.
+While this approach may not be the most general, we will focus on the structures we encounter over $\Z[T]$ and base change them along all possible maps $\Z[T] \to R$, that is, all possible functions in $R$.
 
 % 56:45
-What we will end up with is the statement that the derived category of $\Solid_\Z$-modules localizes along the valuative spectrum of the underlying usual discrete commutative ring of this solid commutative ring. 
+We will end up with the statement that the derived category of $\Solid_\Z$-modules localizes along the valuative spectrum of the underlying usual discrete commutative ring of this solid commutative ring. 
 % \begin{align*}
 % D(\Mod_R (\Solid_{\Z})) \text{ localizes along } \Spv(R(\ast})
 % \end{align*}
 
-\ques Localize this... You take the valuative spectrum of $R$, viewed as a discrete ring.
+\ques Localize this... We take the valuative spectrum of $R$, viewed as a discrete ring.
 
 % 57:32
-\ques The valuative spectrum is a residue field and valuation. 
-The valuation does not have to be integral on $R$, 
+\ques The valuative spectrum is a residue field and valuation. The valuation does not have to be integral on $R$, 
 
 \ans No.
 
 \ques Just any valuation. It has a topology which induces the topology on things like $\Spa$, but it is more general --- sometimes one gets points which are not in $\Spa$. \note{todo}
 
 % 58:16
-I will not remind you what a valuation is right now. But I will remind you that this space is similar to the usual spectrum of a commutative ring. 
+I won't go into the definition of a valuation right now, but I will remind us that this space is similar to the usual spectrum of a commutative ring. 
 
 % 58:30
-It is a spectral space with a basis of quasi-compact opens. It is even a particularly nice basis, analogous to distinguished affine opens in algebraic geometry.
+It is a spectral space with a basis of quasi-compact opens, and it is even a particularly nice basis, analogous to distinguished affine opens in algebraic geometry.
 % 58:44
-While a distinguished open in algebraic geometry is parameterized by a single element of the ring, here we have to take a bit more data.
+While a distinguished open in algebraic geometry is parameterized by a single element of the ring, here we need to consider a bit more data.
 
 %
 The basic opens are the so-called \emph{rational} opens. 
-We take finitely many functions $f_1, \ldots,f_n, g$ and form $\{x \mid |f_i(x)| \le |g(x)|\text { for all i}\}$. %todo
+We take finitely many functions $f_1, \ldots,f_n, g$ and form the open set $\{x \mid |f_i(x)| \le |g(x)|\text { for all i}\}$. %todo
 
-The interpretation is that we invert $g$, so we are inside the Zariski distinguished open for $g$, but then we shrink further by requiring that $|f_i| \le |g|$, $\forall i$.
-Also $g \neq 0$  and %todo 
+The interpretation is that we invert $g$, so we are inside the Zariski distinguished open for $g$. However, we further shrink the opsen set by requiring that $|f_i| \le |g|$ for all $i$. Additionally, we asumme $g \neq 0$ and %todo 
 
 % 59:45
-I am saying that this localizes on this meaning. 
-We have a sheaf of categories, a sheaf of symmetric monoidal categories. 
+I am saying that this localizes on this meaning. We have a sheaf of categories, specifically a sheaf of symmetric monoidal categories. 
 % 59:53
-What we are going to attach to this thing $X(...)$ is a version of the solid theory. 
+What we will associate with this object $X(...)$ is a version of the solid theory. 
 % 1:00:00
-So we look at those $M$ in $D(\Mod_R(\Solid_{\Z}))$ such that, 
+So, we look at those $M$ in $D(\Mod_R(\Solid_{\Z}))$ such that, 
 
 \ben
 	\item 
 	\item $\IntHom(P,M) \xrightarrow \IntHom(P,M)$
 \een
-first you want to say that multiplication by $g$ on $M$ is an isomorphism. 
-$g \cl M \iso M$
-Second, you want to say that if you take $\IntHom(P, M)$, and you take $f_i^\ast \tnsr [-1]$, this should be an isomorphism for all $i$. 
+First, we want to assert that multiplication by $g$ on $M$ is an isomorphism:
+\begin{align*}
+$g \cl M \iso M$.
+\end{align*}
+Next, we want to claim that if we take $\IntHom(P, M)$ and we take $f_i^\ast \tnsr [-1]$, this should be an isomorphism for all $i$. 
 
 $\IntHom(P,M) \to  \IntHom(P,M)$ % todo
 % 1:00:30
-Or in other words, $\frac{f_i}{g}$. Sorry, so in other words, <e think of all these objects as maps from say $\Spec(R)$, so to speak, to the affine line.
+In other words, we are thinking of these objects as maps from, say, $\Spec(R)$, to the affine line.
 % 1:00:58
-Then we want that $g$ lands in the standard Zariski nonzero locus. We want that the $\frac{f_i}{g}$ land inside the closed unit disk.
+Then, we want $g$ to land in the standard Zariski nonzero locus, and we want the ratios $\frac{f_i}{g}$ to lie within the closed unit disk.
 
 $ g \cl \Spec(R) \to M $
 
@@ -762,21 +775,17 @@ $ \frac{f_i}{g} \cl \Spec(R) \to $ % todo triangles
 So I am not going to go into details about that.
 
 
-\ques Here, this $|P|_B$ just refers to the locale correspond to... 
+\ques Here, $|P|_B$ refers to the locale corresponding to... 
 
 % 1:02:05
-\ans We can think of it as a locale, but it is also a topological space.
-
-% 1:02:13
-The points have a nice description and so on.
+\ans We can think of it as a locale, but it is also a topological space. The points have a nice description among other properties.
 
 % 1:02:23
-In particular, I am claiming this category $D(\Mod_R (\Solid_{\Z}))$ localizes along the space $\Spv(R(\ast))$.
+In particular, I am claiming that this category $D(\Mod_R (\Solid_{\Z}))$ localizes along the space $\Spv(R(\ast))$.
 % 1:02:27
-In particular, we get a structure sheaf on the space $\Spv(R(\ast))$. The goal for the rest of lecture, is make this structure sheaf explicit and probably start to compare to Huber's theory. 
+In particular, we obtain a structure sheaf on the space $\Spv(R(\ast))$. The goal for the rest of the lecture is to make this structure sheaf explicit and eventually compare it to Huber's theory. 
 % 1:03:22
-We are eventually going to produce this data by very easy formal means, but it requires some language and setup. 
-So we can not do it yet, but I want to make at least this part of it explicit already at the beginning.
+We are going to produce this data using straightforward formal methods, but it requires some language and setupp, which is why we can't dive into it immediately. However, I want to make at least this part of it clear right from the start.
 
 \subsection{Making structure sheaf explicit}
 
@@ -797,9 +806,8 @@ $\leadsto \Z[T] $
 
 
 % 1:03:58
-Let's start with this generality. We have a solid ring, and let's take an element $f \in R$, or I should say in the underlying discrete ring of $R$ in case there is ambiguity. 
-That in particular gives you a map from $\Z[T]$ to $R$ which sends $T$ to $f$. 
-Then we can see how these loci that we have identified can correspond to properties of $R$.
+Let's start with this generality: we have a solid ring, and consider an element $f \in R$, or more precisely, in the underlying discrete ring of $R$, in case there is any ambiguity. 
+This element $f$ in particular gives us a map from $\Z[T]$ to $R$ which sends $T$ to $f$. Now, we can can see how the loci that we have identified correspond to properties of $R$.
 
 $R \in CAlg(\Solid_\Z, \tnsr)$
 $f \in R$
@@ -808,25 +816,24 @@ $\Z[T] \xrightarrow{T \mapsto f} R$ \label{map:07-t-f}
 % 1:04:47
 Let me make a definition. 
 \bd[Topologically nilpotent]
-$f$ is \textit{topologically nilpotent} if this homomorphism factors through the power series ring $\Z[[T]] = P^\solid$.
+An element $f$ is \textit{topologically nilpotent} if the corresponding homomorphism factors through the power series ring $\Z[[T]] = P^\solid$.
 \ed
 
-I want to say $f$ is power bounded if this map \ref{map:04-t-f} geometrically factors through the closed unit disk. 
-$R$ is an algebra over $\Z[T]$ In particular, it is a module over $\Z[T]$, and we can ask that it be solid.
+I want to define that $f$ is power bounded if this map \ref{map:04-t-f} geometrically factors through the closed unit disk. Let $R$ be an algebra over $\Z[T]$. In particular, it is a module over $\Z[T]$, and we can ask that it be solid.
 \bd[Power bounded]
-$f$ is \textit{power bounded} if $R \in \Solid_{\Z[T]} \iff \IntHom(P, R) \to \IntHom(P, R)$ % todo
+An element $f$ is \textit{power bounded} if $R \in \Solid_{\Z[T]}$ if and only if $\IntHom(P, R) \to \IntHom(P, R)$ % todo
 \ed
 
 %
-\ques In the first definition, the factorization is unique. 
+\ques In the first definition, is the factorization is unique?
 
 % 1:05:40
-\ans Yes, it is unique if it exists because of this idempotency. So that is an interesting fact. $\Z[[T]]$ is also the free module on a nullsequence. 
+\ans Yes, it is unique if it exists, due to this idempotency property. This is an interesting fact. $\Z[[T]]$ is also the free module on a nullsequence. 
 % 1:05:50
-Even though there are Hausdorff solid abelian groups that have non-Hausdorff behavior, this limit is still unique if it exists.
+Even though there are Hausdorff solid abelian groups that have non-Hausdorff behavior, this limit remains unique if it exists.
 
 % 1:06:10
-So in the definition of solid, we are imposing that certain limits exist uniquely, even though we have non-Hausdorff behaviour. That is the same thing as saying that if we take $\IntHom(P, R)$, $f^{\ast} \tnsr [-1]$, that this is an isomorphism. That is just... Oh, someone is talking.
+In the definition of solid, we are requiring that certain limits exist uniquely, even though non-Hausdorff behaviour is present. This is equivalent to saying that if we take $\IntHom(P, R)$, $f^{\ast} \tnsr [-1]$, the result is an isomorphism. That is just... Oh, someone is speaking.
 
 %
 Yes, the first condition is saying that it is a nullsequence which is the $p^n$ go to zero. 
@@ -837,7 +844,7 @@ I was going to explain the relation with classical definitions, but it is quite 
 So this is
 
 % 1:07:15
-Saying that that factors through $P$ is the same thing as saying that this sequence $1, f , f^2, \ldots$ extends to a nullsequence, which is exactly the same thing as being topologically nilpotent. 
+Saying that it factors through $P$ is equivalent to stating that this sequence $1, f , f^2, \ldots$ extends to a nullsequence, which is precisely the same thing as being topologically nilpotent. 
 
 % 1:07:30
 The new phenomenon in the solid case is that such a limit is unique if it exists. 
@@ -846,25 +853,25 @@ The new phenomenon in the solid case is that such a limit is unique if it exists
 
 \gabber it factors through in the sense of rings, so in the sense... of the uniqueness \note{not sure}.  ... You can ask factorization is.
 
-\answer Yes, in the sense of $\Z[T]$-modules is enough, or I am not sure. 
-I do not think so. Thank you for the comment. Yes, just as rings.
+\answer Yes, in the sense of $\Z[T]$-modules is enough, though I am not entirely sure I do not think so. Thanks for the comment. Yes, just as with rings.
 
 % 1:08:25
-Here is a lemma giving basic properties. We write $R^\circ$ (this is again standard notation in Huber's theory) for the set of power-bounded elements, and $R^{\circ \circ}$ for the set of topologically nilpotent elements, which is a subset of $R$. I am going to prove that.
+Here is a lemma that outlines some basic properties. We denote $R^\circ$ (a standard notation in Huber's theory) as the set of power-bounded elements, and $R^{\circ \circ}$ as the set of topologically nilpotent elements, which is a subset of $R$. I will now prove this.
 
 \bl
-$R^\circ \subs R()$ is integrally closed subring
-$R^{\circ \circ} \subs R^\circ$ is a radical ideal.
+$R^\circ \subs R()$ is integrally closed subring, and $R^{\circ \circ} \subs R^\circ$ is a radical ideal.
 \el
 
 %
-The lemma is that $R^\circ$, inside this ring here, is an integrally closed subring, and $R^{\circ \circ}$, first of all, is contained in $R^\circ$, and it is a radical ideal.
+The lemma states that $R^\circ$, as a subring of $R$, is an integrally closed, and that $R^{\circ \circ}$ is contained within $R^\circ$ and is a radical ideal.
 
 %
-I am still confused about this nullsequence. 
-Something is an nullsequence in the sense that the map extends to another sequence, then you do not know that it factors as a ring map, that this is a ring map? 
-That seems correct to me, yes. 
+\ques I am still confused about this nullsequence. Something is an nullsequence in the sense that the map extends to another sequence, then you do not know that it factors as a ring map, that this is a ring map? 
+
+\ans That seems correct to me, yes. 
+
 Okay, so it does not mean topologically nilpotent in your definition, in your sense. 
+
 But on the other hand, if you have something that comes from a Hausdorff topological ring, for example, if the target is quasi-separated, then independently of asking about the algebra structures, the limit is unique if it exists. 
 Yeah, quasi-separated was this analog of Hausdorff in the condensed setting.
 
@@ -874,14 +881,13 @@ So we are not sure whether "topologically nilpotent" in the nullsequence sense i
 Okay, Hausdorff, yeah.
 
 %
-So, proof. Why is this a subring? The first thing to check is that it has a unit (that is part of what I mean by "subring"). But if you look at the definition of "solid", that is one way of saying it. Put $f=1$ here, okay.
+So, proof. To verify that $$R^\circ$ is a subring, the first thing to check is that it has a unit, as this is a necessary condition for a subring. By the definition of "solid", that is one way of saying it. Let $f = 1$ in this case, okay.
 
 \begin{sketch}
 If $1 \in R^\circ$: definition of solid.
 $f,g \in R^\circ \leadsto$ if $F \in \Z(x,y)$ then $F(f,g) \in R^\circ$
 
 $\Z[x,y] \xrightarrow R$
-
 
 
 Resolve $R$ by $\bigoplus \prod_\N \Z[x,y]$'s.
@@ -891,54 +897,46 @@ Solidify $Y^\solid$: $\bigoplus (\prod_\N \Z[x,y])$
 \end{sketch}
 
 %
-Now, I want to show that if $f$ and $g$ are in there, I will prove that it is a subring by showing that if you apply any polynomial to $f$ and $g$, then you are still in there. So how can we do this? 
-Maybe there are different ways, but I think the cleverest one is: we can look at the map from the polynomial ring in two generators to $R$ which sends $X$ to $f$ and $Y$ to $g$. Our hypothesis is that $R$ is a $\Solid_{\Z[X]}$-module \note{todo, check} and a solid $\Z[Y]$-module, and what we want to conclude is that for any map from the polynomial ring in one generator $T$, $R$ is a solid $\Z[T]$-module.
+Now, I want to show that if $f$ and $g$ are in $R^\circ$, then $R^\circ$ is a subring. I will prove that it is a subring by showing that if we apply any polynomial to $f$ and $g$, then we are still in there. So how can we do this? 
+Maybe there are different ways, but I think the cleverest one is: we can look at the map from the polynomial ring in two generators to $R$ which sends $X$ to $f$ and $Y$ to $g$. Our hypothesis is that $R$ is both a $\Solid_{\Z[X]}$-module \note{todo, check} and a solid $\Z[Y]$-module. From this, we aim to conclude that for any map from the polynomial ring in a single generator, $\Z[T]$, $R$ remains a solid $\Z[T]$-module.
 
 % 1:12:45
-So first, resolve $R$ by its resolution. 
-It is definitely solid as an abelian group, so we can resolve $R$ by direct sums of compact projective generators. 
-But we know that $R$ is a solid $\Z[X,Y]$-module. So if we solidify with respect to $X$, then what does this turn into? 
-It turns into a direct sum of products of copies of $\Z[X,Y]$ by the properties of derived solidification that I proved earlier. 
+First, we resolve $R$ using its resolution. Since $R$ is definitely solid as an abelian group, we can resolve it using direct sums of compact projective generators. Moreover, we know that $R$ is a solid $\Z[X,Y]$-module. Now, if we solidify with respect to $X$,  what does this lead to? It results in a direct sum of products of copies of $\Z[X,Y]$, thanks to the properties of derived solidification that I proved earlier. 
 % 1:13:48
-But then it does not change $R$, so that is still a resolution of $R$. 
-Then we solidify with respect to $Y$ and we get a direct sum of products of copies of $\Z[X,Y]$ again by the same reasoning. 
-
+But then it does not change $R$, so it remains a resolution of $R$. Then, we solidify with respect to $Y$, which results in a direct sum of products of copies of $\Z[X,Y]$ following the same reasoning.
 \begin{align*} 
-\text{solidify $Y^\solid$:} \bigoplus(\prod \Z [X,Y])
+\text{solidify with respect to $Y^\solid$:} \bigoplus(\prod \Z [X,Y])
 \end{align*}
 
 % 1:14:05
-In total, we see that $R$ can be resolved by these $\bigoplus(\prod \Z [X,Y])$, but each of these is solid over $\Z[T]$, because it is a colimit of limits of things which are solid over $\Z[T]$. 
+In total, we observe that $R$ can be resolved by these $\bigoplus(\prod \Z [X,Y])$.  Each of these is solid over $\Z[T]$, as it is a colimit of limits of objects which are solid over $\Z[T]$. 
 
 % 1:14:26
 % todo
 
-This is solid over $\Z[T]$ because it is discrete. Then this is a product and that is a direct sum, so in total it is solid over $\Z[T]$.
+This is solid over $\Z[T]$ because it is discrete. Then this is a product and that is a direct sum, the overall structure is solid over $\Z[T]$.
 
 % 1:14:46
-So I did not use directly the definition of solid. Instead, I used the description of these generators 
+I did not directly use the definition of solid. Instead, I relied on the description of these generators.
 
 % 1:15:17
-The topologically nilpotent elements are all power bounded. You can use a very similar argument. What we have is a map
+The topologically nilpotent elements are all power-bounded, and we can use a very similar argument. We have a map
 \begin{align*} 
 \Z[[X]] \to R
 \end{align*}
 % todo label arrow
-which sends $x$ to $f$.
-Which means that $R$ becomes a $\Z$-power series $X$-module. 
+which sends $x$ to $f$. This implies that $R$ becomes a $\Z$-power series $X$-module. 
 % 1:15:35
-So now if we resolve $R$ by direct sums of products of copies of $Z$
+If we resolve $R$ by direct sums of products of copies of $Z$
 M todo
 
 % 
-We conclude that $R$ is solid over $Z[X]$. Oh, I switched to $T$ somehow. Switch to $X$ somehow.
+We conclude that $R$ is solid over $Z[X]$. Oh, I accidentally switched to $T$ somehow. Let's correct that.
 
 % 1:16:15
 We conclude that this composition $R$ is solid as a $Z[T]$-module. 
 
-
-
-Oh, I did not prove... I forgot to prove it is integrally closed.
+Oh, I forgot to prove that it is integrally closed.
 
 \bq[$R^\circ$ is integrally closed]
 \begin{align*} 
@@ -947,80 +945,75 @@ f^n + c_{n-1}f^{n-1} + \ldots + c_0 = 0
 \eq
 
 % 
-Let's do that. It is again a very similar argument. 
-Let's say that we have an equation of the form $\sum c_i t^i = 0$ where all $c_i$ are power bounded. Again, we just make the universal thing. We have $Z[x_0, \dots, x_{n-1}]$ and over that we have the ring where you adjoin another variable, let's call it $t$, and then you set the equation $\sum x_i t^i = 0$.
+Let's now prove this. The argument is quite similar to what we've already done.
+Suppose we have an equation of the form $\sum c_i t^i = 0$, where all $c_i$ are power-bounded. As before, we construct the universal object. Consider the polynomial $Z[x_0, \dots, x_{n-1}]$, and over that, we adjoin a new variable, say $t$. We then set the equation $\sum x_i t^i = 0$.
 
 % 1:17:30
-We have our solid ring $R$. By hypothesis we have a map here, such that when we compose to here, $R$ becomes a solid module over each of the $x_i$ variables. What we want to show is that when you compose here, it becomes a solid module over this $t$ variable.
+We have our solid ring $R$. By hypothesis, we have a map here, such that when we compose to here, $R$ becomes a solid module over each of these $x_i$ variables. Our goal now is to show that when we compose here, $R$ becomes a solid module over this $t$-variable.
 
 % 1:17:50
-I will just say it quickly in words. You use the same trick. 
-You resolve $R$ first as just a $Z[x_0, \dots, x_{n-1}]$-module in solid abelian groups and you solidify with respect to each of the variables. 
-You find yourself built out of products of copies of this ring $Z[x_0, \dots, x_{n-1}]$, but you are also a module over this \note{todo}, so you can tensor up to this. 
+Let me quickly explain it in words. We apply the same approach. Frist, we resolve $R$ as a $Z[x_0, \dots, x_{n-1}]$-module in the category of solid abelian groups. Then, we solidify with respect to each of the variables. As a result, we end up with a structure built from products of copies of the ring $Z[x_0, \dots, x_{n-1}]$. Additionally, since we are also a module over this ring \note{todo}, we can tensor up to this accordingly. 
 % 1:18:13
-But that is a finite free module over that ring, so then that will just go inside the products and you find that you are resolved by a direct sum of products of copies of these objects. Because this individually is solid, and solid is closed under limits and colimits, you deduce that that is solid as well. 
+Since this is a finite free module over the ring, it will simply go inside the products, and we can conclude that $R$ is resolved by a direct sum of products of copies of these objects. Since each of these objects is solid, and the class of solid objects is closed under limits and colimits, we deduce that the whole structure is solid as well. 
 % 1:18:28
-The key here is that this is finite as a module over this, so that tensoring with it you can bring inside the product. 
+The key point here is that the module is finite over this ring, so that tensoring with it we can bring inside the product. 
 Finite free, yes. Although, that is not really necessary. 
-The ring is Noetherian and you can resolve... Finite would be enough in fact.
+The ring is Noetherian and we can resolve... Finite would be enough in fact.
 
 QA
 Finite is all 
 It is a Noetherian ring.
 
 % 1:19:06
-I will leave the rest to you. They are completely analogous arguments, like why it is an ideal and why it is a radical ideal. These are fun exercises in that style of argument.
+I will leave the remaining details to you. The arguments are entirely analogous, such as proving why it is an ideal and why it is a radical ideal. These exercises are fun and follow the same style of argument.
 
 % 1:19:46
-So now we can describe this structure sheaf. 
-Suppose we have again a solid ring $R$ and then $g, f_1, \dots, f_n \in R^\solid$. 
+Now, we can describe this structure sheaf. Suppose we have a solid ring $R$ and then $g, f_1, \dots, f_n \in R^\solid$. 
 
 \bcl
-$\exists$ initial solid ring $R \frac{f_1,\ldots,f_n}{g}^\solid$ such that 
+There exists an initial solid ring $R \frac{f_1,\ldots,f_n}{g}^\solid$ such that 
 \ben
-	\item $g$ is invertible in $R$
-	\item $\frac{f_i}{g}$ is power bounded in $R \frac{f_1,\ldots,f_n}{g} \forall i$
+	\item $g$ is invertible in $R$,
+	\item $\frac{f_i}{g}$ is power bounded in $R \frac{f_1,\ldots,f_n}{g}$ for all $i$
 \een
 \ecl
 
 % 1:20:18
-That encodes the idea I was talking about, where you want $f_i/g$ to go to the closed unit disk, you want $g^{-1}$ to be invertible.
+This encodes the idea I was discussing: we want $\frac{f_i}{g}$ to map to the closed unit disk, and we require $g^{-1}$ to be invertible.
 
-
-The proof is that you can just construct the object. 
+The proof is straightforward: we can simply construct the object.
 
 \bq
 $R[x_1,\dots, x_n]^{x_1^\solid, x_2^\solid, \ldots, x_n^\solid}$
 \eq
 
 % 1:21:42
-You could first invert $g$, but maybe I will invert $g$ at the end. What you can do is take $R$ and adjoin polynomial variables $x_1, \ldots, x_n$ and then solidify with respect to all of them, which recall does something when $R$ is not discrete.
+We could start by inverting $g$, but I think will leave that for later. Instead, we can take $R$ and adjoin polynomial variables $x_1, \ldots, x_n$, then solidify with respect to all of them. This process is significant, especially when $R$ is not discrete.
 % 1:22:03
-Remember we had the example of one variable and $R$ was $\Q_p$, then this gave us the Tate algebra.
+For instance, recall the example where $R = \Q_p$ and we had a single variable. In that case, this procedure gave us the Tate algebra.
 
 % 1:22:10
 Then we can say that these variables are supposed to be $\frac{f_i}{g}$, so maybe $gx_i = f_i$ for all $i$. todo
 
-It does not matter at which point you invert $g$, but let's do it at the end. This obviously satisfies the correct universal property.
+It does not matter when we invert $g$, but let's do it at the end for simplicity. This clearly satisfies the correct universal property.
 % 1:22:50
-First we freely adjoin solid variables, then we impose the relations which guarantee that kind of thing. There is one small thing to check, which is that after you take this in which these are definitely solid and then you do these operations, you need to see it is still solid. But that is because it is all colimits.
+First, we freely adjoin solid variables, then we impose the necessary relations to ensure the desired properties. There is one small detail to verify: which is that after we take this in which these are definitely solid and then we do these operations, we need to confirm that the result remains solid. However, this follows from the fact that everything involved is a colimit.
 
 % 1:23:15
-So this is the thing you are looking at. 
-Now I want to make a caution here.
+So, this is the object we are looking at. However, I want to issue a caution here.
 
 \begin{warning}
-This is not exactly the value of the structure sheaf on $X(\frac{f_1, \ldots, f_n}{g})$. It is $\Pi_0$ (value of structure sheaf).
+This is not exactly the value of the structure sheaf on $X(\frac{f_1, \ldots, f_n}{g})$. Instead, it is $\Pi_0$, which is the value of the structure sheaf. 
 
 % 1:24:02
-So I said, so remember when I was discussing this six-functor formalism and this localizing the category, I was always .. to say the derived category. 
+Now, remember when I discussed this six-functor formalism and the localization of categories? I always referred to the derived category. \note{todo}
 % 1:24:12
-In fact, these things (like the six functor formalism and so on) really only work at the derived level. 
+In fact, these constructions, such as the six-functor formalism, really only apply at the derived level.
 
 % 1:24:20
-That means that what you are producing, a priori is a derived sheaf, not an ordinary sheaf.
+That means that what we are producing is, a priori, a derived sheaf, not a conventional sheaf.
 % 1:24:26
-So that is okay, but in almost all practical cases, all $\pi_i = 0$ for $i > 0$. So in practice, it does not seem to cause trouble, but it is an important thing to keep in mind.
+That being said, in most practical cases, $\pi_i = 0$ for $i > 0$. Therefore, it does not seem to cause issues. However, it is an important point to keep in mind.
 \end{warning}
 
 %QA
@@ -1028,15 +1021,20 @@ Derived structure sheaf
 
 
 % 1:24:52
-The second warning.
+The second warning:
 \begin{warning}
-Even if $R$ is a very nice Huber ring, then this quotient may not be quasi-separated. So it is an analogue of restricted power series in general. 
-Yes, exactly. This will always be the usual Tate algebra in many generators. That follows from the arguments we gave for any sort of Huber ring $R$. But then when you take this quotient by the ideal generated by these elements, it might not be closed. So in principle you could be having a non-Hausdorff quotient here.
+Even if $R$ is a very well-behaved Huber ring, the quotient may not be quasi-separated. This is analogous to restricted power series in general. 
+Yes, exactly. This will always be the usual Tate algebra in multiple generators, as follows from the arguments we have made for any Huber ring $R$. However, when we take the quotient by the ideal generated by these elements, it may not be closed. As a result, we could potentially end up with a non-Hausdorff quotient.
 \end{warning}
 
 \ques When you say "Huber ring", do you mean complete Huber rings?
 
-\ans Yes, I mean complete Huber ring, thank you. But this theory is defined for complete Huber rings as well, or no? This theory is only defined for complete Huber rings, the theory I am discussing, because you cannot define the condensed set of any topological thing. You can define it, but it will not be solid unless the thing is complete in general. 
+\ans Yes, I mean complete Huber ring, thank you for the clarification. 
+
+But this theory is defined for complete Huber rings as well, or no? 
+
+This theory is only defined for complete Huber rings, the theory I am discussing.
+This is because you cannot define the condensed set of any topological thing. You can define it, but it will not be solid unless the structure is complete in general. 
 
 Okay, you want it solid. So you want complete, and then the other guys, when you do this, it is still solid but does not come from---it is an analogue of, yes.
 
@@ -1045,74 +1043,71 @@ Yes, but again, in almost all practical cases, or maybe all practical cases, it 
 \subsection{Relation to Huber's theory}
 
 % 1:27:25
-What I was trying to aim for is the relation to Huber's theory.  I guess I probably will not get there. 
+What I was aiming for was the connection to Huber's theory, though I realize I may not reach that point today.
 % 1:27:38
-We will definitely discuss this in more detail later, but just as a preview: if $R$ is a Huber ring (and do not worry if you do not know what that is, it is just a certain nice topological ring that people use in non-archimedean analysis), and let's say complete---no, just Huber, I am just doing the rings now, not the pairs. 
+We will definitely cover this in more detail later, but as a preview: if $R$ is a Huber ring (don't worry if you're not familiar with it yet---it is just a certain  type of well-behaved topological ring that people use in non-archimedean analysis), and let's assume it is just a Huber ring for now---not necessarily complete or paired, just the ring itself.
 % 1:27:59
-If the ideal generated by $f_1, \ldots, f_n$ inside $R$ is open, which is the condition that describes rational opens in the space of continuous valuations as opposed to the space of arbitrary valuations, then in this case Huber defines the ring of functions here. 
+If the ideal generated by $f_1, \ldots, f_n$ in $R$ is open---this condition characterizes rational opens in the space of continuous valuations (as opposed to the space of arbitrary valuations)---then, in this case, Huber defines the ring of functions here.
 
 % todo macros Huber, 
 
 $R < \frac{f_1, \ldots, f_n}{g}> ^\huber $
 
-You could ask what the relationship is with this thing that comes from the solid theory.
+We might ask about the relationship is with this thing that comes from the solid theory.
 
 % 1:28:35
-This is the "quasi-separification" of this more generally defined thing that we have here. 
+This represents the "quasi-separification" of thhe more generally defined structure that we have here. 
 
 %todo
 %\begin{align*}
 %\pi_0 $ R < \frac{f_1, \ldots, \f_n}{g} > ^\text{solid}
 %\end{align*}
 
-So the solid thing, or for emphasis I should put the $\pi_i = 0$ as well---you can get the Huber thing functorially from this more general thing, in particular from our structure sheaf. 
-But they are not necessarily equal in general. But in all practical cases, they are equal. That is the general outline of the story.
+So the solid thing, or for emphasis I should put the $\pi_i = 0$ as well---we can get the Huber thing functorially from this more general thing, in particular from our structure sheaf. 
+However, they are not necessarily equal in all cases. In all practical cases, though, they are equal. That is the general outline of the story.
 
 % 1:29:23
-In general, if you always use the derived structure sheaf, it always satisfies the---
+\ques In general, if we always use the derived structure sheaf, it always satisfies the---
 
-yes, 
-
-
-So it is always a sheaf. 
+\ans yes, 
 
 
-Yes. So that is an important point to mention. 
+\ques So it is always a sheaf. 
 
 
-There was this little fly in the ointment in Huber's theory, that in the general setting, he defined a structure sheaf, except it was not a sheaf. It was only a presheaf.
+\ans Yes. So that is an important point to mention. 
+
+
+There was a small issue in Huber's theory: in the general setting, he defined a structure sheaf, but it turned out not to be a sheaf---rather it was only a presheaf.
 % 1:29:49
-In all practical cases it was a sheaf, but still, the general theory was missing something for that reason. 
-That is fixed by this. If you no longer care about things being quasi-separated and non-derived, then you get a good plain old structure sheaf. 
-You get even more, you get the derived category of quasi-coherent sheaves which localizes. 
-Also, you get the possibility of defining all of these things even without this condition being present.
+In all practical cases it was a sheaf, but the general theory was still missing something for that reason. This issue is fixed by this \note{todo}. By relaxing the requirement for things to be quasiseparated and non-derived, we obtain a well-defined  structure sheaf. Even more, we get the derived category of quasicoherent sheaves, which localizes. Furthermore, we get the possibility of defining all of these constructions,, even without this condition being present.
 
 \subsection{Questions}
 
-\ques Do we have any use of discontinuous valuations? 
+\ques Do we have any use for discontinuous valuations? 
 
-\ans Any use? Yes, I know Pierre Colmez likes them, so he has this notion of adux spaces. Those correspond to certain---
+\ans Any use? Yes, I know Pierre Colmez likes them. He developed the notion of adux spaces. Those correspond to certain---
 
 % https://en.wikipedia.org/wiki/Pierre_Colmez
 
-\ques Yes, but you do not really use them.
+\ques Yes, but you do not really use them, right?
 
-\ans I think he used them, but you did mean me? Look, I just build the theory, I do not use it. He calls them "ad hoc spaces", I do not think he developed the theory, he just did it in an example. So he wanted to exactly include things like this open unit disk.
+\ans I believe Colmez used them in his work. But did you mean that I personally use them? Well, my role is more about building the theory, not necessarily applying it. Colmez refers to them as "ad hoc spaces", I do not think he developed the theory, he just did it in an example. So he wanted to exactly include case like the open unit disk.
 
 % 1:31:10
-So this is objects like the $\Z_p[[T]][\frac{1}{z}]$. I think in his paper where he does this $GL_2$ mod $p$ Langlands. This object is a prototypical example of a topological ring that is not a Huber ring. So in the usual theories of analytic geometry, the open unit disk, you can not think of it as an affine space, because the ring the ring that it corresponds to is not one of your allowed rings. So you always have to think of the open unit disk as a union of the closed unit disks contained in it.
+These are objects like $\Z_p[[T]][\frac{1}{z}]$. In his paper on the $\GL_2$ modulo $p$ Langlands program, Colmez uses this type of object. This object is a prototypical example of a topological ring that is not a Huber ring. In the traditional theories of analytic geometry, the open unit disk, we cannot think of it as an affine space, because the corresponding ring is not one of the allowed rings. Therefore, we must think of the open unit disk as a union of the closed unit disks contained within it.
 
 % 1:31:45
-This non-quasicompact object, to fit it inside Huber's theory---but Colmez advocates that sometimes it is better to just work with this thing as if it were affine. That is something that our theory easily accommodates.
+This non-quasicompact object, to fit it inside Huber's theory---but Colmez argues that sometimes it is better to just work with this thing as if it were affine. Our theory accommodates this approach quite well.
 
 % 1:32:00
-\gabber There are people who did---I forgot the name of this---and constructed some notion of rigid, I forgot the name. Someone wrote some paper on this, on like a variant of... I forgot the name of the... There was some paper some time ago, but I am not sure.
+\gabber There are people who did---I forgot the name of this---and constructed some notion of rigid, I forgot the name. Someone wrote a paper on this, on like a variant of... I forgot the name of the... There was some paper some time ago, but I am not sure.
 
 % 1:32:38
 \ques So every solid $\Z$-algebra...
 
 % 1:32:42
-\ans So this notion of analytic ring, we have not defined it yet. It organizes a lot of discussion. But indeed, if you have an algebra in solid $\Z$-modules, you get what we call an induced analytic ring structure. I said, the module category you have, and that sits inside condensed $\R$-modules \note{not sure if $R$ or $\R$}, and that is an analytic ring. 
+\ans We haven't defined the notion of an analytic ring yet, but it organizes much of our discussion. Indeed, if we have an algebra in solid $\Z$-modules, we can get what we call an \emph{induced analytic ring structure}. I said, the module category you have, and that sits inside condensed $\R$-modules \note{not sure if $R$ or $\R$}, and that is an analytic ring. 
 
 \ques Yes, but in the case of $\Z$, we had something more natural \note{could not hear the rest of the remark}.
 
@@ -1120,60 +1115,60 @@ This non-quasicompact object, to fit it inside Huber's theory---but Colmez advoc
 \ans More natural, it is arguable, it is more complete. There are two things. They exist. They do, you want them both, I think, 
 
 % 1:33:22
-\ques And can be extended to any discrete ring, right?
+\ques And this can be extended to any discrete ring, right?
 
 % 1:33:27
-\ans Yes, that is right. 
+\ans Yes, that's correct. 
 
 % 1:33:30
-\ques Not in general? Not general solid $\Z$-algebra? 
+\ques But not in general? Not for all solid $\Z$-algebras? 
 
 % 1:33:33
-\ans For a general solid $\Z$-algebra, I do not necessarily know of any completely canonical... One thing you could do, is you could take all of the power-bounded elements and force all of them to be solid. That would be the maximally complete thing that you can get via the stuff that we have developed. But there could be further completions of that, as far as I know.
+\ans For a general solid $\Z$-algebra, I do not necessarily know of any completely canonical approach. One thing we could do is take all of the power-bounded elements and enforce that they are solid. This would be the mst complete version that we can obtain using the methods that we have developed. However, there could be further completions of that, as far as I know.
 
 % 1:34:00
-\ques With the definition of solid analytic rings we used in the very first lecture, if we use this instead of a regular ring here, do we get something similar to like Huber's theory for Huber pairs, instead of just regular rings? 
+\ques In the very first lecture, we defined solid analytic rings, including the ring and the derived category. \note{todo} this instead of a regular ring here, do we get something similar to like Huber's theory for Huber pairs, instead of just regular rings? 
 
 % 1:34:20
 \ans Could you repeat the question? I am not sure I understood.
 
 % 1:34:25
-\ques In the very first lecture, we defined solid analytic rings. With the ring and the derived category. If we try applying something similar here to analytic rings...
+\ques In the first lecture, we defined solid analytic rings, including both the ring and the derived category. If we apply a similar approach to analytic rings here...
 
 % 1:34:37
-\ans Do you mean this discussion of this object here \note{add what he points at}? You can do that. 
+\ans Are you referring to the discussion of this object here \note{add what he points at}? Yes, you can do that. 
 
-\ques But do we recover, like...? 
+\ques So, do we recover, like...? 
 
 % 1:34:47
 \ans Yes, you recover the theory with the $R^+$ in there as well. 
 
-\gabber So elements $R^+$, you require solidity. 
+\gabber So, for elements of $R^+$, you require solidity. 
 
 \clausen Exactly.
 
-\gabber Not for all of the guys.
+\gabber But not for all elements.
 
-\clausen Exactly. We will discuss this. You can add that extra flexibility into the picture, yes.
+\clausen Exactly. We will discuss this in more detail. You can add that extra flexibility into the picture, yes.
 
 % 1:35:03
-\gabber The fact that $R_{00}$ \note{todo}, this is automatic, that those are the topologically nilpotent ones.  
+\gabber The fact that $R_{00}$ \note{todo}, this is automatic, that those are the topologically nilpotent ones, right?
 
 % 1:35:12
-\clausen They are automatically solid, exactly.
+\clausen Yes, they are automatically solid.
 
 
 \clausen Yes, so it actually fits remarkably well with Huber's theory.
 
 % 1:35:25
-\ques Like, you take tensor products of analytic rings, you have to first solidify one another, have to take... %todo
+\ques When you take tensor products of analytic rings, do you first need to solidify one another, have to take... %todo
 
 % 1:35:33
 \clausen Yes, usually. 
 
-\ques So here it is still the same. 
+\ques So, it is still the same here? 
 
-\clausen Here you do not have... These \note{add what he points at} solidifications all commute with each other, so there you do not need to... Yes, they are all given by $\RHom$'ing out of something, and any two $\RHom$'ing out of commutes with each other.
+\clausen Here we do not have... These \note{add what he points at} solidifications all commute with each other, so there we do not need to solidify them separately... Yes, they are all given by $\RHom$'ing out of something, and any two $\RHom$'ing out of commutes with each other.
 
 
 \end{unfinished}

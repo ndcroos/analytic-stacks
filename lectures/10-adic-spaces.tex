@@ -7,187 +7,696 @@
 \vspace{1em}
 
 \begin{unfinished}{0:00}
-Good morning. Today I want to talk about what is called analytic geometry.
+% 0:36
+Good morning. Today I want to talk about what is called analytic adic spaces.
 
-I immediately want to point out that there is some conflict of terminology here. Basically, using what we've said so far, all rigid analytic spaces give rise to analytic spaces in our sense. But within the world of rigid analytic spaces, there was already a qualifier called "analytic." 
+% 0:50
+I immediately want to point out that there is some conflict of terminology here. 
+Using what we have said so far, \emph{all} adic spaces give rise to analytic spaces in our sense. 
+But within the world of adic spaces, there was already a qualifier called "analytic."
 
-Within the context of any space, what is this conflict of terminology?  I didn't come up with a good name for them, but there's one name that's already to some extent used in this world, so I will call them "T" in this lecture. Peter, could you write a bit bigger, as it's a bit unclear. 
+%
+Within the context of any space, what is this conflict of terminology?  
 
-I don't want to overuse the word "analytic" in this.
+% 2:09
+I did not come up with a good name for them, but there is one name that is already to some extent also used in this world. 
+% 2:16
+So I will call them "T" in this lecture. 
 
-Here's the definition where this name is already used: it's called the "affinoid" case. This is terminology that's already in use. If it has a topologically nilpotent unit, it's also called "adic."
 
-The example to keep in mind is, for example, $\T_p$, where $p$ is a topological unit. In fact, any non-archimedean locally complete field will do. We always assume completeness. Anything above you will also be called an "affinoid space."
+% Peter, could you write a bit bigger, as it's a bit unclear. 
+% 2:58
+I do not want to overuse the word "analytic" in this.
 
-This is usually called "analytic" if it is covered by such affinoid subsets. We didn't really discuss the full definition of rigid analytic spaces, but we discussed the algebra that their rings have, and there's some way of doing them which will not be all that important for us right now. Basically, we told you what the open subsets are, and then you kind of do the obvious thing.
+%
+Here is the definition where this name is already used: it is called the "affinoid" case. 
+This is terminology that is already in use. If it has a topologically nilpotent unit, it is also called "adic."
 
-It's actually equivalent to a property that the speaker discusses in the green text, which I won't go into.
+\begin{definition}[Tate]
+A Huber ring $A$ is called \emph{Tate} if it has a topologically nilpotent unit.
+\end{definition}
 
-The speaker also clarifies that we did not define "analytic spaces" in our sense, and that there is a subtlety about sheafiness in the classical theory of rigid analytic spaces.
+\begin{remark}
+It is also called a pseudouniformizer.
+\end{remark}
 
-The speaker then mentions the question of whether in the theory of localization and Dustin talked about last time, when you do this, you get some condensed thing, possibly over a rational domain, and it is unclear if this always gives the right thing.
+% 4:05
+The example to keep in mind is, for example, $\T_p$, where $p$ is a topological unit. 
+In fact, any non-archimedean locally complete field will do. 
+We always assume completeness. Anything above you will also be called an "affinoid space".
 
-The speaker then explains that if you have any space, you can associate to each point a completed residue field, which can either be the residue field or a complete valued field, and it is asked that there are no points where this is a discrete valuation ring.
+% 4:53
+\begin{definition}[Tate space]
+An adic space $X$ is \emph{Tate} (usually analytic) if it is covered by $\Spa(A, A^+)$.
+\end{definition}
 
-Basically, the setup is that the regular fields are always of these forms. And when you have such a complete non-archimedean field and there is some unit in there, you can lift this to a small neighborhood, and that's why these are called "adic."
+\begin{remark}
+%
+This is usually called "analytic" if it is covered by such affinoid subsets. 
+We did not really discuss the full definition of rigid analytic spaces, but we discussed the algebra that their rings have. 
+There is some way of doing them, which will not be all that important for us right now. 
+Basically, we told you what the open subsets are, and then you kind of do the obvious thing.
 
-The intuition is that there is a world of schemes, which sits on some world of formal schemes, maybe with some adjectives. These all sit with the context of rigid analytic spaces. But then these "adic" spaces are some of the ones where you start with a formal scheme, but then remove all the scheme-like points, so they are at the other end.
+\end{remark}
 
-The speaker then mentions something like $\T_p^0$ that can also be considered a kind of $\mathbb{SP}_1$, but says the generic fiber in this sense is unclear.
 
-Finally, the speaker wants to say a few words about the structure of such things.
+% It is equivalent to a property that the speaker discusses in the green text, which I won't go into.
 
-Definitions. So, let's say $\pi$ is a topological unit. You can then take the ring of definition, because you can always assume that they contain any given power-bounded element. I mean, some particular power-bounded $\pi$. You could also do it such that you take any $\pi$, and then some power of $\pi$ will anyway be a unit. And then actually, it's automatically the case that $\mathcal{O}_K/\pi$ is a zero ring.
+% The speaker also clarifies that we did not define "analytic spaces" in our sense, and that there is a subtlety about sheafiness in the classical theory of rigid analytic spaces.
 
-That's an actual exercise in looking at the axioms of the topology. So you might think that it could have some rather more subtle topology, but actually, it's always supplementary. And then you can actually write $\mathcal{O}_K$ with Banach algebras. For example, you could say that the norm of a function $f$ is $2^{-\max\{m|f\in\pi^m\mathcal{O}_K\}}$. This means that the norm of $\pi$ is $1/2$ the norm of $\pi^{-1}$. Of course, there's some kind of arbitrary choice that I made here, both in uniformizing $\pi$ and in the number $1/2$ here.
+% The speaker then mentions the question of whether in the theory of localization and Dustin talked about last time, when we do this, we get some condensed thing, possibly over a rational domain, and it is unclear if this always gives the right thing.
 
-The trivial counterexample is the zero ring, where the norm of $\pi$ would be zero. I don't think it has a topological unit, or maybe that's a counterexample to show that anything that is an algebra over $\Z$ is probably okay. So, whatever you figure it out.
+% The speaker then explains that if we have any space, we can associate to each point a completed residue field, which can either be the residue field or a complete valued field, and it is asked that there are no points where this is a discrete valuation ring.
 
-There is an equivalence between certain $p$-adic and algebraic geometry of rings. The objects are $p$-rings admitting a $p$-valuation such that the norm of $\pi$ is basically between $0$ and $1$, and the norm of the inverse is also $1$. But as a moment, you actually only care about the topology used by the valuation, and everything here is completed $p$-ring and continuous. Of course, the zero ring is still a counterexample to what happens to zero.
+%
+Basically, the setup is that the regular fields are always of these forms. 
+When we have such a complete non-archimedean field and there is some unit in there, we can lift this to a small neighborhood, and that is why these are called "adic."
 
-Okay, so these are the basic algebras that we consider here. You could also talk about this in the language of $p$-algebras, but you shouldn't really fix the norm, but you should just ask defined by some norm with this property, because we have...
+% 8:30
+The intuition is that there is a world of schemes, which sits on some world of formal schemes, maybe with some adjectives that I don't want to discuss right now, because it is not really relevant. 
+These all sit within Huber's theory of adic spaces. 
+\note{todo, diagram}
+% 8:48
+But then these are some things where we start with a scheme and there is somehow still some kind of large space where is it scheme-like. At least like the underlying reduced. But the these analytic adic spaces are somehow to the ones morally speaking where we start with a formal scheme, but then remove all the scheme-like points, so they are at the other end.
+% 9:16
+Tate adic spaces, which are the other end.
 
-Right, so now I want to state a theorem that I proved some 10 years ago or so, and the theorem that I found extremely striking and surprising at the time. As was discussed, there are all these issues that for general Huber rings or Huber pairs, what Huber defines is not always actually a sheaf. But let's just say that $A^+$ is quasi-coherent if what Huber defines is a sheaf of Huber rings. And I did not at all expect that in those cases where you can prove that something is a sheaf, you can probably also prove other nice properties, because then that's probably the reason that things are well-behaved. What I did not at all expect is that you could prove any non-trivial theorem whose only hypothesis is that something is a sheaf, and then other good things happen, because just asking for the sheaf condition is the first thing that could break, but I didn't expect that if you're in a situation where it is a sheaf, why should other...
+% The speaker then mentions something like $\T_p^0$ that can also be considered a kind of $\SP_1$, but says the generic fiber in this sense is unclear.
 
-But here, I proved the following statement: If $A$ is a quasi-coherent sheaf of finite projective modules over a Huber pair $(A,A^+)$, then any finite projective module over $A$ can be extended to a sheaf of finite projective modules over $A^+$. And I mean, $A$ is just a direct module, so certainly this is still a sheaf. It's a sheaf of finite projective modules, and actually, it's one that's locally free.
+Here, we might have something like 
+.. which you can also consider some kind of 
+but then the generic fiber.
 
-A locally free $\mathcal{O}$-module is called a vector bundle. Whenever you have a ringed space, you can always talk about these modules which are locally free or of finite rank. These are called vector bundles with respect to that ringed space. It's easy to see that this is a functorial construction, but the highly nontrivial, surprising fact is that there is actually an equivalence. When you can glue vector bundles, you can define the category of vector bundles. Somewhat later, they also proved that there is some version of this that works for some kind of coherent modules, but I don't want to state the precise result because it's extremely...
+% Finally, the speaker wants to say a few words about the structure of Huber rings.
+% 9:54
+Let me say a few words about the structure of such Huber rings.
 
-Let me just say there is a result that if the ring is nice enough, then you recover the expected result that you can do this even for rings, but you have to be careful because localization might not preserve all the properties you want.
+\subsection{Structure of Tate-Huber Rings A}
+So we always have this ring of definition.
+\begin{align*}
+A_0 \subs A
+\end{align*}
 
-All right, so this is a very nice result. Basically, the aim at the time was just to prove that on perfectoid spaces you can define vector bundles, but the argument actually worked whenever the space is quasi-compact and quasi-separated. I could kind of follow their argument line by line, but it's a rather tricky argument where you really have to do some changes of bases to make things better. It's actually an analysis argument.
+Let us say $\pi \in A$ is a topological nilpotent unit, so a pseudo-uniformizer.
+% 10:28
+We can then take the ring of definition, because we can always assume that they contain any given power-bounded element. 
+I mean topologically nilpotent unit, in particular power-bounded.
+So we can assume that our ring of definition contains $\pi$. 
+We could also do it such that we take any $\pi$, and then some power of $\pi$ will anyway be a unit. \note{todo, check if what's written here makes sense}
+% 10:53
+Then it is automatically the case that $A_0$ ... $pi$-adic topology. \note{todo}
 
-Today I want to explain different proofs that we can give using our general theory of solid modules. I should maybe say that some 10 years ago, when this result came out, I was also talking to K and he was already telling me that if you work in the derived category and look at some kind of $\mathbb{I}^{\mathbb{N}}$-up modules, then you can just glue. I was like, okay, but what does it even mean? We have all these problems, I think it's not a structure sheaf, and it seems highly non-obvious how vector bundles and so on would work. So what does this extremely general result actually tell you about such constructions? I don't know whether he ever figured that out, but the goal of this lecture is to show that this is not just some fancy, abstract result, and to get down to something more concrete.
+% 11:05
+That is an exercise in looking at the axioms of the topology. 
+We might think that it could have some rather more subtle topology, but it is always supplementary \note{todo}.
+% 10:25
+Then we can turn $A$ into a Banach algebras with unit ball $A_0$. 
+For example, we could say that the norm of a function $f$ is $2^{$. 
+\begin{align*}
+\norm{f} = 2^{-n},
+\end{align*}
+where $n = \max\{m | f \in \pi^m A_0 \}$.
+Technically the supremum because it could also be in ... \note{todo}
+In particular that means that $\norm{\pi} = \frac{1}{2}$ and $\norm{\pi^{-1}} = 2$. 
+Of course, there is some kind of arbitrary choice that I made here, both in uniformizing $\pi$ and in the number $\frac{1}{2}$ here.
 
-Now, the idea of continuous valuations means that when I form such a rational subset, I should assume that the ideal generated by 1/a is an open ideal. But actually, once you have a topology where 1 is a unit, then a must be equal to 1.
+% 12:50
+\ques The trivial counterexample is the zero ring, where the $\norm{\pi}$ would be zero. 
 
-First of all, $H$ is given by taking the completed power series algebra in variables $G_1$ to $G_N$, and then modding out by the ideal generated by $dG_1 - F_1, \dots, dG_N - F_N$, and taking the closure.
+\ans Is the zero ring Tate? I do not think it has a topologically nilpotent unit.
+Maybe that is a counterexample to show that anything that is an algebra over a Tate ring is probably okay. 
+So, whatever. You figure it out. \note{todo}
 
-This is basically why that works on this open subset. But first of all, you didn't invert $G$, because now the ideal generated by $G$ contains $F_1$ up to $F_N$, but they generate the unit ideal. So $G$ has become invertible even without taking the closure.
+% 14:20
+There is an equivalence between certain complete Tate Huber rings and the category of complete ultrametric Banach rings admitting ...
 
-And then on this, you have $T_1$ which is $F_1/G$ and all its completed power series. This is what could happen on this subset where this is less than or equal to that.
+The objects are Banach rings $B$ admitting a $\pi \in B$ with $0 < \norm{\pi} < 1$ and $\norm{\pi}\norm{\pi^{-1}} = 1$
 
-But I mean, Huber was always working with complete topological rings, so when you take a quotient by something, you also take the quotient by the closure. And then, for example, this is a $B$-algebra, and the quotient by any closed ideal is still a $B$-algebra, so it's still okay.
+-valuation such that the norm of $\pi$ is basically between $0$ and $1$, and the norm of the inverse is also $1$. 
+But as a moment, we only care about the topology used by the Banach norm. Everything here is completed $p$-ring \note{todo}
 
-This is maybe not so hard to show, and you all recall the endomorphism part. The image of $a$ is just the thing that was defined last time. You define a category ring structure by asking for this completion for all these elements, and then you somehow look at what the completion of the unit actually is. This is what the $S$ uses, and it has a very similar formula.
+ and continuous maps. 
 
-But then, take the derived quotient, where here or and elements $I$ want to $R$. This derived quotient signifies the derived base change from only algebra, but they just modify all the variables $X_i$, so basically you're setting $X_i$ also to zero, but not just in the stupid way, but in the derived way. And completely, this is computed by a possible complex, and in the middle there are some $Ext$ there, a cotangent differentials.
+% 15:32
+\ques Do you mean ultrametric Banach rings? Otherwise you have a... Of course, the zero ring is still a counterexample to what happens to zero.
 
-And this is just by taking the standard resolution of $\Z$ over here. It will be an animated condensed thing, and that's why I will consider this. I don't really want to talk about animated things today, but yeah.
+% 16:29
+So these are the basic algebras that we consider here. We could also talk about this in the language of Banach algebras, but we should not really fix the norm. But we should just ask defined by some norm with this property, because we have... pseudo-uniformizer...
 
-So, it's certainly some kind of algebra. Let me just give a sketch of it, and for the second part, so you can write $A^1/d$ as $A^1$ mod $d$, and now it's not really necessary whether I take the derived or not, but it's also turn the derived $S$ because what I will write down is a regular sequence.
+% 17:00
+Now I want to state a theorem that I proved some ten years ago or so. I found the theorem extremely striking and surprising at the time.
+% 17:15
+As was discussed, there are all these issues that for general Huber rings or Huber pairs, what Huber defines is not always actually a sheaf.
 
-And then you solidify, solidify, solidify these, so some exact operations category. This thing is just computed by a possible complex, which is a complex of finite complexes of some $C$ thing. Just understand what happens when you solidify these things, but this is exactly what Dustin already computed that something.
+%
+\begin{definition}[Sheafy]
+ $(A, A^+)$ is \emph{sheafy} if what Huber defines ($\O^\huber_{\Spv(A, A^+)}$)is a sheaf of Huber rings.
+\end{definition}
 
-Okay, and so certain things that saying it's the same thing as stating all, which is a context, but zero is just a usual structure. And then you take the $C$ separated a small inter, the inclusion from light or not, it doesn't really matter, probably separated condition set inside of all condition set, it hasn't left the join. I'll take any $x$ to the quotient separated portion, and this is making the operation of taking the maximum $h$
+% 18:08
+I did not expect at all that we could prove any nontrivial theorem that uses that something is a sheafy, then other things happen. Somehow only asking for the 
 
-Has a good effect that if $x$ has some kind of algebraic structure like being a group or ring, and so on, and the functor that is a preservation of final product is available both for the adic setting and all condensed sets, yes. I mean, also, if you start with the adic condensed and then from the maximal condensed also adic and so on. So, thank you.
+% we can probably also prove other nice properties, because then that is probably the reason that things are well-behaved. 
 
-Right, so completely if you write $X$ as a condensed set, it's telling you to compute the joint, and you can always write any condensed set as a quotient of a discrete set. Just take different profiles depending on it. Then, there exists the minimal compact injection $\overline{R}$ of $R$ that is also an equivalence relation and containing $R$. So, it's in some sense taking the closure of $R$ intuitively speaking. But sometimes this adds new things where the relation is not spreading, you add that as well, and then you do some kind of transfinite induction or you just intersect all possible containments.
+%
+What I did not expect at all is that we could prove any non-trivial theorem whose only hypothesis is that something is a sheaf, and then other good things happen, because just asking for the sheaf condition is the first thing that could break.
+ But I did not expect that if we are in a situation where it is a sheaf, why should other... \note{todo}
 
-Then $X$ is this quotient, this is $X \text{mod} R$, because this inclusion relation was called the compact injection. So, for example, if $X$ happens to be a group, then you can always also find a surjection from the separated condensed to the group, and then the relation is just the quotient by the subgroup. In that case, you're really just taking the quotient by the closure of the subgroup, the closure in the sense of small injections.
+% 18:36
+%But here, I proved the following statement: If $A$ is a quasi-coherent sheaf of finite projective modules over a Huber pair $(A,A^+)$, then any finite projective module over $A$ can be extended to a sheaf of finite projective modules over $A^+$. 
 
-Okay, so here's one other thing I should recall, which is what do compact injections have to do with spaces? Let's say $X$ is any sequential space. To recall, it's a topological space for which the condensed set is fully faithful in the closed subsets of $X$. Relatively to the compact injections, taking any closed subset here, why is it actually a further compact injection? While to check that, the definition is that whenever you pull back to some profinite set, then the preimage is a compact injection. But this precisely means that the other way is also compact, and so the preimage in this case is just the closed subset of this profinite set by the closed subset here.
+\begin{theorem}[Kedlaya-Liu]
+Assume $A$ is Tate and $(A, A^+)$ is sheafy. Then
+\begin{align*}
+todo
+\end{align*}
 
-Okay, and so back to the sequence, what is this? Well, this is just the thing, and then you take the extension. Okay, and then if you take a separated quotient, well, this guy is already separated, and then by the above, and because this here is actually sequential, comes from a sequential topological space, this precisely means that I should just replace this one here by the closure, which is what.
+\begin{align*}
+todo
+\end{align*}
 
-Right, and so this gives us some relation, but we're interested in a somewhat more precise relation, which is the following theorem, potentially due to Lurie, except that he didn't use this language to phrase it, but I mean the proof is really his. That a $p$-adic completion is $p$-adically complete if and only if all $p$-power series all have bounded denominators. 
+is an equivalence, i.e. locally free of finite rank.
+One can glue finite projective modules.
 
-Let me give the proof. This is clear because by the general descent results from the last lecture, we have the sheaf of categories, but in particular, you get a sheaf of rings, and we just take the units. And the non-trivial and I think somewhat surprising result is that if it so happens to be a sheaf, then actually it is the right thing. Let me get the other direction. And before I start, note that to check this property that all $p$-power series are $p$-adically separated, it suffices to show that this is true on a further refinement of the cover, because you can always recover it by all the smaller values
+\end{therorem}
 
-To get the good properties of all these views, we need further refinement. I don't want to go through all the commutative refinement, but just note that some following concepts are also always refined.
+I mean, $A$ is just a direct module, so certainly this is still a sheaf. It is a sheaf of finite projective modules, and it is one that is locally free.
 
-We can always cover any space with a Zariski-type cover, with at most one and at least one nonempty intersection. So the other type of cover is not necessary when you look at new units. This reduces to the following key steps.
+%
+A locally free $\O$-module is called a vector bundle. Given a ringed space, we can always consider modules that are locally free or of finite rank. These are referred to as vector bundles with respect to that ringed space. 
+It is easy to see that this construction is functorial. 
+However, the highly nontrivial and surprising fact is that there exists an equivalence. 
+When vector bundles can be glued, we can define the category of vector bundles. 
+% 21:20
+Somewhat later, they also proved a variant of this result that applies to certain classes of coherent modules. However, I will not state the precise theorem here, as it is extremely subtle... subtle \note{todo}
 
-Assume we have a sequence of $x_n$ that is Cauchy. Actually, what does "Cauchy" mean here? I mean, this is a sequence of elements in $\R$, so let me denote it as $a_n$. This satisfies the Cauchy condition, which says that for any $\epsilon > 0$, there exists $N$ such that $|a_m - a_n| < \epsilon$ for all $m, n \geq N$. 
+% 21:35
+Let me just mention that if the ring is sufficiently well-behaved, we recover the expected result: this construction extends naturally to rings as well. 
 
+Moreover, there exists a version for (pseudo)coherent modules.
+
+However, we have to be careful, as localization may fail to preserve all the properties all the desirable properties in this setting.
+
+% 22:32
+All in all, this is a remarkable result.
+
+% 22:36
+At the time, the primary goal was simply to prove that vector bundles can be defined on perfectoid spaces. However, the argument turned out to work more generally whenever the space is a sheaf. \note{todo, check} 
+I was able to follow their argument step by step, but it is rather intricate, but it is a rather tricky argument where we really have to ... data... vector bundle that somehow, some kind of invertible matrix over some complete normed ring. Then you have to do some ring ... basis ... to make things better. 
+Ultimately, it is an analysis argument.
+
+% 23:17
+Today I want to explain different proofs that we can give, using our general theory of solid modules. 
+\begin{goal}
+Give a proof of this theorem using $D( )^\solid$.
+\end{goal}
+% 23:51
+About ten years ago, when this result first appeared, Kedlaya and Liu also proved a related theorem. I remember discussing it with [someone]...
+% 23:58
+He was already explaining to me that if we work in the derived category and consider certain 
+$N$-Banach modules, then we can simply glue them together.
+At the time, I thought: Okay, but what does that even mean?
+
+% 24:10
+There are all these complications. I think it is not a structure sheaf, and it seems highly nontrivial to prove how vector bundles and similar objects would work. \note{check this}
+% 24:18
+What does this extremely general result actually tell us about such concrete questions? \note{todo check} 
+I am not sure whether he ever fully worked it out,, but the goal of this lecture is to show that this is not just an abstract, high-level result...
+% 24:41
+Today, I want to demonstrate how we can actually make this concrete.
+
+Outline
+% 25:00
+First of all, the relation between the thing that Huber defined ($\O^\huber$) and structure sheaf from last time.
+% 25:34
+In particular, it is actually that if it so happens that this thing is a sheaf, then it actually happens to always agree with our structure sheaf. Which is why suddenly the good things happen, because then it actually has a correct ... \note{todo}
+
+% 25:56
+The second thing is that, while in general sending any rational subset $U = U(\frac{f_1,\ldots,f_n}{g}) $
+Let us say the coherent modules in non-negative 
+over $\O(U)$
+This is a sheaf of a ring.
+
+% 27:53
+Rference for this with more details is paper: 
+
+1) The first thing are some of the relations between $\O^\huber$ and $\O$.
+
+\begin{proposition}
+Just computes those those sides.
+Let us say we have a structure $U = U(\frac{f_1,\ldots,f_n}{g}) \subs \Spa(A,A^+)$
+\end{proposition}
+
+% 28:06
+In my mind, I am making the blanket assumption that $A$ is ... throughout this lecture. It may or may not be necessary for everything I am saying. 
+
+% 29:20
+So let this be a rational subset.
+% 29:25
+Here, I am really using this adic spectrum of continuous valuations, which concretely means that when I form such a rational subset, we should assume that the ideal generated by $(f_1, \ldots, f_n) \subs A$ is an open ideal. But once we have a topology where 1 is a unit, then it must be equal to $A$:
+\begin{align*}
+(f_1, \ldots, f_n) = A.
+\end{align*}
+
+% 30:00
+First of all, the Huber structure sheaf $\O^\huber$ is given by taking the convergent power series algebra in variables $T_1$ to $T_n$, and then modding out by the ideal generated by $dg_1 - f_1, \ldots, dg_n - f_n$, and taking the closure.
+\begin{align*}
+\O^\huber (\U) = A \langle T_1, \ldots, T_n / () \rangle
+\end{align*}
+\note{todo}
+
+% 31:30
+Why is that? Somehow, on this open subset, first of all 
+
+%
+This is basically why that works on this open subset. But first of all, we did not invert $G$, because now the ideal generated by $g$ contains $f_1$ up to $f_n$, but they generate the unit ideal. So the ideal generated by $G$ has become invertible even without taking the closure. \note{todo}
+
+% 31:52
+Then on this, we have $T_1$ which is $f_1/g$ and all its convergent power series. This is what could happen on this subset, where this is less than or equal to that.
+
+% 32:05
+Huber was always working with complete topological rings, so when we take a quotient by something, we also take the quotient by the closure. 
+Then, for example, this is a Banach algebra, and the quotient by any closed ideal is still a Banach algebra, so it is still a Huber ring.
+
+% 32:32
+This is maybe not so hard to show, and we all recall the endomorphism part. 
+\begin{align*}
+\O^ (\U) = A \langle T_1, \ldots, T_n \rangle / ()
+\end{align*}
+
+The image of $A$ is just the thing that was defined last time. 
+% 33:06
+We define a category ring structure by asking for this completion for all these elements. 
+% 33:15
+Then we look at what the completion of the unit is. 
+This is what the $S$ uses \note{todo}, and it has a very similar formula.
+
+%
+But then we take the derived quotient, where here for a (condensed) ring nd elements $I$ want to $R$. 
+This derived quotient signifies the derived base change from only algebra, but they just modify all the variables $X_i$. 
+Essentially, we are setting $X_i$ to zero, but not just in the naive sense, but in the derived manner. 
+Completely, this is computed by a possible complex, and in the middle there are some $\Ext$ there, a cotangent differentials.
+
+%
+This is just by taking the standard resolution of $\Z$ over here. It will be an animated condensed thing, and that is why we will consider this. I do not really want to talk about animated things today, but \note{todo}.
+
+%
+So it is certainly some kind of algebra. Let me just give a sketch of it, and for the second part, so we can write $A^1/d$ as $A^1$ mod $d$. Now it is not really necessary whether I take the derived or not, but it is also turn the derived $S$ because what I will write down is a regular sequence.
+
+%
+Then we solidify these, so some exact operations category. This object is computed by a possible complex, which is a complex of finite complexes of some $C$ thing. Just understand what happens when we solidify these objects, but this is exactly what Dustin already computed that something.
+
+%
+So certain things that saying it is the same thing as stating all, which is a context, but zero is just a usual structure. Then we take the $C$ separated a small inter \note{todo}, the inclusion from light or not, it does not really matter, probably separated condition set inside of all condition set, it hasn't left the join. I will take any $x$ to the quotient separated portion, and this is making the operation of taking the maximum $h$.
+
+%
+Has a good effect that if $x$ has some kind of algebraic structure like being a group or ring, and so on, and the functor that is a preservation of final product is available both for the adic setting and all condensed sets, yes. 
+Also, if we start with the adic condensed and then from the maximal condensed also adic and so on. So, thank you.
+
+%
+So completely, if we write $X$ as a condensed set, it is telling us to compute the joint. We can always write any condensed set as a quotient of a discrete set. Just take different profiles depending on it. Then there exists the minimal compact injection $\overline{R}$ of $R$ that is also an equivalence relation and containing $R$. 
+
+So it is in some sense taking the closure of $R$, intuitively speaking. But sometimes, this adds new things where the relation is not spreading. We add that as well. Then we do some kind of transfinite induction, or we just intersect all possible containments.
+
+%
+Then $X$ is this quotient, this is $X \Mod_R$, because this inclusion relation was called the compact injection. 
+
+\begin{example}
+So, for example, if $X$ happens to be a group, then we can always also find a surjection from the separated condensed to the group. Then the relation is the quotient by the subgroup. In that case, we are really just taking the quotient by the closure of the subgroup, the closure in the sense of small injections.
+\end{example}
+
+
+%
+Here is one other thing I should recall, which is: what do compact injections have to do with spaces? Let us say $X$ is any sequential space. 
+
+To recall, it is a topological space for which the condensed set is fully faithful in the closed subsets of $X$. Relatively to the compact injections, taking any closed subset here, why is it a further compact injection? 
+While to check that, the definition is that whenever we pull back to some profinite set, then the preimage is a compact injection.  But this precisely means that the other way is also compact. So the preimage in this case is just the closed subset of this profinite set by the closed subset here.
+
+%
+So back to the sequence, what is this? This is just the thing, and then we take the extension.
+
+% 49:05
+Then if we take a separated quotient, this object \note{add what he points at} is already quasiseparated. then by the above, and because this here comes from a sequential topological space, this precisely means that we should just replace this one here by the closure. \note{todo}
+
+$\O^\huber (\U)$
+
+%
+This already gives us some relation, but we are interested in a somewhat more precise relation. This will be the following theorem. It is potentially due to Kedlaya, except that he did not use this language to phrase it, but the proof is really his. 
+That a $p$-adic completion is $p$-adically complete if and only if all $p$-power series all have bounded denominators. 
+
+\begin{align*}
+(A, A^+) \text{sheafy} \iff \O^\huber = 0
+\end{align*}
+
+sits in degree 0 and is quasiseparated
+
+% 51:48
+\begin{sketch}
+Let us give the proof. 
+\end{sketch}
+% todo latex arrow
+This is clear because by the general descent results from the last lecture, we have the sheaf of categories. But in particular, we get a sheaf of rings, and we just take the units. 
+
+% 52:15
+The non-trivial, and I think somewhat surprising result, is that if $(A, A^+)$ happens to be sheafy, then it is the right thing.
+
+% 52:28
+Let me get the other direction. Before we start, note that to check this property that all $\O(\U)$ sit in degree 0 and are quasiseparated, it suffices to show that this is true on a further refinement of $\U$, for the cover of $\U$, because we can always recover it by all the smaller values as a limit.
+
+% 52:55
+Then as Dustin use it last time, there are all these arguments that general .. covers and so on. They can always be refined by this simple Laurent covers \note{todo}. Actually, the second type of cover that .. is actually not necessary in the Tate setting \note{todo}.
+
+% 53:30
+To get the good properties of all $\O(\U)$, we need further refinement \note{todo}. I do not want to go through all the commutative refinement \note{todo}, but just note that this somehow reduces to the following key lemma.
+
+%
+We can always cover any space with a Zariski-type cover, with at most one and at least one nonempty intersection. So the other type of cover is not necessary when we ... topologically nilpotent units \note{todo}. This reduces to the following key assertion.
+
+
+\begin{lemma}
+Let $A$ be a Tate-Huber ring, and $f \in A$. 
+% 55:55
+Assume we have a sequence of 
+\begin{align*}
+0 \to A \to A \tnsr A \to A 
+\end{align*}
+
+that is exact. \footnote{Sheafiness means }
+\end{lemma}
+
+% Probably need to delete this
+What does "Cauchy" mean here? This is a sequence of elements in $\R$, so let us denote it as $a_n$. 
+This satisfies the Cauchy condition, which says that for any $\epsilon > 0$, there exists $N$ such that $|a_m - a_n| < \epsilon$ for all $m, n \geq N$. 
+
+
+% 57:15
+.. agree on intersections
+
+Actually, it is always true that the last $m$ is surjective because any element in here can be written as sums of $f^n$ and $\frac{1}{f^n}$
+
+%
 This is always true, just because any element in the limit can be written as a sum of $f^n$ and $1/f^n$, where the $f^n$ come from one side and the $1/f^n$ come from the other side.
 
-Assume this Cauchy condition, which is always true for a Pro-$H$ space, because it's just one specific instance of the Cauchy condition.
+% t
+Assume this Cauchy condition, which is always true for a $\Pro$-$H$ space, because it is just one specific instance of the Cauchy condition.
 
-Then, the derived object by $f$ and the other thing is also the identity. In other words, it agrees with what we defined earlier. What does "the $D$" mean? It means that modification by $-f$ is actually injective here and has closed image.
+%
+Then, the derived object by $f$ and the other object is also the identity. In other words, it agrees with what we defined earlier. What does "the $D$" mean? It means that modification by $-f$ is injective here and has closed image.
 
-Let's prove this. What you have to see is that if you look at the map, and then multiply by $f$ or $1/f$, this is injective with closed image.
+% 59:20
+Let us prove this. What we have to see is that if we look at the map, and then multiply by $f$ or $\frac{1}{f}$, that this is injective with closed image.
 
-But actually, because of the star condition, if you want to show injectivity, let's assume you have something in the kernel that also still lies in the kernel when you replace $a$ by one of those two rings. But then over those two rings, it's easy to see that this map is injective.
+\begin{sketch}
 
-And similarly, this map actually has closed image, because the image is precisely the kernel of the next map. Using this, you can also check that if it has closed image over those rings, it must also have closed image here.
+To see
+\begin{align*}
+A<T> 
+\end{align*}
 
-So it's enough to check it when we replace $a$ by those two rings. In other words, we can assume that either the absolute value of $f$ is less than or equal to 1, or the absolute value of $f$ is greater than or equal to 1.
 
-If $f$ is less than or equal to 1, then $T - f$ can be shown to be a closed ideal, because you can just successively "peel off" the highest coefficient. Something similar holds in the other case.
+\end{sketch}
 
-Basically, if you have an element here, you can really just by looking at coefficients see what happens. And also, one of them becomes a torsion module anyway, because after not doing any further localization, it's only the other one you have to check.
 
-So this is a funny argument that $K$ found, that if you just assume the Cauchy condition, then you can reduce this problem to the simple open covers where you just take a portion by one element. Because then the question of what the $R$-portion is is really just the question of whether this one $M$ here is injective and has closed image.
+%
+But because of the star condition, if we want to show injectivity, let us assume we have something in the kernel that also still lies in the kernel when we replace $a$ by one of those two rings. But then over those two rings, it is easy to see that this map is injective.
 
-Okay, so this finishes my discussion about the Cauchy condition and the relation between the $H$-structure and so on.
+%
+Similarly, this map has closed image, because the image is precisely the kernel of the next map. Using this, we can also check that if it has closed image over those rings, it must also have closed image here.
 
-To the second part---so, here are some definitions. What does the "me" mean? Let $R$ be a ring with a certain condition structure for now. Then, something like this definition $S_6$, I believe. If it can be represented by complexes up to some degree $n$, but $\Z$-graded, then all these terms must be finitely generated. You could also say, try to project this with negative degrees as well, because I want to say something else in a second.
+%
+So it is enough to check it when we replace $a$ by those two rings. In other words, we can assume that either the absolute value of $f \leq 1$, or the absolute value of $f \geq 1$.
 
-And then, importantly, if your ring was an $\mathfrak{a}$-adic ring, then this will just be the condition that each group is a coherent module---the case just finitely generated module. But if you're not in an $\mathfrak{a}$-adic range, then there's some coherent module structure form in some category, usually. And because you didn't ask, the relations between the relations are finitely generated, and so some of the infinite complexes they capture the idea that you have modules which are finitely generated with as many relations, as many further relations.
+%
+If $f \leq 1$ then $T - f$ can be shown to be a closed ideal, because we can just successively "peel off" the highest coefficient. Something similar holds in the other case.
 
-So the point is that over in the $\mathfrak{a}$-adic case, it's a good class of finitely generated modules behaving nicely; you don't have that over a general ring, but the ring still has a nice class of complexes. And let $\mathcal{P}$ be perfect if there is such a representation which just wanted to find it---just a finite complex, projective modules.
+%
+Basically, if we have an element here, we can see what happens, really just by looking at coefficients. Also, one of them becomes a torsion module anyway, because after not doing any further localization, it is only the other one we have to check.
 
-Then the theorem is that, let's say $\mathcal{A}^+$ is any $H$-module. Then sending any $A$ to the following things: so, on the one hand, you can take perfect complexes, all the ones or you can take two coherent ones that are, say, in degrees greater than or equal to zero or greater than or equal to $n$ for any $n$. We could also take all perfect complexes, but you could also take those perfect complexes which have such a representation in some interval. So, perad means those that can be represented using a complex sitting in certain degrees.
+%
+This is a funny argument that $K$ found, that if we just assume the Cauchy condition, then we can reduce this problem to the simple open covers, where we just take a portion by one element. Then the question of what the $R$-portion is the question of whether this one $M$ here is injective and has closed image.
 
-These are all functors that take a real subset to the infinity category, and they all agree, and I claim that they all share some nice properties on the right. I'm always just thinking of $A$ as a cochain complex being a reason; there's no dependency on you on the right-hand side. I did not, thank you.
+%
+This finishes our discussion about the Cauchy condition and the relation between the $H$-structure and so on.
 
-And I guess finally, I'm now extending all these notions to animated rings. And so, okay, so either you know what all these things mean when this guy is just an animated ring, then it's true as stated, or you secretly that you maybe in the $\C$ case where it's just $\C_0$, and then I just told you what they are. Either way, these are nice properties, in particular, the $\C$ case, if I expect the vector bundles, this cover.
+%
+To the second part---so, here are some definitions. What does the "me" mean? Let $R$ be a ring with a certain condition structure for now. Then, something like this definition $S_6$, I believe.  If it can be represented by complexes up to some degree $n$, but $\Z$-graded, then all these terms must be finitely generated. We could also say, try to project this with negative degrees as well, because I want to say something else in a second.
 
-Yes, Peter, is there a reason you didn't state the like pseudo-coherent $\mathcal{A}$-module? No, okay. You have to be careful that the good way to make $\mathcal{P}$ restrictions on $\mathcal{C}$ and a perfect complex are different. Yeah, for perfect complex, you assume that there is a representation as an actual complex that's in some range of degrees. For coherent sheaves, you can just make a more naive thing like bounded below, bounded above, although no, there is actually a reason. If I no, there is a reason because look, I don't think localizations are flat in any
+%
+Importantly, if our ring was Noetherian, then this will just be the condition that each group is a coherent module---the case just finitely generated module. But if we are not in an $a$-adic range, then there is usually some coherent module structure form in some category. This is because we did not ask that the relations between the relations are finitely generated. So some of the infinite complexes capture the idea that we have modules, which are finitely generated with as many further relations.
 
-Okay, this will have a meaning at some point when this is animated. We didn't discuss this yet, so if you feel more comfortable, just assume this sits at zero, and this is a sheet of any categorical and so this certainly contains fully faceful, just the modules over the underlying $\mathcal{S}$ ring, which is always true for any anticyclic ring whatsoever.
+%
+The point is that over in the $a$-adic case, it is a good class of finitely generated modules behaving nicely. We do not have that over a general ring, but the ring still has a nice class of complexes.
+ 
+Let $\P$ be perfect if there is such a representation which just wanted to find it---just a finite complex, projective modules.
 
-And this certainly contains all these other subcategories. But yeah, basically some kind of a finite solution here. And so by virtue of this being fully faceful, it means that the only thing we actually have to prove in all these settings is that if you have an object here, which locally happens to lie in all of the sub-categories, and actually so globally--maybe at the expense of pretending that I can replace all of you by $\mathcal{A}$ again--that this is such that over the base change from $\mathcal{A}$ plus, one of the sub-categories, then so does the conditions that we put.
+%
+Then the theorem is that, let us say $\A^+$ is any $H$-module. Then sending any $A$ to the following things: so, on the one hand, we can take perfect complexes, all the ones or we can take two coherent ones that are in degrees greater than or equal to zero or greater than or equal to $n$ for any $n$.  We could also take all perfect complexes, but we could also take those perfect complexes which have such a representation in some interval. So, perad means those that can be represented using a complex sitting in certain degrees.
 
-Okay, and so maybe the first idea you might have is that well, let's first check that this condition of being a discrete module in the sense, and then the success conditions. But this actually does not work. Warning, this is a warning that Dustin already made, but I want to reiterate it because it's important. The condition does not just say globally, it's do locally, which will not be globally. Let me actually quickly sketch one example. I'm not sure it's the easiest example, but somewhat instructive.
+%\begin{theorem}
+%\end{theorem}
 
-Let's consider the curve, so it takes the $\mathbf{T}_m$ spheres over, let's say, $\P^1$, and then you can take the quotient by, let's say, other units. This what's called a table, different with the analog of taking $\C^\times$, complex space $\C^\times$, and $\P^1$ by some topological element. And then this becomes an adic curve, complex numbers do similar, or whatever rigid geometry started. And let's assume that our $\mathcal{A}^+$ is some large open subset here, so basically remove a small disc around the origin. But large enough so that there is non-vanishing global monodromy. But should really be sub-only and not this. And then there is $\mathcal{C}$, the projection that--yeah, ring. And then you can find what I will call a lower streak of sub here. What is this? Well, locally, this map is just split, and so locally on the base, like the $\P^1$ are just discs, a union of copies of the base taken by the integers, and then the sheaf is just a direct sum of copies of this same. And so this is how it's defined locally. And well, it's obviously a sheaf, and so it glues to some sheaf on the base. So this defines for you an object $\mathcal{A}^+$-solid, because locally it does. And it is locally discrete because locally, as I said, this cover of splits, and this is just a bunch of copies of your base. But you can check that globally it is not split.
+%
+These are all functors that take a real subset to the infinity category, and they all agree. I claim that they all share some nice properties on the right. I am always just thinking of $A$ as a cochain complex being a reason; there is no dependency on us on the right-hand side. I did not, thank you.
 
-Okay, so we can't hope to use this category instead. We will use two other notions. We said you can first also define this kind of pseudo-coherent, where now I mean, yeah, it's again the complexes which are represented by something that's bounded to the right, so goes to the left, and the cohomology are in this case, I just say they are
+%
+Finally, I am now extending all these notions to animated rings. So either we know what all these things mean when this guy is just an animated ring, then it is true as stated, or we secretly that we maybe in the $\C$ case where it is just $\C_0$, and then I just told you what they are. Either way, these are nice properties, in particular, the $\C$ case, if I expect the vector bundles, this cover.
 
-And you actually just use---I first of all being bounded to the right is a property that globalizes because you're locally bounded to the right, and then globally you're just some kind of finite limit of that, so you're still bounded to the right. And so then you need to check this $x$ condition, and the only thing you need is that these localizations have the finiteness amplitude. Otherwise, there would be some issue, but during that localization, it's fine.
+%
+\ques Peter, is there a reason you didn't state the like pseudo-coherent $\A$-module? No, okay. 
 
-So this finiteness condition on the big category---this can be checked, and then actually once you have the finiteness condition, the thisness is also something that can be globalized. But this actually needs to be proved, and some equivalent conditions need to be checked.
+You have to be careful that the good way to make $\P$ restrictions on $\C$ and a perfect complex are different. Yes, for perfect complex, that there is a representation as an actual complex that is in some range of degrees. For coherent sheaves, we can just make a more naive thing like bounded below, bounded above, although no, there is a reason. 
+If I no, there is a reason because look, I don't think localizations are flat in any...
 
-So the issue there is that it's in some sense easier to work with the second subcategory of $n$-nuclear objects, and these are somewhat more general than just the $B$-nuclear objects, but not the $C$-nuclear ones. Let me just give a quick definition here. So all the $B$-nuclear ones will be modular, but things are somewhat more general than that. In particular, they contain all the $B$-nuclear objects, but not the $C$-nuclear ones.
+% 
+This will have a meaning at some point when this is animated. We did not discuss this yet, so if you feel more comfortable, just assume this sits at zero, and this is a sheet of any categorical. So this certainly contains fully faithful, just the modules over the underlying $\S$ ring, which is always true for any anticyclic ring whatsoever.
 
-The name is inspired by this class of nuclear vector spaces defined in functional analysis. It's not a completely precise translation, but in spirit it is. The condition is that the internal Hom to $P$ factors through a trace-class map. This in some way encodes the idea that all maps from the dual of $B$ tensor with something are trace-class.
+% 
+This certainly contains all these other subcategories. But basically some kind of a finite solution here. 
+By virtue of this being fully faithful, it means that the only thing we have to prove in all these settings, is that if we have an object here, which locally happens to lie in all of the sub-categories, and actually so globally--maybe at the expense of pretending that I can replace all of you by $\A$ again--that this is such that over the base change from $\A^+$ , one of the sub-categories, then so does the conditions that we put. \note{make this clearer}
 
-In general, the nuclear modules are generated by shifts of just $B$-module functions. You can generate them by full limits, and in general, referring to more general analytic rings, by where these are all trace-class, meaning they come from elements in the dual. Whenever you have an element in the standard pro, you can produce an $M$ from that, and these are all trace-class. And then if you take a sequential form of trace-class maps, you can check using that internal Hom commutes with limits that they always have, and conversely, when you try to present nuclear objects in terms of how they're generated by compact projectors, the map will actually factor through a trace-class map.
+%
+The first idea we might have is that: let us first check that this condition of being a discrete module in the sense, and then the success conditions. But this does not work. 
 
-Okay, and so yeah, in particular, over $\Q_p$, this is stuff generated by $B$-nuclear objects, so this is still a rather large class of guys. It will actually, I mean, there are actually $C$-nuclear and so on. One very nice property of this nuclear module category is that it forms a universal $L^1$ approximation in some sense to the right-hand side, and using this, you can also define the $L^1$ spaces.
+\begin{warning}
+This is a warning that Dustin already made \note{tod, add ref}, but I want to reiterate it because it is important. The condition does not just say \emph{globally}, it is do \emph{locally}, which will not be globally. 
 
-So back to here, you have the subcategory of $n$-nuclear objects, and the finest class that is globally closed. And so you want to check that if you have some $C$ that satisfies this condition locally, then you want to check it globally. And for this, the ideal situation is that just the two sides of the morphism can localize---the right-hand side definitely localizes, as it's just some tensoring. The question is, does the left-hand side also localize? And it actually does, and the key thing is that you can use the same argument that was used last time to show the different localizations commute with each other, because they actually show that all the localizations are given by internal Hom from some object.
+Let me quickly sketch one example. I am not sure it is the easiest example, but somewhat instructive.
 
-Strictly speaking, for an algebraic localization by inverting an element, it's not literally an internal hom from some object spaces and rational subsets, like inverting an element is not a rational subset. But in general, there's a suitable localization. In any case, you can always refine further so that it is.
+%
+Let us consider the curve, so it takes the $\T_m$ spheres over, let us say, $\P^1$, and then we can take the quotient by, let us say, other units. 
+This what is called a table, different with the analog of taking $\C^\times$, complex space $\C^\times$, and $\P^1$ by some topological element. 
+Then this becomes an adic curve, complex numbers do similar, or whatever rigid geometry started. 
 
-I just wanted to mention that, in case there was some confusion. Actually, with other types of localizations, it's also commutative with elements, because it limits. 
 
-So, now we have two classes of things that are in the sense of a special category, and the question of commutative localization seems to suggest that the sketchy argument given doesn't use that you can put anything, not necessarily compact, instead of $P$. This commutative localization is contrary to what we have for schemes, where you have to take the underlying hom.
+Let us assume that our $\A^+$ is some large open subset here, so basically remove a small disc around the origin. But large enough so that there is non-vanishing global monodromy. But should really be sub-only and not this. 
+% 
+Then there is $\C$, the projection that--yeah, ring. Then we can find what I will call a lower streak of sub here. 
+What is this? Locally, this map is just split, and so locally on the base, like the $\P^1$ are just discs, a union of copies of the base taken by the integers, and then the sheaf is a direct sum of copies of this same. 
 
-However, in this case, the localizations commute with all products, because they have a left adjoint, which is extremely important for the theory of compact SP-coherent modules. In these situations, the pullback functor has a kind of coherent lower shriek functor, which is the left adjoint. So the pullback preserves all limits, but it also satisfies the projection formula. This is precisely equivalent to the internal hom, so it's true for anything instead of $P$.
+So this is how it is defined locally. It is obviously a sheaf, so it glues to some sheaf on the base. This defines for us an object $\A^+$-solid, because locally it does. It is locally discrete because locally, as I said, this cover of splits, and this is just a bunch of copies of our base. But we can check that globally, it is not split.
 
-For the specific localization we're interested in here, to Zariski open subsets, this is actually always true. We made two steps in our proof: we isolated two different classes of modules that can be glued, and the last step is to isolate the intersection and show that the two central modules over $S$ are just an inclusion. They are certainly in the SP category, and this is actually called...
+\end{warning}
 
-So then we finally show that we can glue these two ones, and there's still a little bit to show that all the other super- and subscripts I put also glue, but this is actually easy.
+%
+So we cannot hope to use this category instead. We will use two other notions. We said q" can first also define this kind of pseudo-coherent, where now I mean, it is again the complexes which are represented by something that is bounded to the right. So it goes to the left, and the cohomology are in this case, I just say they are
 
-So far, I didn't do anything that seems remotely like analysis. But for doing vector bundles, there is actually some new curious power series that you have to undertake somewhere. So somewhere, there has to be some actual work.
+%
+We use---I first of all being bounded to the right is a property that globalizes because we are locally bounded to the right. Then globally, we are just some kind of finite limit of that, so we are still bounded to the right. Then we need to check this $x$ condition. The only thing we need is that these localizations have the finiteness amplitude. 
+Otherwise, there would be some issue, but during that localization, it is fine.
 
-Let me show how it's done. We can assume we have some complex, and by shifting, you can assume it starts at $\Z$. I also said you can assume that these are all just...
+% 
+So this finiteness condition on the big category can be checked. Once we have the finiteness condition, the thisness \note{todo} is also something that can be globalized. But this needs to be proved, and some equivalent conditions need to be checked.
 
-Okay, you have such a complex. How do we know that it is nuclear? Now I certainly have a map from $\P$ to here, which is just the identity here, and my complex is just zero elsewhere. This is a map from $\P$ into $C$. Being nuclear, it means that it's trace class. If you actually have a section in here, then again you can factor this over some approximation to $C$, and when you think a little bit about what this means, you realize that there exists a diagram where $G$ is $PR$, but then this $F$ can actually be split back. You get a morphism here, and what you see with this is that the map from $\P$ to the complexes over the morphism from $G$ to $\P$ for some $G$ of $\P$ is just some playing around with the fact that $\P$ is projective and so on, and the definition of nuclearity reduces this.
+% 1:28:00
+The issue there is that it is in some sense easier to work with the second subclass ... objects. These are somewhat more general than just the $B$-nuclear objects. These are the so-called nuclear objects.
 
-So in the end, you see that there is actually a way to put a unit here, and then it's actually enough to show that this guy here is actually perfect. Certainly, this representation doesn't show that, but they claim, as far as the
-Particular compact operator, and then any perturbation of a Fredholm operator by a compact operator is still a Fredholm operator. Some have properties that are related to the kernel and cokernel dimensions.
+Define
+\begin{align*}
+D^\nuc((A, A^+)_\solid) \subset D((A, A^+)_\solid)
+\end{align*}
+nuclear modules
 
-This is an argument that you just have to execute slightly more carefully in this situation. So, there's some Fredholm operator on this like base, something like this. And then, you can show that, yeah, the cone on the Fredholm operator is a perfect complex, which is a better way of thinking about it as the K-theory generator.
+% 1:29:15
+All the discrete ones will be modular, but things are somewhat more general than that. In particular, they contain all the Banach modules, but not the Smith ones.
 
-This is the only place where you actually have to play with some, I mean, you have to have a matrix representing the map, and then you play with that. It's easy, but there's this step where you actually feel like you're doing a little bit of analysis.
+% 1:29:30
+\begin{definition}
+$C \in D((A, A^+)_\solid) is \emph{nuclear} 
+\end{definition}
 
-Okay, before you erased the blackboard, you had a factorization where $P$. You said that you factorized it through $P$, and one map is trace class, right? But it seems to me that you have to use the $\text{Hom}$ space. I mean, the data will not give you that the map from $P$ to $P$ is, you need some homotopy to do it. I mean, I think the data is probably that where it's executed, look at the complex geometry, not where we do precisely the same argument like this linear vector space.
+% 1:29:48
+\footnote{The name is inspired by this class of nuclear vector spaces Grothendieck defined in functional analysis. It is not a completely precise translation, but in spirit it is one.}
 
-So, it's an unfortunate thing that I'm probably screwing up if I try to do it right here. But in any case, the data probably means that the map from $P$ to the complex is homotopic to a map that factorizes through a finitely generated free module, up to homotopy. And then you can use this finitely generated free module to modify the complex, so that now the degree zero part becomes zero, and then you can just keep going.
+
+So it takes the internal hom
+$P$ as usual is a free complete module on nullsequences.
+So you have that the 
+\begin{align*}
+\IntHom(P, C) \leftarrow C todo
+\end{align*}
+is an isomorphism
+
+So we have that one way to produce maps is to start with a dual of $P$ and then tensor ...
+
+% 1:31:16
+These are in some kind of trace .. map.
+
+% 1:31:40
+So this is in some way encoding the idea that all maps from $P$ are "trace-class".
+
+%The condition is that the $\IntHom$ to $P$ factors through a trace-class map. 
+%In some way, this encodes the idea that all maps from the dual of $B$ tensor with something are trace-class.
+
+\begin{remark}
+
+% 1:32:00
+In general, the nuclear modules are generated under colimits and shifts by just \note{todo}.
+ 
+We can generate them by full limits. 
+
+% 1:32:42
+In general, 
+generated by colimits
+
+\colim()$
+
+in general referring to more general analytic rings, by where these are all trace-class. This means they come from elements in the $\Q^\wedge_f \tnsr Q$. \note{todo}
+% 1:33:26
+Whenever we have an element in this tensor product, we can produce a map from .. \note{}. These are all trace-class. 
+If we then take a sequential form of trace-class maps, we can check using that $\IntHom$ commutes with colimits that they always have this property.
+
+% 1:33:48
+Conversely, when we try to start presenting nuclear objects in terms of how they are generated by compact projectors, and somehow take the \note{todo} ... projectors mapping into $C$. But then that map will be trace-class, and we can it over the trace-class map and so on \note{todo, not sure of this}.
+
+
+% 1:34:45 
+In particular, over $\Q_p$, this is stuff generated by Banach $\Q_p$-vector spaces \note{todo, not sure of this}. So this is still a rather large class of objects. There are actually $C$-nuclear and so on. actually, theory of ..
+\note{mention of name I didn't understand} about .. category and so on. 
+
+% 1:35:05
+One very nice property of this nuclear module category is that it forms a dualizable category. The universal approximation in some sense to the right-hand side. Using this, we can also define the $K$-theory of adic spaces, which is .. \note{didn't understand this part}, but somehow taking us the field 
+
+% 1:35:25
+Back to here, we have the subset of nuclear objects, and the finest class that is globally closed, then we show that this is .. \note{todo}. So if we have some $C$ that satisfies this condition \note{todo, add ref} locally, then we want to check it globally.
+
+%  1:36:58
+For this, the ideal situation is that just the two sides of the morphism can localize. The right-hand side is some tensoring, so it definitely localizes. The question is: does the left-hand side also localize? It actually does. 
+
+% 1:36:20
+The key thing is that we can use the same argument that Dustin used last time to show the different localizations commute with each other, because they show that all the localizations are given by $\IntHom$ from some object.
+
+% 1:37:07
+So a differentent internal $\Hom$ commutes with each other.
+
+%
+\clausen Strictly speaking, for an algebraic localization by inverting an element, it is not literally an $\IntHom$ from some object.
+
+\scholze Take \note{todo} spaces and all rational subsets, like inverting an element is not a rational subset. But in general .., there is a suitable localization. \note{todo}
+
+% 1:37:40
+\clausen In any case, we can always refine further, so that it is. I just wanted to mention that, in case there was some confusion. 
+
+% 1:37:50
+\scholze .. \note{todo} With other types of localizations, because it is also commutative with elements, because commutes with climits. 
+
+% 1:38:08
+So, now we have \note{not sure if 'have'} two classes of things that are in the sense of a special category \note{todo}, and these nuclear objects. 
+
+\gabber This question of commutative localization seems to suggest that the sketchy argument given does not use that we, we can put anything, not necessarily compact, instead of $P$, is it right? This commutative localization is contrary to what we have for schemes, where we have to take the underlying $\Hom$ from something..
+
+% 1:38:40
+\scholze A bit surprising, so actually in this case, also localizations, they commute with all product, because they have a left adjoint, which is something we will discuss and which is extremely important for the theory of complex .. \note{todo} cohomology. 
+
+% 1:39:00
+In these situations, the pullback functor has a kind of coherent lower shriek functor, which is the left adjoint. So the pullback preserves all limits, but it also satisfies the projection formula .. \note{I didn't understand the last part of this sentence}. This is precisely equivalent to the $\IntHom$ \note{add ref to what he points at}, 
+
+% 1:39:15
+\gabber So it is true for anything instead of $P$?
+
+\scholze 
+
+%
+For the specific localization we are interested in here, to Zariski open subsets, this is always true. We made two steps in our proof: 
+\begin{enumerate}
+\item We isolated two different classes of modules that can be glued.
+\item We isolated the intersection and showed that the two central modules over $S$ are just an inclusion.
+\end{enumerate}
+
+They are certainly in the SP category \note{todo}, and they are also nuclear.
+
+% 1:40:30
+Then we finally show that we can glue these two nuclear ones. There is still a little bit to show that all the other super- and subscripts we put also glue, but this is easy.
+
+% 1:41:00
+So far, we did not do anything that seems remotely like analysis. But for doing vector bundles, there is actually some new curious power series that we have to undertake somewhere. So somewhere, there has to be some actual work.
+
+% 1:41:25
+Let me show how it is done. 
+
+
+% Sketch
+Assume $C \in \text{intersection }$
+
+We can assume we have some complex. By shifting, we can assume it starts at zero. We also said we can assume that these are all just... \note{todo}
+
+% 1:41:56
+Now that we have such a complex, how do we know that it is nuclear? 
+
+% 1:42:13
+Now I certainly have a map from $P$ to here, which is just the identity here, and my complex is just zero elsewhere. This is a map from $\P$ into $C$. Being nuclear, it means that it is trace class. 
+
+% 1:42:35
+If we have a section in here \note{todo, add ref to what he points at}, then again we can factor this over some approximation to $C$. When we think a little bit about what this means, we realize that there exists a diagram like this, where $G$ is $PR$. \note{todo}
+
+% 1:43:14
+But then this is actually surjective, so this $F$ can be split back and 
+
+% 1:43:18
+So we get a morphism here. What we see with this, is that the map $P \to C$ factors over the .. cone. 1 - g to p
+
+
+to the complexes over the morphism from $G$ to P$ for some $G$ of $P$ is \note{todo}
+
+% 1:43:58
+So this is just some playing around with the fact that $P$ is projective and so on, and the definition of nuclearity reduces this \note{todo, add ref to what he points at}.
+
+% 1:44:12
+So in the end, we see that there is actually a way to put $1-P$ here. Then it is enough to show that this object here \note{todo, add ref to what he points at} is perfect. Certainly, this representation does not show that, but they claim, .. complex, so these are just finite pre modules \note{todo}.
+
+Claim: This lives in $\Perf((A(\ast))$
+
+% 1:45:58
+This is basically classical Fredholm theory here. So if we have a trace-class operator, the identity map is certainly a Fredholm operator, and then we .. by trace-class, in particular compact operator \note{todo}. Then any perturbation of a Fredholm operator by a compact operator is still a Fredholm operator. 
+
+Fredholm operators somehow have the properties that the kernel and cokernel are finite-dimensional.
+
+% 1:45:20
+This is an argument that we just have to execute slightly more carefully in this \note{todo, add ref to what he points at} situation. 
+
+So, this \note{todo, add ref to what he points at} is some Fredholm operator on something like a Banach space. Then we can show that the cone on the Fredholm operator is a perfect complex. This is a better way of thinking that the kernel and cokernel are non-degenerate.
+
+% 1:45:40
+This is the only place where we actually have to play with some analysis. We have to have a matrix representing $G$, and then we play with that. It is easy, but there is this step where we feel like we are doing a little bit of analysis.
+
+% 1:46:17
+\ques Before you erased the blackboard, you had a factorization where $P$... You said that you factorized it through $P$, and one map is trace-class...
+
+\ans Right.
+
+\ques ... But it seems to me that you have to use $\Hom$, I mean, the data will not give you that the map $P \to P$ is, you need some homotopy to do it. I think the data is probably that where it is executed, look at the...
+
+\ans complex geometry, not where we do precisely the same argument like this liquid vector space and so... It is an unfortunate thing that I am probably screwing up if I try to do it right here. 
+
+\ques But in any case, the data probably means that the map from $P$ to the complex is homotopic to a map that factorizes through a finitely generated free $A$-module...
+
+% 1:47:26
+\ans Up to homotopy. 
+
+
+\ques Then we can use this finitely generated free $A$-module to modify the...
+
+\ans ... So in this way, I can modify the complex, so that now the degree zero part becomes zero. Then we can just keep going.
+
+\ques Okay, maybe it is the same approximately. 
 
 \end{unfinished}
