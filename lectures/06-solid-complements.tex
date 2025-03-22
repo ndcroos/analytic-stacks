@@ -72,7 +72,7 @@ This projective generator is $P$ itself, and the solidification functor acts as 
 % 5:02
 Additionally, it is important to note that when we compute the solidification of free modules on a profinite set $S$, the result is simply the limit of the free modules on the finite sets $S_n$, provided that $S$ is a light profinite set.
 
-\begin{align*}
+\begin{align*} \label{eq-06-compact-projective}
 \Z[S]^\solid \iso \lim_n \Z[S_n] \quad & \text{if } S = \lim_n S_n \in \Pro_\N (\Fin)
 \end{align*}
 
@@ -121,21 +121,18 @@ The class of solid $A$ is a triangulated subcategory and is stable under infinit
 % 8:55
 In the context of $\infty$-categories, the stability under all limits and colimits is likely analogous.
 
-\begin{unfinished}{9:00}
-
 Once again, we can show that the class of solid complexes is also stable under $\IntRHom$, following the same proof as last time. 
 % 9:23
 At this point, if we extend this discussion of tensor products to the level of derived categories, we will observe that...
 % 9:38
-It is also true that ... because in the end, it just turns out that if we take the derived category of solid object
-... functorial so we get a map
+It is also true that ... because in the end, it just turns out that if we take the derived category of solid object, then ... \note{Audio is not good enough here} are functorial, so we get a map:
 
 % 10:05
 \bp
 \be
 D(\Solid) \mono D(\Cond\Ab^\light) \label{06:eq-derived}
 \ee
-is fully faithful, and the essential image is exactly the solid $A$'s.
+is fully faithful, and the essential image are exactly the solid $A$'s.
 
 has left adjoint
 \be
@@ -155,17 +152,16 @@ This is not entirely automatic. It relies on the fact that the projective genera
 \ques Is it the case that if you have any complex (possibly unbounded), whose terms are direct sums of these generators, then taking solidification term by term is a good derived functor? 
 
 % 11:13
-\ans Yes, that is correct. Solidification preserves, on the level of---maybe forget about the thing.
+\ans Yes, that is correct. Solidification preserves, at the level of... For a moment, maybe forget about this thing.
 
 We then obtain a whole subcategory in the derived category of solid objects. 
 % 11:35
-Again, by adjunction, this subcategory will have a left adjoint --- a derived solidification functor. This funtor will commute with all colimits, mapping objects back into $D(\Cond(\Ab))$, since this category is stable under all colimits.
-
+Again, by the adjoint functor theorem, this subcategory will have a left adjoint --- a type of  derived solidification functor. This functor will commute with all colimits, mapping objects back into $D(\Cond(\Ab))$, since this category is stable under all colimits.
 % 11:46
-On the generators, we determined what the functor does last time. It becomes this \note{todo, add ref} thing, even in the derived sense.
+On the generators, we determined what the functor does last time. It becomes this \ref{eq-06-compact-projective} thing, even in the derived sense.
 
-% 12:05
-At the level of derived categories, we also have a full inclusion, making it is as nice as possible. Again, by some adjoint functor theorem, this \ref{06:eq-derived} has a left adjoint. Let me denote this as derived solidification functor $L\solid$:
+% 12:07
+At the level of derived categories, we also have a full inclusion, making it is as nice as possible. Again, by some adjoint functor theorem, this \ref{06:eq-derived} has a left adjoint. Let me denote this as the derived solidification functor $L\solid$ (verbalize as: L "box"):
 \be
 A \mapsto A^{L\solid} 
 \ee
@@ -174,11 +170,13 @@ A \mapsto A^{L\solid}
 \ques In the adjoint functor theorem, there is usually some set-theoretical condition, because you want...
 
 % 12:45
-\ans I am thinking of everything as $\infty$-categories, and then everything here is a presentable $\infty$-category. Then Lurie has this general adjoint functor theorem there. 
+\ans I am considering everything as $\infty$-categories, where all categories here are presentable $\infty$-categories. In this setting, Lurie's general adjoint functor theorem applies. 
 % 12:54
-I think that for triangulated categories, there are theorems of Neeman \note{not sure of spelling of this name} and others, which would also suffice to justify this, I believe. 
+For triangulated categories, there are relevant theorems by Neeman \note{spelling uncertain} and others, which might also suffice to justify this. 
 % 13:02
-They often assume actual compact generation, which is not quite true in this case, so I am not sure. But Lurie's version is definitely sufficient.
+However, these often assume actual compact generation, which is not quite true in this case, so I am not sure. Nevertheless, Lurie's version is definitely sufficient.
+
+\begin{unfinished}{13:15}
 
 % 13:19
 We would not need the abstract theorem, because we can just prove the existence by hand in this case. Because on a class of generators, we have identified that the left adjoint exists. But these objects, we already know that they exist.
