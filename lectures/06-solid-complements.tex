@@ -227,46 +227,45 @@ The derived tensor product of two such copies is given by:
 % 17:10
 One might assume that derived concepts never appear in practical settings, but this is not the case. 
 
-\begin{unfinished}{17:20}
-
 % 17:33
-Here is a proposition. Suppose $X$ is a CW complex.
-
-% 
+We now state a well-known proposition. Let $X$ be a CW complex.
+% 17:30
 Recall that in this context, we previously established that the $\Ext$-groups of $\Z$ are the singular cohomology groups:
 \be
 \Ext^i (\Z[X], \Z) = H^i_\sing (X, \Z).
 \ee
 
 % 17:47
-But now, we can also interpret the homology of $X$. More precisely, it turns out that the singular homology of $X$ is exactly the homology of the derived solidification.
+Similarly, we can now interpret the homology of $X$. Specifically, the singular homology of $X$ coincides with the $i$th homology of the derived solidification.
 
 % 18:18
-More precisely, there exists a complex that computes the singular homology of $X$. This complex is isomorphic to the derived solidification. In particular, the derived  solidification is discrete; it originates from the complex of discrete abelian groups.
+More precisely, there exists a complex that computes the singular homology of $X$. This complex is isomorphic to the derived solidification. In particular, the derived solidification is discrete; it arises from the complex of discrete abelian groups.
 
 \bp
-Let $X$ be a CW complex. Then we have the following:
+Let $X$ be a CW complex. Then:
 \be
-H_i^\sing(X,\Z) = H_i(\Z[\underline{X}]^{L\solid})
+H_i^\sing(X,\Z) = H_i(\Z[\underline{X}]^{L\solid}).
 \ee
-More precisely, we can say that:
+More precisely, we have a quasi-isomorphism:
 \be
-C^\sing(X,\Z) \iso_{\quasi} \Z[\underline{X}]^{L\solid} \label{eq:06-quasi}
+C^\sing(X,\Z) \iso_{\quasi} \Z[\underline{X}]^{L\solid}, \label{eq:06-quasi}
 \ee
-where the isomorphism is quasi-isomorphic.
+where $\iso_{\quasi}$ denotes quasi-isomorphism.
 \ep
 
 % 19:04
-So again, this is some kind of the version of $\Hom$ isomorphism, that if we take discrete abelian groups on $X$ and this models the homology of $X$.
+So again, this is a version of the ... \note{Audio unclear} Thom isomorphism: if we take the free \note{not sure of 'free' or 'discrete'} abelian groups on $X$, this provides a model for the homology of $X$.
 
 % todo missing text
 
 \bex
-If we take $\Z[]^{L\solid} \iso \Z$
+If we take \note{todo} is some large thing, right. The underlying thing is finite sums of points, but if you solidify them, the interval just goes away. It just becomes $Z$.
+\begin{align*}
+$\Z[[0,1]]^{L\solid} \iso \Z$
+\end{align*}
 
 % 19:45
 But if we take the circle and apply solidification, it becomes a copy of $\Z$ in degree 0 and $\Z$ in degree 1, giving the isomorphism:
-
 \begin{align*}
 \Z[]^{L\solid} \iso \Z.
 \end{align*}
@@ -285,7 +284,7 @@ In general, if we take the disjoint union of circles of all dimensions, the resu
 
 \begin{sketch}
 % 20:22
-Again, there is the formal reduction to the case of finite CW complexes---just assuming I keep, which, \note{todo, edit text}
+Again, there is the formal reduction to the case of finite CW complexes---just assuming I use the isomorphism to ... functiorally, which I will use. \note{todo, unclear audio}
 
 Formal reduction to case of finite CW complexes.
 
@@ -295,7 +294,7 @@ To compute this for a finite CW complex, assume $X$ is a compact, finite CW comp
 % 21:48
 To compute the derived solidification, we proceed as usual. 
 % 21:54
-First, we take a surjection from some $S \in \Pro_\N(\Fin)$ onto $X$, such as the Cantor set:
+First, we take a surjection $S$ from some light profinite set $\Pro_\N(\Fin)$ (e.g., the Cantor set) onto $X$:
 \be 
 S \epi X
 \ee
@@ -303,74 +302,74 @@ S \epi X
 From this, we can compute all the fiber products.
 
 % 22:12
-This gives a resolution of the condensed sheaf by the constant sheaves, and then the constant sheaves on the fiber products, which are again some profinite sets, and then all the fiber products.
-We get the following sequence:
+This process induces a resolution of the condensed sheaf by the constant sheaves, and then the constant sheaves on the fiber product, which is again some light profinite sets, and then all the fiber products.
+This yields the following sequence:
 \be 
-\ldots \to \Z[S \times S] \to \Z[\underline{S}] \to \Z[\underline{X}] \to 0.
+\ldots \to \Z[\underline{S \times_\lambda S}] \to \Z[\underline{S}] \to \Z[\underline{X}] \to 0.
 \ee
 % todo
+\note{Unsure if notation \times_\lambda is correct$}
 
-% 
-This is the resolution of this guy. To form the derived solidification, we can apply the solidification to all the terms in the sequence. But for these terms, we know that it is concentrated in degree zero. 
+% 22:28
+This provides the resolution of $\Z[\underline{X}]$. To compute its derived solidification, we apply the solidification functor to each term in the sequence. However, for these terms, we know that it is concentrated in degree zero. 
 % 22:45
-We know that the derived solidification is computed by this, let me not underline.
-
-So $\Z[\underline{X}]^{L\solid}$ is computed by 
-\be 
+Thus, the derived solidification $\Z[\underline{X}]^{L\solid}$ is computed by the following complex, where we now denote $S$ without the underline for clarity:
+\be \label{eq:06-complex}
 \ldots \to \Z[S \times_X S]^\solid \to \Z[S]^\solid \to 0.
 \ee
 
 % 23:16
-This might seem a bit difficult to compute, but we know that each term, such as $\Z[S]^\solid$, is $\IntHom(\Cont(S, \Z), \Z)$---the internal $\Hom$ from the continuous functions from $S$ into $\Z$, back into $\Z$. This is something I discussed at the end of the last lecture. 
+This might seem a bit difficult to compute, but we know that each term, such as $\Z[S]^\solid$, is $\IntHom(\Cont(S, \Z), \Z)$---the internal $\Hom$ from the continuous functions from $S$ into $\Z$, back into $\Z$. This wasdiscussed at the end of the last lecture. 
 % 23:32
-This formula that this limit of the $S_n$ can be translated into this formula. 
+This formula that this limit of the $S_n$ can be translated into this formula $\IntHom(\Cont(S, \Z), \Z)$. 
 % 23:36
-So these are some kind of measures on $S$, and similarly for the other guy.
+So these are some kind of measures on $S$, and similarly for the other guy $\Z[S \times_X S]^\solid$.
 
 \end{sketch}
 
 % 24:17
-This means that all the terms in this complex are isomorphic to their double dual. 
+This implies that all terms in the complex \ref{eq:06-complex} are isomorphic to their double duals. 
 % 24:24
-Specifically, the continuous functions $\Cont(S,\Z)$ is the dual of this one, and then we dualize again. The solidification is equivalent to taking the $\Hom$ functor, and I could also put the $\R$ here without affecting the result in these cases.
+More precisely, the space of continuous functions $\Cont(S,\Z)$ is the dual of this one \not{todo, add ref}, and then we dualize again. The solidification is equivalent to taking the $\Hom$ functor, and I could also put the $\IntRHom$ here without affecting the result in these cases.
 \be
 \Z[S]^\solid \iso \IntRHom(\IntRHom(\Z[S], \Z), \Z)
 \ee
 
 % 25:00
-This means that the same formula holds for $\Z[\underline{X}]$ \note{not sure if $\Z[\underline{X}]$ or $\Z[S]^\solid$ is meant}, if you think about it. Since it is a resolution, this means that also this derived solidification here, one way to compute it, is that it is isomorphic to $R\Gamma(X, \R)$.
+This means that the same formula holds for $\Z[\underline{X}]$ and $\Z[S]^\solid$, as it follows from the resolution. Since this is a resolution, we conclude that the derived solidification $\Z[X]^{L\solid}$ can be computed as
 \be 
-\implies \Z[X]^{L\solid} \iso \IntRHom(\IntRHom(\Z[\underline{X}], \Z), \Z)
+\implies \Z[X]^{L\solid} \iso \IntRHom(\IntRHom(\Z[\underline{X}], \Z), \Z).
 \ee
 
 % 25:31
-But now we are in a good position, because we know that $\IntRHom(\Z[\underline{X}], \Z)$ is isomorphic to the singular cochain complex.
-
+At this point, we are in a good position, as we know that $\IntRHom(\Z[\underline{X}], \Z)$ is isomorphic to the singular cochain complex:
+\begin{align*}
 %todo brakets
-$C^\ast_\sing (X, \Z)$
+$C^\ast_\sing (X, \Z)$.
+\end{align*}
 
 % 25:45
-Because we know that the singular cohomology for finite CW complexes is finite in each degree, it is taking the dual of singular cohomology against singular homology.
+Since the singular cohomology for finite CW complexes is finite in each degree, taking its dual corresponds to dualizing singular cohomology against singular homology:
 
 % todo brackets
 \begin{align*} 
-C^\sing (X,\Z) \text{as all $H^\sing_i (X,\Z)$ are finitely generated}
+C^\sing (X,\Z) \text{as all $H^\sing_i (X,\Z)$ are finitely generated}.
 \end{align*}
 
 % 26:20
 Therefore, we conclude that the derived solidification of $X$ is the dual of its singular homology. 
 
 % 26:40
-This suggests that, to some extent, this transition from light condensed abelian groups or solid abelian groups is analogous to passing to homotopy types. At least for CW complexes, it contracts intervals and then identifies two homotopy-equivalent CW complexes. 
+This suggests that, to some extent, this transition from light condensed abelian groups or solid abelian groups is analogous to passing to homotopy types. At least for CW complexes, it contracts intervals and then identifies homotopy-equivalent CW complexes. 
 % 27:00
-However, for totally disconnected objects, it provides much finer information. 
+However, for totally disconnected objects, this transition provides much finer information. 
 % 27:06
-While we could still invert homotopy equivalences, weak homotopy equivalences would not necessarily be inverted.
+While homotopy equivalences could still be inverted, weak homotopy equivalences would not necessarily be.
 
 % 
 \ques Is it the case for locally contractible spaces, in the sense that you explained earlier? 
 
-\ans Yes, the same principles I mentioned for CW complexes apply to locally contractible spaces as well. Zhouhan \note{not sure of the name} pointed out to me that the paracompactness assumption is actually not required when comparing singular cohomology and sheaf cohomology. 
+\ans Yes, the same principles I mentioned for CW complexes apply to locally contractible spaces as well. Zhouhan \note{Spelling name unsure} pointed out to me that the paracompactness assumption is actually not needed when comparing singular cohomology and sheaf cohomology. 
 
 \ques No? 
 
@@ -382,29 +381,25 @@ While we could still invert homotopy equivalences, weak homotopy equivalences wo
 Now, let me revisit and attempt to provide a clearer description of the category of solid abelian groups. Our goal is to better understand the structure of solid abelian groups.
 
 \bit
-	\item finitely generated objects: these are quotients of $\prod_\N \Z$
-	\item finitely presented objects: these are cokernels of maps of the form 
+	% 29:10
+	\item There exists a compact projective generator, and these objects are precisely the quotients of the products of $\prod_\N \Z$.
+	% 29:27
+	\item Next, there is the notion of finitely presented objects, which correspond to the cokernels of maps: 
 	\begin{align*} 
-	\prod_\N \Z \to \prod_\N \Z
+	\prod_\N \Z \to \prod_\N \Z.
 	\end{align*}
 \eit
 
-% 29:10
-So there exists a compact projective generator, and these objects are precisely the quotients of the products of $\prod_\N \Z$.
-
-% 29:27
-Next, there is the notion of finitely presented objects, which correspond to the  the cokernels of maps as described above.
-
 % 29:50
-It turns out that solid $\Z$-modules behave similarly to modules over a completed  ring in the following sense: they are finitely presented objects, forming an abelian category. only crucial aspect to note is their stability under kernels.
+It turns out that solid $\Z$-modules behave similarly to modules over a completed ring in the following sense: they are finitely presented objects, forming an abelian category. The only crucial aspect to note is their stability under kernels.
 Once this property is established, the objects are automatically stable under kernels, cokernels, and extensions. Therefore, the main point of focus is their stability under kernels.
 
 % 31:00
-The entire category can be viewed as the $\Ind$-category of those. 
+The entire category can be viewed as the $\Ind$-category of those objects. 
 
-% 30:15, todo proper placement
+% 31:10, todo proper placement
 \begin{theorem}
-The finitely presented objects of $\Solid$ form an abelian category, stable under kernels (!), cokernels and extensions.
+The finitely presented objects in $\Solid$ form an abelian category, which is stable under kernels (!), cokernels, and extensions.
 \be
 \Solid \iso \Ind(\Solid^{\text{finitely presented}})
 \ee
@@ -423,12 +418,13 @@ Any finitely presented $M \in \Solid$ has a resolution that terminates in one st
 \ee
 \el
 
-So there are certain finite objects in our category that are precisely the cokernels of injective maps. Then everything is a kernel of a map \note{not sure of this} from one of those.
+% 32:36
+There are certain finite objects in our category that correspond precisely the cokernels of injective maps. In this case, everything can be understood as a filtered colimit \note{not sure of this}.
 
 % 32:56
-The key lemma for this is the following. We are trying to understand all the finitely presented ones. Given a kernel, we can always find a surjection onto $M$, and from there, the kernel is at least a finitely generated submodule. 
+The key lemma for this is the following: we aim to understand all the finitely presented objects. Given a kernel, we can always find a surjection onto $M$, and from that, the kernel is at least a finitely generated submodule. 
 
-Then it would be good to know that all the finitely generated submodules of this are actually such a product. This is the claim I present now.
+It is important to know that all the finitely generated submodules of this kernel are indeed products of copies of $\Z$. This is the claim I will present now.
 
 % 33:34
 % Key lemma
@@ -441,35 +437,37 @@ Any finitely generated submodule of $\prod_\N \Z$ is isomorphic to a product of 
 % 34:32
 But then \ref{lemma:06-fin-generated} also always reduces to identifying the finitely generated submodules of our generating objects. If those are all finitely presented, then everything falls into place.
 
-This theorem is straightforward to deduce from the lemma, so let’s proceed with the proof of the lemma.
+This \note{todo} theorem is straightforward to deduce from the lemma, so let's proceed with the proof of the lemma.
 
 % 35:03
 \bq
-We know that it is finitely generated, so we know that there is some surjective map from a product of copies of $\Z$ onto $M$ which injects back into $\prod_\N \Z$.
+We know that $M$ is finitely generated, so there exists a surjective map from a product of copies of $\Z$ onto $M$, which then injects back into $\prod_\N \Z$. This gives the following diagram:
 \be
 \prod_\N \Z \epi M \mono \prod_\N \Z
 \ee
 
-By the way, this is again the result... Previously, a lot of what I was talking about, about the general properties of the category of solid abelian groups, they extend to the full condensed setting, and not just the light one.
+By the way, this result is consistent with what we discussed earlier. Many of the general properties of the category of solid abelian groups extend to the full condensed setting, not just the light one.
 % 35:33
-This theorem is again one which holds only in the light setting. It will be because we are using some countability again in just a second.
+This particular theorem, however, holds only in the light setting, as it relies on countability, which will become apparent in just a moment.
 
 % 35:50
-So we have some map here. Let's call it $g$.
+Now, consider the map $g$.
 % todo: draw map g
 
-We know that the maps from a product back to $\Z$ are given by direct sums. This implies that this is dual to a map in the other direction from a direct sum of these. 
-Our goal is to show that whenever we have such an endomorphism of a direct sum of $\Z$ and then dualize, the image (denoted $M$) is itself a product.
+We know that maps from a product back to $\Z$ are given by a direct sum. This implies that this is dual to a map in the reverse direction, from a direct sum of these. 
+Our goal is to show that for any endomorphism of a direct sum of $\Z$, dualized, the image (denoted by $M$) is itself a product.
 
-So: $g$ is dual to a map
+So, the map $g$ is dual to a map:
 \begin{align*}
-\bigoplus_\N \Z \xrightarrow{h} \bigoplus_\N \Z \to
+\bigoplus_\N \Z \xrightarrow{h} \bigoplus_\N \Z.
 \end{align*}
 
 % Todo: Actually a right hook, need to define that
 
+\begin{unfinished}{37:10}
+
 % 37:12
-For the proof, I will rely on the following fact, though I am  unsure whether is widely known.
+For the proof, I will rely on the following fact, though I am unsure whether is widely known.
 % 37:24
 \underline{Fact:} Let $N$ be a countable abelian group that embeds into a product of copies of $\Z$. In abstract, $N$ is discrete, there is no condensed structure. Then $N$ is free.
 
@@ -477,71 +475,67 @@ For the proof, I will rely on the following fact, though I am  unsure whether is
 Let me leave this as an exercise. I am confident it is false if we drop the countability assumption, as an arbitrary product of copies of an abstract abelian group is definitely not a free abelian group.
 
 % 38:35
-But one implication of this is that if we examine the image of $h$, it is definitely countable. Furthermore, this image embeds both in the direct sum and the direct product of these \note{not sure of this}.
-This also embeds into the direct sum, 
+One consequence of this iss that if we examine the image of $h$, it is countable. Furthermore, this image embeds both in the direct sum and the direct product of these \note{not sure of this}.
 
-This implies that the image of the map is free.
+This leads to the conclusion that the image of the map $h$ is free.
 \begin{align*}
-\implies \Im(h) \text{ is free}
+\implies \Im(h) \text{ is free}.
 \end{align*}
 
-% 39:10
-The image is free, but then we have a surjection here \ref{lemma:06-fin-generated} from this direct sum $\bigoplus_\N \Z$ onto another free group. This implies that the map splits. In particular, there is a kernel involved, but this must also split back. Therefore, the image of the map splits as a direct summand.
+One way to justify this is to use a spec, but okay, maybe it is easier. \note{todo}
+
+% 39:08
+The image is free, but then we have a surjection here \ref{lemma:06-fin-generated} from this direct sum $\bigoplus_\N \Z$ onto another free group. This implies that the map splits. In particular, there is a kernel involved, but this must also split back. Therefore, the kernel of $h$ splits as a direct summand.
 
 % todo diagram seq
 \begin{align*}
 \implies \ker(h) \text{ splits as a summand}
 \end{align*}
 
-% 39:50
-Since the kernel splits, we can replace the $\bigoplus_\N Z$ with the other direct summand factor, which is also a free abelian group.
+Maybe this is actually not very relevant, and I should focus more on the quotient. But let me first try to understand the structure of such maps and what it implies for the dual side.
 
-% 
-Freyd and replace $H$ by the corresponding thing, because then this corresponding product will split into two copies, and this $N$ will just embed into one of them. 
-So we can definitely assume that $H$ is indexed.
+% 39:48
+Since the kernel splits, we can replace $\bigoplus_\N Z$ with the other direct summand factor, which is also a free abelian group. We can then replace $h$ by the corresponding map, as this corresponding product will split into two copies, and $N$ will embed into one of them. 
+
+Therefore, we can assume that $h$ is injective:
 \begin{align*}
-\leadsto \text{We can assume w.l.o.g. that $h$ is injective}
+\leadsto \text{We can assume, w.l.o.g., that $h$ is injective}
 \end{align*}
 
 % 40:27
-Now we have an injection.
+Now, we have an injection from a direct sum of these to another direct sum of the same type.This gives us a quotient $Q$ as follows: 
 % 40:30
 \be
-0 \to \bigoplus_\N \Z \hookrightarrow \bigoplus_\N \Z \to Q \to 0 % todo h
+0 \to \bigoplus_\N \Z \hookrightarrow \bigoplus_\N \Z \to Q \to 0. % todo h
 \ee
 
-Now we have some quotient here. The next task is to understand the structure of this quotient.
+The next step is to understand the structure of this quotient $Q$.
 
 % 39:05
 % For this, you do not need this [previous fact]. It is just the image. Okay, I will use this [previous fact] again in a second, so I wanted to mention it.
 
-% 
-Maybe this [previous discussion] is completely irrelevant, and I should focus more on the current question at hand. 
-However, let me first explore the structure of such maps and what it implies on the dual side.
-
 % 41:34
-There is a certain quotient of $Q$, which is the image when we embed it into a doublde... Let me express this as a product over all possible maps from $Q$ into $\Z$: 
-\begin{align*}
+There is a certain quotient of $Q$, which is the image when we embed $Q$ into its double dual. This can be expressed a product over all possible maps from $Q$ into $\Z$: 
+\begin{align*} \label{eq:06-quotient}
 0 \to Q^{'} \to Q \epi \overline{Q} \mono \prod_{\Hom(Q,\Z)} \Z.
 \end{align*}
 
 % 42:02
 Therefore, we examine all possible maps that $Q$ maps to a free abelian group, or simply to $\Z$, and consider the corresponding maps to $\Z$. 
 % 42:10
-This will result in some quotient. Since $\overline{Q}$ is free---more specifically, projectiv---it follows that it splits as a direct summand.
+This will result in some quotient in \ref{eq:06-quotient}. Since $\overline{Q}$ is free---more specifically, projective---it follows that it splits as a direct summand.
 % todo add to eq
 %\eq
 
-% 42:40
-Furthermore, if we examine the kernel of this map, then it is straightforward to see  that $Q^{'}$ has no maps to $\Z$.
+% 42:38
+Furthermore, if we examine the kernel of this map, then it is straightforward to see that $Q^{'}$ has no maps to $\Z$.
 \begin{align*}
 \Hom(Q^{'},\Z) = 0
 \end{align*}
 If there were a map from $Q^{'}$ to $\Z$, then, since we are working with a direct sum, this would imply the existence of another map from $Q$ to $\Z$, which would make $\overline{Q}$ larger. 
-This means that this has this quotient $\overline{Q}$ which is free, and so this splits back here, but then also back here if we want, allowing us to eliminate that summand as well.
-% todo diagram
+This means that this $Q$ has this quotient $\overline{Q}$ which is free, and so this splits back here, but then also back here if we want, allowing us to eliminate that summand as well.
 
-
+\note{todo diagram}
 
 % 43:20
 Without loss of generality, we can replace $Q$ by $Q^{'}$, and from this point onward, there are no more homomorphisms to $\Z$ \note{todo}. That is, $Q$ has no more maps to $\Z$:
@@ -550,12 +544,13 @@ Without loss of generality, we can replace $Q$ by $Q^{'}$, and from this point o
 \end{align*}
 
 % 43:40
-Alternatively, one could think of this in another way: observe that the category of countably generated free abelian groups has cokernels. In this context, $\overline{Q}$ would be the cokernel.
+Alternatively, one could think of \ref{eq:06-quotient} in another way: observe that the category of countably generated free abelian groups has cokernels. In this context, $\overline{Q}$ would be the cokernel.
 
 % 44:38
-So where are we in the proof?
-We are aiming to show that whenever we have a map from a direct sum of $\Z$, once we dualize, the image of this map is itself a product of copies of $\Z$. 
-At this point, we have split off the kernel and part of the cokernel, reducing the situation to one where we have this map and $Q$ has no more maps to $\Z$. Now, we are focused on understanding the behavior when we dualize.
+Where are we in the proof? Our goal is to show that whenever we have a map from a direct sum of $\Z$, the image of this map, after dualizing, is itself a product of copies of $\Z$. 
+At this stage, we have split off the kernel and part of the cokernel, reducing the situation to one where we have this map and $Q$ has no more maps to $\Z$. Now, our focus shifts to understanding the behavior of the map $h$ when we dualize.
+
+\begin{unfinished}{45:00}
 
 Dualize $h$
 
