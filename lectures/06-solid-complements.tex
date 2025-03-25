@@ -464,8 +464,6 @@ So, the map $g$ is dual to a map:
 
 % Todo: Actually a right hook, need to define that
 
-\begin{unfinished}{37:10}
-
 % 37:12
 For the proof, I will rely on the following fact, though I am unsure whether is widely known.
 % 37:24
@@ -544,41 +542,42 @@ Without loss of generality, we can replace $Q$ by $Q^{'}$, and from this point o
 \end{align*}
 
 % 43:40
-Alternatively, one could think of \ref{eq:06-quotient} in another way: observe that the category of countably generated free abelian groups has cokernels. In this context, $\overline{Q}$ would be the cokernel.
+Alternatively, one could think of \ref{eq:06-quotient} in another way: observe that the category of countably generated free abelian groups has cokernels. In this context, $\overline{Q}$ would be the cokernel.\\
 
 % 44:38
 Where are we in the proof? Our goal is to show that whenever we have a map from a direct sum of $\Z$, the image of this map, after dualizing, is itself a product of copies of $\Z$. 
-At this stage, we have split off the kernel and part of the cokernel, reducing the situation to one where we have this map and $Q$ has no more maps to $\Z$. Now, our focus shifts to understanding the behavior of the map $h$ when we dualize.
+At this stage, we have split off the kernel and part of the cokernel, reducing the situation to one where we have this map and $Q$ has no more maps to $\Z$.\\
 
-\begin{unfinished}{45:00}
-
-Dualize $h$
+Now, our focus shifts to understanding the behavior of the map $h$ when we dualize $h$.
 
 % 45:13
-We have a product of copies of $\Z$ here, and this map is our original map $D$. 
+We have a product of copies of $\Z$ here, and this map is our original map $g$. 
 \begin{align*}
-0 \leftarrow \IntExt^1(\Q,\Z) \leftarrow \prod_\N \Z \leftarrow \IntHom(\Q, \Z) \leftarrow 0
+0 \leftarrow \IntExt^1(Q,\Z) \leftarrow \prod_\N \Z \leftarrow \IntHom(Q, \Z) \leftarrow 0
 \end{align*}
+\note{todo, add g = h'.}
 % todo
 
 % 45:46
-The kernel of this map is precisely the $\IntHom$ from $Q$ to $\Z$. Therefore, the kernel is $\IntExt^1(\Q,\Z)$.
+The kernel of this map is precisely $\IntHom(Q, \Z), which means the kernel is $\IntExt^1(Q,\Z)$.
 
 % 46:20
-We have shown that the $\Hom(Q, \Z) = 0$, but it turns out that $\IntHom(Q, \Z) = 0$ as well.
-The points of $\Hom(Q, \Z) $ join into $\Z$, and by using the adjunction in a different order, is the $\Hom$ from $Q$ into the continuous homomorphisms from $\Z$ to $\Z$, which is a discrete guy and where this guy is solid. 
+We have already shown that $\Hom(Q, \Z) = 0$, and it turns out that $\IntHom(Q, \Z) = 0$ as well, as the $S$-valued points are given by $\Hom(Q \tnsr \Z[S], \Z) $, which, by applying the tensor-hom adjunction in a different order, simplifies to $\Hom(\Q, \Cont(S,\Z))$, which is discrete. Since $\Cont(S,\Z)$ is itself free, we have:
 % todo
 \begin{align*}
-\Hom(Q \tnsr \Z[S], \Z) = \Hom(\Q, \Cont(S,\Z)) = 0
+\Hom(Q \tnsr \Z[S], \Z) = \Hom(Q, \Cont(S,\Z)) = 0.
 \end{align*}
 %todo brackets under
 
 % 
-Since $Q$ has no maps to $\Z$ or any other abelian group, what does this imply?
+Since $Q$ has no maps to $\Z$ or any other abelian group, it is actually zero.
 % 47:18
-It means that the image of $g$ is the product of $g$'s \note{not sure}. Some of the reductions we made earlier precisely ensured that our map $g$ became injective.
+This implies that the image of $g$ is the product of $g$'s \note{not sure}. Some of the reductions we made earlier precisely ensured that our map $g$ became injective \note{audio unclear}.
 
-Thus, $g$ injective so $\Im(g) \iso \prod_\N \Z$
+Thus, $g$ injective, so
+\begin{align*}
+\Im(g) \iso \prod_\N \Z.
+\end{align*}
 
 % 47:47
 Strictly speaking, during some of these reductions, it was possible for an infinite direct sum to become a finite direct sum. However, we can simply take the direct sum with an infinite object, regardless.
@@ -589,14 +588,10 @@ Strictly speaking, during some of these reductions, it was possible for an infin
 % 
 
 % 48:25
-A corollary of the proof is:
-Any $M \in \Solid^{fin. presented}$ is a product of copies of $\Z$ and the group of the form $\Ext^1(Q, \Z)$, where $Q$ is a countable abelian group with $\Hom(Q,\Z) = 0$.
-
-The light condensed rings are true again, which is why we have not encountered any  obstruction to this in actual mathematical practice.
+A corollary of the proof is that any $M \in \Solid^{fin. presented}$ can be expressed as a product of copies of $\Z$ and the group of the form $\Ext^1(Q, \Z)$, where $Q$ is a countable abelian group with $\Hom(Q,\Z) = 0$.
 
 % 49:53
-Furthermore, $Q$ is a torsion group. These are precisely the profinite ...
-by Poincare duality. In general, there are some kind of weird non-quasi-separated cases.
+Furthermore, $Q$ is a torsion group. These are precisely the profinite ... by Poincare duality \note{todo, unclear}. In general, there are some kind of weird non-quasi-separated cases.
 
 Here is another corollary:
 
@@ -609,62 +604,77 @@ $\prod_\N \Z$ is flat for $\tnsr^\solid$.
 Again, this corollary only holds in the light setting, namely that the product of copies of $\Z$ is flat.
 
 % 50:55
-In an abstract symmetric monoidal category, it is always true that projective objects are exact.
+In an abstract symmetric monoidal abelian category, it is always true that projective objects are flat.
 % 51:00
 We could verify that a similar result holds when passing to the $p$-adic numbers, though it may hold without the lightness assumption. However, we were initially unsure about the case of solid abelian groups. It was later observed by [name] \note{todo} that flatness fails in general for solid abelian groups.
 
 % 51:21
 Nonetheless, once we restrict our attention to the light condensed abelian groups, the flatness property holds again. This also explains why we have not encountered any obstructions to this in actual mathematical practice.
 % 51:38
-Why? 
+\begin{sketch}
 
+% 51:45
+For all $M$ solid modules, we require that the derived tensor product sits in degree 0. 
 \bq
 Need: $\forall M \solid$, $M \tnsr^{L\solid} \prod_\N \Z$ sits in degree 0.
 \eq
 
-% 
-We need for all solid $\Z$-modules, the product is solid. So without loss of generality, we actually have a resolution of length one. 
-% todo
-
+% 52:00
+But the solid tensor product, ... colimits \note{audio unclear}. So w.l.o.g., $M$ is finitely represented. So we actually have a resolution of length one.
 \be
 0 \to \prod_\N \Z \to \prod_\N \Z \to M \to 0
 \ee
 
 % 52:29
-But now, if I tensor this with a product of copies of $\Z$ ($\tnsr^\solid \prod_\N \Z$), then this map stays injective. 
+Now, if we tensor this with a product of copies of $\Z$ (i.e., $\tnsr^\solid \prod_\N \Z$), then this map \note{todo, add ref} stays injective. 
 % 52:50
-What we see, is that if we take the derived tensor product of this, we get a product of copies of $M$, because we can write this as a finitely presented guy.
-
+What we observe is that we we take the derived tensor product of this, we obtain a product of copies of $M$, since $M$ expressed as a finitely presented object:
 \be
-M \tnsr^\solid \prod_\N \Z = \prod_\N M
+M \tnsr^{L\solid} \prod_\N \Z = \prod_\N M.
 \ee
 
+\end{sketch}
+
+\ques Why is \note{audio unclear}?
+
+% 54:07
+\ans Because this derived solid tensor product commutes with filtered colimits, so you can write this $Mm$ as a filtered colimit of finitely presented guys, and then \note{audio unclear}.
+
 % 54:28
-One thing that is really nice about this solid tensor product is that many computations come out right, sometimes in non-obvious ways. Just like previously, a lot of $\Ext$ computations came out right in non-obvious ways.
+One of the great features of this solid tensor product is that many computations yield correct results, often in ways that aren't immediately obvious. This is similar to how many $\Ext$ turned out to be correct, albeit in non-obvious ways.
+
+
+\begin{unfinished}{54:50}
 
 % 54:50
 \subsection{Some $\tnsr^\solid$-computations}
 
 % 54:48
-Let us perform some tensor computations. Typically, we are interested in objects such as: starting with a discrete abelian group $M$. Then we form the $p$-adic completion of $M$.
-In such sit, the completed tensor product $\hat{\tnsr}$ is commonly used. This is analogous to the completion of the usual tensor product, often encountered in formal geometry or similar contexts.
+Let's perform some tensor computations. Typically, we are interested in objects such as: starting with a discrete abelian group $M$. Then we form the $p$-adic completion of $M$:
+\begin{align*} \label{eq:06-p-adic-completion}
+M^n_p = \lim_n M / p^b
+\end{align*}
 
-Let $M$ be an abelian group. $M^\ast_p = \lim_n M / p$ % todo
-In such situations, one often uses $\hat{\tnsr} = $ $p$-adic completion of ... $\tnsr$
+% 55:38
+In such situations, the completed tensor product $\hat{\tnsr}$ is commonly used. This is analogous to the $p$-adic completion of the usual tensor product, often encountered in formal geometry or similar areas.
 
 % 56:10
-Here is a theorem that describes the behavior of the solid tensor product. In fact, in full generality, for any abelian group, it is preferable to replace this with the solid-derived $p$-completion, which is the derived $p$-completion operation.
-Here, this derived thing just means a complex represented by multiplication by $p$, where this sits in degree zero and this sits in homological degree minus one or homological degree one. % todo
+Here is a theorem that describes the behavior of the solid tensor product. In fact, in full generality, for any abelian group, it is preferable to replace this limit in \ref{\label{eq:06-p-adic-completion}} with the solid derived $p$-completion, which is, you derive both operations \note{unsure}.
+\begin{align*} \label{eq:06-p-adic-completion}
+M^n_p = R\lim_n M / p^b
+\end{align*}
+
+Here, the term "derived" refers to a complex represented by multiplication by $p$, where this sits in degree zero and this sits in either homological degree $-1$ or $1$. \note{todo}
 % 
-Almost always, this agrees with the usual $p$-adic completion in degree zero. However, in full generality, the derived $p$-completion is a better operation.
+Almost always, this agrees with the usual $p$-adic completion in degree zero. However, in full generality, the derived $p$-completion is the more appropriate operation.
 
 % 57:00
-Generally, it is meaningful to discuss derived completions, which correspond to derived complete modules.
+Generally, it is meaningful to discuss derived..., I mean these things are the derived $p$-complete...
 
 % 57:12
-Here is a proposition. Given this context, it is slightly more advantageous to work from the start in the derived category. For the sake of simplicity, let's assume that the objects in question are concentrated in non-negative degrees, so they extend to the left.
+Here's a proposition. In this context, it is slightly more advantageous to work from the start within the derived category. For the sake of simplicity, let's assume that the objects in question are concentrated in non-negative degrees, so they extend to the left.
 
-\bp
+\bp \label{prop:06-solid-tensor-product-derived-p-complete}
 If $N, M \in D_{>0}(\Solid)$ are derived $p$-complete, then $N \tnsr^{L\solid} M$ is derived $p$-complete.
 \ep
 
@@ -674,36 +684,42 @@ Consider two objects $M$ and $N$ that are derived $p$-complete. They are isomorp
 This condition is also verifiable on homotopy groups.
 
 %  58:14
-Additionally, their solid tensor product is the derived $p$-completion of the usual tensor product. 
+Additionally, their solid tensor product is the derived $p$-completion of the usual tensor product.
 
 
 % 58:35
-Let me prove this in a moment, but first, but let me point out a corollary. For example, if we take an infinite direct sum of copies of $\Z$, apply the $p$-adic completion, then tensor this result with another $p$-adic completion, we end up with the similar $p$-adic completion.
+Let me prove this in a moment, but first, but let me point out a corollary.
 
-\bc
-\be
+\bc \label{corr:06-infinite-direct-sum-of-copies}
+if we take an infinite direct sum of copies of $\Z$, apply the $p$-adic completion, then tensor this result with another $p$-adic completion, we end up with the similar $p$-adic completion.
+\be \label{corr:06-solid-tensor-product}
 % todo wedge
 (\bigoplus_\N \Z)_p \tnsr^{L\solid} (\bigoplus_\N \Z)_p \simeq (\bigoplus_{\N \times \N} Z)_p
 \ee
-
-
 \ec
 
 % 59:05
-This means that in such situations of more or less formal geometry, for derived $p$-adically complete things, the solid tensor product behaves as expected. The number 
-$p$ is not special in this context. We could work with any base ring and solid module structures over that ring, and then any element of that ring and the result would still hold true.
+This means that in such situations of more or less formal geometry, the solid tensor product behaves as expected for derived $p$-adically complete objects. The number $p$ is not particularly special in \ref{corr:06-solid-tensor-product}. We could work with any base ring and solid module structures over that ring, and then any element of that ring and the result would still hold true.
 
-% 
-So this $p$-adic completion of the free abelian group, you consider it as a solid abelian group, or as a condensed abelian group. 
-It is solid because the class of solid modules is stable under all limits, and so on. We start with something solid like $\Z$, take a direct sum---it is solid. Take the $p$-adic completion---it is solid. Take a limit, and so on.
+% 59:36
+\ques So this $p$-adic completion of the free abelian group can be considered as either a solid abelian group, or as a light condensed abelian group... Is it solid?
+
+% 59:50
+\ans I found the completion in condensed abelian groups. All the $\Z^n_p$ are discrete, but then takes the limit requires a non-trivial condensed structure.
+
+% 1:00:00
+\ques And it is solid?
+
+% 1:00:03
+\ans It is solid, because the class of solid modules is stable under all limits, colimits and similar operations. Starting with a solid object like $\Z$, taking direct sums, $p$-adic completions, or limits preserves its solidity.
 
 % 1:00:25
-\br
-There is nothing special about $p$. For any ring $A$ and any elements $f_1, \ldots, f_n \in R$, and $M, N \in D_{\geq 0}(\Solid_A)$ which are derived $x$-complete, then the derived tensor product $M \tnsr^{L\solid}$ of $M$ and $N$ is the derived $x$-completion of their usual tensor product.
+\br \label{corr:06-p-not-special}
+There is nothing special about $p$. For any ring $A$ and any elements $f_1, \ldots, f_n \in R$, and $M, N \in D_{\geq 0}(\Solid_A)$ \footnote{At this moment, $\Solid_A$ really just means $A$-modules inside solid abelian groups.} that are derived $x$-complete, the derived tensor product $M \tnsr^{L\solid}$ is the derived $x$-completion of their usual tensor product.
 \er
 
 % 1:02:31
-I should mention this is a corollary of the preceding proposition. We know there is definitely a map from $(\bigoplus_\N \Z)_p \tnsr^{L\solid} (\bigoplus_\N \Z)_p$ to $(\bigoplus_{\N \times \N} Z)_p$, because the tensor product linear maps, and so there is this obvious bilinear map.
+I should mention \ref{corr:06-infinite-direct-sum-of-copies} is a corollary of the preceding proposition \ref{prop:06-solid-tensor-product-derived-p-complete}. We know there is definitely a map from $(\bigoplus_\N \Z)_p \tnsr^{L\solid} (\bigoplus_\N \Z)_p$ to $(\bigoplus_{\N \times \N} Z)_p$, because the tensor product linear maps, and so there is this obvious bilinear map.
 But those sides are derived $p$-complete. By definition proposition
 % todo wedges
 % 1:02:52
@@ -744,15 +760,15 @@ What is happening here is that this is a colimit over all functions $f\cl \N \to
 Case $N = M$
 $= \hat{\bigoplus_\N} \Z_p \simeq \colim_{f \cl \N \to \N \text{ going to $\infty$}} \prod_\N p^{f(n)} \Z_p $
 
-To demonstrate surjective, let's pick any $S \in \Pro_\N(\Fin)$.
+To show surjectivity, let's taky any $S \in \Pro_\N(\Fin)$.
 
 \end{sketch}
 
 % 1:06:23
 What is happening here? First, why is there a map? 
-Whenever we have a map $f$ which tends to infinity, we can take the product of these copies of $\Z_p$ raised to the to power of $f(n)$:
+Whenever we have a map $f$ that tends to infinity, we can take the product of these copies of $\Z_p$, raised to the to power of $f(n)$:
 \begin{align*}
-\prod_\N p^{f(n)} \Z_p
+\prod_\N p^{f(n)} \Z_p.
 \end{align*}
 
 \note{todo}
@@ -775,7 +791,7 @@ So we have $g$ here, and a collection of $g_n$ here. Each $g_n$ factors through 
 This is because $S$ is a compact object, and maps out of a compact object are finitely generated.
 
 % 1:09:55
-Thus, there are just a bunch of elements where we get something modulo $p^1$, followed by  a larger set where we get something nonzero modulo $p^2$, and an even larger set where we get something nonzero modulo $p^3$. 
+Thus, there are just a bunch of elements where we get something modulo $p^1$, followed by a larger set where we get something nonzero modulo $p^2$, and an even larger set where we get something nonzero modulo $p^3$. 
 % todo diagram
 % 1:10:11
 We can then find some very slowly increasing function $f$ that factors through this product. 
@@ -795,7 +811,7 @@ Now, there is an obvious map here, so $f$ on it, over all functions. Let me deno
 % todo
 
 % 
-Now, at first we might think that this will surely not work out, because here \note{todo} we are allowed to quantify over all arbitrary slowly increasing functions of two variables, whereas here \note{todo} we are just getting those that are sums of functions of one variable individually. 
+At first, we might think this will not work out, because here \note{todo} we are allowed to quantify over all arbitrary slowly increasing functions of two variables, whereas here \note{todo} we are just getting those that are sums of functions of one variable individually. 
 % 1:13:51
 There is, however, a combinatorial lemma that might seem surprising at first, but is not difficult to prove. It states that whenever we have a slowly increasing function $H$, we can always find one that increases even more slowly, and this function can be expressed as the sum of two functions, each depending on an individual coordinate.
 % 1:14:05
@@ -811,7 +827,7 @@ There is an argument, based on more formal considerations, that the uncountable 
 % 
 This is an interesting computation, and there are even more computations that emerge, particularly when we delve into solid functional analysis. 
 % 1:16:37
-For simplicity, let's work $\Q_p$, though most of what we are discussing applies to any field.
+For simplicity, let's work with $\Q_p$, though most of what we are discussing applies to any field.
 
 % 
 Again, the solid $p$-adic Banach spaces, or even the derived category, form a full subcategory of $p$-modules where $p$ is invertible. It is also a full subcategory of abelian groups. When we take tensor products and direct sums, it is in the subcategory.
@@ -820,12 +836,12 @@ D(\Solid_{Q_p}) \subs D(\Solid_{Z_p}) \subs D(\Solid)
 \ee
 
 % 1:17:40
-This category, $\Solid_{Q_p}$, has a compact projective generator $(\prod_\N Z_p)[\frac{1}{p}]$. In $\Solid_{Z_p}$, this generato is a product of $\Z_p$'s, while in $\Solid_{Q_p}$, we need to invert $p$ and consider $(\Z_p)^\vee$. 
+This category, $\Solid_{Q_p}$, has a compact projective generator $(\prod_\N Z_p)[\frac{1}{p}]$. In $\Solid_{Z_p}$, this generator is a product of $\Z_p$'s, while in $\Solid_{Q_p}$, we need to invert $p$ and consider $(\Z_p)^\vee$. 
 % 1:17:50
 This $(\prod_\N Z_p)[\frac{1}{p}]$ is a rather unusual topological vector space. (Or, more precisely, it resembles a condensed vector space, but it originates from a topological vector space.)
 % 1:17:58
 So it looks like one where the unit, which has a norm, where the unit ball is this thing \note{add what he points at}, where the unit ball is compact. 
-However, there is a general result, that we cannot have Banach spaces or normed vector spaces of infinite dimension where the unit ball is compact.
+However, there is a general result stating that we cannot have Banach spaces or normed vector spaces of infinite dimension where the unit ball is compact.
 
 
 % 1:18:14
@@ -860,7 +876,7 @@ So either we put "separable" and "light" on those sides, or we... "Separable" on
 \ep
 
 %
-This is quite straightforward: we take a Smith space and dualize it, but we can also take Banach spaces like so. 
+This is quite straightforward: we take a Smith space and dualize it, but we can also take Banach spaces in a similar manner. 
 The generator that we use here, $(\Z_p)^\vee$, is sometimes dual to Banach spaces. So, in essence, we are building everything based on these duals.
 
 \br
