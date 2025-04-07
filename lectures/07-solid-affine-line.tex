@@ -75,7 +75,7 @@ When we take into account the ring structure, solidifying the map in \ref{eq:07-
 \note{not sure of this notation $[[]]$}
 
 % 4:18
-in the solid context, the universal carrier of a nullsequence is the power series ring $\Z[[T]]$.
+In the solid context, the universal carrier of a nullsequence is the power series ring $\Z[[T]]$.
 
 % 4:30
 Moreover, there is a very nice property of this situation, which is given by the following lemma. 
@@ -98,66 +98,66 @@ If we tensor the power series ring $\Z[[T]]$ with itself in the solid world over
 \ee
 \el
 
-The multiplication map is an isomorphism, we could say, even the derived tensor product.
+The multiplication map is an isomorphism, even the derived tensor product.
 
 % 6:25
-This is quite elementary, because we know how to do tensor products in $\Solid_\Z$. Peter gave lots of examples of calculations in this category, and the tensor product of two of these basic objects is just another one of them. 
+This result is quite elementary, because we know how to do tensor products in $\Solid_\Z$. Peter gave many examples of calculations in this category, and the tensor product of two of these basic objects is just another one of them. 
 
 % 6:45
 \begin{sketch}
-If we do $\Z[[T_1]] \tnsr_{\Z}^{\solid} \Z[[T_2]]$, that is $\Z[[T_1, T_2]]$ by the basic calculation of the solid tensor product. Then if we want to get to this \note{add where he points at, todo: equation}, we just mod out by identifying the two different variables $T_1 - T_2$, and the power series ring modulo $T_1 - T_2$ is the power series ring in one variable.
+If we compute the solid tensor product $\Z[[T_1]] \tnsr_{\Z}^{\solid} \Z[[T_2]]$, we obtain $\Z[[T_1, T_2]]$. This follows from a basic calculation of the solid tensor product. 
+
+Then if we want to get to this \note{add where he points at, todo: equation}, we just mod out by identifying the two different variables $T_1 - T_2$, and the power series ring modulo $T_1 - T_2$ is the power series ring in one variable.
 
 % 7:19
-There is another perspective. Peter also mentioned this fact that if we take the solid tensor product of two derived complete objects, then the result is still derived complete. 
+There is another useful perspective. Peter also mentioned that the solid tensor product of two derived complete objects remains derived complete. 
 % 7:32
-Maybe we have to worry a little bit about this, but morally, if we want to check that \ref{07:iso} is an isomorphism, both sides are derived $T$-complete. We can check it modulo $T$, and modulo $T$ it is a triviality.
+Maybe we have to worry a little bit about this, but morally, if we want to verify that \ref{07:iso} is an isomorphism, both sides are derived $T$-complete. We can check the isomorphism modulo $T$, where it becomes a trivial computation.
 \end{sketch}
 
 % 7:46
 \ques Is the derived solid tensor product defined as the derived $T$-product, followed by solidification? How is it exactly defined?
 
 % 8:00
-\ans We can either describe it is the left derived functor of the solid tensor product, or alternatively, we can say that we take the derived tensor product and then derived solidify it. Both descriptions are equivalent.
+\ans There are two equivalent ways to describe it. We can either describe it as the left derived functor of the solid tensor product. Alternatively, we can say that we take the derived tensor product first and then derived solidify it. Both descriptions are equivalent.
 
 % 8:15
 \ques Do we need to know there are somehow enough flat objects to construct the---
 
 % 8:23
-\ans We don't need to know that. However, it is true that all of these objects are flat. I’m not sure if Peter mentioned that---I've forgotten.
+\ans We don't need to know that. However, it is true that all of these objects are flat. I'm not sure if Peter mentioned that---I've forgotten.
 
 Apriori, we would need to resolve both variables, but since we have flat objects, we only need to resolve one.
 
 % 8:47
-Okay. So what is the interpretation of \ref{07:power-series-ring}? We could say this $\Z[T]$ corresponds to the affine line $\A^1$. 
+Okay, so how should we interpret \ref{07:power-series-ring}? We can think of $\Z[T]$ as corresponding to the affine line $\A^1$. 
 % 8:57
-Then, since \ref{07:iso} satisfies this idempotence property---similar to when we invert an element in a ring and get the same element---we can think of $\Z[[T]]$ as corresponding to some subspace of $\A^1$. 
+Then, since \ref{07:iso} satisfies this idempotence property---similar to when we invert an element in a ring and get the same element---we can view $\Z[[T]]$ as corresponding to a certain subspace of $\A^1$. 
 
 % 9:13
-So a \emph{subspace}, as opposed to just an arbitrary space with a map to the affine line. That is the interpretation of this idempotency.
+So a \emph{subspace}, as opposed to merely an arbitrary space with a map to the affine line $\A^1$. That is the interpretation of this idempotency.
 
 % 9:21
-Then we might ask: how should one think of this subspace? What subspace is it? The natural assumption would be that it is the formal completion of $\A^1$ at the origin, since it is a power series ring. 
+This naturally leads to the question: how should one conceptualize this subspace? What subspace is it? The natural assumption would be that it is the formal completion of $\A^1$ at the origin, since it is a power series ring. 
 % 9:35
-However, that naive interpretation is not correct.
+However, that naive interpretation turns out to be not correct.
 
-So, $\Z[[T]]$ does not correspond to a formal neighborhood of 0 in $\A^1$. 
-
-The reason is that this interpretation is not stable under base change.
+So, $\Z[[T]]$ does not correspond to a formal neighborhood of 0 in $\A^1$. The reason is that this interpretation is not stable under base change.
 
 % 10:00
-To examine base change---by which I mean, although everything here is implicitly over $\Z$, we could tensor it with any ring or solid ring and see what emerges---let me do a small calculation.
+To examine the behavior under base change---by which I mean, although everything here is implicitly over $\Z$, we could tensor it with an arbitrary ring or solid ring and see what emerges---we consider a simple illustrative computation.
 
 % 10:17
-Let's perform a base change to a non-archimedean field, starting with the simplest example, $\Q_p$, and see what arises.
+Let us perform a base change to a non-archimedean field, beginning with the simplest example, $\Q_p$. 
 % 10:26
-We take $\Q_p$ and then we take a solid tensor product with $\Z[[T]]$, aiming to compare this to $\Q_p[T]$.
+We take the solid tensor product of $\Q_p$ with $\Z[[T]]$, and compare the result to the polynomial ring $\Q_p[T]$. Specifically, we consider the expression:
 \begin{align*}
-\Q_p \tnsr^\solid_\Z \Z[[T]]
+\Q_p \tnsr^\solid_\Z \Z[[T]].
 \end{align*}
 
 % todo
 %
-So, $\Q_p$ is $\Z_p$ with $p$ inverted, and the solid tensor product commutes with colimits in both variables. Therefore, this is equivalent to taking the solid tensor product of $\Z_p$ and $\Z[[T]]$, and then inverting $p$:
+Recall that $\Q_p$ is $\Z_p$ with $p$ inverted, and the solid tensor product commutes with colimits in both variables. Therefore, we may compute the solid tensor product \Q_p \tnsr^\solid_\Z \Z[[T]] by first forming the solid tensor product of $\Z_p$ and $\Z[[T]]$, and then inverting $p$:
 
 \begin{align*}
 \Q_p \tnsr^\solid_\Z \Z[[T]] = (\Z_p \tnsr \Z[[T]])[\frac{1}{p}].
@@ -167,7 +167,7 @@ So, $\Q_p$ is $\Z_p$ with $p$ inverted, and the solid tensor product commutes wi
 But this $\Z_p$ has a resolution by two copies of---so $\Z[[U]]/(U-p)$, it has a resolution by two copies of this power series ring. So we know how to do these tensor products, and it just does the naive thing of pulling in the limits.
 
 % 11:28
-As a result, we obtain $\Z_p[[T]]$, and then we invert $p$ afterwards. However, this is not the same object as the formal completion at the origin, namely $\Q_p[[T]]$. Instead, it is a subset of $\Q_p[[T]]$, where the coefficients remain bounded in the $p$-adic norm.
+As a result, we obtain $\Z_p[[T]]$, followed by the inversion of $p$. However, this is not the same object as the formal completion at the origin, namely $\Q_p[[T]]$. Instead, it represents a subset of $\Q_p[[T]]$, where the coefficients remain bounded in the $p$-adic norm.
 
 \begin{align*}
 = \Z_p [[T]][\frac{1}{p}] \neq \Q_p[[T]]
@@ -178,10 +178,10 @@ As a result, we obtain $\Z_p[[T]]$, and then we invert $p$ afterwards. However, 
 \end{align*}
 
 % 12:06
-What, then, is the interpretation then the ring $\Z_p [[T]][\frac{1}{p}]$? It is the ring of bounded functions on the open unit disk in $\A^1_{\Q_p}$.
+What, then, is the interpretation of the ring $\Z_p [[T]][\frac{1}{p}]$? It corresponds to the ring of bounded functions on the open unit disk in $\A^1_{\Q_p}$.
 
 % 12:36
-More generally, after an arbitrary non-archimedean field extension of $\Q_p$, we can ask: when we plug in a value in that field $T$ of $\Z[[T]][\frac{1}{p}]$, when will such a series converge? The answer is that series converges if and only if the substituted value has absolute value strictly less than one. 
+More generally, after an arbitrary non-archimedean field extension of $\Q_p$, we can ask: when we substitute a value in that field $T$ of $\Z[[T]][\frac{1}{p}]$, under what conditions will such a series converge? The answer is that the series converges if and only if the substituted value has an absolute value strictly less than one.
 
 % 12:52 
 \gabber It is the ring of \emph{bounded} holomorphic functions on the open unit disk. Not the full ring, because sometimes, there is another one. \note{not sure of the last part of this sentence}
@@ -201,13 +201,13 @@ More generally, after an arbitrary non-archimedean field extension of $\Q_p$, we
 % Unit disk is you can imagine putting the open unit disk at infinity instead. So then you are looking at the complement of the closed unit disk. The complement of a thing is just as good as describing the thing.
 
 % 13:35
-This interpretation suggests that $\Z[[T]]$ should be thought of as corresponding to some kind of open unit disk. 
+This interpretation suggests that $\Z[[T]]$ should be viewed as corresponding to an open unit disk. 
 
 % 13:50
 Over a discrete ring like $\Z$, there is no distinction between the open unit disk and the formal completion at the origin. However, this difference becomes apparent when we perform a base change to a setting that has more freedom to play with.
 
 % 14:14
-In rigid geometry, though, the fundamental object is not usually the open unit disk, but rather the \emph{closed} unit disk. So what about the closed unit disk?
+In rigid geometry, the fundamental object is usually not the open unit disk, but rather the \emph{closed} unit disk. So, what about the closed unit disk?
 
 \subsection{Closed unit disk}
 
@@ -215,9 +215,9 @@ In rigid geometry, though, the fundamental object is not usually the open unit d
 One way to understand the closed unit disk is, if we understand what an open unit disk is, we can imagine putting the open unit disk at infinity instead. Then we obtain the complement of the closed unit disk. The complement of the unit disk is just as good as describing the unit disk.
 
 % 15:00
-So, let's take this object and place it at infinity instead. This is all just intuition for now. We consider this power series ring $\Z[[T^{-1}]]$ in one variable and tensor it over... but let me call the variable $T^{-1}$ instead, to reinforce the idea of focusing on behavior at infinity.
+So, let's take this object and place it at infinity instead. For now, this is just an intuitive approach. We consider this power series ring $\Z[[T^{-1}]]$ in one variable and tensor it over... Let me denote the variable as $T^{-1}$, to emphasize the focus on behavior at infinity.
 
-Then, we tensor it over $\Z[T^{-1}]$ with $\Z[T, T^{-1}]$. This operation effectively removes the point at infinity, ensuring that we are now working within the affine line.
+Next, we tensor the ring $\Z[[T^{-1}]]$ over $\Z[T^{-1}]$ with $\Z[T, T^{-1}]$. This operation effectively removes the point at infinity, ensuring that we are now working within the affine line.
 
 I have a homomorphism from $\Z[T]$... 
 
@@ -226,12 +226,11 @@ I have a homomorphism from $\Z[T]$...
 \end{align*}
 
 % 15:41
-What is this ring $\Z[[T^{-1}]]$? I am taking this power series ring and inverting the variable there. Another way of describing this is as the power series $\Z((T^{-1}))$. So that is the open unit disk centered at infinity.
+What is the ring $\Z[[T^{-1}]]$? It represents the power series ring where the variable is inverted. Another way to describe this is as the power series $\Z((T^{-1}))$, which corresponds to the open unit disk centered at infinity.
 
 
 % 16:17
-To understand the closed unit disk, we should, in a sense, localize away from this complement. Another way to express this is that we need to eliminate this object $\Z((T^{-1}))$. 
-Thus, to obtain the closed unit disk, we effectively need to \emph{kill} $\Z((T^{-1}))$.
+To understand the closed unit disk, we should, in a sense, localize away from this complement. Another way to express this is that we need to "eliminate" the object $\Z((T^{-1}))$. In other words, to obtain the closed unit disk, we effectively need to \emph{kill} $\Z((T^{-1}))$.
 
 % 16:50
 A preliminary observation: this $\Z((T^{-1}))$ is a module over $\Z[T]$, as we have just described, and it also admits a very simple resolution:
@@ -242,15 +241,15 @@ A preliminary observation: this $\Z((T^{-1}))$ is a module over $\Z[T]$, as we h
 
 Note that $\Z((T^{-1}))$---
 
-To clarify, let's rename the variable as $U$ to avoid ambiguity. We can think of that \note{todo} as $\Z[[U]]$ with $U$ inverted. One way to invert $U$ is to adjoin the object that that serves as the inverse, and then enforce the equation that says that they are inverse to each other. When we look at it like this...
+To clarify, let's rename the variable as $U$ to avoid ambiguity. We can think of that \note{todo} as $\Z[[U]]$ with $U$ inverted. One way to invert $U$ is to adjoin the object that serves as the inverse, and then enforce the equation that says that they are inverses of each other. Viewing it this way, let me rephrase more clearly:
 
-Let me rewrite that more clearly. $\Z((T^{-1}))$ admits a two-term resolution, involving two copies of $\Z[[U]][T]$. Here we have $U-1$, so it is a two-term resolution.
+$\Z((T^{-1}))$ admits a two-term resolution, which involves two copies of $\Z[[U]][T]$. Here we have $U-1$ \note{todo, check $UT-1$ or $U-1$}, so we have a two-term resolution:
 \begin{align*} \label{07:UT-map}
 \Z[[U]][T] \xrightarrow{UT-1} \Z[[U]][T] \rightarrow \Z((T^{-1}))
 \end{align*}
 
 % 17:59
-What are these objects? They are simply base changes of our fundamental object $p$, not to $\Solid_{\Z}$ but to $\Solid_\Z[T]$. In other words, these are resolutions by the compact projective generator of $\Mod_\Z[T](\Solid_\Z)$.
+What are these objects? They are essentially base changes of our fundamental object $p$, not to $\Solid_{\Z}$ but to $\Solid_\Z[T]$. In other words, these are resolutions by the compact projective generator of $\Mod_\Z[T](\Solid_\Z)$.
 
 So it is a two-term resolution by the compact projective generator of $\Mod_{\Z[T]}(\Solid_\Z)$.
 
@@ -261,22 +260,23 @@ This leads to the following suggestion, based on an analogy with the definition 
 
 Let's consider one of these objects. 
 
-We say that $M$ is $\Z[T]$-solid if and only if, when we take $\IntHom(P, M)$, and then again $\IntHom(P, M)$, and then we take the map which is given by---so now $U$ corresponds to the shift, and $T$ is the extra thing we have acting on $M$, because $M$ is a $\Z[T]$-module, so we have $(\operatorname{shift}T - 1)$. We want this map to be an isomorphism.
+We say that $M$ is $\Z[T]$-solid if and only if, when we apply $\IntHom(P, M)$ twice, and then we take the map which is given by $(\operatorname{shift}T - 1)$, where $U$ corresponds to the shift and $T$ acts on $M$, because $M$ is a $\Z[T]$-module. In this context, we require this map to be an isomorphism.
 
 \bd \label{def:07-Z-solid}
-$M \in \Mod_{\Z[T]}(\Solid_\Z)$ is \textit{$\Z[T]$-solid} $\iff \IntHom(P,M) \xrightarrow{\sigma T - 1} \IntHom(P,M)$.
+$M \in \Mod_{\Z[T]}(\Solid_\Z)$ is \textit{$\Z[T]$-solid} if and only if the map \IntHom(P,M) \xrightarrow{\sigma T - 1} \IntHom(P,M)$ holds.
 
 % 19:45
 % todo: ref to note
 Alternatively, this is equivalent to:
-$\iff \RHom_{\Z[T]}(\Z[[T^{-1}]],M) = 0$
-
+\begin{align*}
+$\iff \RHom_{\Z[T]}(\Z[[T^{-1}]],M) = 0$.
+\end{align*}
 \ed
 
-The note above indicates that this is equivalent to requesting that there are no $IntRHom$s maps from the object we aim to kill into $M$.
+The note above indicates that this condition is equivalent to requiring that there are no $IntRHom$ maps from the object we aim to "kill" into $M$.
 
 % 20:30
-Now, the theorem states that in this definition \ref{def:07-Z-solid}, the name \textit{$\Z[T]$-solid} is well-chosen. This $\Z[T]$-solid theory over $\Z[T]$ closely mirrors to the $\Solid_\Z$ theory over $\Z$.
+Now, the theorem states that the term \textit{$\Z[T]$-solid} in Definition \ref{def:07-Z-solid} is well-chosen. The $\Z[T]$-solid theory over $\Z[T]$ closely mirrors the $\Solid_\Z$ theory over $\Z$.
 
 \begin{theorem}
 
@@ -284,12 +284,12 @@ Now, the theorem states that in this definition \ref{def:07-Z-solid}, the name \
 \Solid_{\Z[T]} \subs \Mod_{\Z[T]}(\Solid_\Z) \subs \Mod_{\Z[T]}(\Cond^\light_\Z)
 \end{align*}
 
-$\Solid_{\Z[T]}$:
+Properties of $\Solid_{\Z[T]}$:
 \bit
-	\item is an abelian category, closed under limits, colimits and extensions.
-	\item if $M \in \Cond_{\Z[T]}$ and $N \in \Solid_{\Z[T]} \implies \Ext^i_{\Z[T]}(M,N) \in \Solid_{\Z[T]}$.
-	\item $\exists$ left adjoint to inclusion, $(-)^{\T^\solid}$.
-	\item $\exists$ symmetric monoidal structure on $(-)^{\T^\solid}$.
+	\item It is an abelian category, closed under limits, colimits and extensions.
+	\item If $M \in \Cond_{\Z[T]}$ and $N \in \Solid_{\Z[T]}, then \Ext^i_{\Z[T]}(M,N) \in \Solid_{\Z[T]}$.
+	\item There exists a left adjoint to the inclusion, denoted $(-)^{\T^\solid}$.
+	\item There exists a symmetric monoidal structure on $(-)^{\T^\solid}$.
 	\item The derived analogue holds as well.
 \eit
 
