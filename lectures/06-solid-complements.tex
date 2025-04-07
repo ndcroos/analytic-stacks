@@ -643,16 +643,13 @@ M \tnsr^{L\solid} \prod_\N \Z = \prod_\N M.
 % 54:28
 One of the great features of this solid tensor product is that many computations yield correct results, often in ways that aren't immediately obvious. This is similar to how many $\Ext$ turned out to be correct, albeit in non-obvious ways.
 
-
-\begin{unfinished}{54:50}
-
 % 54:50
 \subsection{Some $\tnsr^\solid$-computations}
 
 % 54:48
-Let's perform some tensor computations. Typically, we are interested in objects such as: starting with a discrete abelian group $M$. Then we form the $p$-adic completion of $M$:
+Let's perform some tensor computations. Typically, we are interested in objects such as: let $M$be a discrete abelian group. Then we form the $p$-adic completion of $M$:
 \begin{align*} \label{eq:06-p-adic-completion}
-M^n_p = \lim_n M / p^b
+M_p^\wedge = \lim_n M / p^n.
 \end{align*}
 
 % 55:38
@@ -661,37 +658,38 @@ In such situations, the completed tensor product $\hat{\tnsr}$ is commonly used.
 % 56:10
 Here is a theorem that describes the behavior of the solid tensor product. In fact, in full generality, for any abelian group, it is preferable to replace this limit in \ref{\label{eq:06-p-adic-completion}} with the solid derived $p$-completion, which is, you derive both operations \note{unsure}.
 \begin{align*} \label{eq:06-p-adic-completion}
-M^n_p = R\lim_n M / p^b
+M_p^\wedge = R\lim_n M /^L p^n
 \end{align*}
 
-Here, the term "derived" refers to a complex represented by multiplication by $p$, where this sits in degree zero and this sits in either homological degree $-1$ or $1$. \note{todo}
-% 
+Here, the term "derived" refers to a complex represented by multiplication by $n$, where this sits in degree zero and this sits in either homological degree $-1$ or $1$. \note{todo, notation}
+
+% 56:52
 Almost always, this agrees with the usual $p$-adic completion in degree zero. However, in full generality, the derived $p$-completion is the more appropriate operation.
 
 % 57:00
-Generally, it is meaningful to discuss derived..., I mean these things are the derived $p$-complete...
+Generally, it is meaningful to discuss derived..., I mean these things $M_p^\wedge$ are the derived $p$-complete...
 
 % 57:12
 Here's a proposition. In this context, it is slightly more advantageous to work from the start within the derived category. For the sake of simplicity, let's assume that the objects in question are concentrated in non-negative degrees, so they extend to the left.
+
+% 57:50
+Consider two objects $M$ and $N$ that are derived $p$-complete. They are isomorphic to the derived limit of the derived ... $p^n$ \note{audio unclear}.  
+%$p$-adic completion of $M$ tensored with $\Z/p^n$ over $n$. 
+% 58:07
+Non-obviously, this condition is also verifiable on homology groups.
+
+%  58:14
+Additionally, their solid tensor product is the derived $p$-completion of the usual tensor product.
 
 \bp \label{prop:06-solid-tensor-product-derived-p-complete}
 If $N, M \in D_{>0}(\Solid)$ are derived $p$-complete, then $N \tnsr^{L\solid} M$ is derived $p$-complete.
 \ep
 
-% 
-Consider two objects $M$ and $N$ that are derived $p$-complete. They are isomorphic to the derived limit of the derived ... $p^m$.  
-%$p$-adic completion of $M$ tensored with $\Z/p^n$ over $n$. 
-This condition is also verifiable on homotopy groups.
-
-%  58:14
-Additionally, their solid tensor product is the derived $p$-completion of the usual tensor product.
-
-
 % 58:35
 Let me prove this in a moment, but first, but let me point out a corollary.
 
 \bc \label{corr:06-infinite-direct-sum-of-copies}
-if we take an infinite direct sum of copies of $\Z$, apply the $p$-adic completion, then tensor this result with another $p$-adic completion, we end up with the similar $p$-adic completion.
+If we take an infinite direct sum of copies of $\Z$, apply the $p$-adic completion, then tensor this result with another $p$-adic completion, we end up with the similar $p$-adic completion.
 \be \label{corr:06-solid-tensor-product}
 % todo wedge
 (\bigoplus_\N \Z)_p \tnsr^{L\solid} (\bigoplus_\N \Z)_p \simeq (\bigoplus_{\N \times \N} Z)_p
@@ -700,6 +698,8 @@ if we take an infinite direct sum of copies of $\Z$, apply the $p$-adic completi
 
 % 59:05
 This means that in such situations of more or less formal geometry, the solid tensor product behaves as expected for derived $p$-adically complete objects. The number $p$ is not particularly special in \ref{corr:06-solid-tensor-product}. We could work with any base ring and solid module structures over that ring, and then any element of that ring and the result would still hold true.
+
+
 
 % 59:36
 \ques So this $p$-adic completion of the free abelian group can be considered as either a solid abelian group, or as a light condensed abelian group... Is it solid?
@@ -711,48 +711,69 @@ This means that in such situations of more or less formal geometry, the solid te
 \ques And it is solid?
 
 % 1:00:03
-\ans It is solid, because the class of solid modules is stable under all limits, colimits and similar operations. Starting with a solid object like $\Z$, taking direct sums, $p$-adic completions, or limits preserves its solidity.
+\ans It is solid, because the class of solid modules is stable under all limits, colimits and similar operations. Starting with a solid object like $\Z$, taking direct sums, $p$-adic completions \note{audio unclear}, or limits preserves its solidity.
+
+\begin{unfinished}{1:00:20}
 
 % 1:00:25
 \br \label{corr:06-p-not-special}
-There is nothing special about $p$. For any ring $A$ and any elements $f_1, \ldots, f_n \in R$, and $M, N \in D_{\geq 0}(\Solid_A)$ \footnote{At this moment, $\Solid_A$ really just means $A$-modules inside solid abelian groups.} that are derived $x$-complete, the derived tensor product $M \tnsr^{L\solid}$ is the derived $x$-completion of their usual tensor product.
+There is nothing special about $p$. For any ring $A$, and any elements $f_1, \ldots, f_n \in R$, and for any $M, N \in D_{\geq 0}(\Solid_A)$ \footnote{At this moment, $\Solid_A$ refers to $A$-modules inside solid abelian groups.} that are derived $x$-complete, the derived tensor product $M \tnsr^{L\solid}$ is the derived $x$-completion of their usual tensor product.
 \er
 
 % 1:02:31
-I should mention \ref{corr:06-infinite-direct-sum-of-copies} is a corollary of the preceding proposition \ref{prop:06-solid-tensor-product-derived-p-complete}. We know there is definitely a map from $(\bigoplus_\N \Z)_p \tnsr^{L\solid} (\bigoplus_\N \Z)_p$ to $(\bigoplus_{\N \times \N} Z)_p$, because the tensor product linear maps, and so there is this obvious bilinear map.
-But those sides are derived $p$-complete. By definition proposition
+I should mention why \ref{corr:06-infinite-direct-sum-of-copies} is a corollary of the preceding proposition \ref{prop:06-solid-tensor-product-derived-p-complete}. 
+We know there is definitely a map 
+\begin{align*}
+(\bigoplus_\N \Z)_p \tnsr^{L\solid} (\bigoplus_\N \Z)_p \to (\bigoplus_{\N \times \N} Z)_p,
+\end{align*}
+because this tensor product $\tnsr^{L\solid}$ represents bilinear maps, and so there is this obvious bilinear map to here $(\bigoplus_{\N \times \N} Z)_p$.
+But both sides are derived $p$-complete. 
+The right hand side by definition, the left hand side by the proposition \note{todo, add ref to proposition}.
+
 % todo wedges
 % 1:02:52
 To verify it is an isomorphism, we can check after reduction mod $p$. For derived completed things, this isomorphism can be verified modulo $p$. 
-When we reduce modulo $p$, both sides simplify to the usual tensor product. In this case, we are simply taking the usual tensor product of FP's and product, a direct sum of FP's, and a direct sum of FP's.
+When we reduce modulo $p$, both sides become discrete \note{audio unclear} and you are just taking the usual tensor product to the usual tensor product. In this case, we are simply taking the usual tensor product of FP's and product, a direct sum of FP's, and a direct sum of FP's. \note{todo}
 
 
 \begin{sketch}
 
 % 1:03:45
-Let me provide a sketch. First of all, in this situation, we can work with $\Z_p$ instead, because the derived completion of $\Z_p$ with respect to $p$ is simply $\Z_p$. 
-This is because we can take $\Z[[T]]$, $\Z$ power series in $T$, and quotient by $(T-p)$. Modulo $p$, we get here $\F_p[[T]]$, and similarly, when we take the power series in two variables and quotient by $p$, we obtain $\Z_p[[T]]$ quotiented by $p\Z_p[[T]]$. 
-This means that the derived category of solid $\Z_p$-modules is automatically a full subcategory of solid $\Z$-modules. Therefore, being a $\Z_p$-module is not a structure on a solid; rather, it is simply a condition. When everything is derived $p$-complete, it automatically becomes a $\Z_p$-module.
-
+Let me provide a sketch. First of all, in this situation, we can work with $\Z_p$ instead, because the derived completion of $\Z_p$ with respect to $p$ is simply $\Z_p$.
 \be
 \Z_p \tnsr^{L\solid} \Z_p = \Z_p
 \ee
 
+% 1:03:56
+This is because we can take $\Z[[T]]$, $\Z$ power series in $T$, and quotient by $(T-p)$.
 \begin{align*}
 todo
 \end{align*}
 
+ Modulo $p$, we get here $\F_p[[T]]$, and similarly, when we take the power series in two variables and quotient by $p$, we obtain $\Z_p[[T]]$ quotiented by $p\Z_p[[T]]$.
+ 
+% 1:04:30
+This means that the derived category of solid $\Z_p$-modules is automatically a full subcategory of solid $\Z$-modules. 
+\be
+\implies D(\Solid_{\Z_p} \subs D(\Solid) % p^{f(n)} \Z_p
+\ee
+
+Therefore, being a $\Z_p$-module is not a structure on a solid; rather, it is simply a condition. When everything is derived $p$-complete, it automatically becomes a $\Z_p$-module.
+
+
 % 
 So $M, N \in D(\Solid_{Z_p})$ is actually here, and everything is taking place in the subcategory. 
 
-\be
-\implies D(\Solid_{\Z_p} \subs D(\Solid) p^{f(n)} \Z_p
-\ee
-
 % 1:05:00
-Let me start with the most destructive case, where $M$ is the direct sum of copies of $\Z_p$, and we complete this direct sum. To compute the effect of the solid tensor product, we need to express this in terms of our generating objects.
+Let me start with the most destructive case, where $M$ and $N$ are the direct sum of copies of $\Z_p$, and we complete this direct sum. 
+\begin{align*}
+N = M = \hat{\bigoplus_\N} \Z_p
+\end{align*}
+
+% 1:05:25
+To compute the effect of the solid tensor product, we need to express this in terms of our generating objects.
 % 1:05:33
-This is a non-trivial exercise, as it involves a rather large collection of compact projective objects.
+This is a non-trivial exercise, as it involves a rather large colimit of compact projective objects.
 
 % 1:05:40
 What is happening here is that this is a colimit over all functions $f\cl \N \to \N$ which go to infinity. These functions only take finitely many values below some constant, of $\prod_\N p^{f(n)} \Z_p$. 
@@ -761,8 +782,6 @@ Case $N = M$
 $= \hat{\bigoplus_\N} \Z_p \simeq \colim_{f \cl \N \to \N \text{ going to $\infty$}} \prod_\N p^{f(n)} \Z_p $
 
 To show surjectivity, let's taky any $S \in \Pro_\N(\Fin)$.
-
-\end{sketch}
 
 % 1:06:23
 What is happening here? First, why is there a map? 
@@ -773,13 +792,13 @@ Whenever we have a map $f$ that tends to infinity, we can take the product of th
 
 \note{todo}
 
+% 1:06:35
 This maps to the completed direct sum $\hat{\bigoplus_\N} \Z_p$, because, modulo each power of $p$, almost all the terms in the product $\prod_\N p^{f(n)} \Z_p$ will tend to zero. This happens because $f$ tends to infinity.
 
 % 1:07:00
 Quite clearly, this map is also injective. However, we still need to show that it is surjective. Specifically, we must demonstrate that whenever a light profinite set maps into the completed direct sum $\hat{\bigoplus_\N} \Z_p$, it factors through one of these terms $\prod_\N p^{f(n)} \Z_p$.
 % 1:07:12
-Now, if we have a map into this completion, we can pick any $S \in \Pro_\N(\Fin)$ and a map from $S$ to these copies of $\Z_p$, which, by the definition, is the limit:
-
+Now, if we have a map into this completion \note{todo, add ref}, we can pick any $S \in \Pro_\N(\Fin)$ and a map from $S$ to these copies of $\Z_p$, which, by the definition, is the limit:
 % 1:08:40
 \be
 S \to \bigoplus_\N \Z_p = \colim_n (\bigoplus_\N \Z / p^n )
@@ -810,53 +829,62 @@ Now, there is an obvious map here, so $f$ on it, over all functions. Let me deno
 % to infty
 % todo
 
-% 
-At first, we might think this will not work out, because here \note{todo} we are allowed to quantify over all arbitrary slowly increasing functions of two variables, whereas here \note{todo} we are just getting those that are sums of functions of one variable individually. 
+% 1:13:34
+At first, we might think this will surely not work out, because here \note{todo} we are allowed to quantify over all arbitrary slowly increasing functions of two variables, whereas here \note{todo} we are just getting those that are sums of functions of one variable individually. 
 % 1:13:51
-There is, however, a combinatorial lemma that might seem surprising at first, but is not difficult to prove. It states that whenever we have a slowly increasing function $H$, we can always find one that increases even more slowly, and this function can be expressed as the sum of two functions, each depending on an individual coordinate.
+There is, however, a combinatorial lemma that might seem surprising at first, but is not difficult to prove. It states that whenever we have a slowly increasing function $h$, we can always find one that increases even more slowly, and this function can be expressed as the sum of two functions, each depending on an individual coordinate.
 % 1:14:05
-I will leave it as an exercise for you to figure that out. What I mean is that, for non-obvious reasons, the softer approach leads us to the correct object.
+I will leave it as an exercise for you to figure that out. 
+
+\end{sketch}
+
+% 1:14:18
+But that's what I mean that, this solid tensor product, like for non-obvious reasons, gives you the correct guy.
 
 % 1:15:20
-The general argument is that we can reduce to the case where $n$ and $m$ are simply some completed direct sums of copies of the generators. Then, although the same argument---we have to be slightly careful because a priori, we can also have the case that $m$ and $n$ are completions of a direct sum which is over an uncountable index set. Then we still want that.
+The general argument is that we can reduce to the case where $M$ and $N$ are simply some completed direct sums of copies of the generators. Then, although the same argument---we have to be slightly careful because a priori, we can also have the case that $M$ and $N$ are completions of a direct sum which is over an uncountable index set. Then we still want that...
 % 1:15:50
 There is an argument, based on more formal considerations, that the uncountable case reduces to the countable case. Because these derived completions always commute, we can reduce uncountable cases to countable ones. \note{todo, check this}
 
+So this is an interesting computation.
+
 \subsection{Solid functional analysis}
 
-% 
-This is an interesting computation, and there are even more computations that emerge, particularly when we delve into solid functional analysis. 
+% 1:16:20
+There are even more computations that occur, particularly when we do solid functional analysis.
 % 1:16:37
-For simplicity, let's work with $\Q_p$, though most of what we are discussing applies to any field.
+For simplicity, let's work over $\Q_p$, though most of what we are discussing applies over aby complete nonarchimedean field.
 
-% 
-Again, the solid $p$-adic Banach spaces, or even the derived category, form a full subcategory of $p$-modules where $p$ is invertible. It is also a full subcategory of abelian groups. When we take tensor products and direct sums, it is in the subcategory.
+% 1:17:05
+Again, the solid $p$-adic Banach spaces \note{todo, audio unclear, vector spaces?}, or even the derived category, form a full subcategory of $p$-modules where $p$ is invertible. It is also a full subcategory of abelian groups. 
+
+When we form tensor products, we somehow stay within this subcategory.
 \be
 D(\Solid_{Q_p}) \subs D(\Solid_{Z_p}) \subs D(\Solid)
 \ee
 
 % 1:17:40
-This category, $\Solid_{Q_p}$, has a compact projective generator $(\prod_\N Z_p)[\frac{1}{p}]$. In $\Solid_{Z_p}$, this generator is a product of $\Z_p$'s, while in $\Solid_{Q_p}$, we need to invert $p$ and consider $(\Z_p)^\vee$. 
+The category $\Solid_{Q_p}$ has a compact projective generator given by $(\prod_\N Z_p)[\frac{1}{p}]$. In the category $\Solid_{Z_p}$, this generator is a product of $\Z_p$'s, while in $\Solid_{Q_p}$, we need to invert $p$ and consider $(\Z_p)^\vee$. 
 % 1:17:50
-This $(\prod_\N Z_p)[\frac{1}{p}]$ is a rather unusual topological vector space. (Or, more precisely, it resembles a condensed vector space, but it originates from a topological vector space.)
+The object $(\prod_\N Z_p)[\frac{1}{p}]$ is a rather unusual topological vector space. (Or more precisely, it resembles a condensed vector space, but it originates from a topological vector space.)
 % 1:17:58
 So it looks like one where the unit, which has a norm, where the unit ball is this thing \note{add what he points at}, where the unit ball is compact. 
-However, there is a general result stating that we cannot have Banach spaces or normed vector spaces of infinite dimension where the unit ball is compact.
+However, there is a general result stating that in infinite-dimensional Banach spaces or normed vector spaces, the unit ball can never be compact.
 
 
 % 1:18:14
-It turns out that if we tried to endow this space with a norm in the obvious way, where this would become the unit ball, the norm map would not be continuous. 
+It turns out that if we attempted to equip this space with a norm in the obvious way, where this would become the unit ball, the resulting norm map would fail to be continuous. 
 % 1:18:25
 Therefore, this is not strictly a normed vector space. It is simply what it is.
 
 % 1:18:33
-Objects like $(\prod_\N Z_p)[\frac{1}{p}]$ have also appeared in classical functional analysis literature. Lefschetz might have been the first to call them "Smith spaces". 
+Objects such as $(\prod_\N Z_p)[\frac{1}{p}]$ also appear in classical functional analysis literature. Lefschetz may have been the first to refer to them as \emph{Smith spaces}. 
 % 1:19:13
-She studied the analogs of these spaces over the real numbers, so we can think of these as $p$-adic Smith spaces. 
+She studied the analogs of these spaces over the real numbers, so these can be viewed as \emph{$p$-adic Smith spaces}. 
 They can also be considered as a type of topological vector spaces, specifically increasing unions obtained by scaling out some compact convex set.
 
 % 1:19:40
-The more familiar objects in $p$-adic functional analysis are $p$-adic Banach spaces. At least separable examples of these are exactly the ones that we considered previously.
+The more familiar objects in $p$-adic functional analysis are the $p$-adic Banach spaces. At least separable examples of these are exactly the ones that we considered previously.
 
 So, we have the following:
 \begin{align*}
@@ -870,9 +898,7 @@ So either we put "separable" and "light" on those sides, or we... "Separable" on
 
 
 \bp
-
 (light) Smith spaces $\simeq$ (separable) Banach spaces
-
 \ep
 
 %
@@ -889,11 +915,11 @@ V \mapsto R\IntHom(V, \Q_p) = \IntHom(V, \Q_p)
 % 1:22:05
 Again, here is a curious remark, and maybe people will
 Just the internal dual, that is true and obvious. 
-However, if we go the opposite direction, we can wonder: if we take the dual of a Banach space, is it simply the usual dual? 
+However, going in the opposite direction, one might ask: when we take the dual of a Banach space, is it simply the usual dual? 
 % 1:23:03
-The answer depends on our model of the set theory. As mentioned earlier, it fails under the continuum hypothesis. However, under the principle $\ast$ that I mentioned (that is consistent), it holds true.
+The answer depends on our model of the set theory. As mentioned earlier, it fails under the continuum hypothesis. However, under the principle $\ast$ that I mentioned (that is consistent), it does hold.
 
-This is because a Banach space is a special type of pro-abelian group---a limit of direct sums over $\N$ of $\Q_p$-mod-$p^{t(n)} \Z_p$.
+This is because a Banach space can be viewed as a special type of pro-abelian group: namely, a limit of direct sums over $\N$ of $\Q_p$-mod-$p^{t(n)} \Z_p$.
 
 Thus, the duality between $\Pro$-things and $\Ind$-things is exactly what is controlled by the principle $\ast$.
 
@@ -909,13 +935,13 @@ At some point, surely we will take some $\RHom$ of a Banach space against someth
 Then we can decide whether we work in a model where it is just meaningless "junk", or we work in this model where it is what it is supposed to be.
 
 % 1:25:30
-What I really wanted to highlight is that we also have Fréchet spaces, which are countable limits of banach spaces along compact maps. 
+What I want to highlight here is that we also have Fréchet spaces, which are countable limits of Banach spaces along compact maps. 
 
 \begin{align*}
 \text{Fréchet spaces} = \text{Countable limits of Banach spaces under dense transition maps}
 \end{align*}
 
-These spaces appear frequently in analysis, and there is a standard notion of a completed tensor product for them. 
+These spaces appear frequently in analysis, and there exists a standard notion of a completed tensor product for them. 
 
 have standard notion of $\tnsr$ todo for them, compatible with such limits.
 
@@ -927,12 +953,12 @@ In particular, this tensor product is the one that is compatible with limits.
 \end{itemize}
 
 % 1:26:42
-More generally, a thing that usually happens when we define such tensor products in functional analysis, is that we are trying to make them compatible with limits. 
+More generally, a thing that usually happens when we define such tensor products in functional analysis, the goal is often to ensure that they are compatible with limits. 
 %
 Which is not related, because our solid tensor product was defined to be compatible with colimits. 
 Usually, very few functors preserve both limits and colimits, and the tensor product is certainly not compatible with \emph{all} limits. 
 %
-BHowever, in this particular setting it turns out that the tensor product gives the correct answer. This leads to the following proposition:
+However, in this particular setting, thee tensor product turns out to yield the correct answer. This leads to the following proposition:
 
 \bp
 Let $V, W$ be Fréchet $\Q_p$-vector spaces. Then their derived solid tensor product satisfies:
@@ -942,21 +968,21 @@ Let $V, W$ be Fréchet $\Q_p$-vector spaces. Then their derived solid tensor pro
 \ep
 
 % 
-If $C$, $M$ and $W$ are Fréchet spaces (considered as topological spaces for now), we can move to the condensed setting and take their solid tensor product (or even the derived solid tensor product). 
-
+If $C$, $M$ and $W$ are Fréchet spaces (considered as topological spaces for the moment), we can move to the condensed setting and take their solid tensor product, or even the derived solid tensor product. 
+% 1:27:44
 It turns out that this is simply the completed tensor product of Fréchet spaces. 
 Then pass back. In particular, it is degree zero.
 
 \bex
 % 
-Consider taking the product of copies of $\Z_p$ and tensoring it with another product of copies of $\Z_p$. The result is the bi-infinite tensor product $\bigotimes_\Z^\infty \Z_p$, which satisfies:
+Consider the product of copies of $\Q_p$ and its tensor product with another product of copies of $\Q_p$. The result is the bi-infinite tensor product $ \prod_{\N \times \N} \Q_p$:
 
 \be
 \prod_\N \Q_p \tnsr^{L\solid} \prod_\N \Q_p \simeq \prod_{\N \times \N} \Q_p.
 \ee
 \eex
 
-At first glance, this might seem like a standard result concerning compact projective generators, but it is absolutely not. These spaces are, in fact, vastly different from compact projective objects. Only these kind of unit balls within them are compact projective objects, but this is a huge space.
+At first glance, this might seem like a standard result concerning compact projective generators, but it is absolutely not. These spaces $\prod_\N \Q_p$ are, in fact, vastly different from compact projective objects. Only these kind of unit balls are compact projective objects, but this \note{todo, add ref} is a \emph{huge} space.
 
 % 1:29:20
 Once again, let me outline a proof sketch, or an example. 
@@ -1015,82 +1041,133 @@ I think that is all I wanted to say. But if there are questions, we have a few m
 % 
 \ans No, it does not make a difference, because all Banach spaces are liquid. Similarly, Fréchet spaces are liquid, regardless of whether they are separable or not. The only exceptions are the preditorials \note{todo}, which do not factor in this context.
 
-% 
+% 1:35:50
 \ques Is the connection between the homology of the $C$-complex and solidification just an accident, or should I view it as something deeper? Can I expect similar examples to arise, in condensed spectra or other contexts?
 
-% 
-\ans Rather than focusing on de Rham $C$-complex being groups, we could work entirely in a category of spectra. Then we could also... 
-Maybe a good point to point out is the following: there is a spectrum called $ku$, which I like to think of as taking the algebraic K-theory of the complex numbers, but we take into account the topology that the $\GL_n(\C)$ has. This makes it homotopy-theoretic. Classically, this is somewhat hard to phrase what this means, but I believe there are ways to do it anyway.
+% 1:36:13
+\ans Rather than taking the derived category of abelian groups, we could work entirely in a category of spectra. Then we could also... 
+A good point to highlight here is the spectrum $ku$, which I like to think of as taking the algebraic K-theory of the complex numbers, but with the topology of $\GL_n(\C)$ taken into account. This makes it homotopy-theoretic. Classically, this is somewhat hard to phrase what this means, but I believe there are ways to do it nonetheless.
 
-% 
-One way to approach within our formalism is to treat the K-theory of the complex numbers as a condensed spectrum. The complex numbers themselves form a condensed ring. This means that the K-theory series has some automatic structure as a condensed spectrum. To define a condensed spectrum, I need to provide a function that, for each profinite set $S$, produces a spectrum. In this case, I can simply take the K-theory of the continuous functions from $S$ to $\C$.
+% 1:37:00
+One way to approach this within our formalism is to treat the K-theory of the complex numbers as a condensed spectrum. The complex numbers themselves form a condensed ring, which gives the K-theory series some automatic structure as a condensed spectrum. To define a condensed spectrum, we need to provide a function that, for each profinite set $S$, produces a spectrum. In this case, we can take the K-theory of the continuous functions from $S$ to $\C$.
 
-% 
-So far, this is not at all true, because here the $\pi_1$, for example, will be $\C^*$ as a condensed being group. 
-But now we can take $K(\C)$ and solidify. Just like we had solid sheaves of solid being groups and sheaves of condensed being groups, we also have solid spectra inside of all condensed spectra. 
-This solidification does exactly what we wanted to do. It somehow contracts all the $GL_n(\C)$ that this was built out of, topologically, essentially by the proposition I mentioned in the lecture today.
-
+% 1:37:44
+So far, this is not at all true, because here the fundamental group $\pi_1$, for example, will be $\C^*$ as a condensed abelian group.
 
 \begin{align*}
 ku \neq K(\C)
 \end{align*}
 % todo annotations
 
+% 1:37:58
+But now we can take $K(\C)$ and solidify it. Just like we had derived category of solid abelian groups and derived category of condensed abelian groups, we can also consider solid spectra inside of all condensed spectra.
 \begin{align*}
 ku = K(\C)^{L\solid}
 \end{align*}
 
-% 1:38:40
-Then we see that this is exactly the... We can extend this approach not only to the complex numbers, but also to any algebra over the complex numbers, or even a category over $\C$.
-Then take the K-theory as a condensed spectrum and solidify. 
-This gives a construction of what is known as a semi-topological K-theory. So solidification is what makes semi-topological K-theory.
-
-% 
-If $A$ is any kind of $\C$-algebra with a topology (I do not care about the specific topology), then we can similarly take the K-theory of $A$ and solidify. This recovers something that is known as the semi-topological K. Think: can we get a similar result for $K_O$ or $KR$? Sure, just write $\R$. I mean, all the obvious variations. So in particular, $K_O$ is $K(C^*(\R))$. There is something $KU^{top}$ or whatever it is, and then maybe related to the...
+This solidification does exactly what we wanted to do. It somehow contracts all the $GL_n(\C)$ that this was built out of, homotopy type, essentially by the proposition I mentioned in the lecture today. Then we see that this is exactly $ku$. 
 
 
-If $A$ any $\C$-algebra:
+% 1:38:36
+We can extend this approach not just to the complex numbers, but also to any algebra or category over $\C$. Then take the K-theory as a condensed spectrum and solidify. This gives a construction of what is known as semi-topological K-theory. So solidification is what makes semi-topological K-theory.
 
+\ques So it is a solidification of 
+
+% 1:39:06
+\ans If $A$ is any $\C$-algebra with a discrete topology (I do not care about the specific topology), we can similarly take the K-theory of $A$ and solidify. This process recovers something that is known as the semi-topological K-theory:
 \begin{align*}
-K(A)^{L\solid} = \text{"semitopological $K$-theory"}
+K(A)^{L\solid} = \text{"semitopological $K$-theory"}.
 \end{align*}
 
-% 
-Here the $K$ is the periodic (or the full) spectra. In this notation, the $K$-theory spectrum... 
-It turns out to be connective for the inputs that I am using, maybe not quite obviously so, but it is true. So there is a connective $KU$. It is much more subtle to recover the periodic $KU$. We can of course just invert both at the end, but...
+% 1:39:50
+hope Proper smooth dg category of the complex numbers, there is some way to define its topological K-theory and I think this was one of the reasons people started to define the semi-topological K-theory. So the actual one should be a module over periodic $ku$, but you can just take this one and invert the Bott element. This gives a candidate for something that might be the correct things, but nobody knows how to prove much about it I think.
+
+% 1:40:18
+\ques Do you think we can get a similar result for $ko$ or $KR$? 
+
+% 1:40:22
+\ans Sure, just write $\R$. I mean, all the obvious variations. In particular, for $ko$, you take the K-theory of the real numbers, which gives us:
+\begin{align*} \label{eq:06-ko}
+ko = K(\underline{\R})^{L\solid}
+\end{align*}
+
+% 1:40:48
+There is something $ksp$ or whatever it is, and then maybe related to the \note{audio unclear}.
+
+
+% 1:41:00
+\ques Here, the $K$ is the periodic, or the full spectrum, I mean... In this notation, the $K$-theory spectrum... 
+% 1:41:05
+\ans The $K$ refers to the algebraic K-theory spectrum. It turns out to be connective for the inputs that I am using--though this might not be immediately obviously, it is indeed the case. So, there is a connective $ku$. Recovering the periodic $ku$ is much more subtle. Of course, we can just invert both at the end, but...
 
 % 
-Sometimes, in the $p$-adic case, the stuff that Dustin Clausen and I developed, which is a different way to approach this kind of stuff, is aimed at defining some version of $C^*(\C)$, but now an analytic ring, where the answer certainly has homotopy in negative degrees.
+Sometimes, some of this analytic $K$-theory, the stuff that Dustin Clausen and I developed, which is a different way to approach this kind of stuff, is aimed at defining some version of the K-theory of complex number $K(\C)$, but now an analytic ring, where the answer \note{did not hear a word} certainly has homotopy in negative degrees.
 
-% 1:42:15
-\ques Is there a connection to Segal's configuration space-like description of the small $KU$ or small $K(\R)$?
+%
+\ques Is this somehow related to the description of the small $ku$ or $ko$ as some configuration space like the description given by Graeme Segal \note{name spelling unsure}
 
-% 
-\ans I do not know about the... Sorry, there is some description for small $K(\R)$ and for $KU$ using a thing given by Segal. I think this statement is much more naive. This statement is really just one way of encoding the intuition that... 
-Or maybe see, but in some sense this is false. 
-Something that is true before group completion, namely that if we take the infinity groupoid classifying space of $\C^\times$ and then pass to homotopy types here, then $KU$ is a group completion of that, and solidification factors over passing to homotopy types. 
-So this is Segal's...
+% 1:42:10
+\ans I don't know about that...
 
-% 
+
+% 1:42:13
+\ques Sorry. there is some description for small $ku$ and for $KU$ using a thing given by Segal. 
+
+% 1:42:35
+\ans I think this statement is much more naive. This statement \ref{eq:06-ko} is really just one way of encoding the intuition that... 
+Or maybe the theorem, but in some sense this is false. 
+Something that is true before group completion, namely that if we take the infinity monoid classifying space of $\C^\times$ and then pass to homotopy types here, then $ku$ is a group completion of that. 
+
+\note{todo, eq}
+Basically solidification factors over passing to homotopy types. 
+So \note{audio unclear}.
+
+% 1:43:20
 But they have, I do not think, any configuration spaces.
 
-\ques To what extent does the solid tensor product combine two topologies? 
-Say we have $M$ and $N$, and $M$ is $x$-complete and $N$ is $y$-complete. 
-There was a thing that I mentioned: if we take power series $\Z[[T]]$ and then $\Z[[U]]$, then $\Z[[T]] \tnsr \Z[[U]]$ becomes the $(U,T)$-adic one. 
+% 1:43:43
+\ques To what extent does the solid tensor product combine two topologies? Say we have $M$ and $N$, and $M$ is $x$-complete and $N$ is $y$-complete.
+
+% 1:44:10
+\ans Not directly. There was a thing that I mentioned: if we take power series $\Z[[T]]$ and then $\Z[[U]]$, then $\Z[[T]] \tnsr \Z[[U]]$ becomes the $(U,T)$-adic one. 
 So there it does do this thing.
 
-In this more general condensed setting, it does not do it. So when we $-\tnsr_A-$ and we have this $x$-completeness statement, now when we complete the ring $A$, this one is no longer the derived completion. Does it make a difference for the proof?
+% 1:44:28
+In this more general Banach space setting, it does not do it. 
 
-Sorry, I realized that probably the most general version for solidification might not be expected to be true. 
-I was getting confused about this. If we want to compute some product of a solid thing or whatever, one way is to kind of resolve by the absolute one. 
-Then we are also taking a product over $A$, and so to show that this here is the $xy$-completed one, it is enough to know that all the other ones are. 
+% 
+\ques So, when we tensor over $A$ and we have this $x$-adically complete statement, if we now take the completion of the ring $A$, this one is no longer the derived completion. Does this affect the proof?
+
+% 1:45:07
+\ans Sorry, I realized that probably the most general version for solidification might not be expected to be true. I was getting confused about this. If we want to compute a derived tensor product over $A$---a solid object or whatever, one way is to kind of resolve by the absolute one.
+\begin{align*} \label{eq:06-ko}
+M \tnsr^{L\solid}_A N
+\end{align*}
+
+
+Then we are also taking a product over $A$, and
+
+% 1:45:54
+So to show that this you have derived $x$-completed, it is enough to know that all the other ones are. 
 This way we can reduce to the case that the ring $A$ is just $\Z[[x]]$ here. 
 Then the derived $x$-completeness of this one reduces to the one of $\Z[[x]] \tnsr \Z[[y]]$ here. But $A$ itself is derived $x$-complete. 
-If it is $x$-complete, it is also derived $x$-complete. 
-So we can reduce this statement to the case that the ring is really just the join $\Z[[x]]$.
+If it is $x$-complete, it is also derived $x$-complete.
 
-\ques What did you mean by "passing to homotopy type" in $B(GL_n(\C))$? 
-So $\GL_n(\C)$ is viewed as a topological space, and therefore as a condensed set or abelian group?
+% 1:46:22
+So we can reduce this statement to the case that the ring is really just the $\Z[[x]]$.
 
-Yes. So when I define $K(\C)$, one way to do that is to take this classifying space
+% 1:46:46
+\ques What did you mean by "passing to the homotopy type" in $B(GL_n(\C))$? So is $\GL_n(\C)$ viewed as a topological space, and therefore as a condensed set, or not?
+
+% 1:46:58
+\ans A priori, when I define $K(\C)$, one approach is to take this classifying space of \note{audio unclear} and then I have some infinity-group in condensed groupoids. Then I group complete that. But then... So somehow physically I'm here using the category of condensed anima, which contains condensed sets or condensed groupoids and so on, as one \note{not sure} full subcategory. But contains anima or like homotopy type or whatever, there is another full subcategory which somehow the discrete objects.
+\begin{align*} \label{eq:06-ko}
+\Cond(Anima}
+\end{align*}
+
+% 1:47:46
+For a certain class of objects here, there exists a left adjoint, which corresponds to passing to the homotopy type. This is not always defined, but one some objects, it is defined. For example, it is defined for CW-complexes classifying space of ... \note{audio unclear} and so on.
+% 1:48:00
+So what I meant earlier \note{add ref} was that I applied this left adjoint to this \note{not sure}.
+
 \end{unfinished}
