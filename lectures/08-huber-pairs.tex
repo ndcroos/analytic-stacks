@@ -249,8 +249,7 @@ Let's assume $A^\tri$ is a light condensed ring. Now, I want to define what an a
 Here is the definition. It is equivalent to the one that Dustin gave in the first lecture, but presented from a slightly more elementary perspective.
 
 \bd[Analytic ring structure]
-Let $A^\tri$ be a light condensed ring.
-An \textit{analytic ring structure} on $A^\tri$ is a full subcategory $Mod(A)$ that is an abelian category, satisfying:
+Let $A^\tri$ be a light condensed ring. An \textit{analytic ring structure} on $A^\tri$ is a full subcategory $\Mod(A)$ that is an abelian category, satisfying:
 \begin{align*}
 \Mod(A) \subs \Cond(A^\tri)
 \end{align*}
@@ -271,7 +270,7 @@ We make this definition to avoid restating this list repeatedly.
 First, it should be an abelian subcategory, stable under both kernels and cokernels. Additionally, it must be stable under all limits and colimits. It should also be stable under all extensions, meaning that if we have an extension of two things in a complete guy, the extension itself should also be complete.
 
 % 26:05
-Then there is a slightly tricky condition we want to check that is also stable under all $\IntExt^i_{A^\tri}(N,-)$, where $N \in \Cond(A^\tri)$. Furthermore, it should be stable under taking direct sums $X \mapsto X^{\oplus I}$ for some set $I$. Finally, it must contain $A^\tri$.
+Then there is a slightly tricky condition: if we want to check that it is also stable under all $\IntExt^i_{A^\tri}(N,-)$, where $N \in \Cond(A^\tri)$. Furthermore, it should be stable under taking direct sums $X \mapsto X^{\oplus I}$ for some set $I$. Finally, it must contain $A^\tri$.
 
 % 27:20
 \clausen So can I ask a question? Does it imply, maybe one can prove from this in some way, for example, that it ... a Grothendieck category, where the condition that I allude to is the existence of a set of generators. Is it automatic under these conditions?
@@ -319,13 +318,13 @@ the thing I will define as a certain triangulated category or stable $\infty$-ca
 \clausen No, I think that is fine.
 
 % 30:15
-\scholze What is the argument again for this?
+\scholze What is the argument for this again?
 
 % 30:20
-\clausen It is again this general principle. I think it is not quite trivial, but I think it is a general principle that if you have a presentable category and a full subcategory closed under limits and sufficiently filtered colimits, in this case all filtered colimits, then the inclusion has a left adjoint. 
+\clausen It is again this general principle. I think it is not quite trivial, but I think it is a general principle: if you have a presentable category and a full subcategory that is closed under limits and sufficiently filtered colimits---in this case, all filtered colimits---then the inclusion has a left adjoint. 
 
 % 30:40
-\scholze There is a very related statement that involves this set-theoretic nonsense that is called ... principle \note{todo}, but I think there you do not have the limits, right?
+\scholze There is a closely related statement that involves this set-theoretic nonsense that is referred to as ... principle \note{todo, audio not clear. Did he say Vopenka's principle?}, but I think there you do not have the limits, right?
 
 \clausen Yes, or maybe you do not have this sufficiently filtered colimits or something. I believe this statement that I just mentioned, which I believe you also mentioned at some point earlier. It is just a fact in ZFC.
 
@@ -355,37 +354,49 @@ the thing I will define as a certain triangulated category or stable $\infty$-ca
 \clausen I think it maybe implies you can leave out sufficiently filtered colimits or something. Do not quote me.
 
 % 31:52 
-\scholze end of definition.
+\scholze So, end of definition.
 
 % 32:02
 First, I want to explain some general structures at the conceptual level
 % 32:18
-The claim is that there exists a left adjoint, which I will write as sending a module $M$ to its base change from $A_\infty$ to $A$ mod $A$ is just purely notational for now, but I will think of it as the modules over this analytic ring $A$.
+The claim is that there exists a left adjoint, which I will write as sending a module $M$ to its base change from $A^\tri$ to $A$.
 \begin{align*}
 \Cond(A^\tri) \to \Mod(A) \text{ to inclusion}
 \end{align*}
 \begin{align*}
 M \mapsto M \tnsr_{A^\tri} A
 \end{align*}
+% 33:00
+$\Mod(A)$ is just purely notational for now, but I will think of it as the modules over this analytic ring $A$. So it is such a ... \note{todo} functor.
 
 sufficiently filtered colimit
 
 \bp
-There exists a left adjoint. The kernel of this functor is a $\tnsr$-ideal, and $\Mod(A)$ acquires a unique symmetric monoidal structure, making $\tnsr A$ \note{todo} symmetric monoidal.
+There exists a left adjoint
+\begin{align*}
+\Cond(A^\tri) \to \Mod(A) \text{ to inclusion}
+\end{align*}
+\begin{align*}
+M \mapsto M \tnsr_{A^\tri} A
+\end{align*}
+% 33:11
+The kernel of this functor is a $\tnsr$-ideal, and $\Mod(A)$ acquires a unique symmetric monoidal structure, making the base change $\tnsr_{A^\tri} A$ a symmetric monoidal functor.
 \ep
 
-% 33:11
-This base change functor has kernel, the $\tnsr$-ideal in $\Mod(A_\infty)$, and $\Mod(A)$ acquires a unique symmetric monoidal structure making the base change a symmetric monoidal functor.
 
+% This base change functor has kernel, the $\tnsr$-ideal in $\Mod(A_\infty)$, and $\Mod(A)$ acquires a unique symmetric monoidal structure making the base change a symmetric monoidal functor.
+
+% 34:25
 Let's sketch the proof. We already discussed the existence of the left adjoint, which is formal nonsense. If it is not, just make it part of the definition. 
 % 34:53
-The question is about this ... being a $\tnsr$-ideal.
+The question is about this functor being a $\tnsr$-ideal.
 
 \begin{sketch}
-Existence of left adjoint: formal nonsense.
-Assume $M \in \Cond(A^\tri)$ such that $M \tnsr_{A^\tri} A = 0$
+Existence of left adjoint: formal nonsense.\\
+
+Assume that module $M \in \Cond(A^\tri)$ such that $M \tnsr_{A^\tri} A = 0$, meaning $M$ has no maps to any $A$-module.
 Let $N \in \Cond(A^\tri)$ arbitrary.
-To show:
+We want to show that:
 \begin{align*}
 (N \tnsr_{A^\tri} M) \tnsr_{A^\tri} A = 0 \quad & \forall L \in \Mod(A)
 \end{align*}
@@ -397,7 +408,7 @@ What does it mean to be a $\tnsr$-ideal?
 % 34:59
 The left adjoint functor definitely preserves colimits \note{todo}. To show that it is a $\tnsr$-ideal, we need to prove that if something is in the kernel, then for any $N$, the tensor product $M \tnsr N$ is still in the kernel.
 
-Assume that module $M \in \Mod(A_\infty)$ such that $F(M) = 0$, meaning $M$ has no maps to any $A$-module. We want to show that for all $N \in \Mod(A_\infty)$, we have: 
+We want to show that for all $N \in \Mod(A_\infty)$, we have: 
 \begin{align*}
 F(M \tnsr N) = 0.
 \end{align*}
@@ -406,15 +417,17 @@ This means proving that for all $L \in \Mod(A)$, we have
 \begin{align*}
 \Hom(F(M \tnsr N), L) = 0. 
 \end{align*}
+
 By the definition of $F$ as a left adjoint, this is equivalent to showing that
 \begin{align*}
 \Hom(M \tnsr N, L) = 0.
 \end{align*}
 
-Using the $\Hom$-tensor adjunction, we can rewrite thi as , 
+Using the $\Hom$-tensor adjunction, we can rewrite this as , 
 \begin{align*}
 \Hom(M, [N,L]) = 0,
 \end{align*}
+
 where $[N,L]$ denotes the internal $\Hom$. Since we assumed that $\Mod(A)$ is stable under all limits, in particular internal $\Hom$'s, it follows that $[N,L] \in \Mod(A)$. 
 
 Once again, we have
@@ -423,27 +436,61 @@ Once again, we have
 \end{align*}
 since $F(M) = 0$ by assumption.
 
-The symmetric monoidal structure on $\Mod(A)$ must be given by taking the tensor product in $\Mod(A_\infty)$, viewing it as a colimit in the category of modules, and then completing it again. The key question is whether this process ensures that the base change functor remains symmetric monoidal.
+% 38:50
+The symmetric monoidal structure on $\Mod(A)$ must be given by taking the tensor product in $\Mod(A_\infty)$, light condensed $A$-modules, and then completing it again. 
+\begin{align*}
+M \tnsr_A N = (M \tnsr_{A^\tri} N) \tnsr_{A^\tri} A
+\end{align*}
+
+% 39:36
+The key question is whether this process ensures that the base change functor remains symmetric monoidal.
 
 % 39:50
-To verify this, we need to show that for all $M,N \in \Mod(A_\infty)$, the following two operations yield the same result:
+To verify this, we need to show that for all $M,N \in \Cond(A^\tri)$, the following two operations yield the same result:
 \begin{itemize}
-\item  we can either first tensor $M$ and $N$ and then apply $F$.
+\item we can either first tensor $M$ and $N$ and then apply $F$.
 \item first apply $F$ to both of them and then tensor in $\Mod(A)$
 \end{itemize}
 
 
-I think a better statement is that if a map in $\Mod(A_\infty)$ becomes an isomorphism under localization, then tensoring it with anything else also makes it an isomorphism. This follows from the same type of argument as before: by mapping into the subcategory and using the internal $\Hom$. I previously worked through this in the solid case, and the same reasoning applies here.
+tensor ideal
 
-The key idea is that, for example,  if $f: M \to \hat{M}$ is a completion map, which becomes an item of localization because an important operation. So if I-- this within some-- the same-- stage it.
+% 41:12
+\gabber I think you don't use the kernel but just repeat the same type of argument homing this to something in the subcategory and using...
+
+% 41:22
+\scholze I did this in the solid case and you just use the same argument.
+
+% 41:40
+Yes, actually I realized that on the abelian level the better thing to say would have been that if I have which is turned into an isomorphism under $A$, under this localization, if I tensor this map with anyhting else, it also becomes an isomorphism 
+
+I think a better statement is that if a map in $\Mod(A_\infty)$ becomes an isomorphism under localization, then tensoring with anything else also makes it an isomorphism. \note{todo}
+
+% 41:55
+This follows from the same type of argument as before.
+
+% 42:00
+Then the point is that for example if I have this map from $M$ to its completion, which becomes an isomorphism after localization because of idempotent operation. So if I tensor it with $N$, the same stage proven... \note{todo}
+
+% by mapping into the subcategory and using the internal $\Hom$. I previously worked through this in the solid case, and the same reasoning applies here.
+
+% The key idea is that, for example,  if $f: M \to \hat{M}$ is a completion map, which becomes an item of localization because an important operation. So if I-- this within some-- the same-- stage it.
+
+% 42:55
+So this is some structure we automatically have on an analytic ring. So if you have a category of modules, some kind of localization of the category of condensed modules over the underlying ring and this ... \note{todo} a tensor product.
+
+\subsection{On derived categories}
+% 43:10
+Now we pass to the derived category setting.
+
 
 % 44:40
 \bd
-Let $A$ be an analytic ring structure on $A^\tri$.
-Then we define $D(A) \subs D(\Cond(A^\tri))$ as the full subcategory, consisting of all $M \in D(\Cond(A^\tri))$, such that for all $i \in \Z$, the homology groups $H_i(M)$ of all $M \in D(\Cond(A^\tri))$ 
+Let $A$ be an analytic ring structure on an underlying light condensed ring $A^\tri$.
+Then we define $D(A) \subs D(\Cond(A^\tri))$ as the full subcategory, consisting of all $M \in D(\Cond(A^\tri))$, such that for all $i \in \Z$, the homology groups $H_i(M)$ of all $M$ lie in $D(\Cond(A^\tri))$ 
 \ed
 
-This is some structure we automatically have on a triangulated category $C$ of modules, some localization of condens-- the underlying ring. Requires in terms of product. Now we pass-- D-- let not just say that a structure on an underlying lightens string a triangle.
+% This is some structure we automatically have on a triangulated category $C$ of modules, some localization of condens-- the underlying ring. Requires in terms of product. Now we pass-- D-- let not just say that a structure on an underlying lightens string a triangle.
 
 Then undine the of a modules, the full sub-subset for all $Z$ of all-- let me still just call them $N$, so compx of modules. So group-- let me think homologically, all the homo groups line. Define for .
 
@@ -461,55 +508,60 @@ In essentially all cases I am aware of, this functor does turn out to be an equi
 % 46:45
 Thus, our main focus will be on the category we simply denote as $D(A)$. 
 % 46:55
-Moreover, the previous proposition has a corresponding analogue on the derived double \note{todo}.
+Moreover, the previous proposition has a corresponding analogue on the derived double.
 
 \bp
-The category $D(A) \subs D(\Cond(A^\tri))$ is a triangulated subcategory that is stable under all direct sums $\bigoplus$ and all products $\prod$.
+The category $D(A) \subs D(\Cond(A^\tri))$ is a triangulated subcategory \footnote{In one or two lectures, we will likely transition to the $\infty$-categorical language, where this would instead be described as a \emph{stable $\infty$-category}. For now, this perspective is not really required, so let me phrase it in more practical terms.} that is stable under all direct sums and all products \footnote{Again, in the stable $\infty$-categorical setting, we could say it is stable under all limits and colimits, but general limits and colimits are not well behaved work ... \note{todo} triangulated categories. Instead, we can state this equivalent property.}.
 
-Moreover, the inclusion admits a left adjoint:
-- $\tnsr_{A^\tri}^L A: D(\Cond(A^\tri)) \to D(A)$
+%  which are well behaved to what they are supposed to do. %TODO
 
-The kernel of this functor forms a $\tnsr$-ideal.
-\ep
-
-So E of A triangle triang. In one or two lectures, we will likely transition to the $\infty$-categorical language, where we would instead describe it as a \emph{stable $\infty$-category}. For now, it is not really required. However, for now, this is not necessary, so we will stick to more classical terminology.
-
-Stable under all \note{todo}-- 
-In the stable $\infty$-categorical setting, we could say it is stable under all limits and colimits, but general limits and colimits are not well behaved work Str categories. Instead, we can state an equivalent property:-- and stable under all direct sums -- and for product, which are well behaved to what they are supposed to do.
+Moreover, the inclusion again admits a left adjoint, which we will refer to as the \emph{derived tensor product from a condensed set to $A$}:
+\begin{align*}
+- \tnsr_{A^\tri}^L A: D(\Cond(A^\tri)) \to D(A)
+\end{align*}
 
 % 48:31
-The inclusion again admits a left adjoint, which I will refer to as the \emph{derived tensor product}. Again, this has a property that if we have something, it becomes an isomorphism here. Then if we tensor it with anything else, it is still the same. 
+Again, this has a property that if we have something, it becomes an isomorphism here. Then if we tensor it with anything else, it is still the same.
+
 % 49:09
 Because this is now a triangulated category, we can phrase this equ-- in terms of the co--. So if we have something in the kernel of this, then we tend up with something sa-- the.
 
+The kernel of this functor forms a $\tnsr$-ideal.
+
 % 49:30
-Then again, this the T-- here. 
+Then again, the tensor product here uses the tensor product back \note{todo}.
+\ep
 
 % 50:21
-\gabber If one wants to to do the previous type of argument for this fact, then one lends into the question of whether-- of course there is internal or in the full derived category by unbounded and so on. But is the question is whether if you have internal $\Hom$ -- from anything to something in $D(A)$, then it lies in $D(A)$, 
-
+\gabber If one wants to to do the previous type of argument for this fact, then one lends into the question of whether-- of course, there is internal or in the full derived category by unbounded and so on. But is the question is whether if you have internal $\Hom$ -- from anything to something in $D(A)$, then it lies in $D(A)$, 
 
 \scholze right? 
 
+% 50:46
+\gabber This is not-- because of unboundedness, I do not-- of course you have a bounded complex, you have a spectral sequence, I mean. You still have to work with that. Here, you have unbounding in both directions, I can see in one direction you have 
 
-\gabber This is not-- because of unboundedness, I do not-- of course you have a bounded complex, you have a spectral sequence. You still have to work with that. Here you have unbounding in both directions, I can see in one direction you have 
-
-IND light conding is still repete. So the derived category is left complete and so I think you can control the question. Let let me do this in a second when I come to the proof-- the product maying base changed.
+% 51:00
+\scholze \note{audio unclear} light condensed ring is still repete. So the derived category is left complete and so I think you can control the question. Let let me do this in a second when I come to the proof-- the tensor product may derived base changed.
 
 You have-- I do not know, $M'$ to $M$, $M'$, $M'_1$, $M'$, and there a modules. let's assume two of them, and by shifting it does not matter which to, are $D(A)$. Then we want to show that $M$ is also to show. 
 
 
-% todo proper placement
+% 52:05
 There is a unique symmetric monoidal tensor product $ - \tnsr^L_A -$ on $D(A)$ making $ - \tnsr^L_{A^\tri} A$ symmetric monoidal.
-
 
 \begin{sketch}
 \underline{triangulated:}
-$ M^{'} \to M \to M^{''} \to M^{'}[i]$
+You have:
+\begin{align*}
+M^{'} \to M \to M^{''} \to M^{'}[i]
+\end{align*}
 triangle in $D(\Cond(A^\tri))$
-and $M^{'}, M^{''} \in D(A)$
-to show $M \in D(A)$
 
+Let's assume two of them and by shifting, it doesn't matter which 
+
+and $M^{'}, M^{''} \in D(A)$
+Then we want to show that $M$ is also in $D(A)$
+% 53:08
 But for this, we just look at long exact sequence. So we have 
 
 $H(M')$ have $H$, and these are $A$. 
@@ -521,7 +573,6 @@ $H(M')$ have $H$, and these are $A$.
 % 53:36
 So if I have some quotient here and have some cokernel. This is a kernel of the thing which a mod is a qu-- of a modules. So this of both a modules and then this one is an extension.
 
-
 $K, Q \in Mod(A)$
 
 % 53:55
@@ -529,8 +580,9 @@ Here, we use stability on the kernels and quotients, and then we use stability o
 
 
 % 55:23
-Stability under $\bigoplus$ reduces to $H_i$'s 
+Stability under direct sum reduces to $H_i$'s.
 
+% 55:30
 Now standing here, I realize. So and the directed to the $H$, and not standing realize that possibility the product, countable ones, they definitely reduce to $H_i$'s.
 
 \begin{align*}
@@ -540,38 +592,25 @@ Now standing here, I realize. So and the directed to the $H$, and not standing r
 
 \end{sketch}
 
+% 55:41
+Then the uncountable ones? That was okay when we were working in the full condensed setting. In preparing the lecture, I overlooked that there might be an argument to do here.
 
-then the uncountable ones? That was okay when we were working in the full condensed setting. In preparing the lecture, I overlooked that there might be an argument to do here.
-
-Dustin, should I just assume that there is a left adjoint on the level of the right categories? 
-
-
-\clausen I am sorry, I was busy with the chat. What is going on? 
-
-\scholze Why is it stable under all products?
-
-Why is what stable under all products? 
-
-
-The subcategory of complete ones? 
-
-
-all products! Instead of just countable products, right? 
+% 55:53
+\scholze Dustin, should I just assume that there is a left adjoint on the level of derived categories? Why is the subcategory of complete ones stable under all products (instead of just countable products)?
 
 % 56;26
-\gabber all products exist, but is it exact in your category? 
+\gabber All products exist, but is it exact in your category?
 
+\clausen Yes, this is a problem.
 
-\clausen Yes, this is a problem. 
-
-
-the problem in light condensed abelian groups limits, all products are not exact. 
+% 56:30
+\scholze The problem is that in light condensed abelian groups, all products are not exact.
 
 % 56:35
-\clausen This is a problem. We will have to think about this. 
+\clausen Yes, this is a problem. We will have to think about this.
 
 % 56:47
-\scholze It is not an actual issue in some sense, but I screwed up the definition. So we should ask for the existence of left adjoints. 
+\scholze It is not an actual issue in some sense, but I screwed up the definition. So we should ask for the existence of left adjoints.
 
 \begin{question}
 Should ask for existence of left adjoints to the inclusion $D(A) \subs D(\Cond(A^\tri))$ definion \note{todo}.
@@ -582,11 +621,15 @@ Dustin did in the first lecture and I just threw it out when I prepared the lect
 % 57:03
 For existence of left adjoints. The definition, I definitely want the admitted left adjoints.
 
-Now I made this next thing part of the definition that exists.
+% 58:00
+Arbitrary products: OK when you admit a left adjoint.\\
 
-Let's say $M$ is complete. Then, is any condensed... No, sorry. What I want to show is $N$ is in $D^-(A)$. Then there anything... Then you have to show that:
+Now I made this next thing part of the definition that the left adjoint exists.\\
 
+So the kernel of the tensor ideal. 
+Let's say $M$ is complete and $M \in D(A) and $N$ is any complex and $N \in D(\Cond(A^\tri))$. Then, is any condensed... No, sorry. What I want to show is $N$ is in $D^-(A)$. Then there anything... 
 
+Then you have to show that for all the ones that are complete,  
 for all $L$ in $D(A)$, 
 \begin{align*}
 \Hom_{D(\Cond(A^\tri))}(M \tnsr^L_{A^\tri} N, L) = 0
@@ -599,13 +642,15 @@ First of all, because light condensed sets form what is known as a \emph{replete
 % 1:00:40
 This means that countable limits of surjections remain surjections. 
 % 1:00:58
-This notion was introduced in my joint work with Bhargav Bhatt \note{not sure}, but on the pro-side.
+This notion was introduced in my joint work with Bhargav Bhatt, but on the pro-étale site \note{add ref}.
 % 1:01:05
-One key consequence we observed there is that, this implies that any such... Sorry, for all $K$, I did not use the letter $K$, right? So for any $K$ which is, for example, a condensed abelian group or module, $K$ is isomorphic to the derived limit of its truncations in degrees at most $n$. Some limit, usually of abelian groups.
+One key consequence we observed there is that, this implies that for any $K$ which is, for example, a ... \note{audio unclear for this word} condensed $A^\tri}$-module, $K$ is isomorphic to the derived limit of its truncations in degrees at most $n$. Some limit, usually of abelian groups.
 
 
 Countable limits of surjections are surjections. \label{assumption:08-countable-limits}
-$\implies K \in D(\Cond(A^\tri)), K \iso \lim K$.
+\begin{align*}
+\implies K \in D(\Cond(A^\tri)), K \iso \lim \tau K.
+\end{align*}
 
 "Postnikov limit"
 
@@ -618,33 +663,33 @@ This means that I can certainly assume that $L$ is bounded in \ref{eq:08-}.
 
 % 1:02:25
 First of all, to show \ref{eq:08-}, I can again use the tensor $\Hom$ adjunction. 
-I assume that $M$ has sheaf completion \note{tod}. So it suffices to show that the $\IntRHom$ in condensed $A^\tri$-modules from $N$ to $L$ is in $D(A)$.
+I assume that $M$ has trivial completion \note{todo, not sure}. So it suffices to show that the $\IntRHom$ in condensed $A^\tri$-modules from $N$ to $L$ is in $D(A)$.
 
-
-\underline{Suffices}
+It sufficues to show that:
 \begin{align*}
 \RHom_{D(\Cond(A^\tri)}(N,L) \in D(A)
 \end{align*}
 
- 
-Sorry, it is not complete, 
 % 1:03:08
-Because then you can rewrite this as a $\Hom$ from $N$ \note{not sure if N or L} into this guy. But I assume that $M$ has trivial completion, so it does not have to do anything.
+Because then you can rewrite this as a $\Hom$ from $M$ into $L$. But I assume that $M$ has trivial completion, so it does not have anything in $D(A)$ \note{not sure of this}.
 
-%
-This I want to reduce to the level where I had the statement that if $L$ is in $D^-(A)$ and $M$ is in $D^+(A)$, then all the internal $\Hom$'s are in $D^+(A)$. 
-The issue though, as already pointed out, is that here we need to ask this condition for all possibly unbounded complexes. That is why I mentioned this fact. 
-This at least allows us to assume that $L$ is in $D^-(A)$.
+% 1:03:15
+This \note{add what he points at} I want to reduce to the abelian level where I had the statement that if I had something in $\Mod(A)$ and some anything, then 
+all the internal ... are on $\Mod(A)$.
+
+% in $D^-(A)$ and $M$ is in $D^+(A)$, then all the internal $\Hom$'s are in $D^+(A)$. 
+
+% 1:03:26
+The issue though, as Gabber already pointed out, is that here \note{todo, add ref} we need to ask this condition for all possibly unbounded complexes. That is why I mentioned this fact. This at least allows us to assume that $L$ is in $D^+(A)$.
 
 
 % 1:03:46
-So I can assume $L \in D^+$. I usually put this going to the right. Because also all truncations, they are still in $D(A)$. 
-But because the condition was just 
+I usually put this going to the right. Because also all truncations, they are still in $D(A)$. But because the condition was just \note{todo}.\\
+
 % 1:04:15
 On the other hand, $N$ can be written as a colimit of the truncations to the left. 
-
 \begin{align*}
-N = \colim_n N % todo
+N = \colim_n \tau N % todo
 \end{align*}
 
 This is always true, that there is a colimit of truncations $\tau_{\geq -n} N$. 
