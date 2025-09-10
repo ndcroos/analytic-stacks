@@ -644,7 +644,7 @@ This means that countable limits of surjections remain surjections.
 % 1:00:58
 This notion was introduced in my joint work with Bhargav Bhatt, but on the pro-étale site \note{add ref}.
 % 1:01:05
-One key consequence we observed there is that, this implies that for any $K$ which is, for example, a ... \note{audio unclear for this word} condensed $A^\tri}$-module, $K$ is isomorphic to the derived limit of its truncations in degrees at most $n$. Some limit, usually of abelian groups.
+One key consequence we observed there is that, this implies that for any $K$ which is, for example, a ... \note{audio unclear for this word} condensed $A^\tri$-module, $K$ is isomorphic to the derived limit of its truncations in degrees at most $n$. Some limit, usually of abelian groups.
 
 
 Countable limits of surjections are surjections. \label{assumption:08-countable-limits}
@@ -652,39 +652,36 @@ Countable limits of surjections are surjections. \label{assumption:08-countable-
 \implies K \in D(\Cond(A^\tri)), K \iso \lim \tau K.
 \end{align*}
 
-"Postnikov limit"
+So some kind of Postnikov limit.
 
-%
-It is somewhat true, right? When you truncate up to a certain degree and then take the limit of these things, you are, in some sense, stabilizing towards the correct answer. 
-However, in general, this poses an issue because we are taking a countable limit here. In general, such limits need not exist. But under this assumption \ref{assumption:08-countable-limits}, we have sufficient control to ensure their existence.
+
+% 1:01:40
+So usual, the derived category of abelian groups, I mean, it is somewhat true, right? When you truncate up to a certain degree and then take the limit of these things, you are, in some sense, stabilizing towards the correct answer. 
+However, in general, this poses an issue because we are taking a countable limit here. In general, countable limits of a derived category are nasty things. But under this assumption \ref{assumption:08-countable-limits}, we can control it.
 
 % 1:02:05
 This means that I can certainly assume that $L$ is bounded in \ref{eq:08-}. 
 
 % 1:02:25
-First of all, to show \ref{eq:08-}, I can again use the tensor $\Hom$ adjunction. 
-I assume that $M$ has trivial completion \note{todo, not sure}. So it suffices to show that the $\IntRHom$ in condensed $A^\tri$-modules from $N$ to $L$ is in $D(A)$.
-
-It sufficues to show that:
+First of all, to prove~\ref{eq:08-}, we can again use the tensor $\Hom$ adjunction. Assume that the completion of $M$ is trivial \note{todo, not sure}. Then it suffices to show that the $\IntRHom$ in the category of condensed $A^\tri$-modules from $N$ to $L$ lies in $D(A)$, i.e.,
 \begin{align*}
-\RHom_{D(\Cond(A^\tri)}(N,L) \in D(A)
+\RHom_{D(\Cond(A^\tri)}(N,L) \in D(A).
 \end{align*}
 
 % 1:03:08
-Because then you can rewrite this as a $\Hom$ from $M$ into $L$. But I assume that $M$ has trivial completion, so it does not have anything in $D(A)$ \note{not sure of this}.
+Once this is established, we can rewrite this as a $\Hom$ from $M$ into $L$. Since $M$ has trivial completion, it does not have anything in $D(A)$ \note{not sure of this}.
 
 % 1:03:15
-This \note{add what he points at} I want to reduce to the abelian level where I had the statement that if I had something in $\Mod(A)$ and some anything, then 
-all the internal ... are on $\Mod(A)$.
+This \note{add what he points at} I want to reduce to the abelian level where I had the statement that if I had something in $\Mod(A)$ and some anything, then all the internal ... lie in $\Mod(A)$ \note{todo}.
 
 % in $D^-(A)$ and $M$ is in $D^+(A)$, then all the internal $\Hom$'s are in $D^+(A)$. 
 
 % 1:03:26
-The issue though, as Gabber already pointed out, is that here \note{todo, add ref} we need to ask this condition for all possibly unbounded complexes. That is why I mentioned this fact. This at least allows us to assume that $L$ is in $D^+(A)$.
+The issue, as Gabber already pointed out, is that here \note{todo, add ref} we need to impose this condition for all possibly unbounded complexes. That is why I mentioned this fact \note{todo}. This at least allows us to assume that $L \in D^+$.
 
 
 % 1:03:46
-I usually put this going to the right. Because also all truncations, they are still in $D(A)$. But because the condition was just \note{todo}.\\
+I usually put this going to the right. Because also all truncations, they are still in $D(A)$. But because the condition was just on the ...\note{todo}.\\
 
 % 1:04:15
 On the other hand, $N$ can be written as a colimit of the truncations to the left. 
@@ -697,59 +694,87 @@ This is always true, that there is a colimit of truncations $\tau_{\geq -n} N$.
 \tau_{\geq -n} N \in D^{\geq -n}(A)
 \end{align*}
 
+%
+This is much easier because colimits forgetful to direct sums are always good. 
+Similarly, you can pull the colimit into a limit. 
+Because we know that this is stable, at least under countable products. I can also assume that $N \in  D^-$
+
+Now we are in business, because on this goes to the left and this goes to the rightn everything reduces to kind of to the usual \note{todo}. 
+
+% 1:06:00
 But then the spectral sequence reduces one to 
 \begin{align*}
 L \in \Mod(A), N \in \Cond(A^\tri) \leadsto \text{ condition } \IntExt^i_{A^\tri}(N,L) \in \Mod(A)
 \end{align*}
 
-%
-This is much easier because colimits forgetful to direct sums are always good. 
-Similarly, you can pull the colimit into a limit. 
-Because we know I think that is fine. 
-
-
 % 1:07:00
-Once you have that, the existence of the tensor product is just the same formal diagram chase that I did not execute previously, but did earlier.
+Once that is established, the existence of the tensor product follows from the same formal diagram chase, which I did not execute just now, but performed earlier.
+
+% end proof
 
 % 1:08:10
-Another thing I should have mentioned as part of the general theory, but did not, is that $D^{\leq 0}(A)$ has a natural $t$-structure, making it a stable $\infty$-category. 
-The left adjoint is not generally $t$-exact, as we have already seen that solidification could turn something unbounded on the left. 
-Still, this left adjoint preserves connective objects.
+Another thing I should have mentioned earlier as part of the general theory, is that $D^{\leq 0}(A)$ has a natural $t$-structure, making it a stable $\infty$-category.
+
+% Second part of proposition
+% 1:08:32
+The left adjoint is not generally $t$-exact, as we have already seen that solidification could turn something unbounded on the left. Still, this derived base change preserves connective objects $D_{\geq 0}$.
 
 \bp
-$D(A)$ has a natural $t$-structure. This makes taking inclusions $t$-exact:
+The derived category $D(A)$ admits a natural $t$-structure. This makes taking inclusions $t$-exact:
 \begin{align*}
 (D(A) \mono D(\Cond(A^\tri)) \quad & \text{$t$-exact}
 \end{align*}
-$\tnsr^L_{A^\tri}$ preserves $D_{\geq 0}$.
+The derived base change functor $\tnsr^L_{A^\tri}$ preserves $D_{\geq 0}$.
 \ep
 
+% Possibly a question before this, which was not recorded by the audio.
+% 1:09:40
+A $t$-structure is where you have a notion of truncation of complexes, a notion of complexes which live in certain non-negative degrees or certain non-positive degrees, and they satisfy all the usual properties. 
+
+% Proof
 \begin{sketch}
 
+% 1:10:12
+By definition, we made $D(A)$ \note{todo: add ref to what he points at} a triangulated subcategory, which remains stable under all the different truncations.
 
+% board
+$D(A)$ stable under all $\tau_{\leq n}$, $\tau_{\geq n}$ by definition
 
+% 1:10:32
+Since this inclusion \note{todo, add ref} is $t$-exact, a general fact applies: any left adjoint to a $t$-exact functor preserves the connective part $D_{\geq 0}$ of the $t$-structure.
 
 \end{sketch}
 
-%
-A $t$-structure is where you have a notion of truncation of complexes, a notion of complexes which live in certain non-negative degrees or certain non-positive degrees, and they satisfy all the usual properties. 
-By definition, we made this a triangulated subcategory which remains stable under all the different functors.
+% 1:11:15
+Let me check whether this maps to anything which is concentrated on the right, but this is a left adjoint, so you can compute the morphisms in the larger category. But then this \note{add ref} is still in this category.
 
-Since the inclusion is $t$-exact, a general fact applies: if you have a left adjoint to a $t$-exact functor, at least the left adjoint preserves the connective part. 
-Let me check whether this maps to anything which is concentrated on the right, but this is a left adjoint, so you can compute the $\Mor$ in the larger category. 
-But then this is still in this category.
 
 % 1:11:42
-In particular, one can consider the heart: $D(A)^\heart$. 
-By definition, the heart corresponds precisely to $\Mod(A)$. 
+In particular, one can consider the heart: $D(A)^\heart$. By definition, the heart corresponds precisely to $\Mod(A)$.
+\begin{align*}
+D(A)^\heart = \Mod(A)
+\end{align*}
+
 If you take this and pass to the heart, this is $A$. 
+\begin{align*}
+(-\tnsr^L_{A\tri} A)^\heart = \tnsr_{A^\tri} A.
+\end{align*}
 % todo
 
-If you take the tensor product and pass to the heart, in this sense the derived and abelian level are compatible.
+% 1:12:02
+If you take the derived tensor product and pass to the heart,
+\begin{align*}
+(-\tnsr^L_{A\tri}-)^\heart = - \tnsr_{A^\tri} -.
+\end{align*}
+
+% 1:12:13
+In this sense, the derived and abelian level are compatible.
 
 Then there is the other question: if one starts with these constructions and simply animates them to the setting of $\infty$-categories, do one recover the original constructions? 
 In general, the answer is no---even the category $D(A)$ may not be recovered. 
 Even if you do, there are additional questions about whether the correct functors are obtained, which is also not guaranteed. 
+
+
 That said, if the correct categories are recovered, then by functoriality, the correct functors should follow as well.
 The behavior of the tensor product, however, is more subtle. Nevertheless, in practical cases, it turns out that $C(A)$ is indeed just the animation, and all these functors are correct.
 
@@ -778,24 +803,25 @@ Moreover, this entire process is fully faithful. All my ones are complete. \note
 %
 I will denote these as $A^\solid$ and $A^{\solid+}$, where the superscript $\solid$ indicates solidity. 
 % 1:15:19
-Last time, Dustin provided a definition stating that for a solid ring $A^\solid$, we can define subsets $A^\blacksquare \circ$ and $A^{\blacksquare \circ\circ}$ within the underlying condensed ring.
+Last time, Dustin provided a definition stating that for a solid ring $A^\solid$, we can define subsets $A^\circ$ and $A^{\circ\circ}$ within the underlying condensed ring.
 
+% 1:15:43
+Let me recall the definition.
 \bd
-$A^\solid$ solid ring, can define 
+$A^{\circ\circ}$ consists of elements in the underlying ring such that the corresponding map $\Z[T] \to A^\tri$ factors through $\Z\langle T \rangle$. 
+$A^\solid$ solid ring, can define .. in the underlying ring
 $ A \subs A^0 \subs A^\tri(x)$
 
-$A = \{ f \in A^\tri(x)| \Z[T] \to $
+$A = \{ f \in A^\tri(x)| \Z[T] \to \}$
 %todo diagram
-
-$A$ integrally closed subring
-
-
-$A$ solid ideal
 
 \ed
 
-%
-Let me recall that $A^\blacksquare \circ$ consists of elements in the underlying ring such that the corresponding map $\Z[T] \to A^\blacksquare$ factors through $\Z\langle T \rangle$. There was some discussion about how much structure for verifying this condition. Specifically, the condition was that it factors as condensed rings. It is enough to check that it factors as condensed modules over $\Z$.
+% 1:16:17
+There was some discussion about how much structure for verifying this condition. Specifically, the condition was that it factors as condensed rings. It is enough to check that it factors as condensed modules over $\Z$.
+
+% 1:16:30
+Then, ... saying that there is a a nullsequence mod f, $f^2$ and so on, up to zero, but together with small condition that f time seuqnece of shift ... make a module.
 
 %
 Similarly, $A^{\solid\circ\circ}$ was defined as the set of elements $f$ for which there exists a sequence $(f_n)_{n \geq 0}$ satisfying the conditions:
@@ -808,46 +834,59 @@ Similarly, $A^{\solid\circ\circ}$ was defined as the set of elements $f$ for whi
 Additionally, this definition includes a smallness condition: that $f$ times the shifted sequence makes it $I$-adically Cauchy.
 
 % 1:16:55
-If we apply this to the case where this solid ring $A^\solid$ arose from a Huber ring, then this is precisely the set of topologically nilpotent elements, and those define the $\circ\\circ$-elements. When you regard $A^\tri$ as .. module in this way ... In the same way, that actually becomes 
+If we apply this to the case where this solid ring $A^\solid$ arose from a Huber ring, then this is precisely the set of topologically nilpotent elements.
+
+% 1:17:45
+those define the $\circ\circ$-elements. When you regard $A^\tri$ as .. module in this way ... In the same way, that actually becomes 
+
+\bd
+\ed
+
 \begin{align*}
-A^\tri \in \Solid_{\Z[T]}
+$A^\circ = \{ | A^\tri \in \Solid_{\Z[T]}  \}
 \end{align*}
 
 % 1:18:04
-... Can show that this is precisely the same thing as Huber's ....
+Again, it can be shown that this condition is precisely equivalent to Huber's notion of being power-bounded \note{not sure of this}.
+
 % 1:18:18
 Dustin showed last time that $A^\circ$ is always an integrally closed subring.
 
 % 1:18:34
-And $A^{\circ\circ}$ here is always an ideal. 
+Moreover, $A^{\circ\circ}$ is always a radical ideal. 
 
 % 1:18:40
 \ques What is the definition? ...
 
 % 1:18:47
-\ans Given $f$, I can again---let me write again why this means I can "$a$" and then the condition is, I am already speaking of modules over $C$, modules over the closed unit disc, as we motivated last time. This means that $\lvert f(a) \rvert$ should be at most $1$. So it should be also power-bounded.
+\ans Given $f$, I can again---let me write again why this means I can "$a$" and then the condition is, I am already speaking of modules over $C$, modules over the closed unit disc, as Dustin motivated last time. This means that $\lvert f(a) \rvert$ should be at most $1$. So it should be also power-bounded.
+
+% 1:19:42
+But now, I can also make the point.
 
 % 1:20:00
 \begin{definition}
-Assume $A$ is a solid analytic ring structure on the solid ring $A^\tri$. Then
+Assume $A$ is a solid analytic ring structure on the solid ring $A^\tri$. Then we can also define 
 \begin{align*}
-A^{+} = \{ f \in A^\tri | T \mapsto f, \Z[T] \to A^\tri \text{ induces map of analytic ring } \} %todo
+A^{+} = \{ f \in A^\tri(\ast) | T \mapsto f, \Z[T] \to A^\tri \text{ induces map of analytic ring } \} %todo
 \end{align*}
 \end{definition}
 
-%
-But now, I can also make the point: Assume $A$ is an analytic ring structure on a solid $R$-algebra. Then I can also define an $A^+$. 
 I realized I did not define this, so let me do this in just a second. Such that the map from $D(T) \to A$ is the same as always.
 
 % 1:22:00
 \subsection{Maps of analytic rings}
 
-%
+% 1:20:48
 This map induces a map of analytic rings, from $\mathbf{V}$ (the corresponding solid module). Yeah, that is precise.
 
+% 1:21:52
+Something that I should have said previously, but forgot.
+
+% 1:22:05
 % todo proper placement
 \bd[Map of analytic rings]
-Given $A = (A^\tri, \Mod(A))$ and $B = (B^\tri, \Mod(B)$), a \textit{map of analytic rings} $A \to B$ is a map $A^\tri \to B^\tri$ of the underlying condensed rings, which has the property that if you use this to restrict the condensed $B$-module to condensed $A$-module, then .. module .. complete \note{todo}.
+Given $A = (A^\tri, \Mod(A))$ and $B = (B^\tri, \Mod(B)$), a \textit{map of analytic rings} $A \to B$ is a map $A^\tri \to B^\tri$ of the underlying condensed rings, which has the property that if you use this to restrict the condensed $B$-module to condensed $A$-module, then .. modules stay complete \note{todo}.
 % todo diagram
 $\leadsto$ Pass to left adjoint. get 
 \begin{align*}
@@ -857,11 +896,16 @@ $\leadsto$ Pass to left adjoint. get
 \ed
 
 % 1:23:39
-In this case, you can pass to left adjoints. Once you pass to left adjoints, the left adjoint to the restriction of scalars (i.e., what I term the base change functor) becomes the left adjoint here. 
+In this case, you can pass to left adjoints. 
+% 1:23:43
+Once on the abelian level, the same thing is true on the level of derived categories., because then you can check it on the level of modules \note{todo}.
+
+% 1:23:56
+Once you pass to left adjoints, the left adjoint to the restriction of scalars (i.e., what I term the base change functor) becomes the left adjoint here. 
 Thus, you get it also left adjoint here, which is base change.
 
 % 1:24:15
-.. which is symmetric monoidal
+.. which is symmetric monoidal.
 
 % 1:24:23
 If desired, one can compute this functor by first performing the base change as condensed modules and then taking the completion. Moreover, you also get a derived tensor .. \note{todo}
@@ -869,7 +913,7 @@ If desired, one can compute this functor by first performing the base change as 
 - \tnsr_A^L B: D(A) \to D(B)
 \end{align*}
 
-%
+% todo, check this again
 There is something I should have mentioned earlier but forgot. Let $\phi\colon R \to S$ be a map of condensed rings, let $M$ be an $S$-module, and let $N$ be an $R$-module.
 
 Then a map of modules $f\colon M \to \phi_* N$ (where $\phi_*$ denotes restriction of scalars) is equivalent to a map of condensed $S$-modules $\phi^* M \to N$ (where $\phi^*$ denotes base change). 
@@ -882,7 +926,7 @@ The claim is that once you have an analytic ring, you naturally obtain data simi
 % 1:25:47
 I will immediately verify that this construction automatically satisfies all the conditions Huber imposes on his ring $A^+$ of integral elements.
 
-% 1:26:00
+% 1:25:58
 Conversely, given a ring of integral elements in Huber's theory, one can construct an associated analytic ring, which is in some sense the initial one.
 
 % 1:26:20
@@ -896,7 +940,8 @@ Recall, $P$ is always a discrete space on the null sequence. \note{todo, eq}
 P = \Z[\N] / \Z[]
 \end{align*}
 
-
+% 1:26:55
+We characterize ...
 
 %
 Changing notation: $P$ was this "$P$" called---it is always the spectrum based on the normed $R$-algebra. We characterized being solid over $\Z[[T]]$ by being solid (but this we already asked), and that $1-f shift$ is an isomorphism on this projective generator.
