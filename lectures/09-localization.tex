@@ -724,9 +724,19 @@ But plus empty cover of empty set.
 Verifying the sheaf condition in this case amounts to checking that the value of our sheaf on the empty set is the terminal object in the target category of our sheaf. Usually, that can verified without much difficulty.
 
 % 57:28
-But note that this cover here \note{todo, add what he points at} is refined by another cover where we take $f_i * x_i$. 
-This is a smaller distinguished open. Those still generate the unit ideal because of the same expression. 
-Then we can assume that $f_1 + \ldots + f_n = 1$. Then we can do an induction on $n$.
+But note that this cover here \note{todo, add what he points at} is refined by another cover obtained by multiplying each $f_i$ with the corresponding $x_i$. 
+\[
+\{ U(f_i x_i)  \}_{i \in I}
+
+
+% 57:47
+Each $U(f_i x_i)$ is a smaller distinguished open, yet the collection still generates the unit ideal because of the same expression.
+Then we can assume that 
+\[
+f_1 + \cdots + f_n = 1.
+\]
+
+From here, the argument proceeds by induction on $n$.
 
 % 58:17
 Suppose we have $f_1 + f_2 + f_3 = 1$ and we want to check the sheaf condition. We can localize to $U()$ \note{todo}, since we assume the sheaf condition holds for covers of this form. It is enough to check the sheaf condition when we do these localizations. But when you localize to here, 
