@@ -838,6 +838,7 @@ M \times_{M[\frac{1}{f}]} N = M \times_{M[\frac{1}{1-f}]} N
 
 \ques \note{Can't hear a question/remark}
 
+% 1:06:50
 \ans Yes, you have to open up Lurie to find the precise version. But it works.
 
 % 1:07:02
@@ -848,31 +849,81 @@ M \times_{M[\frac{1}{f}]} N = M \times_{M[\frac{1}{1-f}]} N
 \gabber Because ... finitely many intersections, just to ... like alternating circles ... finite \note{can't hear this question/remark well}
 
 % 1:07:32
-\ans I think that once we get to the statement we are trying to prove with the valuative spectrum, then we really probably do not want to do it this way. Maybe we could organize it cleverly, but I think doing the reductions makes it much easier.
+\ans I think that once we reach the statement we are trying to prove with the valuative spectrum, then we really probably do not want to do it this way. Maybe we could organize it cleverly, but I think doing the reductions makes it much easier.
 
 % 1:07:50
-This is good news. This is the great thing about proving something as a sheaf of categories. We have an automatic candidate for the inverse, it is some right adjoint. So we have a functor we want to prove is an equivalence. 
+This is good news. This is the great thing about proving something as a sheaf of categories. We automatically obtain a candidate for the inverse functor, namely the right adjoint. So we have a functor we want to prove is an equivalence. 
 
-% 
-We have a right adjoint, that means we have a unit and a counit we need to check are isomorphisms. Then we need to check, one of them will be a map in this category, and one of them will be a map in this category.
+% 1:08:05
+Having a right adjoint means that we obtain both a unit and a counit of the adjunction, and to prove equivalence we need to verify that each of them is an isomorphism. Then we need to check, one of them will be a map in this category, and one of them will be a map in this category \note{todo, add categories}.
 
 % 1:08:30
 \begin{example}
-For example, for the unit, we need that if $M$
+For example, for the unit, we need that if $M \in D(R)$
+
+
+This is a pullback. That would be the claim that the unit of the adjunction is an isomorphism.
+
+% 1:09:02
+This follows from the statement that if you have any element, call it $N \in D(R)$, such that .. \note{todo} then $N = 0$.
+
+% 1:09:22
+So you want to test something as a homotopy pullback, you can measure the difference between this \note{todo} and the homotopy pullback by a mapping cone. That object, you can check with this \note{todo}, will satisfy this condition. Then you want to conclude that the object is zero. 
+
+% 1:09:45
+For example, now you could reduce to the abelian level, because an object is zero if and only if its homology is zero, and these are localizations that are flat. So it reduces to the same claim on the abelian level, which is kind of very easy to check. 
+
+% 1:10:00
+That was for the unit. Now the co-unit.
+It actually reduces to the exact same claim again. So that is kind of the proof. 
+% end proof
+
+But I want to point out that what is formally used is ...
+
+% 1:10:20
+\gabber So we use localization by $f$ somehow, and this right adjoint commute, that is...
 
 \end{example}
 
-% 
-So then the proof of the solid analog. We use the fact that when we invert $1-f$, this is the intersection of the two. That is, those which are---yes, we want to know that when we pass to right adjoints, this thing is just the intersection of those two things as well. Maybe I should have added that to the list.
+\begin{remark}
+Formally, what is used is the following:
+\begin{enumerate}
+\item Each base change is a localization, so the right adjoint is fully faithfull.
+\item The localizations commute with each other. \note{todo, add them} I'll say what this means. It means that if you take something which is local with respect to say this operation, so something on which $1-f$ acts invertably \note{todo}, and then you invert $f$ on that. That $1-f$ will still act invertably. These are things which are all just obvious in this context, but I want to point out exactly what is being used in this argument.
+\item If $M \mapsto 0$ on each element of the cover, then $M = 0$. 
+% 1:11:50
+So if you have a pullback diagram satisfying these three properties, then you are going to automatically get this limit, I mean a square like this, satisfying these three properties. Then you are automatically getting a pullback.
+\end{enumerate}
+\end{remark}
 
-We have to understand it in a sensible way, I guess you are right. Of course, we have to know the language of $\L$ to make it precise. 
+% 1:12:52
+So then the proof of the solid analog. 
 
+\gabber We use the fact that when we invert $1-f$, this is the intersection of the two. 
 
+\answer Right.
 
-Yes, so it is not---maybe to well, it is the right adjoints are fully faithful, so it is kind of an object-wise condition you could say, just---yeah.
+\gabber That is, those which are---
 
-% 
-What is the analog? Again, we have the site of rational opens $U$ in this valuation spectrum, and the Grothendieck topology, open covers. 
+\answer Yes, we want to know that when we pass to right adjoints, this thing \note{todo} is just the intersection of those two things as well. Maybe I should have added that to the list.
+
+\gabber We have to understand it in a sensible way... 
+
+% 1:13:30
+\answer I guess you are right. 
+
+\gabber Of course, we have to know the language of Lurie to make it precise. 
+
+\answer Yes.
+
+\gabber So it is not...
+
+\answer Well, I mean, the right adjoints are fully faithful, so it is just kind of an object-wise condition you could say, just---yeah.
+
+% 1:13:52
+What is the analog? Again, we have the site of rational opens $U$ in this valuation spectrum $\Spv(R, R^\plus)$, and the Grothendieck topology, open covers.
+
+% 1:14:13
 Then we have a lemma that states that this topology is generated by the empty set cover. 
 For all rational opens $U$ and all $f \in \O_R$, we have to take care of two different kinds of covers. 
 
