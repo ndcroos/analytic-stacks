@@ -739,32 +739,39 @@ f_1 + \cdots + f_n = 1.
 From here, the argument proceeds by induction on $n$.
 
 % 58:17
-Suppose we have $f_1 + f_2 + f_3 = 1$ and we want to check the sheaf condition. We can localize to $U()$ \note{todo}, since we assume the sheaf condition holds for covers of this form. It is enough to check the sheaf condition when we do these localizations. But when you localize to here, 
+Suppose we have $f_1 + f_2 + f_3 = 1$ and we want to check the sheaf condition. We can localize to $U()$ \note{todo}, since we assume the sheaf condition holds for covers of this form. It is enough to check the sheaf condition when we do these localizations. But when you localize to $U(f_1 + f_2)$ \note{not sure he point to this or $U(f_3)$}
 
-when $f_3$ is the unit, there is something similar.
+when $f_1 + f_2$ is equal to a unit, multiplying by the inverse of the unit, you reduce to that case there. Then, when $f_3$ is a unit, there is something similar.
 
-\gabber grothendieck topology. Under some conditions it is enough to check. Assuming that things like the intersections exist.
+% 59:05
+\gabber First there is a statement about the generation of the product \note{not sure if product} topology. (...)
+Then there is another statement, which is probably ... under some conditions that it is enough the check the sheaf condition on all generators of, on coverage to generate topologyand then base change it.
+Of course, assuming that things like the intersections exist.
 
+% 59:27
+\clausen Yes, exactly, but I chose this collection to be compatible under base change. This collection here \note{todo, add what is pointing at} is closed under base change. That is an important technical point, when we get into making this argument completely precise. 
+I have set it up to ensure this property holds. .. 
+% 59:44
+When we restrict our cover to thisn the cover is split, because this was one of your covering elements. So the sheaf condition is automatic here. The sheaf condition here follows by induction. That is essentially the core of the argument.
 
-\clausen Yes, exactly, but I chose this collection to be compatible under base change. This collection here \note{todo} is closed under base change. That is an important technical point, when we get into making this argument completely precise. 
-I have set it up to ensure this property holds. .. We get the sheaf condition by induction. That is essentially the core of the argument.
+% end proof
 
-% 1:00:25
-What about this case here?
+% 1:00:23
+What about this case here \note{todo}?
 
 % 1:00:32
-What we are trying to show, checking the sheaf condition for ... Well, it is a distinguished open in an element $f \in R$, but now there is no loss of generality assuming $U = \Spec R$.
+What we are trying to show, checking the sheaf condition for ... Well, it is a distinguished open in an element $f \in R$, but now there is no loss of generality assuming $U = \Spec(R)$.
 
 \note{todo diagram 1:01:00}
 
 % 1:01:04
-What is the sheaf condition in this case? In this \note{add what he points at} case, we have just two elements, and then we have their intersection. The sheaf condition says that if we look at the derived category of $R$, and the derived category of $R[\frac{1}{f}]$, todo.., this should be a pullback of $\infty$-categories.
+What is the sheaf condition in this case? In this \note{add what he points at} case, we have just two elements ($U(f)$ and $U(1-f)$), and then we have their intersection. The sheaf condition says that if we look at the derived category of $R$, and the derived category of $R[\frac{1}{f}]$ and the derived category of $R[\frac{1}{1-ff}]$, and then the derived cateogry on their intersection, which is where you invert both, this should be a pullback of $\infty$-categories.
 
 
 \note{todo diagram 1:01:25}
 
 % 1:01:38
-Let me pause here, as I haven't spent much time discussing what this notions mean, such as sheaves of $\infty$-categories, limits of $\infty$-categories, and so on. However I can presents a completely (so to speak) elementary case of these pullbacks, to give us a better intuition for the claim.
+Let me pause here, as I haven't spent much time discussing what this notions mean, such as sheaves of $\infty$-categories, limits of $\infty$-categories, and so on. However, I can presents a completely (so to speak) elementary case of these pullbacks, to give us a better intuition for the claim.
 
 % 1:01:55
 Claiming that this \note{add ref to diagram} is a pullback of $\infty$-categories, what does that mean concretely? The functor from $D(R)$ to the pullback category 
@@ -793,9 +800,9 @@ The key point is that we must specify the data of the chain homotopy equivalence
 \ans It sounds reasonable, but I am not entirely sure. That is certainly not how I think about it.
 
 % 1:04:48
-So that is how to think about this result \note{add ref}. It lets us glue objects that are defined locally in a derived sense, but it also lets us do global $\Ext$ calculations by localizing.
+So that is how to think about this result \note{add ref}. It allows us not only to glue objects that are defined locally in a derived sense, but also to perform global $\Ext$-calculations by localizing.
 
-% 
+% 1:05:05
 \begin{question}
 How do we formally prove such a statement?
 \end{question}
@@ -810,11 +817,17 @@ That is for each of the individual maps in diagram \note{todo, add ref}.
 From this, it follows formally that this \note{todo, add ref} functor also has a right adjoint.
 
 % 1:06:02
-We can explicitly describe the right adjoint. Suppose we have a pair $(M, N, \alpha)$ where $M$ is module in $D(R[\frac{1}{f}])$, $N$ is a module in $D(R[\frac{1}{1-f}])$, and $\alpha$ is an isomorphism between their common base changes:
-\begin{align*}
-\alpha \cl M[\frac{1}{1-f}] \equiv N[\frac{1}{f}].
-\end{align*}
+We can explicitly describe the right adjoint. Suppose we have a triple $(M, N, \alpha)$, where 
+\begin{itemize}
+	\item $M$ is a module in $D(R[\frac{1}{f}])$,
+	\item $N$ is a module in $D(R[\frac{1}{1-f}])$, and
+	\item  $\alpha$ is an isomorphism between their common base changes:
+	\begin{align*}
+	\alpha \cl M[\frac{1}{1-f}] \equiv N[\frac{1}{f}].
+	\end{align*}
+\end{itemize}
 
+% 1:06:24
 Then we apply the right adjoints to each of these objects \note{todo, add what he points at}, and then we take a limit. 
 So we take $M$ cross $N$ with $M[\frac{1}{f}]$ , which is the same thing as $N[\frac{1}{1-f}]$.
 \begin{align*}
