@@ -438,7 +438,7 @@ In this context, we can think of it as a binary condition: whether a funtion is 
 % 35:26
 In the valuative spectrum, we are allowed some more refined information. This is not just information about whether a given function vanishes or not, but we can also compare two functions to see if one is greater than the other.
 % 35:39
-We can measure this comparison through a valuation, which is a function $v \cl R \to $\Gamma \cup \{0\}$, where $\Gamma$ is an ordered abelian group written multiplicatively.
+We can measure this comparison through a valuation, which is a function $v \cl R \to \Gamma \cup \{0\}$, where $\Gamma$ is an ordered abelian group written multiplicatively.
 \begin{align*}
 \Spv(R, R^+) = \{ v \mid v \cl R \to \Gamma \cup \{0\} \}
 \end{align*}
@@ -515,7 +515,7 @@ There are many different types of valuations, because in a surface, we can have 
 I am not going to go too much into this, but I will stick to mostly formal aspects for now. Let's continue with the table of analogies.
 
 % 40:46
-\note{Point at $\U(f) \sim \Spec (R ...)$}
+\note{Point at $U(f) \sim \Spec (R ...)$}
 We considered $\Spec(R)$, where we had a particularly nice basis for the topology: quasi-compact open sets, closed under finite intersections. Each of these sets was also of the same form as the global one, but with a different input datum, $R[\frac{1}{f}]$. 
 The situation is analogous here. We have a basis of quasi-compact open sets, also closed under finite intersections. These sets are referred to as the \emph{rational opens}. 
 
@@ -670,7 +670,7 @@ We are currently only describing the sheaf of categories on the rational opens. 
 We sketch the proof of the classical theorem, what one might call Zariski descent, for $D(R)$. We are interested in the site of distinguished opens inside $\Spec(R)$. 
 
 % 53:20
-So we consider this site of distinguished opens $U \subs \Spec(R), equipped with an open cover topology. We have a reasonable understanding for distinguished opens to form a cover. For a ring $R$, the distinguished opens cover $\Spec(R)$ if and only if we are inverting some elements, such that these elements generate the unit ideal.
+So we consider this site of distinguished opens $U \subs \Spec(R)$, equipped with an open cover topology. We have a reasonable understanding for distinguished opens to form a cover. For a ring $R$, the distinguished opens cover $\Spec(R)$ if and only if we are inverting some elements, such that these elements generate the unit ideal.
 
 % 54:00
 However, through a series of reductions, we can show that it suffices to check the sheaf condition for a very specific case of such a situation.
@@ -727,7 +727,7 @@ Verifying the sheaf condition in this case amounts to checking that the value of
 But note that this cover here \note{todo, add what he points at} is refined by another cover obtained by multiplying each $f_i$ with the corresponding $x_i$. 
 \[
 \{ U(f_i x_i)  \}_{i \in I}
-
+\]
 
 % 57:47
 Each $U(f_i x_i)$ is a smaller distinguished open, yet the collection still generates the unit ideal because of the same expression.
@@ -791,7 +791,7 @@ If we have a chain complex in $D(R[\frac{1}{f}])$, and a chain complex $D(R[\fra
 The key point is that we must specify the data of the chain homotopy equivalence here \note{todo, add what he points at}, to obtain a well-defined object there \note{todo, add what he points at}. This is what we mean by essential surjectivity.
 
 % 1:03:50
-\emph{Full faithfulness} describes a different condition. It says that if we have two objects in $D(R)$, and we want to know the $\Hom$-spaces between them \footnote{For example, we can compute $\Ext$ groups, or the $\RHom$-spaces between two objects.}, we can get it by base changing here $$D(R[\frac{1}{f}])$ and taking $\RHom$'s, base changing here $D(R[\frac{1}{1-f}])$ and taking $\RHom$'s, and then taking the homotopy pullback of those complexes for $\RHom$'s we have there ($D(R[\frac{1}{f}]) \times_{D(R[\frac{1}{1-f}])} D(R[\frac{1}{1-f}])$). This is the same thing like a shift of a mapping cone of some direct sum of these two mapping to that.
+\emph{Full faithfulness} describes a different condition. It says that if we have two objects in $D(R)$, and we want to know the $\Hom$-spaces between them \footnote{For example, we can compute $\Ext$ groups, or the $\RHom$-spaces between two objects.}, we can get it by base changing here $D(R[\frac{1}{f}])$ and taking $\RHom$'s, base changing here $D(R[\frac{1}{1-f}])$ and taking $\RHom$'s, and then taking the homotopy pullback of those complexes for $\RHom$'s we have there ($D(R[\frac{1}{f}]) \times_{D(R[\frac{1}{1-f}])} D(R[\frac{1}{1-f}])$). This is the same thing like a shift of a mapping cone of some direct sum of these two mapping to that.
 
 % 1:04:18
 \ques But is it equivalent to like the derived category of this diagram? You can say, on the abelian level, modulo a diagram is just giving a modulo over every ring. And maps ... then you take the derived category .. something condition homology?
@@ -931,7 +931,7 @@ For all rational opens $U$ and all $f \in \O_R$, we have to take care of two dif
 The topology is generated by:
 \begin{itemize}
 	\item the empty cover of empty set
-	\item for all rational opens $U \subs \Spv(R,R^+), all $f \in \O(R)$ 
+	\item for all rational opens $U \subs \Spv(R,R^+)$, all $f \in \O(R)$ 
 \end{itemize}
 \end{lemma}
 
